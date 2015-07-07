@@ -29,7 +29,7 @@ function(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, show=TRUE, no
    stopifnot(grain.x<201)
    stopifnot(grain.y<201)
    stopifnot(grain.y*grain.x<10007)
-   oldpar <- par(no.readonly = TRUE)
+   old.par <- par(no.readonly = TRUE)
    ## --- matrix to be returned
    mat <- matrix(0, ncol = grain.x, nrow = grain.y)
    ## --- plot and lines
@@ -85,7 +85,7 @@ function(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, show=TRUE, no
        rect(seqx[xlf], seqy[ybt], seqx[xrg+1], seqy[ytp+1], col = "#00000088", border = "#00000088")
    }
   dev.off()
-  par(oldpar)
+  par(old.par)
   if (show) {
     layout(mat)
     layout.show(n)

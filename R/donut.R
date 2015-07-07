@@ -39,6 +39,7 @@
 #' donut(c(10,20,15), 0, lwd=3, col=4)
 #' donut(c(10,20,15), 0.5, col=4, mycol=c(3,7,2), density=30, angle=c(20,55,110))
 #' donut(c(10,20,40), 0.2, col=NA, mycol=c(3,7,2), width=0.2, clockwise=TRUE)
+#'
 #' #Example 2:
 #' plot0(c(0,10),c(0,40), type="n")
 #' vec <- runif(7)

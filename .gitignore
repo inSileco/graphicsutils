@@ -13,5 +13,4 @@ vignettes/*.html
 vignettes/*.pdf
 
 # "todo" folders
-./man/todo
 ./R/todo

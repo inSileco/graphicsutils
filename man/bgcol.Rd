@@ -2,7 +2,7 @@
 % Please edit documentation in R/bgcol.R
 \name{bgcol}
 \alias{bgcol}
-\title{An empty plot function}
+\title{Background color}
 \usage{
 bgcol(...)
 }
@@ -10,10 +10,13 @@ bgcol(...)
 \item{...}{Additional arguments to be passed to \code{\link{rect}} function.}
 }
 \description{
-\code{bgcol} color the background of the plot region.
+Color the background of the plot region.
 }
 \details{
 The function calls \code{\link{rect}} and draw a colored (defaut is light blue) rectangle whose dimension are given par argument of function \code{\link{par}}.
+}
+\note{
+In par(), the argument bg colors all the window.
 }
 \examples{
 #Example 1:
