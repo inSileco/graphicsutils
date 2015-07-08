@@ -6,6 +6,10 @@ You can install this package using the  [*devtools*](http://cran.r-project.org/w
 
 > install_git("https://github.com/KevCaz/graphicsutils.git")
 
+or
+
+> install_github("KevCaz/graphicsutils")
+
 Then, load it:
 
 > library(graphicsutils.git)

@@ -4,8 +4,8 @@
 \alias{pickcolors}
 \title{Pick your colors up}
 \usage{
-pickcolors(ramp = rainbow(1000), colors = 6, tones = colors,
-  shades = 20)
+pickcolors(ramp = rainbow(1024), colors = 8, tones = colors,
+  shades = 32)
 }
 \arguments{
 \item{ramp}{A first set of colors.}
@@ -30,6 +30,7 @@ Beyond 20 colors, the interest of such function is questionnable.
 mypal1 <- pickcolors()
 #Example 2:
 mypal2 <- pickcolors(colorRampPalette(c('grey','blue','red'))(100), colors=6, tones=4, shades=30)
+plot(runif(10),runif(10), col=mypal2, pch=19, cex=3)
 }
 \keyword{color,}
 \keyword{selection}

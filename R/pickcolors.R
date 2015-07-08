@@ -21,8 +21,9 @@
 #' mypal1 <- pickcolors()
 #' #Example 2:
 #' mypal2 <- pickcolors(colorRampPalette(c('grey','blue','red'))(100), colors=6, tones=4, shades=30)
+#' plot(runif(10),runif(10), col=mypal2, pch=19, cex=3)
 
-pickcolors <- function(ramp=rainbow(1000), colors=6, tones=colors, shades=20){
+pickcolors <- function(ramp=rainbow(1024), colors=8, tones=colors, shades=32){
     ## checkings
     if (colors>20) warning("More than 20 colors, really?")
     colors <- min(colors,100)
@@ -85,7 +86,7 @@ pickcolors <- function(ramp=rainbow(1000), colors=6, tones=colors, shades=20){
         }
       }
     }
-    Sys.sleep(1)
+    Sys.sleep(0.8)
     par(old.par)
     dev.off()
     return(slccol)
