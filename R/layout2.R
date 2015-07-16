@@ -64,7 +64,7 @@ function(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, show=TRUE, no
    ## ---- center sequences
    seqcx <- seq(1/(2*grain.x), 1-1/(2*grain.x), length.out = grain.x)
    seqcy <- seq(1/(2*grain.y), 1-1/(2*grain.y), length.out = grain.y)
-   for (i in 1 : n){
+   for (i in 1:n){
        xy <- locator(1)
        pt1x <- which.min((seqcx-xy$x)^2)
        pt1y <- which.min((seqcy-xy$y)^2)

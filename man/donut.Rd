@@ -16,7 +16,7 @@ donut(vec, eaten = 0, labels = NULL, rot = 0, cx = 0, cy = 0,
 
 \item{labels}{One or more expressions or character strings giving names for the slices.}
 
-\item{rot}{The Rotation angle (in degree) of the donut.}
+\item{rot}{The rotation angle (in degree) of the donut.}
 
 \item{cx}{Controls the total horizontal width of the donut.}
 

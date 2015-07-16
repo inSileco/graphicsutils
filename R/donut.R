@@ -5,7 +5,7 @@
 #' @param vec Vector of data.
 #' @param eaten The eaten part of the donut.
 #' @param labels One or more expressions or character strings giving names for the slices.
-#' @param rot The Rotation angle (in degree) of the donut.
+#' @param rot The rotation angle (in degree) of the donut.
 #' @param cx Controls the total horizontal width of the donut.
 #' @param cy Controls the total vertical width of the donut.
 #' @param cex The magnification of the size of the donut.
