@@ -2,7 +2,7 @@
 % Please edit documentation in R/rotation.R
 \name{rotation}
 \alias{rotation}
-\title{Rotatation}
+\title{Rotation}
 \usage{
 rotation(x, y, rot = 90, xrot = NULL, yrot = NULL)
 }
@@ -18,7 +18,7 @@ rotation(x, y, rot = 90, xrot = NULL, yrot = NULL)
 \item{yrot}{Optional y coordinate for the center of rotation.}
 }
 \description{
-Rotates a set of points
+Rotates a set of points.
 }
 \details{
 This function returns the coordinates of the points after rotation. If The coordinates of the rotation center are not specified, the rotation center is taken as the means of coordinates.

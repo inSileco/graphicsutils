@@ -35,7 +35,7 @@
 
 
 rhombi <- function(x, y=x, ldg=1, sdg=ldg, rot=0, area=FALSE, ...){
-    sz <- max(unlist(lapply(list(x,y,ldg,sdg,rot),length)))
+    sz <- max(sapply(list(x,y,ldg,sdg,rot),length))
     x <- rep_len(x, sz)
     y <- rep_len(y, sz)
     ldg <- rep_len(ldg, sz)

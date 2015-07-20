@@ -1,6 +1,6 @@
-#' Rotatation
+#' Rotation
 #'
-#' Rotates a set of points
+#' Rotates a set of points.
 #'
 #' @param x The x coordinates of points.
 #' @param y The y coordinates of points.
@@ -50,3 +50,5 @@ function(x, y, rot=90, xrot=NULL, yrot=NULL){
     matxy2<-mat.rot%*%matxy
     return(list(x=matxy2[1,]+xrot,y=matxy2[2,]+yrot))
 }
+
+
