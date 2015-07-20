@@ -1,21 +1,25 @@
 #' Draw circles
 #'
-#' \code{circle} Draw circles in a flexible way.
+#' Draw circles in a flexible way.
 #'
 #' @param x The x coordinates of the centers of the circles.
 #' @param y The y coordinates of the centers of the circles.
 #' @param radi The radii of the circles.
-#' @param from Start points expressed in radians.
-#' @param to End points expressed in radians.
-#' @param incr Increments expressed in radians.
-#' @param col Vector of colors of the circles.
-#' @param ... Additional arguments to be passed to either \code{\link{polygon}} function (if \code{boder} is defined) either \code{\link{lines}} function (otherwise).
+#' @param from The angles, expressed in radians, from which circles are drawn.
+#' @param to The angles, expressed in radians, to which circles are drawn.
+#' @param incr Increments between two points to be linked (expressed in radians).
+#' @param pie logical. If TRUE end points are linked with the center of the circle (default is set to FALSE).
+#' @param ... Additional arguments to be passed to \code{\link{polygon}} function.
 #'
-#' @keywords circle, plot
+#' @keywords circle
 #'
 #' @export
 #'
-#' @details The number of cicrles drawn is given by the maximum argument length among \code{x}, \code{y} and \code{radi} arguments. Sizes are adjusted using \code{\link{rep_len}} function. The plot used \code{\link{lines}} function, however if \code{border} is defined, then \code{\link{polygon}} function is used.
+#' @details 
+#' The number of circles drawn is given by the maximum argument length amng \code{x}, \code{y}, \code{radi}, \code{from} and \code{to} arguments.
+#' Sizes are adjusted using \code{\link{rep_len}} function. 
+#'
+#' To plot circles, \code{\link{polygon}} function is called. 
 #'
 #' @examples
 #' #Example 1:
@@ -23,41 +27,48 @@
 #' circle()
 #'
 #' #Example 2:
-#' plot0(x=c(-2,2),y=c(-2,2))
-#' circle(c(-1,1), col=2, lwd=4)
+#' plot0()
+#' circle(x=-.5, radi=0.5, from=0.5*pi, to=0.25*pi)
+#' circle(x=.5, radi=0.5, from=0.5*pi, to=0.25*pi, pie=TRUE)
 #'
 #' #Example 3:
+#' plot0()
+#' circle(matrix(-.5+.5*stats::runif(18), ncol=3))
+#'
+#' #Example 4:
 #' plot0(x=c(-2,2),y=c(-2,2), asp=1)
 #' circle(x=c(-1,1),c(1,1,-1,-1),from=pi*seq(0.25,1,by=0.25),to=1.25*pi, col=2, border=4, lwd=3)
 
 circle <-
-function(x=0, y=x, radi=1, from=0, to=2*pi, incr=0.01, closing=1, col=1, ...){
+function(x=0, y=x, radi=1, from=0, to=2*pi, incr=0.01, pie=FALSE,...){
 
-    ## --- format checking
-    x <- as.matrix(x)
-    stopifnot(ncol(x)<=3)
-    x <- matrix(as.numeric(x),ncol=ncol(x))
-    if (ncol(x)>1){
-        y <- x[,2L]
-        if (ncol(x)>2) radi <- x[,3L]
-        x <- x[,1L]
-    }
-
-    ## --- adjust vectors sizes
-    sz <- max(length(x),length(y),length(radi), length(from), length(to))
-    x <- rep_len(x,sz)
-    y <- rep_len(y,sz)
-    from <- rep_len(from,sz)
-    to <- rep_len(to,sz)
-    radi <- rep_len(radi,sz)
-    mycol <- rep_len(col,sz)
-    bd <- which("border"%in%names(list(...)))
+    ## --- format checking / adjusting vectors sizes
+    matx <- as.matrix(x)
+    argn <- c("x","y","radi","from","to")
+    nbarg <- length(argn)
+    nbcol <- min(nbarg,ncol(matx))
+    for (i in 1:nbcol) assign(argn[i],matx[,i])
+    argo <- list(x,y,radi,from,to)
+    sz <- max(sapply(argo,length))
+    print(sz)
+    for (i in 1:nbarg) assign(argn[i],rep_len(argo[[i]],sz))
 
     ## --- draw the circle
     for (i in 1L:sz){
         ## --- sequence to draw the circle
+        if (abs(to[i]-from[i])>=(2*pi)) {
+            to[i]=2*pi
+            from[i]=0
+        }
+        else {
+            if ((to[i]>from[i]) & (to[i]%%(2*pi)==0)) to[i] <- 2*pi
+            to[i] <- to[i]%%(2*pi)
+            from[i] <- from[i]%%(2*pi)
+            if (to[i]<from[i]) to[i] <- to[i]+2*pi
+        }
+        ##
         sqc <- seq(from[i], to[i], by=incr)
-        if (length(bd)>0) polygon(x[i]+radi[i]*cos(sqc),y[i]+radi[i]*sin(sqc), col=mycol[i],...)
-        else lines(x[i]+radi[i]*cos(sqc),y[i]+radi[i]*sin(sqc),col=mycol[i],...)
+        if (!pie) polygon(x[i]+radi[i]*cos(sqc),y[i]+radi[i]*sin(sqc), ...)
+        else polygon(x[i]+c(0,radi[i]*cos(sqc),0),y[i]+c(0,radi[i]*sin(sqc),0), ...)
     }
 }

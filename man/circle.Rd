@@ -5,7 +5,7 @@
 \title{Draw circles}
 \usage{
 circle(x = 0, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01,
-  closing = 1, col = 1, ...)
+  pie = FALSE, ...)
 }
 \arguments{
 \item{x}{The x coordinates of the centers of the circles.}
@@ -14,21 +14,24 @@ circle(x = 0, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01,
 
 \item{radi}{The radii of the circles.}
 
-\item{from}{Start points expressed in radians.}
+\item{from}{The angles, expressed in radians, from which circles are drawn.}
 
-\item{to}{End points expressed in radians.}
+\item{to}{The angles, expressed in radians, to which circles are drawn.}
 
-\item{incr}{Increments expressed in radians.}
+\item{incr}{Increments between two points to be linked (expressed in radians).}
 
-\item{col}{Vector of colors of the circles.}
+\item{pie}{logical. If TRUE end points are linked with the center of the circle (default is set to FALSE).}
 
-\item{...}{Additional arguments to be passed to either \code{\link{polygon}} function (if \code{boder} is defined) either \code{\link{lines}} function (otherwise).}
+\item{...}{Additional arguments to be passed to \code{\link{polygon}} function.}
 }
 \description{
-\code{circle} Draw circles in a flexible way.
+Draw circles in a flexible way.
 }
 \details{
-The number of cicrles drawn is given by the maximum argument length among \code{x}, \code{y} and \code{radi} arguments. Sizes are adjusted using \code{\link{rep_len}} function. The plot used \code{\link{lines}} function, however if \code{border} is defined, then \code{\link{polygon}} function is used.
+The number of circles drawn is given by the maximum argument length amng \code{x}, \code{y}, \code{radi}, \code{from} and \code{to} arguments.
+Sizes are adjusted using \code{\link{rep_len}} function.
+
+To plot circles, \code{\link{polygon}} function is called.
 }
 \examples{
 #Example 1:
@@ -36,13 +39,17 @@ plot0()
 circle()
 
 #Example 2:
-plot0(x=c(-2,2),y=c(-2,2))
-circle(c(-1,1), col=2, lwd=4)
+plot0()
+circle(x=-.5, radi=0.5, from=0.5*pi, to=0.25*pi)
+circle(x=.5, radi=0.5, from=0.5*pi, to=0.25*pi, pie=TRUE)
 
 #Example 3:
+plot0()
+circle(matrix(-.5+.5*stats::runif(18), ncol=3))
+
+#Example 4:
 plot0(x=c(-2,2),y=c(-2,2), asp=1)
 circle(x=c(-1,1),c(1,1,-1,-1),from=pi*seq(0.25,1,by=0.25),to=1.25*pi, col=2, border=4, lwd=3)
 }
-\keyword{circle,}
-\keyword{plot}
+\keyword{circle}
 
