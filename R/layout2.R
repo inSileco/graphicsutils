@@ -22,21 +22,21 @@
 #' #Example:
 #' dev.off()
 #' cat("You must click eight times on the current plot \n")
-#' mat <- layout2()
+#' mat<-layout2()
 
 layout2 <-
 function(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, show=TRUE, now=TRUE){
    stopifnot(grain.x<201)
    stopifnot(grain.y<201)
    stopifnot(grain.y*grain.x<10007)
-   old.par <- par(no.readonly = TRUE)
+   old.par<-par(no.readonly = TRUE)
    ## --- matrix to be returned
-   mat <- matrix(0, ncol = grain.x, nrow = grain.y)
+   mat<-matrix(0, ncol = grain.x, nrow = grain.y)
    ## --- plot and lines
    par(mar = rep(0, 4), xaxs = "i", yaxs = "i", ann = T)
    plot(0, xlim = c(0, 1), ylim = c(0, 1), type = "n", axes = F)
-   seqx <- seq(0, 1, length.out = grain.x+1)
-   seqy <- seq(0, 1, length.out = grain.y+1)
+   seqx<-seq(0, 1, length.out = grain.x+1)
+   seqy<-seq(0, 1, length.out = grain.y+1)
    abline(v = seqx, h = seqy, lty = 3, lwd=0.8)
    ## --- Reperes
    if ((grain.x %% 2) == 0 && (grain.y %% 2) == 0){
@@ -57,29 +57,29 @@ function(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, show=TRUE, no
        points(x = seqx[c(1+2*grain.x/3, 1+grain.x/3)],
            y = seqy[c(1+grain.y/3, 1+2*grain.y/3)], pch = 43)
    }
-   rx <- max(which((grain.x %% 1:5)==0))
-   ry <- max(which((grain.y %% 1:5)==0))
+   rx<-max(which((grain.x %% 1:5)==0))
+   ry<-max(which((grain.y %% 1:5)==0))
    if (rx>1) abline(v=seqx[1+seq(grain.y/rx,(rx-1)*grain.x/rx,length.out=rx-1)])
    if (ry>1) abline(h=seqy[1+seq(grain.y/ry,(ry-1)*grain.y/ry,length.out=ry-1)])
    ## ---- center sequences
-   seqcx <- seq(1/(2*grain.x), 1-1/(2*grain.x), length.out = grain.x)
-   seqcy <- seq(1/(2*grain.y), 1-1/(2*grain.y), length.out = grain.y)
+   seqcx<-seq(1/(2*grain.x), 1-1/(2*grain.x), length.out = grain.x)
+   seqcy<-seq(1/(2*grain.y), 1-1/(2*grain.y), length.out = grain.y)
    for (i in 1:n){
-       xy <- locator(1)
-       pt1x <- which.min((seqcx-xy$x)^2)
-       pt1y <- which.min((seqcy-xy$y)^2)
-       xy <- locator(1)
-       pt2x <- which.min((seqcx-xy$x)^2)
-       pt2y <- which.min((seqcy-xy$y)^2)
+       xy<-locator(1)
+       pt1x<-which.min((seqcx-xy$x)^2)
+       pt1y<-which.min((seqcy-xy$y)^2)
+       xy<-locator(1)
+       pt2x<-which.min((seqcx-xy$x)^2)
+       pt2y<-which.min((seqcy-xy$y)^2)
        #--
-       xlf <- min(pt1x,pt2x)
-       xrg <- max(pt1x,pt2x)
-       ybt <- min(pt1y,pt2y)
-       ytp <- max(pt1y,pt2y)
+       xlf<-min(pt1x,pt2x)
+       xrg<-max(pt1x,pt2x)
+       ybt<-min(pt1y,pt2y)
+       ytp<-max(pt1y,pt2y)
        #--
        for (j in ybt:ytp){
            for (k in xlf:xrg){
-               mat[grain.y-j+1,k] <- i
+               mat[grain.y-j+1,k]<-i
            }
        }
        rect(seqx[xlf], seqy[ybt], seqx[xrg+1], seqy[ytp+1], col = "#00000088", border = "#00000088")

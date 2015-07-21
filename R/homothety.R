@@ -38,12 +38,12 @@ homothety <-
 function(x, y, lambda, xcen=NULL, ycen=NULL, add=FALSE, ...){
 
     ## Format checking
-    x <- as.matrix(x)
+    x<-as.matrix(x)
     stopifnot(ncol(x)<=2)
     x <- matrix(as.numeric(x),ncol=ncol(x))
     if (ncol(x)>1){
         y <- x[,2]
-        x <- x[,1]
+        x<-x[,1]
     }
     else {
         sz <- max(length(x),length(y))
@@ -51,8 +51,8 @@ function(x, y, lambda, xcen=NULL, ycen=NULL, add=FALSE, ...){
         y <- rep_len(y,sz)
     }
     ## if null, xrot/yrot are the mean of x/y coordinates
-    if (is.null(xcen)) xcen <- mean(x)
-    if (is.null(ycen)) ycen <- mean(y)
+    if (is.null(xcen)) xcen<-mean(x)
+    if (is.null(ycen)) ycen<-mean(y)
     ## ----
     homot <- list(x=lambda*(x-xcen)+xcen,y=lambda*(y-ycen)+ycen)
     if (add) polygon(homot$x, homot$y, ...)

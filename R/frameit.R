@@ -29,20 +29,20 @@
 
 frameit <-
 function(nbc=10, cex.x=1, cex.y=cex.x, col=c("grey45","grey85"), border=NA){
-	pu <- par()$usr
+	pu<-par()$usr
 	##
-	px <- pretty(c(pu[1],pu[2]),nbc)
-	dx <- px[2]-px[1]
-	px <- c(px[1]-dx,px, px[nbc]+dx)
+	px<-pretty(c(pu[1],pu[2]),nbc)
+	dx<-px[2]-px[1]
+	px<-c(px[1]-dx,px, px[nbc]+dx)
 	##
-	py <- pretty(c(pu[3],pu[4]),nbc)
-	dy <- py[2]-py[1]
-	py <- c(py[1]-dy,py, py[nbc]+dy)
+	py<-pretty(c(pu[3],pu[4]),nbc)
+	dy<-py[2]-py[1]
+	py<-c(py[1]-dy,py, py[nbc]+dy)
 	##
-	widx <- 0.01*(pu[4]-pu[3])*cex.x*par()$pin[1]/par()$pin[2]
-	widy <- 0.01*(pu[2]-pu[1])*cex.y
+	widx<-0.01*(pu[4]-pu[3])*cex.x*par()$pin[1]/par()$pin[2]
+	widy<-0.01*(pu[2]-pu[1])*cex.y
 	##
-	mycol <- rep_len(col,nbc+3)
+	mycol<-rep_len(col,nbc+3)
 	##
 	for(i in (1:(nbc+3))){
 		# axis 1

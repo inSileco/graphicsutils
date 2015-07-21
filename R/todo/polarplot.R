@@ -17,9 +17,9 @@ function(seqtime, seqval=NULL, rad=1, from=0, to=2*pi, incr=0.01, labelc=NULL, a
     rgval <- prettyRange(seqval)
     lgv <- floor(log(rgval[2]-rgval[1]))
     ## 
-    seqtp <- -.5*pi+from + (to-from)*(seqtime-rgtime[1L])/(rgtime[2L]-rgtime[1L])
+    seqtp<--.5*pi+from + (to-from)*(seqtime-rgtime[1L])/(rgtime[2L]-rgtime[1L])
     if (clockwise) seqtp <- 2*from - seqtp 
-    seqvp <- rad*(seqval-rgval[1L])/(rgval[2L]-rgval[1L]) 
+    seqvp<-rad*(seqval-rgval[1L])/(rgval[2L]-rgval[1L]) 
 
     ## --- plot
     if (!add) {
@@ -44,7 +44,7 @@ function(seqtime, seqval=NULL, rad=1, from=0, to=2*pi, incr=0.01, labelc=NULL, a
     points(seqvp[lv]*cos(seqtp[lv]), seqvp[lv]*sin(seqtp[lv]), pch=20, col=4)
 
     ## --- Values labels 
-    if (is.null(labelr)) labelr <-  round(seq(rgval[1],rgval[2],length.out=6),digits=-lgv+2)
+    if (is.null(labelr)) labelr<- round(seq(rgval[1],rgval[2],length.out=6),digits=-lgv+2)
     if (!is.na(labelr) && nzchar(labelr)){
         text(rep(0,6), -.2*0:5, as.graphicsAnnot(labelr), cex=1.15, pos=3)
     }
@@ -56,11 +56,11 @@ function(seqtime, seqval=NULL, rad=1, from=0, to=2*pi, incr=0.01, labelc=NULL, a
     segments(cos(mangle),sin(mangle),1.05*cos(mangle),1.05*sin(mangle))
 
     ## --- Circular values
-    if (is.null(labelc)) labelc <- as.graphicsAnnot(seq(rgtime[1],rgtime[2],length.out=7))
-    else labelc <- as.graphicsAnnot(labelc)
+    if (is.null(labelc)) labelc<-as.graphicsAnnot(seq(rgtime[1],rgtime[2],length.out=7))
+    else labelc<-as.graphicsAnnot(labelc)
     if (!is.na(labelc) && nzchar(labelc)) {
         if (mangle[1]%%(2*pi)==mangle[length(mangle)]%%(2*pi)) {
-            mg1 <- mangle[1] 
+            mg1<-mangle[1] 
             mgl <- mangle[length(mangle)]
             text(1.15*cos(mg1),1.15*sin(mg1), labelc[1], pos=4, cex=1.15, col=4)
             text(1.15*cos(mgl),1.15*sin(mgl), labelc[length(labelc)], pos=2, cex=1.15, col=4)

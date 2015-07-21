@@ -54,47 +54,47 @@ function(vec, eaten=0, labels=NULL, rot=0, cx=0, cy=0, cex=0.8, tck=0.05, width=
     width <- 1-width
     ## sequence to draw circles
     x <- (2*pi*rot/360)+seq(-.5*pi,-2.5*pi,-dt)
-    if (!clockwise) x <- rev(x)
-    sz <- length(x)
-    d <- floor(.5*eaten*sz)
+    if (!clockwise) x<-rev(x)
+    sz<-length(x)
+    d<-floor(.5*eaten*sz)
     ## remove the eaten part
-    xb <- x[d:(sz-d)]
-    szb <- length(xb)
+    xb<-x[d:(sz-d)]
+    szb<-length(xb)
     ## vector
     nb <- length(vec)
     vecb <- floor(vec/sum(vec)*szb)
     ## color
     mycol <- rep(mycol, length.out=nb)
     ## labels
-    if (is.null(labels)) labels <- as.character(1:nb)
-    else labels <- as.graphicsAnnot(labels)
+    if (is.null(labels)) labels<-as.character(1:nb)
+    else labels<-as.graphicsAnnot(labels)
     ## Dimension
-    wid <- (par()$usr[2]-par()$usr[1])
-    heg <- (par()$usr[4]-par()$usr[3])
+    wid<-(par()$usr[2]-par()$usr[1])
+    heg<-(par()$usr[4]-par()$usr[3])
 
     if (!add) {
         plot.new()
         plot.window(c(-1,1), c(-1,1), asp=1)
-        cx <- cy <- 0
-        cex.x <- cex.y <- cex
+        cx<-cy<-0
+        cex.x<-cex.y<-cex
     }
     else {
         cex.x <- cex*.4*wid
-        aspin <- par()$pin[1]/par()$pin[2]
+        aspin<-par()$pin[1]/par()$pin[2]
         print(aspin)
         cex.y <- aspin*cex*.4*heg
     }
     if (!is.null(density)) {
-        density <- rep(density,length.out=nb)
-        angle <- rep(angle,length.out=nb)
+        density<-rep(density,length.out=nb)
+        angle<-rep(angle,length.out=nb)
     }
     sx <- 1
     for (i in 1L:nb){
         vx <- c(cos(xb[sx]),width*cos(xb[sx]),width*cos(xb[sx:(sx+vecb[i])]),cos(xb[(sx+vecb[i]):sx]))
-        vy <- c(sin(xb[sx]),width*sin(xb[sx]),width*sin(xb[sx:(sx+vecb[i])]),sin(xb[(sx+vecb[i]):sx]))
+        vy<-c(sin(xb[sx]),width*sin(xb[sx]),width*sin(xb[sx:(sx+vecb[i])]),sin(xb[(sx+vecb[i]):sx]))
         if (!is.null(density)) polygon(cx+cex.x*vx,cy+cex.y*vy, col=mycol[i], border=border, density=density[i], angle=angle[i])
         else polygon(cx+cex.x*vx,cy+cex.y*vy, col=mycol[i], border=border)
-        lab <- as.character(labels[i])
+        lab<-as.character(labels[i])
         if (!is.na(lab) && nzchar(lab)) {
             mid <- sx+floor(.5*vecb[i])
             pos <- 1+(sin(xb[mid])>-.5*sqrt(3))
@@ -102,7 +102,7 @@ function(vec, eaten=0, labels=NULL, rot=0, cx=0, cy=0, cex=0.8, tck=0.05, width=
             lines(cx+cex.x*c(1, 1+tck)*cos(xb[mid]),cy+cex.y*c(1, 1+tck)*sin(xb[mid]), ...)
             text(cx+(1+tck)*cex.x*cos(xb[mid]),cy+cex.y*(1+tck)*sin(xb[mid]), labels[i], pos=pos, xpd=TRUE)
         }
-        sx <- sx+vecb[i]
+        sx<-sx+vecb[i]
     }
     lines(cx+cex.x*cos(xb),cy+cex.y*sin(xb), ...)
     lines(cx+cex.x*width*cos(xb),cy+cex.y*width*sin(xb), ...)

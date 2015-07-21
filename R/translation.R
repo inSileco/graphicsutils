@@ -26,7 +26,7 @@
 #' x <- c(4,6,5)
 #' y <- c(2,2,4)
 #' polygon(x,y)
-#' trans1 <- translation(x,y,xtrans=2,ytrans=5, add=TRUE, border=4, lwd=2)
+#' trans1<-translation(x,y,xtrans=2,ytrans=5, add=TRUE, border=4, lwd=2)
 #'
 #' #Example 2:
 #' x <- c(2,4,3,1)
@@ -40,12 +40,12 @@ translation <-
 function(x, y, xtrans=0, ytrans=0, add=FALSE, ...){
 
     ## Format checking
-    x <- as.matrix(x)
+    x<-as.matrix(x)
     stopifnot(ncol(x)<=2)
     x <- matrix(as.numeric(x),ncol=ncol(x))
     if (ncol(x)>1){
         y <- x[,2]
-        x <- x[,1]
+        x<-x[,1]
     }
     else {
         sz <- max(length(x),length(y))

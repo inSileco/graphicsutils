@@ -33,7 +33,7 @@ As \code{layout} is ultimately called, \code{layout2} has the same limits: curre
 #Example:
 dev.off()
 cat("You must click eight times on the current plot \\n")
-mat <- layout2()
+mat<-layout2()
 }
 \keyword{empty}
 \keyword{plot}

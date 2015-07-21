@@ -35,7 +35,7 @@ plot0(c(0,10),c(0,10))
 x <- c(4,6,5)
 y <- c(2,2,4)
 polygon(x,y)
-trans1 <- translation(x,y,xtrans=2,ytrans=5, add=TRUE, border=4, lwd=2)
+trans1<-translation(x,y,xtrans=2,ytrans=5, add=TRUE, border=4, lwd=2)
 
 #Example 2:
 x <- c(2,4,3,1)

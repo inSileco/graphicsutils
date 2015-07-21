@@ -37,49 +37,49 @@ arrows2 <- function(x0, y0, x1=x0, y1=y0, cex.hg=1, cex.hh=1, pct.hw=0.1, cex.sk
 
     stopifnot()
     ## ----
-    sz <- max(sapply(list(x0,y0,x1,y1),length))
-    x0 <- rep_len(x0, sz)
-    y0 <- rep_len(y0, sz)
-    x1 <- rep_len(x1, sz)
-    y1 <- rep_len(y1, sz)
+    sz<-max(sapply(list(x0,y0,x1,y1),length))
+    x0<-rep_len(x0, sz)
+    y0<-rep_len(y0, sz)
+    x1<-rep_len(x1, sz)
+    y1<-rep_len(y1, sz)
     ## ---
     ## checkings
-    pb <- which((x0==x1)*(y0==y1)==1)
+    pb<-which((x0==x1)*(y0==y1)==1)
     if (length(pb)) stop("Points between which arrows are drawn must have different coordinates.") 
 
     ## ----
-    distpt <- sqrt((x0-x1)^2+(y0-y1)^2)
-    anglpt <- getangle2d(x0,y0,x1,y1)
-    usrx <- 0.008*(par()$usr[2L]-par()$usr[1L])
-    usry <- 0.008*(par()$usr[4L]-par()$usr[3L])
+    distpt<-sqrt((x0-x1)^2+(y0-y1)^2)
+    anglpt<-getangle2d(x0,y0,x1,y1)
+    usrx<-0.008*(par()$usr[2L]-par()$usr[1L])
+    usry<-0.008*(par()$usr[4L]-par()$usr[3L])
     ## ----
     for (i in 1:sz){
         ## Using length reference in both dimension, weightening by the sin and cos of the angle  
         ## 
-        asphg <- sin(anglpt[i]+90)^2*usry+cos(anglpt[i]+90)^2*usrx
-        aspwd <- sin(anglpt[i])^2*usry+cos(anglpt[i])^2*usrx
+        asphg<-sin(anglpt[i]+90)^2*usry+cos(anglpt[i]+90)^2*usrx
+        aspwd<-sin(anglpt[i])^2*usry+cos(anglpt[i])^2*usrx
         ##
-        myspace <- space*aspwd
+        myspace<-space*aspwd
         ##
-        totdist <- distpt[i]-2*myspace
-        ax1 <- myspace
-        ax2 <- totdist*(1-pct.hw) 
-        ax3 <- distpt[i]-myspace
+        totdist<-distpt[i]-2*myspace
+        ax1<-myspace
+        ax2<-totdist*(1-pct.hw) 
+        ax3<-distpt[i]-myspace
         ##
-        ay1 <- asphg*cex.hg
-        ay2 <- asphg*(cex.sk*cex.hg+cex.hh)
-        ay3 <- 0
+        ay1<-asphg*cex.hg
+        ay2<-asphg*(cex.sk*cex.hg+cex.hh)
+        ay3<-0
         ##
         if (!twoheaded){
-            sqptx <- rep(x0[i],7)+c(ax1, ax2, ax2, ax3, ax2, ax2, ax1)
-            sqpty <- rep(y0[i],7)+c(ay1, cex.sk*ay1, ay2, ay3, -ay2, -cex.sk*ay1, -ay1)
+            sqptx<-rep(x0[i],7)+c(ax1, ax2, ax2, ax3, ax2, ax2, ax1)
+            sqpty<-rep(y0[i],7)+c(ay1, cex.sk*ay1, ay2, ay3, -ay2, -cex.sk*ay1, -ay1)
         }
         else {  
-            ax4 <- totdist*pct.hw 
-            sqptx <- rep(x0[i],12)+c(ax1, ax4, ax4, 0.5*totdist, ax2, ax2, ax3, ax2, ax2, 0.5*totdist, ax4, ax4)
-            sqpty <- rep(y0[i],12)+c(ay3, ay2, cex.sk*ay1, ay1, cex.sk*ay1, ay2, ay3, -ay2, -cex.sk*ay1, -ay1, -cex.sk*ay1, -ay2)
+            ax4<-totdist*pct.hw 
+            sqptx<-rep(x0[i],12)+c(ax1, ax4, ax4, 0.5*totdist, ax2, ax2, ax3, ax2, ax2, 0.5*totdist, ax4, ax4)
+            sqpty<-rep(y0[i],12)+c(ay3, ay2, cex.sk*ay1, ay1, cex.sk*ay1, ay2, ay3, -ay2, -cex.sk*ay1, -ay1, -cex.sk*ay1, -ay2)
         }
-        ptcoord <- rotation(sqptx,sqpty,rot=anglpt[i], xrot=x0[i], yrot=y0[i])
+        ptcoord<-rotation(sqptx,sqpty,rot=anglpt[i], xrot=x0[i], yrot=y0[i])
         polygon(ptcoord$x,ptcoord$y,...)
     }
 }

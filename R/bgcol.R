@@ -23,13 +23,13 @@
 
 bgcol <-
 function(...){
-    args <- list(...)
-    lp <- par()$usr
-    coor <- list(xleft=lp[1], ybottom=lp[3], xright=lp[2], ytop=lp[4])
-    deft <- list(border=NA, col=2)#"lightblue")
+    args<-list(...)
+    lp<-par()$usr
+    coor<-list(xleft=lp[1], ybottom=lp[3], xright=lp[2], ytop=lp[4])
+    deft<-list(border=NA, col=2)#"lightblue")
     if (length(args)>0){
-      id <- which(names(deft) %in% names(args))
-      if (length(id)>0) deft <- deft[-id]
+      id<-which(names(deft) %in% names(args))
+      if (length(id)>0) deft<-deft[-id]
       do.call("rect", args=as.list(c(coor,deft,args)))
     }
     else do.call("rect", args=as.list(c(coor,deft)))
