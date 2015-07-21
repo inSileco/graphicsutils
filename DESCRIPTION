@@ -7,8 +7,9 @@ Author: Kevin Cazelles [aut, cre],  Nicolas Casajus [aut, cre]
 Maintainer: Kevin Cazelles <kevin.cazelles@um2.fr>
 Description: This packages contains several functions that could be useful to create and customize graphics easier with basic packages "graphics", "grDevices".
 Depends: R (>= 3.0)
-Imports:
+Imports: 
   jpeg(>= 0.1-8),
   png(>= 0.1-7)
 License: GPL-3
 URL: https://github.com/KevCaz/graphicsutils.git
+Suggests: testthat
