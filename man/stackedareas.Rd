@@ -52,7 +52,7 @@ Using a stacked areas chart with more than 20 areas should provide a figure real
 }
 \examples{
 ## data for 8 populations at 25 different periods.
-x <- data.frame(matrix(runif(200,2,10),8,25))
+x<- data.frame(matrix(runif(200,2,10),8,25))
 stackedareas(x)
 # plot 1: default plot
 stackedareas()

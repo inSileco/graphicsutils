@@ -21,7 +21,7 @@
 #' plot0()
 #' bgcol(col=8, lwd=4, border=4)
 
-bgcol <-
+bgcol<-
 function(...){
     args<-list(...)
     lp<-par()$usr

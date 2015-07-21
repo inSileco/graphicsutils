@@ -39,14 +39,14 @@
 #' plot0(x=c(-2,2),y=c(-2,2), asp=1)
 #' circle(x=c(-1,1),c(1,1,-1,-1),from=pi*seq(0.25,1,by=0.25),to=1.25*pi, col=2, border=4, lwd=3)
 
-circle <-
+circle<-
 function(x=0, y=x, radi=1, from=0, to=2*pi, incr=0.01, pie=FALSE,...){
 
     ## --- format checking / adjusting vectors sizes
     matx<-as.matrix(x)
     argn<-c("x","y","radi","from","to")
     nbarg<-length(argn)
-    nbcol <- min(nbarg,ncol(matx))
+    nbcol<- min(nbarg,ncol(matx))
     for (i in 1:nbcol) assign(argn[i],matx[,i])
     argo<-list(x,y,radi,from,to)
     sz<-max(sapply(argo,length))
@@ -62,9 +62,9 @@ function(x=0, y=x, radi=1, from=0, to=2*pi, incr=0.01, pie=FALSE,...){
         }
         else {
             if ((to[i]>from[i]) & (to[i]%%(2*pi)==0)) to[i]<-2*pi
-            to[i] <- to[i]%%(2*pi)
-            from[i] <- from[i]%%(2*pi)
-            if (to[i]<from[i]) to[i] <- to[i]+2*pi
+            to[i]<- to[i]%%(2*pi)
+            from[i]<- from[i]%%(2*pi)
+            if (to[i]<from[i]) to[i]<- to[i]+2*pi
         }
         ##
         sqc<-seq(from[i], to[i], by=incr)
