@@ -39,20 +39,16 @@
 #' plot0(x=c(-2,2),y=c(-2,2), asp=1)
 #' circle(x=c(-1,1),c(1,1,-1,-1),from=pi*seq(0.25,1,by=0.25),to=1.25*pi, col=2, border=4, lwd=3)
 
-circle<-
-function(x=0, y=x, radi=1, from=0, to=2*pi, incr=0.01, pie=FALSE,...){
-
+circle <- function(x=0, y=x, radi=1, from=0, to=2*pi, incr=0.01, pie=FALSE,...){
     ## --- format checking / adjusting vectors sizes
-    matx<-as.matrix(x)
-    argn<-c("x","y","radi","from","to")
-    nbarg<-length(argn)
-    nbcol<- min(nbarg,ncol(matx))
+    matx <- as.matrix(x)
+    argn <- c("x","y","radi","from","to")
+    nbarg <- length(argn)
+    nbcol <- min(nbarg,ncol(matx))
     for (i in 1:nbcol) assign(argn[i],matx[,i])
-    argo<-list(x,y,radi,from,to)
-    sz<-max(sapply(argo,length))
-    print(sz)
+    argo <- list(x,y,radi,from,to)
+    sz <- max(sapply(argo,length))
     for (i in 1:nbarg) assign(argn[i],rep_len(argo[[i]],sz))
-
     ## --- draw the circle
     for (i in 1L:sz){
         ## --- sequence to draw the circle
@@ -61,13 +57,13 @@ function(x=0, y=x, radi=1, from=0, to=2*pi, incr=0.01, pie=FALSE,...){
             from[i]=0
         }
         else {
-            if ((to[i]>from[i]) & (to[i]%%(2*pi)==0)) to[i]<-2*pi
-            to[i]<- to[i]%%(2*pi)
-            from[i]<- from[i]%%(2*pi)
-            if (to[i]<from[i]) to[i]<- to[i]+2*pi
+            if ((to[i]>from[i]) & (to[i]%%(2*pi)==0)) to[i] <- 2*pi
+            to[i] <- to[i]%%(2*pi)
+            from[i] <- from[i]%%(2*pi)
+            if (to[i] <- from[i]) to[i] <- to[i]+2*pi
         }
         ##
-        sqc<-seq(from[i], to[i], by=incr)
+        sqc <- seq(from[i], to[i], by=incr)
         if (!pie) polygon(x[i]+radi[i]*cos(sqc),y[i]+radi[i]*sin(sqc), ...)
         else polygon(x[i]+c(0,radi[i]*cos(sqc),0),y[i]+c(0,radi[i]*sin(sqc),0), ...)
     }
