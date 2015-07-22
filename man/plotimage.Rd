@@ -25,8 +25,8 @@ If a path is provided either \code{readPNG} or \code{readJPEG} according to the 
 }
 \examples{
 #Example:
-img<-readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
-op<-par(no.readonly = TRUE)
+img <- readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
+op <- par(no.readonly = TRUE)
 par(mfrow=c(4,4), mar=rep(2,4))
 for (i in 1:16) plotimage(img)
 par(op)

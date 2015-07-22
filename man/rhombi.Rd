@@ -15,14 +15,14 @@ rhombi(x, y = x, ldg = 1, sdg = ldg, rot = 0, area = FALSE, ...)
 
 \item{sdg}{Vector of length of the small diagonals.}
 
-\item{rot}{The rotation angle (in degree) of the rhombus}
+\item{rot}{The rotation angles (in degree) of the rhombi.}
 
 \item{area}{logical. If TRUE the area of rhombis are returned.}
 
 \item{...}{Additionnal arguments to be passed to polygon function.}
 }
 \description{
-Draw one rhombus or several rhombi.
+Add rhombi on a plot and optionnaly returns areas.
 }
 \details{
 The number of rhombus maximual is provided by the length of the largest argument among x, y, ldg, sdg and rot.

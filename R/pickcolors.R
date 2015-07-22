@@ -18,63 +18,63 @@
 #'
 #' @examples
 #' #Example 1:
-#' mypal1 <- pickcolors()
+#' mypal1<-pickcolors()
 #' #Example 2:
-#' mypal2 <- pickcolors(colorRampPalette(c('grey','blue','red'))(100), colors=6, tones=4, shades=30)
+#' mypal2<-pickcolors(colorRampPalette(c('grey','blue','red'))(100), colors=6, tones=4, shades=30)
 #' plot(runif(10),runif(10), col=mypal2, pch=19, cex=3)
 
-pickcolors <- function(ramp=rainbow(1024), colors=8, tones=colors, shades=32){
+pickcolors<-function(ramp=rainbow(1024), colors=8, tones=colors, shades=32){
     ## checkings
     if (colors>20) warning("More than 20 colors, really?")
-    colors <- min(colors,100)
-    tones <- min(tones,100)
-    shades <- min(shades,100)
+    colors<-min(colors,100)
+    tones<-min(tones,100)
+    shades<-min(shades,100)
     ## First : tones selection
-    szrp <- length(ramp)
+    szrp<-length(ramp)
     dev.new(height=3, width=8)
-    old.par <- par(no.readonly=TRUE)
+    old.par<-par(no.readonly=TRUE)
     par(mar=c(0,0,4,0))
     image(matrix(1:szrp, ncol=1L), col=ramp, axes = TRUE, xlab="", ylab="", main=paste0("Pick up your ", tones, " tones (",tones," clicks are required)"))
-    slcton <- double(tones)
-    slc <- 0
+    slcton<-double(tones)
+    slc<-0
     ## while + locator + check the relevance of locator's result.
     while (slc<tones){
-      xy <- locator(1L)
+      xy<-locator(1L)
       if (xy$y>1) cat('Your click is outside the relevant region! \n')
       else {
-        slc <- slc+1
+        slc<-slc+1
         points(rep(xy$x,2),rep(xy$y,2), cex=c(1.2,0.8), col=c("white",1), pch=19)
         text(rep(xy$x,2),rep(xy$y,2),rep(as.character(slc),2), col=c("white",1), pos=c(1,3))
-        slcton[slc] <- ramp[1L+floor(szrp*xy$x)]
+        slcton[slc]<-ramp[1L+floor(szrp*xy$x)]
       }
     }
     ##
-    matrp <- matrix("",nrow=shades, ncol=tones)
-    for (i in rev(1:tones)) matrp[,i] <- colorRampPalette(c("white",slcton[i],"black"))(shades+2)[2:(shades+1)]
+    matrp<-matrix("",nrow=shades, ncol=tones)
+    for (i in rev(1:tones)) matrp[,i]<-colorRampPalette(c("white",slcton[i],"black"))(shades+2)[2:(shades+1)]
     dev.off()
     ## Second: color selection
     dev.new()
     layout(matrix(1:2,2,1), height=c(3,1))
     par(mar=c(0, 0, 0, 0))
-    par1 <- par(no.readonly=TRUE)
+    par1<-par(no.readonly=TRUE)
     image(matrix(1:(shades*tones),nrow=shades, ncol=tones), col=as.vector(matrp), axes=FALSE, ann=FALSE)
     ##
     par(mar=c(4, 4, 4, 4))
-    par2 <- par(no.readonly=TRUE)
-    yourcol <- rep("transparent", colors)
+    par2<-par(no.readonly=TRUE)
+    yourcol<-rep("transparent", colors)
     image(matrix(1:colors,ncol=1), axes=FALSE, xlab="", ylab="", main=paste0("Click above, get your ",colors," colors below"), col=yourcol)
     ##
-    slccol <- rep("",colors)
-    slc <- 0
+    slccol<-rep("",colors)
+    slc<-0
     while (slc<colors) {
       par(new=TRUE, fig=par2$fig, mar=c(0, 0, 0, 0), xaxs="i", yaxs="i")
       frame()
       plot.window(c(0,1),c(0,1))
-      xy <- locator(1)
+      xy<-locator(1)
       if (xy$x<0 | xy$y<0) cat('Your click is outside the relevant region! \n')
       else {
-        slc <- slc+1
-        slccol[slc] <- yourcol[slc] <- matrp[1+floor(shades*xy$x),1+floor(tones*xy$y)]
+        slc<-slc+1
+        slccol[slc]<-yourcol[slc]<-matrp[1+floor(shades*xy$x),1+floor(tones*xy$y)]
         points(rep(xy$x,2),rep(xy$y,2), cex=c(1.2,0.8), col=c("white",1), pch=19)
         text(rep(xy$x,2),rep(xy$y,2),rep(as.character(slc),2), col=c("white",1), pos=c(1,3))
         ##

@@ -33,7 +33,7 @@
 #' arrows2(1,4,x1=9,y1=2, lwd=2, cex.hg=2, cex.hh=2, cex.sk=0.5, pct.hw=0.18, twoheaded=TRUE, twocol=4, border=2, lwd=2)
 
 
-arrows2 <- function(x0, y0, x1=x0, y1=y0, cex.hg=1, cex.hh=1, pct.hw=0.1, cex.sk=1, space=1, twoheaded=FALSE, ...){
+arrows2<-function(x0, y0, x1=x0, y1=y0, cex.hg=1, cex.hh=1, pct.hw=0.1, cex.sk=1, space=1, twoheaded=FALSE, ...){
 
     stopifnot()
     ## ----

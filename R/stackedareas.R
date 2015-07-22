@@ -48,15 +48,15 @@
 stackedareas<-
 function(val, index=NULL, rgy=1, cumul=FALSE, transp=FALSE, legend=NULL, add=FALSE, col=NULL, pickcolors=FALSE, lty=1, lwd=1, border=NA, main="", xlab="", ylab=""){
     ## checking values / converting if required
-    x<- as.matrix(val)
+    x <- as.matrix(val)
     stopifnot(ncol(x)>1)
     if (sum(x<0)>0) stop("x must be positive")
-    if (transp==TRUE) x<- t(x)
+    if (transp==TRUE) x <- t(x)
     if (is.null(index)) index<-1:ncol(x)
     vecol<-colSums(x)
-    if (sum(vecol!=rep(1,ncol(x)))>0) x<-t(t(x)/vecol)
+    if (sum(vecol!=rep(1,ncol(x)))>0) x <- t(t(x)/vecol)
     if (nrow(x)>1){
-        if (!cumul) for (i in 2:nrow(x)) x[i,]<- x[i-1,]+x[i,]
+        if (!cumul) for (i in 2:nrow(x)) x[i,] <- x[i-1,]+x[i,]
     }
     ## Colors
     if (pickcolors==TRUE){
@@ -64,28 +64,28 @@ function(val, index=NULL, rgy=1, cumul=FALSE, transp=FALSE, legend=NULL, add=FAL
     }
     else {
       if (is.null(col)) {
-          d1dark<-c("#05695e","#710c25","#82480c","#69820c","#0b7687")
-          d1light<-c("#38bfaf","#e23d4f","#e2913d","#bfe23d","#3dcce2")
-          bigfail<-c("#e1b54d","#bd5f2c","#722121","#0c505a","#101029")
-          cbacwine<- c("#c7a34b","#966426","#7a4a0f","#541726","#420518")
-          colors<-rep(c(d1light,bigfail,d1dark,cbacwine),length.out=nrow(x))
+          d1dark <- c("#05695e","#710c25","#82480c","#69820c","#0b7687")
+          d1light <- c("#38bfaf","#e23d4f","#e2913d","#bfe23d","#3dcce2")
+          bigfail <- c("#e1b54d","#bd5f2c","#722121","#0c505a","#101029")
+          cbacwine <- c("#c7a34b","#966426","#7a4a0f","#541726","#420518")
+          colors <- rep(c(d1light,bigfail,d1dark,cbacwine),length.out=nrow(x))
       }
-      else colors<-rep(col,length.out=nrow(x))
+      else colors <- rep(col,length.out=nrow(x))
     }
     ## -- Defaults plotting set
     if (!add) {
-        oldpar<- par(no.readonly=TRUE)
+        oldpar <- par(no.readonly=TRUE)
         layout(matrix(1:2,1), widths=c(1,0.3))
         par(mar=c(5,4,4,1),xaxs="i", yaxs="i")
         plot(range(index), rgy*c(0,1), type="n", main=main, xlab=xlab, ylab=ylab)
     }
     ## -- Stacked areas
-    cx<-c(index,rev(index))
+    cx <- c(index,rev(index))
     polygon(cx,rgy*c(rep(1,ncol(x)),1-rev(x[1,])),col=colors[1], lty=lty, lwd=lwd, border=border)
     if (nrow(x)>1) polygon(cx,rgy*c(1-x[nrow(x)-1,],rep(0,ncol(x))),col=colors[nrow(x)], lty=lty, lwd=lwd, border=border)
     if (nrow(x)>2){
         for (i in 2:(nrow(x)-1)){
-            cy<-c(1-x[i-1,],rev(1-x[i,]))
+            cy <- c(1-x[i-1,],rev(1-x[i,]))
             polygon(cx,rgy*cy,col=colors[i], lty=lty, lwd=lwd, border=border)
         }
     }
@@ -93,7 +93,7 @@ function(val, index=NULL, rgy=1, cumul=FALSE, transp=FALSE, legend=NULL, add=FAL
     if (!add) {
         box(lwd=1.1)
         par(mar=c(4,0,4,1), xaxs="i", yaxs="i")
-        if (is.null(legend)) legend<- paste0("population ",1:nrow(x))
+        if (is.null(legend)) legend <- paste0("population ",1:nrow(x))
         plot0(c(0,1),c(0,1))
         legend("center", legend, fill=colors, bty="n", cex=1.1)
         par(oldpar)

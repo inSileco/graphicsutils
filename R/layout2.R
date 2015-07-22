@@ -24,7 +24,7 @@
 #' cat("You must click eight times on the current plot \n")
 #' mat<-layout2()
 
-layout2 <-
+layout2<-
 function(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, show=TRUE, now=TRUE){
    stopifnot(grain.x<201)
    stopifnot(grain.y<201)

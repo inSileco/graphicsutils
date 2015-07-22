@@ -36,24 +36,22 @@
 #' for (i in 1:6) translation(x,y,xtrans=i,ytrans=i, add=TRUE, border=i+1, lwd=2)
 
 
-translation<-
-function(x, y, xtrans=0, ytrans=0, add=FALSE, ...){
-
-    ## Format checking
-    x<-as.matrix(x)
+translation <- function(x, y, xtrans=0, ytrans=0, add=FALSE, ...){
+    ## ---- Format checking
+    x <- as.matrix(x)
     stopifnot(ncol(x)<=2)
-    x <- matrix(as.numeric(x),ncol=ncol(x))
+    x <- matrix(as.numeric(x),ncol=ncol(x))
     if (ncol(x)>1){
-        y<- x[,2]
-        x<-x[,1]
+        y <- x[,2]
+        x <- x[,1]
     }
     else {
-        sz<- max(length(x),length(y))
-        x<- rep_len(x,sz)
-        y<- rep_len(y,sz)
+        sz <- max(length(x),length(y))
+        x <- rep_len(x,sz)
+        y <- rep_len(y,sz)
     }
     ## ----
-    trasla<- list(x=x+xtrans,y=y+ytrans)
+    trasla <- list(x=x+xtrans,y=y+ytrans)
     if (add) polygon(trasla$x, trasla$y, ...)
     ## ----
     return(trasla)

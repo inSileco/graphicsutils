@@ -23,12 +23,12 @@
 #'
 #' @examples
 #' #Example:
-#' img <- readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
-#' n <- 15
+#' img<-readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
+#' n<-15
 #' plot0(c(0,1),c(0,1))
 #' pchimage(0.1+0.8*stats::runif(n), 0.1+0.8*stats::runif(n), cex.x=0.2+1.6*stats::runif(n), obj=img, angle=360*runif(n))
 
-pchimage <-
+pchimage<-
 function(x, y, obj=NULL,file=NULL, cex.x=1, cex.y=cex.x, atcenter=TRUE, add=TRUE,...){
     ## obj or file must be defined
     stopifnot(!is.null(c(obj,file)))
@@ -38,14 +38,14 @@ function(x, y, obj=NULL,file=NULL, cex.x=1, cex.y=cex.x, atcenter=TRUE, add=TRUE
     else {
         # if the file ends with jpeg or jpg we use readJPG from "jpeg" package
         # if the file ends with png we use readPNG from "png" package
-        ext <- sapply(c(".jpeg$",".jpg$",".png$"),grepl,file)
+        ext<-sapply(c(".jpeg$",".jpg$",".png$"),grepl,file)
         if (sum(ext)==0) stop("No method found for the given file.")
-        nb <-which(ext==TRUE)
+        nb<-which(ext==TRUE)
         if (nb==3) obj<-png::readPNG(file, native=TRUE)
         else obj<-jpeg::readJPEG(file, native=TRUE)
     }
-    dx <- cex.x*0.05*(par()$usr[2] - par()$usr[1])
-    dy <- cex.y*0.05*(par()$usr[4] - par()$usr[3])
+    dx<-cex.x*0.05*(par()$usr[2] - par()$usr[1])
+    dy<-cex.y*0.05*(par()$usr[4] - par()$usr[3])
     ##
     if (!add) plot(x,y,type="n")
     if (atcenter==TRUE) rasterImage(obj, x-dx, y-dy, x+dx, y+dy, ...)

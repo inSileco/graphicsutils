@@ -4,9 +4,9 @@
 \alias{donut}
 \title{Donut chart.}
 \usage{
-donut(vec, eaten = 0, labels = NULL, rot = 0, cx = 0, cy = 0,
-  cex = 0.8, tck = 0.05, width = 0.6, mycol = 1 + 1:length(vec),
-  density = NULL, angle = 45, dt = 0.001, add = FALSE, border = NA,
+donut(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05,
+  width = 0.6, mycol = 1 + 1:length(vec), density = NULL, angle = 45,
+  dt = 0.001, add = FALSE, cx = 0, cy = 0, border = NA,
   clockwise = TRUE, ...)
 }
 \arguments{
@@ -18,19 +18,15 @@ donut(vec, eaten = 0, labels = NULL, rot = 0, cx = 0, cy = 0,
 
 \item{rot}{The rotation angle (in degree) of the donut.}
 
-\item{cx}{Controls the total horizontal width of the donut.}
+\item{cex}{The magnification coefficient to be used for the size of the donut.}
 
-\item{cy}{Controls the total vertical width of the donut.}
-
-\item{cex}{The magnification of the size of the donut.}
-
-\item{tck}{The magnification of the length of the tick marks.}
+\item{tck}{The magnification coefficient to be used for the length of the tick marks.}
 
 \item{width}{The width of the donut (set between 0 and 1).}
 
 \item{mycol}{Vector of colors to be used.}
 
-\item{density}{the density of shading lines, in lines per inch.  The default value of ‘NULL’ means that no shading lines are drawn.}
+\item{density}{the density of shading lines, in lines per inch.  The default value of \code{NULL} means that no shading lines are drawn.}
 
 \item{angle}{the slope of shading lines, given as an angle in degrees (counter-clockwise).}
 
@@ -38,7 +34,11 @@ donut(vec, eaten = 0, labels = NULL, rot = 0, cx = 0, cy = 0,
 
 \item{add}{Should images be added on the current graph ? If FALSE a new plot is created.}
 
-\item{border}{border color of the donut. The default value of ‘NA’ means that no border lines are drawn.}
+\item{cx}{The magnification coefficient to be used for the total horizontal width of the donut.}
+
+\item{cy}{Controls the total vertical width of the donut.}
+
+\item{border}{The border color of the donut. The default value of \code{NA} means that no border lines are drawn.}
 
 \item{clockwise}{logical. Shall slices be drawn clockwise?}
 
@@ -58,14 +58,14 @@ The 'col' argument determines the succession of colors to be applied to each axi
 \examples{
 #Example 1:
 par(mfrow=c(2,2), mar=rep(2,4))
-donut(c(10,20,15), 0.2, rot=180, lwd=2, labels=paste("group",1:3))
-donut(c(10,20,15), 0, lwd=3, col=4)
-donut(c(10,20,15), 0.5, col=4, mycol=c(3,7,2), density=30, angle=c(20,55,110))
-donut(c(10,20,40), 0.2, col=NA, mycol=c(3,7,2), width=0.2, clockwise=TRUE)
+donut(vec=c(10,20,15))
+donut(c(10,20,15), eaten=0.2)
+donut(c(10,20,15), eaten=0.2, rot=180, labels=paste("group",1:3), lwd=3, col=8)
+donut(c(10,20,15), 0.2, cx=4, col=4, mycol=c(4,3,2), density=30, angle=c(20,55,110), add=TRUE)
 
 #Example 2:
 plot0(c(0,10),c(0,40), type="n")
-vec <- runif(7)
+vec <- runif(7)
 donut(vec, 0.15, cx=5, cy=20, add=TRUE, col=2)
 }
 \keyword{donut}

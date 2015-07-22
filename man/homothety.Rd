@@ -36,12 +36,12 @@ Drawing the points computed is relevant only if there are more than 2 points.
 \examples{
 #Example:
 plot0(c(0,10),c(0,10))
-x <- c(4,6,5)
-y <- c(2,2,4)
+x <- c(4,6,5)
+y <- c(2,2,4)
 polygon(x,y)
-poly2 <- homothety(x,y,2)
+poly2 <- homothety(x,y,2)
 polygon(poly2$x,poly2$y)
-poly3 <- homothety(x, y, -2.5, xcen=5, ycen=4, border=4, add=TRUE)
+poly3 <- homothety(x, y, -2.5, xcen=5, ycen=4, border=4, add=TRUE)
 }
 \keyword{homothethy}
 

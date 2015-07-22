@@ -24,7 +24,7 @@ Calcul the angle of the vector between two points of a plane.
 #Example:
 plot0(c(-10,10),c(-10,10))
 arrows(c(0,3),c(0,0),c(3,0),c(3,-3))
-cool <- getangle2d(c(0,3),c(0,0),c(3,0),c(3,-3))
+cool <- getangle2d(c(0,3),c(0,0),c(3,0),c(3,-3))
 }
 \keyword{empty}
 \keyword{plot}

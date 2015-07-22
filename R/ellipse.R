@@ -41,42 +41,41 @@
 #' plot0(x=c(-2,2),y=c(-2,2), asp=1)
 #' ellipse(x=c(-1,1),c(1,1,-1,-1),from=pi*seq(0.25,1,by=0.25),to=1.25*pi, col=2, border=4, lwd=3)
 
-ellipse <-
-function(x=0, y=x, mjradi=1, mnradi=0.5, from=0, to=2*pi, rot=0, incr=0.01, pie=FALSE, ...){
+ellipse <- function(x=0, y=x, mjradi=1, mnradi=0.5, from=0, to=2*pi, rot=0, incr=0.01, pie=FALSE, ...){
 
     ## --- format checking / adjusting vectors sizes
     matx <- as.matrix(x)
-    argn <- c("x","y","mjradi","mnradi","from","to")
+    argn <- c("x", "y", "mjradi", "mnradi", "from", "to")
     nbarg <- length(argn)
-    nbcol <- min(nbarg,ncol(matx))
-    for (i in 1:nbcol) assign(argn[i],matx[,i])
-    argo <- list(x,y,mjradi,mnradi,from,to)
-    sz <- max(sapply(argo,length))
-    for (i in 1:nbarg) assign(argn[i],rep_len(argo[[i]],sz))
+    nbcol <- min(nbarg, ncol(matx))
+    for (i in 1:nbcol) assign(argn[i], matx[,i])
+    argo <- list(x, y, mjradi, mnradi, from, to)
+    sz <- max(sapply(argo, length))
+    for (i in 1:nbarg) assign(argn[i], rep_len(argo[[i]], sz))
 
     ## --- draw the ellipse
     for (i in 1L:sz){
         ## --- sequence to draw the ellipse
         if (abs(to[i]-from[i])>=(2*pi)) {
-            to[i]=2*pi
-            from[i]=0
+            to[i] <- 2*pi
+            from[i] <- 0
         }
         else {
             if ((to[i]>from[i]) & (to[i]%%(2*pi)==0)) to[i] <- 2*pi
-            to[i] <- to[i]%%(2*pi)
-            from[i] <- from[i]%%(2*pi)
-            if (to[i]<from[i]) to[i] <- to[i]+2*pi
+            to[i] <- to[i]%%(2*pi)
+            from[i] <- from[i]%%(2*pi)
+            if (to[i]<from[i]) to[i] <- to[i]+2*pi
         }
         ##
         sqc <- seq(from[i], to[i], by=incr)
-        seqx <- x[i]+mjradi[i]*cos(sqc)
-        seqy <- y[i]+mnradi[i]*sin(sqc)
+        seqx <- x[i]+mjradi[i]*cos(sqc)
+        seqy <- y[i]+mnradi[i]*sin(sqc)
         if (pie) {
-            seqx <- c(x[i],seqx,x[i])
-            seqy <- c(y[i],seqy,y[i])
+            seqx <- c(x[i], seqx, x[i])
+            seqy <- c(y[i], seqy, y[i])
         }
-        rotpt <- graphicsutils::rotation(seqx,seqy, xrot=x[i], yrot=y[i],rot=rot)
-        polygon(rotpt$x,rotpt$y, ...)
+        rotpt <- graphicsutils::rotation(seqx, seqy, xrot=x[i], yrot=y[i], rot=rot)
+        polygon(rotpt$x, rotpt$y, ...)
             
     }
 }

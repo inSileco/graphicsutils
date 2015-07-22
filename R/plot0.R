@@ -20,14 +20,14 @@
 #' plot0(c(-10,10), asp=1)
 
 
-plot0 <-
-function(x=c(-1,1), y = c(-1,1), ...){
+plot0 <- function(x=c(-1,1), y = c(-1,1), ...){
     args <- list(...)
     coor <- list(x=x, y=y)
     deft <- list(ann=FALSE, axes=FALSE, type="n")
+    ##
     if (length(args)>0){
       id <- which(names(deft) %in% names(args))
-      if (length(id)>0) deft <- deft[-id]
+      if (length(id)>0) deft<-deft[-id]
       do.call("plot.default", args=as.list(c(coor,args,deft)))
     }
     else plot.default(x=x, y=y, ann=FALSE, axes=FALSE, type="n")

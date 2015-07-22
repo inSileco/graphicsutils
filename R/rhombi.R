@@ -1,12 +1,12 @@
 #' Rhombi
 #'
-#' Draw one rhombus or several rhombi. 
+#' Add rhombi on a plot and optionnaly returns areas. 
 #'
 #' @param x Vector of x coordinates of the centers of the losange
 #' @param y Vector of y coordinates of the centers of the losange
 #' @param ldg Vector of length of the large diagonals. 
 #' @param sdg Vector of length of the small diagonals.  
-#' @param rot The rotation angle (in degree) of the rhombus
+#' @param rot The rotation angles (in degree) of the rhombi. 
 #' @param area logical. If TRUE the area of rhombis are returned.
 #' @param ... Additionnal arguments to be passed to polygon function.
 #'
@@ -34,21 +34,21 @@
 #' rhombi(x=0, rot=seq(0,180,30), ldg=0.6, col=7, border=NA)
 
 
-rhombi<-function(x, y=x, ldg=1, sdg=ldg, rot=0, area=FALSE, ...){
-    sz<- max(sapply(list(x,y,ldg,sdg,rot),length))
-    x<- rep_len(x, sz)
-    y<- rep_len(y, sz)
-    ldg<- rep_len(ldg, sz)
-    sdg<-rep_len(sdg, sz)
-    rot<-rep_len(rot, sz)
-    rot<-pi*rot/180
+rhombi <- function(x, y=x, ldg=1, sdg=ldg, rot=0, area=FALSE, ...){
+    sz <- max(sapply(list(x, y, ldg, sdg, rot), length))
+    x <- rep_len(x, sz)
+    y <- rep_len(y, sz)
+    ldg <- rep_len(ldg, sz)
+    sdg <- rep_len(sdg, sz)
+    rot <- rep_len(rot, sz)
+    rot <- pi*rot/180
     ## ----
     for (i in 1:sz){
-        corh<-matrix(0,2,4)
-        corh[1,]<-c(.5*ldg[i],0,-.5*ldg[i],0)
-        corh[2,]<-c(0,.5*sdg[i],0,-.5*sdg[i])
-        mat.rot<-matrix(c(cos(rot[i]),sin(rot[i]),-sin(rot[i]),cos(rot[i])),2)
-        pt.los<-mat.rot%*%corh
+        corh <- matrix(0,2,4)
+        corh[1,] <- c(.5*ldg[i],0,-.5*ldg[i],0)
+        corh[2,] <- c(0,.5*sdg[i],0,-.5*sdg[i])
+        mat.rot <- matrix(c(cos(rot[i]), sin(rot[i]), -sin(rot[i]), cos(rot[i])),2)
+        pt.los <- mat.rot%*%corh
         polygon(x[i]+pt.los[1,], y[i]+pt.los[2,], ...)
     }
     ## ----
