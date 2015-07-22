@@ -1,6 +1,7 @@
 #' An interactive version of \code{layout}
 #'
-#' This function provides an interactive version of the \code{layout} function. Once \code{layout2} is called, the users get a grid he can click on (thanks to \code{locator} function.) Once the clicks have been achieved, the users can get the matrix created and/or use directly layout and then call the function.
+#' This function provides an interactive version of the \code{layout} function. Once \code{layout2} is called, the users get a grid he can click on (thanks to \code{locator} function).
+#' Once the clicks have been achieved, the users can get the matrix created and/or use directly layout and then call the function.
 #'
 #' @param n Number of plot regions desired.
 #' @param grain.x Number of vertical lines drawn to select the size of the subplots regions.

@@ -4,7 +4,8 @@
 \alias{layout2}
 \title{An interactive version of \code{layout}}
 \usage{
-layout(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, show=TRUE, now=TRUE)
+layout2(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE,
+  show = TRUE, now = TRUE)
 }
 \arguments{
 \item{n}{Number of plot regions desired.}
@@ -20,7 +21,8 @@ layout(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, show=TRUE, now=
 \item{now}{logical. If TRUE \code{layout} is called at \code{layout2} exit.}
 }
 \description{
-This function provides an interactive version of the \code{layout} function. Once \code{layout2} is called, the users get a grid he can click on (thanks to \code{locator} function.) Once the clicks have been achieved, the users can get the matrix created and/or use directly layout and then call the function.
+This function provides an interactive version of the \code{layout} function. Once \code{layout2} is called, the users get a grid he can click on (thanks to \code{locator} function).
+Once the clicks have been achieved, the users can get the matrix created and/or use directly layout and then call the function.
 }
 \details{
 Arguments \code{grain.x} and \code{grain.y} control the aspect of the grid generated. Then,  users must click 2*n times to select the size of their n subplot (2 click by subplot).
