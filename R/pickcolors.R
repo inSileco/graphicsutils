@@ -15,13 +15,6 @@
 #' This functions is a two steps color selection. First, color decribed by \code{color} are displayed and users are invited to pick up \code{tones} number of color tones. In the second step, for each selected tones, \code{shades} shades and tints are presented. Users are then allowed to select the final set of \code{colors} colors they require.
 #'
 #' @note Beyond 20 colors, the interest of such function is questionnable.
-#'
-#' @examples
-#' #Example 1:
-#' mypal1<-pickcolors()
-#' #Example 2:
-#' mypal2<-pickcolors(colorRampPalette(c('grey','blue','red'))(100), colors=6, tones=4, shades=30)
-#' plot(runif(10),runif(10), col=mypal2, pch=19, cex=3)
 
 pickcolors<-function(ramp=rainbow(1024), colors=8, tones=colors, shades=32){
     ## checkings
@@ -54,7 +47,7 @@ pickcolors<-function(ramp=rainbow(1024), colors=8, tones=colors, shades=32){
     dev.off()
     ## Second: color selection
     dev.new()
-    layout(matrix(1:2,2,1), height=c(3,1))
+    layout(matrix(1:2,2,1), heights=c(3,1))
     par(mar=c(0, 0, 0, 0))
     par1<-par(no.readonly=TRUE)
     image(matrix(1:(shades*tones),nrow=shades, ncol=tones), col=as.vector(matrp), axes=FALSE, ann=FALSE)

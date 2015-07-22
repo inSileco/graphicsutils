@@ -51,18 +51,16 @@ The default colors have been inspired by four palettes found on line: \url{http:
 Using a stacked areas chart with more than 20 areas should provide a figure really hard to read.
 }
 \examples{
-## data for 8 populations at 25 different periods.
+# data for 8 populations at 25 different periods.
 x <- data.frame(matrix(runif(200,2,10), 8, 25))
-stackedareas(x)
+
 # plot 1: default plot
-stackedareas()
+stackedareas(x)
 
-## plot 2:
-stackedareas(x, index=2001:2025, rgy=100, border="white", pickcolors=TRUE, main="Stacked areas chart")
-
-## plot 3: personalized plot
+# plot 2: personalized plot
 par(xaxs="i", yaxs="i", font=2, cex.axis=1.2, cex.lab=1.4, bty="l")
-plot(c(1999,2027), c(-10,110), type="n", xlab="Years",ylab="Percentage", main="My customized stacked areas chart")
+plot(c(1999,2027), c(-10,110), type="n", xlab="Years", ylab="Percentage",
+main="My customized stacked areas chart")
 bgcol(col="#f2c4c4")
 stackedareas(x, index=2001:2025, rgy=100, lwd=2, add=TRUE, border="transparent")
 }

@@ -15,7 +15,7 @@ getangle2d(x0, y0, x1, y1, rad = FALSE)
 
 \item{y1}{The y coordinates of points to which to draw.}
 
-\item{...}{Number of vertical lines drawn to select the size of the subplots regions.}
+\item{rad}{logical. If TRUE the angle are returned in radians.}
 }
 \description{
 Calcul the angle of the vector between two points of a plane.

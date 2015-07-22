@@ -20,6 +20,8 @@ ellipse(x = 0, y = x, mjradi = 1, mnradi = 0.5, from = 0, to = 2 *
 
 \item{to}{The angles, expressed in radians, to which ellipses are drawn.}
 
+\item{rot}{The rotation angles (in degree) of the ellipses.}
+
 \item{incr}{Increments between two points to be linked (expressed in radians).}
 
 \item{pie}{logical. If TRUE end points are linked with the center of the ellipse (default is set to FALSE).}

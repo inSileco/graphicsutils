@@ -2,7 +2,7 @@
 % Please edit documentation in R/translation.R
 \name{translation}
 \alias{translation}
-\title{Translation.}
+\title{Translation}
 \usage{
 translation(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...)
 }
@@ -15,12 +15,12 @@ translation(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...)
 
 \item{ytrans}{The y vector of the translation..}
 
-\item{add}{logical. If TRUE the set of transforned points are drawn as a polygon.}
+\item{add}{logical. If TRUE the set of transforned points is drawn as a polygon.}
 
 \item{...}{Additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).}
 }
 \description{
-Compute a translation for a set of points. The transformed set of points is optionnaly drawn as a polygon.
+Compute a translation for a set of points. The transformed set of points is optionnaly add to the current plot.
 }
 \details{
 Details about what is a translation, see \url{https://en.wikipedia.org/wiki/Translation_(geometry)}.
@@ -30,14 +30,14 @@ If x is a matrix with more than 2 columns, then x is the first column and y the 
 Drawing the points computed is relevant only if there are more than 2 points.
 }
 \examples{
-#Example 1:
+# Example 1:
 plot0(c(0,10),c(0,10))
 x <- c(4,6,5)
 y <- c(2,2,4)
 polygon(x,y)
 trans1 <- translation(x,y,xtrans=2,ytrans=5, add=TRUE, border=4, lwd=2)
 
-#Example 2:
+# Example 2:
 x <- c(2,4,3,1)
 y <- c(1,1,3,3)
 plot0(c(0,10),c(0,10))

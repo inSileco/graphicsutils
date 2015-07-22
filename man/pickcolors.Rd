@@ -25,13 +25,6 @@ This functions is a two steps color selection. First, color decribed by \code{co
 \note{
 Beyond 20 colors, the interest of such function is questionnable.
 }
-\examples{
-#Example 1:
-mypal1<-pickcolors()
-#Example 2:
-mypal2<-pickcolors(colorRampPalette(c('grey','blue','red'))(100), colors=6, tones=4, shades=30)
-plot(runif(10),runif(10), col=mypal2, pch=19, cex=3)
-}
 \keyword{color,}
 \keyword{selection}
 

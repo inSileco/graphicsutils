@@ -15,14 +15,6 @@
 #' It does the same for the shades.
 #'
 #' @note Beyond 20 colors, the interest of such function is questionnable.
-#'
-#' @examples
-#' #Example 1:
-#' mypal1<-pickcolors2()
-#' #Example 2:
-#' mypal2<-pickcolors(colors=7, ramp=colorRampPalette(c('grey','blue','red'))(100))
-#' plot(runif(8),runif(8), col=mypal2, pch=19, cex=3)
-
 
 pickcolors2 <- function(colors=6, ramp=rainbow(1024)){
     ## checkings
@@ -40,7 +32,7 @@ pickcolors2 <- function(colors=6, ramp=rainbow(1024)){
     dev.new()
     old.par<-par(no.readonly=TRUE)
     ## 
-    layout(matrix(c(1,2,4,5,1,3,3,3),ncol=2), height=c(0.8,0.8,0.8,2), width=c(1,2))
+    layout(matrix(c(1,2,4,5,1,3,3,3),ncol=2), heights=c(0.8,0.8,0.8,2), widths=c(1,2))
     ## Record par for all the subplot region
     mypar<-list()
     for (i in 1:5) {

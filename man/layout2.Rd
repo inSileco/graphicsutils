@@ -4,8 +4,7 @@
 \alias{layout2}
 \title{An interactive version of \code{layout}}
 \usage{
-layout2(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE,
-  show = TRUE, now = TRUE)
+layout(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, show=TRUE, now=TRUE)
 }
 \arguments{
 \item{n}{Number of plot regions desired.}
@@ -18,8 +17,7 @@ layout2(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE,
 
 \item{show}{logical. If TRUE \code{layout.show} is used to get a preview of the subplots regions.}
 
-\item{now}{logical. If TRUE \code{layout} is called at \code{layout2} exit.
-q}
+\item{now}{logical. If TRUE \code{layout} is called at \code{layout2} exit.}
 }
 \description{
 This function provides an interactive version of the \code{layout} function. Once \code{layout2} is called, the users get a grid he can click on (thanks to \code{locator} function.) Once the clicks have been achieved, the users can get the matrix created and/or use directly layout and then call the function.
@@ -28,12 +26,6 @@ This function provides an interactive version of the \code{layout} function. Onc
 Arguments \code{grain.x} and \code{grain.y} control the aspect of the grid generated. Then,  users must click 2*n times to select the size of their n subplot (2 click by subplot).
 
 As \code{layout} is ultimately called, \code{layout2} has the same limits: currently 200 for the numbers of rows and columns and 10007 for the total number of cells.
-}
-\examples{
-#Example:
-dev.off()
-cat("You must click eight times on the current plot \\n")
-mat<-layout2()
 }
 \keyword{empty}
 \keyword{plot}

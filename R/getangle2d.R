@@ -6,8 +6,8 @@
 #' @param y0 The y coordinates of points from which to 
 #' @param x1 The x coordinates of points to which to draw.
 #' @param y1 The y coordinates of points to which to draw.
-#' @param ... Number of vertical lines drawn to select the size of the subplots regions.
-
+#' @param rad logical. If TRUE the angle are returned in radians.
+#'
 #' @keywords empty plot
 #'
 #' @export

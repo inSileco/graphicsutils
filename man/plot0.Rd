@@ -20,10 +20,10 @@ plot0(x = c(-1, 1), y = c(-1, 1), ...)
 The function is based on the plot.defaut function. It simply makes the creation of an empty plot quicker
 }
 \examples{
-#Example 1:
+# Example 1:
 plot0()
 
-#Example 2:
+# Example 2:
 plot0(c(-10,10), asp=1)
 }
 \keyword{empty}

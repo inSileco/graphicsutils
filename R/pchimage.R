@@ -22,11 +22,12 @@
 #' If a path is provided either \code{readPNG} or \code{readJPEG} according to the end of the file extension.
 #'
 #' @examples
-#' #Example:
+#' # Example:
 #' img<-readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
 #' n<-15
 #' plot0(c(0,1),c(0,1))
-#' pchimage(0.1+0.8*stats::runif(n), 0.1+0.8*stats::runif(n), cex.x=0.2+1.6*stats::runif(n), obj=img, angle=360*runif(n))
+#' pchimage(0.1+0.8*stats::runif(n), 0.1+0.8*stats::runif(n), cex.x=0.2+1.6*stats::runif(n),
+#' obj=img, angle=360*runif(n))
 
 pchimage<-
 function(x, y, obj=NULL,file=NULL, cex.x=1, cex.y=cex.x, atcenter=TRUE, add=TRUE,...){

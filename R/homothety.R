@@ -24,7 +24,7 @@
 #' Drawing the points computed is relevant only if there are more than 2 points. 
 #'
 #' @examples
-#' #Example:
+#' # Example:
 #' plot0(c(0,10),c(0,10))
 #' x <- c(4,6,5)
 #' y <- c(2,2,4)

@@ -21,8 +21,7 @@
 #' plot0()
 #' bgcol(col=8, lwd=4, border=4)
 
-bgcol<-
-function(...){
+bgcol <- function(...){
     args<-list(...)
     lp<-par()$usr
     coor<-list(xleft=lp[1], ybottom=lp[3], xright=lp[2], ytop=lp[4])

@@ -1,12 +1,12 @@
-#' Translation. 
+#' Translation
 #'
-#' Compute a translation for a set of points. The transformed set of points is optionnaly drawn as a polygon. 
+#' Compute a translation for a set of points. The transformed set of points is optionnaly add to the current plot. 
 #'
 #' @param x The x coordinates of points. It can also be a matrix (see details).
 #' @param y The y coordinates of points.
 #' @param xtrans The x vector of the translation.
 #' @param ytrans The y vector of the translation..
-#' @param add logical. If TRUE the set of transforned points are drawn as a polygon. 
+#' @param add logical. If TRUE the set of transforned points is drawn as a polygon. 
 #' @param ... Additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).
 #' 
 #' @keywords translation
@@ -21,14 +21,14 @@
 #' Drawing the points computed is relevant only if there are more than 2 points. 
 #'
 #' @examples
-#' #Example 1:
+#' # Example 1:
 #' plot0(c(0,10),c(0,10))
 #' x <- c(4,6,5)
 #' y <- c(2,2,4)
 #' polygon(x,y)
 #' trans1 <- translation(x,y,xtrans=2,ytrans=5, add=TRUE, border=4, lwd=2)
 #'
-#' #Example 2:
+#' # Example 2:
 #' x <- c(2,4,3,1)
 #' y <- c(1,1,3,3)
 #' plot0(c(0,10),c(0,10))

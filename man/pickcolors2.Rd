@@ -22,13 +22,6 @@ It does the same for the shades.
 \note{
 Beyond 20 colors, the interest of such function is questionnable.
 }
-\examples{
-#Example 1:
-mypal1<-pickcolors2()
-#Example 2:
-mypal2<-pickcolors(colors=7, ramp=colorRampPalette(c('grey','blue','red'))(100))
-plot(runif(8),runif(8), col=mypal2, pch=19, cex=3)
-}
 \keyword{color,}
 \keyword{selection}
 

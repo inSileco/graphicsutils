@@ -8,6 +8,7 @@
 #' @param mnradi The minor radii of the ellipses.
 #' @param from The angles, expressed in radians, from which ellipses are drawn.
 #' @param to The angles, expressed in radians, to which ellipses are drawn.
+#' @param rot The rotation angles (in degree) of the ellipses. 
 #' @param incr Increments between two points to be linked (expressed in radians).
 #' @param pie logical. If TRUE end points are linked with the center of the ellipse (default is set to FALSE).
 #' @param ... Additional arguments to be passed to \code{\link{polygon}} function.

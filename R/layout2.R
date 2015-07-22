@@ -2,13 +2,15 @@
 #'
 #'  This function provides an interactive version of the \code{layout} function. Once \code{layout2} is called, the users get a grid he can click on (thanks to \code{locator} function.) Once the clicks have been achieved, the users can get the matrix created and/or use directly layout and then call the function.
 #'
+#' @usage layout(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, show=TRUE, now=TRUE)
+#'
 #' @param n Number of plot regions desired.
 #' @param grain.x Number of vertical lines drawn to select the size of the subplots regions.
 #' @param grain.y Number of horizontal lines drawn to select the size of the subplots regions.
 #' @param getmatrix logical. If TRUE the matrix used to draw the subplot region is returned.
 #' @param show logical. If TRUE \code{layout.show} is used to get a preview of the subplots regions.
 #' @param now logical. If TRUE \code{layout} is called at \code{layout2} exit.
-#'q
+#' 
 #' @keywords empty plot
 #'
 #' @export
@@ -17,15 +19,8 @@
 #'
 #' As \code{layout} is ultimately called, \code{layout2} has the same limits: currently 200 for the numbers of rows and columns and 10007 for the total number of cells.
 
-#'
-#' @examples
-#' #Example:
-#' dev.off()
-#' cat("You must click eight times on the current plot \n")
-#' mat<-layout2()
 
-layout2<-
-function(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, show=TRUE, now=TRUE){
+layout2 <- function(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, show=TRUE, now=TRUE){
    stopifnot(grain.x<201)
    stopifnot(grain.y<201)
    stopifnot(grain.y*grain.x<10007)

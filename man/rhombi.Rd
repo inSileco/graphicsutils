@@ -30,15 +30,15 @@ Other arguments are repeated with the largest length as the desired one (see \co
 Additionnal arguments remain the same for every rhombus.
 }
 \examples{
-#Example 1:
+# Example 1:
 plot0(asp=1)
 rhombi(0)
 
-#Example 2:
+# Example 2:
 plot0(c(-0.4,1.4),c(-0.4,1.4))
 rhombi(runif(6), runif(5), runif(2), runif(3))
 
-#Example 3:
+# Example 3:
 plot0(asp=1)
 rhombi(x=0, rot=seq(0,180,20), col=2, border=NA)
 rhombi(x=0, rot=seq(0,180,30), ldg=0.6, col=7, border=NA)
