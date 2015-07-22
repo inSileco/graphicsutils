@@ -28,7 +28,7 @@ pickcolors2 <- function(colors=6, ramp=rainbow(1024)){
     ## checkings
     if (colors>20) stop("More than 20 colors, really?")
     ##
-    msg1 <- function() cat('Your click is outside the red frame! \n')
+    msg1 <- function() cat('Your click is outside the red frame! \n')
     ##
     szrp<-length(ramp)
     slccolor<-rep("white",colors)
@@ -86,8 +86,8 @@ pickcolors2 <- function(colors=6, ramp=rainbow(1024)){
                 rect(0,-1,1,0, col="black")
                 text(0.5,-0.5,"Change it !", cex=2, col="white")
                 box(col=2,lwd=2.5)
-                xy0<-locator(1L)
-                while (xy0$x>1 | xy0$x<0 | (xy0$y)^2>1) {
+                xy0 <- locator(1L)
+                while (xy0$x>1|xy0$x<0|(xy0$y)^2>1) {
                     msg1()
                     xy0<-locator(1L)
                 }
@@ -113,9 +113,9 @@ pickcolors2 <- function(colors=6, ramp=rainbow(1024)){
             else {
                 box(lwd=2.8)
                 ##
-                diffx <- ((1:16)-xy2$x)^2
-                diffy <- ((1:8)-xy2$y)^2
-                sclcol<- which.min(diffx)+(which.min(diffy)-1)*16
+                diffx <- ((1:16)-xy2$x)^2
+                diffy <- ((1:8)-xy2$y)^2
+                sclcol <- which.min(diffx)+(which.min(diffy)-1)*16
                 points(rep(xy2$x,2),rep(xy2$y,2), cex=c(1.2,0.8), col=c("white",1), pch=19)
                 ## ----
                 par(new=TRUE, fig=mypar[[4]]$fig, mar=c(1, 1, 0.5, 0.5))

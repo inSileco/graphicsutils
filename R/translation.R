@@ -23,14 +23,14 @@
 #' @examples
 #' #Example 1:
 #' plot0(c(0,10),c(0,10))
-#' x<- c(4,6,5)
-#' y<- c(2,2,4)
+#' x <- c(4,6,5)
+#' y <- c(2,2,4)
 #' polygon(x,y)
-#' trans1<-translation(x,y,xtrans=2,ytrans=5, add=TRUE, border=4, lwd=2)
+#' trans1 <- translation(x,y,xtrans=2,ytrans=5, add=TRUE, border=4, lwd=2)
 #'
 #' #Example 2:
-#' x<- c(2,4,3,1)
-#' y<- c(1,1,3,3)
+#' x <- c(2,4,3,1)
+#' y <- c(1,1,3,3)
 #' plot0(c(0,10),c(0,10))
 #' polygon(x,y)
 #' for (i in 1:6) translation(x,y,xtrans=i,ytrans=i, add=TRUE, border=i+1, lwd=2)

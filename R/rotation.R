@@ -17,19 +17,19 @@
 #' @examples
 #' #Example:
 #' plot0(c(0,10),c(0,10))
-#' y<-c(6,6,9)
-#' x<-c(2,5,3.5)
-#' polygon(x,y, lwd=2)
-#' myrot<-rotation(x, y, rot=90)
-#' polygon(myrot$x,myrot$y, lwd=2, border=4)
-#' myrot2<-rotation(x, y, rot=-40, 0,0)
+#' y <- c(6,6,9)
+#' x <- c(2,5,3.5)
+#' polygon(x, y, lwd=2)
+#' myrot <- rotation(x, y, rot=90)
+#' polygon(myrot$x, myrot$y, lwd=2, border=4)
+#' myrot2 <- rotation(x, y, rot=-40, 0, 0)
 #' polygon(myrot2$x,myrot2$y, lwd=2, border=3)
 
 rotation <- function(x, y, rot=90, xrot=NULL, yrot=NULL){
     ## Format checking
     x <- as.matrix(x)
     stopifnot(ncol(x)<=2)
-    x <- matrix(as.numeric(x),ncol=ncol(x))
+    x <- matrix(as.numeric(x),ncol=ncol(x))
     if (ncol(x)>1){
         y <- x[,2]
         x <- x[,1]

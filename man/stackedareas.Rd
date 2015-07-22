@@ -29,15 +29,15 @@ stackedareas(val, index = NULL, rgy = 1, cumul = FALSE, transp = FALSE,
 
 \item{lty}{The line type (see \code{\link{par}} documentation)}
 
-\item{lwd}{The line width (see \code{\link{par}}q documentation)}
+\item{lwd}{The line width (see \code{\link{par}} documentation)}
 
-\item{border}{The color to draw the border. The default, ‘NULL’, means to 1use ‘par("fg")’.  Use ‘border = NA’ to omit borders.}
+\item{border}{The color to draw the border. The default, \code{NULL}, means to use \code{par("fg")}. Use \code{border=NA} to omit borders.}
 
-\item{main}{A main title for the plot, see also ‘title’.}
+\item{main}{A main title for the plot.}
 
-\item{xlab}{A label for the x axis, defaults to a description of ‘x’.}
+\item{xlab}{A label for the x axis, defaults to a description of \code{x}.}
 
-\item{ylab}{A label for the y axis, defaults to a description of ‘y’}
+\item{ylab}{A label for the y axis, defaults to a description of \code{y}.}
 }
 \description{
 Draw a stacked areas chart.
@@ -52,13 +52,13 @@ Using a stacked areas chart with more than 20 areas should provide a figure real
 }
 \examples{
 ## data for 8 populations at 25 different periods.
-x<- data.frame(matrix(runif(200,2,10),8,25))
+x <- data.frame(matrix(runif(200,2,10), 8, 25))
 stackedareas(x)
 # plot 1: default plot
 stackedareas()
 
 ## plot 2:
-stackedareas(x, index=2001:2025,rgy=100, border="white",pickcolors=TRUE, main="Stacked areas chart")
+stackedareas(x, index=2001:2025, rgy=100, border="white", pickcolors=TRUE, main="Stacked areas chart")
 
 ## plot 3: personalized plot
 par(xaxs="i", yaxs="i", font=2, cex.axis=1.2, cex.lab=1.4, bty="l")
