@@ -2,10 +2,6 @@
 #'
 #' Draw arrows between pairs of points.
 #'
-#' @usage
-#' function(x0, y0, x1=x0, y1=y0, cex.hg=1, cex.hh=1, pct.hw=0.1, 
-#' cex.sk=1, space=1, twoheaded=FALSE, ...)
-#'
 #' @param x0 The x coordinates of points from which to draw.
 #' @param y0 The y coordinates of points from which to draw.
 #' @param x1 The x coordinates of points to which to draw.
@@ -36,7 +32,7 @@
 #' arrows2(1,8,x1=9,y1=6, lwd=2, col=4, border=2, lty=2)
 #' arrows2(1,6,x1=9,y1=4, lwd=2, cex.hg=2, cex.hh=2, cex.sk=0.5, col=4, border=2, lwd=2)
 #' arrows2(1,4,x1=9,y1=2, lwd=2, cex.hg=2, cex.hh=2, cex.sk=0.5, pct.hw=0.18, twoheaded=TRUE, 
-#' twocol=4, border=2, lwd=2)
+#' col=4, border=2, lwd=2)
 
 
 arrows2 <- function(x0, y0, x1=x0, y1=y0, cex.hg=1, cex.hh=1, pct.hw=0.1, cex.sk=1, space=1, twoheaded=FALSE, ...){

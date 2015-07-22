@@ -18,7 +18,7 @@
 #'
 #' @examples
 #' # Example:
-#' img <- readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
+#' img <- png::readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
 #' op <- par(no.readonly = TRUE)
 #' par(mfrow=c(4,4), mar=rep(2,4))
 #' for (i in 1:16) plotimage(img)
@@ -38,7 +38,7 @@ plotimage <- function(obj=NULL,file=NULL, add=FALSE, ...){
         if (sum(ext)==0) stop("No method found for the given file.")
         nb<-which(ext==TRUE)
         if (nb==3) obj<-png::readPNG(file, native=TRUE)
-        else obj<-rjpeg::readJPEG(file, native=TRUE)
+        else obj<-jpeg::readJPEG(file, native=TRUE)
     }
     ##
     dm <- dim(obj)
