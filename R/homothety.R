@@ -26,35 +26,35 @@
 #' @examples
 #' #Example:
 #' plot0(c(0,10),c(0,10))
-#' x <- c(4,6,5)
-#' y <- c(2,2,4)
+#' x <- c(4,6,5)
+#' y <- c(2,2,4)
 #' polygon(x,y)
-#' poly2 <- homothety(x,y,2)
+#' poly2 <- homothety(x,y,2)
 #' polygon(poly2$x,poly2$y)
-#' poly3 <- homothety(x, y, -2.5, xcen=5, ycen=4, border=4, add=TRUE)
+#' poly3 <- homothety(x, y, -2.5, xcen=5, ycen=4, border=4, add=TRUE)
 
 
-homothety <-
+homothety<-
 function(x, y, lambda, xcen=NULL, ycen=NULL, add=FALSE, ...){
 
     ## Format checking
-    x<-as.matrix(x)
+    x <- as.matrix(x)
     stopifnot(ncol(x)<=2)
-    x <- matrix(as.numeric(x),ncol=ncol(x))
+    x <- matrix(as.numeric(x),ncol=ncol(x))
     if (ncol(x)>1){
-        y <- x[,2]
-        x<-x[,1]
+        y <- x[,2]
+        x <- x[,1]
     }
     else {
-        sz <- max(length(x),length(y))
-        x <- rep_len(x,sz)
-        y <- rep_len(y,sz)
+        sz <- max(length(x),length(y))
+        x <- rep_len(x,sz)
+        y <- rep_len(y,sz)
     }
     ## if null, xrot/yrot are the mean of x/y coordinates
-    if (is.null(xcen)) xcen<-mean(x)
-    if (is.null(ycen)) ycen<-mean(y)
+    if (is.null(xcen)) xcen <- mean(x)
+    if (is.null(ycen)) ycen <- mean(y)
     ## ----
-    homot <- list(x=lambda*(x-xcen)+xcen,y=lambda*(y-ycen)+ycen)
+    homot <- list(x=lambda*(x-xcen)+xcen,y=lambda*(y-ycen)+ycen)
     if (add) polygon(homot$x, homot$y, ...)
     ## ----
     return(homot)
