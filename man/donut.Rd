@@ -61,7 +61,7 @@ par(mfrow=c(2,2), mar=rep(2,4))
 donut(vec=c(10,20,15))
 donut(c(10,20,15), eaten=0.2)
 donut(c(10,20,15), eaten=0.2, rot=180, labels=paste("group",1:3), lwd=3, col=8)
-donut(c(10,20,15), 0.2, cx=4, col=4, mycol=c(4,3,2), density=30, angle=c(20,55,110), add=TRUE)
+donut(c(10,20,15), 0.2, cx=4, col=4, mycol=c(4,3,2), density=30, angle=c(20,55,110))
 
 #Example 2:
 plot0(c(0,10),c(0,40), type="n")

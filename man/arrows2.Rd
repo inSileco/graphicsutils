@@ -2,10 +2,11 @@
 % Please edit documentation in R/arrows2.R
 \name{arrows2}
 \alias{arrows2}
-\title{Add arrows to a plot}
+\title{Add arrows arrows_rel to a plot.}
 \usage{
-arrows2(x0, y0, x1 = x0, y1 = y0, cex.hg = 1, cex.hh = 1,
-  pct.hw = 0.1, cex.sk = 1, space = 1, twoheaded = FALSE, ...)
+arrows2(x0, y0, x1 = x0, y1 = y0, cex.hg = 1, pct.hg = 0.1,
+  cex.hh = 1, pct.hw = 0.1, cex.sk = 1, pct.spc = 0,
+  twoheaded = FALSE, relativ = TRUE, ...)
 }
 \arguments{
 \item{x0}{The x coordinates of points from which to draw.}
@@ -16,7 +17,9 @@ arrows2(x0, y0, x1 = x0, y1 = y0, cex.hg = 1, cex.hh = 1,
 
 \item{y1}{The y coordinates of points to which to draw.}
 
-\item{cex.hg}{The magnification coefficient to be used for the height of the arrows.}
+\item{cex.hg}{The magnification coefficient to be used for the heights of the arrows.}
+
+\item{pct.hg}{The height of the arrows expressed as a percentage of the total length (see details).}
 
 \item{cex.hh}{The magnification coefficient to be used for the height of the heads of the arrows.}
 
@@ -24,30 +27,38 @@ arrows2(x0, y0, x1 = x0, y1 = y0, cex.hg = 1, cex.hh = 1,
 
 \item{cex.sk}{The magnification coefficient to be used to chance the height of the arrows towards the heads.}
 
-\item{space}{The magnification coefficient to be used for the space between points between which arrows are drawn and the arrows them-selves.}
+\item{twoheaded}{logical. If TRUE two headed arrows are drawn, default is FALSE.}
 
-\item{twoheaded}{logical. If TRUE two headed arrows are drawn.}
+\item{relativ}{logical. If TRUE, the heights of arrows are proportional to the lengths, default is TRUE.}
 
 \item{...}{Additional arguments to be passed to \code{polygon} function.}
+
+\item{pct.sp}{The proportion of the distance between the points to leave as space before and after the arrow.}
 }
 \description{
 Draw arrows between pairs of points.
 }
 \details{
-Arrows as a polygons
+If \code{relativ} is FALSE (as it is by default), then when \code{cex.hh} is set to 1, heights represent 10\% of the length of arrows.
+If \code{relativ} is FALSE then a reference length is computed according to bith the y axis and the x/y ratio of the current plot.
+In both case the height can be ajusted using \code{cex.hh}.
+}
+\note{
+When arrows are not parallel to one axis, right angles within arrows are not right unless the x/y ration is set to 1.
 }
 \examples{
 # Example 1:
+par(mfrow=c(1,2))
 plot0(c(0,10),c(0,10))
-points(c(2,6),c(8,8), col=8, pch=19)
-arrows2(2,2,x1=2,y1=4)
-arrows2(2,c(4,6,8),x1=6,y1=c(4,6,8), col=8, space=1.2)
+arrows2(2,c(4,6,8),x1=c(4,6,8),y1=c(4,6,8), col=8, pct.spc=0.025)
+plot0(c(0,10),c(0,10))
+arrows2(2,c(4,6,8),x1=c(4,6,8),y1=c(4,6,8), col=8, pct.spc=0.025, relativ=FALSE)
 
 # Example 2:
-plot0(c(0,10),c(0,10))
-arrows2(1,8,x1=9,y1=6, lwd=2, col=4, border=2, lty=2)
-arrows2(1,6,x1=9,y1=4, lwd=2, cex.hg=2, cex.hh=2, cex.sk=0.5, col=4, border=2, lwd=2)
-arrows2(1,4,x1=9,y1=2, lwd=2, cex.hg=2, cex.hh=2, cex.sk=0.5, pct.hw=0.18, twoheaded=TRUE,
+plot0(c(0,10),c(0,10), asp=1)
+arrows2(1, 9, x1=9,y1=6, lwd=2, col=4, border=2, lty=2)
+arrows2(1, 7, x1=9,y1=4, lwd=2, cex.hg=0.8, cex.hh=2, cex.sk=0.5, col=4, border=2, lwd=2)
+arrows2(1, 5, x1=9,y1=2, lwd=2, cex.hg=0.6, cex.hh=2, cex.sk=1, pct.hw=0.18, twoheaded=TRUE,
 col=4, border=2, lwd=2)
 }
 \keyword{arrows}

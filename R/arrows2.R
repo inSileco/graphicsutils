@@ -24,6 +24,9 @@
 #' If \code{relativ} is FALSE (as it is by default), then when \code{cex.hh} is set to 1, heights represent 10\% of the length of arrows. 
 #' If \code{relativ} is FALSE then a reference length is computed according to bith the y axis and the x/y ratio of the current plot. 
 #' In both case the height can be ajusted using \code{cex.hh}.
+#'
+#' @note
+#' When arrows are not parallel to one axis, right angles within arrows are not right unless the x/y ration is set to 1. 
 #' 
 #' @examples
 #' # Example 1:
@@ -34,10 +37,10 @@
 #' arrows2(2,c(4,6,8),x1=c(4,6,8),y1=c(4,6,8), col=8, pct.spc=0.025, relativ=FALSE)
 #'
 #' # Example 2:
-#' plot0(c(0,10),c(0,10))
+#' plot0(c(0,10),c(0,10), asp=1)
 #' arrows2(1, 9, x1=9,y1=6, lwd=2, col=4, border=2, lty=2)
 #' arrows2(1, 7, x1=9,y1=4, lwd=2, cex.hg=0.8, cex.hh=2, cex.sk=0.5, col=4, border=2, lwd=2)
-#' arrows2(1, 5, x1=9,y1=2, lwd=2, cex.hg=0.6, cex.hh=2, cex.sk=0.5, pct.hw=0.18, twoheaded=TRUE, 
+#' arrows2(1, 5, x1=9,y1=2, lwd=2, cex.hg=0.6, cex.hh=2, cex.sk=1, pct.hw=0.18, twoheaded=TRUE, 
 #' col=4, border=2, lwd=2)
 
 

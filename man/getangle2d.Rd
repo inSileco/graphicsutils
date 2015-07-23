@@ -2,23 +2,23 @@
 % Please edit documentation in R/getangle2d.R
 \name{getangle2d}
 \alias{getangle2d}
-\title{getangle2d}
+\title{Angles between vectors.}
 \usage{
 getangle2d(x0, y0, x1, y1, rad = FALSE)
 }
 \arguments{
-\item{x0}{The x coordinates of points from which to}
+\item{x0}{The x coordinates of the first set of vector.}
 
-\item{y0}{The y coordinates of points from which to}
+\item{y0}{The y coordinates of the first set of vector.}
 
-\item{x1}{The x coordinates of points to which to draw.}
+\item{x1}{The x coordinates of the second set of vector.}
 
-\item{y1}{The y coordinates of points to which to draw.}
+\item{y1}{The y coordinates of the second set of vector.}
 
-\item{rad}{logical. If TRUE the angle are returned in radians.}
+\item{rad}{logical. If TRUE, angles are returned in radians.}
 }
 \description{
-Calcul the angle of the vector between two points of a plane.
+Calcul the angle of two set of vectors.
 }
 \examples{
 #Example:
