@@ -1,12 +1,12 @@
-#' getangle2d
+#' Angles between vectors.
 #'
-#' Calcul the angle of the vector between two points of a plane. 
+#' Calcul the angle of two set of vectors. 
 #'
-#' @param x0 The x coordinates of points from which to 
-#' @param y0 The y coordinates of points from which to 
-#' @param x1 The x coordinates of points to which to draw.
-#' @param y1 The y coordinates of points to which to draw.
-#' @param rad logical. If TRUE the angle are returned in radians.
+#' @param x0 The x coordinates of the first set of vector.
+#' @param y0 The y coordinates of the first set of vector.
+#' @param x1 The x coordinates of the second set of vector.
+#' @param y1 The y coordinates of the second set of vector.
+#' @param rad logical. If TRUE, angles are returned in radians.
 #'
 #' @keywords empty plot
 #'
@@ -26,7 +26,6 @@ getangle2d<-function(x0, y0, x1, y1, rad=FALSE){
     y1 <- rep_len(y1, sz)  
     ## ----
     dstc <- sqrt((x1-x0)*(x1-x0)+(y1-y0)*(y1-y0))
-    print(dstc)
     stopifnot(sum(dstc==0)==0)
     cx <- acos((x1-x0)/dstc)	
     ## ----

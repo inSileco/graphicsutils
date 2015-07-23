@@ -49,10 +49,10 @@ ellipse <- function(x=0, y=x, mjradi=1, mnradi=0.5, from=0, to=2*pi, rot=0, incr
     argn <- c("x", "y", "mjradi", "mnradi", "from", "to")
     nbarg <- length(argn)
     nbcol <- min(nbarg, ncol(matx))
-    for (i in 1:nbcol) assign(argn[i], matx[,i])
+    for (i in 1L:nbcol) assign(argn[i], matx[,i])
     argo <- list(x, y, mjradi, mnradi, from, to)
     sz <- max(sapply(argo, length))
-    for (i in 1:nbarg) assign(argn[i], rep_len(argo[[i]], sz))
+    for (i in 1L:nbarg) assign(argn[i], rep_len(argo[[i]], sz))
 
     ## --- draw the ellipse
     for (i in 1L:sz){
