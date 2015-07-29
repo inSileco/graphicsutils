@@ -1,4 +1,4 @@
-#' Add arrows arrows_rel to a plot.
+#' Add arrows to a plot.
 #'
 #' Draw arrows between pairs of points.
 #'
@@ -11,23 +11,23 @@
 #' @param cex.hh The magnification coefficient to be used for the height of the heads of the arrows.
 #' @param pct.hw The length of the heads of the arrows expressed as a percentage of the total length.
 #' @param cex.sk The magnification coefficient to be used to chance the height of the arrows towards the heads.
-#' @param pct.sp The proportion of the distance between the points to leave as space before and after the arrow.  
+#' @param pct.sp The proportion of the distance between the points to leave as space before and after the arrow.
 #' @param twoheaded logical. If TRUE two headed arrows are drawn, default is FALSE.
 #' @param relativ logical. If TRUE, the heights of arrows are proportional to the lengths, default is TRUE.
-#' @param ... Additional arguments to be passed to \code{polygon} function. 
+#' @param ... Additional arguments to be passed to \code{polygon} function.
 
 #' @keywords arrows
 #'
 #' @export
 #'
 #' @details
-#' If \code{relativ} is FALSE (as it is by default), then when \code{cex.hh} is set to 1, heights represent 10\% of the length of arrows. 
-#' If \code{relativ} is FALSE then a reference length is computed according to bith the y axis and the x/y ratio of the current plot. 
+#' If \code{relativ} is FALSE (as it is by default), then when \code{cex.hh} is set to 1, heights represent 10\% of the length of arrows.
+#' If \code{relativ} is FALSE then a reference length is computed according to bith the y axis and the x/y ratio of the current plot.
 #' In both case the height can be ajusted using \code{cex.hh}.
 #'
 #' @note
-#' When arrows are not parallel to one axis, right angles within arrows are not right unless the x/y ration is set to 1. 
-#' 
+#' When arrows are not parallel to one axis, right angles within arrows are not right unless the x/y ration is set to 1.
+#'
 #' @examples
 #' # Example 1:
 #' par(mfrow=c(1,2))
@@ -40,7 +40,7 @@
 #' plot0(c(0,10),c(0,10), asp=1)
 #' arrows2(1, 9, x1=9,y1=6, lwd=2, col=4, border=2, lty=2)
 #' arrows2(1, 7, x1=9,y1=4, lwd=2, cex.hg=0.8, cex.hh=2, cex.sk=0.5, col=4, border=2, lwd=2)
-#' arrows2(1, 5, x1=9,y1=2, lwd=2, cex.hg=0.6, cex.hh=2, cex.sk=1, pct.hw=0.18, twoheaded=TRUE, 
+#' arrows2(1, 5, x1=9,y1=2, lwd=2, cex.hg=0.6, cex.hh=2, cex.sk=1, pct.hw=0.18, twoheaded=TRUE,
 #' col=4, border=2, lwd=2)
 
 
@@ -66,12 +66,12 @@ arrows2 <- function(x0, y0, x1=x0, y1=y0, cex.hg=1, pct.hg=0.1, cex.hh=1, pct.hw
     myusr <- par()$usr
     hgref <- 0.001*(myusr[4L]-myusr[3L])*(mypin[1L]+mypin[2L])/(2*mypin[2L])
     # ## ----
-    for (i in 1L:sz){ 
+    for (i in 1L:sz){
         myspace <- pct.spc*distpt[i]
         totdist <- distpt[i]*(1-2*pct.spc)
         ## ----
         ax1 <- myspace
-        ax2 <- totdist*(1-pct.hw) 
+        ax2 <- totdist*(1-pct.hw)
         ax3 <- distpt[i]-myspace
         ## ----
         if (relativ) {
@@ -87,8 +87,8 @@ arrows2 <- function(x0, y0, x1=x0, y1=y0, cex.hg=1, pct.hg=0.1, cex.hh=1, pct.hw
             sqptx<-rep(x0[i],7)+c(ax1, ax2, ax2, ax3, ax2, ax2, ax1)
             sqpty<-rep(y0[i],7)+c(ay1, cex.sk*ay1, ay2, 0, -ay2, -cex.sk*ay1, -ay1)
         }
-        else {  
-            ax4 <- totdist*pct.hw 
+        else {
+            ax4 <- totdist*pct.hw
             sqptx <- rep(x0[i],12)+c(ax1, ax4, ax4, 0.5*totdist, ax2, ax2, ax3, ax2, ax2, 0.5*totdist, ax4, ax4)
             sqpty <- rep(y0[i],12)+c(0, ay2, cex.sk*ay1, ay1, cex.sk*ay1, ay2, 0, -ay2, -cex.sk*ay1, -ay1, -cex.sk*ay1, -ay2)
         }

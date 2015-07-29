@@ -13,7 +13,7 @@ bgcol(...)
 Color the background of the plot region.
 }
 \details{
-The function calls \code{\link{rect}} and draw a colored (defaut is light blue) rectangle whose dimension are given par argument of function \code{\link{par}}.
+The function calls \code{\link{rect}} and draw a colored rectangle (defaut color is set to light blue) whose dimensions are given by argument \code{usr} of function \code{\link{par}}.
 }
 \note{
 In par(), the argument bg colors all the window.

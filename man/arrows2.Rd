@@ -2,7 +2,7 @@
 % Please edit documentation in R/arrows2.R
 \name{arrows2}
 \alias{arrows2}
-\title{Add arrows arrows_rel to a plot.}
+\title{Add arrows to a plot.}
 \usage{
 arrows2(x0, y0, x1 = x0, y1 = y0, cex.hg = 1, pct.hg = 0.1,
   cex.hh = 1, pct.hw = 0.1, cex.sk = 1, pct.spc = 0,
