@@ -8,7 +8,7 @@
 #' @param mnradi The minor radii of the ellipses.
 #' @param from The angles, expressed in radians, from which ellipses are drawn.
 #' @param to The angles, expressed in radians, to which ellipses are drawn.
-#' @param rot The rotation angles (in degree) of the ellipses. 
+#' @param rot The rotation angles (in degree) of the ellipses.
 #' @param incr Increments between two points to be linked (expressed in radians).
 #' @param pie logical. If TRUE end points are linked with the center of the ellipse (default is set to FALSE).
 #' @param ... Additional arguments to be passed to \code{\link{polygon}} function.
@@ -17,13 +17,16 @@
 #'
 #' @export
 #'
-#' @details 
-#' For a rotation angle of 0, major radii refer to the one along the x axis. 
+#' @details
+#' For a rotation angle of 0, major radii refer to the one along the x axis.
 #'
 #' The number of cicrles drawn is given by the maximum argument length amng \code{x}, \code{y}, \code{radi}, \code{from} and \code{to} arguments.
-#' Sizes are adjusted using \code{\link{rep_len}} function. 
+#' Sizes are adjusted using \code{\link{rep_len}} function.
 #'
-#' To plot ellipses, \code{\link{polygon}} function is called. 
+#' To plot ellipses, \code{\link{polygon}} function is called.
+#'
+#' @note
+#' There is a similar function, called \code{draw.ellipse}, in the package \code{plotrix}.
 #'
 #' @examples
 #' #Example 1:
@@ -77,6 +80,6 @@ ellipse <- function(x=0, y=x, mjradi=1, mnradi=0.5, from=0, to=2*pi, rot=0, incr
         }
         rotpt <- graphicsutils::rotation(seqx, seqy, xrot=x[i], yrot=y[i], rot=rot)
         polygon(rotpt$x, rotpt$y, ...)
-            
+
     }
 }

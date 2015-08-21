@@ -1,6 +1,6 @@
 #' Background color
 #'
-#' Color the background of the plot region.
+#' Color the background of the plot region. Default color is a light blue. 
 #'
 #' @param ... Additional arguments to be passed to \code{\link{rect}} function.
 #'
@@ -25,7 +25,7 @@ bgcol <- function(...){
     args<-list(...)
     lp<-par()$usr
     coor<-list(xleft=lp[1], ybottom=lp[3], xright=lp[2], ytop=lp[4])
-    deft<-list(border=NA, col=2)#"lightblue")
+    deft<-list(border=NA, col="#A2E3FF")
     if (length(args)>0){
       id<-which(names(deft) %in% names(args))
       if (length(id)>0) deft<-deft[-id]

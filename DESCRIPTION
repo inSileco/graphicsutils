@@ -7,7 +7,7 @@ Author: Kevin Cazelles [aut, cre],  Nicolas Casajus [aut, cre]
 Maintainer: Kevin Cazelles <kevin.cazelles@um2.fr>
 Description: A collection of graphical functions to help customizing graphics easily with the basic packages: "graphics" and "grDevices".
 Depends: R (>= 3.0)
-Imports: 
+Imports:
   jpeg(>= 0.1-8),
   png(>= 0.1-7)
 License: GPL-3

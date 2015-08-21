@@ -1,18 +1,17 @@
 library(RCurl)
 library(downloader)
 
-
 plotImage <- function(obj=NULL,file=NULL,boxcol=0,...){
 
     require(jpeg)
     require(png)
     ## obj or file must be defined
     stopifnot(!is.null(c(obj,file,url)))
-    ## obj class must be "nativeRaster" 
-    if (!is.null(obj)) stopifnot(class(obj)=="nativeRaster")  
+    ## obj class must be "nativeRaster"
+    if (!is.null(obj)) stopifnot(class(obj)=="nativeRaster")
     ## if obj is not defined we use the file to define it
     else {
-        # if the file ends with jpeg or jpg we use readJPG from "jpeg" package 
+        # if the file ends with jpeg or jpg we use readJPG from "jpeg" package
         # if the file ends with png we use readPNG from "png" package
         ext <- sapply(c(".jpeg$",".jpg$",".png$"),grepl,file)
         if (sum(ext)==0) stop("No method found for the given file.")
@@ -62,23 +61,5 @@ ploticon <- function(name,res=128,plotnew=TRUE){
 
 
 nameicon <- getIconNames()
-
-andro <- getIconFile(nameicon[9])
-apple <- getIconFile(nameicon[19])
-linux <- getIconFile(nameicon[279])
-flute <- getIconFile(nameicon[336])
-
-plot0()
-pchimage(5,5,file=andro, cex.x=2)
-pchimage(-5,5,file=apple, cex.x=2)
-pchimage(-5,-5,file=linux, cex.x=2)
-pchimage(5,-5,file=flute, cex.x=2)
-
-
-nameicon <- getIconNames()
 par(mar=rep(1,4),mfrow=c(10,10))
 for (i in 1:400) ploticon(name=nameicon[i])
-
-
-pchimage(runif(10),runif(10),
-

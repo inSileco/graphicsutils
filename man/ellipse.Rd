@@ -39,6 +39,9 @@ Sizes are adjusted using \code{\link{rep_len}} function.
 
 To plot ellipses, \code{\link{polygon}} function is called.
 }
+\note{
+There is a similar function, called \code{draw.ellipse}, in the package \code{plotrix}.
+}
 \examples{
 #Example 1:
 plot0(asp=1)
