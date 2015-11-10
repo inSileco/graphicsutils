@@ -1,12 +1,12 @@
 #' Rhombi
 #'
-#' Add rhombi on a plot and optionnaly returns areas. 
+#' Add rhombi on a plot and optionnaly returns areas.
 #'
 #' @param x Vector of x coordinates of the centers of the losange
 #' @param y Vector of y coordinates of the centers of the losange
-#' @param ldg Vector of length of the large diagonals. 
-#' @param sdg Vector of length of the small diagonals.  
-#' @param rot The rotation angles (in degree) of the rhombi. 
+#' @param ldg Vector of length of the large diagonals.
+#' @param sdg Vector of length of the small diagonals.
+#' @param rot The rotation angles (in degree) of the rhombi.
 #' @param area logical. If TRUE the area of rhombis are returned.
 #' @param ... Additionnal arguments to be passed to polygon function.
 #'
@@ -15,9 +15,12 @@
 #' @export
 #'
 #' @details
-#' The number of rhombus maximual is provided by the length of the largest argument among x, y, ldg, sdg and rot. 
+#' The number of rhombus maximual is provided by the length of the largest argument among x, y, ldg, sdg and rot.
 #' Other arguments are repeated with the largest length as the desired one (see \code{rep_len}).
-#' Additionnal arguments remain the same for every rhombus. 
+#' Additionnal arguments remain the same for every rhombus.
+#'
+#' @return
+#' If \code{area} is set to TRUE then areas of rhonbi drawn are returned.
 #'
 #' @examples
 #' # Example 1:

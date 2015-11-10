@@ -13,4 +13,4 @@ vignettes/*.html
 vignettes/*.pdf
 
 # "todo" folders
-./R/todo
+./R/todo/**

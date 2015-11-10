@@ -12,7 +12,7 @@ pchimage(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x,
 
 \item{y}{The y coordinates of images to be drawn.}
 
-\item{obj}{An object of class \code{nativeRaster} function.}
+\item{obj}{An object of class \code{nativeRaster}.}
 
 \item{file}{A path to either a \code{.png} file or a \code{.jpeg} file.}
 

@@ -21,6 +21,9 @@ rhombi(x, y = x, ldg = 1, sdg = ldg, rot = 0, area = FALSE, ...)
 
 \item{...}{Additionnal arguments to be passed to polygon function.}
 }
+\value{
+If \code{area} is set to TRUE then areas of rhonbi drawn are returned.
+}
 \description{
 Add rhombi on a plot and optionnaly returns areas.
 }

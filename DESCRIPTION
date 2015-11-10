@@ -1,7 +1,7 @@
 Package: graphicsutils
 Type: Package
 Title: Collection of Graphics Utilities
-Version: 1.0-2
+Version: 1.0-3
 Date: 2015-07-20
 Author: Kevin Cazelles [aut, cre],  Nicolas Casajus [aut, cre]
 Maintainer: Kevin Cazelles <kevin.cazelles@um2.fr>

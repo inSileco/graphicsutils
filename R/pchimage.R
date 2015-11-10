@@ -4,7 +4,7 @@
 #'
 #' @param x The x coordinates of images to be drawn.
 #' @param y The y coordinates of images to be drawn.
-#' @param obj An object of class \code{nativeRaster} function.
+#' @param obj An object of class \code{nativeRaster}.
 #' @param file A path to either a \code{.png} file or a \code{.jpeg} file.
 #' @param cex.x A numerical value giving the amount by which the horizontal width of the image should be magnified relative to the default.
 #' @param cex.y A numerical value giving the amount by which the vertical width of the image should be magnified relative To the default.
