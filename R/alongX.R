@@ -15,7 +15,7 @@
 #' @describeIn percX Return the values of x-axis for a given percentage.
 percX<-function(percentage=90){
     stopifnot(percentage>0 & percentage<=100)
-    alg.x <- par()$usr[1]+0.01*percentage*(par()$usr[2]-par()$usr[1])
+    alg.x<-par()$usr[1]+0.01*percentage*(par()$usr[2]-par()$usr[1])
     return(alg.x)
 }
 
@@ -23,6 +23,6 @@ percX<-function(percentage=90){
 #' @describeIn percX Return the values of y-axis for a given percentage.
 percY<-function(percentage=90){
     stopifnot(percentage>0 & percentage<=100)
-    alg.y <- par()$usr[3]+0.01*percentage*(par()$usr[4]-par()$usr[3])
+    alg.y<-par()$usr[3]+0.01*percentage*(par()$usr[4]-par()$usr[3])
     return(alg.y)
 }
