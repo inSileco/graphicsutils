@@ -61,7 +61,7 @@ stackedareas(x)
 par(xaxs="i", yaxs="i", font=2, cex.axis=1.2, cex.lab=1.4, bty="l")
 plot(c(1999,2027), c(-10,110), type="n", xlab="Years", ylab="Percentage",
 main="My customized stacked areas chart")
-bgcol(col="#f2c4c4")
+plotAreaColor(col="#f2c4c4")
 stackedareas(x, index=2001:2025, rgy=100, lwd=2, add=TRUE, border="transparent")
 }
 \keyword{circle,}
