@@ -9,7 +9,7 @@
 #'
 #' @examples
 #' plot0()
-#' text(x=percX(90), y=percY(90),label="cool")
+#' text(x=percX(90), y=percY(90), label="cool")
 
 
 #' @describeIn percX Return the values of x-axis for a given percentage.
