@@ -23,14 +23,10 @@
 #' plot0()
 #' plotAreaColor(col=8, lwd=4, border=4)
 
-plotAreaColor <- function(border=NA, col="grey80", ...){
+plotAreaColor <- function(col="grey80", border=NA, ...){
     args <- list(...)
     lp <- par()$usr
     coor <- list(xleft=lp[1], ybottom=lp[3], xright=lp[2], ytop=lp[4])
-    if (length(args)>0){
-      id <- which(names(deft) %in% names(args))
-      if (length(id)>0) deft<-deft[-id]
-      do.call("rect", args=as.list(c(coor,border=border,col=col,args)))
-    }
+    if (length(args)>0) do.call("rect", args=as.list(c(coor,border=border,col=col,args)))
     else do.call("rect", args=as.list(c(coor,border=border,col=col)))
 }

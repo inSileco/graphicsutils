@@ -4,12 +4,12 @@
 \alias{plotAreaColor}
 \title{Color the plot area}
 \usage{
-plotAreaColor(border = NA, col = "grey80", ...)
+plotAreaColor(col = "grey80", border = NA, ...)
 }
 \arguments{
-\item{border}{Color of the border of the rectangle drawn, default is set to NA, that is no border.}
-
 \item{col}{Color of the rectangle, default is set to "grey80".}
+
+\item{border}{Color of the border of the rectangle drawn, default is set to NA, that is no border.}
 
 \item{...}{Additional arguments to be passed to \code{\link{rect}} function.}
 }
