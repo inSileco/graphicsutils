@@ -7,10 +7,11 @@
 #' @details
 #' This function intends to ease the positionning of additionnal marks such as text when axis have not common axis.
 #'
+#' @export
+#'
 #' @examples
 #' plot0()
 #' text(x=percX(90), y=percY(90), label="cool")
-
 
 #' @describeIn percX Return the values of x-axis for a given percentage.
 percX<-function(percentage=90){
