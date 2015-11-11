@@ -1,86 +1,151 @@
-#' Pick your colors up
+#' Pick your colors up version 2
 #'
-#' Generate a simple interactive interface to pick up colors and returns colors selected.
+#' Generate an interactive interface to pick up colors and returns colors selected.
 #'
-#' @param ramp A first set of colors.
 #' @param colors The number of colors to be selected.
-#' @param tones A number of tones.
-#' @param shades A number of shades to be plotted for each tones.
+#' @param ramp A vector of colors.
 #'
 #' @keywords color, selection
 #'
 #' @export
 #'
 #' @details
-#' This functions is a two steps color selection. First, color decribed by \code{color} are displayed and users are invited to pick up \code{tones} number of color tones. In the second step, for each selected tones, \code{shades} shades and tints are presented. Users are then allowed to select the final set of \code{colors} colors they require.
+#' This colors selection open a grapical interface you navigate within following a red frame. 
+#' It allows you to confirm at each step wether or not you want to use the tone selected. 
+#' It does the same for the shades.
 #'
 #' @note Beyond 20 colors, the interest of such function is questionnable.
 
-pickcolors<-function(ramp=rainbow(1024), colors=8, tones=colors, shades=32){
+pickcolors2 <- function(colors=6, ramp=rainbow(1024)){
     ## checkings
-    if (colors>20) warning("More than 20 colors, really?")
-    colors<-min(colors,100)
-    tones<-min(tones,100)
-    shades<-min(shades,100)
-    ## First : tones selection
+    if (colors>20) stop("More than 20 colors, really?")
+    ##
+    msg1 <- function() cat('Your click is outside the red frame! \n')
+    ##
     szrp<-length(ramp)
-    dev.new(height=3, width=8)
-    old.par<-par(no.readonly=TRUE)
-    par(mar=c(0,0,4,0))
-    image(matrix(1:szrp, ncol=1L), col=ramp, axes = TRUE, xlab="", ylab="", main=paste0("Pick up your ", tones, " tones (",tones," clicks are required)"))
-    slcton<-double(tones)
+    slccolor<-rep("white",colors)
     slc<-0
-    ## while + locator + check the relevance of locator's result.
-    while (slc<tones){
-      xy<-locator(1L)
-      if (xy$y>1) cat('Your click is outside the relevant region! \n')
-      else {
-        slc<-slc+1
-        points(rep(xy$x,2),rep(xy$y,2), cex=c(1.2,0.8), col=c("white",1), pch=19)
-        text(rep(xy$x,2),rep(xy$y,2),rep(as.character(slc),2), col=c("white",1), pos=c(1,3))
-        slcton[slc]<-ramp[1L+floor(szrp*xy$x)]
-      }
-    }
+    tonecoor<-double(colors)
     ##
-    matrp<-matrix("",nrow=shades, ncol=tones)
-    for (i in rev(1:tones)) matrp[,i]<-colorRampPalette(c("white",slcton[i],"black"))(shades+2)[2:(shades+1)]
-    dev.off()
-    ## Second: color selection
+    extra<-0+((colors%%2)==1)*1
+    ##
     dev.new()
-    layout(matrix(1:2,2,1), heights=c(3,1))
-    par(mar=c(0, 0, 0, 0))
-    par1<-par(no.readonly=TRUE)
-    image(matrix(1:(shades*tones),nrow=shades, ncol=tones), col=as.vector(matrp), axes=FALSE, ann=FALSE)
-    ##
-    par(mar=c(4, 4, 4, 4))
-    par2<-par(no.readonly=TRUE)
-    yourcol<-rep("transparent", colors)
-    image(matrix(1:colors,ncol=1), axes=FALSE, xlab="", ylab="", main=paste0("Click above, get your ",colors," colors below"), col=yourcol)
-    ##
-    slccol<-rep("",colors)
-    slc<-0
-    while (slc<colors) {
-      par(new=TRUE, fig=par2$fig, mar=c(0, 0, 0, 0), xaxs="i", yaxs="i")
-      frame()
-      plot.window(c(0,1),c(0,1))
-      xy<-locator(1)
-      if (xy$x<0 | xy$y<0) cat('Your click is outside the relevant region! \n')
-      else {
-        slc<-slc+1
-        slccol[slc]<-yourcol[slc]<-matrp[1+floor(shades*xy$x),1+floor(tones*xy$y)]
-        points(rep(xy$x,2),rep(xy$y,2), cex=c(1.2,0.8), col=c("white",1), pch=19)
-        text(rep(xy$x,2),rep(xy$y,2),rep(as.character(slc),2), col=c("white",1), pos=c(1,3))
-        ##
-        par(mar=c(2, 2, 4, 2),new=TRUE, fig=par1$fig, xaxs="i", yaxs="i")
-        image(matrix(1:colors,ncol=1), axes=FALSE, ann=FALSE, col=yourcol)
-        if (colors<11){
-          text(seq(0,1,length.out=colors)[1:slc],rep(0.3,slc),yourcol[1:slc], cex=0.7)
-          text(seq(0,1,length.out=colors)[1:slc],rep(-0.3,slc),yourcol[1:slc], cex=0.7, col="white")
-        }
-      }
+    old.par<-par(no.readonly=TRUE)
+    ## 
+    layout(matrix(c(1,2,4,5,1,3,3,3),ncol=2), heights=c(0.8,0.8,0.8,2), widths=c(1,2))
+    ## Record par for all the subplot region
+    mypar<-list()
+    for (i in 1:5) {
+        plot0()
+        mypar[[i]]<-par(no.readonly=TRUE)
     }
+    ## while + locator + check the relevance of locator's result.
+    while (slc<colors){
+        tone<-0
+        while (tone==0){
+            ## ----
+            par(new=TRUE, fig=mypar[[1L]]$fig, mar=c(0.5, 1, 1, 1), xaxs="i", yaxs="i")
+            image(matrix(1:szrp, ncol=1L), col=ramp, axes = FALSE, ann=FALSE)
+            if (slc>0) for (i in 1:slc) {
+                points(rep(tonecoor[i],2),rep(0,2), cex=c(1.2,0.8), col=c("white",1), pch=19)
+                text(rep(tonecoor[i],2),rep(0,2),rep(as.character(1+colors-i),2), col=c("white",1), pos=c(1,3))
+            }
+            box(col=2,lwd=2.5)
+            if (slc==0) text(0.5,0,"First, chose a tone, then select a shades below. Follow the red frame !", cex=1.5)
+            xy<-locator(1L)
+            ## ---
+            if (abs(xy$y)>1 | xy$x>1 | xy$x<0) msg1()
+            else {
+                box(lwd=2.8)
+                points(rep(xy$x,2),rep(xy$y,2), cex=c(1.2,0.8), col=c("white",1), pch=19)
+                text(rep(xy$x,2),rep(xy$y,2),rep(as.character(colors-slc),2), col=c("white",1), pos=c(1,3))
+                slcton<-ramp[1L+floor(szrp*xy$x)]
+                mypal<-colorRampPalette(c("white",slcton,"black"))(128)
+                ## ----
+                seqx<-1:16
+                seqy<-1:8
+                slc2<-0
+                ## ----
+                par(new=TRUE, fig=mypar[[3]]$fig, mar=c(1, 0.5, 0.5, 1))
+                mypal<-colorRampPalette(c("white",slcton,"black"))(128)
+                image(x=seqx, y=seqy, matrix(1:128,16,8), col=mypal, axes=FALSE, ann=FALSE)
+                box(lwd=2.8)
+                ## ----
+                par(new=TRUE, fig=mypar[[2]]$fig, mar=c(0.5, 1, 0.5, 0.5))
+                plot0(c(0,1),c(-1,1))
+                bgcol(col="white")
+                text(0.5,0.5,"Keep it !", cex=2)
+                rect(0,-1,1,0, col="black")
+                text(0.5,-0.5,"Change it !", cex=2, col="white")
+                box(col=2,lwd=2.5)
+                xy0 <- locator(1L)
+                while (xy0$x>1|xy0$x<0|(xy0$y)^2>1) {
+                    msg1()
+                    xy0<-locator(1L)
+                }
+                if (xy0$y>0) {
+                    box(lwd=2.8)
+                    tone<-1
+                    tonecoor[slc+1]<-xy$x
+                }
+                else box(lwd=2.8)
+                ## ----
+            }
+        }
+        while (!slc2) {
+            ## ----
+            par(new=TRUE, fig=mypar[[3]]$fig, mar=c(1, 0.5, 0.5, 1))
+            image(x=seqx, y=seqy, matrix(1:128,16,8), col=mypal,  axes = FALSE, ann=FALSE)
+            box(col=2,lwd=2.5)
+            ## ----
+            xy2<-locator(1L)
+            points(rep(xy2$x,2),rep(xy2$y,2), cex=c(1.2,0.8), col=c("white",1), pch=19)
+            ## ----
+            if (xy2$y> 8.5 | xy2$y< -0.5) msg1()
+            else {
+                box(lwd=2.8)
+                ##
+                diffx <- ((1:16)-xy2$x)^2
+                diffy <- ((1:8)-xy2$y)^2
+                sclcol <- which.min(diffx)+(which.min(diffy)-1)*16
+                points(rep(xy2$x,2),rep(xy2$y,2), cex=c(1.2,0.8), col=c("white",1), pch=19)
+                ## ----
+                par(new=TRUE, fig=mypar[[4]]$fig, mar=c(1, 1, 0.5, 0.5))
+                image(matrix(1,1),col=mypal[sclcol], axes = FALSE, ann=FALSE)
+                box(col=1, lwd=2)
+                text(0,0.35,mypal[sclcol], cex=2.5)
+                text(0,-0.35,mypal[sclcol], cex=2.5, col="white")
+                ## -----
+                par(new=TRUE, fig=mypar[[2]]$fig, mar=c(0.5, 1, 0.5, 0.5))
+                plot0(c(0,1),c(-1,1))
+                bgcol(col="white")
+                text(0.5,0.5,"Keep it !", cex=2)
+                rect(0,-1,1,0, col="black")
+                text(0.5,-0.5,"Change it !", cex=2, col="white")
+                box(col=2,lwd=2.5)
+                xy3<- locator(1L)
+                while ((xy3$x)^2>1 | (xy3$y)^2>1) {
+                    msg1()
+                    xy3<-locator(1L)
+                }
+                if (xy3$y>0) {
+                    box(lwd=2.8)
+                    slc<-slc+1
+                    slc2<-1
+                    slccolor[slc]<-mypal[sclcol]
+                    ## ----
+                    par(new=TRUE, fig=mypar[[5]]$fig, mar=c(1, 1, 0.5, 0.5))
+                    image(matrix(1:(colors+extra), nrow=2L), col="white", axes = FALSE, ann=FALSE)
+                    par(new=TRUE, fig=mypar[[5]]$fig, mar=c(1, 0.5, 0.5, 1))
+                    image(matrix(1:(colors+extra), nrow=2L), col=rev(slccolor), axes = FALSE, ann=FALSE)
+                }
+                else box(lwd=2.8)
+            }
+        }
+    }
+
     Sys.sleep(0.8)
     par(old.par)
     dev.off()
-    return(slccol)
+    return(slccolor)
 }
