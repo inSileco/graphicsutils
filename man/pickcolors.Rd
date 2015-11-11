@@ -4,20 +4,25 @@
 \alias{pickcolors}
 \title{Pick your colors up}
 \usage{
-pickcolors(colors = 6, ramp = rainbow(1024))
+pickcolors(ramp = rainbow(1024), nb_shades = 1024, rgb = FALSE)
 }
 \arguments{
-\item{colors}{The number of colors to be selected.}
+\item{ramp}{A vector of colors used as tone palette.}
 
-\item{ramp}{A vector of colors.}
+\item{nb_shades}{Number of shades to be displayed once a tone is selected.}
+}
+\value{
+A vector
 }
 \description{
 Generate an interactive interface to pick up colors and returns colors selected.
 }
 \details{
-This colors selection open a grapical interface you navigate within following a red frame.
-It allows you to confirm at each step wether or not you want to use the tone selected.
-It does the same for the shades.
+This function generates a graphical window splitted into 6 panels. The top panel serves to select one tone.
+The panel right below present \code{nb_shades} of the selected tones.
+The bottom rigth panel presents the selected color that can be stored by clicking on the bottom left panel.
+The bottom center panel shows the characteristic of the selcted color.
+Finally, to abort, the user can simply clik on the left Stop panel
 }
 \keyword{color,}
 \keyword{selection}
