@@ -18,7 +18,7 @@
 #' @param xlab A label for the x axis, defaults to a description of \code{x}.
 #' @param ylab A label for the y axis, defaults to a description of \code{y}.
 #'
-#' @keywords circle, plot
+#' @keywords areas, plot, histogramme
 #'
 #' @export
 #'

@@ -42,7 +42,8 @@ plot0(c(0,1),c(0,1))
 pchimage(0.1+0.8*stats::runif(n), 0.1+0.8*stats::runif(n), cex.x=0.2+1.6*stats::runif(n),
 obj=img, angle=360*runif(n))
 }
+\keyword{character}
 \keyword{image,}
-\keyword{pch}
 \keyword{plot,}
+\keyword{plotting}
 

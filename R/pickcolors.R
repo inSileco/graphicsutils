@@ -4,8 +4,8 @@
 #'
 #' @param ramp A vector of colors used as tone palette.
 #' @param nb_shades Number of shades to be displayed once a tone is selected.
-#' @param rgb logical. If TRUE colors are returned as a rgb matrix. Default is set to FALSE.
-#' @param preview logcal. If TRUE the colors are displayed once the selection is done. Default is set to FALSE.
+#' @param rgb logical. If TRUE, colors are returned as a rgb matrix. Default is set to FALSE.
+#' @param preview logical. If TRUE, colors are displayed once the selection is done. Default is set to FALSE.
 #'
 #' @keywords color, selection
 #'
@@ -36,11 +36,13 @@ pickColors <- function(ramp=rainbow(1024), nb_shades=1024, rgb=FALSE, preview=FA
         plot0()
         ##
         par(fig=c(0,1,0.8,1), new=TRUE)
-        image(matrix(1:nb_ramp), col=ramp, axes=FALSE, ann=FALSE)
+        image(matrix(1L:nb_ramp), col=ramp, axes=FALSE, ann=FALSE)
+        points(rep(which(ramp==col_ini)[1L]/nb_shades,2),c(0,0),col=c("white",1), pch=c(19,20))
         box(lwd=3, col="white")
         ##
         par(fig=c(0,1,0.6,0.8), new=TRUE)
         image(matrix(1:nb_shades), col=shades, axes=FALSE, ann=FALSE)
+        points(rep(which(shades==col_foc)[1L]/nb_shades,2),c(0,0),col=c("white",1), pch=c(19,20))
         box(lwd=3, col="white")
         ##
         par(fig=c(0,0.2,0.3,0.6), new=TRUE)
@@ -51,13 +53,13 @@ pickColors <- function(ramp=rainbow(1024), nb_shades=1024, rgb=FALSE, preview=FA
         ##
         par(fig=c(0,0.2,0,0.3), new=TRUE)
         plot0()
-        plotAreaColor()
+        plotAreaColor()#col="grey80")
         text(0,0,label="Stop", cex=2)
         box(lwd=3, col="white")
         ##
         par(fig=c(0.2,0.5,0,0.6), new=TRUE)
         plot0()
-        plotAreaColor()
+        plotAreaColor(col="grey90")
         text(0,0.6,label=colorRampPalette(col_foc)(1), cex=2)
         code_rgb <- col2rgb(col_foc)
         text(0,0.1,label=paste0("Red: ",code_rgb[1]), cex=2)
@@ -77,7 +79,7 @@ pickColors <- function(ramp=rainbow(1024), nb_shades=1024, rgb=FALSE, preview=FA
     while(i==0){
       shades <- colorRampPalette(c("white",col_ini,"black"))(nb_shades)
       drawSelector(col_ini, col_foc, shades)
-      loc <- locator(1)
+      loc <- locator(1L)
       ##
       if (loc$y>0.6){
         if (loc$y>0.8) {
@@ -102,7 +104,7 @@ pickColors <- function(ramp=rainbow(1024), nb_shades=1024, rgb=FALSE, preview=FA
     par(old.par)
     dev.off()
 
-    slccolor <- slccolor[-1]
+    slccolor <- slccolor[-1L]
     if (preview) showPalette(slccolor, add_number=TRUE)
 
     if (rgb) return(col2rgb(slccolor))

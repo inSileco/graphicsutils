@@ -12,7 +12,7 @@
 #' @param add logical. Should images be added on the current graph ? If FALSE a new plot is created.
 #' @param ... Additional arguments to be passed to \code{rasterImage} function.
 #'
-#' @keywords plot, image, pch
+#' @keywords plot, image, plotting character
 #'
 #' @export
 #'

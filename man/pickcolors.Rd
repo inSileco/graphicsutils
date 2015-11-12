@@ -12,9 +12,9 @@ pickColors(ramp = rainbow(1024), nb_shades = 1024, rgb = FALSE,
 
 \item{nb_shades}{Number of shades to be displayed once a tone is selected.}
 
-\item{rgb}{logical. If TRUE colors are returned as a rgb matrix. Default is set to FALSE.}
+\item{rgb}{logical. If TRUE, colors are returned as a rgb matrix. Default is set to FALSE.}
 
-\item{preview}{logcal. If TRUE the colors are displayed once the selection is done. Default is set to FALSE.}
+\item{preview}{logical. If TRUE, colors are displayed once the selection is done. Default is set to FALSE.}
 }
 \value{
 A vector

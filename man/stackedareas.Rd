@@ -64,6 +64,7 @@ main="My customized stacked areas chart")
 plotAreaColor(col="#f2c4c4")
 stackedareas(x, index=2001:2025, rgy=100, lwd=2, add=TRUE, border="transparent")
 }
-\keyword{circle,}
-\keyword{plot}
+\keyword{areas,}
+\keyword{histogramme}
+\keyword{plot,}
 
