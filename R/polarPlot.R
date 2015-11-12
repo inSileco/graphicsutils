@@ -46,7 +46,7 @@ function(seqtime, seqval=NULL, rad=1, from=0, to=2*pi, incr=0.005, labelc=NULL, 
     lgv <- floor(log(rgval[2]-rgval[1]))
     ##
     seqtp <- -.5*pi+from + (to-from)*(seqtime-rgtime[1L])/(rgtime[2L]-rgtime[1L])
-    if (clockwise) seqtp <- 2*from - seqtp 
+    if (clockwise) seqtp <- 2*from-seqtp
     seqvp <- rad*(seqval-rgval[1L])/(rgval[2L]-rgval[1L])
 
     ## --- plot
