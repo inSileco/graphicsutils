@@ -3,7 +3,7 @@
 #' Draw a compass rose fully customizable.
 #'
 #' @param name Name of the ocon to be dowloaded.
-#' @param res
+#' @param res The resolution of the icon to be downloaded.
 #' @param destfile A character string with the name where the downloaded file is saved.  Tilde-expansion is performed.
 #' @param col Color of the image.
 #' @param quiet logical. If TRUE, no message are printed.
@@ -24,7 +24,7 @@
 #' getIcon(name="beer", col="grey80")
 
 
-#' @describeIn Return the list of names available for downloading.
+#' @describeIn getIcon Return the list of names available for downloading.
 getIconNames <- function(){
     adr <- RCurl::getURL("https://github.com/encharm/Font-Awesome-SVG-PNG/tree/master/black/png/128")
     wbp <- readLines(tc <- textConnection(adr))
