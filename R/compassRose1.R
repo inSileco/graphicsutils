@@ -56,9 +56,9 @@ function(x, y=x, rot=0, cex.cr=1, cex.let=1, labels=c("S","W","N","E"), offset=1
 #' @describeIn compassRose1 A compass rose with the four cardinal directions and additionnal directions.
 #' @export
 compassRose2<-
-function(cx=0, cy=0, rot=0, cex.cr=1, cex.let=1, offset=1.2, col=c(1,8), border=c(1,8), lty=1){
-    compassRose1(cx,cy,rot+22.5,cex.cr*0.65, label=rep("",4), cex.let=cex.let, offset=offset, col=col, border=border, lty=lty)
-    compassRose1(cx, cy ,rot+67.5,cex.cr*0.65, label=rep("",4), cex.let=cex.let, offset=offset, col=col, border=border, lty=lty)
-    compassRose1(cx,cy,rot+45,cex.cr*0.85, label=c("SW","NW","NE","SE"), cex.let=cex.let, offset=offset, col=col, border=border, lty=lty)
-    compassRose1(cx, cy, rot, cex.cr, offset=offset, cex.let=cex.let, offset=offset, col=col, border=border, lty=lty)
+function(x=0, y=0, rot=0, cex.cr=1, cex.let=1, offset=1.2, col=c(1,8), border=c(1,8), lty=1){
+    compassRose1(x, y, rot+22.5,cex.cr*0.65, labels=rep("",4), cex.let=cex.let, offset=offset, col=col, border=border, lty=lty)
+    compassRose1(x, y, rot+67.5,cex.cr*0.65, labels=rep("",4), cex.let=cex.let, offset=offset, col=col, border=border, lty=lty)
+    compassRose1(x, y,rot+45,cex.cr*0.85, labels=c("SW","NW","NE","SE"), cex.let=cex.let, offset=offset, col=col, border=border, lty=lty)
+    compassRose1(x, y, rot, cex.cr, cex.let=cex.let, offset=offset, col=col, border=border, lty=lty)
 }

@@ -57,7 +57,7 @@ stackedareas <- function(val, index=NULL, rgy=1, cumul=FALSE, transp=FALSE, lege
     }
     ## ---- Colors
     if (pickcolors==TRUE){
-      colors<-pickcolors(colors=nrow(x))
+      colors<-pickColors(colors=nrow(x))
     }
     else {
       if (is.null(col)) {

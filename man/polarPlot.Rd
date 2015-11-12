@@ -13,6 +13,8 @@ polarPlot(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi,
 
 \item{seqval}{Sequence of values of interest (radial axis, equivalent to the y axis).}
 
+\item{rad}{Radius of the circle.}
+
 \item{from}{Starting point of the circle.}
 
 \item{to}{Ending point of the circle.}
@@ -20,6 +22,8 @@ polarPlot(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi,
 \item{incr}{Increment used to draw the circle.}
 
 \item{labelc}{Character or expression vector of labels to be placed at the tickpoints.}
+
+\item{tckcol}{Color of the tickmarks.}
 
 \item{atc}{The points at which tick-marks are to be drawn. By default (when \code{NULL}) tickmark locations are computed.}
 
@@ -34,8 +38,6 @@ polarPlot(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi,
 \item{add}{logical. Add to current plot?}
 
 \item{...}{Additional argument to be passed to \code{polygon} function.}
-
-\item{radius}{of the circle.}
 }
 \description{
 Draw a polar plot.

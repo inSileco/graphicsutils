@@ -27,13 +27,13 @@ arrows2(x0, y0, x1 = x0, y1 = y0, cex.hg = 1, pct.hg = 0.1,
 
 \item{cex.sk}{The magnification coefficient to be used to chance the height of the arrows towards the heads.}
 
+\item{pct.spc}{The proportion of the distance between the points to leave as space before and after the arrow.}
+
 \item{twoheaded}{logical. If TRUE two headed arrows are drawn, default is FALSE.}
 
 \item{relativ}{logical. If TRUE, the heights of arrows are proportional to the lengths, default is TRUE.}
 
 \item{...}{Additional arguments to be passed to \code{polygon} function.}
-
-\item{pct.sp}{The proportion of the distance between the points to leave as space before and after the arrow.}
 }
 \description{
 Draw arrows between pairs of points.

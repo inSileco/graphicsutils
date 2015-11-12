@@ -11,7 +11,7 @@
 #' @param cex.hh The magnification coefficient to be used for the height of the heads of the arrows.
 #' @param pct.hw The length of the heads of the arrows expressed as a percentage of the total length.
 #' @param cex.sk The magnification coefficient to be used to chance the height of the arrows towards the heads.
-#' @param pct.sp The proportion of the distance between the points to leave as space before and after the arrow.
+#' @param pct.spc The proportion of the distance between the points to leave as space before and after the arrow.
 #' @param twoheaded logical. If TRUE two headed arrows are drawn, default is FALSE.
 #' @param relativ logical. If TRUE, the heights of arrows are proportional to the lengths, default is TRUE.
 #' @param ... Additional arguments to be passed to \code{polygon} function.

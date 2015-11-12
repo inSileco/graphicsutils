@@ -9,7 +9,7 @@ compassRose1(x, y = x, rot = 0, cex.cr = 1, cex.let = 1,
   labels = c("S", "W", "N", "E"), offset = 1.2, col = c(1, 8),
   border = c(1, 8), lty = 1)
 
-compassRose2(cx = 0, cy = 0, rot = 0, cex.cr = 1, cex.let = 1,
+compassRose2(x = 0, y = 0, rot = 0, cex.cr = 1, cex.let = 1,
   offset = 1.2, col = c(1, 8), border = c(1, 8), lty = 1)
 }
 \arguments{
