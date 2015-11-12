@@ -8,12 +8,12 @@
 #' @param from Starting point of the circle.
 #' @param to Ending point of the circle.
 #' @param incr Increment used to draw the circle.
-#' @param atc The points at which tick-marks are to be drawn. By default (when ‘NULL’) tickmark locations are computed.
+#' @param atc The points at which tick-marks are to be drawn. By default (when \code{NULL}) tickmark locations are computed.
 #' @param labelc Character or expression vector of labels to be placed at the tickpoints.
 #' @param atr The points at which radial-axis marks are to be drawn.
 #' @param labelr Character or expression vector of labels to be placed at the radial-axis marks.
 #' @param clockwise logical. If TRUE, the plot mus de read clockwise, otherwise, counter-clockwise.
-#' @param n_signif Number of significant number to be displayed (used when labelc is null).
+#' @param n_signif Number of significant number to be displayed (used when labelc is \code{NULL}).
 #' @param add logical. Add to current plot?
 #' @param ... Additional argument to be passed to \code{polygon} function.
 #'
@@ -30,7 +30,7 @@ polarPlot<-
 function(seqtime, seqval=NULL, rad=1, from=0, to=2*pi, incr=0.005, labelc=NULL, tckcol=1, atc=NULL, labelr=NULL, atr=NULL, clockwise=TRUE, n_signif=2, add=FALSE, ...){
 
     ## --- format checking
-    seqtime<- as.matrix(seqtime)
+    seqtime <- as.matrix(seqtime)
     if (ncol(seqtime)>1L) {
         seqval <- seqtime[,-1L]
         seqtime<- seqtime[,1L]
@@ -66,7 +66,7 @@ function(seqtime, seqval=NULL, rad=1, from=0, to=2*pi, incr=0.005, labelc=NULL, 
 
     ## --- Points at start and end
     points(seqvp[1L]*cos(seqtp[1L]), seqvp[1L]*sin(seqtp[1L]), pch=19, cex=1.2)
-    lv<- length(seqval)
+    lv <- length(seqval)
     points(seqvp[lv]*cos(seqtp[lv]), seqvp[lv]*sin(seqtp[lv]), pch=20)
 
     ## --- Values labels
@@ -77,7 +77,7 @@ function(seqtime, seqval=NULL, rad=1, from=0, to=2*pi, incr=0.005, labelc=NULL, 
 
     ## --- Circular ticks
     mangle <- -.5*pi+from+(0:6)/6*(to-from)
-    if (clockwise) mangle<- 2*from-mangle
+    if (clockwise) mangle <- 2*from-mangle
     print(mangle)
     segments(cos(mangle),sin(mangle),1.05*cos(mangle),1.05*sin(mangle))
 

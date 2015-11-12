@@ -32,7 +32,7 @@ getIconNames <- function(){
     ## ---
     wic <-  wbp[which(lapply(wbp, function(x) grep("\\.png",x))==1)]
     wic <- wic[which(lapply(wic, function(x) grep("span",x))==1)]
-    wicl <- lapply(wic, function(x) strsplit(x,"href|>|.png")[[1]][7])
+    wicl <- lapply(wic, function(x) strsplit(x,"href|>|.png")[[1]][7])
     return(unlist(wicl))
 }
 
@@ -40,10 +40,10 @@ getIconNames <- function(){
 #' @describeIn getIcon Download an icon based on its name.
 getIcon <- function(name, res=256, destfile=NULL, col=NULL, quiet=FALSE, preview=FALSE, get_path=FALSE){
     if (!res%in%c(16,22,24,32,48,64,128,256)) stop("Available resolution are 16, 22, 24, 32, 48, 64, 128 or 256")
-    base <- "https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/"
-    tmp <- paste0(base,res,"/",name,".png?raw=true")
+    base <- "https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/"
+    tmp <- paste0(base,res,"/",name,".png?raw=true")
     ## ---
-    if (is.null(NULL)) destfile <- paste0(tempdir(),name,".png")
+    if (is.null(NULL)) destfile <- paste0(tempdir(),name,".png")
     downloader::download(tmp, destfile=destfile, quiet=TRUE)
     if (!quiet) cat(paste0("Downloaded and stored at ''", destfile, "'\n"))
     raset <- png::readPNG(destfile, native=TRUE)
