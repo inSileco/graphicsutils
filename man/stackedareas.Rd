@@ -25,7 +25,7 @@ stackedareas(val, index = NULL, rgy = 1, cumul = FALSE, transp = FALSE,
 
 \item{col}{Vector of colors, repeated if too small.}
 
-\item{pickcolors}{logical. If TRUE, \code{\link{pickcolors}} is called to select colors.}
+\item{pickcolors}{logical. If TRUE, \code{\link{pickColors}} is called to select colors.}
 
 \item{lty}{The line type (see \code{\link{par}} documentation)}
 

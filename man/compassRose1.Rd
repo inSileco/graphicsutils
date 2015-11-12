@@ -32,8 +32,6 @@ compassRose2(x = 0, y = 0, rot = 0, cex.cr = 1, cex.let = 1,
 \item{border}{Colors of the borders of the compass rose.}
 
 \item{lty}{Line type for the border lines.}
-
-\item{percentage}{The percentage of the axis for which the values is returned.}
 }
 \description{
 Draw a compass rose fully customizable.

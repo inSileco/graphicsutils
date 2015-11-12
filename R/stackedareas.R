@@ -10,7 +10,7 @@
 #' @param legend The text to be used as a legend for each area drawn.
 #' @param col Vector of colors, repeated if too small.
 #' @param add logical. Should the stacked arease be add on the current plot?
-#' @param pickcolors logical. If TRUE, \code{\link{pickcolors}} is called to select colors.
+#' @param pickcolors logical. If TRUE, \code{\link{pickColors}} is called to select colors.
 #' @param lty The line type (see \code{\link{par}} documentation)
 #' @param lwd The line width (see \code{\link{par}} documentation)
 #' @param border The color to draw the border. The default, \code{NULL}, means to use \code{par("fg")}. Use \code{border=NA} to omit borders.
