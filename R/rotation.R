@@ -15,7 +15,7 @@
 #' @details This function returns the coordinates of the points after rotation. If The coordinates of the rotation center are not specified, the rotation center is taken as the means of coordinates.
 #'
 #' @examples
-#' #Example:
+#' # Example:
 #' plot0(c(0,10),c(0,10))
 #' y <- c(6,6,9)
 #' x <- c(2,5,3.5)
@@ -48,5 +48,3 @@ rotation <- function(x, y, rot=90, xrot=NULL, yrot=NULL){
     matxy2 <- mat.rot%*%matxy
     return(list(x=matxy2[1,]+xrot,y=matxy2[2,]+yrot))
 }
-
-

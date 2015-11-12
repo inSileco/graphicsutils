@@ -1,8 +1,32 @@
+#' Pretty range
+#'
+#' This function returns a pretty range of values given a vector of type \code{numeric}.
+#'
+#' @param x A vector of numerical values.
+#'
+#' @keywords range, interval.
+#'
+#' @export
+#'
+#' @return
+#' A vector if two values that correspond to the range of values.
+#'
+#' @details
+#' This function intends to generate range with round values.
+#'
+#' @examples
+#' example 1:
+#' vec <- stats::runif(20)
+#' range(vec)
+#' prettyRange(vec)
+#' example 2:
+#' prettyRange(c(3.85,3.88245))
+
 prettyRange<-
 function(x){
     ## --- format checking
     rgx<-as.numeric(range(x))
-    ## --- Assess the range of values 
+    ## --- Assess the range of values
     dif<- rgx[2L]-rgx[1L]
     pow<- floor(log(dif,10))
     ## --- Get the "fixed part" (e.g. if the range values is [3.85;3.88] then we set 3.8 apart.)

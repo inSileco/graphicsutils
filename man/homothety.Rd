@@ -17,7 +17,7 @@ homothety(x, y, lambda, xcen = NULL, ycen = NULL, add = FALSE, ...)
 
 \item{ycen}{The y coordinate for the center of rotation.}
 
-\item{add}{logical. If TRUE the set of transforned points are drawn as a polygon.}
+\item{add}{logical. If TRUE the set of transformed points are drawn as a polygon.}
 
 \item{...}{Additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).}
 }

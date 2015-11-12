@@ -60,7 +60,7 @@ arrows2 <- function(x0, y0, x1=x0, y1=y0, cex.hg=1, pct.hg=0.1, cex.hh=1, pct.hw
     }
     ## ----
     distpt <- sqrt((x0-x1)^2+(y0-y1)^2)
-    anglpt <- getangle2d(x0,y0,x1,y1)
+    anglpt <- getAngle2d(x0,y0,x1,y1)
     ## ---- Using height reference, hgref integrates the range of y axis and the y/x aspect ration
     mypin <- par()$pin
     myusr <- par()$usr

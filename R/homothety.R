@@ -1,27 +1,27 @@
 #' Homothety
 #'
-#' Compute a homothetic transformation for a set of points. The transformed set of points is optionnaly drawn as a polygon. 
+#' Compute a homothetic transformation for a set of points. The transformed set of points is optionnaly drawn as a polygon.
 #'
 #' @param x The x coordinates of points. It can also be a matrix (see details).
 #' @param y The y coordinates of points.
-#' @param lambda The factor to be used for the homothetetic transformations. 
+#' @param lambda The factor to be used for the homothetetic transformations.
 #' @param xcen The x coordinate for the center of rotation.
 #' @param ycen The y coordinate for the center of rotation.
-#' @param add logical. If TRUE the set of transforned points are drawn as a polygon. 
+#' @param add logical. If TRUE the set of transformed points are drawn as a polygon. 
 #' @param ... Additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).
-#' 
+#'
 #' @keywords homothethy
 #'
 #' @export
 #'
-#' @details 
+#' @details
 #' Details about what is a homothetic transformation, see \url{https://en.wikipedia.org/wiki/Homothetic_transformation}.
 #'
-#' If x is a matrix with more than 2 columns, then x is the first column and y the second one. 
+#' If x is a matrix with more than 2 columns, then x is the first column and y the second one.
 #'
 #' Note that \code{lambda}, \code{xcen} and \code{ycen} are unique meaning that \code{homothety} computes only one homothetic transformation.
-#' 
-#' Drawing the points computed is relevant only if there are more than 2 points. 
+#'
+#' Drawing the points computed is relevant only if there are more than 2 points.
 #'
 #' @examples
 #' # Example:

@@ -17,7 +17,7 @@ pickColors(ramp = rainbow(1024), nb_shades = 1024, rgb = FALSE,
 \item{preview}{logical. If TRUE, colors are displayed once the selection is done. Default is set to FALSE.}
 }
 \value{
-A vector
+A vector containing the colrs selected.
 }
 \description{
 Generate an interactive interface to pick up colors and returns colors selected.
