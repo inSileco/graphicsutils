@@ -41,8 +41,7 @@ getIconNames <- function(){
 
 getIconFile <- function(name, res=128){
 
-    if (!res%in%c(16,22,24,32,48,64,128,256)) stop("available resolution are c(16,22,24,32,48,64,128,256)")
-
+    if (!res%in%c(16,22,24,32,48,64,128,256)) stop("Available resolution are 16, 22, 24, 32, 48, 64, 128 or 256")
     base <- "https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/"
     tmp <- paste0(base,res,"/",name,".png?raw=true")
     tfile <- paste0(tempdir(),name,".png")

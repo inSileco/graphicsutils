@@ -1,9 +1,11 @@
-#' Pick your colors up
+#' Pick colors up
 #'
 #' Generate an interactive interface to pick up colors and returns colors selected.
 #'
 #' @param ramp A vector of colors used as tone palette.
 #' @param nb_shades Number of shades to be displayed once a tone is selected.
+#' @param rgb logical. If TRUE colors are returned as a rgb matrix. Default is set to FALSE.
+#' @param preview logcal. If TRUE the colors are displayed once the selection is done. Default is set to FALSE.
 #'
 #' @keywords color, selection
 #'
@@ -17,9 +19,9 @@
 #' The panel right below present \code{nb_shades} of the selected tones.
 #' The bottom rigth panel presents the selected color that can be stored by clicking on the bottom left panel.
 #' The bottom center panel shows the characteristic of the selcted color.
-#' Finally, to abort, the user can simply clik on the left Stop panel
+#' Finally, to abort, the user can simply clik on the left \code{Stop} panel.
 
-pickcolors <- function(ramp=rainbow(1024), nb_shades=1024, rgb=FALSE){
+pickColors <- function(ramp=rainbow(1024), nb_shades=1024, rgb=FALSE, preview=FALSE){
 
     old.par <- par(no.readonly=TRUE)
     ##
@@ -76,7 +78,7 @@ pickcolors <- function(ramp=rainbow(1024), nb_shades=1024, rgb=FALSE){
       shades <- colorRampPalette(c("white",col_ini,"black"))(nb_shades)
       drawSelector(col_ini, col_foc, shades)
       loc <- locator(1)
-      print(loc)
+      ##
       if (loc$y>0.6){
         if (loc$y>0.8) {
           col_ini <- ramp[floor(nb_ramp*loc$x)+1]
@@ -97,10 +99,12 @@ pickcolors <- function(ramp=rainbow(1024), nb_shades=1024, rgb=FALSE){
       }
     }
 
-    # Sys.sleep(0.8)
     par(old.par)
     dev.off()
 
-    if (rgb) return(col2rgb(slccolor[-1]))
-    else return(slccolor[-1])
+    slccolor <- slccolor[-1]
+    if (preview) showPalette(slccolor, add_number=TRUE)
+
+    if (rgb) return(col2rgb(slccolor))
+    else return(slccolor)
 }
