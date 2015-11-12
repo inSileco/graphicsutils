@@ -23,7 +23,6 @@ Either obj or file must be defined.
 If a path is provided either \code{readPNG} or \code{readJPEG} according to the end of the file extension.
 }
 \examples{
-# Example:
 img <- png::readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
 op <- par(no.readonly = TRUE)
 par(mfrow=c(4,4), mar=rep(2,4))

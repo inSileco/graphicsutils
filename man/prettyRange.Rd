@@ -19,11 +19,11 @@ This function returns a pretty range of values given a vector of type \code{nume
 This function intends to generate range with round values.
 }
 \examples{
-example 1:
+# Example 1:
 vec <- stats::runif(20)
 range(vec)
 prettyRange(vec)
-example 2:
+# Example 2:
 prettyRange(c(3.85,3.88245))
 }
 \keyword{interval.}
