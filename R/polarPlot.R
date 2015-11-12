@@ -32,22 +32,22 @@ function(seqtime, seqval=NULL, rad=1, from=0, to=2*pi, incr=0.005, labelc=NULL, 
     ## --- format checking
     seqtime<- as.matrix(seqtime)
     if (ncol(seqtime)>1L) {
-        seqval <- seqtime[,-1L]
-        seqtime<- seqtime[,1L]
+        seqval <- seqtime[,-1L]
+        seqtime<- seqtime[,1L]
     }
-    else seqval<- as.matrix(seqval)
+    else seqval <- as.matrix(seqval)
     stopifnot(length(seqtime)==length(seqval[]))
     if (from>to) stop("Error : from>to, to use counter-clockwise direction, use 'clockwise' argument !" )
     if (to>2*pi) warning("to>2*pi, it can generate unexpected outputs !", call=FALSE)
 
     ## --- to polar coordinates
-    rgtime<- range(seqtime)
-    rgval<- prettyRange(seqval)
-    lgv<- floor(log(rgval[2]-rgval[1]))
+    rgtime <- range(seqtime)
+    rgval <- prettyRange(seqval)
+    lgv <- floor(log(rgval[2]-rgval[1]))
     ##
-    seqtp<--.5*pi+from + (to-from)*(seqtime-rgtime[1L])/(rgtime[2L]-rgtime[1L])
-    if (clockwise) seqtp<- 2*from - seqtp 
-    seqvp<-rad*(seqval-rgval[1L])/(rgval[2L]-rgval[1L])
+    seqtp <- -.5*pi+from + (to-from)*(seqtime-rgtime[1L])/(rgtime[2L]-rgtime[1L])
+    if (clockwise) seqtp <- 2*from - seqtp 
+    seqvp <- rad*(seqval-rgval[1L])/(rgval[2L]-rgval[1L])
 
     ## --- plot
     if (!add) {
@@ -76,7 +76,7 @@ function(seqtime, seqval=NULL, rad=1, from=0, to=2*pi, incr=0.005, labelc=NULL, 
     }
 
     ## --- Circular ticks
-    mangle<- -.5*pi+from+(0:6)/6*(to-from)
+    mangle <- -.5*pi+from+(0:6)/6*(to-from)
     if (clockwise) mangle<- 2*from-mangle
     print(mangle)
     segments(cos(mangle),sin(mangle),1.05*cos(mangle),1.05*sin(mangle))
@@ -86,12 +86,12 @@ function(seqtime, seqval=NULL, rad=1, from=0, to=2*pi, incr=0.005, labelc=NULL, 
     else labelc <- as.graphicsAnnot(labelc)
     if (!is.na(labelc) && nzchar(labelc)) {
         if (mangle[1]%%(2*pi)==mangle[length(mangle)]%%(2*pi)) {
-            mg1<-mangle[1]
-            mgl<- mangle[length(mangle)]
+            mg1 <- mangle[1]
+            mgl <- mangle[length(mangle)]
             text(1.15*cos(mg1),1.15*sin(mg1), labelc[1], pos=4, cex=1.15, col=tckcol)
             text(1.15*cos(mgl),1.15*sin(mgl), labelc[length(labelc)], pos=2, cex=1.15, col=tckcol)
-            mangle<- mangle[-c(1L,length(mangle))]
-            labelc<- labelc[-c(1L,length(labelc))]
+            mangle <- mangle[-c(1L,length(mangle))]
+            labelc <- labelc[-c(1L,length(labelc))]
         }
         text(1.15*cos(mangle),1.15*sin(mangle), labelc, cex=1.15, col=tckcol)
     }

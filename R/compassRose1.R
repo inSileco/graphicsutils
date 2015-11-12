@@ -28,23 +28,23 @@
 compassRose1<-
 function(x, y=x, rot=0, cex.cr=1, cex.let=1, labels=c("S","W","N","E"), offset=1.2, col=c(1,8), border=c(1,8), lty=1){
     ## ---
-    wh<-strheight("M")
-    rot<-pi*rot/180
+    wh <- strheight("M")
+    rot < -pi*rot/180
     mat.rot<-matrix(c(cos(rot),sin(rot),-sin(rot),cos(rot)),2)
     ## ---
-    lwh<-cex.cr*4*wh
-    swh<-cex.cr*.45*wh
+    lwh <- cex.cr*4*wh
+    swh <- cex.cr*.45*wh
     ## ---
-    rex<- rep(c(0,-1,0,1),each=2)
-    rey<- rep(c(-1,0,1,0),each=2)
-    rex1<-c(lwh*rex,swh*c(-1,1)*rey+rex*swh)
-    rey1<- c(lwh*rey,swh*c(-1,1)*rex+rey*swh)*rep(c(1,-1),each=2,4)
+    rex <- rep(c(0,-1,0,1),each=2)
+    rey <- rep(c(-1,0,1,0),each=2)
+    rex1 <- c(lwh*rex,swh*c(-1,1)*rey+rex*swh)
+    rey1 <- c(lwh*rey,swh*c(-1,1)*rex+rey*swh)*rep(c(1,-1),each=2,4)
     # last multiplication for the color order
-    matxy<-as.matrix(cbind(rex1,rey1))
-    matxy<-matxy%*%mat.rot
+    matxy <- as.matrix(cbind(rex1,rey1))
+    matxy <- matxy%*%mat.rot
     ## ---
-    cr.col<- rep(col,length.out=8)
-    cr.bd<- rep(border,length.out=8)
+    cr.col <- rep(col,length.out=8)
+    cr.bd <- rep(border,length.out=8)
     ## ---
     for (i in 1:8) {
         polygon(cx+c(0,matxy[i,1],matxy[8+i,1]),cy+c(0,matxy[i,2],matxy[8+i,2]), col=cr.col[i], border=cr.bd[i], lty=lty)
