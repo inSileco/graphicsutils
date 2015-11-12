@@ -18,7 +18,7 @@
 #' @param xlab A label for the x axis, defaults to a description of \code{x}.
 #' @param ylab A label for the y axis, defaults to a description of \code{y}.
 #'
-#' @keywords areas, plot, histogramme
+#' @keywords areas, plot, histogram
 #'
 #' @export
 #'
@@ -57,7 +57,7 @@ stackedareas <- function(val, index=NULL, rgy=1, cumul=FALSE, transp=FALSE, lege
     }
     ## ---- Colors
     if (pickcolors==TRUE){
-      colors<-pickColors(colors=nrow(x))
+      colors<-pickColors()
     }
     else {
       if (is.null(col)) {

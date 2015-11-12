@@ -29,7 +29,6 @@ getIcon(name, res = 256, destfile = NULL, col = NULL, quiet = FALSE,
 Draw a compass rose fully customizable.
 }
 \details{
-The list of icons is available on \link[Github]{https://github.com/encharm/Font-Awesome-SVG-PNG/commit/161b9457c423f2dd53ce106360505ad0b286fa3e}
 Resolutions available are 16, 22, 24, 32, 48, 64, 128 or 256.
 To obtain the list of name that can be used in \code{getIcon}, use getIconNames().
 If argument \code{destfile} is not specified, then the icon is stored in a temporary file.
@@ -42,7 +41,11 @@ Colour gradient as it may appear in original icon is not yet handled once the co
 \item \code{getIcon}: Download an icon based on its name.
 }}
 \examples{
-getIconNames()
-getIcon(name="beer", col="grey80")
+names <- getIconNames()
+my_icon <- getIcon(name="beer", col="grey80")
+plotImage(my_icon)
+}
+\references{
+<URL: "https://github.com/encharm/Font-Awesome-SVG-PNG/tree/master/black/png>
 }
 

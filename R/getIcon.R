@@ -11,7 +11,6 @@
 #' @param get_path logical. If TRUE, the path to the file downloaded is returned. Otherwise a objet of class \code{nativeRaster} is returned.
 #'
 #' @details
-#' The list of icons is available on \link[Github]{https://github.com/encharm/Font-Awesome-SVG-PNG/commit/161b9457c423f2dd53ce106360505ad0b286fa3e}
 #' Resolutions available are 16, 22, 24, 32, 48, 64, 128 or 256.
 #' To obtain the list of name that can be used in \code{getIcon}, use getIconNames().
 #' If argument \code{destfile} is not specified, then the icon is stored in a temporary file.
@@ -19,9 +18,13 @@
 #'
 #' @export
 #'
+#' @references
+#' <URL: "https://github.com/encharm/Font-Awesome-SVG-PNG/tree/master/black/png>
+#'
 #' @examples
-#' getIconNames()
-#' getIcon(name="beer", col="grey80")
+#' names <- getIconNames()
+#' my_icon <- getIcon(name="beer", col="grey80")
+#' plotImage(my_icon)
 
 
 #' @describeIn getIcon Return the list of names available for downloading.
