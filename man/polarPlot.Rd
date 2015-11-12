@@ -21,7 +21,7 @@ polarPlot(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi,
 
 \item{labelc}{Character or expression vector of labels to be placed at the tickpoints.}
 
-\item{atc}{The points at which tick-marks are to be drawn. By default (when ‘NULL’) tickmark locations are computed.}
+\item{atc}{The points at which tick-marks are to be drawn. By default (when \code{NULL}) tickmark locations are computed.}
 
 \item{labelr}{Character or expression vector of labels to be placed at the radial-axis marks.}
 
@@ -29,7 +29,7 @@ polarPlot(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi,
 
 \item{clockwise}{logical. If TRUE, the plot mus de read clockwise, otherwise, counter-clockwise.}
 
-\item{n_signif}{Number of significant number to be displayed (used when labelc is null).}
+\item{n_signif}{Number of significant number to be displayed (used when labelc is \code{NULL}).}
 
 \item{add}{logical. Add to current plot?}
 

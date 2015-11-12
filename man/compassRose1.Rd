@@ -2,11 +2,15 @@
 % Please edit documentation in R/compassRose1.R
 \name{compassRose1}
 \alias{compassRose1}
+\alias{compassRose2}
 \title{Compass Rose}
 \usage{
 compassRose1(x, y = x, rot = 0, cex.cr = 1, cex.let = 1,
   labels = c("S", "W", "N", "E"), offset = 1.2, col = c(1, 8),
   border = c(1, 8), lty = 1)
+
+compassRose2(cx = 0, cy = 0, rot = 0, cex.cr = 1, cex.let = 1,
+  offset = 1.2, col = c(1, 8), border = c(1, 8), lty = 1)
 }
 \arguments{
 \item{x}{The x coordinates of the center of the compass rose.}
@@ -41,6 +45,8 @@ There already exists one compass rose by Jim Lemon in \code{sp} package.
 \section{Functions}{
 \itemize{
 \item \code{compassRose1}: A compass rose with the four cardinal directions.
+
+\item \code{compassRose2}: A compass rose with the four cardinal directions and additionnal directions.
 }}
 \examples{
 plot0()
