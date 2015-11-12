@@ -1,6 +1,8 @@
 # DESCRIPTION
 *graphicsutils* is an R package including functions that add the graphical facilities. It is basically a set of functions, not necessary related, as the valuable package [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html). This should help R users that use basic graphic packages such as *graphics*. It is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package.
 
+Travis [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()
+
 # Installation
 You can install this package using the [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package. Once "devtools" is installed and loaded, enter:
 

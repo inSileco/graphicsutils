@@ -102,7 +102,7 @@ pickColors <- function(ramp=rainbow(1024), nb_shades=1024, rgb=FALSE, preview=FA
     par(old.par)
     dev.off()
 
-    slccolor <- slccolor[-1]
+    slccolor <- slccolor[-1]
     if (preview) showPalette(slccolor, add_number=TRUE)
 
     if (rgb) return(col2rgb(slccolor))
