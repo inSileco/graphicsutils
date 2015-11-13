@@ -26,10 +26,10 @@
 #' img<-png::readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
 #' n<-15
 #' plot0(c(0,1),c(0,1))
-#' pchimage(0.1+0.8*stats::runif(n), 0.1+0.8*stats::runif(n), cex.x=0.2+1.6*stats::runif(n),
+#' pchImage(0.1+0.8*stats::runif(n), 0.1+0.8*stats::runif(n), cex.x=0.2+1.6*stats::runif(n),
 #' obj=img, angle=360*runif(n))
 
-pchimage<-
+pchImage<-
 function(x, y, obj=NULL,file=NULL, cex.x=1, cex.y=cex.x, atcenter=TRUE, add=TRUE,...){
     ## obj or file must be defined
     stopifnot(!is.null(c(obj,file)))
