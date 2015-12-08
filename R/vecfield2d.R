@@ -7,6 +7,7 @@
 #' @param grid A matrix with two columns that is optionnally used to alternatively define the coordinates of the vector field.
 #' @param FUN The function that describes the dynamical system (see details).
 #' @param args The parameters of the dynamical system (see details).
+#' @param name_var The name of the vector of dynamic variable that is used by \code{FUN}.
 #' @param cex.x The magnification coefficient to be used for lengths of vectors along the x axis.
 #' @param cex.y The magnification coefficient to be used for lengths of vectors along the y axis.
 #' @param log logical. If TRUE, the lenghts of arrows are log-transformed.
@@ -26,24 +27,29 @@
 #' # Example:
 #' systLin <- function(X, beta){
 #'     Y <- matrix(0,ncol=2)
-#'     Y[1] <- beta[1]*X[1]+beta[2]*X[2]
-#'     Y[2] <- beta[3]*X[1]+beta[4]*X[2]
+#'     Y[1] <- beta[1,1]*X[1]+beta[1,2]*X[2]
+#'     Y[2] <- beta[2,1]*X[1]+beta[2,2]*X[2]
 #'     return(Y)
 #' }
 #' seqx <- seq(-2,2,0.35)
 #' seqy <- seq(-2,2,0.35)
+#' beta1 <- matrix(c(0,-1,1,0),2)
 #' # Plot 1:
-#' vecfield2d(seqx, seqy, FUN=systLin, args=c(0,-1,1,0))
+#' vecfield2d(seqx, seqy, FUN=systLin, args=list(beta=beta1))
 #' # Plot 2:
-#' vecfield2d(seqx, seqy, FUN=systLin, args=c(0,-1,1,0), log=FALSE, cex.hh=1.4, cex.sk=0.8, col=8)
+#' plot0(c(-2.2,2.2),c(-2.2,2.2))
+#' vecfield2d(seqx, seqy, FUN=systLin, args=list(beta=beta1), cex.x=0.08, cex.arr=0.4, log=FALSE, border=NA,cex.hh=1.2, #' cex.shr=0.6, col=8, add=TRUE)
 
 
-vecfield2d <- function(seqx, seqy, grid=NULL, FUN, args, cex.x=0.25, cex.y=0.25, log=TRUE, add=FALSE, ...){
+vecfield2d <- function(seqx, seqy, grid=NULL, FUN, args, name_var="X", cex.x=0.25, cex.y=cex.x, log=TRUE, add=FALSE, ...){
     ## ----
     gridin <- expand.grid(seqx, seqy)
     if (!is.null(grid)) gridin <- grid
     gridout <- gridin*0
-    for (i in 1:nrow(gridin)) gridout[i,] <- do.call(FUN, list(X=c(gridin[i,1], gridin[i,2]), unlist(args)))
+    for (i in 1:nrow(gridin)) {
+      args[[name_var]] <- c(gridin[i,1], gridin[i,2])
+      gridout[i,] <- do.call(FUN, args)
+    }
     if (!add) plot0(range(seqx), range(seqy))
     ## ----
     for (i in 1:nrow(gridout)) {
