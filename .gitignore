@@ -12,8 +12,7 @@
 vignettes/*.html
 vignettes/*.pdf
 
-# "todo" folders
-./R/todo/**
+# folders
 ./R/deprecated/**
 ./.DS_Store
 ./R/.DS_Store

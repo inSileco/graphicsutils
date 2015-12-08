@@ -7,6 +7,7 @@
 #' @param rot Angle of the rotation expressed in degree.
 #' @param xrot Optional x coordinate for the center of rotation.
 #' @param yrot Optional y coordinate for the center of rotation.
+#' @param radian logical. If TRUE, then radian are used rather that degree.
 #'
 #' @keywords rotation
 #'
@@ -25,7 +26,7 @@
 #' myrot2 <- rotation(x, y, rot=-40, 0, 0)
 #' polygon(myrot2$x,myrot2$y, lwd=2, border=3)
 
-rotation <- function(x, y, rot=90, xrot=NULL, yrot=NULL){
+rotation <- function(x, y, rot=90, xrot=NULL, yrot=NULL, radian=FALSE){
     ## Format checking
     x <- as.matrix(x)
     stopifnot(ncol(x)<=2)
@@ -43,7 +44,7 @@ rotation <- function(x, y, rot=90, xrot=NULL, yrot=NULL){
     if (is.null(xrot)) xrot<-mean(x)
     if (is.null(yrot)) yrot<-mean(y)
     matxy <- matrix(c(x-xrot,y-yrot), nrow=2, byrow=TRUE)
-    rot <- pi*rot/180
+    if (!radian) rot <- pi*rot/180
     mat.rot <- matrix(c(cos(rot),sin(rot),-sin(rot),cos(rot)),2)
     matxy2 <- mat.rot%*%matxy
     return(list(x=matxy2[1,]+xrot,y=matxy2[2,]+yrot))
