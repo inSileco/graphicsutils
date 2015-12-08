@@ -1,24 +1,23 @@
 #' Translation
 #'
-#' Compute a translation for a set of points. The transformed set of points is optionnaly add to the current plot. 
+#' Compute a translation for a set of points. The transformed set of points is optionnaly add to the current plot.
 #'
 #' @param x The x coordinates of points. It can also be a matrix (see details).
 #' @param y The y coordinates of points.
 #' @param xtrans The x vector of the translation.
 #' @param ytrans The y vector of the translation..
-#' @param add logical. If TRUE the set of transforned points is drawn as a polygon. 
+#' @param add logical. If TRUE the set of transforned points is drawn as a polygon.
 #' @param ... Additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).
-#' 
+#'
 #' @keywords translation
 #'
 #' @export
 #'
-#' @details 
-#' Details about what is a translation, see \url{https://en.wikipedia.org/wiki/Translation_(geometry)}.
+#' @details
+#' For details about what is a translation, see \url{https://en.wikipedia.org/wiki/Translation_(geometry)}.
 #'
-#' If x is a matrix with more than 2 columns, then x is the first column and y the second one. 
-#' 
-#' Drawing the points computed is relevant only if there are more than 2 points. 
+#' If x is a matrix with more than 2 columns, then x is the first column and y the second one.
+#'
 #'
 #' @examples
 #' # Example 1:

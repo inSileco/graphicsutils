@@ -1,15 +1,16 @@
-#' Vector Fields. 
+#' Vector Fields.
 #'
-#' Draw a vector field associated to a dynamical system of dimension 2. 
+#' Draw a vector field associated to a dynamical system of dimension 2.
 #'
-#' @param seqx The x coordinates of the set of vector.
-#' @param seqy The y coordinates of the set of vector.
+#' @param seqx The set of x coordinates of the vector field to be drawn.
+#' @param seqy The set of y coordinates of the vector field  to be drawn.
+#' @param grid A matrix with two columns that is optionnally used to alternatively define the coordinates of the vector field.
 #' @param FUN The function that describes the dynamical system (see details).
 #' @param args The parameters of the dynamical system (see details).
-#' @param cex.x The magnification coefficient to be used for the x coordinates of the vectors.
-#' @param cex.y The magnification coefficient to be used for the y coordinates of the vectors.
-#' @param log logical. If TRUE, the lenghts of arrows are log-transformed. 
-#' @param add logical. If TRUE, the vector field is added on the current plot. 
+#' @param cex.x The magnification coefficient to be used for lengths of vectors along the x axis.
+#' @param cex.y The magnification coefficient to be used for lengths of vectors along the y axis.
+#' @param log logical. If TRUE, the lenghts of arrows are log-transformed.
+#' @param add logical. If TRUE, the vector field is added on the current plot.
 #' @param ... Additionnal arguments to be passed to \code{arrows2}.
 #'
 #' @keywords empty plot
@@ -17,9 +18,9 @@
 #' @export
 #'
 #' @details
-#' The \code{FUN} function to be used must be a function of two arguments. The first argument must contain the dynamical variables 
-#' as a vector of two elements. Values in \code{seqx} and \code{seqy} will be used as the values of the dynamical variables.
-#' The second arguments must contain all the other parameters that shapes the dynamical system. 
+#' The \code{FUN} function to be used must be a function of two arguments. The first argument must contain the dynamical variables
+#' as a vector X of two elements. Values in \code{seqx} and \code{seqy} will be used as the values of the dynamical variables.
+#' The second arguments must contain all the other parameters that shapes the dynamical system.
 #'
 #' @examples
 #' # Example:
@@ -31,17 +32,18 @@
 #' }
 #' seqx <- seq(-2,2,0.35)
 #' seqy <- seq(-2,2,0.35)
-#' # Plot 1: 
+#' # Plot 1:
 #' vecfield2d(seqx, seqy, FUN=systLin, args=c(0,-1,1,0))
-#' # Plot 2: 
+#' # Plot 2:
 #' vecfield2d(seqx, seqy, FUN=systLin, args=c(0,-1,1,0), log=FALSE, cex.hh=1.4, cex.sk=0.8, col=8)
 
 
-vecfield2d <- function(seqx, seqy, FUN, args, cex.x=0.25, cex.y=0.25, log=TRUE, add=FALSE, ...){
+vecfield2d <- function(seqx, seqy, grid=NULL, FUN, args, cex.x=0.25, cex.y=0.25, log=TRUE, add=FALSE, ...){
     ## ----
     gridin <- expand.grid(seqx, seqy)
+    if (!is.null(grid)) gridin <- grid
     gridout <- gridin*0
-    for (i in 1:nrow(gridin)) gridout[i,] <- FUN(c(gridin[i,1], gridin[i,2]), args)
+    for (i in 1:nrow(gridin)) gridout[i,] <- do.call(FUN, list(X=c(gridin[i,1], gridin[i,2]), unlist(args)))
     if (!add) plot0(range(seqx), range(seqy))
     ## ----
     for (i in 1:nrow(gridout)) {
