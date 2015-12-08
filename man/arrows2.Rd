@@ -4,62 +4,50 @@
 \alias{arrows2}
 \title{Add arrows to a plot.}
 \usage{
-arrows2(x0, y0, x1 = x0, y1 = y0, cex.hg = 1, pct.hg = 0.1,
-  cex.hh = 1, pct.hw = 0.1, cex.sk = 1, pct.spc = 0,
-  twoheaded = FALSE, relativ = TRUE, ...)
+arrows2(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1,
+  cex.shr = 1, cex.hh = 1, cex.hl = 1, prophead = TRUE,
+  twoheaded = FALSE, ...)
 }
 \arguments{
-\item{x0}{The x coordinates of points from which to draw.}
+\item{x0}{The x coordinates of points from which to draw arrows.}
 
-\item{y0}{The y coordinates of points from which to draw.}
+\item{y0}{The y coordinates of points from which to draw arrows.}
 
-\item{x1}{The x coordinates of points to which to draw.}
+\item{x1}{The x coordinates of points to which to draw arrows.}
 
-\item{y1}{The y coordinates of points to which to draw.}
+\item{y1}{The y coordinates of points to which to draw arrows.}
 
-\item{cex.hg}{The magnification coefficient to be used for the heights of the arrows.}
+\item{off0}{Offset of points from which to draw arrows.}
 
-\item{pct.hg}{The height of the arrows expressed as a percentage of the total length (see details).}
+\item{off1}{Offset of points to which to draw arrows.}
 
-\item{cex.hh}{The magnification coefficient to be used for the height of the heads of the arrows.}
+\item{cex.arr}{The magnification coefficient to be used for the heights of the arrows.}
 
-\item{pct.hw}{The length of the heads of the arrows expressed as a percentage of the total length.}
+\item{cex.shr}{The magnification coefficient to be used to change the height of arrows towards their heads.}
 
-\item{cex.sk}{The magnification coefficient to be used to chance the height of the arrows towards the heads.}
+\item{cex.hh}{The magnification coefficient to be used for the heights of arrows' head.}
 
-\item{pct.spc}{The proportion of the distance between the points to leave as space before and after the arrow.}
+\item{cex.hl}{The magnification coefficient to be used for the lengths of arrows' head.}
 
-\item{twoheaded}{logical. If TRUE two headed arrows are drawn, default is FALSE.}
+\item{prophead}{logical. If TRUE arrows are drawn with head proportionnal to the length of the arrows.}
 
-\item{relativ}{logical. If TRUE, the heights of arrows are proportional to the lengths, default is TRUE.}
+\item{twoheaded}{logical. If TRUE two-headed arrows are drawn, default is FALSE.}
 
 \item{...}{Additional arguments to be passed to \code{polygon} function.}
 }
 \description{
-Draw arrows between pairs of points.
-}
-\details{
-If \code{relativ} is FALSE (as it is by default), then when \code{cex.hh} is set to 1, heights represent 10\% of the length of arrows.
-If \code{relativ} is FALSE then a reference length is computed according to bith the y axis and the x/y ratio of the current plot.
-In both case the height can be ajusted using \code{cex.hh}.
-}
-\note{
-When arrows are not parallel to one axis, right angles within arrows are not right unless the x/y ration is set to 1.
+Draw arrows between pairs of points. Arrows drawn are fully customizable by using parameters of \code{polygon} function.
 }
 \examples{
 # Example 1:
-par(mfrow=c(1,2))
 plot0(c(0,10),c(0,10))
-arrows2(2,c(4,6,8),x1=c(4,6,8),y1=c(4,6,8), col=8, pct.spc=0.025)
-plot0(c(0,10),c(0,10))
-arrows2(2,c(4,6,8),x1=c(4,6,8),y1=c(4,6,8), col=8, pct.spc=0.025, relativ=FALSE)
+arrows2(1,9,8)
+arrows2(1,8,8,1,cex.hh=1.2, cex.hl=1.2, col="grey30", lwd=1.2, prophead=TRUE, twoheaded=TRUE)
 
 # Example 2:
-plot0(c(0,10),c(0,10), asp=1)
-arrows2(1, 9, x1=9,y1=6, lwd=2, col=4, border=2, lty=2)
-arrows2(1, 7, x1=9,y1=4, lwd=2, cex.hg=0.8, cex.hh=2, cex.sk=0.5, col=4, border=2, lwd=2)
-arrows2(1, 5, x1=9,y1=2, lwd=2, cex.hg=0.6, cex.hh=2, cex.sk=1, pct.hw=0.18, twoheaded=TRUE,
-col=4, border=2, lwd=2)
+plot0(c(0,1),c(0,1))
+arrows2(runif(2), runif(2), x1=runif(2), y1=runif(2))
+arrows2(runif(2), runif(2), x1=runif(2), y1=runif(2), prophead=FALSE, lty=3)
 }
 \keyword{arrows}
 

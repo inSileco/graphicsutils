@@ -4,21 +4,25 @@
 \alias{vecfield2d}
 \title{Vector Fields.}
 \usage{
-vecfield2d(seqx, seqy, FUN, args, cex.x = 0.25, cex.y = 0.25, log = TRUE,
-  add = FALSE, ...)
+vecfield2d(seqx, seqy, grid = NULL, FUN, args, name_var = "X",
+  cex.x = 0.25, cex.y = cex.x, log = TRUE, add = FALSE, ...)
 }
 \arguments{
-\item{seqx}{The x coordinates of the set of vector.}
+\item{seqx}{The set of x coordinates of the vector field to be drawn.}
 
-\item{seqy}{The y coordinates of the set of vector.}
+\item{seqy}{The set of y coordinates of the vector field  to be drawn.}
+
+\item{grid}{A matrix with two columns that is optionnally used to alternatively define the coordinates of the vector field.}
 
 \item{FUN}{The function that describes the dynamical system (see details).}
 
 \item{args}{The parameters of the dynamical system (see details).}
 
-\item{cex.x}{The magnification coefficient to be used for the x coordinates of the vectors.}
+\item{name_var}{The name of the vector of dynamic variable that is used by \code{FUN}.}
 
-\item{cex.y}{The magnification coefficient to be used for the y coordinates of the vectors.}
+\item{cex.x}{The magnification coefficient to be used for lengths of vectors along the x axis.}
+
+\item{cex.y}{The magnification coefficient to be used for lengths of vectors along the y axis.}
 
 \item{log}{logical. If TRUE, the lenghts of arrows are log-transformed.}
 
@@ -31,23 +35,25 @@ Draw a vector field associated to a dynamical system of dimension 2.
 }
 \details{
 The \code{FUN} function to be used must be a function of two arguments. The first argument must contain the dynamical variables
-as a vector of two elements. Values in \code{seqx} and \code{seqy} will be used as the values of the dynamical variables.
+as a vector X of two elements. Values in \code{seqx} and \code{seqy} will be used as the values of the dynamical variables.
 The second arguments must contain all the other parameters that shapes the dynamical system.
 }
 \examples{
 # Example:
 systLin <- function(X, beta){
     Y <- matrix(0,ncol=2)
-    Y[1] <- beta[1]*X[1]+beta[2]*X[2]
-    Y[2] <- beta[3]*X[1]+beta[4]*X[2]
+    Y[1] <- beta[1,1]*X[1]+beta[1,2]*X[2]
+    Y[2] <- beta[2,1]*X[1]+beta[2,2]*X[2]
     return(Y)
 }
 seqx <- seq(-2,2,0.35)
 seqy <- seq(-2,2,0.35)
+beta1 <- matrix(c(0,-1,1,0),2)
 # Plot 1:
-vecfield2d(seqx, seqy, FUN=systLin, args=c(0,-1,1,0))
+vecfield2d(seqx, seqy, FUN=systLin, args=list(beta=beta1))
 # Plot 2:
-vecfield2d(seqx, seqy, FUN=systLin, args=c(0,-1,1,0), log=FALSE, cex.hh=1.4, cex.sk=0.8, col=8)
+plot0(c(-2.2,2.2),c(-2.2,2.2))
+vecfield2d(seqx, seqy, FUN=systLin, args=list(beta=beta1), cex.x=0.08, cex.arr=0.4, log=FALSE, border=NA,cex.hh=1.2, #' cex.shr=0.6, col=8, add=TRUE)
 }
 \keyword{empty}
 \keyword{plot}

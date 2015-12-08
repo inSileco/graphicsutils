@@ -23,11 +23,9 @@ translation(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...)
 Compute a translation for a set of points. The transformed set of points is optionnaly add to the current plot.
 }
 \details{
-Details about what is a translation, see \url{https://en.wikipedia.org/wiki/Translation_(geometry)}.
+For details about what is a translation, see \url{https://en.wikipedia.org/wiki/Translation_(geometry)}.
 
 If x is a matrix with more than 2 columns, then x is the first column and y the second one.
-
-Drawing the points computed is relevant only if there are more than 2 points.
 }
 \examples{
 # Example 1:
