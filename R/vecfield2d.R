@@ -31,18 +31,19 @@
 #'     Y[2] <- beta[2,1]*X[1]+beta[2,2]*X[2]
 #'     return(Y)
 #' }
-#' seqx <- seq(-2,2,0.35)
-#' seqy <- seq(-2,2,0.35)
+#' seqx <- seq(-2,2,0.31)
+#' seqy <- seq(-2,2,0.31)
 #' beta1 <- matrix(c(0,-1,1,0),2)
 #' # Plot 1:
 #' vecfield2d(seqx, seqy, FUN=systLin, args=list(beta=beta1))
 #' # Plot 2:
-#' plot0(c(-2.2,2.2),c(-2.2,2.2))
-#' vecfield2d(seqx, seqy, FUN=systLin, args=list(beta=beta1), cex.x=0.2, cex.arr=0.4, log=FALSE,
-#' border=NA,cex.hh=1.2, cex.shr=0.6, col=8, add=TRUE)
+#' par(mar=c(2,2,2,2))
+#' vecfield2d(seqx, seqy, FUN=systLin, args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
+#'    border=NA,cex.hh=1.2, cex.shr=0.6, col=8)
+#' abline(v=0,h=0)
 
 
-vecfield2d <- function(seqx, seqy, grid=NULL, FUN, args, name_var="X", cex.x=0.25, cex.y=cex.x, log=TRUE, add=FALSE, ...){
+vecfield2d <- function(seqx, seqy, grid=NULL, FUN, args, name_var="X", cex.x=0.25, cex.y=cex.x, log=FALSE, add=FALSE, ...){
     ## ----
     gridin <- expand.grid(seqx, seqy)
     if (!is.null(grid)) gridin <- grid
