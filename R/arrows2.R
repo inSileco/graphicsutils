@@ -2,6 +2,8 @@
 #'
 #' Draw arrows between pairs of points. Arrows drawn are fully customizable by using parameters of \code{polygon} function.
 #'
+#' @export
+#'
 #' @param x0 The x coordinates of points from which to draw arrows.
 #' @param y0 The y coordinates of points from which to draw arrows.
 #' @param x1 The x coordinates of points to which to draw arrows.
@@ -15,11 +17,10 @@
 #' @param prophead logical. If TRUE arrows are drawn with head proportionnal to the length of the arrows.
 #' @param twoheaded logical. If TRUE two-headed arrows are drawn, default is FALSE.
 #' @param ... Additional arguments to be passed to \code{polygon} function.
-
+#'
 #' @keywords arrows
 #'
-#' @export
-#'
+#' @seealso \code{\link[graphics]{arrows}}, \code{\link[shape]{Arrows}}
 #'
 #' @examples
 #' # Example 1:

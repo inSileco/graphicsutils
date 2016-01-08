@@ -2,6 +2,8 @@
 #'
 #' Draw a polar plot.
 #'
+#' @export
+#'
 #' @param seqtime Sequence of time values (equivalent to the x axis).
 #' @param seqval Sequence of values of interest (radial axis, equivalent to the y axis).
 #' @param rad Radius of the circle.
@@ -21,7 +23,7 @@
 #' @details
 #' Polar Plot
 #'
-#' @export
+#' @seealso \code{\link[plotrix]{polar.plot}}
 #'
 #' @examples
 #' polarPlot(1:20, stats::runif(20), to=1.8*pi, col=2, border="grey80")

@@ -12,6 +12,8 @@
 #'
 #' @details The function is based on the plot.defaut function. It simply makes the creation of an empty plot quicker
 #'
+#' @seealso \code{\link[shape]{emplyplot}}
+#'
 #' @examples
 #' # Example 1:
 #' plot0()

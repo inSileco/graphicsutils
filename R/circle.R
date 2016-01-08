@@ -2,6 +2,8 @@
 #'
 #' Draw circles in a flexible way.
 #'
+#' @export
+#'
 #' @param x The x coordinates of the centers of the circles.
 #' @param y The y coordinates of the centers of the circles.
 #' @param radi The radii of the circles.
@@ -13,13 +15,13 @@
 #'
 #' @keywords circle
 #'
-#' @export
-#'
 #' @details
 #' The number of circles drawn is given by the maximum argument length amng \code{x}, \code{y}, \code{radi}, \code{from} and \code{to} arguments.
 #' Sizes are adjusted using \code{\link{rep_len}} function.
 #'
 #' To plot circles, \code{\link{polygon}} function is called.
+#'
+#' @seealso \code{\link[graphics]{symbols}}, \code{\link[plotrix]{draw.circle}}, \code{\link[plotrix]{draw.arc}}.
 #'
 #' @examples
 #' #Example 1:

@@ -16,7 +16,7 @@
 #' @examples
 #' showPalette(floor(runif(30,1,9)), add_number=TRUE)
 
-showPalette <- function(ramp, inline=FALSE, add_number=FALSE){
+showPalette <- function(ramp, inline=FALSE, add_number=FALSE, cex_number=1.2){
 
     old.par <- par(no.readonly=TRUE)
     nb_ramp <- length(ramp)
@@ -37,8 +37,8 @@ showPalette <- function(ramp, inline=FALSE, add_number=FALSE){
       plot0()
       plotAreaColor(col=ramp[i])
       if (add_number) {
-        text(0,0,i, cex=1.2, pos=3L)
-        text(0,0,i, cex=1.2, pos=1L, col="white")
+        text(0,0,i, cex=cex_number, pos=3L)
+        text(0,0,i, cex=cex_number, pos=1L, col="white")
       }
       box(col="white")
     }
