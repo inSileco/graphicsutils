@@ -31,11 +31,6 @@ The function is based on the plot.defaut function. It simply makes the creation 
 \examples{
 # Example 1:
 plot0(c(0,10),c(0,10))
-img <- png::readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
-mypal <- colorRampPalette(c("grey95","grey5"))
-gradientPolygons(x=c(2,8,8,2), y=c(4.6,3.5,6.5,5.4), color_palette=mypal(100), angle=0, radian=TRUE, lwd=2)
-gradientPolygons(c(2,8,8,2), c(4.6,3.5,6.5,5.4), image=system.file("img", "Rlogo.png", package="png"), angle=pi/4, res=1000, radian=TRUE, lwd=2)
-# Example 2:
 }
 \keyword{empty}
 \keyword{plot}

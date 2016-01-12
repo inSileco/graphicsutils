@@ -18,11 +18,6 @@
 #' @examples
 #' # Example 1:
 #' plot0(c(0,10),c(0,10))
-#' img <- png::readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
-#' mypal <- colorRampPalette(c("grey95","grey5"))
-#' gradientPolygons(x=c(2,8,8,2), y=c(4.6,3.5,6.5,5.4), color_palette=mypal(100), angle=0, radian=TRUE, lwd=2)
-#' gradientPolygons(c(2,8,8,2), c(4.6,3.5,6.5,5.4), image=system.file("img", "Rlogo.png", package="png"), angle=pi/4, res=1000, radian=TRUE, lwd=2)
-#' # Example 2:
 
 
 gradientPolygons <- function(x, y, color_palette=rainbow(100), image=NULL, res=300, angle=0, radian=FALSE, ...){
@@ -60,17 +55,17 @@ gradientPolygons <- function(x, y, color_palette=rainbow(100), image=NULL, res=3
         else pict <- image
     }
     else stop("class(image) is neither 'nativeRaster' nor a bitmap file")
-    ##
-    dmig <- dim(pict)
-    ptx <- rgx[1] + (rgx[2]-rgx[1])*rep(seq(1/res,1,length.out=dmig[1]), each=dmig[2])
-    pty <- rgy[1] + (rgy[2]-rgy[1])*rep(seq(1/res,1,length.out=dmig[2]), each=dmig[1])
-    pt_incl <- pointsInPolygon(ptx, pty, x, y)
-    ##
-    # mat <- matrix(pict, dmig[1], dmig[2])
-    # mat[!pt_incl] <- 0L
-    grid::grid.raster(mat, rgx[1], rgy[1], rgx[2], rgy[2], col=2)
-    # seqx <- rep(seq(1/res,1,length.out=res), each=res)
-    # seqy <- rep(seq(1/res,1,length.out=res), res)
+  #   ##
+  #   dmig <- dim(pict)
+  #   ptx <- rgx[1] + (rgx[2]-rgx[1])*rep(seq(1/res,1,length.out=dmig[1]), each=dmig[2])
+  #   pty <- rgy[1] + (rgy[2]-rgy[1])*rep(seq(1/res,1,length.out=dmig[2]), each=dmig[1])
+  #   pt_incl <- pointsInPolygon(ptx, pty, x, y)
+  #   ##
+  #   # mat <- matrix(pict, dmig[1], dmig[2])
+  #   # mat[!pt_incl] <- 0L
+  #   grid::grid.raster(mat, rgx[1], rgy[1], rgx[2], rgy[2], col=2)
+  #   # seqx <- rep(seq(1/res,1,length.out=res), each=res)
+  #   # seqy <- rep(seq(1/res,1,length.out=res), res)
   }
   graphics::polygon(x, y, ...)
 }
