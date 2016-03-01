@@ -9,6 +9,7 @@
 #' @param cex.x A numerical value giving the amount by which the horizontal width of the image should be magnified relative to the default.
 #' @param cex.y A numerical value giving the amount by which the vertical width of the image should be magnified relative To the default.
 #' @param atcenter logical. If TRUE x and y coordinates describe the center of the image. Otherwise they represent the bottom-left coordinates of the image.
+#' @param col Optionnal color use to fill pixels whose values are not 0
 #' @param add logical. Should images be added on the current graph ? If FALSE a new plot is created.
 #' @param ... Additional arguments to be passed to \code{rasterImage} function.
 #'
@@ -23,14 +24,14 @@
 #'
 #' @examples
 #' # Example:
-#' img<-png::readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
-#' n<-15
-#' plot0(c(0,1),c(0,1))
-#' pchImage(0.1+0.8*stats::runif(n), 0.1+0.8*stats::runif(n), cex.x=0.2+1.6*stats::runif(n),
-#' obj=img, angle=360*runif(n))
+ img<-png::readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
+ n<-15
+ plot0(c(0,1),c(0,1))
+ pchImage(0.1+0.8*stats::runif(n), 0.1+0.8*stats::runif(n), cex.x=0.2+1.6*stats::runif(n),
+ obj=img, angle=360*runif(n), col=2)
 
 pchImage<-
-function(x, y, obj=NULL,file=NULL, cex.x=1, cex.y=cex.x, atcenter=TRUE, add=TRUE,...){
+function(x, y, obj=NULL,file=NULL, cex.x=1, cex.y=cex.x, atcenter=TRUE, add=TRUE, col=NULL, ...){
     ## obj or file must be defined
     stopifnot(!is.null(c(obj,file)))
     ## obj class must be "nativeRaster"
@@ -49,6 +50,7 @@ function(x, y, obj=NULL,file=NULL, cex.x=1, cex.y=cex.x, atcenter=TRUE, add=TRUE
     dy<-cex.y*0.05*(par()$usr[4] - par()$usr[3])
     ##
     if (!add) plot(x,y,type="n")
+    if (!is.null(col)) obj[which(obj!=0)] <- col
     if (atcenter==TRUE) rasterImage(obj, x-dx, y-dy, x+dx, y+dy, ...)
     else rasterImage(obj, x, y, x+2*dx, y+2*dy, ...)
 }
