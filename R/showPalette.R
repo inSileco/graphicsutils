@@ -5,6 +5,7 @@
 #' @param ramp A vector of colors.
 #' @param inline logical. If TRUE, the colors are displayed on a single row.
 #' @param add_number logical. If TRUE, color vector's indices are added.
+#' @param cex_num The maginification coefficient of the color vector's indices.
 #'
 #' @keywords color, selection
 #'
@@ -16,7 +17,7 @@
 #' @examples
 #' showPalette(floor(runif(30,1,9)), add_number=TRUE)
 
-showPalette <- function(ramp, inline=FALSE, add_number=FALSE, cex_number=1.2){
+showPalette <- function(ramp, inline=FALSE, add_number=FALSE, cex_num=1.2){
 
     old.par <- par(no.readonly=TRUE)
     nb_ramp <- length(ramp)
@@ -37,8 +38,8 @@ showPalette <- function(ramp, inline=FALSE, add_number=FALSE, cex_number=1.2){
       plot0()
       plotAreaColor(col=ramp[i])
       if (add_number) {
-        text(0,0,i, cex=cex_number, pos=3L)
-        text(0,0,i, cex=cex_number, pos=1L, col="white")
+        text(0,0,i, cex=cex_num, pos=3L)
+        text(0,0,i, cex=cex_num, pos=1L, col="white")
       }
       box(col="white")
     }

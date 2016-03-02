@@ -33,7 +33,7 @@ polarPlot(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi,
 
 \item{clockwise}{logical. If TRUE, the plot must de read clockwise, otherwise, counter-clockwise.}
 
-\item{n_signif}{Number of significant number to be displayed (used when labelc is \code{NULL}).}
+\item{n_signif}{Number of significant numbers to be displayed (used when labelc is \code{NULL}).}
 
 \item{add}{logical. Add to current plot?}
 

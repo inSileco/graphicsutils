@@ -16,7 +16,7 @@
 #' @param tckcol Color of the tickmarks.
 #' @param labelr Character or expression vector specifying the _text_ to be placed at the radial-axis marks.
 #' @param clockwise logical. If TRUE, the plot must de read clockwise, otherwise, counter-clockwise.
-#' @param n_signif Number of significant number to be displayed (used when labelc is \code{NULL}).
+#' @param n_signif Number of significant numbers to be displayed (used when labelc is \code{NULL}).
 #' @param add logical. Add to current plot?
 #' @param ... Additional argument to be passed to \code{polygon} function.
 #'

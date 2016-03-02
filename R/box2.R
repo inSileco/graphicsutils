@@ -3,16 +3,16 @@
 #' Draw a Box around a Plot
 #'
 #' @param side A numerical/character vector or a character string specifying which side(s) of the plot/figure the box is to be drawn (see details).
-#' @param which A character, one of ‘plot’, ‘figure’, ‘inner’ and ‘outer’.
+#' @param which A character, one of \code{plot}, \code{figure}, \code{inner} and \code{outer}.
 #' @param col2fill The color to be used to fill the box.
-#' @param ... Further graphical parameters (see ‘par’) may also be supplied as arguments, particularly, line type, ‘lty’, line width, ‘lwd’, color, ‘col’ and for ‘type = "b"’, ‘pch’.  Also the line characteristics ‘lend’, ‘ljoin’ and ‘lmitre’.
+#' @param ... Further graphical parameters (see \code{\link[graphics]{par}}) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = "b"}, \code{pch}.  Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.
 #'
 #' @keywords box
 #'
 #' @export
 #'
 #' @details This function intends to give more flexibility to the \code{\link[graphics]{box}} function.
-#' As \code{which} parameter, users provides an object first coerced by ‘as.character’ to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{'1', '2', '3', '4', 'b', 'l', 't', 'r'} where 1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right.
+#' As \code{which} parameter, users provides an object first coerced by ‘as.character’ to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{1, 2, 3, 4, b, l, t, r} where 1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right.
 #'
 #'
 #' @seealso \code{\link[graphics]{box}}

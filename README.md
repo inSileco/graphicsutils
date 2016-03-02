@@ -72,7 +72,7 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.06871627 0.96098954
+#> [1] 0.06253055 0.96706165
 prettyRange(vec)
 #> [1] 0.05 1.00
 prettyRange(c(3.85,3.88245))

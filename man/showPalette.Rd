@@ -4,7 +4,7 @@
 \alias{showPalette}
 \title{Show a color Palette}
 \usage{
-showPalette(ramp, inline = FALSE, add_number = FALSE, cex_number = 1.2)
+showPalette(ramp, inline = FALSE, add_number = FALSE, cex_num = 1.2)
 }
 \arguments{
 \item{ramp}{A vector of colors.}
@@ -12,6 +12,8 @@ showPalette(ramp, inline = FALSE, add_number = FALSE, cex_number = 1.2)
 \item{inline}{logical. If TRUE, the colors are displayed on a single row.}
 
 \item{add_number}{logical. If TRUE, color vector's indices are added.}
+
+\item{cex_num}{The maginification coefficient of the color vector's indices.}
 }
 \description{
 Generate an interactive interface to pick up colors and returns colors selected.

@@ -81,7 +81,6 @@ function(vec, eaten=0, labels=NULL, rot=0, cex=0.8, tck=0.05, width=0.6, mycol=1
     else {
         cex.x <- cex*.4*wid
         aspin <- par()$pin[1]/par()$pin[2]
-        print(aspin)
         cex.y <- aspin*cex*.4*heg
     }
     if (!is.null(density)) {
