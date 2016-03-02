@@ -75,7 +75,7 @@ function(seqtime, seqval=NULL, rad=1, from=0, to=2*pi, incr=0.005, labelc=NULL, 
     ## --- Values labels
     if (is.null(labelr)) labelr<- round(seq(rgval[1],rgval[2],length.out=6),digits=-lgv+2)
     if (!is.na(labelr) && nzchar(labelr)){
-        text(rep(0,6), -.2*0:5, as.graphicsAnnot(labelr), cex=1.15, pos=3)
+        text(rep(0,6), -.2*0:5, as.graphicsAnnot(labelr), cex=1.1, pos=3)
     }
 
     ## --- Circular ticks

@@ -67,7 +67,7 @@ axis(2)
 
 ```{r,   fig.width=6,  fig.height=6}
 x <- data.frame(matrix(runif(200,2,10), 8, 25))
-stackedareas(x)
+stackedAreas(x)
 ```
 
 ## Polar plot

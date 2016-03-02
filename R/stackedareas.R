@@ -34,16 +34,16 @@
 #' x <- data.frame(matrix(runif(200,2,10), 8, 25))
 #'
 #' # plot 1: default plot
-#' stackedareas(x)
+#' stackedAreas(x)
 #'
 #' # plot 2: personalized plot
 #' par(xaxs="i", yaxs="i", font=2, cex.axis=1.2, cex.lab=1.4, bty="l")
 #' plot(c(1999,2027), c(-10,110), type="n", xlab="Years", ylab="Percentage",
 #' main="My customized stacked areas chart")
 #' plotAreaColor(col="#f2c4c4")
-#' stackedareas(x, index=2001:2025, rgy=100, lwd=2, add=TRUE, border="transparent")
+#' stackedAreas(x, index=2001:2025, rgy=100, lwd=2, add=TRUE, border="transparent")
 
-stackedareas <- function(val, index=NULL, rgy=1, cumul=FALSE, transp=FALSE, legend=NULL, add=FALSE, col=NULL, pickcolors=FALSE, lty=1, lwd=1, border=NA, main="", xlab="", ylab=""){
+stackedAreas <- function(val, index=NULL, rgy=1, cumul=FALSE, transp=FALSE, legend=NULL, add=FALSE, col=NULL, pickcolors=FALSE, lty=1, lwd=1, border=NA, main="", xlab="", ylab=""){
     ## checking values / converting if required
     x <- as.matrix(val)
     stopifnot(ncol(x)>1)
@@ -72,7 +72,7 @@ stackedareas <- function(val, index=NULL, rgy=1, cumul=FALSE, transp=FALSE, lege
     ## ---- Defaults plotting set
     if (!add) {
         oldpar <- par(no.readonly=TRUE)
-        layout(matrix(1:2,1), widths=c(1,0.3))
+        layout(matrix(1:2,1), widths=c(1,0.4))
         par(mar=c(5,4,4,1),xaxs="i", yaxs="i")
         plot(range(index), rgy*c(0,1), type="n", main=main, xlab=xlab, ylab=ylab)
     }

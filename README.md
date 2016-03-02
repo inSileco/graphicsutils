@@ -52,7 +52,7 @@ A stacked areas chart
 
 ``` r
 x <- data.frame(matrix(runif(200,2,10), 8, 25))
-stackedareas(x)
+stackedAreas(x)
 ```
 
 ![](inst/assets/img/unnamed-chunk-6-1.png)
@@ -72,9 +72,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.06253055 0.96706165
+#> [1] 0.0179900 0.9900202
 prettyRange(vec)
-#> [1] 0.05 1.00
+#> [1] 0 1
 prettyRange(c(3.85,3.88245))
 #> [1] 3.850 3.885
 ```
