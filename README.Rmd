@@ -33,7 +33,7 @@ To install the package, use the [*devtools*](http://cran.r-project.org/web/packa
 
 ```{r eval=FALSE}
 install.packages("devtools")
-devtools::install_github("sckott/rphylopic")
+devtools::install_github("KevCaz/graphicsutils")
 ```
 
 Then, load it:
