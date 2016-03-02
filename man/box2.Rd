@@ -7,7 +7,7 @@
 box2(side = 1:4, which = "plot", col2fill = NULL, ...)
 }
 \arguments{
-\item{side}{A numerical/character vector or a character string specifying which side(s) of the plot/figure the box is to be drawn (see details).}
+\item{side}{A numerical or character vector or a character string specifying which side(s) of the plot the box is to be drawn (see details).}
 
 \item{which}{A character, one of \code{plot}, \code{figure}, \code{inner} and \code{outer}.}
 
@@ -20,7 +20,7 @@ Draw a Box around a Plot
 }
 \details{
 This function intends to give more flexibility to the \code{\link[graphics]{box}} function.
-As \code{which} parameter, users provides an object first coerced by ‘as.character’ to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{1, 2, 3, 4, b, l, t, r} where 1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right.
+As \code{which} parameter, users provides an object first coerced by \code{as.character} to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{1, 2, 3, 4, b, l, t, r} where \code{1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right}.
 }
 \examples{
 # Example 1:
