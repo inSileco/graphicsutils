@@ -47,7 +47,12 @@ box2(side=12, lwd=2, col2fill=8)
 My version of the stacked areas
 -------------------------------
 
-x &lt;- data.frame(matrix(runif(200,2,10), 8, 25)) \#plot 1: default plot stackedareas(x)
+``` r
+x <- data.frame(matrix(runif(200,2,10), 8, 25))
+stackedareas(x)
+```
+
+![](inst/assets/img/unnamed-chunk-6-1.png)
 
 Interactive functions
 ---------------------
