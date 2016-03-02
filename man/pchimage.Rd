@@ -5,7 +5,7 @@
 \title{Images as ploting characters.}
 \usage{
 pchImage(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x,
-  atcenter = TRUE, add = TRUE, ...)
+  atcenter = TRUE, add = TRUE, col = NULL, ...)
 }
 \arguments{
 \item{x}{The x coordinates of images to be drawn.}
@@ -24,6 +24,8 @@ pchImage(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x,
 
 \item{add}{logical. Should images be added on the current graph ? If FALSE a new plot is created.}
 
+\item{col}{Optionnal color use to fill pixels whose values are not 0}
+
 \item{...}{Additional arguments to be passed to \code{rasterImage} function.}
 }
 \description{
@@ -40,7 +42,7 @@ img<-png::readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
 n<-15
 plot0(c(0,1),c(0,1))
 pchImage(0.1+0.8*stats::runif(n), 0.1+0.8*stats::runif(n), cex.x=0.2+1.6*stats::runif(n),
-obj=img, angle=360*runif(n))
+obj=img, angle=360*runif(n), col=2)
 }
 \keyword{character}
 \keyword{image,}

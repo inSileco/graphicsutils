@@ -17,32 +17,71 @@ knitr::opts_chunk$set(
 ```
 
 
-# DESCRIPTION
+# Description
+
 *graphicsutils* is an R package that includes a set of graphical functions as the valuable [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package do. It is intended to use help users to deal with typical issues they may encounter when they use the core package *graphics*. Note that *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package.
 
 Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils)
 
-# Installation
+
+
+# Install
+
 To install the package, use the [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package.
 
-  devtools::install_git("https://github.com/KevCaz/graphicsutils.git")
-
-or
-
-  devtools::install_github("KevCaz/graphicsutils")
+```{r eval=FALSE}
+install.packages("devtools")
+devtools::install_github("sckott/rphylopic")
+```
 
 Then, load it:
 
-  library(graphicsutils)
+```{r}
+library(graphicsutils)
+```
+
+
+# Principal feature
+
+## Empty your plot
+
+```{r}
+plot0()
+```
+
+## Add a box
+
+```{r}
+plot0()
+box2(which="figure",lwd=2, col2fill=2)
+box2(side=12, lwd=2, col2fill=8)
+```
+
+
+## Interactive functions
+
+Some function are interactive and to need a lot to be undersatood !
+So, once the package installed, try:
+
+```{r eval=FALSE}
+pickColors()
+```
+
+```{r eval=FALSE}
+layout2()
+```
+
 
 
 # License
 The *graphicsutils* package is licensed under the GPLv3 (http://www.gnu.org/licenses/gpl.html).
 
 
-# To do list 
+
+# To do list
 
 1. Add example
+2. Create a sustainable system to include different shaped.
 2. grapdientPolygon must be completed to include images before exporting it.
 2. Add interactive mode in 'showPalette Function'
-2. Review Vectfield2d function, I think it will be better to provide 3 coordinates rather than a dynamic system.
+2. Vectfield2d needs to be reviewed.

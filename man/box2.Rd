@@ -4,10 +4,14 @@
 \alias{box2}
 \title{Box version 2}
 \usage{
-box2(bty = 1:4, col2fill = NULL, ...)
+box2(side = 1:4, which = "plot", col2fill = NULL, ...)
 }
 \arguments{
-\item{bty}{A numerical/character vector or a character string decribing on which side the box is drawn (see details).}
+\item{side}{A numerical/character vector or a character string specifying which side(s) of the plot/figure the box is to be drawn (see details).}
+
+\item{which}{A character, one of ‘plot’, ‘figure’, ‘inner’ and ‘outer’.}
+
+\item{col2fill}{The color to be used to fill the box.}
 
 \item{...}{Further graphical parameters (see ‘par’) may also be supplied as arguments, particularly, line type, ‘lty’, line width, ‘lwd’, color, ‘col’ and for ‘type = "b"’, ‘pch’.  Also the line characteristics ‘lend’, ‘ljoin’ and ‘lmitre’.}
 }
@@ -15,9 +19,8 @@ box2(bty = 1:4, col2fill = NULL, ...)
 Draw a Box around a Plot
 }
 \details{
-This function is made to give more flexibility to the \code{\link[grpahics]{box}} function.
-Users provides an object first coerced by ‘as.character’ to a character string that is secondly split
-into single characters. For all of these characters, matches are sought with element among \code{c('1', '2', '3', '4', 'b', 'l', 't', 'r'}. All of these are matched with the
+This function intends to give more flexibility to the \code{\link[graphics]{box}} function.
+As \code{which} parameter, users provides an object first coerced by ‘as.character’ to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{'1', '2', '3', '4', 'b', 'l', 't', 'r'} where 1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right.
 }
 \examples{
 # Example 1:
@@ -31,7 +34,19 @@ box2(c(1,4), col2fill="grey80", lwd=2)
 plot0()
 box2(c(1,4), col2fill="grey80", lwd=2)
 # Example 2:
-plot0(c(-10,10), asp=1)
+par(mfrow=c(2,2),oma=c(2,2,2,2))
+plot(0,0)
+box("outer",lwd=2)
+box("inner",lwd=2)
+plot(0,0)
+plot(0,0)
+plot(c(0,1),c(0,2))
+box2(which="figure",lwd=2, col2fill=2)
+box2(side=12, lwd=2, col2fill=8)
+points(c(0,1),c(0,2))
+axis(2)
+axis(1)
+title(xlab="coolx", ylab="cooly")
 }
 \seealso{
 \code{\link[graphics]{box}}

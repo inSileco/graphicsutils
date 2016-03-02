@@ -24,11 +24,11 @@
 #'
 #' @examples
 #' # Example:
- img<-png::readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
- n<-15
- plot0(c(0,1),c(0,1))
- pchImage(0.1+0.8*stats::runif(n), 0.1+0.8*stats::runif(n), cex.x=0.2+1.6*stats::runif(n),
- obj=img, angle=360*runif(n), col=2)
+#' img<-png::readPNG(system.file("img", "Rlogo.png", package="png"), native=TRUE)
+#' n<-15
+#' plot0(c(0,1),c(0,1))
+#' pchImage(0.1+0.8*stats::runif(n), 0.1+0.8*stats::runif(n), cex.x=0.2+1.6*stats::runif(n),
+#' obj=img, angle=360*runif(n), col=2)
 
 pchImage<-
 function(x, y, obj=NULL,file=NULL, cex.x=1, cex.y=cex.x, atcenter=TRUE, add=TRUE, col=NULL, ...){
