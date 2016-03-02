@@ -37,15 +37,18 @@ Add a box
 ---------
 
 ``` r
+par(mar=rep(2,4))
 plot0()
 box2(which="figure",lwd=2, col2fill=2)
 box2(side=12, lwd=2, col2fill=8)
+axis(1)
+axis(2)
 ```
 
 ![](inst/assets/img/unnamed-chunk-5-1.png)
 
-My version of the stacked areas
--------------------------------
+A stacked areas chart
+---------------------
 
 ``` r
 x <- data.frame(matrix(runif(200,2,10), 8, 25))
@@ -53,6 +56,28 @@ stackedareas(x)
 ```
 
 ![](inst/assets/img/unnamed-chunk-6-1.png)
+
+Polar plot
+----------
+
+``` r
+polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
+```
+
+![](inst/assets/img/unnamed-chunk-7-1.png)
+
+Get pretty ranges
+-----------------
+
+``` r
+vec <- stats::runif(20)
+range(vec)
+#> [1] 0.06871627 0.96098954
+prettyRange(vec)
+#> [1] 0.05 1.00
+prettyRange(c(3.85,3.88245))
+#> [1] 3.850 3.885
+```
 
 Interactive functions
 ---------------------

@@ -14,8 +14,8 @@
 #' @param labelc Character or expression vector of labels to be placed at the tickpoints.
 #' @param atr The points at which radial-axis marks are to be drawn.
 #' @param tckcol Color of the tickmarks.
-#' @param labelr Character or expression vector of labels to be placed at the radial-axis marks.
-#' @param clockwise logical. If TRUE, the plot mus de read clockwise, otherwise, counter-clockwise.
+#' @param labelr Character or expression vector specifying the _text_ to be placed at the radial-axis marks.
+#' @param clockwise logical. If TRUE, the plot must de read clockwise, otherwise, counter-clockwise.
 #' @param n_signif Number of significant number to be displayed (used when labelc is \code{NULL}).
 #' @param add logical. Add to current plot?
 #' @param ... Additional argument to be passed to \code{polygon} function.
@@ -26,7 +26,7 @@
 #' @seealso \code{\link[plotrix]{polar.plot}}
 #'
 #' @examples
-#' polarPlot(1:20, stats::runif(20), to=1.8*pi, col=2, border="grey80")
+#' polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
 
 
 polarPlot<-
@@ -81,7 +81,6 @@ function(seqtime, seqval=NULL, rad=1, from=0, to=2*pi, incr=0.005, labelc=NULL, 
     ## --- Circular ticks
     mangle <- -.5*pi+from+(0:6)/6*(to-from)
     if (clockwise) mangle <- 2*from-mangle
-    print(mangle)
     segments(cos(mangle),sin(mangle),1.05*cos(mangle),1.05*sin(mangle))
 
     ## --- Circular values

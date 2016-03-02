@@ -55,19 +55,35 @@ Empty isn't it ?
 ## Add a box
 
 ```{r}
+par(mar=rep(2,4))
 plot0()
 box2(which="figure",lwd=2, col2fill=2)
 box2(side=12, lwd=2, col2fill=8)
+axis(1)
+axis(2)
 ```
 
-## My version of the stacked areas
+## A stacked areas chart
 
 ```{r,   fig.width=6,  fig.height=6}
 x <- data.frame(matrix(runif(200,2,10), 8, 25))
 stackedareas(x)
 ```
 
+## Polar plot
 
+```{r,   fig.width=6,  fig.height=6}
+polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
+```
+
+## Get pretty ranges
+
+```{r}
+vec <- stats::runif(20)
+range(vec)
+prettyRange(vec)
+prettyRange(c(3.85,3.88245))
+```
 
 ## Interactive functions
 

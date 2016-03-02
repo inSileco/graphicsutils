@@ -27,11 +27,11 @@ polarPlot(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi,
 
 \item{atc}{The points at which tick-marks are to be drawn. By default (when \code{NULL}) tickmark locations are computed.}
 
-\item{labelr}{Character or expression vector of labels to be placed at the radial-axis marks.}
+\item{labelr}{Character or expression vector specifying the _text_ to be placed at the radial-axis marks.}
 
 \item{atr}{The points at which radial-axis marks are to be drawn.}
 
-\item{clockwise}{logical. If TRUE, the plot mus de read clockwise, otherwise, counter-clockwise.}
+\item{clockwise}{logical. If TRUE, the plot must de read clockwise, otherwise, counter-clockwise.}
 
 \item{n_signif}{Number of significant number to be displayed (used when labelc is \code{NULL}).}
 
@@ -46,7 +46,7 @@ Draw a polar plot.
 Polar Plot
 }
 \examples{
-polarPlot(1:20, stats::runif(20), to=1.8*pi, col=2, border="grey80")
+polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
 }
 \seealso{
 \code{\link[plotrix]{polar.plot}}
