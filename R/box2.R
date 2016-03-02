@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @details This function intends to give more flexibility to the \code{\link[graphics]{box}} function.
-#' As \code{which} parameter, users provides an object first coerced by ‘as.character’ to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{1, 2, 3, 4, b, l, t, r} where 1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right.
+#' As \code{which} parameter, users provides an object first coerced by \code{as.character} to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{1, 2, 3, 4, b, l, t, r} where 1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right.
 #'
 #'
 #' @seealso \code{\link[graphics]{box}}
