@@ -12,7 +12,7 @@ To install the package, use the [*devtools*](http://cran.r-project.org/web/packa
 
 ``` r
 install.packages("devtools")
-devtools::install_github("sckott/rphylopic")
+devtools::install_github("KevCaz/graphicsutils")
 ```
 
 Then, load it:
@@ -72,9 +72,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.0179900 0.9900202
+#> [1] 0.03551863 0.92562572
 prettyRange(vec)
-#> [1] 0 1
+#> [1] 0.00 0.95
 prettyRange(c(3.85,3.88245))
 #> [1] 3.850 3.885
 ```
