@@ -9,19 +9,19 @@ stackedareas(val, index = NULL, rgy = 1, cumul = FALSE, transp = FALSE,
   lwd = 1, border = NA, main = "", xlab = "", ylab = "")
 }
 \arguments{
-\item{val}{A dataframe or a matrix containing a series of positive value, rows stand for popultaions.}
+\item{val}{A dataframe or a matrix containing a series of positive values, rows stand for popultaions.}
 
-\item{index}{Values to be used for the x axis. Defaults set is}
+\item{index}{Values to be used for the x axis, by default it is set to \code{NULL} meaning that it is handled by \code{plot.default}}
 
-\item{rgy}{A values that determines the range of y values. Default is set to 1 which means that the range of values is [0,1].}
+\item{rgy}{A value that determines the range of y values. Default is set to 1 which means that the range of values is [0,1].}
 
-\item{cumul}{logical. If TRUE, data are regarded as cumulative sums.}
+\item{cumul}{logical. If TRUE, data are considered as cumulative sums.}
 
 \item{transp}{logical. If TRUE, the transpose of the data table is computed.}
 
-\item{legend}{The text to be used as a legend for each area drawn.}
+\item{legend}{Text to be used as a legend for each area drawn.}
 
-\item{add}{logical. Should the stacked arease be add on the current plot?}
+\item{add}{logical. Should stacked areas be added on the current plot?}
 
 \item{col}{Vector of colors, repeated if too small.}
 

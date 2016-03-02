@@ -2,14 +2,14 @@
 #'
 #' Draw a stacked areas chart.
 #'
-#' @param val A dataframe or a matrix containing a series of positive value, rows stand for popultaions.
-#' @param index Values to be used for the x axis. Defaults set is
-#' @param rgy A values that determines the range of y values. Default is set to 1 which means that the range of values is [0,1].
-#' @param cumul logical. If TRUE, data are regarded as cumulative sums.
+#' @param val A dataframe or a matrix containing a series of positive values, rows stand for popultaions.
+#' @param index Values to be used for the x axis, by default it is set to \code{NULL} meaning that it is handled by \code{plot.default}
+#' @param rgy A value that determines the range of y values. Default is set to 1 which means that the range of values is [0,1].
+#' @param cumul logical. If TRUE, data are considered as cumulative sums.
 #' @param transp logical. If TRUE, the transpose of the data table is computed.
-#' @param legend The text to be used as a legend for each area drawn.
+#' @param legend Text to be used as a legend for each area drawn.
 #' @param col Vector of colors, repeated if too small.
-#' @param add logical. Should the stacked arease be add on the current plot?
+#' @param add logical. Should stacked areas be added on the current plot?
 #' @param pickcolors logical. If TRUE, \code{\link{pickColors}} is called to select colors.
 #' @param lty The line type (see \code{\link{par}} documentation)
 #' @param lwd The line width (see \code{\link{par}} documentation)
@@ -92,7 +92,7 @@ stackedareas <- function(val, index=NULL, rgy=1, cumul=FALSE, transp=FALSE, lege
         par(mar=c(4,0,4,1), xaxs="i", yaxs="i")
         if (is.null(legend)) legend <- paste0("population ",1:nrow(x))
         plot0(c(0,1),c(0,1))
-        legend("center", legend, fill=colors, bty="n", cex=1.1)
+        legend("center", legend, fill=colors, bty="n", cex=1.2, border=NA)
         par(oldpar)
     }
 }

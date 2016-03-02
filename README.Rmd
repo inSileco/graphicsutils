@@ -12,7 +12,9 @@ knitr::opts_chunk$set(
   comment = "#>",
   collapse = TRUE,
   warning = FALSE,
-  message = FALSE
+  message = FALSE,
+  fig.width=4,
+  fig.height=4
 )
 ```
 
@@ -46,8 +48,9 @@ library(graphicsutils)
 ## Empty your plot
 
 ```{r}
-plot0()
+plot0(c(0,1),c(0,1))
 ```
+Empty isn't it ?
 
 ## Add a box
 
@@ -57,19 +60,30 @@ box2(which="figure",lwd=2, col2fill=2)
 box2(side=12, lwd=2, col2fill=8)
 ```
 
+## My version of the stacked areas
+
+x <- data.frame(matrix(runif(200,2,10), 8, 25))
+#plot 1: default plot
+stackedareas(x)
+
+
+
 
 ## Interactive functions
 
-Some function are interactive and to need a lot to be undersatood !
-So, once the package installed, try:
+Some functions are interactive are fairly understandable !
+So, try:
 
 ```{r eval=FALSE}
 pickColors()
 ```
+and also
 
 ```{r eval=FALSE}
 layout2()
 ```
+
+
 
 
 
@@ -80,8 +94,8 @@ The *graphicsutils* package is licensed under the GPLv3 (http://www.gnu.org/lice
 
 # To do list
 
-1. Add example
-2. Create a sustainable system to include different shaped.
+1. Add more examples
+2. Create a sustainable system to include different shapes (I am thinking about it ).
 2. grapdientPolygon must be completed to include images before exporting it.
 2. Add interactive mode in 'showPalette Function'
 2. Vectfield2d needs to be reviewed.
