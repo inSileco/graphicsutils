@@ -62,7 +62,7 @@ box2(side=12, lwd=2, col2fill=8)
 
 ## My version of the stacked areas
 
-```{r}
+```{r,   fig.width=6,  fig.height=6}
 x <- data.frame(matrix(runif(200,2,10), 8, 25))
 stackedareas(x)
 ```
