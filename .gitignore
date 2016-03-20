@@ -16,3 +16,6 @@ vignettes/*.pdf
 ./R/deprecated/**
 ./.DS_Store
 ./R/.DS_Store
+
+# Makefile
+Makefile

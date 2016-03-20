@@ -1,7 +1,9 @@
 Description
 ===========
 
-*graphicsutils* is an R package that includes a set of graphical functions as the valuable [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package do. It is intended to use help users to deal with typical issues they may encounter when they use the core package *graphics*. Note that *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package.
+*graphicsutils* is an R package that includes a set of graphical functions as the valuable [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package do. This package is not intended to be submitted to the CRAN. First, because many of these functions already exist in other package (in a different form though). Second, because it serves me as a experiment for many aspect of coding. Nevertheless this package may help users to deal with typical issues they may encounter when they use the core package *graphics*. If some of these function turn out to be really valuable, then they will likely appear in a different package which will be submit to the CRAN.
+
+Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package. Note that
 
 Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils)
 
@@ -21,8 +23,8 @@ Then, load it:
 library(graphicsutils)
 ```
 
-Principal feature
-=================
+Main features
+=============
 
 Empty your plot
 ---------------
@@ -31,7 +33,7 @@ Empty your plot
 plot0(c(0,1),c(0,1))
 ```
 
-![](inst/assets/img/unnamed-chunk-4-1.png) Empty isn't it ?
+![](inst/assets/img/unnamed-chunk-4-1.png)<!-- --> Empty isn't it ?
 
 Add a box
 ---------
@@ -39,13 +41,13 @@ Add a box
 ``` r
 par(mar=rep(2,4))
 plot0()
-box2(which="figure",lwd=2, col2fill=2)
-box2(side=12, lwd=2, col2fill=8)
+box2(which="figure",lwd=2, col2fill="grey30")
+box2(side=12, lwd=2, col2fill="grey80")
 axis(1)
 axis(2)
 ```
 
-![](inst/assets/img/unnamed-chunk-5-1.png)
+![](inst/assets/img/unnamed-chunk-5-1.png)<!-- -->
 
 A stacked areas chart
 ---------------------
@@ -55,7 +57,7 @@ x <- data.frame(matrix(runif(200,2,10), 8, 25))
 stackedAreas(x)
 ```
 
-![](inst/assets/img/unnamed-chunk-6-1.png)
+![](inst/assets/img/unnamed-chunk-6-1.png)<!-- -->
 
 Polar plot
 ----------
@@ -64,7 +66,7 @@ Polar plot
 polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
 ```
 
-![](inst/assets/img/unnamed-chunk-7-1.png)
+![](inst/assets/img/unnamed-chunk-7-1.png)<!-- -->
 
 Get pretty ranges
 -----------------
@@ -72,9 +74,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.1574579 0.9291268
+#> [1] 0.09607092 0.99706903
 prettyRange(vec)
-#> [1] 0.15 0.95
+#> [1] 0.05 1.00
 prettyRange(c(3.85,3.88245))
 #> [1] 3.850 3.885
 ```
@@ -82,7 +84,7 @@ prettyRange(c(3.85,3.88245))
 Interactive functions
 ---------------------
 
-Some functions are interactive are fairly understandable ! So, try:
+Some functions are interactive and fairly understandable ! So, I suggest you try:
 
 ``` r
 pickColors()
