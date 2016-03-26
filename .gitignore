@@ -9,8 +9,8 @@
 .Rproj.user/
 
 # produced vignettes
-vignettes/*.html
-vignettes/*.pdf
+vignettes.*
+README.Rmd
 
 # folders
 ./R/deprecated/**
