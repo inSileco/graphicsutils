@@ -35,11 +35,13 @@
 #' vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin, args=list(beta=beta1))
 #' # Plot 2:
 #' par(mar=c(2,2,2,2))
-#' vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin, args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
+#' vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
+#'    args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
 #'    border=NA,cex.hh=1, cex.shr=0.6, col=8)
 #' abline(v=0,h=0)
 
-vecfield2d <- function(coords, FUN, args=NULL, ndim=NULL, slices=c(1,2), fixed=NULL, cex.x=0.25, cex.y=cex.x, log=FALSE, add=FALSE, ...){
+vecfield2d <- function(coords, FUN, args=NULL, ndim=NULL, slices=c(1,2), fixed=NULL,
+cex.x=0.25, cex.y=cex.x, log=FALSE, add=FALSE, ...){
 
     ##-- Format checking
     grid <- as.matrix(coords)
