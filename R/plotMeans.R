@@ -4,7 +4,7 @@
 #'
 #' @param formula a formula, see \code{\link[stats]{formula}}.
 #' @param data a data frame (or list) from which the variables in formula should be taken.
-#' @param SE logical. If TRUE then the standard error is computed rather than the standard deviation.
+#' @param FUN_err The function that assess uncertainty. Default function is \code{\link[stats]{sd}}.
 #' @param draw_axis logical. If TRUE axes and box are drawn.
 #' @param col_err color of the lines that reflect uncertainty.
 #' @param col_pt color of the points that stand for means.
@@ -16,26 +16,25 @@
 #' @export
 #'
 #' @examples
-#' # Example 1:
+#' # Example:
 #' dataset <- data.frame(dat=c(rnorm(50, 10, 2), rnorm(50, 20, 2)) , grp=rep(c("A","D"), each=50))
+#' par(mfrow=c(1,3))
 #' plotMeans(dat~grp, data=dataset, pch=15)
+#' plotMeans(dat~grp, data=dataset, FUN_err= function(x) sd(x)*2, pch=15)
+#' ser <- function(x) sd(x)/sqrt(length(x))
+#' plotMeans(dat~grp, data=dataset, FUN_err=ser, pch=15)#'
 
-plotMeans <- function(formula, data, SE=FALSE, draw_axis=TRUE, col_err=par()$col, col_pt=par()$col, cex_pt=1, ...){
+plotMeans <- function(formula, data, FUN_err=sd, draw_axis=TRUE, col_err=par()$col, col_pt=par()$col, cex_pt=1, ...){
   ##
   formu <- as.formula(formula)
   ##
   args <- list(...)
   ##
   mn_val <- aggregate(formu, data=data, FUN=mean)
-  sd_val <- aggregate(formu, data=data, FUN=sd)
+  sd_val <- aggregate(formu, data=data, FUN=FUN_err)
   ##
   n_val <- nrow(mn_val)
   n_col <- ncol(mn_val)
-  ##
-  if (SE) sd_val[,ncol(mn_val)] <- sd_val[,ncol(mn_val)]/sqrt(aggregate(dat~grp, dataset, FUN=length)[,ncol(mn_val)])
-  print(sd_val)
-  ##
-
   ##
   min_val <- mn_val[,n_col]-sd_val[,n_col]
   max_val <- mn_val[,n_col]+sd_val[,n_col]
