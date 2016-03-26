@@ -9,9 +9,9 @@ stackedAreas(val, index = NULL, rgy = 1, cumul = FALSE, transp = FALSE,
   lwd = 1, border = NA, main = "", xlab = "", ylab = "")
 }
 \arguments{
-\item{val}{A dataframe or a matrix containing a series of positive values, rows stand for popultaions.}
+\item{val}{a dataframe or a matrix containing a series of positive values, rows stand for popultaions.}
 
-\item{index}{Values to be used for the x axis, by default it is set to \code{NULL} meaning that it is handled by \code{plot.default}}
+\item{index}{values to be used for the x axis, by default it is set to \code{NULL} meaning that it is handled by \code{plot.default}}
 
 \item{rgy}{A value that determines the range of y values. Default is set to 1 which means that the range of values is [0,1].}
 
@@ -23,13 +23,13 @@ stackedAreas(val, index = NULL, rgy = 1, cumul = FALSE, transp = FALSE,
 
 \item{add}{logical. Should stacked areas be added on the current plot?}
 
-\item{col}{Vector of colors, repeated if too small.}
+\item{col}{vector of colors, repeated if too small.}
 
 \item{pickcolors}{logical. If TRUE, \code{\link{pickColors}} is called to select colors.}
 
-\item{lty}{The line type (see \code{\link{par}} documentation)}
+\item{lty}{the line type (see \code{\link{par}} documentation)}
 
-\item{lwd}{The line width (see \code{\link{par}} documentation)}
+\item{lwd}{the line width (see \code{\link{par}} documentation)}
 
 \item{border}{The color to draw the border. The default, \code{NULL}, means to use \code{par("fg")}. Use \code{border=NA} to omit borders.}
 

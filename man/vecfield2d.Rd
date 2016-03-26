@@ -38,7 +38,6 @@ Draw a vector field associated to a system of at least two ODE.
 The \code{FUN} function to be used must be a function of at least two arguments. The first argument must contain the dynamical variables as a vector and the second arguments must contain all the other parameters that shapes the dynamical system. When some dimension are missing, the order of \code{fixed} is the one in FUN once the drawn dimension are withdrawn.
 }
 \examples{
-# Example:
 systLin <- function(X, beta){
     Y <- matrix(0,ncol=2)
     Y[1] <- beta[1,1]*X[1]+beta[1,2]*X[2]

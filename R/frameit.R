@@ -1,21 +1,20 @@
-#' Draw a frame
+#' Draw a frame around a Plot
 #'
-#' Draw a frame around the plot region. \code{frameit} function draw an ensemble of small rectangles around the plot region to create a frame which colors can be specified.
+#' Draw a frame around the plot region as an ensemble of small rectangles whose colors can be specified.
 #'
-#' @param nbc number of rectangles drawn for each axis.
+#' @param nbc number of rectangles to be drawn for each axis.
 #' @param cex.x control the dimension
 #' @param cex.y The radii of the circles.
 #' @param col color of the rectangles drawn.
 #' @param border color of the borders if the rectangles drawn.
 #'
-#' @keywords frame
+#' @keywords frame, box
 #'
 #' @export
 #'
 #' @details
-#' The number of rectangles could be different from \code{nbc} as \code{pretty} is called to position them.
-#'
-#' The 'col' argument determines the succession of colors to be applied to each axis.
+#' The number of rectangles could be different from \code{nbc} as \code{pretty} is called to properly locate them.
+#' The \code{col} argument determines the succession of colors to be applied to each axis.
 #'
 #' @examples
 #' #Example 1:

@@ -2,17 +2,17 @@
 #'
 #' Draw a stacked areas chart.
 #'
-#' @param val A dataframe or a matrix containing a series of positive values, rows stand for popultaions.
-#' @param index Values to be used for the x axis, by default it is set to \code{NULL} meaning that it is handled by \code{plot.default}
+#' @param val a dataframe or a matrix containing a series of positive values, rows stand for popultaions.
+#' @param index values to be used for the x axis, by default it is set to \code{NULL} meaning that it is handled by \code{plot.default}
 #' @param rgy A value that determines the range of y values. Default is set to 1 which means that the range of values is [0,1].
 #' @param cumul logical. If TRUE, data are considered as cumulative sums.
 #' @param transp logical. If TRUE, the transpose of the data table is computed.
 #' @param legend Text to be used as a legend for each area drawn.
-#' @param col Vector of colors, repeated if too small.
+#' @param col vector of colors, repeated if too small.
 #' @param add logical. Should stacked areas be added on the current plot?
 #' @param pickcolors logical. If TRUE, \code{\link{pickColors}} is called to select colors.
-#' @param lty The line type (see \code{\link{par}} documentation)
-#' @param lwd The line width (see \code{\link{par}} documentation)
+#' @param lty the line type (see \code{\link{par}} documentation)
+#' @param lwd the line width (see \code{\link{par}} documentation)
 #' @param border The color to draw the border. The default, \code{NULL}, means to use \code{par("fg")}. Use \code{border=NA} to omit borders.
 #' @param main A main title for the plot.
 #' @param xlab A label for the x axis, defaults to a description of \code{x}.

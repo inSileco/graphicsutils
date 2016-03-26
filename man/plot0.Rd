@@ -7,17 +7,17 @@
 plot0(x = c(-1, 1), y = c(-1, 1), ...)
 }
 \arguments{
-\item{x}{The x coordinates of points in the plot.}
+\item{x}{the x coordinates of points in the plot.}
 
-\item{y}{The y coordinates of points in the plot.}
+\item{y}{the y coordinates of points in the plot.}
 
-\item{...}{Additional arguments affecting the plot.}
+\item{...}{additional arguments affecting the plot.}
 }
 \description{
 \code{plot0} returns an empty plot.
 }
 \details{
-The function is based on the plot.defaut function. It simply makes the creation of an empty plot quicker
+The function is based on the \link[graphics]{plot.default} function. It makes the creation of an empty plot faster.
 }
 \examples{
 # Example 1:

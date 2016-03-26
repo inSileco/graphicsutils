@@ -9,31 +9,31 @@ arrows2(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1,
   twoheaded = FALSE, ...)
 }
 \arguments{
-\item{x0}{The x coordinates of points from which to draw arrows.}
+\item{x0}{the x coordinates of points from which to draw arrows.}
 
-\item{y0}{The y coordinates of points from which to draw arrows.}
+\item{y0}{the y coordinates of points from which to draw arrows.}
 
-\item{x1}{The x coordinates of points to which to draw arrows.}
+\item{x1}{the x coordinates of points to which to draw arrows.}
 
-\item{y1}{The y coordinates of points to which to draw arrows.}
+\item{y1}{the y coordinates of points to which to draw arrows.}
 
-\item{off0}{Offset of points from which to draw arrows.}
+\item{off0}{offset of points from which to draw arrows.}
 
-\item{off1}{Offset of points to which to draw arrows.}
+\item{off1}{offset of points to which to draw arrows.}
 
-\item{cex.arr}{The magnification coefficient to be used for the heights of the arrows.}
+\item{cex.arr}{the magnification coefficient to be used for the heights of the arrows.}
 
-\item{cex.shr}{The magnification coefficient to be used to change the height of arrows towards their heads.}
+\item{cex.shr}{the magnification coefficient to be used to change the height of arrows towards their heads.}
 
-\item{cex.hh}{The magnification coefficient to be used for the heights of arrows' head.}
+\item{cex.hh}{the magnification coefficient to be used for the heights of arrows' head.}
 
-\item{cex.hl}{The magnification coefficient to be used for the lengths of arrows' head.}
+\item{cex.hl}{the magnification coefficient to be used for the lengths of arrows' head.}
 
 \item{prophead}{logical. If TRUE arrows are drawn with head proportionnal to the length of the arrows.}
 
 \item{twoheaded}{logical. If TRUE two-headed arrows are drawn, default is FALSE.}
 
-\item{...}{Additional arguments to be passed to \code{polygon} function.}
+\item{...}{additional arguments to be passed to \code{polygon} function.}
 }
 \description{
 Draw arrows between pairs of points. Arrows drawn are fully customizable by using parameters of \code{polygon} function.

@@ -2,13 +2,13 @@
 % Please edit documentation in R/frameit.R
 \name{frameit}
 \alias{frameit}
-\title{Draw a frame}
+\title{Draw a frame around a Plot}
 \usage{
 frameit(nbc = 10, cex.x = 1, cex.y = cex.x, col = c("grey45", "grey85"),
   border = NA)
 }
 \arguments{
-\item{nbc}{number of rectangles drawn for each axis.}
+\item{nbc}{number of rectangles to be drawn for each axis.}
 
 \item{cex.x}{control the dimension}
 
@@ -19,12 +19,11 @@ frameit(nbc = 10, cex.x = 1, cex.y = cex.x, col = c("grey45", "grey85"),
 \item{border}{color of the borders if the rectangles drawn.}
 }
 \description{
-Draw a frame around the plot region. \code{frameit} function draw an ensemble of small rectangles around the plot region to create a frame which colors can be specified.
+Draw a frame around the plot region as an ensemble of small rectangles whose colors can be specified.
 }
 \details{
-The number of rectangles could be different from \code{nbc} as \code{pretty} is called to position them.
-
-The 'col' argument determines the succession of colors to be applied to each axis.
+The number of rectangles could be different from \code{nbc} as \code{pretty} is called to properly locate them.
+The \code{col} argument determines the succession of colors to be applied to each axis.
 }
 \examples{
 #Example 1:
@@ -35,5 +34,6 @@ frameit()
 plot0()
 frameit(cex.x=1.5, col=c(2,3), border=1)
 }
-\keyword{frame}
+\keyword{box}
+\keyword{frame,}
 

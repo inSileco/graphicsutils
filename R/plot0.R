@@ -2,15 +2,15 @@
 #'
 #' \code{plot0} returns an empty plot.
 #'
-#' @param x The x coordinates of points in the plot.
-#' @param y The y coordinates of points in the plot.
-#' @param ... Additional arguments affecting the plot.
+#' @param x the x coordinates of points in the plot.
+#' @param y the y coordinates of points in the plot.
+#' @param ... additional arguments affecting the plot.
 #'
 #' @keywords empty plot
 #'
 #' @export
 #'
-#' @details The function is based on the plot.defaut function. It simply makes the creation of an empty plot quicker
+#' @details The function is based on the \link[graphics]{plot.default} function. It makes the creation of an empty plot faster.
 #'
 #' @seealso \code{\link[shape]{emplyplot}}
 #'

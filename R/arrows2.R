@@ -1,22 +1,22 @@
-#' Add arrows to a plot.
+q#' Add arrows to a plot.
 #'
 #' Draw arrows between pairs of points. Arrows drawn are fully customizable by using parameters of \code{polygon} function.
 #'
 #' @export
 #'
-#' @param x0 The x coordinates of points from which to draw arrows.
-#' @param y0 The y coordinates of points from which to draw arrows.
-#' @param x1 The x coordinates of points to which to draw arrows.
-#' @param y1 The y coordinates of points to which to draw arrows.
-#' @param off0 Offset of points from which to draw arrows.
-#' @param off1 Offset of points to which to draw arrows.
-#' @param cex.arr The magnification coefficient to be used for the heights of the arrows.
-#' @param cex.shr The magnification coefficient to be used to change the height of arrows towards their heads.
-#' @param cex.hl The magnification coefficient to be used for the lengths of arrows' head.
-#' @param cex.hh The magnification coefficient to be used for the heights of arrows' head.
+#' @param x0 the x coordinates of points from which to draw arrows.
+#' @param y0 the y coordinates of points from which to draw arrows.
+#' @param x1 the x coordinates of points to which to draw arrows.
+#' @param y1 the y coordinates of points to which to draw arrows.
+#' @param off0 offset of points from which to draw arrows.
+#' @param off1 offset of points to which to draw arrows.
+#' @param cex.arr the magnification coefficient to be used for the heights of the arrows.
+#' @param cex.shr the magnification coefficient to be used to change the height of arrows towards their heads.
+#' @param cex.hl the magnification coefficient to be used for the lengths of arrows' head.
+#' @param cex.hh the magnification coefficient to be used for the heights of arrows' head.
 #' @param prophead logical. If TRUE arrows are drawn with head proportionnal to the length of the arrows.
 #' @param twoheaded logical. If TRUE two-headed arrows are drawn, default is FALSE.
-#' @param ... Additional arguments to be passed to \code{polygon} function.
+#' @param ... additional arguments to be passed to \code{polygon} function.
 #'
 #' @keywords arrows
 #'
