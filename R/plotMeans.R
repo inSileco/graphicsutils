@@ -45,7 +45,7 @@ plotMeans <- function(formula, data, SE=FALSE, draw_axis=TRUE, col_err=par()$col
   plt_def <-  list(x=c(0, n_val), y=range(min_val,max_val), type="n", axes=FALSE, xlab="", ylab="")
   ##
   if (length(args)) {
-    idpa <- which(names(args)%in%graphics:::.Pars)
+    idpa <- which(names(args)%in%names(par(no.readonly=TRUE)))
     if (length(idpa)) do.call(par, args[idpa])
     idpl <- which(names(args)%in%names(formals(plot.default)))
     if (length(idpl)) {
