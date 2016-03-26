@@ -2,7 +2,7 @@
 #'
 #' Draw a Box around a Plot
 #'
-#' @param formula a formula, such as ‘y ~ x’ or ‘cbind(y1, y2) ~ x1 + x2’, where the ‘y’ variables are numeric data to be split into groups according to the grouping ‘x’ variables (usually factors).
+#' @param formula a formula, see \code{\link[stats]{formula}}.
 #' @param data a data frame (or list) from which the variables in formula should be taken.
 #' @param SE logical. If TRUE then the standard error is computed rather than the standard deviation.
 #' @param draw_axis logical. If TRUE axes and box are drawn.

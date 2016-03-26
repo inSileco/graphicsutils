@@ -8,7 +8,7 @@ plotMeans(formula, data, SE = FALSE, draw_axis = TRUE,
   col_err = par()$col, col_pt = par()$col, cex_pt = 1, ...)
 }
 \arguments{
-\item{formula}{a formula, such as ‘y ~ x’ or ‘cbind(y1, y2) ~ x1 + x2’, where the ‘y’ variables are numeric data to be split into groups according to the grouping ‘x’ variables (usually factors).}
+\item{formula}{a formula, see \code{\link[stats]{formula}}.}
 
 \item{data}{a data frame (or list) from which the variables in formula should be taken.}
 
