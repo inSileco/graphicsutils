@@ -4,21 +4,22 @@
 \alias{vecfield2d}
 \title{Vector Fields.}
 \usage{
-vecfield2d(seqx, seqy, grid = NULL, FUN, args, name_var = "X",
-  cex.x = 0.25, cex.y = cex.x, log = FALSE, add = FALSE, ...)
+vecfield2d(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2),
+  fixed = NULL, cex.x = 0.25, cex.y = cex.x, log = FALSE, add = FALSE,
+  ...)
 }
 \arguments{
-\item{seqx}{The set of x coordinates of the vector field to be drawn.}
-
-\item{seqy}{The set of y coordinates of the vector field  to be drawn.}
-
-\item{grid}{A matrix with two columns that is optionnally used to alternatively define the coordinates of the vector field.}
+\item{coords}{A matrix with two columns or more that is optionnally used to alternatively define the coordinates of the vector field.}
 
 \item{FUN}{The function that describes the dynamical system (see details).}
 
 \item{args}{The parameters of the dynamical system (see details).}
 
-\item{name_var}{The name of the vector of dynamic variable that is used by \code{FUN}.}
+\item{ndim}{Number of dimension of the system. If \code{NULL} the values is based on \code{coords} and \code{slice}}
+
+\item{slices}{A vector of 2 elements providing the dimensions to be displayed, (default set to c(1,2)).}
+
+\item{fixed}{The values used for non drawn dimension, if \code{NULL} the values will be set to 0.}
 
 \item{cex.x}{The magnification coefficient to be used for lengths of vectors along the x axis.}
 
@@ -31,12 +32,10 @@ vecfield2d(seqx, seqy, grid = NULL, FUN, args, name_var = "X",
 \item{...}{Additionnal arguments to be passed to \code{arrows2}.}
 }
 \description{
-Draw a vector field associated to a dynamical system of dimension 2.
+Draw a vector field associated to a system of at least two ODE.
 }
 \details{
-The \code{FUN} function to be used must be a function of two arguments. The first argument must contain the dynamical variables
-as a vector X of two elements. Values in \code{seqx} and \code{seqy} will be used as the values of the dynamical variables.
-The second arguments must contain all the other parameters that shapes the dynamical system.
+The \code{FUN} function to be used must be a function of at least two arguments. The first argument must contain the dynamical variables as a vector and the second arguments must contain all the other parameters that shapes the dynamical system. When some dimension are missing, the order of \code{fixed} is the one in FUN once the drawn dimension are withdrawn.
 }
 \examples{
 # Example:
@@ -50,11 +49,11 @@ seqx <- seq(-2,2,0.31)
 seqy <- seq(-2,2,0.31)
 beta1 <- matrix(c(0,-1,1,0),2)
 # Plot 1:
-vecfield2d(seqx, seqy, FUN=systLin, args=list(beta=beta1))
+vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin, args=list(beta=beta1))
 # Plot 2:
 par(mar=c(2,2,2,2))
-vecfield2d(seqx, seqy, FUN=systLin, args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
-   border=NA,cex.hh=1.2, cex.shr=0.6, col=8)
+vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin, args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
+   border=NA,cex.hh=1, cex.shr=0.6, col=8)
 abline(v=0,h=0)
 }
 \keyword{empty}
