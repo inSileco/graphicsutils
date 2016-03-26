@@ -4,7 +4,7 @@
 \alias{plotMeans}
 \title{plot a means an error asociated}
 \usage{
-plotMeans(formula, data, SE = FALSE, draw_axis = TRUE,
+plotMeans(formula, data, FUN_err = sd, draw_axis = TRUE,
   col_err = par()$col, col_pt = par()$col, cex_pt = 1, ...)
 }
 \arguments{
@@ -12,7 +12,7 @@ plotMeans(formula, data, SE = FALSE, draw_axis = TRUE,
 
 \item{data}{a data frame (or list) from which the variables in formula should be taken.}
 
-\item{SE}{logical. If TRUE then the standard error is computed rather than the standard deviation.}
+\item{FUN_err}{The function that assess uncertainty. Default function is \code{\link[stats]{sd}}.}
 
 \item{draw_axis}{logical. If TRUE axes and box are drawn.}
 
@@ -28,9 +28,13 @@ plotMeans(formula, data, SE = FALSE, draw_axis = TRUE,
 Draw a Box around a Plot
 }
 \examples{
-# Example 1:
+# Example:
 dataset <- data.frame(dat=c(rnorm(50, 10, 2), rnorm(50, 20, 2)) , grp=rep(c("A","D"), each=50))
+par(mfrow=c(1,3))
 plotMeans(dat~grp, data=dataset, pch=15)
+plotMeans(dat~grp, data=dataset, FUN_err= function(x) sd(x)*2, pch=15)
+ser <- function(x) sd(x)/sqrt(length(x))
+plotMeans(dat~grp, data=dataset, FUN_err=ser, pch=15)#'
 }
 \keyword{deviation}
 \keyword{means,}
