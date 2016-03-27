@@ -2,19 +2,24 @@
 % Please edit documentation in R/plotMeans.R
 \name{plotMeans}
 \alias{plotMeans}
-\title{plot a means an error asociated}
+\title{Plot means and error asociated}
 \usage{
-plotMeans(formula, data, FUN_err = sd, draw_axis = TRUE,
-  col_err = par()$col, col_pt = par()$col, cex_pt = 1, ...)
+plotMeans(formula, data, FUN_err = sd, add = FALSE, seqx = NULL,
+  draw_axis = TRUE, col_err = par()$col, col_pt = par()$col, cex_pt = 1,
+  connect = FALSE, args_con = list(), ...)
 }
 \arguments{
 \item{formula}{a formula, see \code{\link[stats]{formula}}.}
 
 \item{data}{a data frame (or list) from which the variables in formula should be taken.}
 
-\item{FUN_err}{The function that assess uncertainty. Default function is \code{\link[stats]{sd}}.}
+\item{FUN_err}{the function that assess uncertainty. Default function is \code{\link[stats]{sd}}.}
 
-\item{draw_axis}{logical. If TRUE axes and box are drawn.}
+\item{add}{logical. should images be added on the current graph ? If FALSE a new plot is created.}
+
+\item{seqx}{the x coordinates of the means to be plotted, if \code{NULL}, default values are used. This is intended to be used when \code{add} parameter is \code{TRUE}.}
+
+\item{draw_axis}{logical. If \code{TRUE} axes and box are drawn.}
 
 \item{col_err}{color of the lines that reflect uncertainty.}
 
@@ -22,19 +27,29 @@ plotMeans(formula, data, FUN_err = sd, draw_axis = TRUE,
 
 \item{cex_pt}{magnification coefficient of the points that stand for means.}
 
-\item{...}{Further graphical parameters (see \code{\link[graphics]{plot.default}} and ) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = "b"}, \code{pch}.  Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
+\item{connect}{logical. If TRUE then mean are linked using a lines.}
+
+\item{args_con}{a list of parameters that are used to customize the lines that links the means.}
+
+\item{...}{Further graphical parameters (see \code{\link[graphics]{plot.default}} and ) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = "b"}, \code{pch}. Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
 }
 \description{
-Draw a Box around a Plot
+Plot a set of means computed based on a dataset and draw error asociated.
 }
 \examples{
 # Example:
 dataset <- data.frame(dat=c(rnorm(50, 10, 2), rnorm(50, 20, 2)) , grp=rep(c("A","D"), each=50))
 par(mfrow=c(1,3))
-plotMeans(dat~grp, data=dataset, pch=15)
-plotMeans(dat~grp, data=dataset, FUN_err= function(x) sd(x)*2, pch=15)
+plotMeans(dat~grp, data=dataset, pch=19)
+#
+plotMeans(dat~grp, data=dataset, FUN_err= function(x) sd(x)*2, pch=15,
+ylim=c(-5,30), yaxs="i", connect=TRUE, args_con=list(lwd=2, lty=2, col="grey35"))
+#
 ser <- function(x) sd(x)/sqrt(length(x))
-plotMeans(dat~grp, data=dataset, FUN_err=ser, pch=15)#'
+plot0(c(0,4), c(0,30))
+plotMeans(dat~grp, data=dataset, FUN_err=ser, pch=15,
+draw_axis=FALSE, add=TRUE, seqx=c(.5,3.5), mar=c(6,6,1,1), cex=1.4)
+axis(2)
 }
 \keyword{deviation}
 \keyword{means,}

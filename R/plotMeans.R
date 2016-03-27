@@ -11,6 +11,8 @@
 #' @param col_err color of the lines that reflect uncertainty.
 #' @param col_pt color of the points that stand for means.
 #' @param cex_pt magnification coefficient of the points that stand for means.
+#' @param connect logical. If TRUE then mean are linked using a lines.
+#' @param args_con a list of parameters that are used to customize the lines that links the means.
 #' @param ... Further graphical parameters (see \code{\link[graphics]{plot.default}} and ) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = "b"}, \code{pch}. Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.
 #'
 #' @keywords means, standard deviation

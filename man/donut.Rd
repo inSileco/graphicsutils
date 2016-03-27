@@ -10,35 +10,35 @@ donut(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05,
   clockwise = TRUE, ...)
 }
 \arguments{
-\item{vec}{Vector of data.}
+\item{vec}{a vector of non-negative numerical quantities  that are displayed as the areas of donut slices.}
 
-\item{eaten}{The eaten part of the donut.}
+\item{eaten}{the eaten part of the donut.}
 
-\item{labels}{One or more expressions or character strings giving names for the slices.}
+\item{labels}{one or more expressions or character strings giving names for the slices.}
 
-\item{rot}{The rotation angle (in degree) of the donut.}
+\item{rot}{the rotation angle (in degree) of the donut.}
 
-\item{cex}{The magnification coefficient to be used for the size of the donut.}
+\item{cex}{the magnification coefficient to be used for the size of the donut.}
 
-\item{tck}{The magnification coefficient to be used for the length of the tick marks.}
+\item{tck}{the magnification coefficient to be used for the length of the tick marks.}
 
-\item{width}{The width of the donut (set between 0 and 1).}
+\item{width}{the width of the donut (set between 0 and 1).}
 
-\item{mycol}{Vector of colors to be used.}
+\item{mycol}{vector of colors to be used.}
 
 \item{density}{the density of shading lines, in lines per inch.  The default value of \code{NULL} means that no shading lines are drawn.}
 
 \item{angle}{the slope of shading lines, given as an angle in degrees (counter-clockwise).}
 
-\item{dt}{Point density of the drawn circles.}
+\item{dt}{point density of the drawn circles.}
 
-\item{add}{Should images be added on the current graph ? If FALSE a new plot is created.}
+\item{add}{should images be added on the current graph ? If FALSE a new plot is created.}
 
-\item{cx}{The magnification coefficient to be used for the total horizontal width of the donut.}
+\item{cx}{the magnification coefficient to be used for the total horizontal width of the donut.}
 
-\item{cy}{Controls the total vertical width of the donut.}
+\item{cy}{controls the total vertical width of the donut.}
 
-\item{border}{The border color of the donut. The default value of \code{NA} means that no border lines are drawn.}
+\item{border}{the border color of the donut. The default value of \code{NA} means that no border lines are drawn.}
 
 \item{clockwise}{logical. Shall slices be drawn clockwise?}
 
@@ -48,6 +48,7 @@ donut(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05,
 Draw a donut chart.
 }
 \details{
+As pie chart, donut charts are a very bad way of displaying information, see \link[graphics]{pie}
 The aspect of the donut is fully customizable. If \code{width} is set to 1 and \code{eaten} to 0, the donut chart is then a pie chart.
 }
 \note{
