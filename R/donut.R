@@ -2,21 +2,21 @@
 #'
 #' Draw a donut chart.
 #'
-#' @param vec Vector of data.
-#' @param eaten The eaten part of the donut.
-#' @param labels One or more expressions or character strings giving names for the slices.
-#' @param rot The rotation angle (in degree) of the donut.
-#' @param cx The magnification coefficient to be used for the total horizontal width of the donut.
-#' @param cy Controls the total vertical width of the donut.
-#' @param cex The magnification coefficient to be used for the size of the donut.
-#' @param tck The magnification coefficient to be used for the length of the tick marks.
-#' @param width The width of the donut (set between 0 and 1).
-#' @param mycol Vector of colors to be used.
+#' @param vec a vector of non-negative numerical quantities  that are displayed as the areas of donut slices.
+#' @param eaten the eaten part of the donut.
+#' @param labels one or more expressions or character strings giving names for the slices.
+#' @param rot the rotation angle (in degree) of the donut.
+#' @param cx the magnification coefficient to be used for the total horizontal width of the donut.
+#' @param cy controls the total vertical width of the donut.
+#' @param cex the magnification coefficient to be used for the size of the donut.
+#' @param tck the magnification coefficient to be used for the length of the tick marks.
+#' @param width the width of the donut (set between 0 and 1).
+#' @param mycol vector of colors to be used.
 #' @param density the density of shading lines, in lines per inch.  The default value of \code{NULL} means that no shading lines are drawn.
 #' @param angle the slope of shading lines, given as an angle in degrees (counter-clockwise).
-#' @param dt Point density of the drawn circles.
-#' @param add Should images be added on the current graph ? If FALSE a new plot is created.
-#' @param border The border color of the donut. The default value of \code{NA} means that no border lines are drawn.
+#' @param dt point density of the drawn circles.
+#' @param add should images be added on the current graph ? If FALSE a new plot is created.
+#' @param border the border color of the donut. The default value of \code{NA} means that no border lines are drawn.
 #' @param clockwise logical. Shall slices be drawn clockwise?
 #' @param ... additionnal arguments to be passed to lines methods.
 #'
@@ -25,6 +25,7 @@
 #' @export
 #'
 #' @details
+#' As pie chart, donut charts are a very bad way of displaying information, see \link[graphics]{pie}
 #' The aspect of the donut is fully customizable. If \code{width} is set to 1 and \code{eaten} to 0, the donut chart is then a pie chart.
 #'
 #' @note
