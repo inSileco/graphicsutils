@@ -7,15 +7,15 @@
 rotation(x, y, rot = 90, xrot = NULL, yrot = NULL, radian = FALSE)
 }
 \arguments{
-\item{x}{The x coordinates of points.}
+\item{x}{the x coordinates of points.}
 
-\item{y}{The y coordinates of points.}
+\item{y}{the y coordinates of points.}
 
 \item{rot}{Angle of the rotation expressed in degree.}
 
-\item{xrot}{Optional x coordinate for the center of rotation.}
+\item{xrot}{optional, x coordinate for the center of rotation.}
 
-\item{yrot}{Optional y coordinate for the center of rotation.}
+\item{yrot}{optional, y coordinate for the center of rotation.}
 
 \item{radian}{logical. If TRUE, then radian are used rather that degree.}
 }

@@ -4,21 +4,21 @@
 #'
 #' @export
 #'
-#' @param seqtime Sequence of time values (equivalent to the x axis).
-#' @param seqval Sequence of values of interest (radial axis, equivalent to the y axis).
-#' @param rad Radius of the circle.
-#' @param from Starting point of the circle.
-#' @param to Ending point of the circle.
-#' @param incr Increment used to draw the circle.
-#' @param atc The points at which tick-marks are to be drawn. By default (when \code{NULL}) tickmark locations are computed.
-#' @param labelc Character or expression vector of labels to be placed at the tickpoints.
-#' @param atr The points at which radial-axis marks are to be drawn.
-#' @param tckcol Color of the tickmarks.
-#' @param labelr Character or expression vector specifying the _text_ to be placed at the radial-axis marks.
+#' @param seqtime sequence of time values (equivalent to the x axis).
+#' @param seqval sequence of values of interest (radial axis, equivalent to the y axis).
+#' @param rad radius of the circle.
+#' @param from starting point of the circle.
+#' @param to ending point of the circle.
+#' @param incr increment used to draw the circle.
+#' @param atc the points at which tick-marks are to be drawn. By default (when \code{NULL}) tickmark locations are computed.
+#' @param labelc character or expression vector of labels to be placed at the tickpoints.
+#' @param atr the points at which radial-axis marks are to be drawn.
+#' @param tckcol color of the tickmarks.
+#' @param labelr character or expression vector specifying the _text_ to be placed at the radial-axis marks.
 #' @param clockwise logical. If TRUE, the plot must de read clockwise, otherwise, counter-clockwise.
-#' @param n_signif Number of significant numbers to be displayed (used when labelc is \code{NULL}).
-#' @param add logical. Add to current plot?
-#' @param ... Additional argument to be passed to \code{polygon} function.
+#' @param n_signif number of significant numbers to be displayed (used when labelc is \code{NULL}).
+#' @param add logical. add to current plot?
+#' @param ... additional argument to be passed to \code{polygon} function.
 #'
 #' @details
 #' Polar Plot

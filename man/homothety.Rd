@@ -7,19 +7,19 @@
 homothety(x, y, lambda, xcen = NULL, ycen = NULL, add = FALSE, ...)
 }
 \arguments{
-\item{x}{The x coordinates of points. It can also be a matrix (see details).}
+\item{x}{the x coordinates of points. It can also be a matrix (see details).}
 
-\item{y}{The y coordinates of points.}
+\item{y}{the y coordinates of points.}
 
-\item{lambda}{The factor to be used for the homothetetic transformations.}
+\item{lambda}{the factor to be used for the homothetetic transformations.}
 
-\item{xcen}{The x coordinate for the center of rotation.}
+\item{xcen}{the x coordinate for the center of rotation.}
 
-\item{ycen}{The y coordinate for the center of rotation.}
+\item{ycen}{the y coordinate for the center of rotation.}
 
 \item{add}{logical. If TRUE the set of transformed points are drawn as a polygon.}
 
-\item{...}{Additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).}
+\item{...}{additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).}
 }
 \description{
 Compute a homothetic transformation for a set of points. The transformed set of points is optionnaly drawn as a polygon.

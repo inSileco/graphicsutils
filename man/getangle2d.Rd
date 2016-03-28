@@ -7,13 +7,13 @@
 getAngle2d(x0, y0, x1, y1, rad = FALSE)
 }
 \arguments{
-\item{x0}{The x coordinates of the first set of vector.}
+\item{x0}{the x coordinates of the first set of vector.}
 
-\item{y0}{The y coordinates of the first set of vector.}
+\item{y0}{the y coordinates of the first set of vector.}
 
-\item{x1}{The x coordinates of the second set of vector.}
+\item{x1}{the x coordinates of the second set of vector.}
 
-\item{y1}{The y coordinates of the second set of vector.}
+\item{y1}{the y coordinates of the second set of vector.}
 
 \item{rad}{logical. If TRUE, angles are returned in radians.}
 }

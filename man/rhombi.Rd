@@ -7,19 +7,19 @@
 rhombi(x, y = x, ldg = 1, sdg = ldg, rot = 0, area = FALSE, ...)
 }
 \arguments{
-\item{x}{Vector of x coordinates of the centers of the losange}
+\item{x}{a vector of x coordinates of the centers of the losange}
 
-\item{y}{Vector of y coordinates of the centers of the losange}
+\item{y}{a vector of y coordinates of the centers of the losange}
 
-\item{ldg}{Vector of length of the large diagonals.}
+\item{ldg}{vector of length of the large diagonals.}
 
-\item{sdg}{Vector of length of the small diagonals.}
+\item{sdg}{vector of length of the small diagonals.}
 
-\item{rot}{The rotation angles (in degree) of the rhombi.}
+\item{rot}{rotation angles (in degree) of the rhombi.}
 
 \item{area}{logical. If TRUE the area of rhombis are returned.}
 
-\item{...}{Additionnal arguments to be passed to polygon function.}
+\item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.}
 }
 \value{
 If \code{area} is set to TRUE then areas of rhonbi drawn are returned.

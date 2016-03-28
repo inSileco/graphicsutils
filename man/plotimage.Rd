@@ -7,13 +7,13 @@
 plotImage(obj = NULL, file = NULL, add = FALSE, ...)
 }
 \arguments{
-\item{obj}{An object of class \code{nativeRaster} function.}
+\item{obj}{an object of class \code{nativeRaster} function.}
 
-\item{file}{A path to either a \code{.png} file or a \code{.jpeg} file.}
+\item{file}{a path to either a \code{.png} file or a \code{.jpeg} file.}
 
 \item{add}{logical. Should images be added on the current graph? If FALSE a new plot is created.}
 
-\item{...}{Additional arguments to be passed to \code{rasterImage} function.}
+\item{...}{additional arguments to be passed to \code{rasterImage} function.}
 }
 \description{
 Function that returns a plot that displays an image. It enables to users to directly include a png or a jpeg file in a plot region by providing their path.

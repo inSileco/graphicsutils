@@ -2,10 +2,10 @@
 #'
 #' Function that returns a plot that displays an image. It enables to users to directly include a png or a jpeg file in a plot region by providing their path.
 #'
-#' @param obj An object of class \code{nativeRaster} function.
-#' @param file A path to either a \code{.png} file or a \code{.jpeg} file.
+#' @param obj an object of class \code{nativeRaster} function.
+#' @param file a path to either a \code{.png} file or a \code{.jpeg} file.
 #' @param add logical. Should images be added on the current graph? If FALSE a new plot is created.
-#' @param ... Additional arguments to be passed to \code{rasterImage} function.
+#' @param ... additional arguments to be passed to \code{rasterImage} function.
 #'
 #' @keywords plot, image.
 #'

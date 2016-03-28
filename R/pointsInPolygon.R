@@ -2,10 +2,10 @@
 #'
 #' Return a logical vector stating whether or not points are inside a static polygon.
 #'
-#' @param x The x coordinates of points to be tested.
-#' @param y The y coordinates of points to be tested.
-#' @param poly_x The x coordinates of the static polygons.
-#' @param poly_y The y coordinates of the static polygons.
+#' @param x the x coordinates of points to be tested.
+#' @param y the y coordinates of points to be tested.
+#' @param poly_x the x coordinates of the static polygons.
+#' @param poly_y the y coordinates of the static polygons.
 #'
 #' @keywords points, polygons, over
 #'

@@ -2,11 +2,11 @@
 #'
 #' Rotates a set of points.
 #'
-#' @param x The x coordinates of points.
-#' @param y The y coordinates of points.
+#' @param x the x coordinates of points.
+#' @param y the y coordinates of points.
 #' @param rot Angle of the rotation expressed in degree.
-#' @param xrot Optional x coordinate for the center of rotation.
-#' @param yrot Optional y coordinate for the center of rotation.
+#' @param xrot optional, x coordinate for the center of rotation.
+#' @param yrot optional, y coordinate for the center of rotation.
 #' @param radian logical. If TRUE, then radian are used rather that degree.
 #'
 #' @keywords rotation

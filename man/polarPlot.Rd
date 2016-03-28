@@ -9,35 +9,35 @@ polarPlot(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi,
   atr = NULL, clockwise = TRUE, n_signif = 2, add = FALSE, ...)
 }
 \arguments{
-\item{seqtime}{Sequence of time values (equivalent to the x axis).}
+\item{seqtime}{sequence of time values (equivalent to the x axis).}
 
-\item{seqval}{Sequence of values of interest (radial axis, equivalent to the y axis).}
+\item{seqval}{sequence of values of interest (radial axis, equivalent to the y axis).}
 
-\item{rad}{Radius of the circle.}
+\item{rad}{radius of the circle.}
 
-\item{from}{Starting point of the circle.}
+\item{from}{starting point of the circle.}
 
-\item{to}{Ending point of the circle.}
+\item{to}{ending point of the circle.}
 
-\item{incr}{Increment used to draw the circle.}
+\item{incr}{increment used to draw the circle.}
 
-\item{labelc}{Character or expression vector of labels to be placed at the tickpoints.}
+\item{labelc}{character or expression vector of labels to be placed at the tickpoints.}
 
-\item{tckcol}{Color of the tickmarks.}
+\item{tckcol}{color of the tickmarks.}
 
-\item{atc}{The points at which tick-marks are to be drawn. By default (when \code{NULL}) tickmark locations are computed.}
+\item{atc}{the points at which tick-marks are to be drawn. By default (when \code{NULL}) tickmark locations are computed.}
 
-\item{labelr}{Character or expression vector specifying the _text_ to be placed at the radial-axis marks.}
+\item{labelr}{character or expression vector specifying the _text_ to be placed at the radial-axis marks.}
 
-\item{atr}{The points at which radial-axis marks are to be drawn.}
+\item{atr}{the points at which radial-axis marks are to be drawn.}
 
 \item{clockwise}{logical. If TRUE, the plot must de read clockwise, otherwise, counter-clockwise.}
 
-\item{n_signif}{Number of significant numbers to be displayed (used when labelc is \code{NULL}).}
+\item{n_signif}{number of significant numbers to be displayed (used when labelc is \code{NULL}).}
 
-\item{add}{logical. Add to current plot?}
+\item{add}{logical. add to current plot?}
 
-\item{...}{Additional argument to be passed to \code{polygon} function.}
+\item{...}{additional argument to be passed to \code{polygon} function.}
 }
 \description{
 Draw a polar plot.

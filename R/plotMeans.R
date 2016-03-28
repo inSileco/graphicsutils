@@ -76,7 +76,6 @@ plotMeans <- function(formula, data, FUN_err=sd, add=FALSE, seqx=NULL, draw_axis
   do.call(points, list(x=seqx, y=mn_val[,n_col], col=col_pt, cex=cex_pt))
   for (i in 1:n_val) do.call(lines, list(x=rep(seqx[i],2), y=c(min_val[i],max_val[i]), col=col_err))
   #
-  print(as.list(c(x=seqx, y=mn_val[,n_col], args_con)))
   if (connect) do.call(lines, c(list(x=seqx, y=mn_val[,n_col]),args_con))
   #
   if (draw_axis){

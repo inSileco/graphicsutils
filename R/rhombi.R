@@ -2,13 +2,13 @@
 #'
 #' Add rhombi on a plot and optionnaly returns areas.
 #'
-#' @param x Vector of x coordinates of the centers of the losange
-#' @param y Vector of y coordinates of the centers of the losange
-#' @param ldg Vector of length of the large diagonals.
-#' @param sdg Vector of length of the small diagonals.
-#' @param rot The rotation angles (in degree) of the rhombi.
+#' @param x a vector of x coordinates of the centers of the losange
+#' @param y a vector of y coordinates of the centers of the losange
+#' @param ldg vector of length of the large diagonals.
+#' @param sdg vector of length of the small diagonals.
+#' @param rot rotation angles (in degree) of the rhombi.
 #' @param area logical. If TRUE the area of rhombis are returned.
-#' @param ... Additionnal arguments to be passed to polygon function.
+#' @param ... additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.
 #'
 #' @keywords rhumbus
 #'

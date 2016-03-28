@@ -2,10 +2,10 @@
 #'
 #' Calcul the angle of two set of vectors.
 #'
-#' @param x0 The x coordinates of the first set of vector.
-#' @param y0 The y coordinates of the first set of vector.
-#' @param x1 The x coordinates of the second set of vector.
-#' @param y1 The y coordinates of the second set of vector.
+#' @param x0 the x coordinates of the first set of vector.
+#' @param y0 the y coordinates of the first set of vector.
+#' @param x1 the x coordinates of the second set of vector.
+#' @param y1 the y coordinates of the second set of vector.
 #' @param rad logical. If TRUE, angles are returned in radians.
 #'
 #' @keywords empty plot

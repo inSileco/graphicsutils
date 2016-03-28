@@ -7,13 +7,13 @@
 pointsInPolygon(x, y, poly_x, poly_y)
 }
 \arguments{
-\item{x}{The x coordinates of points to be tested.}
+\item{x}{the x coordinates of points to be tested.}
 
-\item{y}{The y coordinates of points to be tested.}
+\item{y}{the y coordinates of points to be tested.}
 
-\item{poly_x}{The x coordinates of the static polygons.}
+\item{poly_x}{the x coordinates of the static polygons.}
 
-\item{poly_y}{The y coordinates of the static polygons.}
+\item{poly_y}{the y coordinates of the static polygons.}
 }
 \description{
 Return a logical vector stating whether or not points are inside a static polygon.
