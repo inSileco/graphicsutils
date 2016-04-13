@@ -12,7 +12,7 @@
 #'
 #' @details The function is based on the \link[graphics]{plot.default} function. It makes the creation of an empty plot faster.
 #'
-#' @seealso \code{\link[shape]{emplyplot}}
+#' @seealso \code{\link[shape]{emptyplot}}
 #'
 #' @examples
 #' # Example 1:

@@ -5,7 +5,7 @@
 #' @param x vectors containing the x coordinates.
 #' @param upper the y coordinates of the upper values.
 #' @param lower the y coordinates of the lower values.
-#' @param ... additionnal arguments to be passed to \code{\link[graphics]{polygons}}
+#' @param ... additionnal arguments to be passed to \link[graphics]{polygon}.
 #'
 #' @export
 #'
