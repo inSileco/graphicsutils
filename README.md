@@ -1,9 +1,7 @@
 Description
 ===========
 
-*graphicsutils* is an R package that includes a set of graphical functions as the valuable [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package do. This package is not intended to be submitted to the CRAN. First, because many of these functions already exist in other package (in a different form though). Second, because it serves me as a experiment for many aspect of coding. Nevertheless this package may help users to deal with typical issues they may encounter when they use the core package *graphics*. If some of these function turn out to be really valuable, then they will likely appear in a different package which will be submit to the CRAN.
-
-Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package. Note that
+*graphicsutils* is an R package that includes a set of graphical functions. As the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html), this package ass some graphics utilities based on the core package *graphics*. Note that this package is not intended to be sumitted to the CRAN for two reasons. First, because many of these functions already exist in other packages (in a different form though). Second, because I use it to improve my coding skill and my experience in writting a R package. Nevertheless, this package may help users to deal with typical issues they may encounter. If some of these functions turn out to be really valuable, then they will likely appear in a different package which will be submit to the CRAN. Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package. Note that
 
 Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils)
 
@@ -52,12 +50,28 @@ axis(2)
 A stacked areas chart
 ---------------------
 
+### A simple area
+
+``` r
+plot0(c(0,10),c(0,10))
+sz <- 100
+seqx <- seq(0, 10, length.out=sz)
+seqy1 <- 0.2*seqx*runif(sz, 0, 1)
+seqy2 <- 4+0.25*seqx*runif(sz, 0, 1)
+seqy3 <- 8+0.25*seqx*runif(sz, 0, 1)
+envelop(seqx, seqy1, seqy2, col="grey85", border=NA)
+```
+
+![](inst/assets/img/unnamed-chunk-6-1.png)<!-- -->
+
+### A complete stacked areas
+
 ``` r
 x <- data.frame(matrix(runif(200,2,10), 8, 25))
 stackedAreas(x)
 ```
 
-![](inst/assets/img/unnamed-chunk-6-1.png)<!-- -->
+![](inst/assets/img/unnamed-chunk-7-1.png)<!-- -->
 
 Polar plot
 ----------
@@ -66,7 +80,7 @@ Polar plot
 polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
 ```
 
-![](inst/assets/img/unnamed-chunk-7-1.png)<!-- -->
+![](inst/assets/img/unnamed-chunk-8-1.png)<!-- -->
 
 Get pretty ranges
 -----------------
@@ -74,9 +88,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.09607092 0.99706903
+#> [1] 0.001531836 0.930422110
 prettyRange(vec)
-#> [1] 0.05 1.00
+#> [1] 0.00 0.95
 prettyRange(c(3.85,3.88245))
 #> [1] 3.850 3.885
 ```
@@ -105,7 +119,7 @@ To do list
 ==========
 
 1.  Add more examples
-2.  Create a sustainable system to include different shapes (I am thinking about it ).
+2.  Create a sustainable system to include different shapes (I am curenlty thinking about it).
 3.  grapdientPolygon must be completed to include images before exporting it.
 4.  Add interactive mode in 'showPalette Function'
 5.  Vectfield2d needs to be reviewed.

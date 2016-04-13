@@ -3,7 +3,6 @@ title: "'graphicsutils': R functions to facilitate the use of 'graphics'"
 output:
     md_document:
         variant: markdown_github
-# markdown()
 ---
 
 
@@ -22,14 +21,11 @@ knitr::opts_chunk$set(
 
 # Description
 
-*graphicsutils* is an R package that includes a set of graphical functions as the valuable [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package do.
-This package is not intended to be submitted to the CRAN.
-First, because many of these functions already exist in other package (in a different form though).
-Second, because it serves me as a experiment for many aspect of coding.
-Nevertheless this package may help users to deal with typical issues they may encounter when they use the core package *graphics*.
-If some of these function turn out to be really valuable, then they will likely appear in a different package which will be submit to the CRAN.
-
-Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package. Note that
+*graphicsutils* is an R package that includes a set of graphical functions. As the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html), this package ass some graphics utilities based on the core package *graphics*. Note that this package is not intended to be sumitted to the CRAN for two reasons.
+First, because many of these functions already exist in other packages (in a different form though).
+Second, because I use it to improve my coding skill and my experience in writting a R package.
+Nevertheless, this package may help users to deal with typical issues they may encounter.
+If some of these functions turn out to be really valuable, then they will likely appear in a different package which will be submit to the CRAN. Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package. Note that
 
 Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils)
 
@@ -72,6 +68,22 @@ axis(2)
 ```
 
 ## A stacked areas chart
+
+### A simple area
+
+
+```{r,   fig.width=6,  fig.height=6}
+plot0(c(0,10),c(0,10))
+sz <- 100
+seqx <- seq(0, 10, length.out=sz)
+seqy1 <- 0.2*seqx*runif(sz, 0, 1)
+seqy2 <- 4+0.25*seqx*runif(sz, 0, 1)
+seqy3 <- 8+0.25*seqx*runif(sz, 0, 1)
+envelop(seqx, seqy1, seqy2, col="grey85", border=NA)
+```
+
+### A complete stacked areas
+
 
 ```{r,   fig.width=6,  fig.height=6}
 x <- data.frame(matrix(runif(200,2,10), 8, 25))
@@ -119,7 +131,7 @@ The *graphicsutils* package is licensed under the GPLv3 (http://www.gnu.org/lice
 # To do list
 
 1. Add more examples
-2. Create a sustainable system to include different shapes (I am thinking about it ).
+2. Create a sustainable system to include different shapes (I am curenlty thinking about it).
 2. grapdientPolygon must be completed to include images before exporting it.
 2. Add interactive mode in 'showPalette Function'
 2. Vectfield2d needs to be reviewed.
