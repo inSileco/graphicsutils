@@ -5,7 +5,7 @@
 #' @param mat a matrix object specifying the location of the next N figures on the output device, see \link[graphics]{layout}.
 #' @param dim optionnal. If provided, then a matrix is created based and this argument speciefies its dimensions.
 #' @param side the number of the sides on which plot areas must be added.
-#' @param cex.mar
+#' @param quiet if TRUE, no warning message will be displayed.
 #' @param ... additionnal arguments to be passed to \link[graphics]{layout}.
 #'
 #' @export
@@ -15,11 +15,10 @@
 #' repeating or deleting axis labels, \code{plotOnSide} add plot areas on the specified sides of the original fgures.
 #' It is based on \link[graphics]{layout} and it is no more than a tunned version of it.
 #'
-#' @example
-#'
-#'par(mar=c(0,0,0,0))
-#'plotOnSide(1:3, width=c(0.2,1), height=c(1,1,1,0.6))
-#'layout.show(5)
+#' @examples
+#' par(mar=c(0,0,0,0))
+#' plotOnSide(1:3, width=c(0.2,1), height=c(1,1,1,0.6))
+#' layout.show(5)
 
 
 plotOnSide <- function(mat, side=1:2, dim=NULL, quiet=FALSE, ...){

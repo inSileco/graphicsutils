@@ -27,7 +27,7 @@ plot0()
 plot0(c(-10,10), asp=1)
 }
 \seealso{
-\code{\link[shape]{emplyplot}}
+\code{\link[shape]{emptyplot}}
 }
 \keyword{empty}
 \keyword{plot}

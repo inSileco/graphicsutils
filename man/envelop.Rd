@@ -13,7 +13,7 @@ envelop(x, upper, lower, ...)
 
 \item{lower}{the y coordinates of the lower values.}
 
-\item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygons}}}
+\item{...}{additionnal arguments to be passed to \link[graphics]{polygon}.}
 }
 \description{
 \code{envelop} colors the area between two series of y coordinates.
