@@ -27,6 +27,7 @@ q#' Add arrows to a plot.
 #' plot0(c(0,10),c(0,10))
 #' arrows2(1,9,8)
 #' arrows2(1,8,8,1,cex.hh=1.2, cex.hl=1.2, col="grey30", lwd=1.2, prophead=TRUE, twoheaded=TRUE)
+#' arrows2(5,9,5,1)
 #'
 #' # Example 2:
 #' plot0(c(0,1),c(0,1))
@@ -56,7 +57,7 @@ arrows2 <- function(x0, y0, x1=x0, y1=y0, off0=0, off1=off0, cex.arr=1, cex.shr=
     anglept <- .5*pi
     idx1 <- which(rx!=0)
     anglept[idx1] <- atan(ry[idx1]/rx[idx1])
-    idx2 <- which(rx<0)
+    idx2 <- which(rx<0 | (rx==0 & ry<0))
     anglept[idx2] <- anglept[idx2]+pi
     ## ----
     x0 <- x0+distpt*off0*cos(anglept)
