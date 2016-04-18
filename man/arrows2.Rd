@@ -43,6 +43,7 @@ Draw arrows between pairs of points. Arrows drawn are fully customizable by usin
 plot0(c(0,10),c(0,10))
 arrows2(1,9,8)
 arrows2(1,8,8,1,cex.hh=1.2, cex.hl=1.2, col="grey30", lwd=1.2, prophead=TRUE, twoheaded=TRUE)
+arrows2(5,9,5,1)
 
 # Example 2:
 plot0(c(0,1),c(0,1))
