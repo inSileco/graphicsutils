@@ -23,11 +23,11 @@
 #' box2()
 #' ##
 #' plot0()
-#' box2("14", col2fill="grey80", lwd=2)
+#' box2("14", fill="grey80", lwd=2)
 #' plot0()
-#' box2(c(1,4), col2fill="grey80", lwd=2)
+#' box2(c(1,4), fill="grey80", lwd=2)
 #' plot0()
-#' box2(c(1,4), col2fill="grey80", lwd=2)
+#' box2(c(1,4), fill="grey80", lwd=2)
 #' # Example 2:
 #' par(mfrow=c(2,2),oma=c(2,2,2,2))
 #' plot(0,0)
@@ -36,8 +36,8 @@
 #' plot(0,0)
 #' plot(0,0)
 #' plot(c(0,1),c(0,2))
-#' box2(which="figure",lwd=2, col2fill=2)
-#' box2(side=12, lwd=2, col2fill=8)
+#' box2(which="figure",lwd=2, fill=2)
+#' box2(side=12, lwd=2, fill=8)
 #' points(c(0,1),c(0,2))
 #' axis(2)
 #' axis(1)
@@ -82,7 +82,7 @@ box2 <- function(side=1:4, which="plot", fill=NULL, ...){
       op <- par("xpd")
       par(xpd=NA)
       mat <- matrix(c(4,2,3,1,3,1,4,2), ncol=2)
-      if (!is.null(col2fill)) rect(coord[1],coord[3],coord[2],coord[4], col=col2fill, border=NA)
+      if (!is.null(fill)) plotAreaColor(col=fill)
       for (i in ax) {
         coordb <- coord
         coordb[mat[i,1]] <- coordb[mat[i,2]]
