@@ -10,7 +10,6 @@
 
 # produced vignettes
 vignettes.*
-README.Rmd
 
 # folders
 ./R/deprecated/**

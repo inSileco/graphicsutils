@@ -4,6 +4,7 @@
 #'
 #' @param x the x coordinates of points in the plot.
 #' @param y the y coordinates of points in the plot.
+#' @param fill The color to be used to fill the plot area.
 #' @param ... additional arguments affecting the plot.
 #'
 #' @keywords empty plot

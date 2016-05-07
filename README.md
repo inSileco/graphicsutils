@@ -1,7 +1,7 @@
 Description
 ===========
 
-*graphicsutils* is an R package that includes a set of graphical functions. As the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html), this package ass some graphics utilities based on the core package *graphics*. Note that this package is not intended to be sumitted to the CRAN for two reasons. First, because many of these functions already exist in other packages (in a different form though). Second, because I use it to improve my coding skill and my experience in writting a R package. Nevertheless, this package may help users to deal with typical issues they may encounter. If some of these functions turn out to be really valuable, then they will likely appear in a different package which will be submit to the CRAN. Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package. Note that
+*graphicsutils* is an R package that includes a set of graphical functions. As the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package, it ads some graphics utilities based on the core package *graphics*. Note that this package is not intended to be sumitted to the CRAN. First, because many of these functions already exist in other packages (in a different form though). Second, because I use it to improve my coding skill and my experience in writing a R package. This allows me to make some functions disappearing without me explaining why !! Nevertheless, this package may help users to deal with typical issues they may encounter when using *graphics*. If some of these functions turn out to be really helpful then they will likely appear in a different package which will be submitted to the CRAN. Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package.
 
 Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils)
 
@@ -39,8 +39,8 @@ Add a box
 ``` r
 par(mar=rep(2,4))
 plot0()
-box2(which="figure",lwd=2, col2fill="grey30")
-box2(side=12, lwd=2, col2fill="grey80")
+box2(which="figure",lwd=2, fill="grey30")
+box2(side=12, lwd=2, fill="grey80")
 axis(1)
 axis(2)
 ```
@@ -88,9 +88,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.001531836 0.930422110
+#> [1] 0.1041567 0.9812158
 prettyRange(vec)
-#> [1] 0.00 0.95
+#> [1] 0.1 1.0
 prettyRange(c(3.85,3.88245))
 #> [1] 3.850 3.885
 ```

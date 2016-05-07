@@ -11,6 +11,8 @@ plot0(x = c(-1, 1), y = c(-1, 1), fill = NULL, ...)
 
 \item{y}{the y coordinates of points in the plot.}
 
+\item{fill}{The color to be used to fill the plot area.}
+
 \item{...}{additional arguments affecting the plot.}
 }
 \description{
