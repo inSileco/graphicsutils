@@ -88,9 +88,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.1041567 0.9812158
+#> [1] 0.001531836 0.930422110
 prettyRange(vec)
-#> [1] 0.1 1.0
+#> [1] 0.00 0.95
 prettyRange(c(3.85,3.88245))
 #> [1] 3.850 3.885
 ```

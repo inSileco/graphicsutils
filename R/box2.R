@@ -82,7 +82,7 @@ box2 <- function(side=1:4, which="plot", fill=NULL, ...){
       op <- par("xpd")
       par(xpd=NA)
       mat <- matrix(c(4,2,3,1,3,1,4,2), ncol=2)
-      if (!is.null(fill)) plotAreaColor(col=fill)
+      if (!is.null(fill)) rect(coord[1],coord[3],coord[2],coord[4], col=fill, border=NA)
       for (i in ax) {
         coordb <- coord
         coordb[mat[i,1]] <- coordb[mat[i,2]]
