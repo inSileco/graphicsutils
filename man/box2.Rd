@@ -4,14 +4,14 @@
 \alias{box2}
 \title{Box version 2}
 \usage{
-box2(side = 1:4, which = "plot", col2fill = NULL, ...)
+box2(side = 1:4, which = "plot", fill = NULL, ...)
 }
 \arguments{
 \item{side}{A numerical or character vector or a character string specifying which side(s) of the plot the box is to be drawn (see details).}
 
 \item{which}{A character, one of \code{plot}, \code{figure}, \code{inner} and \code{outer}.}
 
-\item{col2fill}{The color to be used to fill the box.}
+\item{fill}{The color to be used to fill the box.}
 
 \item{...}{Further graphical parameters (see \code{\link[graphics]{par}}) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = "b"}, \code{pch}.  Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
 }

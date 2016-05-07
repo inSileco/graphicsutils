@@ -22,7 +22,7 @@
 #' plot0(c(-10,10), asp=1)
 
 
-plot0 <- function(x=c(-1,1), y = c(-1,1), ...){
+plot0 <- function(x=c(-1,1), y = c(-1,1), fill=NULL, ...){
     args <- list(...)
     coor <- list(x=x, y=y)
     deft <- list(ann=FALSE, axes=FALSE, type="n")
@@ -33,4 +33,5 @@ plot0 <- function(x=c(-1,1), y = c(-1,1), ...){
       do.call("plot.default", args=as.list(c(coor,args,deft)))
     }
     else plot.default(x=x, y=y, ann=FALSE, axes=FALSE, type="n")
+    if (!is.null(fill)) plotAreaColor(col=fill)
 }

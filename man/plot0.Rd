@@ -4,7 +4,7 @@
 \alias{plot0}
 \title{An empty plot function}
 \usage{
-plot0(x = c(-1, 1), y = c(-1, 1), ...)
+plot0(x = c(-1, 1), y = c(-1, 1), fill = NULL, ...)
 }
 \arguments{
 \item{x}{the x coordinates of points in the plot.}
