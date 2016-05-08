@@ -21,14 +21,14 @@ knitr::opts_chunk$set(
 
 # Description
 
-*graphicsutils* is an R package that includes a set of graphical functions. As the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package, it ads some graphics utilities based on the core package *graphics*. Note that this package is not intended to be sumitted to the CRAN.
+*graphicsutils* is an R package that includes a set of graphical functions. As the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package, it adds several graphics utilities based on the core package *graphics*. Note that this package is not intended to be sumitted to the CRAN.
 First, because many of these functions already exist in other packages (in a different form though).
-Second, because I use it to improve my coding skill and my experience in writing a R package. This allows me to make some functions disappearing without me explaining why !!
+Second, because I use it to improve my coding skill and my experience in writing a R package. This allows me to make some functions disappearing without me explaining why !
 Nevertheless, this package may help users to deal with typical issues they may encounter when using *graphics*.
 If some of these functions turn out to be really helpful then they will likely appear in a different package which will be submitted to the CRAN. Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package.
 
 Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils)
-
+Last update: `r format(Sys.time(), '%d %B %Y')`
 
 
 # Install
@@ -51,17 +51,31 @@ library(graphicsutils)
 
 ## Empty your plot
 
+To start a figure from scratch it is often useful to get a plot without nothing but the correct size of axes.
+`plot0()` allows the user to do so :
+
+
 ```{r}
 plot0(c(0,1),c(0,1))
 ```
-Empty isn't it ?
+
+Empty isn't it?
+Also, it can be filled with a given color using `fill` parameter.
+
+
+```{r}
+plot0(c(0,1),c(0,1), fill="lightskyblue1")
+```
+
 
 ## Add a box
+
+Box allows the user to add any axes around the plot.
 
 ```{r}
 par(mar=rep(2,4))
 plot0()
-box2(which="figure",lwd=2, fill="grey30")
+box2(which="figure", lwd=2, fill="grey30")
 box2(side=12, lwd=2, fill="grey80")
 axis(1)
 axis(2)
@@ -69,7 +83,7 @@ axis(2)
 
 ## A stacked areas chart
 
-### A simple area
+### A simple stacked areas
 
 
 ```{r,   fig.width=6,  fig.height=6}
@@ -107,13 +121,12 @@ prettyRange(c(3.85,3.88245))
 
 ## Interactive functions
 
-Some functions are interactive and fairly understandable !
-So, I suggest you try:
+Some functions are interactive and fairly understandable!
+So, I suggest you try the following functions:
 
 ```{r eval=FALSE}
 pickColors()
 ```
-and also
 
 ```{r eval=FALSE}
 layout2()
