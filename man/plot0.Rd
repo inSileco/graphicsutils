@@ -27,6 +27,9 @@ plot0()
 
 # Example 2:
 plot0(c(-10,10), asp=1)
+
+# Example 2:
+plot0(c(-10,10), asp=1, fill=8)
 }
 \seealso{
 \code{\link[shape]{emptyplot}}

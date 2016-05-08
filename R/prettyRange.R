@@ -1,6 +1,6 @@
 #' Pretty range
 #'
-#' This function returns a pretty range of values given a vector of type \code{numeric}.
+#' This function returns a pretty range of values for a given a vector of type \code{numeric}.
 #'
 #' @param x A vector of numerical values.
 #'

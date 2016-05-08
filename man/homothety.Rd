@@ -30,7 +30,6 @@ Details about what is a homothetic transformation, see \url{https://en.wikipedia
 If x is a matrix with more than 2 columns, then x is the first column and y the second one.
 
 Note that \code{lambda}, \code{xcen} and \code{ycen} are unique meaning that \code{homothety} computes only one homothetic transformation.
-
 Drawing the points computed is relevant only if there are more than 2 points.
 }
 \examples{

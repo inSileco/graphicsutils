@@ -1,9 +1,9 @@
 Description
 ===========
 
-*graphicsutils* is an R package that includes a set of graphical functions. As the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package, it adds several graphics utilities based on the core package *graphics*. Note that this package is not intended to be sumitted to the CRAN. First, because many of these functions already exist in other packages (in a different form though). Second, because I use it to improve my coding skill and my experience in writing a R package. This allows me to make some functions disappearing without me explaining why ! Nevertheless, this package may help users to deal with typical issues they may encounter when using *graphics*. If some of these functions turn out to be really helpful then they will likely appear in a different package which will be submitted to the CRAN. Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package.
+*graphicsutils* is an R package that includes a set of graphical functions. As the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package, it adds several graphics utilities based on the core package *graphics*. Note that this package is not intended to be sumitted to the CRAN. First, because many of these functions already exist in other packages (in a different form though). Second, because I use it to improve my coding skill and my experience in writing a R package. This allows me to make some functions disappearing without me explaining why! Nevertheless, this package may help users to deal with typical issues they may encounter when using *graphics*. If some of these functions turn out to be really helpful then they will likely appear in a different package which will be submitted to the CRAN. Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package.
 
-Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) Last update: 07 mai 2016
+Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) Last update: 08 mai 2016
 
 Install
 =======
@@ -100,9 +100,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.007175023 0.919595309
+#> [1] 0.1639849 0.9874569
 prettyRange(vec)
-#> [1] 0.00 0.95
+#> [1] 0.15 1.00
 prettyRange(c(3.85,3.88245))
 #> [1] 3.850 3.885
 ```

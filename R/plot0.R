@@ -21,7 +21,9 @@
 #'
 #' # Example 2:
 #' plot0(c(-10,10), asp=1)
-
+#'
+#' # Example 2:
+#' plot0(c(-10,10), asp=1, fill=8)
 
 plot0 <- function(x=c(-1,1), y = c(-1,1), fill=NULL, ...){
     args <- list(...)

@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @details
-#' This function eases the creation of plots with multiple panels that shares information such as axis labels. Instead of
+#' This function eases the creation of plots that include multiple panels that shares information such as axis labels. Instead of
 #' repeating or deleting axis labels, \code{plotOnSide} add plot areas on the specified sides of the original fgures.
 #' It is based on \link[graphics]{layout} and it is no more than a tunned version of it.
 #'

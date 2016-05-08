@@ -13,7 +13,7 @@ prettyRange(x)
 A vector if two values that correspond to the range of values.
 }
 \description{
-This function returns a pretty range of values given a vector of type \code{numeric}.
+This function returns a pretty range of values for a given a vector of type \code{numeric}.
 }
 \details{
 This function intends to generate range with round values.

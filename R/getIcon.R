@@ -14,7 +14,7 @@
 #' Resolutions available are 16, 22, 24, 32, 48, 64, 128 or 256.
 #' To obtain the list of name that can be used in \code{getIcon}, use getIconNames().
 #' If argument \code{destfile} is not specified, then the icon is stored in a temporary file.
-#' Colour gradient as it may appear in original icon is not yet handled once the color is changed.
+#' Color gradient as it may appear in original icon is not yet handled once the color is changed.
 #'
 #' @export
 #'

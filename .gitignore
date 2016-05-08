@@ -18,3 +18,5 @@ vignettes.*
 
 # Makefile
 Makefile
+pkgup2date.R
+check.txt

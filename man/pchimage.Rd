@@ -26,7 +26,7 @@ pchImage(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x,
 
 \item{col}{Optionnal color use to fill pixels whose values are not 0}
 
-\item{...}{Additional arguments to be passed to \code{rasterImage} function.}
+\item{...}{Additional arguments to be passed to the \code{rasterImage} function.}
 }
 \description{
 \code{pchimage} returns a plot that displays an image. It enables to users to directly include a png or a jpeg file in a plot region by providing their path.

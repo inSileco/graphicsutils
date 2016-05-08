@@ -16,11 +16,11 @@ box2(side = 1:4, which = "plot", fill = NULL, ...)
 \item{...}{Further graphical parameters (see \code{\link[graphics]{par}}) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = "b"}, \code{pch}.  Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
 }
 \description{
-Draw a Box around a Plot
+Draw a Box around a Plot.
 }
 \details{
 This function intends to give more flexibility to the \code{\link[graphics]{box}} function.
-As \code{which} parameter, users provides an object first coerced by \code{as.character} to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{1, 2, 3, 4, b, l, t, r} where \code{1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right}.
+As \code{which} parameter, the user provides an object first coerced by \code{as.character} to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{1, 2, 3, 4, b, l, t, r} where \code{1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right}.
 }
 \examples{
 # Example 1:

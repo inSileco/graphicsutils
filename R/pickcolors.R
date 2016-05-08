@@ -4,7 +4,7 @@
 #'
 #' @param ramp A vector of colors used as tone palette.
 #' @param nb_shades Number of shades to be displayed once a tone is selected.
-#' @param rgb logical. If TRUE, colors are returned as a rgb matrix. Default is set to FALSE.
+#' @param rgb logical. If TRUE, colors are returned as a rgb matrix. Default is FALSE.
 #' @param preview logical. If TRUE, colors are displayed once the selection is done. Default is set to FALSE.
 #'
 #' @keywords color, selection

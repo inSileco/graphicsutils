@@ -11,7 +11,7 @@
 #' @param atcenter logical. If TRUE x and y coordinates describe the center of the image. Otherwise they represent the bottom-left coordinates of the image.
 #' @param col Optionnal color use to fill pixels whose values are not 0
 #' @param add logical. Should images be added on the current graph ? If FALSE a new plot is created.
-#' @param ... Additional arguments to be passed to \code{rasterImage} function.
+#' @param ... Additional arguments to be passed to the \code{rasterImage} function.
 #'
 #' @keywords plot, image, plotting character
 #'
