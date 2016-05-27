@@ -35,7 +35,7 @@ darken <- function(col, percentage = 50, as_rgb = FALSE) {
 
 #' @describeIn darken A lightened color.
 #' @export
-lighten <- function(col, percentage = 50, rgb = FALSE) {
-    outcol <- ramp(col, "white", percentage = percentage, as_rgb = rgb)
+lighten <- function(col, percentage = 50, as_rgb = FALSE) {
+    outcol <- ramp(col, "white", percentage = percentage, as_rgb = as_rgb)
     return(outcol)
 }

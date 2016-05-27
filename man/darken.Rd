@@ -10,7 +10,7 @@ ramp(fromcol, tocol, percentage = 50, as_rgb = FALSE)
 
 darken(col, percentage = 50, as_rgb = FALSE)
 
-lighten(col, percentage = 50, rgb = FALSE)
+lighten(col, percentage = 50, as_rgb = FALSE)
 }
 \arguments{
 \item{fromcol}{The starting color.  color to be changed.}
