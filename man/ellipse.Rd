@@ -8,25 +8,25 @@ ellipse(x = 0, y = x, mjradi = 1, mnradi = 0.5, from = 0, to = 2 *
   pi, rot = 0, incr = 0.01, pie = FALSE, ...)
 }
 \arguments{
-\item{x}{The x coordinates of the centers of the ellipses.}
+\item{x}{the x coordinates of the centers of the ellipses.}
 
-\item{y}{The y coordinates of the centers of the ellipses.}
+\item{y}{the y coordinates of the centers of the ellipses.}
 
-\item{mjradi}{The major radii of the ellipses.}
+\item{mjradi}{the major radii of the ellipses.}
 
-\item{mnradi}{The minor radii of the ellipses.}
+\item{mnradi}{the minor radii of the ellipses.}
 
-\item{from}{The angles, expressed in radians, from which ellipses are drawn.}
+\item{from}{the angles, expressed in radians, from which ellipses are drawn.}
 
-\item{to}{The angles, expressed in radians, to which ellipses are drawn.}
+\item{to}{the angles, expressed in radians, to which ellipses are drawn.}
 
-\item{rot}{The rotation angles (in degree) of the ellipses.}
+\item{rot}{the rotation angles (in degree) of the ellipses.}
 
-\item{incr}{Increments between two points to be linked (expressed in radians).}
+\item{incr}{increments between two points to be linked (expressed in radians).}
 
 \item{pie}{logical. If TRUE end points are linked with the center of the ellipse (default is set to FALSE).}
 
-\item{...}{Additional arguments to be passed to \code{\link{polygon}} function.}
+\item{...}{additional arguments to be passed to \code{\link{polygon}} function.}
 }
 \description{
 Draw ellipses in a flexible way.

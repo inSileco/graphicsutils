@@ -4,14 +4,14 @@
 #'
 #' @export
 #'
-#' @param x The x coordinates of the centers of the circles.
-#' @param y The y coordinates of the centers of the circles.
-#' @param radi The radii of the circles.
-#' @param from The angles, expressed in radians, from which circles are drawn.
-#' @param to The angles, expressed in radians, to which circles are drawn.
-#' @param incr Increments between two points to be linked (expressed in radians).
+#' @param x the x coordinates of the centers of the circles.
+#' @param y the y coordinates of the centers of the circles.
+#' @param radi the radii of the circles.
+#' @param from the angles, expressed in radians, from which circles are drawn.
+#' @param to the angles, expressed in radians, to which circles are drawn.
+#' @param incr increments between two points to be linked (expressed in radians).
 #' @param pie logical. If TRUE end points are linked with the center of the circle (default is set to FALSE).
-#' @param ... Additional arguments to be passed to \code{\link{polygon}} function.
+#' @param ... additional arguments to be passed to \code{\link{polygon}} function.
 #'
 #' @keywords circle
 #'
@@ -41,32 +41,35 @@
 #' plot0(x=c(-2,2),y=c(-2,2), asp=1)
 #' circle(x=c(-1,1),c(1,1,-1,-1),from=pi*seq(0.25,1,by=0.25),to=1.25*pi, col=2, border=4, lwd=3)
 
-circle <- function(x=0, y=x, radi=1, from=0, to=2*pi, incr=0.01, pie=FALSE, ...){
+circle <- function(x = 0, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01, pie = FALSE, 
+    ...) {
     ## --- format checking / adjusting vectors sizes
     matx <- as.matrix(x)
-    argn <- c("x","y","radi","from","to")
+    argn <- c("x", "y", "radi", "from", "to")
     nbarg <- length(argn)
-    nbcol <- min(nbarg,ncol(matx))
-    for (i in 1L:nbcol) assign(argn[i],matx[,i])
-    argo <- list(x,y,radi,from,to)
-    sz <- max(sapply(argo,length))
-    for (i in 1L:nbarg) assign(argn[i],rep_len(argo[[i]],sz))
+    nbcol <- min(nbarg, ncol(matx))
+    for (i in 1L:nbcol) assign(argn[i], matx[, i])
+    argo <- list(x, y, radi, from, to)
+    sz <- max(sapply(argo, length))
+    for (i in 1L:nbarg) assign(argn[i], rep_len(argo[[i]], sz))
     ## --- draw the circle
-    for (i in 1L:sz){
+    for (i in 1L:sz) {
         ## --- sequence to draw the circle
-        if (abs(to[i]-from[i])>=(2*pi)) {
-            to[i]=2*pi
-            from[i]=0
+        if (abs(to[i] - from[i]) >= (2 * pi)) {
+            to[i] = 2 * pi
+            from[i] = 0
+        } else {
+            if ((to[i] > from[i]) & (to[i]%%(2 * pi) == 0)) 
+                to[i] <- 2 * pi
+            to[i] <- to[i]%%(2 * pi)
+            from[i] <- from[i]%%(2 * pi)
+            if (to[i] < from[i]) 
+                to[i] <- to[i] + 2 * pi
         }
-        else {
-            if ((to[i]>from[i]) & (to[i]%%(2*pi)==0)) to[i] <- 2*pi
-            to[i] <- to[i]%%(2*pi)
-            from[i] <- from[i]%%(2*pi)
-            if (to[i] < from[i]) to[i] <- to[i]+2*pi
-        }
-        ##
-        sqc <- seq(from[i], to[i], by=incr)
-        if (!pie) polygon(x[i]+radi[i]*cos(sqc),y[i]+radi[i]*sin(sqc), ...)
-        else polygon(x[i]+c(0,radi[i]*cos(sqc),0),y[i]+c(0,radi[i]*sin(sqc),0), ...)
+        ## 
+        sqc <- seq(from[i], to[i], by = incr)
+        if (!pie) 
+            polygon(x[i] + radi[i] * cos(sqc), y[i] + radi[i] * sin(sqc), ...) else polygon(x[i] + c(0, radi[i] * cos(sqc), 0), y[i] + c(0, radi[i] * sin(sqc), 
+            0), ...)
     }
 }

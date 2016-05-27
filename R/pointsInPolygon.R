@@ -23,32 +23,31 @@
 #' points(valx, valy, col=pointsInPolygon(valx,valy,c(4,8,8,4),c(4,4,8,8))+1)
 
 
-pointsInPolygon <- function(x, y, poly_x, poly_y){
-  ##
-  szpt <- length(x)
-  szpo <- length(poly_x)
-  ##
-  stopifnot(szpt==length(y))
-  stopifnot(szpo>3)
-  stopifnot(szpo==length(poly_y))
-  ##
-  next_x <- c(poly_x[-1], poly_x[1])
-  next_y <- c(poly_y[-1], poly_y[1])
-  ##
-  constant <- (next_x-poly_x)/(next_y-poly_y)
-  ##
-  out <- rep(FALSE, szpt)
-  ##
-  for (k in 1:szpt){
-    for (j in 1:szpo){
-      if ( (poly_y[j]>=y[k] & next_y[j]<y[k]) |
-      (next_y[j]>=y[k] & poly_y[j]<y[k]) &
-      (poly_x[j]<=x[k] | next_x[j]<=y[k]) ){
-        if (poly_x[j]+(y[k]-poly_y[j])*constant[j]<x[k]){
-          out[k] <- !out[k]
+pointsInPolygon <- function(x, y, poly_x, poly_y) {
+    ## 
+    szpt <- length(x)
+    szpo <- length(poly_x)
+    ## 
+    stopifnot(szpt == length(y))
+    stopifnot(szpo > 3)
+    stopifnot(szpo == length(poly_y))
+    ## 
+    next_x <- c(poly_x[-1], poly_x[1])
+    next_y <- c(poly_y[-1], poly_y[1])
+    ## 
+    constant <- (next_x - poly_x)/(next_y - poly_y)
+    ## 
+    out <- rep(FALSE, szpt)
+    ## 
+    for (k in 1:szpt) {
+        for (j in 1:szpo) {
+            if ((poly_y[j] >= y[k] & next_y[j] < y[k]) | (next_y[j] >= y[k] & poly_y[j] < 
+                y[k]) & (poly_x[j] <= x[k] | next_x[j] <= y[k])) {
+                if (poly_x[j] + (y[k] - poly_y[j]) * constant[j] < x[k]) {
+                  out[k] <- !out[k]
+                }
+            }
         }
-      }
     }
-  }
-  return(out)
+    return(out)
 }

@@ -31,19 +31,19 @@ plotMeans(formula, data, FUN_err = sd, add = FALSE, seqx = NULL,
 
 \item{args_con}{a list of parameters that are used to customize the lines that links the means.}
 
-\item{...}{Further graphical parameters (see \code{\link[graphics]{plot.default}} and ) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = "b"}, \code{pch}. Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
+\item{...}{Further graphical parameters (see \code{\link[graphics]{plot.default}} and ) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = 'b'}, \code{pch}. Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
 }
 \description{
 Plot a set of means computed based on a dataset and draw error asociated.
 }
 \examples{
 # Example:
-dataset <- data.frame(dat=c(rnorm(50, 10, 2), rnorm(50, 20, 2)) , grp=rep(c("A","D"), each=50))
+dataset <- data.frame(dat=c(rnorm(50, 10, 2), rnorm(50, 20, 2)) , grp=rep(c('A','D'), each=50))
 par(mfrow=c(1,3))
 plotMeans(dat~grp, data=dataset, pch=19)
 #
 plotMeans(dat~grp, data=dataset, FUN_err= function(x) sd(x)*2, pch=15,
-ylim=c(-5,30), yaxs="i", connect=TRUE, args_con=list(lwd=2, lty=2, col="grey35"))
+ylim=c(-5,30), yaxs='i', connect=TRUE, args_con=list(lwd=2, lty=2, col='grey35'))
 #
 ser <- function(x) sd(x)/sqrt(length(x))
 plot0(c(0,4), c(0,30))

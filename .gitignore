@@ -19,4 +19,4 @@ vignettes.*
 # Makefile
 Makefile
 pkgup2date.R
-check.txt
+record_updates.txt

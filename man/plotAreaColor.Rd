@@ -7,14 +7,14 @@
 plotAreaColor(col = "grey80", border = NA, ...)
 }
 \arguments{
-\item{col}{Color of the rectangle, default is set to "grey80".}
+\item{col}{Color of the rectangle, default is set to 'grey80'.}
 
 \item{border}{Color of the border of the rectangle drawn, default is set to NA, that is no border.}
 
 \item{...}{Additional arguments to be passed to \code{\link{rect}} function.}
 }
 \description{
-Color the plot area by drawing a rectangle. Default color is "grey80".
+Color the plot area by drawing a rectangle. Default color is 'grey80'.
 }
 \details{
 The function calls \code{\link{rect}} and draw a colored rectangle (defaut color is set to light blue) whose dimensions are given by argument \code{usr} of function \code{\link{par}}.

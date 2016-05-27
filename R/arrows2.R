@@ -1,4 +1,4 @@
-q#' Add arrows to a plot.
+q  #' Add arrows to a plot.
 #'
 #' Draw arrows between pairs of points. Arrows drawn are fully customizable by using parameters of \code{polygon} function.
 #'
@@ -26,7 +26,7 @@ q#' Add arrows to a plot.
 #' # Example 1:
 #' plot0(c(0,10),c(0,10))
 #' arrows2(1,9,8)
-#' arrows2(1,8,8,1,cex.hh=1.2, cex.hl=1.2, col="grey30", lwd=1.2, prophead=TRUE, twoheaded=TRUE)
+#' arrows2(1,8,8,1,cex.hh=1.2, cex.hl=1.2, col='grey30', lwd=1.2, prophead=TRUE, twoheaded=TRUE)
 #' arrows2(5,9,5,1)
 #'
 #' # Example 2:
@@ -35,61 +35,63 @@ q#' Add arrows to a plot.
 #' arrows2(runif(2), runif(2), x1=runif(2), y1=runif(2), prophead=FALSE, lty=3)
 
 
-arrows2 <- function(x0, y0, x1=x0, y1=y0, off0=0, off1=off0, cex.arr=1, cex.shr=1, cex.hh=1, cex.hl=1, prophead=TRUE, twoheaded=FALSE, ...){
-    stopifnot(all(c(off0,off1)^2<1))
+arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1, 
+    cex.shr = 1, cex.hh = 1, cex.hl = 1, prophead = TRUE, twoheaded = FALSE, ...) {
+    stopifnot(all(c(off0, off1)^2 < 1))
     ## ---- Format checkings / adjusting vectors sizes
     argn <- c("x0", "y0", "x1", "y1")
     argo <- list(x0, y0, x1, y1)
-    sz <- max(sapply(list(x0,y0,x1,y1),length))
+    sz <- max(sapply(list(x0, y0, x1, y1), length))
     for (i in 1L:length(argn)) assign(argn[i], rep_len(argo[[i]], sz))
     argo <- list(x0, y0, x1, y1)
     ## ----
-    rx <- (x1-x0)
-    ry <- (y1-y0)
-    distpt <- sqrt(rx*rx+ry*ry)
+    rx <- (x1 - x0)
+    ry <- (y1 - y0)
+    distpt <- sqrt(rx * rx + ry * ry)
     # ----- Checkings
-    pb <- which(distpt==0)
-    if (length(pb)>0) {
+    pb <- which(distpt == 0)
+    if (length(pb) > 0) {
         warning("Zero-length arrows are skipped.")
         for (i in 1L:length(argn)) assign(argn[i], argo[[i]][-pb])
     }
     ## ----
-    anglept <- .5*pi
-    idx1 <- which(rx!=0)
+    anglept <- 0.5 * pi
+    idx1 <- which(rx != 0)
     anglept[idx1] <- atan(ry[idx1]/rx[idx1])
-    idx2 <- which(rx<0 | (rx==0 & ry<0))
-    anglept[idx2] <- anglept[idx2]+pi
+    idx2 <- which(rx < 0 | (rx == 0 & ry < 0))
+    anglept[idx2] <- anglept[idx2] + pi
     ## ----
-    x0 <- x0+distpt*off0*cos(anglept)
-    y0 <- y0+distpt*off0*sin(anglept)
-    distpt <- distpt*(1-off0-off1)
+    x0 <- x0 + distpt * off0 * cos(anglept)
+    y0 <- y0 + distpt * off0 * sin(anglept)
+    distpt <- distpt * (1 - off0 - off1)
     ## ----
     myusr <- par()$usr
-    hg1 <- 0.015*(myusr[4L]-myusr[3L])*cex.arr
-    hg2 <- hg1*cex.shr
-    hg3 <- hg2+cex.hh*hg1
+    hg1 <- 0.015 * (myusr[4L] - myusr[3L]) * cex.arr
+    hg2 <- hg1 * cex.shr
+    hg3 <- hg2 + cex.hh * hg1
     ## ----
-    for (i in 1L:sz){
-      lg1 <- distpt[i]
-      if (!prophead) {
-        lg3 <- cex.hl*0.06*(myusr[2L]-myusr[1L])
-        lg2 <- lg1-lg3
-      }
-      else {
-        lg2 <- lg1*(1-cex.hl*0.2)
-        lg3 <- lg1*cex.hl*0.2
-      }
-      ## ----
-      if (!twoheaded){
-        sqptx <- rep(x0[i],7)+c(0, lg2, lg2, lg1, lg2, lg2, 0)
-        sqpty <- rep(y0[i],7)+c(hg1, hg2, hg3, 0, -hg3, -hg2, -hg1)
-      }
-      else {
-        sqptx <- rep(x0[i],12)+c(0, lg3, lg3, 0.5*lg1, lg2, lg2, lg1, lg2, lg2, 0.5*lg1, lg3, lg3)
-        sqpty <- rep(y0[i],12)+c(0, hg3, hg2, hg1, hg2, hg3, 0, -hg3, -hg2, -hg1, -hg2, -hg3)
-      }
-      ## ----
-      ptcoord <- rotation(sqptx, sqpty, rot=anglept[i], xrot=x0[i], yrot=y0[i], radian=TRUE)
-      polygon(ptcoord$x, ptcoord$y, ...)
+    for (i in 1L:sz) {
+        lg1 <- distpt[i]
+        if (!prophead) {
+            lg3 <- cex.hl * 0.06 * (myusr[2L] - myusr[1L])
+            lg2 <- lg1 - lg3
+        } else {
+            lg2 <- lg1 * (1 - cex.hl * 0.2)
+            lg3 <- lg1 * cex.hl * 0.2
+        }
+        ## ----
+        if (!twoheaded) {
+            sqptx <- rep(x0[i], 7) + c(0, lg2, lg2, lg1, lg2, lg2, 0)
+            sqpty <- rep(y0[i], 7) + c(hg1, hg2, hg3, 0, -hg3, -hg2, -hg1)
+        } else {
+            sqptx <- rep(x0[i], 12) + c(0, lg3, lg3, 0.5 * lg1, lg2, lg2, lg1, lg2, 
+                lg2, 0.5 * lg1, lg3, lg3)
+            sqpty <- rep(y0[i], 12) + c(0, hg3, hg2, hg1, hg2, hg3, 0, -hg3, -hg2, 
+                -hg1, -hg2, -hg3)
+        }
+        ## ----
+        ptcoord <- rotation(sqptx, sqpty, rot = anglept[i], xrot = x0[i], yrot = y0[i], 
+            radian = TRUE)
+        polygon(ptcoord$x, ptcoord$y, ...)
     }
 }

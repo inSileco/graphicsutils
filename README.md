@@ -1,9 +1,11 @@
+Last 'README' update: 27 mai 2016
+
+Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils)
+
 Description
 ===========
 
 *graphicsutils* is an R package that includes a set of graphical functions. As the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package, it adds several graphics utilities based on the core package *graphics*. Note that this package is not intended to be sumitted to the CRAN. First, because many of these functions already exist in other packages (in a different form though). Second, because I use it to improve my coding skill and my experience in writing a R package. This allows me to make some functions disappearing without me explaining why! Nevertheless, this package may help users to deal with typical issues they may encounter when using *graphics*. If some of these functions turn out to be really helpful then they will likely appear in a different package which will be submitted to the CRAN. Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package.
-
-Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) Last update: 08 mai 2016
 
 Install
 =======
@@ -100,9 +102,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.1639849 0.9874569
+#> [1] 0.001531836 0.930422110
 prettyRange(vec)
-#> [1] 0.15 1.00
+#> [1] 0.00 0.95
 prettyRange(c(3.85,3.88245))
 #> [1] 3.850 3.885
 ```
@@ -120,6 +122,25 @@ pickColors()
 layout2()
 ```
 
+Colors
+------
+
+`darken()` and `lighten()` functions are convenient way to produce consistent set of color with minimal effort. Also, use `showPalette()` to display them!
+
+``` r
+someblue <- darken("blue", 10*1:9)
+showPalette(someblue)
+```
+
+![](inst/assets/img/unnamed-chunk-13-1.png)<!-- -->
+
+``` r
+somered <- lighten("red", 10*1:9)
+showPalette(somered)
+```
+
+![](inst/assets/img/unnamed-chunk-14-1.png)<!-- -->
+
 License
 =======
 
@@ -128,8 +149,9 @@ The *graphicsutils* package is licensed under the GPLv3 (<http://www.gnu.org/lic
 To do list
 ==========
 
-1.  Add more examples
-2.  Create a sustainable system to include different shapes (I am curenlty thinking about it).
-3.  grapdientPolygon must be completed to include images before exporting it.
-4.  Add interactive mode in 'showPalette Function'
-5.  Vectfield2d needs to be reviewed.
+1.  add code coverage (so far, I didn't implement any tests...);
+2.  Add more examples;
+3.  Create a sustainable system to include different shapes (I am currently thinking about it);
+4.  gradientPolygon must be completed to include images before exporting it;
+5.  add interactive mode in `showPalette` function;
+6.  vectfield2d needs to be reviewed (related to point 3)...

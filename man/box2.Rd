@@ -7,13 +7,13 @@
 box2(side = 1:4, which = "plot", fill = NULL, ...)
 }
 \arguments{
-\item{side}{A numerical or character vector or a character string specifying which side(s) of the plot the box is to be drawn (see details).}
+\item{side}{a numerical or character vector or a character string specifying which side(s) of the plot the box is to be drawn (see details).}
 
-\item{which}{A character, one of \code{plot}, \code{figure}, \code{inner} and \code{outer}.}
+\item{which}{a character, one of \code{plot}, \code{figure}, \code{inner} and \code{outer}.}
 
-\item{fill}{The color to be used to fill the box.}
+\item{fill}{the color to be used to fill the box.}
 
-\item{...}{Further graphical parameters (see \code{\link[graphics]{par}}) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = "b"}, \code{pch}.  Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
+\item{...}{further graphical parameters (see \code{\link[graphics]{par}}) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = 'b'}, \code{pch}.  Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
 }
 \description{
 Draw a Box around a Plot.
@@ -28,25 +28,25 @@ plot0()
 box2()
 ##
 plot0()
-box2("14", fill="grey80", lwd=2)
+box2('14', fill='grey80', lwd=2)
 plot0()
-box2(c(1,4), fill="grey80", lwd=2)
+box2(c(1,4), fill='grey80', lwd=2)
 plot0()
-box2(c(1,4), fill="grey80", lwd=2)
+box2(c(1,4), fill='grey80', lwd=2)
 # Example 2:
 par(mfrow=c(2,2),oma=c(2,2,2,2))
 plot(0,0)
-box("outer",lwd=2)
-box("inner",lwd=2)
+box('outer',lwd=2)
+box('inner',lwd=2)
 plot(0,0)
 plot(0,0)
 plot(c(0,1),c(0,2))
-box2(which="figure",lwd=2, fill=2)
+box2(which='figure',lwd=2, fill=2)
 box2(side=12, lwd=2, fill=8)
 points(c(0,1),c(0,2))
 axis(2)
 axis(1)
-title(xlab="coolx", ylab="cooly")
+title(xlab='coolx', ylab='cooly')
 }
 \seealso{
 \code{\link[graphics]{box}}

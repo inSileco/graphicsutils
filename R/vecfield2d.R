@@ -40,44 +40,49 @@
 #'    border=NA,cex.hh=1, cex.shr=0.6, col=8)
 #' abline(v=0,h=0)
 
-vecfield2d <- function(coords, FUN, args=NULL, ndim=NULL, slices=c(1,2), fixed=NULL,
-cex.x=0.25, cex.y=cex.x, log=FALSE, add=FALSE, ...){
-
+vecfield2d <- function(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2), fixed = NULL, 
+    cex.x = 0.25, cex.y = cex.x, log = FALSE, add = FALSE, ...) {
+    
     ##-- Format checking
     grid <- as.matrix(coords)
-    stopifnot(ncol(grid)>1)
-    stopifnot(length(slices)==2)
-
+    stopifnot(ncol(grid) > 1)
+    stopifnot(length(slices) == 2)
+    
     ##-- Generating a grid based on coords / slices / fixed
-    if (is.null(ndim)) ndim <- max(ncol(grid),length(fixed)+length(slices), slices)
-    gridin <- matrix(0, ncol=ndim, nrow=nrow(grid))
-    #
-    if (ncol(grid)<ndim) {
-      gridin[,slices] <- grid
-      if (is.null(fixed)) fixed <- rep(0, ndim-2)
-      grid_val <- matrix(rep(fixed, each=nrow(grid)), ncol=length(fixed))
-      print(grid_val)
-      gridin[,-slices] <- grid_val
-    }
-    else gridin <- grid
+    if (is.null(ndim)) 
+        ndim <- max(ncol(grid), length(fixed) + length(slices), slices)
+    gridin <- matrix(0, ncol = ndim, nrow = nrow(grid))
+    # 
+    if (ncol(grid) < ndim) {
+        gridin[, slices] <- grid
+        if (is.null(fixed)) 
+            fixed <- rep(0, ndim - 2)
+        grid_val <- matrix(rep(fixed, each = nrow(grid)), ncol = length(fixed))
+        print(grid_val)
+        gridin[, -slices] <- grid_val
+    } else gridin <- grid
     ##---
-    gridout <- gridin*0
+    gridout <- gridin * 0
     fun_names <- names(formals(FUN))
     for (i in 1:nrow(gridin)) {
-      args[[fun_names[1]]] <- gridin[i,]
-      gridout[i,] <- do.call(FUN, args)
+        args[[fun_names[1]]] <- gridin[i, ]
+        gridout[i, ] <- do.call(FUN, args)
     }
-    if (!add) plot0(range(gridin[,slices[1]]), range(gridin[,slices[2]]))
+    if (!add) 
+        plot0(range(gridin[, slices[1]]), range(gridin[, slices[2]]))
     ## ----
     for (i in 1:nrow(gridout)) {
-        dstx <- cex.x*gridout[i, 1]
-        dsty <- cex.y*gridout[i, 2]
+        dstx <- cex.x * gridout[i, 1]
+        dsty <- cex.y * gridout[i, 2]
         if (log) {
-            dstx <- log(abs(dstx)+1)
-            if (gridout[i,1]<0) dstx <- -dstx
-            dsty <- log(abs(dsty)+1)
-            if (gridout[i,2]<0) dsty <- -dsty
+            dstx <- log(abs(dstx) + 1)
+            if (gridout[i, 1] < 0) 
+                dstx <- -dstx
+            dsty <- log(abs(dsty) + 1)
+            if (gridout[i, 2] < 0) 
+                dsty <- -dsty
         }
-        arrows2(gridin[i,1], gridin[i,2], gridin[i,1]+dstx, gridin[i,2]+dsty, ...)
+        arrows2(gridin[i, 1], gridin[i, 2], gridin[i, 1] + dstx, gridin[i, 2] + dsty, 
+            ...)
     }
 }

@@ -11,19 +11,19 @@ getIcon(name, res = 256, destfile = NULL, col = NULL, quiet = FALSE,
   preview = FALSE, get_path = FALSE)
 }
 \arguments{
-\item{name}{Name of the ocon to be dowloaded.}
+\item{name}{name of the ocon to be dowloaded.}
 
-\item{res}{The resolution of the icon to be downloaded.}
+\item{res}{the resolution of the icon to be downloaded.}
 
-\item{destfile}{A character string with the name where the downloaded file is saved.  Tilde-expansion is performed.}
+\item{destfile}{a character string with the name where the downloaded file is saved.  Tilde-expansion is performed.}
 
-\item{col}{Color of the image.}
+\item{col}{color of the image.}
 
-\item{quiet}{logical. If TRUE, no message are printed.}
+\item{quiet}{logical. if TRUE, no message are printed.}
 
-\item{preview}{logical. If TRUE, the icon is displayed once downloaded.}
+\item{preview}{logical. if TRUE, the icon is displayed once downloaded.}
 
-\item{get_path}{logical. If TRUE, the path to the file downloaded is returned. Otherwise a objet of class \code{nativeRaster} is returned.}
+\item{get_path}{logical. if TRUE, the path to the file downloaded is returned. Otherwise a objet of class \code{nativeRaster} is returned.}
 }
 \description{
 Draw a compass rose fully customizable.
@@ -42,10 +42,10 @@ Color gradient as it may appear in original icon is not yet handled once the col
 }}
 \examples{
 names <- getIconNames()
-my_icon <- getIcon(name="beer", col="grey80")
+my_icon <- getIcon(name='beer', col='grey80')
 plotImage(my_icon)
 }
 \references{
-<URL: "https://github.com/encharm/Font-Awesome-SVG-PNG/tree/master/black/png>
+<URL: 'https://github.com/encharm/Font-Awesome-SVG-PNG/tree/master/black/png>
 }
 

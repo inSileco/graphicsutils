@@ -31,7 +31,7 @@ stackedAreas(val, index = NULL, rgy = 1, cumul = FALSE, transp = FALSE,
 
 \item{lwd}{the line width (see \code{\link{par}} documentation)}
 
-\item{border}{The color to draw the border. The default, \code{NULL}, means to use \code{par("fg")}. Use \code{border=NA} to omit borders.}
+\item{border}{The color to draw the border. The default, \code{NULL}, means to use \code{par('fg')}. Use \code{border=NA} to omit borders.}
 
 \item{main}{A main title for the plot.}
 
@@ -58,11 +58,11 @@ x <- data.frame(matrix(runif(200,2,10), 8, 25))
 stackedAreas(x)
 
 # plot 2: personalized plot
-par(xaxs="i", yaxs="i", font=2, cex.axis=1.2, cex.lab=1.4, bty="l")
-plot(c(1999,2027), c(-10,110), type="n", xlab="Years", ylab="Percentage",
-main="My customized stacked areas chart")
-plotAreaColor(col="#f2c4c4")
-stackedAreas(x, index=2001:2025, rgy=100, lwd=2, add=TRUE, border="transparent")
+par(xaxs='i', yaxs='i', font=2, cex.axis=1.2, cex.lab=1.4, bty='l')
+plot(c(1999,2027), c(-10,110), type='n', xlab='Years', ylab='Percentage',
+main='My customized stacked areas chart')
+plotAreaColor(col='#f2c4c4')
+stackedAreas(x, index=2001:2025, rgy=100, lwd=2, add=TRUE, border='transparent')
 }
 \keyword{areas,}
 \keyword{histogram}

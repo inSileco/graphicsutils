@@ -8,21 +8,21 @@ circle(x = 0, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01,
   pie = FALSE, ...)
 }
 \arguments{
-\item{x}{The x coordinates of the centers of the circles.}
+\item{x}{the x coordinates of the centers of the circles.}
 
-\item{y}{The y coordinates of the centers of the circles.}
+\item{y}{the y coordinates of the centers of the circles.}
 
-\item{radi}{The radii of the circles.}
+\item{radi}{the radii of the circles.}
 
-\item{from}{The angles, expressed in radians, from which circles are drawn.}
+\item{from}{the angles, expressed in radians, from which circles are drawn.}
 
-\item{to}{The angles, expressed in radians, to which circles are drawn.}
+\item{to}{the angles, expressed in radians, to which circles are drawn.}
 
-\item{incr}{Increments between two points to be linked (expressed in radians).}
+\item{incr}{increments between two points to be linked (expressed in radians).}
 
 \item{pie}{logical. If TRUE end points are linked with the center of the circle (default is set to FALSE).}
 
-\item{...}{Additional arguments to be passed to \code{\link{polygon}} function.}
+\item{...}{additional arguments to be passed to \code{\link{polygon}} function.}
 }
 \description{
 Draw circles in a flexible way.

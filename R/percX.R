@@ -11,20 +11,20 @@
 #'
 #' @examples
 #' plot0()
-#' text(x=percX(90), y=percY(90), label="cool")
+#' text(x=percX(90), y=percY(90), label='cool')
 
 #' @describeIn percX Return the values of x-axis for a given percentage.
-percX<-function(percentage=90){
-    stopifnot(percentage>=0 & percentage<=100)
-    alg.x<-par()$usr[1]+0.01*percentage*(par()$usr[2]-par()$usr[1])
+percX <- function(percentage = 90) {
+    stopifnot(percentage >= 0 & percentage <= 100)
+    alg.x <- par()$usr[1] + 0.01 * percentage * (par()$usr[2] - par()$usr[1])
     return(alg.x)
 }
 
 
 #' @describeIn percX Return the values of y-axis for a given percentage.
 #' @export
-percY<-function(percentage=90){
-    stopifnot(percentage>=0 & percentage<=100)
-    alg.y<-par()$usr[3]+0.01*percentage*(par()$usr[4]-par()$usr[3])
+percY <- function(percentage = 90) {
+    stopifnot(percentage >= 0 & percentage <= 100)
+    alg.y <- par()$usr[3] + 0.01 * percentage * (par()$usr[4] - par()$usr[3])
     return(alg.y)
 }
