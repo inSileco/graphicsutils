@@ -7,6 +7,8 @@ Description
 
 *graphicsutils* is an R package that includes a set of graphical functions. As the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package, it adds several graphics utilities based on the core package *graphics*. Note that this package is not intended to be sumitted to the CRAN. First, because many of these functions already exist in other packages (in a different form though). Second, because I use it to improve my coding skill and my experience in writing a R package. This allows me to make some functions disappearing without me explaining why! Nevertheless, this package may help users to deal with typical issues they may encounter when using *graphics*. If some of these functions turn out to be really helpful then they will likely appear in a different package which will be submitted to the CRAN. Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package.
 
+-   Functions are written using Camel case (e.g. `keepWords()`)
+
 Install
 =======
 
@@ -35,7 +37,7 @@ To start a figure from scratch it is often useful to get a plot without nothing 
 plot0(c(0,1),c(0,1))
 ```
 
-![](inst/assets/img/unnamed-chunk-4-1.png)<!-- -->
+![](inst/assets/img/unnamed-chunk-4-1.png)
 
 Empty isn't it? Also, it can be filled with a given color using `fill` parameter.
 
@@ -43,7 +45,7 @@ Empty isn't it? Also, it can be filled with a given color using `fill` parameter
 plot0(c(0,1),c(0,1), fill="lightskyblue1")
 ```
 
-![](inst/assets/img/unnamed-chunk-5-1.png)<!-- -->
+![](inst/assets/img/unnamed-chunk-5-1.png)
 
 Add a box
 ---------
@@ -59,7 +61,7 @@ axis(1)
 axis(2)
 ```
 
-![](inst/assets/img/unnamed-chunk-6-1.png)<!-- -->
+![](inst/assets/img/unnamed-chunk-6-1.png)
 
 A stacked areas chart
 ---------------------
@@ -76,7 +78,7 @@ seqy3 <- 8+0.25*seqx*runif(sz, 0, 1)
 envelop(seqx, seqy1, seqy2, col="grey85", border=NA)
 ```
 
-![](inst/assets/img/unnamed-chunk-7-1.png)<!-- -->
+![](inst/assets/img/unnamed-chunk-7-1.png)
 
 ### A complete stacked areas
 
@@ -85,7 +87,7 @@ x <- data.frame(matrix(runif(200,2,10), 8, 25))
 stackedAreas(x)
 ```
 
-![](inst/assets/img/unnamed-chunk-8-1.png)<!-- -->
+![](inst/assets/img/unnamed-chunk-8-1.png)
 
 Polar plot
 ----------
@@ -94,7 +96,7 @@ Polar plot
 polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
 ```
 
-![](inst/assets/img/unnamed-chunk-9-1.png)<!-- -->
+![](inst/assets/img/unnamed-chunk-9-1.png)
 
 Get pretty ranges
 -----------------
@@ -102,9 +104,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.01366101 0.99597210
+#> [1] 0.01122804 0.90363674
 prettyRange(vec)
-#> [1] 0 1
+#> [1] 0.00 0.95
 prettyRange(c(3.85,3.88245))
 #> [1] 3.850 3.885
 ```
@@ -132,14 +134,14 @@ someblue <- darken("blue", 10*1:9)
 showPalette(someblue)
 ```
 
-![](inst/assets/img/unnamed-chunk-13-1.png)<!-- -->
+![](inst/assets/img/unnamed-chunk-13-1.png)
 
 ``` r
 somered <- lighten("red", 10*1:9)
 showPalette(somered)
 ```
 
-![](inst/assets/img/unnamed-chunk-14-1.png)<!-- -->
+![](inst/assets/img/unnamed-chunk-14-1.png)
 
 License
 =======

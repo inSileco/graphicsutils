@@ -1,8 +1,8 @@
 ---
-title: "'graphicsutils': R functions to facilitate the use of 'graphics'"
+title: "graphicsutils"
 output:
-    md_document:
-        variant: markdown_github
+  md_document:
+    variant: markdown_github
 ---
 
 
@@ -31,6 +31,8 @@ First, because many of these functions already exist in other packages (in a dif
 Second, because I use it to improve my coding skill and my experience in writing a R package. This allows me to make some functions disappearing without me explaining why!
 Nevertheless, this package may help users to deal with typical issues they may encounter when using *graphics*.
 If some of these functions turn out to be really helpful then they will likely appear in a different package which will be submitted to the CRAN. Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package.
+
+- Functions are written using Camel case (e.g. `keepWords()`)
 
 
 
@@ -102,7 +104,7 @@ envelop(seqx, seqy1, seqy2, col="grey85", border=NA)
 ### A complete stacked areas
 
 
-```{r,   fig.width=6,  fig.height=6}
+```{r,  fig.width=6,  fig.height=6}
 x <- data.frame(matrix(runif(200,2,10), 8, 25))
 stackedAreas(x)
 ```
