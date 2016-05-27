@@ -1,6 +1,6 @@
 Last 'README' update: 27 mai 2016
 
-Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils)
+Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils)
 
 Description
 ===========
@@ -102,9 +102,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.001531836 0.930422110
+#> [1] 0.01366101 0.99597210
 prettyRange(vec)
-#> [1] 0.00 0.95
+#> [1] 0 1
 prettyRange(c(3.85,3.88245))
 #> [1] 3.850 3.885
 ```

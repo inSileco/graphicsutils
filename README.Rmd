@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 Last 'README' update: `r format(Sys.time(), '%d %B %Y')`
 
 Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils)
-
+[![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils)
 
 # Description
 
