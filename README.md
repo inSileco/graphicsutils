@@ -1,6 +1,6 @@
 Last 'README' update: 26 novembre 2016
 
-Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils)
+[![Build status](https://ci.appveyor.com/api/projects/status/x5ngkcflyfiixr37?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils)
 
 Description
 ===========
@@ -9,8 +9,8 @@ Description
 
 -   Functions are written using Camel case (e.g. `keepWords()`)
 
-Install
-=======
+Installation
+============
 
 To install the package, use the [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package.
 
@@ -120,7 +120,7 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.02317972 0.99228129
+#> [1] 0.001732444 0.980235976
 prettyRange(vec)
 #> [1] 0 1
 prettyRange(c(3.85,3.88245))

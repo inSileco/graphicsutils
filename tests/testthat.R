@@ -1,4 +1,4 @@
 library(testthat)
-library(recruitR)
+library(graphicsutils)
 
-test_check("recruitR")
+test_check("graphicsutils")
