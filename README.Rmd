@@ -36,7 +36,7 @@ If some of these functions turn out to be really helpful then they will likely a
 
 
 
-# Install
+# Installation
 
 To install the package, use the [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package.
 

@@ -1,5 +1,10 @@
-^README\.Rmd$       # An Rmarkdown file used to generate README.md
-^\.travis\.yml$     # Used for continuous integration testing with travis
-^\vignettes.Rmd
+^\.Rproj\.user$
+^.*\.Rproj$
+^appveyor\.yml$
+^\.travis\.yml$
+^\.gitignore
 ^Makefile
-^pkgup2date.R
+^pkg2date\.R
+^README\.Rmd
+^record*
+^vignettes*
