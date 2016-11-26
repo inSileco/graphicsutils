@@ -26,27 +26,25 @@ As \code{which} parameter, the user provides an object first coerced by \code{as
 # Example 1:
 plot0()
 box2()
-##
+
+# Example 2:
 plot0()
 box2('14', fill='grey80', lwd=2)
 plot0()
 box2(c(1,4), fill='grey80', lwd=2)
 plot0()
 box2(c(1,4), fill='grey80', lwd=2)
-# Example 2:
+
+# Example 3:
 par(mfrow=c(2,2),oma=c(2,2,2,2))
-plot(0,0)
+plot0(0,0)
 box('outer',lwd=2)
 box('inner',lwd=2)
 plot(0,0)
 plot(0,0)
-plot(c(0,1),c(0,2))
+plot0()
 box2(which='figure',lwd=2, fill=2)
 box2(side=12, lwd=2, fill=8)
-points(c(0,1),c(0,2))
-axis(2)
-axis(1)
-title(xlab='coolx', ylab='cooly')
 }
 \seealso{
 \code{\link[graphics]{box}}

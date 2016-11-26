@@ -1,15 +1,19 @@
 Package: graphicsutils
 Type: Package
 Title: Collection of Graphics Utilities
-Version: 1.1-0
+Version: 1.1-1
 Date: 2015-07-20
-Author: Kevin Cazelles [aut, cre],  Nicolas Casajus [aut, cre]
+Author: Kevin Cazelles [aut, cre],  Nicolas Casajus [aut]
 Maintainer: Kevin Cazelles <kevin.cazelles@um2.fr>
 Description: A collection of graphical functions that helps customizing graphics
     with the basic packages: "graphics" and "grDevices".
 Depends:
     R (>= 3.0)
 Imports:
+    grDevices,
+    graphics,
+    stats,
+    utils,
     jpeg(>= 0.1-8),
     png(>= 0.1-7),
     magrittr(>= 1.5),
