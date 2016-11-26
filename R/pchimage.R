@@ -15,6 +15,9 @@
 #'
 #' @keywords plot, image, plotting character
 #'
+#' @importFrom magrittr %>%
+#' @importFrom magrittr %<>%
+#'
 #' @export
 #'
 #' @details
@@ -31,7 +34,7 @@
 #' obj=img, angle=360*runif(n), col=2)
 
 pchImage<-
-function(x, y, obj=NULL,file=NULL, cex.x=1, cex.y=cex.x, atcenter=TRUE, add=TRUE, col=NULL, ...){
+function(x, y, obj=NULL, file=NULL, cex.x=1, cex.y=cex.x, atcenter=TRUE, add=TRUE, col=NULL, ...){
     ## obj or file must be defined
     stopifnot(!is.null(c(obj,file)))
     ## obj class must be "nativeRaster"
@@ -40,17 +43,24 @@ function(x, y, obj=NULL,file=NULL, cex.x=1, cex.y=cex.x, atcenter=TRUE, add=TRUE
     else {
         # if the file ends with jpeg or jpg we use readJPG from "jpeg" package
         # if the file ends with png we use readPNG from "png" package
-        ext<-sapply(c(".jpeg$",".jpg$",".png$"),grepl,file)
+        ext<-sapply(c(".jpeg$",".jpg$",".png$"), grepl, file)
         if (sum(ext)==0) stop("No method found for the given file.")
         nb<-which(ext==TRUE)
-        if (nb==3) obj<-png::readPNG(file, native=TRUE)
-        else obj<-jpeg::readJPEG(file, native=TRUE)
+        if (nb==3) obj<- png::readPNG(file) %>% as.raster %>% as.matrix
+        else obj<- jpeg::readJPEG(file) %>% as.raster %>% as.matrix
     }
     dx<-cex.x*0.05*(par()$usr[2] - par()$usr[1])
     dy<-cex.y*0.05*(par()$usr[4] - par()$usr[3])
     ##
-    if (!add) plot(x,y,type="n")
-    if (!is.null(col)) obj[which(obj!=0)] <- col
-    if (atcenter==TRUE) rasterImage(obj, x-dx, y-dy, x+dx, y+dy, ...)
-    else rasterImage(obj, x, y, x+2*dx, y+2*dy, ...)
+    if (!add) plot(x, y, type="n")
+    ## Something weird, I had to use the t to getthe correct id fron grepl
+    # if (!is.null(col)) obj[!grepl(obj), pattern="#000000")] <- col
+    if (!is.null(col)) {
+      if (class(obj)=="nativeRaster") obj[obj!=0] <- col
+      else obj[!grepl(obj, pattern="#000000")] <- col
+    }
+    ##
+    if (atcenter==TRUE) {
+      rasterImage(obj, x-dx, y-dy, x+dx, y+dy, ...)
+    } else rasterImage(obj, x, y, x+2*dx, y+2*dy, ...)
 }

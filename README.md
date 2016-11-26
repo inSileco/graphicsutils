@@ -1,4 +1,4 @@
-Last 'README' update: 27 mai 2016
+Last 'README' update: 26 novembre 2016
 
 Travis: [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils)
 
@@ -63,6 +63,22 @@ axis(2)
 
 ![](inst/assets/img/unnamed-chunk-6-1.png)
 
+Add an image
+------------
+
+`pchImage()` eases the uses of `rasterImage` to add images (including png and jpeg files) on a graph. It allows to change the color of the whole image.
+
+``` r
+pathLogo <- system.file("img", "Rlogo.png", package="png")
+par(mar=c(4,1,4,1), mfrow=c(1,2))
+plot0()
+pchImage(0,0, file=pathLogo, cex.x =4.5, cex.y=4)
+plot0()
+pchImage(0,0, file=pathLogo, cex.x =4.5, cex.y=4, col="grey25", angle=25)
+```
+
+![](inst/assets/img/unnamed-chunk-7-1.png)
+
 A stacked areas chart
 ---------------------
 
@@ -78,7 +94,7 @@ seqy3 <- 8+0.25*seqx*runif(sz, 0, 1)
 envelop(seqx, seqy1, seqy2, col="grey85", border=NA)
 ```
 
-![](inst/assets/img/unnamed-chunk-7-1.png)
+![](inst/assets/img/unnamed-chunk-8-1.png)
 
 ### A complete stacked areas
 
@@ -87,7 +103,7 @@ x <- data.frame(matrix(runif(200,2,10), 8, 25))
 stackedAreas(x)
 ```
 
-![](inst/assets/img/unnamed-chunk-8-1.png)
+![](inst/assets/img/unnamed-chunk-9-1.png)
 
 Polar plot
 ----------
@@ -96,7 +112,7 @@ Polar plot
 polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
 ```
 
-![](inst/assets/img/unnamed-chunk-9-1.png)
+![](inst/assets/img/unnamed-chunk-10-1.png)
 
 Get pretty ranges
 -----------------
@@ -104,9 +120,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.01122804 0.90363674
+#> [1] 0.02317972 0.99228129
 prettyRange(vec)
-#> [1] 0.00 0.95
+#> [1] 0 1
 prettyRange(c(3.85,3.88245))
 #> [1] 3.850 3.885
 ```
@@ -134,14 +150,14 @@ someblue <- darken("blue", 10*1:9)
 showPalette(someblue)
 ```
 
-![](inst/assets/img/unnamed-chunk-13-1.png)
+![](inst/assets/img/unnamed-chunk-14-1.png)
 
 ``` r
 somered <- lighten("red", 10*1:9)
 showPalette(somered)
 ```
 
-![](inst/assets/img/unnamed-chunk-14-1.png)
+![](inst/assets/img/unnamed-chunk-15-1.png)
 
 License
 =======

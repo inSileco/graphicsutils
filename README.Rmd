@@ -86,6 +86,23 @@ axis(1)
 axis(2)
 ```
 
+
+## Add an image
+
+`pchImage()` eases the uses of `rasterImage` to add images (including png
+  and jpeg files) on a graph. It allows to change the color of the whole
+  image.
+
+```{r}
+pathLogo <- system.file("img", "Rlogo.png", package="png")
+par(mar=c(4,1,4,1), mfrow=c(1,2))
+plot0()
+pchImage(0,0, file=pathLogo, cex.x =4.5, cex.y=4)
+plot0()
+pchImage(0,0, file=pathLogo, cex.x =4.5, cex.y=4, col="grey25", angle=25)
+```
+
+
 ## A stacked areas chart
 
 ### A simple stacked areas
