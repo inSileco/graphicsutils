@@ -16,7 +16,8 @@
 #' @describeIn percX Return the values of x-axis for a given percentage.
 percX <- function(percentage = 90) {
     stopifnot(percentage >= 0 & percentage <= 100)
-    alg.x <- par()$usr[1] + 0.01 * percentage * (par()$usr[2] - par()$usr[1])
+    alg.x <- graphics::par()$usr[1] + 0.01 * percentage * (graphics::par()$usr[2] - 
+        graphics::par()$usr[1])
     return(alg.x)
 }
 
@@ -25,6 +26,7 @@ percX <- function(percentage = 90) {
 #' @export
 percY <- function(percentage = 90) {
     stopifnot(percentage >= 0 & percentage <= 100)
-    alg.y <- par()$usr[3] + 0.01 * percentage * (par()$usr[4] - par()$usr[3])
+    alg.y <- graphics::par()$usr[3] + 0.01 * percentage * (graphics::par()$usr[4] - 
+        graphics::par()$usr[3])
     return(alg.y)
 }

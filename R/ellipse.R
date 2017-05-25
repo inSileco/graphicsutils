@@ -81,7 +81,7 @@ ellipse <- function(x = 0, y = x, mjradi = 1, mnradi = 0.5, from = 0, to = 2 * p
             seqy <- c(y[i], seqy, y[i])
         }
         rotpt <- graphicsutils::rotation(seqx, seqy, xrot = x[i], yrot = y[i], rot = rot)
-        polygon(rotpt$x, rotpt$y, ...)
+        graphics::polygon(rotpt$x, rotpt$y, ...)
         
     }
 }

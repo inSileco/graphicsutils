@@ -58,7 +58,7 @@ The 'col' argument determines the succession of colors to be applied to each axi
 }
 \examples{
 #Example 1:
-par(mfrow=c(2,2), mar=rep(2,4))
+graphics::par(mfrow=c(2,2), mar=rep(2,4))
 donut(vec=c(10,20,15))
 donut(c(10,20,15), eaten=0.2)
 donut(c(10,20,15), eaten=0.2, rot=180, labels=paste('group',1:3), lwd=3, col=8)
@@ -70,4 +70,3 @@ vec <- runif(7)
 donut(vec, 0.15, cx=5, cy=20, add=TRUE, col=2)
 }
 \keyword{donut}
-

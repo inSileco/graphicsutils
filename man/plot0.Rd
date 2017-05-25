@@ -36,4 +36,3 @@ plot0(c(-10,10), asp=1, fill=8)
 }
 \keyword{empty}
 \keyword{plot}
-

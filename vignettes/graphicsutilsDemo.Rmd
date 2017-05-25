@@ -1,12 +1,12 @@
 ---
-title: "'graphicsutils' in example "
+title: "'graphicsutils' in a nutshell"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteIndexEntry{Vignette Title}
   \usepackage[utf8]{inputenc}
-abstract: Example of functions
-author: Kevin Cazelles, Nicolas Casajus
+abstract: "The package graphicsutils is a set of miscellaneous functions to be used with the graphics library."
+author: Kevin Cazelles
 ---
 
 # Introduction
@@ -15,10 +15,7 @@ author: Kevin Cazelles, Nicolas Casajus
 library("graphicsutils")
 ```
 
-<!-- render("~/Github/graphicsutils/Vgraphicsutils.rmd", "all") -->
-
-
-# plot0() and plotAreaColor()
+# plot0()
 
 ```{r, fig.height=6, fig.width=6, fig.cap="plot0() and plotAreaColor()"}
 par(mar=c(1,1,1,1), mfrow=c(2,2))

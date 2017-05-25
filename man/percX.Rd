@@ -24,8 +24,8 @@ This function intends to ease the positionning of additionnal marks such as text
 
 \item \code{percY}: Return the values of y-axis for a given percentage.
 }}
+
 \examples{
 plot0()
 text(x=percX(90), y=percY(90), label='cool')
 }
-

@@ -20,7 +20,7 @@ Color the plot area by drawing a rectangle. Default color is 'grey80'.
 The function calls \code{\link{rect}} and draw a colored rectangle (defaut color is set to light blue) whose dimensions are given by argument \code{usr} of function \code{\link{par}}.
 }
 \note{
-In par(), argument bg colors all the window, .
+In graphics::par(), argument bg colors all the window, .
 }
 \examples{
 #Example 1:
@@ -33,4 +33,3 @@ plotAreaColor(col=8, lwd=4, border=4)
 }
 \keyword{background,}
 \keyword{color}
-

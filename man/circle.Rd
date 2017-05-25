@@ -55,4 +55,3 @@ circle(x=c(-1,1),c(1,1,-1,-1),from=pi*seq(0.25,1,by=0.25),to=1.25*pi, col=2, bor
 \code{\link[graphics]{symbols}}, \code{\link[plotrix]{draw.circle}}, \code{\link[plotrix]{draw.arc}}.
 }
 \keyword{circle}
-

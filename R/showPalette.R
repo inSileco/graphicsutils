@@ -19,7 +19,7 @@
 
 showPalette <- function(ramp, inline = FALSE, add_number = FALSE, cex_num = 1.2) {
     
-    old.par <- par(no.readonly = TRUE)
+    old.par <- graphics::par(no.readonly = TRUE)
     nb_ramp <- length(ramp)
     
     if (!inline) {
@@ -30,20 +30,20 @@ showPalette <- function(ramp, inline = FALSE, add_number = FALSE, cex_num = 1.2)
             nb_row <- fsq + 1
         if (nb_ramp - nb_row * nb_col > 0) 
             nb_col <- fsq + 1
-        par(mfrow = c(nb_row, nb_col))
-    } else par(mfrow = c(1L, nb_ramp))
+        graphics::par(mfrow = c(nb_row, nb_col))
+    } else graphics::par(mfrow = c(1L, nb_ramp))
     
-    par(mar = rep(0, 4L))
+    graphics::par(mar = rep(0, 4L))
     
     for (i in 1:nb_ramp) {
         plot0()
         plotAreaColor(col = ramp[i])
         if (add_number) {
-            text(0, 0, i, cex = cex_num, pos = 3L)
-            text(0, 0, i, cex = cex_num, pos = 1L, col = "white")
+            graphics::text(0, 0, i, cex = cex_num, pos = 3L)
+            graphics::text(0, 0, i, cex = cex_num, pos = 1L, col = "white")
         }
-        box(col = "white")
+        graphics::box(col = "white")
     }
     
-    par(old.par)
+    graphics::par(old.par)
 }

@@ -31,4 +31,3 @@ seqy3 <- 8+0.25*seqx*runif(sz, 0, 1)
 envelop(seqx, seqy1, seqy2, col='grey85', border=NA)
 envelop(seqx, seqy2, seqy3, col='grey25', border=NA)
 }
-

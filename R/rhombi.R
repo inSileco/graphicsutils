@@ -53,7 +53,7 @@ rhombi <- function(x, y = x, ldg = 1, sdg = ldg, rot = 0, area = FALSE, ...) {
         mat.rot <- matrix(c(cos(rot[i]), sin(rot[i]), -sin(rot[i]), cos(rot[i])), 
             2)
         pt.los <- mat.rot %*% corh
-        polygon(x[i] + pt.los[1, ], y[i] + pt.los[2, ], ...)
+        graphics::polygon(x[i] + pt.los[1, ], y[i] + pt.los[2, ], ...)
     }
     ## ----
     if (area) 

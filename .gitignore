@@ -4,19 +4,16 @@
 
 # Example code in package build process
 *-Ex.R
-
 # RStudio files
 .Rproj.user/
-
 # produced vignettes
 vignettes.*
-
 # folders
 ./R/deprecated/**
-./.DS_Store
-./R/.DS_Store
-
+# MacOS annoying file
+.DS_Store
 # Makefile
 Makefile
-pkgup2date.R
+pkg2date.R
 record_updates.txt
+inst/doc

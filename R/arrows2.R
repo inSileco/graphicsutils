@@ -65,7 +65,7 @@ arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1
     y0 <- y0 + distpt * off0 * sin(anglept)
     distpt <- distpt * (1 - off0 - off1)
     ## ----
-    myusr <- par()$usr
+    myusr <- graphics::par()$usr
     hg1 <- 0.015 * (myusr[4L] - myusr[3L]) * cex.arr
     hg2 <- hg1 * cex.shr
     hg3 <- hg2 + cex.hh * hg1
@@ -92,6 +92,6 @@ arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1
         ## ----
         ptcoord <- rotation(sqptx, sqpty, rot = anglept[i], xrot = x0[i], yrot = y0[i], 
             radian = TRUE)
-        polygon(ptcoord$x, ptcoord$y, ...)
+        graphics::polygon(ptcoord$x, ptcoord$y, ...)
     }
 }

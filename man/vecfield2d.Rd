@@ -50,12 +50,11 @@ beta1 <- matrix(c(0,-1,1,0),2)
 # Plot 1:
 vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin, args=list(beta=beta1))
 # Plot 2:
-par(mar=c(2,2,2,2))
+graphics::par(mar=c(2,2,2,2))
 vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
    args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
    border=NA,cex.hh=1, cex.shr=0.6, col=8)
-abline(v=0,h=0)
+graphics::abline(v=0,h=0)
 }
 \keyword{empty}
 \keyword{plot}
-

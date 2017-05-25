@@ -60,4 +60,3 @@ plot0(x=c(-2,2),y=c(-2,2), asp=1)
 ellipse(x=c(-1,1),c(1,1,-1,-1),from=pi*seq(0.25,1,by=0.25),to=1.25*pi, col=2, border=4, lwd=3)
 }
 \keyword{ellipse}
-

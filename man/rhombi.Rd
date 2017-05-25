@@ -47,4 +47,3 @@ rhombi(x=0, rot=seq(0,180,20), col=2, border=NA)
 rhombi(x=0, rot=seq(0,180,30), ldg=0.6, col=7, border=NA)
 }
 \keyword{rhumbus}
-

@@ -21,72 +21,28 @@
 #' The bottom center panel shows the characteristic of the selcted color.
 #' Finally, to abort, the user can simply clik on the left \code{Stop} panel.
 
-pickColors <- function(ramp = rainbow(1024), nb_shades = 1024, rgb = FALSE, preview = FALSE) {
-    
-    old.par <- par(no.readonly = TRUE)
+pickColors <- function(ramp = grDevices::rainbow(1024), nb_shades = 1024, rgb = FALSE, preview = FALSE) {
+
+    old.par <- graphics::par(no.readonly = TRUE)
     ## ---
     nb_ramp <- length(ramp)
     slccolor <- 0
     col_ini <- ramp[floor(nb_ramp * 0.5) + 1]
-    shades <- colorRampPalette(c("white", col_ini, "black"))(nb_shades)
+    shades <- (grDevices::colorRamp(c("white", col_ini, "black")))(nb_shades)
     col_foc <- shades[floor(nb_shades * 0.5) + 1]
     ## ---
-    drawSelector <- function(col_ini, col_foc, shades) {
-        par(mar = c(0, 0, 0, 0), xaxs = "i", yaxs = "i")
-        plot0()
-        ## --
-        par(fig = c(0, 1, 0.8, 1), new = TRUE)
-        image(matrix(1L:nb_ramp), col = ramp, axes = FALSE, ann = FALSE)
-        points(rep(which(ramp == col_ini)[1L]/nb_shades, 2), c(0, 0), col = c("white", 
-            1), pch = c(19, 20))
-        box(lwd = 3, col = "white")
-        ## --
-        par(fig = c(0, 1, 0.6, 0.8), new = TRUE)
-        image(matrix(1:nb_shades), col = shades, axes = FALSE, ann = FALSE)
-        points(rep(which(shades == col_foc)[1L]/nb_shades, 2), c(0, 0), col = c("white", 
-            1), pch = c(19, 20))
-        box(lwd = 3, col = "white")
-        ## --
-        par(fig = c(0, 0.2, 0.3, 0.6), new = TRUE)
-        plot0()
-        plotAreaColor()
-        text(0, 0, label = "Keep it", cex = 2)
-        box(lwd = 3, col = "white")
-        ## --
-        par(fig = c(0, 0.2, 0, 0.3), new = TRUE)
-        plot0()
-        plotAreaColor()  #col='grey80')
-        text(0, 0, label = "Stop", cex = 2)
-        box(lwd = 3, col = "white")
-        ## --
-        par(fig = c(0.2, 0.5, 0, 0.6), new = TRUE)
-        plot0()
-        plotAreaColor(col = "grey90")
-        text(0, 0.6, label = colorRampPalette(col_foc)(1), cex = 2)
-        code_rgb <- col2rgb(col_foc)
-        text(0, 0.1, label = paste0("Red: ", code_rgb[1]), cex = 2)
-        text(0, -0.3, label = paste0("Green: ", code_rgb[2]), cex = 2)
-        text(0, -0.7, label = paste0("Blue: ", code_rgb[3]), cex = 2)
-        box(lwd = 3, col = "white")
-        ## --
-        par(fig = c(0.5, 1, 0, 0.6), new = TRUE)
-        plot0()
-        plotAreaColor(col = col_foc)
-        box(lwd = 3, col = "white")
-        ## --
-        par(fig = c(0, 1, 0, 1), usr = c(0, 1, 0, 1), new = TRUE)
-    }
+
     ## ---
     i <- 0
     while (i == 0) {
-        shades <- colorRampPalette(c("white", col_ini, "black"))(nb_shades)
-        drawSelector(col_ini, col_foc, shades)
-        loc <- locator(1L)
+        shades <- (grDevices::colorRamp(c("white", col_ini, "black")))(nb_shades)
+        drawSelector(col_ini, col_foc, shades, nb_shades, nb_ramp)
+        loc <- graphics::locator(1L)
         ## --
         if (loc$y > 0.6) {
             if (loc$y > 0.8) {
                 col_ini <- ramp[floor(nb_ramp * loc$x) + 1]
-                shades <- colorRampPalette(c("white", col_ini, "black"))(nb_shades)
+                shades <- (grDevices::colorRamp(c("white", col_ini, "black")))(nb_shades)
                 col_foc <- shades[floor(nb_shades * 0.5) + 1]
             } else col_foc <- shades[floor(nb_shades * loc$x) + 1]
         } else {
@@ -101,13 +57,61 @@ pickColors <- function(ramp = rainbow(1024), nb_shades = 1024, rgb = FALSE, prev
         }
     }
     ## ---
-    par(old.par)
-    dev.off()
+    graphics::par(old.par)
+    grDevices::dev.off()
     ## ---
     slccolor <- slccolor[-1L]
-    if (preview) 
+    if (preview)
         showPalette(slccolor, add_number = TRUE)
     ## ---
-    if (rgb) 
-        return(col2rgb(slccolor)) else return(slccolor)
+    if (rgb)
+        return(grDevices::col2rgb(slccolor)) else return(slccolor)
+}
+
+
+
+drawSelector <- function(col_ini, col_foc, shades, nb_shades, nb_ramp) {
+    graphics::par(mar = c(0, 0, 0, 0), xaxs = "i", yaxs = "i")
+    plot0()
+    ## --
+    graphics::par(fig = c(0, 1, 0.8, 1), new = TRUE)
+    graphics::image(matrix(1L:nb_ramp), col = ramp, axes = FALSE, ann = FALSE)
+    graphics::points(rep(which(ramp == col_ini)[1L]/nb_shades, 2), c(0, 0), col = c("white",
+        1), pch = c(19, 20))
+    graphics::box(lwd = 3, col = "white")
+    ## --
+    graphics::par(fig = c(0, 1, 0.6, 0.8), new = TRUE)
+    graphics::image(matrix(1:nb_shades), col = shades, axes = FALSE, ann = FALSE)
+    graphics::points(rep(which(shades == col_foc)[1L]/nb_shades, 2), c(0, 0), col = c("white",
+        1), pch = c(19, 20))
+    graphics::box(lwd = 3, col = "white")
+    ## --
+    graphics::par(fig = c(0, 0.2, 0.3, 0.6), new = TRUE)
+    plot0()
+    plotAreaColor()
+    graphics::text(0, 0, label = "Keep it", cex = 2)
+    graphics::box(lwd = 3, col = "white")
+    ## --
+    graphics::par(fig = c(0, 0.2, 0, 0.3), new = TRUE)
+    plot0()
+    plotAreaColor()  #col='grey80')
+    graphics::text(0, 0, label = "Stop", cex = 2)
+    graphics::box(lwd = 3, col = "white")
+    ## --
+    graphics::par(fig = c(0.2, 0.5, 0, 0.6), new = TRUE)
+    plot0()
+    plotAreaColor(col = "grey90")
+    graphics::text(0, 0.6, label = (grDevices::colorRamp(col_foc))(1), cex = 2)
+    code_rgb <- grDevices::col2rgb(col_foc)
+    graphics::text(0, 0.1, label = paste0("Red: ", code_rgb[1]), cex = 2)
+    graphics::text(0, -0.3, label = paste0("Green: ", code_rgb[2]), cex = 2)
+    graphics::text(0, -0.7, label = paste0("Blue: ", code_rgb[3]), cex = 2)
+    graphics::box(lwd = 3, col = "white")
+    ## --
+    graphics::par(fig = c(0.5, 1, 0, 0.6), new = TRUE)
+    plot0()
+    plotAreaColor(col = col_foc)
+    graphics::box(lwd = 3, col = "white")
+    ## --
+    graphics::par(fig = c(0, 1, 0, 1), usr = c(0, 1, 0, 1), new = TRUE)
 }

@@ -181,7 +181,7 @@ The *graphicsutils* package is licensed under the GPLv3 (http://www.gnu.org/lice
 # To do list
 
 1. add code coverage (so far, I didn't implement any tests...);
-2. Add more examples;
+2. Add a vignette 
 3. Create a sustainable system to include different shapes (I am currently thinking about it);
 4. gradientPolygon must be completed to include images before exporting it;
 5. add interactive mode in `showPalette` function;

@@ -26,4 +26,3 @@ showPalette(floor(runif(30,1,9)), add_number=TRUE)
 }
 \keyword{color,}
 \keyword{selection}
-

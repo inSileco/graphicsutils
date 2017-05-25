@@ -4,7 +4,7 @@
 \alias{pickColors}
 \title{Pick colors up}
 \usage{
-pickColors(ramp = rainbow(1024), nb_shades = 1024, rgb = FALSE,
+pickColors(ramp = grDevices::rainbow(1024), nb_shades = 1024, rgb = FALSE,
   preview = FALSE)
 }
 \arguments{
@@ -31,4 +31,3 @@ Finally, to abort, the user can simply clik on the left \code{Stop} panel.
 }
 \keyword{color,}
 \keyword{selection}
-

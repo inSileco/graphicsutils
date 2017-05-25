@@ -31,12 +31,12 @@
 #' box2(c(1,4), fill='grey80', lwd=2)
 #'
 #' # Example 3:
-#' par(mfrow=c(2,2),oma=c(2,2,2,2))
+#' graphics::par(mfrow=c(2,2),oma=c(2,2,2,2))
 #' plot0(0,0)
-#' box('outer',lwd=2)
-#' box('inner',lwd=2)
-#' plot(0,0)
-#' plot(0,0)
+#' graphics::box('outer',lwd=2)
+#' graphics::box('inner',lwd=2)
+#' graphics::plot.default(0,0)
+#' graphics::plot.default(0,0)
 #' plot0()
 #' box2(which='figure',lwd=2, fill=2)
 #' box2(side=12, lwd=2, fill=8)
@@ -53,40 +53,40 @@ box2 <- function(side = 1:4, which = "plot", fill = NULL, ...) {
     ax <- ax[!is.na(ax)]
     ## 
     if (length(ax)) {
-        coord <- par()$usr
+        coord <- graphics::par()$usr
         if (which != "plot") {
             ## figure margins in user units
-            cvx <- (par()$usr[2] - par()$usr[1])/par()$pin[1]
-            cvy <- (par()$usr[4] - par()$usr[3])/par()$pin[2]
-            mau <- par()$mai * rep(c(cvy, cvx), 2)
+            cvx <- (graphics::par()$usr[2] - graphics::par()$usr[1])/graphics::par()$pin[1]
+            cvy <- (graphics::par()$usr[4] - graphics::par()$usr[3])/graphics::par()$pin[2]
+            mau <- graphics::par()$mai * rep(c(cvy, cvx), 2)
             coord <- coord + c(-mau[2], mau[4], -mau[1], mau[3])
             ## inner margins in user units (get the lenght and adjust!)
             if (which != "figure") {
                 diffx <- coord[2] - coord[1]
                 diffy <- coord[4] - coord[3]
-                lenx <- diffx * 1/(diff(par()$fig[1:2]))
-                leny <- diffy * 1/(diff(par()$fig[1:2]))
-                coord[1] <- coord[1] - par()$fig[1] * lenx
+                lenx <- diffx * 1/(diff(graphics::par()$fig[1:2]))
+                leny <- diffy * 1/(diff(graphics::par()$fig[1:2]))
+                coord[1] <- coord[1] - graphics::par()$fig[1] * lenx
                 coord[2] <- coord[1] + lenx
-                coord[3] <- coord[3] - par()$fig[3] * leny
+                coord[3] <- coord[3] - graphics::par()$fig[3] * leny
                 coord[4] <- coord[3] + leny
                 ## outer margins in user units
                 if (which != "inner") {
-                  omu <- par()$omi * rep(c(cvy, cvx), 2)
+                  omu <- graphics::par()$omi * rep(c(cvy, cvx), 2)
                   coord <- coord + c(-omu[2], omu[4], -omu[1], omu[3])
                 }
             }
         }
-        op <- par("xpd")
-        par(xpd = NA)
+        op <- graphics::par("xpd")
+        graphics::par(xpd = NA)
         mat <- matrix(c(4, 2, 3, 1, 3, 1, 4, 2), ncol = 2)
         if (!is.null(fill)) 
-            rect(coord[1], coord[3], coord[2], coord[4], col = fill, border = NA)
+            graphics::rect(coord[1], coord[3], coord[2], coord[4], col = fill, border = NA)
         for (i in ax) {
             coordb <- coord
             coordb[mat[i, 1]] <- coordb[mat[i, 2]]
-            lines(c(coordb[1], coordb[2]), c(coordb[3], coordb[4]), ...)
+            graphics::lines(c(coordb[1], coordb[2]), c(coordb[3], coordb[4]), ...)
         }
-        par(xpd = op)
+        graphics::par(xpd = op)
     } else warning("'bty' does not match any of '1', '2', '3', '4', 'b', 'l', 't', 'r'")
 }

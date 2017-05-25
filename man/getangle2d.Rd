@@ -28,4 +28,3 @@ cool <- getAngle2d(c(0,3),c(0,0),c(3,0),c(3,-3))
 }
 \keyword{empty}
 \keyword{plot}
-

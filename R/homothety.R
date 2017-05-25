@@ -27,9 +27,9 @@
 #' plot0(c(0,10),c(0,10))
 #' x <- c(4,6,5)
 #' y <- c(2,2,4)
-#' polygon(x,y)
+#' graphics::polygon(x,y)
 #' poly2 <- homothety(x,y,2)
-#' polygon(poly2$x,poly2$y)
+#' graphics::polygon(poly2$x,poly2$y)
 #' poly3 <- homothety(x, y, -2.5, xcen=5, ycen=4, border=4, add=TRUE)
 
 
@@ -55,7 +55,7 @@ homothety <- function(x, y, lambda, xcen = NULL, ycen = NULL, add = FALSE, ...) 
     ## ----
     homot <- list(x = lambda * (x - xcen) + xcen, y = lambda * (y - ycen) + ycen)
     if (add) 
-        polygon(homot$x, homot$y, ...)
+        graphics::polygon(homot$x, homot$y, ...)
     ## ----
     return(homot)
 }

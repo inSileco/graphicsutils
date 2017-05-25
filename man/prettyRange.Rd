@@ -28,4 +28,3 @@ prettyRange(c(3.85,3.88245))
 }
 \keyword{interval.}
 \keyword{range,}
-

@@ -51,4 +51,3 @@ polarPlot(1:40, stats::runif(40), to=1.9*pi, col='grey30', border='grey80')
 \seealso{
 \code{\link[plotrix]{polar.plot}}
 }
-

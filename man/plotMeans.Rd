@@ -4,9 +4,10 @@
 \alias{plotMeans}
 \title{Plot means and error asociated}
 \usage{
-plotMeans(formula, data, FUN_err = sd, add = FALSE, seqx = NULL,
-  draw_axis = TRUE, col_err = par()$col, col_pt = par()$col, cex_pt = 1,
-  connect = FALSE, args_con = list(), ...)
+plotMeans(formula, data, FUN_err = stats::sd, add = FALSE, seqx = NULL,
+  draw_axis = TRUE, col_err = graphics::par()$col,
+  col_pt = graphics::par()$col, cex_pt = 1, connect = FALSE,
+  args_con = list(), ...)
 }
 \arguments{
 \item{formula}{a formula, see \code{\link[stats]{formula}}.}
@@ -39,7 +40,7 @@ Plot a set of means computed based on a dataset and draw error asociated.
 \examples{
 # Example:
 dataset <- data.frame(dat=c(rnorm(50, 10, 2), rnorm(50, 20, 2)) , grp=rep(c('A','D'), each=50))
-par(mfrow=c(1,3))
+graphics::par(mfrow=c(1,3))
 plotMeans(dat~grp, data=dataset, pch=19)
 #
 plotMeans(dat~grp, data=dataset, FUN_err= function(x) sd(x)*2, pch=15,
@@ -49,9 +50,8 @@ ser <- function(x) sd(x)/sqrt(length(x))
 plot0(c(0,4), c(0,30))
 plotMeans(dat~grp, data=dataset, FUN_err=ser, pch=15,
 draw_axis=FALSE, add=TRUE, seqx=c(.5,3.5), mar=c(6,6,1,1), cex=1.4)
-axis(2)
+graphics::axis(2)
 }
 \keyword{deviation}
 \keyword{means,}
 \keyword{standard}
-

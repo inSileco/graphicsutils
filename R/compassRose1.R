@@ -27,7 +27,7 @@
 compassRose1 <- function(x, y = x, rot = 0, cex.cr = 1, cex.let = 1, labels = c("S", 
     "W", "N", "E"), offset = 1.2, col = c(1, 8), border = c(1, 8), lty = 1) {
     ## ---
-    wh <- strheight("M")
+    wh <- graphics::strheight("M")
     rot < -pi * rot/180
     mat.rot <- matrix(c(cos(rot), sin(rot), -sin(rot), cos(rot)), 2)
     ## ---
@@ -47,11 +47,11 @@ compassRose1 <- function(x, y = x, rot = 0, cex.cr = 1, cex.let = 1, labels = c(
     cr.bd <- rep(border, length.out = 8)
     ## ---
     for (i in 1:8) {
-        polygon(x + c(0, matxy[i, 1], matxy[8 + i, 1]), y + c(0, matxy[i, 2], matxy[8 + 
-            i, 2]), col = cr.col[i], border = cr.bd[i], lty = lty)
+        graphics::polygon(x + c(0, matxy[i, 1], matxy[8 + i, 1]), y + c(0, matxy[i, 
+            2], matxy[8 + i, 2]), col = cr.col[i], border = cr.bd[i], lty = lty)
     }
-    text(x + offset * matxy[seq(1, by = 2, length.out = 4), 1], y + offset * matxy[seq(1, 
-        by = 2, length.out = 4), 2], labels, cex = cex.let)
+    graphics::text(x + offset * matxy[seq(1, by = 2, length.out = 4), 1], y + offset * 
+        matxy[seq(1, by = 2, length.out = 4), 2], labels, cex = cex.let)
 }
 
 

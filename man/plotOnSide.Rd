@@ -26,8 +26,7 @@ repeating or deleting axis labels, \code{plotOnSide} add plot areas on the speci
 It is based on \link[graphics]{layout} and it is no more than a tunned version of it.
 }
 \examples{
-par(mar=c(0,0,0,0))
+graphics::par(mar=c(0,0,0,0))
 plotOnSide(1:3, width=c(0.2,1), height=c(1,1,1,0.6))
-layout.show(5)
+graphics::layout.show(5)
 }
-

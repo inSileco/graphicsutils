@@ -36,12 +36,12 @@ plot0()
 box2(c(1,4), fill='grey80', lwd=2)
 
 # Example 3:
-par(mfrow=c(2,2),oma=c(2,2,2,2))
+graphics::par(mfrow=c(2,2),oma=c(2,2,2,2))
 plot0(0,0)
-box('outer',lwd=2)
-box('inner',lwd=2)
-plot(0,0)
-plot(0,0)
+graphics::box('outer',lwd=2)
+graphics::box('inner',lwd=2)
+graphics::plot.default(0,0)
+graphics::plot.default(0,0)
 plot0()
 box2(which='figure',lwd=2, fill=2)
 box2(side=12, lwd=2, fill=8)
@@ -50,4 +50,3 @@ box2(side=12, lwd=2, fill=8)
 \code{\link[graphics]{box}}
 }
 \keyword{box}
-

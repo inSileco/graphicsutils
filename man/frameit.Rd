@@ -36,4 +36,3 @@ frameit(cex.x=1.5, col=c(2,3), border=1)
 }
 \keyword{box}
 \keyword{frame,}
-

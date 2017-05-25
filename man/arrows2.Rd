@@ -54,4 +54,3 @@ arrows2(runif(2), runif(2), x1=runif(2), y1=runif(2), prophead=FALSE, lty=3)
 \code{\link[graphics]{arrows}}, \code{\link[shape]{Arrows}}
 }
 \keyword{arrows}
-

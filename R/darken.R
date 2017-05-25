@@ -20,9 +20,9 @@
 #' @describeIn darken A color standing between two given hues.
 ramp <- function(fromcol, tocol, percentage = 50, as_rgb = FALSE) {
     perc <- as.integer(percentage)
-    outcol <- colorRampPalette(c(fromcol, tocol))(100)[perc]
+    outcol <- (grDevices::colorRamp(c(fromcol, tocol)))(100)[perc]
     if (as_rgb) 
-        outcol <- col2rgb(outcol)
+        outcol <- grDevices::col2rgb(outcol)
     return(outcol)
 }
 

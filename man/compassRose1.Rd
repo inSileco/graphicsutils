@@ -46,8 +46,8 @@ There already exists one compass rose by Jim Lemon in \code{sp} package.
 
 \item \code{compassRose2}: A compass rose with the four cardinal directions and additionnal directions.
 }}
+
 \examples{
 plot0()
 compassRose2(0, rot=25)
 }
-

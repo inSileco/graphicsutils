@@ -56,8 +56,8 @@ circle <- function(x = 0, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01, p
     for (i in 1L:sz) {
         ## --- sequence to draw the circle
         if (abs(to[i] - from[i]) >= (2 * pi)) {
-            to[i] = 2 * pi
-            from[i] = 0
+            to[i] <- 2 * pi
+            from[i] <- 0
         } else {
             if ((to[i] > from[i]) & (to[i]%%(2 * pi) == 0)) 
                 to[i] <- 2 * pi
@@ -68,8 +68,12 @@ circle <- function(x = 0, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01, p
         }
         ## 
         sqc <- seq(from[i], to[i], by = incr)
-        if (!pie) 
-            polygon(x[i] + radi[i] * cos(sqc), y[i] + radi[i] * sin(sqc), ...) else polygon(x[i] + c(0, radi[i] * cos(sqc), 0), y[i] + c(0, radi[i] * sin(sqc), 
-            0), ...)
+        if (!pie) {
+            graphics::polygon(x[i] + radi[i] * cos(sqc), y[i] + radi[i] * sin(sqc), 
+                ...)
+        } else {
+            graphics::polygon(x[i] + c(0, radi[i] * cos(sqc), 0), y[i] + c(0, radi[i] * 
+                sin(sqc), 0), ...)
+        }
     }
 }

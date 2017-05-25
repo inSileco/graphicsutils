@@ -26,10 +26,9 @@ I repoduced the algorithm described in \url{http://alienryderflex.com/polygon/}.
 plot0(c(0,10), c(0,10))
 valx <- 10*runif(20)
 valy <- 10*runif(20)
-polygon(c(4,8,8,4),c(4,4,8,8))
-points(valx, valy, col=pointsInPolygon(valx,valy,c(4,8,8,4),c(4,4,8,8))+1)
+graphics::polygon(c(4,8,8,4),c(4,4,8,8))
+graphics::points(valx, valy, col=pointsInPolygon(valx,valy,c(4,8,8,4),c(4,4,8,8))+1)
 }
 \keyword{over}
 \keyword{points,}
 \keyword{polygons,}
-

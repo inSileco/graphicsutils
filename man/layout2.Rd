@@ -31,4 +31,3 @@ As \code{layout} is ultimately called, \code{layout2} has the same limits: curre
 }
 \keyword{empty}
 \keyword{plot}
-

@@ -24,5 +24,5 @@
 envelop <- function(x, upper, lower, ...) {
     stopifnot(length(x) == length(upper))
     stopifnot(length(x) == length(lower))
-    polygon(c(x, rev(x)), c(upper, rev(lower)), ...)
+    graphics::polygon(c(x, rev(x)), c(upper, rev(lower)), ...)
 }
