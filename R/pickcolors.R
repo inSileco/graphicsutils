@@ -21,8 +21,9 @@
 #' The bottom center panel shows the characteristic of the selcted color.
 #' Finally, to abort, the user can simply clik on the left \code{Stop} panel.
 
-pickColors <- function(ramp = grDevices::rainbow(1024), nb_shades = 1024, rgb = FALSE, preview = FALSE) {
-
+pickColors <- function(ramp = grDevices::rainbow(1024), nb_shades = 1024, rgb = FALSE, 
+    preview = FALSE) {
+    
     old.par <- graphics::par(no.readonly = TRUE)
     ## ---
     nb_ramp <- length(ramp)
@@ -31,7 +32,7 @@ pickColors <- function(ramp = grDevices::rainbow(1024), nb_shades = 1024, rgb = 
     shades <- (grDevices::colorRamp(c("white", col_ini, "black")))(nb_shades)
     col_foc <- shades[floor(nb_shades * 0.5) + 1]
     ## ---
-
+    
     ## ---
     i <- 0
     while (i == 0) {
@@ -61,10 +62,10 @@ pickColors <- function(ramp = grDevices::rainbow(1024), nb_shades = 1024, rgb = 
     grDevices::dev.off()
     ## ---
     slccolor <- slccolor[-1L]
-    if (preview)
+    if (preview) 
         showPalette(slccolor, add_number = TRUE)
     ## ---
-    if (rgb)
+    if (rgb) 
         return(grDevices::col2rgb(slccolor)) else return(slccolor)
 }
 
@@ -76,13 +77,13 @@ drawSelector <- function(col_ini, col_foc, shades, nb_shades, nb_ramp) {
     ## --
     graphics::par(fig = c(0, 1, 0.8, 1), new = TRUE)
     graphics::image(matrix(1L:nb_ramp), col = ramp, axes = FALSE, ann = FALSE)
-    graphics::points(rep(which(ramp == col_ini)[1L]/nb_shades, 2), c(0, 0), col = c("white",
+    graphics::points(rep(which(ramp == col_ini)[1L]/nb_shades, 2), c(0, 0), col = c("white", 
         1), pch = c(19, 20))
     graphics::box(lwd = 3, col = "white")
     ## --
     graphics::par(fig = c(0, 1, 0.6, 0.8), new = TRUE)
     graphics::image(matrix(1:nb_shades), col = shades, axes = FALSE, ann = FALSE)
-    graphics::points(rep(which(shades == col_foc)[1L]/nb_shades, 2), c(0, 0), col = c("white",
+    graphics::points(rep(which(shades == col_foc)[1L]/nb_shades, 2), c(0, 0), col = c("white", 
         1), pch = c(19, 20))
     graphics::box(lwd = 3, col = "white")
     ## --

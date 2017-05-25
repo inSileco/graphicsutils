@@ -48,8 +48,9 @@ getIcon <- function(name, res = 256, destfile = NULL, col = NULL, quiet = FALSE,
     base <- "https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/"
     tmp <- paste0(base, res, "/", name, ".png?raw=true")
     ## ---
-    if (is.null(NULL)) 
-        destfile <- paste0(tempdir(), name, ".png")
+    if (is.null(destfile)) {
+        destfile <- paste0(tempfile, ".png")
+    }
     downloader::download(tmp, destfile = destfile, quiet = TRUE)
     if (!quiet) 
         cat(paste0("Downloaded and stored at ''", destfile, "'\n"))
