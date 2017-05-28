@@ -68,7 +68,7 @@ circle(0, 0 ,seq(0,1,0.2), from=pi, col="#BBBBFF88", lty=2, lwd=1.4)
 # plotMeans()
 
 
-```{r plotMeans, fig.height=6, fig.width=6}
+```{r plotMeans, fig.height=3, fig.width=6}
 dataset <- data.frame(dat=c(rnorm(50, 10, 2), rnorm(50, 20, 2)) , grp=rep(c('A','D'), each=50))
 graphics::par(mfrow=c(1,3))
 plotMeans(dat~grp, data=dataset, pch=19)
@@ -92,8 +92,19 @@ polarPlot(1:40, stats::runif(40), to=1.9*pi, col='grey30', border='grey80')
 # compassRose
 
 ```{r compassRose, fig.height=6, fig.width=6}
-plot0(asp=1)
-compassRose2(0, rot=25)
+par(mfrow=c(2,2), mar=rep(1,4))
+##
+plot0(c(-1,1), asp=1)
+compassRose2(0, 0)
+##
+plot0(c(-1,1), asp=1)
+compassRose2(0.5, 0.5)
+##
+plot0(c(-1,1), asp=1)
+compassRose2(0, 0, cex.cr=2)
+##
+plot0(c(-1,1), asp=1)
+compassRose2(0, 0, rot=.75*pi, cex.cr=2, cex.let=1.5, offset=-1.25)
 ```
 
 
@@ -120,8 +131,8 @@ envelop(seqx, seqy2, seqy3, col='grey25', border=NA)
 ```{r plotImage, fig.height=6, fig.width=6}
 img <- png::readPNG(system.file('img', 'Rlogo.png', package='png'), native=TRUE)
 op <- graphics::par(no.readonly = TRUE)
-graphics::par(mfrow=c(4,4), mar=rep(2,4))
-for (i in 1:16) plotImage(img)
+graphics::par(mfrow=c(2,2), mar=rep(1,4))
+for (i in 1:4) plotImage(img)
 graphics::par(op)
 ```
 
@@ -136,12 +147,23 @@ obj=img, angle=360*runif(n), col=2)
 ```
 
 
-## Color
+## Colors
 
-## darken and associated
+## Creating shades of colors
 
-```{r}
-darken('red', 50)
-somereds <- lighten('red', seq(10,90,9))
-showPalette(somereds)
+The `darken()` and `lighten()` functions ease the creation of shades of a given color. For any color palette, use the `showPalette()` to display them!
+
+
+```{r darken, fig.height=6, fig.width=6}
+someblue <- darken("blue", 10*1:9)
+showPalette(someblue)
+```
+
+```{r lighten, fig.height=6, fig.width=6}
+somered <- lighten("red", 10*1:9)
+showPalette(somered)
+```
+
+```{r showpal, fig.height=6, fig.width=6}
+showPalette(rainbow(81))
 ```
