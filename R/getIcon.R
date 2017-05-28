@@ -49,7 +49,7 @@ getIcon <- function(name, res = 256, destfile = NULL, col = NULL, quiet = FALSE,
     tmp <- paste0(base, res, "/", name, ".png?raw=true")
     ## ---
     if (is.null(destfile)) {
-        destfile <- paste0(tempfile, ".png")
+        destfile <- paste0(tempfile(), ".png")
     }
     downloader::download(tmp, destfile = destfile, quiet = TRUE)
     if (!quiet) 
