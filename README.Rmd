@@ -33,7 +33,8 @@ Also, *graphicsutils* is base on the *graphics* package and so, it is not intend
 
 ## Status
 
-[![Build status](https://ci.appveyor.com/api/projects/status/x5ngkcflyfiixr37?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils)
+[![Build status](https://ci.appveyor.com/api/github/webhook?id=ckmm09dear2cty1w
+)](https://ci.appveyor.com/project/KevCaz/graphicsutils) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils)
 [![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html)
 
 - Note that functions are written using Camel case (e.g. `showPalette()`)
@@ -80,7 +81,7 @@ Empty, isn't it?
 Also, it can be filled with any color using the `fill` parameter.
 
 
-```{r}
+```{r plot0v2}
 plot0(c(0,1),c(0,1), fill="lightskyblue1")
 ```
 
@@ -138,13 +139,13 @@ stackedAreas(x)
 
 ## Polar plot
 
-```{r,   fig.width=6,  fig.height=6}
+```{r polarPlot,   fig.width=6,  fig.height=6}
 polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
 ```
 
 ## Get pretty ranges
 
-```{r}
+```{r prettyRange}
 vec <- stats::runif(20)
 range(vec)
 prettyRange(vec)
@@ -169,12 +170,12 @@ layout2()
 `darken()` and `lighten()` functions are convenient way to produce consistent set of color with minimal effort. They can be displayed using  the `showPalette()` function as for any color palette.
 
 
-```{r}
+```{r darken}
 someblue <- darken("blue", 10*1:9)
 showPalette(someblue)
 ```
 
-```{r}
+```{r lighten}
 somered <- lighten("red", 10*1:9)
 showPalette(somered, add_codecolor=TRUE)
 ```
@@ -182,12 +183,33 @@ showPalette(somered, add_codecolor=TRUE)
 
 # Access to Font-Awesome's icons
 
-```{r}
+```{r getIcon}
 names <- getIconNames()
 my_icon <- getIcon(name='beer', col='grey80')
 plotImage(my_icon)
 ```
 
+# Vector fields
+
+```{r vector fields}
+systLin <- function(X, beta){
+    Y <- matrix(0,ncol=2)
+    Y[1] <- beta[1,1]*X[1]+beta[1,2]*X[2]
+    Y[2] <- beta[2,1]*X[1]+beta[2,2]*X[2]
+    return(Y)
+}
+seqx <- seq(-2,2,0.31)
+seqy <- seq(-2,2,0.31)
+beta1 <- matrix(c(0,-1,1,0),2)
+# Plot 1:
+vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin, args=list(beta=beta1))
+# Plot 2:
+graphics::par(mar=c(2,2,2,2))
+vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
+   args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
+   border=NA,cex.hh=1, cex.shr=0.6, col=8)
+graphics::abline(v=0,h=0)
+```
 
 
 # To do list
