@@ -44,13 +44,12 @@ getIconNames <- function() {
 getIcon <- function(name, res = 256, destfile = NULL, col = NULL, quiet = FALSE, 
     preview = FALSE, get_path = FALSE) {
     if (!res %in% c(16, 22, 24, 32, 48, 64, 128, 256)) 
-        stop("Available resolution are 16, 22, 24, 32, 48, 64, 128 or 256")
+        stop("Available resolution values are 16, 22, 24, 32, 48, 64, 128 or 256")
     base <- "https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/"
     tmp <- paste0(base, res, "/", name, ".png?raw=true")
     ## ---
-    if (is.null(destfile)) {
-        destfile <- paste0(tempfile(), ".png")
-    }
+    if (is.null(destfile)) 
+        destfile <- tempfile(pattern = "icon", tmpdir = tempdir(), fileext = ".png")
     downloader::download(tmp, destfile = destfile, quiet = TRUE)
     if (!quiet) 
         cat(paste0("Downloaded and stored at ''", destfile, "'\n"))

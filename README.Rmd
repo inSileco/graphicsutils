@@ -33,7 +33,7 @@ If some of these functions turn out to be really helpful then they will likely a
 ## Status
 
 [![Build status](https://ci.appveyor.com/api/projects/status/x5ngkcflyfiixr37?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils)
-![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)
+[![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html))
 
 
 # Installation
@@ -176,19 +176,21 @@ showPalette(somered, add_codecolor=TRUE)
 ```
 
 
-# Status
+# Access to Font Awesome icons
 
-
-# License
-The *graphicsutils* package is licensed under the GPLv3 (http://www.gnu.org/licenses/gpl.html).
+```{r}
+names <- getIconNames()
+my_icon <- getIcon(name='beer', col='grey80')
+plotImage(my_icon)
+```
 
 
 
 # To do list
 
-1. [ ] Add code coverage (so far, I didn't implement many unit tests :scream:),
-2. [ ] Add a vignette gathering examples (pending...),
-3. ~Create a sustainable system to include different shapes (I am currently thinking about it);~ => for another package
-4. ~gradientPolygon must be completed to include images before exporting it;~ => not with graphics' plots.
-5. [ ] add interactive mode in `showPalette()` function;
-6. [ ] `vectfield2d()` needs to be reviewed => I'll do so when I'll integrate nice arrows.
+- [ ] Add code coverage (so far, I didn't implement many unit tests :scream:),
+- [ ] Add a vignette gathering examples (pending...),
+-  ~Create a sustainable system to include different shapes (I am currently thinking about it);~ => for another package
+- ~gradientPolygon must be completed to include images before exporting it;~ => not with graphics' plots.
+- [ ] add interactive mode in `showPalette()` function,
+- [ ] `vectfield2d()` needs to be reviewed => I'll do so when I'll integrate nice looking arrows.

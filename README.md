@@ -8,7 +8,7 @@ Description
 Status
 ------
 
-[![Build status](https://ci.appveyor.com/api/projects/status/x5ngkcflyfiixr37?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils) ![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)
+[![Build status](https://ci.appveyor.com/api/projects/status/x5ngkcflyfiixr37?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils) [![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html))
 
 Installation
 ============
@@ -122,9 +122,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.04534324 0.88067050
+#> [1] 0.03088639 0.78315566
 prettyRange(vec)
-#> [1] 0.0 0.9
+#> [1] 0.0 0.8
 prettyRange(c(3.85,3.88245))
 #> [1] 3.850 3.885
 ```
@@ -161,20 +161,24 @@ showPalette(somered, add_codecolor=TRUE)
 
 ![](inst/assets/img/unnamed-chunk-11-1.png)
 
-Status
-======
+Access to Font Awesome icons
+============================
 
-License
-=======
+``` r
+names <- getIconNames()
+my_icon <- getIcon(name='beer', col='grey80')
+#> Downloaded and stored at ''/var/folders/vw/vkx0lvqd69jf9blhj1c3b3t00000gn/T//RtmpGyv0Oc/icon127c93958ee0d.png'
+plotImage(my_icon)
+```
 
-The *graphicsutils* package is licensed under the GPLv3 (<http://www.gnu.org/licenses/gpl.html>).
+![](inst/assets/img/unnamed-chunk-12-1.png)
 
 To do list
 ==========
 
-1.  \[ \] Add code coverage (so far, I didn't implement many unit tests :scream:),
-2.  \[ \] Add a vignette gathering examples (pending...),
-3.  ~Create a sustainable system to include different shapes (I am currently thinking about it);~ =&gt; for another package
-4.  ~gradientPolygon must be completed to include images before exporting it;~ =&gt; not with graphics' plots.
-5.  \[ \] add interactive mode in `showPalette()` function;
-6.  \[ \] `vectfield2d()` needs to be reviewed =&gt; I'll do so when I'll integrate nice arrows.
+-   \[ \] Add code coverage (so far, I didn't implement many unit tests :scream:),
+-   \[ \] Add a vignette gathering examples (pending...),
+-   ~Create a sustainable system to include different shapes (I am currently thinking about it);~ =&gt; for another package
+-   ~gradientPolygon must be completed to include images before exporting it;~ =&gt; not with graphics' plots.
+-   \[ \] add interactive mode in `showPalette()` function,
+-   \[ \] `vectfield2d()` needs to be reviewed =&gt; I'll do so when I'll integrate nice looking arrows.
