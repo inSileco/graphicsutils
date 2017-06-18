@@ -41,11 +41,6 @@ Color gradient as it may appear in original icon is not yet handled once the col
 \item \code{getIcon}: Download an icon based on its name.
 }}
 
-\examples{
-names <- getIconNames()
-my_icon <- getIcon(name='beer', col='grey80')
-plotImage(my_icon)
-}
 \references{
 <URL: 'https://github.com/encharm/Font-Awesome-SVG-PNG/tree/master/black/png>
 }

@@ -20,11 +20,6 @@
 #'
 #' @references
 #' <URL: 'https://github.com/encharm/Font-Awesome-SVG-PNG/tree/master/black/png>
-#'
-#' @examples
-#' names <- getIconNames()
-#' my_icon <- getIcon(name='beer', col='grey80')
-#' plotImage(my_icon)
 
 
 #' @describeIn getIcon Return the list of names available for downloading.
@@ -52,7 +47,7 @@ getIcon <- function(name, res = 256, destfile = NULL, col = NULL, quiet = FALSE,
         destfile <- tempfile(pattern = "icon", tmpdir = tempdir(), fileext = ".png")
     downloader::download(tmp, destfile = destfile, quiet = TRUE)
     if (!quiet) 
-        cat(paste0("Downloaded and stored at ''", destfile, "'\n"))
+        cat(paste0("Downloaded and stored at '", destfile, "'\n"))
     raset <- png::readPNG(destfile, native = TRUE)
     ## ---
     if (!is.null(col)) 
