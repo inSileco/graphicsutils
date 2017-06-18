@@ -21,24 +21,28 @@ knitr::opts_chunk$set(
 
 # Description
 
-*graphicsutils* is an R package including a set of graphical functions. Just as the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package, it adds several graphics utilities based on the core package *graphics*. Note that this package is not intended to be sumitted to the CRAN.
-First, because many of these functions already exist in other packages (in a different form though).
-Second, because I use it to improve my coding skill and my experience in writing a R package. This allows me to make some functions disappearing without me explaining why!
-Nevertheless, this package may help users to deal with typical issues they may encounter when using *graphics*.
-If some of these functions turn out to be really helpful then they will likely appear in a different package which will be submitted to the CRAN. Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package.
+The *graphicsutils* R package includes a set of graphical functions. Just as the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package, it adds several graphics utilities based on the core package *graphics*.
 
-- Functions are written using Camel case (e.g. `keepWords()`)
+For now, I do not intend to submit this package to the CRAN.
+First, because  similar functions already exist elsewhere (in [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) for instance) and I do not increase the code redundancy on the CRAN!
+Second, because I use this package to improve my coding skills, not being on the CRAN allows me some liberty, *e.g* making some functions/arguments disappearing without me explaining why! Nevertheless, this package may help users to deal with typical issues they may encounter when they use *graphics*.
+
+Also, *graphicsutils* is base on the *graphics* package and so, it is not intended to be used with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html) sytem (and thus neither with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)).
+
 
 
 ## Status
 
 [![Build status](https://ci.appveyor.com/api/projects/status/x5ngkcflyfiixr37?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils)
-[![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html))
+[![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html)
+
+- Note that functions are written using Camel case (e.g. `showPalette()`)
+
 
 
 # Installation
 
-To install the package, use the [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package.
+To install the package, use the [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package:
 
 ```{r eval=FALSE}
 install.packages("devtools")
@@ -65,7 +69,7 @@ devtools::load_all()
 ## Empty your plot
 
 To start a figure from scratch it is often useful to get a plot without nothing but the correct size of axes.
-`plot0()` allows the user to do so :
+`plot0()` allows the user to do so:
 
 
 ```{r plot0}
@@ -83,7 +87,7 @@ plot0(c(0,1),c(0,1), fill="lightskyblue1")
 
 ## Add a box
 
-The `box2` function allows the user to add any axes around the plot in a more flexoble way.
+The `box2` function allows the user to add any axes around the plot in a more flexible way.
 
 ```{r box2}
 par(mar=rep(2,4))
@@ -114,8 +118,8 @@ pchImage(0, 0, file=pathLogo, cex.x =4.5, cex.y=4, col="grey25", angle=25)
 ### A simple stacked areas
 
 
-```{r envelop,   fig.width=6,  fig.height=6}
-plot0(c(0,10),c(0,10))
+```{r envelop,  fig.width=6,  fig.height=6}
+plot0(c(0, 10),c(0, 10))
 sz <- 100
 seqx <- seq(0, 10, length.out=sz)
 seqy1 <- 0.2*seqx*runif(sz, 0, 1)
@@ -128,7 +132,7 @@ envelop(seqx, seqy1, seqy2, col="grey85", border=NA)
 
 
 ```{r stackedArea,  fig.width=6,  fig.height=6}
-x <- data.frame(matrix(runif(200,2,10), 8, 25))
+x <- data.frame(matrix(runif(200, 2, 10), 8, 25))
 stackedAreas(x)
 ```
 
@@ -144,7 +148,7 @@ polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
 vec <- stats::runif(20)
 range(vec)
 prettyRange(vec)
-prettyRange(c(3.85,3.88245))
+prettyRange(c(3.85, 3.88245))
 ```
 
 ## Interactive functions
@@ -162,7 +166,7 @@ layout2()
 
 ## Colors
 
-`darken()` and `lighten()` functions are convenient way to produce consistent set of color with minimal effort. Also, use `showPalette()` to display them!
+`darken()` and `lighten()` functions are convenient way to produce consistent set of color with minimal effort. They can be displayed using  the `showPalette()` function as for any color palette.
 
 
 ```{r}
@@ -176,7 +180,7 @@ showPalette(somered, add_codecolor=TRUE)
 ```
 
 
-# Access to Font Awesome icons
+# Access to Font-Awesome's icons
 
 ```{r}
 names <- getIconNames()
@@ -190,7 +194,7 @@ plotImage(my_icon)
 
 - [ ] Add code coverage (so far, I didn't implement many unit tests :scream:),
 - [ ] Add a vignette gathering examples (pending...),
--  ~Create a sustainable system to include different shapes (I am currently thinking about it);~ => for another package
-- ~gradientPolygon must be completed to include images before exporting it;~ => not with graphics' plots.
+-  ~Create a sustainable system to include different shapes (I am currently thinking about it);~ => for another package,
+- ~gradientPolygon must be completed to include images before exporting it;~ => not with graphics' plots,
 - [ ] add interactive mode in `showPalette()` function,
 - [ ] `vectfield2d()` needs to be reviewed => I'll do so when I'll integrate nice looking arrows.
