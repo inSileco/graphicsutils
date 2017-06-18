@@ -4,7 +4,7 @@
 \alias{rotation}
 \title{Rotation}
 \usage{
-rotation(x, y, rot = 90, xrot = NULL, yrot = NULL, radian = FALSE)
+rotation(x, y, rot = 90, xrot = mean(x), yrot = mean(y), radian = FALSE)
 }
 \arguments{
 \item{x}{the x coordinates of points.}

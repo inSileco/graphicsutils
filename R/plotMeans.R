@@ -89,4 +89,5 @@ plotMeans <- function(formula, data, FUN_err = stats::sd, add = FALSE, seqx = NU
         graphics::axis(2)
         graphics::box(bty = "l", lwd = 1.2)
     }
+    invisible(NULL)
 }

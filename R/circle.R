@@ -76,4 +76,5 @@ circle <- function(x = 0, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01, p
                 sin(sqc), 0), ...)
         }
     }
+    invisible(NULL)
 }

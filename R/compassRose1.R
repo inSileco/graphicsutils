@@ -52,6 +52,7 @@ compassRose1 <- function(x, y = x, rot = 0, cex.cr = 1, cex.let = 1, labels = c(
     }
     graphics::text(x + offset * matxy[seq(1, by = 2, length.out = 4), 1], y + offset * 
         matxy[seq(1, by = 2, length.out = 4), 2], labels, cex = cex.let)
+    invisible(NULL)
 }
 
 
@@ -67,4 +68,5 @@ compassRose2 <- function(x = 0, y = 0, rot = 0, cex.cr = 1, cex.let = 1, offset 
         cex.let = cex.let, offset = offset, col = col, border = border, lty = lty)
     compassRose1(x, y, rot, cex.cr, cex.let = cex.let, offset = offset, col = col, 
         border = border, lty = lty)
+    invisible(NULL)
 }

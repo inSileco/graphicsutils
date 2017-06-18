@@ -34,7 +34,7 @@
 #' # Example 3:
 #' plot0(asp=1)
 #' rhombi(x=0, rot=seq(0,180,20), col=2, border=NA)
-#' rhombi(x=0, rot=seq(0,180,30), ldg=0.6, col=7, border=NA)
+#' rhombi(x=0, rot=seq(0,180,30), ldg=0.5, col=7, border=NA)
 
 
 rhombi <- function(x, y = x, ldg = 1, sdg = ldg, rot = 0, area = FALSE, ...) {
@@ -45,17 +45,19 @@ rhombi <- function(x, y = x, ldg = 1, sdg = ldg, rot = 0, area = FALSE, ...) {
     sdg <- rep_len(sdg, sz)
     rot <- rep_len(rot, sz)
     rot <- pi * rot/180
-    ## ----
-    for (i in 1:sz) {
-        corh <- matrix(0, 2, 4)
-        corh[1, ] <- c(0.5 * ldg[i], 0, -0.5 * ldg[i], 0)
-        corh[2, ] <- c(0, 0.5 * sdg[i], 0, -0.5 * sdg[i])
-        mat.rot <- matrix(c(cos(rot[i]), sin(rot[i]), -sin(rot[i]), cos(rot[i])), 
-            2)
-        pt.los <- mat.rot %*% corh
-        graphics::polygon(x[i] + pt.los[1, ], y[i] + pt.los[2, ], ...)
-    }
-    ## ----
-    if (area) 
+    if (area) {
         return(0.5 * ldg * sdg)
+    } else {
+        ## ----
+        for (i in 1:sz) {
+            corh <- matrix(0, 2, 4)
+            corh[1, ] <- c(0.5 * ldg[i], 0, -0.5 * ldg[i], 0)
+            corh[2, ] <- c(0, 0.5 * sdg[i], 0, -0.5 * sdg[i])
+            mat.rot <- matrix(c(cos(rot[i]), sin(rot[i]), -sin(rot[i]), cos(rot[i])), 
+                2)
+            pt.los <- mat.rot %*% corh
+            graphics::polygon(x[i] + pt.los[1, ], y[i] + pt.los[2, ], ...)
+        }
+        invisible(NULL)
+    }
 }

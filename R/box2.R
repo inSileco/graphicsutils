@@ -89,4 +89,6 @@ box2 <- function(side = 1:4, which = "plot", fill = NULL, ...) {
         }
         graphics::par(xpd = op)
     } else warning("'bty' does not match any of '1', '2', '3', '4', 'b', 'l', 't', 'r'")
+    
+    invisible(NULL)
 }

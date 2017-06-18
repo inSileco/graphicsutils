@@ -112,4 +112,5 @@ polarPlot <- function(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi, in
             col = tckcol)
     }
     
+    invisible(NULL)
 }

@@ -38,4 +38,5 @@ plot0 <- function(x = c(-1, 1), y = x, fill = NULL, ...) {
     } else graphics::plot.default(x = x, y = y, ann = FALSE, axes = FALSE, type = "n")
     if (!is.null(fill)) 
         plotAreaColor(col = fill)
+    invisible()
 }

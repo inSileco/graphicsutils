@@ -94,4 +94,5 @@ arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1
             radian = TRUE)
         graphics::polygon(ptcoord$x, ptcoord$y, ...)
     }
+    invisible(NULL)
 }

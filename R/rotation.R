@@ -26,24 +26,20 @@
 #' myrot2 <- rotation(x, y, rot=-40, 0, 0)
 #' graphics::polygon(myrot2$x,myrot2$y, lwd=2, border=3)
 
-rotation <- function(x, y, rot = 90, xrot = NULL, yrot = NULL, radian = FALSE) {
+rotation <- function(x, y, rot = 90, xrot = mean(x), yrot = mean(y), radian = FALSE) {
     ## Format checking
     x <- as.matrix(x)
     stopifnot(ncol(x) <= 2)
     x <- matrix(as.numeric(x), ncol = ncol(x))
     if (ncol(x) > 1) {
-        y <- x[, 2]
-        x <- x[, 1]
+        y <- x[, 2L]
+        x <- x[, 1L]
     } else {
         sz <- max(length(x), length(y))
         x <- rep_len(x, sz)
         y <- rep_len(y, sz)
     }
-    ## if null, xrot/yrot are the mean of x/y coordinates
-    if (is.null(xrot)) 
-        xrot <- mean(x)
-    if (is.null(yrot)) 
-        yrot <- mean(y)
+    ## 
     matxy <- matrix(c(x - xrot, y - yrot), nrow = 2, byrow = TRUE)
     if (!radian) 
         rot <- pi * rot/180

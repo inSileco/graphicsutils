@@ -2,7 +2,7 @@
 % Please edit documentation in R/pointsInPolygon.R
 \name{pointsInPolygon}
 \alias{pointsInPolygon}
-\title{Are points inside a polygon ?}
+\title{Are points inside a polygon?}
 \usage{
 pointsInPolygon(x, y, poly_x, poly_y)
 }
@@ -19,15 +19,17 @@ pointsInPolygon(x, y, poly_x, poly_y)
 Return a logical vector stating whether or not points are inside a static polygon.
 }
 \details{
-I repoduced the algorithm described in \url{http://alienryderflex.com/polygon/}.
+It implements the Ray-casting algorithm.
 }
 \examples{
 # Example
 plot0(c(0,10), c(0,10))
-valx <- 10*runif(20)
-valy <- 10*runif(20)
+valx <- 10*runif(40)
+valy <- 10*runif(40)
+res <- pointsInPolygon(valx,valy,c(4,8,8,4),c(4,4,8,8))
+# Visual assessment
 graphics::polygon(c(4,8,8,4),c(4,4,8,8))
-graphics::points(valx, valy, col=pointsInPolygon(valx,valy,c(4,8,8,4),c(4,4,8,8))+1)
+graphics::points(valx, valy, col=res+1)
 }
 \keyword{over}
 \keyword{points,}

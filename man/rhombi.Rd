@@ -44,6 +44,6 @@ rhombi(runif(6), runif(5), runif(2), runif(3))
 # Example 3:
 plot0(asp=1)
 rhombi(x=0, rot=seq(0,180,20), col=2, border=NA)
-rhombi(x=0, rot=seq(0,180,30), ldg=0.6, col=7, border=NA)
+rhombi(x=0, rot=seq(0,180,30), ldg=0.5, col=7, border=NA)
 }
 \keyword{rhumbus}
