@@ -99,6 +99,14 @@ axis(1)
 axis(2)
 ```
 
+## Encircle points
+
+```{r encircle}
+coords <- cbind(runif(10), runif(10))
+plot0(coords)
+points(coords, bg="grey25", pch=21)
+encircle(coords, border="#7b11a1", lwd=2)
+```
 
 ## Add an image
 
@@ -191,7 +199,7 @@ plotImage(my_icon)
 
 # Vector fields
 
-```{r vector fields}
+```{r vectorfields}
 systLin <- function(X, beta){
     Y <- matrix(0,ncol=2)
     Y[1] <- beta[1,1]*X[1]+beta[1,2]*X[2]
