@@ -15,8 +15,7 @@
 #'
 #' @keywords plot, image, plotting character
 #'
-#' @importFrom magrittr %>%
-#' @importFrom magrittr %<>%
+#' @importFrom grDevices as.raster
 #'
 #' @export
 #'
@@ -48,9 +47,9 @@ pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, at
             stop("No method found for the given file.")
         nb <- which(ext == TRUE)
         if (nb == 3) {
-            obj <- png::readPNG(file) %>% grDevices::as.raster %>% as.matrix
+            obj <- as.matrix(as.raster(png::readPNG(file)))
         } else {
-            obj <- jpeg::readJPEG(file) %>% grDevices::as.raster %>% as.matrix
+            obj <- as.matrix(as.raster(jpeg::readJPEG(file)))
         }
     }
     dx <- cex.x * 0.05 * (graphics::par()$usr[2L] - graphics::par()$usr[1L])

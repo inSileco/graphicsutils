@@ -1,13 +1,14 @@
-Last 'README' update: 26 novembre 2016
-
-[![Build status](https://ci.appveyor.com/api/projects/status/x5ngkcflyfiixr37?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils)
-
 Description
 ===========
 
-*graphicsutils* is an R package that includes a set of graphical functions. As the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package, it adds several graphics utilities based on the core package *graphics*. Note that this package is not intended to be sumitted to the CRAN. First, because many of these functions already exist in other packages (in a different form though). Second, because I use it to improve my coding skill and my experience in writing a R package. This allows me to make some functions disappearing without me explaining why! Nevertheless, this package may help users to deal with typical issues they may encounter when using *graphics*. If some of these functions turn out to be really helpful then they will likely appear in a different package which will be submitted to the CRAN. Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package.
+*graphicsutils* is an R package including a set of graphical functions. Just as the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package, it adds several graphics utilities based on the core package *graphics*. Note that this package is not intended to be sumitted to the CRAN. First, because many of these functions already exist in other packages (in a different form though). Second, because I use it to improve my coding skill and my experience in writing a R package. This allows me to make some functions disappearing without me explaining why! Nevertheless, this package may help users to deal with typical issues they may encounter when using *graphics*. If some of these functions turn out to be really helpful then they will likely appear in a different package which will be submitted to the CRAN. Also, *graphicsutils* is not intended to be used with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html) package.
 
 -   Functions are written using Camel case (e.g. `keepWords()`)
+
+Status
+------
+
+[![Build status](https://ci.appveyor.com/api/projects/status/x5ngkcflyfiixr37?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils) ![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)
 
 Installation
 ============
@@ -25,6 +26,7 @@ Then, load it:
 library(graphicsutils)
 ```
 
+<!-- use devel version -->
 Main features
 =============
 
@@ -37,9 +39,9 @@ To start a figure from scratch it is often useful to get a plot without nothing 
 plot0(c(0,1),c(0,1))
 ```
 
-![](inst/assets/img/unnamed-chunk-4-1.png)
+![](inst/assets/img/plot0-1.png)
 
-Empty isn't it? Also, it can be filled with a given color using `fill` parameter.
+Empty, isn't it? Also, it can be filled with any color using the `fill` parameter.
 
 ``` r
 plot0(c(0,1),c(0,1), fill="lightskyblue1")
@@ -50,7 +52,7 @@ plot0(c(0,1),c(0,1), fill="lightskyblue1")
 Add a box
 ---------
 
-Box allows the user to add any axes around the plot.
+The `box2` function allows the user to add any axes around the plot in a more flexoble way.
 
 ``` r
 par(mar=rep(2,4))
@@ -61,23 +63,23 @@ axis(1)
 axis(2)
 ```
 
-![](inst/assets/img/unnamed-chunk-6-1.png)
+![](inst/assets/img/box2-1.png)
 
 Add an image
 ------------
 
-`pchImage()` eases the uses of `rasterImage` to add images (including png and jpeg files) on a graph. It allows to change the color of the whole image.
+The `pchImage()` function eases the uses of `rasterImage()` to add images (including png and jpeg files) on a graph. It allows to change the color of the whole image.
 
 ``` r
 pathLogo <- system.file("img", "Rlogo.png", package="png")
 par(mar=c(4,1,4,1), mfrow=c(1,2))
 plot0()
-pchImage(0,0, file=pathLogo, cex.x =4.5, cex.y=4)
+pchImage(0, 0, file=pathLogo, cex.x =4.5, cex.y=4)
 plot0()
-pchImage(0,0, file=pathLogo, cex.x =4.5, cex.y=4, col="grey25", angle=25)
+pchImage(0, 0, file=pathLogo, cex.x =4.5, cex.y=4, col="grey25", angle=25)
 ```
 
-![](inst/assets/img/unnamed-chunk-7-1.png)
+![](inst/assets/img/pchImage-1.png)
 
 A stacked areas chart
 ---------------------
@@ -94,7 +96,7 @@ seqy3 <- 8+0.25*seqx*runif(sz, 0, 1)
 envelop(seqx, seqy1, seqy2, col="grey85", border=NA)
 ```
 
-![](inst/assets/img/unnamed-chunk-8-1.png)
+![](inst/assets/img/envelop-1.png)
 
 ### A complete stacked areas
 
@@ -103,7 +105,7 @@ x <- data.frame(matrix(runif(200,2,10), 8, 25))
 stackedAreas(x)
 ```
 
-![](inst/assets/img/unnamed-chunk-9-1.png)
+![](inst/assets/img/stackedArea-1.png)
 
 Polar plot
 ----------
@@ -112,7 +114,7 @@ Polar plot
 polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
 ```
 
-![](inst/assets/img/unnamed-chunk-10-1.png)
+![](inst/assets/img/unnamed-chunk-6-1.png)
 
 Get pretty ranges
 -----------------
@@ -120,9 +122,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.001732444 0.980235976
+#> [1] 0.04534324 0.88067050
 prettyRange(vec)
-#> [1] 0 1
+#> [1] 0.0 0.9
 prettyRange(c(3.85,3.88245))
 #> [1] 3.850 3.885
 ```
@@ -150,14 +152,17 @@ someblue <- darken("blue", 10*1:9)
 showPalette(someblue)
 ```
 
-![](inst/assets/img/unnamed-chunk-14-1.png)
+![](inst/assets/img/unnamed-chunk-10-1.png)
 
 ``` r
 somered <- lighten("red", 10*1:9)
-showPalette(somered)
+showPalette(somered, add_codecolor=TRUE)
 ```
 
-![](inst/assets/img/unnamed-chunk-15-1.png)
+![](inst/assets/img/unnamed-chunk-11-1.png)
+
+Status
+======
 
 License
 =======
@@ -167,9 +172,9 @@ The *graphicsutils* package is licensed under the GPLv3 (<http://www.gnu.org/lic
 To do list
 ==========
 
-1.  add code coverage (so far, I didn't implement any tests...);
-2.  Add more examples;
-3.  Create a sustainable system to include different shapes (I am currently thinking about it);
-4.  gradientPolygon must be completed to include images before exporting it;
-5.  add interactive mode in `showPalette` function;
-6.  vectfield2d needs to be reviewed (related to point 3)...
+1.  \[ \] Add code coverage (so far, I didn't implement many unit tests :scream:),
+2.  \[ \] Add a vignette gathering examples (pending...),
+3.  ~Create a sustainable system to include different shapes (I am currently thinking about it);~ =&gt; for another package
+4.  ~gradientPolygon must be completed to include images before exporting it;~ =&gt; not with graphics' plots.
+5.  \[ \] add interactive mode in `showPalette()` function;
+6.  \[ \] `vectfield2d()` needs to be reviewed =&gt; I'll do so when I'll integrate nice arrows.

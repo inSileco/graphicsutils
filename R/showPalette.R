@@ -4,8 +4,8 @@
 #'
 #' @param x A vector of colors.
 #' @param inline A logical. If TRUE, the colors are displayed on a single row.
-#' @param add_number A logical. If TRUE, color vector's indices are added.
-#' @param add_codecolor A logical. If TRUE, the code color is displayed.
+#' @param add_number A logical. If TRUE, color vector's indices are added (default is set to FALSE).
+#' @param add_codecolor A logical. If TRUE, the code color is displayed (default is set to FALSE).
 #' @param cex_num The maginification coefficient of the color vector's indices.
 #'
 #' @keywords color, selection
@@ -19,9 +19,9 @@
 #' The top panel serves to select one tone. Currently channel alpha is ignored.
 #'
 #' @examples
-#' showPalette(sample(1:100, 16), add_number=TRUE, add_color = TRUE)
+#' showPalette(sample(1:100, 16), add_number=TRUE, add_codecolor = TRUE)
 
-showPalette <- function(x, inline = FALSE, add_number = FALSE, add_codecolor = TRUE, 
+showPalette <- function(x, inline = FALSE, add_number = FALSE, add_codecolor = FALSE, 
     cex_num = 1.2) {
     
     opar <- graphics::par(no.readonly = TRUE)

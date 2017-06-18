@@ -4,7 +4,7 @@
 \alias{showPalette}
 \title{Show a color Palette}
 \usage{
-showPalette(x, inline = FALSE, add_number = FALSE, add_codecolor = TRUE,
+showPalette(x, inline = FALSE, add_number = FALSE, add_codecolor = FALSE,
   cex_num = 1.2)
 }
 \arguments{
@@ -12,9 +12,9 @@ showPalette(x, inline = FALSE, add_number = FALSE, add_codecolor = TRUE,
 
 \item{inline}{A logical. If TRUE, the colors are displayed on a single row.}
 
-\item{add_number}{A logical. If TRUE, color vector's indices are added.}
+\item{add_number}{A logical. If TRUE, color vector's indices are added (default is set to FALSE).}
 
-\item{add_codecolor}{A logical. If TRUE, the code color is displayed.}
+\item{add_codecolor}{A logical. If TRUE, the code color is displayed (default is set to FALSE).}
 
 \item{cex_num}{The maginification coefficient of the color vector's indices.}
 }
@@ -26,7 +26,7 @@ This function generates a graphical window splitted into 6 panels.
 The top panel serves to select one tone. Currently channel alpha is ignored.
 }
 \examples{
-showPalette(sample(1:100, 16), add_number=TRUE, add_color = TRUE)
+showPalette(sample(1:100, 16), add_number=TRUE, add_codecolor = TRUE)
 }
 \keyword{color,}
 \keyword{selection}
