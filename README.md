@@ -69,6 +69,18 @@ axis(2)
 
 ![](inst/assets/img/box2-1.png)
 
+Encircle points
+---------------
+
+``` r
+coords <- cbind(runif(10), runif(10))
+plot0(coords)
+points(coords, bg="grey25", pch=21)
+encircle(coords, border="#7b11a1", lwd=2)
+```
+
+![](inst/assets/img/encircle-1.png)
+
 Add an image
 ------------
 
@@ -126,9 +138,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-#> [1] 0.03248088 0.99373294
+#> [1] 0.0186652 0.9164087
 prettyRange(vec)
-#> [1] 0 1
+#> [1] 0.00 0.95
 prettyRange(c(3.85, 3.88245))
 #> [1] 3.850 3.885
 ```
@@ -171,7 +183,7 @@ Access to Font-Awesome's icons
 ``` r
 names <- getIconNames()
 my_icon <- getIcon(name='beer', col='grey80')
-#> Downloaded and stored at '/var/folders/vw/vkx0lvqd69jf9blhj1c3b3t00000gn/T//RtmpLY9b0X/icon12b6a2cdb32b2.png'
+#> Downloaded and stored at '/var/folders/vw/vkx0lvqd69jf9blhj1c3b3t00000gn/T//RtmpILiI1C/icon182ff27e7386e.png'
 plotImage(my_icon)
 ```
 
@@ -194,7 +206,7 @@ beta1 <- matrix(c(0,-1,1,0),2)
 vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin, args=list(beta=beta1))
 ```
 
-![](inst/assets/img/vector%20fields-1.png)
+![](inst/assets/img/vectorfields-1.png)
 
 ``` r
 # Plot 2:
@@ -205,7 +217,7 @@ vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
 graphics::abline(v=0,h=0)
 ```
 
-![](inst/assets/img/vector%20fields-2.png)
+![](inst/assets/img/vectorfields-2.png)
 
 To do list
 ==========
