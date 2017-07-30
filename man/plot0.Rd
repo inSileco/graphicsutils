@@ -13,13 +13,11 @@ plot0(x = c(-1, 1), y = x, fill = NULL, ...)
 
 \item{fill}{The color to be used to fill the plot area.}
 
-\item{...}{additional arguments affecting the plot.}
+\item{...}{additional arguments to be passed to the defauls scatterplot
+function \code{\link[graphics]{plot.default}}.}
 }
 \description{
-\code{plot0} returns an empty plot.
-}
-\details{
-The function is based on the \link[graphics]{plot.default} function. It makes the creation of an empty plot faster.
+\code{plot0} returns an a plot of a specific size without any symbols.
 }
 \examples{
 # Example 1:

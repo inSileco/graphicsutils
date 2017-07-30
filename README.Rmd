@@ -21,13 +21,13 @@ knitr::opts_chunk$set(
 
 # Description
 
-The *graphicsutils* R package includes a set of graphical functions. Just as the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package, it adds several graphics utilities based on the core package *graphics*.
+The *graphicsutils* R package includes a set of graphical functions. Just as the [*plotrix*](https://ci.appveyor.com/api/projects/status/ckmm09dear2cty1w?svg=true) package, it adds several graphics utilities based on the core package *graphics*.
 
 For now, I do not intend to submit this package to the CRAN.
 First, because  similar functions already exist elsewhere (in [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) for instance) and I do not increase the code redundancy on the CRAN!
 Second, because I use this package to improve my coding skills, not being on the CRAN allows me some liberty, *e.g* making some functions/arguments disappearing without me explaining why! Nevertheless, this package may help users to deal with typical issues they may encounter when they use *graphics*.
 
-Also, *graphicsutils* is base on the *graphics* package and so, it is not intended to be used with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html) sytem (and thus neither with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)).
+Also, *graphicsutils* is base on the *graphics* package and so, it is not intended to be used with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html) system (and thus neither with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)).
 
 
 
@@ -223,8 +223,6 @@ graphics::abline(v=0,h=0)
 # To do list
 
 - [ ] Add code coverage (so far, I didn't implement many unit tests :scream:),
-- [ ] Add a vignette gathering examples (pending...),
--  ~Create a sustainable system to include different shapes (I am currently thinking about it);~ => for another package,
-- ~gradientPolygon must be completed to include images before exporting it;~ => not with graphics' plots,
+- [ ] Add a vignette gathering examples (pending.. I may create a simple website instead),
 - [ ] add interactive mode in `showPalette()` function,
 - [ ] `vectfield2d()` needs to be reviewed => I'll do so when I'll integrate nice looking arrows.

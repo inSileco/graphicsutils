@@ -1,4 +1,3 @@
-library(graphicsutils)
 context("Test geometry")
 
 ## get the area of rhombi drawn

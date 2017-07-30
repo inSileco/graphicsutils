@@ -7,7 +7,7 @@
 encircle(x, y = NULL, nb.pt = 20, off.set = 1, ...)
 }
 \arguments{
-\item{x}{the x coordinates of a set of points.  Alternatively, a
+\item{x}{the x coordinates of a set of points. Alternatively, a
 single argument \code{x} can be provided.}
 
 \item{y}{the y coordinates of a set of points.}

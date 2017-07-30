@@ -1,17 +1,16 @@
 #' An empty plot function
 #'
-#' \code{plot0} returns an empty plot.
+#' \code{plot0} returns an a plot of a specific size without any symbols.
 #'
 #' @param x the x coordinates of points in the plot.
 #' @param y the y coordinates of points in the plot.
 #' @param fill The color to be used to fill the plot area.
-#' @param ... additional arguments affecting the plot.
+#' @param ... additional arguments to be passed to the defauls scatterplot
+#' function \code{\link[graphics]{plot.default}}.
 #'
 #' @keywords empty plot
 #'
 #' @export
-#'
-#' @details The function is based on the \link[graphics]{plot.default} function. It makes the creation of an empty plot faster.
 #'
 #' @seealso \code{\link[shape]{emptyplot}}
 #'

@@ -2,7 +2,7 @@
 #'
 #' Draw a polygons around a certains set of points.
 #'
-#' @param x the x coordinates of a set of points.  Alternatively, a
+#' @param x the x coordinates of a set of points. Alternatively, a
 #'       single argument \code{x} can be provided.
 #' @param y the y coordinates of a set of points.
 #' @param nb.pt the nuber of points to ge generated around eah coordinates.

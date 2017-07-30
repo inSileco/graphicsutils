@@ -10,7 +10,7 @@ Also, *graphicsutils* is base on the *graphics* package and so, it is not intend
 Status
 ------
 
-[![Build status](https://ci.appveyor.com/api/github/webhook?id=ckmm09dear2cty1w)](https://ci.appveyor.com/project/KevCaz/graphicsutils) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils) [![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html)
+[![Build status](https://ci.appveyor.com/api/github/webhook?id=ckmm09dear2cty1w)](https://ci.appveyor.com/api/projects/status/ckmm09dear2cty1w?svg=true) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils) [![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html)
 
 -   Note that functions are written using Camel case (e.g. `showPalette()`)
 
