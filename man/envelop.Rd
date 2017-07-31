@@ -2,9 +2,9 @@
 % Please edit documentation in R/envelop.R
 \name{envelop}
 \alias{envelop}
-\title{Color the area between two lines.}
+\title{Compute the coordinates of an envelop.}
 \usage{
-envelop(x, upper, lower, ...)
+envelop(x, upper, lower, add = TRUE, ...)
 }
 \arguments{
 \item{x}{vectors containing the x coordinates.}
@@ -13,13 +13,14 @@ envelop(x, upper, lower, ...)
 
 \item{lower}{the y coordinates of the lower values.}
 
-\item{...}{additionnal arguments to be passed to \link[graphics]{polygon}.}
+\item{add}{logical. If \code{TRUE} the envelop is drawn as a polygon.}
+
+\item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygon}}.}
 }
 \description{
-\code{envelop} colors the area between two series of y coordinates.
-}
-\details{
-This function enables to color the areas between two set of values.
+\code{envelop} eases the compuation of the polygons described by to set
+of y coordinates along the x-axis. Optionnaly, the polygons could be added
+on the current plot.
 }
 \examples{
 plot0(c(0,10),c(0,10))

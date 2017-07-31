@@ -57,5 +57,5 @@ homothety <- function(x, y, lambda, xcen = NULL, ycen = NULL, add = FALSE, ...) 
     if (add) 
         graphics::polygon(homot$x, homot$y, ...)
     ## ----
-    return(homot)
+    homot
 }

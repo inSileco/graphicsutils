@@ -67,5 +67,5 @@ showPalette <- function(x, inline = FALSE, add_number = FALSE, add_codecolor = F
         graphics::box(col = "white")
     }
     
-    invisible()
+    invisible(NULL)
 }

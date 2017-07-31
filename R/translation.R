@@ -36,7 +36,7 @@
 
 
 translation <- function(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...) {
-    ## ---- Format checking
+    ##-- Format checking
     x <- as.matrix(x)
     stopifnot(ncol(x) <= 2)
     x <- matrix(as.numeric(x), ncol = ncol(x))
@@ -48,10 +48,10 @@ translation <- function(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...) {
         x <- rep_len(x, sz)
         y <- rep_len(y, sz)
     }
-    ## ----
+    ##--
     trasla <- list(x = x + xtrans, y = y + ytrans)
     if (add) 
         graphics::polygon(trasla$x, trasla$y, ...)
-    ## ----
-    return(trasla)
+    ##--
+    trasla
 }

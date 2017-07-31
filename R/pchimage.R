@@ -71,4 +71,6 @@ pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, at
     if (atcenter == TRUE) {
         graphics::rasterImage(obj, x - dx, y - dy, x + dx, y + dy, ...)
     } else graphics::rasterImage(obj, x, y, x + 2 * dx, y + 2 * dy, ...)
+    ## 
+    invisible(NULL)
 }
