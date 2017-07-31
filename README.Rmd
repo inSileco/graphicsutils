@@ -36,8 +36,7 @@ designed to work with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library
 
 ## Status
 
-[![Build status](https://ci.appveyor.com/api/github/webhook?id=ckmm09dear2cty1w
-)](https://ci.appveyor.com/project/KevCaz/graphicsutils) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils)
+[![Build status](https://ci.appveyor.com/api/projects/status/ckmm09dear2cty1w?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils)
 [![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html)
 
 - Note that functions are written using Camel case (e.g. `showPalette()`)
