@@ -21,13 +21,16 @@ knitr::opts_chunk$set(
 
 # Description
 
-The *graphicsutils* R package includes a set of graphical functions. Just as the [*plotrix*](https://ci.appveyor.com/api/projects/status/ckmm09dear2cty1w?svg=true) package, it adds several graphics utilities based on the core package *graphics*.
+The *graphicsutils* is an R package that add various graphics utilities based on
+the core package *graphics*. For now, I do not intend to submit this package
+to the CRAN. First, because similar functions already exist elsewhere (see the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package).
+Second, because I use this package to improve my coding skills, not being on
+the CRAN allows me some liberty, *e.g* making some functions/arguments
+disappear without having to explain why :smile_cat:! Nevertheless, this package
+may help users to overcome some difficulties they may encounter with *graphics*.
 
-For now, I do not intend to submit this package to the CRAN.
-First, because  similar functions already exist elsewhere (in [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) for instance) and I do not increase the code redundancy on the CRAN!
-Second, because I use this package to improve my coding skills, not being on the CRAN allows me some liberty, *e.g* making some functions/arguments disappearing without me explaining why! Nevertheless, this package may help users to deal with typical issues they may encounter when they use *graphics*.
-
-Also, *graphicsutils* is base on the *graphics* package and so, it is not intended to be used with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html) system (and thus neither with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)).
+Also, as *graphicsutils*  is based on the *graphics* package, it is not
+designed to work with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html) system (and thereby it does not work with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)).
 
 
 
@@ -43,7 +46,7 @@ Also, *graphicsutils* is base on the *graphics* package and so, it is not intend
 
 # Installation
 
-To install the package, use the [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package:
+To install the package, the easiest way is to use the [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package:
 
 ```{r eval=FALSE}
 install.packages("devtools")
@@ -55,6 +58,7 @@ Then, load it:
 ```{r, eval=FALSE}
 library(graphicsutils)
 ```
+
 
 <!-- use devel version -->
 
@@ -110,7 +114,8 @@ encircle(coords, border="#7b11a1", lwd=2)
 
 ## Add an image
 
-The `pchImage()` function eases the uses of `rasterImage()` to add images (including png and jpeg files) on a graph. It allows to change the color of the whole image.
+The `pchImage()` function eases the uses of `rasterImage()` to add images
+(including png and jpeg files) on a graph. It allows to change the color of the whole image.
 
 ```{r pchImage}
 pathLogo <- system.file("img", "Rlogo.png", package="png")
@@ -175,7 +180,9 @@ layout2()
 
 ## Colors
 
-`darken()` and `lighten()` functions are convenient way to produce consistent set of color with minimal effort. They can be displayed using  the `showPalette()` function as for any color palette.
+`darken()` and `lighten()` functions are convenient way to produce consistent
+set of colors with minimal effort. They can be displayed using the
+`showPalette()` function as for any color palette.
 
 
 ```{r darken}
@@ -222,7 +229,7 @@ graphics::abline(v=0,h=0)
 
 # To do list
 
-- [ ] Add code coverage (so far, I didn't implement many unit tests :scream:),
-- [ ] Add a vignette gathering examples (pending.. I may create a simple website instead),
+- [ ] Improve the code coverage,
+- [ ] Add a vignette gathering examples (I may create a simple cookbook website),
 - [ ] add interactive mode in `showPalette()` function,
 - [ ] `vectfield2d()` needs to be reviewed => I'll do so when I'll integrate nice looking arrows.
