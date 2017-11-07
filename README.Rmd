@@ -9,12 +9,12 @@ output:
 ```{r echo=FALSE}
 knitr::opts_chunk$set(
   fig.path = "inst/assets/img/",
-  comment = "#>",
+  comment = "R>> ",
   collapse = TRUE,
   warning = FALSE,
   message = FALSE,
-  fig.width=4,
-  fig.height=4
+  fig.width = 5,
+  fig.height = 5
 )
 ```
 
@@ -36,7 +36,8 @@ designed to work with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library
 
 ## Status
 
-[![Build status](https://ci.appveyor.com/api/projects/status/ckmm09dear2cty1w?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils) [![Travis](https://travis-ci.org/KevCaz/graphicsutils.svg?branch=master)](https://travis-ci.org/KevCaz/graphicsutils) [![codecov](https://codecov.io/gh/KevCaz/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/graphicsutils)
+[![Build Status](https://travis-ci.org/inSileco/graphicsutils.svg?branch=master)](https://travis-ci.org/inSileco/graphicsutils)
+[![Build status](https://ci.appveyor.com/api/projects/status/330p7f0djhpl998q?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils-qo99s)
 [![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html)
 
 - Note that functions are written using Camel case (e.g. `showPalette()`)
@@ -45,7 +46,8 @@ designed to work with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library
 
 # Installation
 
-To install the package, the easiest way is to use the [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package:
+The easiest way to install this package is to use the
+[*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package:
 
 ```{r eval=FALSE}
 install.packages("devtools")
@@ -59,33 +61,25 @@ library(graphicsutils)
 ```
 
 
-<!-- use devel version -->
-
-```{r, echo=FALSE}
-devtools::load_all()
-```
-
-
-
 
 # Main features
 
 ## Empty your plot
 
-To start a figure from scratch it is often useful to get a plot without nothing but the correct size of axes.
-`plot0()` allows the user to do so:
+To start a figure from scratch it is often useful to get a plot without nothing
+but having the correct size of axes. `plot0()` allows the user to do so:
 
 
 ```{r plot0}
 plot0(c(0,1),c(0,1))
 ```
 
-Empty, isn't it?
+Quite empty, isn't it?
 Also, it can be filled with any color using the `fill` parameter.
 
 
 ```{r plot0v2}
-plot0(c(0,1),c(0,1), fill="lightskyblue1")
+plot0(c(0,1), c(0,1), fill="lightskyblue1")
 ```
 
 
@@ -229,6 +223,7 @@ graphics::abline(v=0,h=0)
 # To do list
 
 - [ ] Improve the code coverage,
+- [ ] Add a contributing section
 - [ ] Add a vignette gathering examples (I may create a simple cookbook website),
 - [ ] add interactive mode in `showPalette()` function,
 - [ ] `vectfield2d()` needs to be reviewed => I'll do so when I'll integrate nice looking arrows.

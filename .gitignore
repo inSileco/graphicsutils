@@ -10,10 +10,13 @@
 vignettes.*
 # folders
 ./R/deprecated/**
+
 # MacOS annoying file
 .DS_Store
+
 # Makefile
 Makefile
+tests/testthat/*.pdf
 pkg2date.R
 record_updates.txt
 inst/doc

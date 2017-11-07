@@ -53,4 +53,5 @@ frameit <- function(nbc = 10, cex.x = 1, cex.y = cex.x, col = c("grey45", "grey8
         # axis 4
         graphics::rect(pu[2] - widy, py[i], pu[2], py[i + 1], col = mycol[i], border = border)
     }
+    invisible(NULL)
 }

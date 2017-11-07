@@ -1,8 +1,21 @@
 language: r
+warnings_are_errors: true
 sudo: required
 
-r_github_packages:
-  - jimhester/covr
+notifications:
+  slack:
+    rooms: insileco:3OxNTMMQsOZubgPEXCrXEwx7
+    on_success: always
+    on_failure: always #change or never
+    template:
+      - "%{repository} (%{commit}) : %{message} %{foo} "
+      - "Bravo KevCaz: %{build_url}"
+  email:
+    recipients:
+      - kevin.cazelles@gmail.com
+
+r_packages:
+  - covr
 
 after_success:
   - Rscript -e 'covr::codecov()'

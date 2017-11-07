@@ -4,11 +4,11 @@
 \alias{layout2}
 \title{An interactive version of \code{layout}}
 \usage{
-layout2(n = 4, grain.x = 20, grain.y = grain.x, getmatrix = TRUE,
+layout2(n = 1, grain.x = 20, grain.y = grain.x, getmatrix = TRUE,
   show = TRUE, now = TRUE)
 }
 \arguments{
-\item{n}{Number of plot regions desired.}
+\item{n}{Number of plot regions desired, default is 1.}
 
 \item{grain.x}{Number of vertical lines drawn to select the size of the subplots regions.}
 
@@ -25,7 +25,13 @@ This function provides an interactive version of the \code{layout} function. Onc
 Once the clicks have been achieved, the users can get the matrix created and/or use directly layout and then call the function.
 }
 \details{
-Arguments \code{grain.x} and \code{grain.y} control the aspect of the grid generated. Then,  users must click 2*n times to select the size of their n subplot (2 click by subplot).
+Arguments \code{grain.x} and \code{grain.y} control the aspect of the support
+grid generated to locate the differents panels. Once the grid popup, the user
+must click 2*n times to select the size of their n subplot. A panel is
+delimited by two consecutive clicks: click 2*p and clicks 2*p+1. The two cells
+the user clicked on will then be used to compute the area allocated for
+panel p. Note that the user is allowed to use the same area for several plots
+but only this area will actually be used only by the last one.
 
 As \code{layout} is ultimately called, \code{layout2} has the same limits: currently 200 for the numbers of rows and columns and 10007 for the total number of cells.
 }

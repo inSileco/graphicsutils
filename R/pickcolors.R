@@ -115,4 +115,6 @@ drawSelector <- function(col_ini, col_foc, shades, nb_shades, nb_ramp) {
     graphics::box(lwd = 3, col = "white")
     ## --
     graphics::par(fig = c(0, 1, 0, 1), usr = c(0, 1, 0, 1), new = TRUE)
+    ##--
+    invisible(NULL)
 }
