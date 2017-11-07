@@ -27,13 +27,13 @@
 #'
 #' @examples
 #' # Example:
-#' img<-png::readPNG(system.file('img', 'Rlogo.png', package='png'), native=TRUE)
+#' img <- png::readPNG(system.file('img', 'Rlogo.png', package='png'), native=TRUE)
 #' n<-15
 #' plot0(c(0,1),c(0,1))
 #' pchImage(0.1+0.8*stats::runif(n), 0.1+0.8*stats::runif(n), cex.x=0.2+1.6*stats::runif(n),
 #' obj=img, angle=360*runif(n), col=2)
 
-pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, atcenter = TRUE, 
+pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, atcenter = TRUE,
     add = TRUE, col = NULL, ...) {
     ## obj or file must be defined
     stopifnot(!is.null(c(obj, file)))
@@ -44,7 +44,7 @@ pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, at
         # if the file ends with jpeg or jpg we use readJPG from 'jpeg' package if the
         # file ends with png we use readPNG from 'png' package
         ext <- sapply(c(".jpeg$", ".jpg$", ".png$"), grepl, file)
-        if (sum(ext) == 0) 
+        if (sum(ext) == 0)
             stop("No method found for the given file.")
         nb <- which(ext == TRUE)
         if (nb == 3) {
@@ -55,8 +55,8 @@ pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, at
     }
     dx <- cex.x * 0.05 * (graphics::par()$usr[2L] - graphics::par()$usr[1L])
     dy <- cex.y * 0.05 * (graphics::par()$usr[4L] - graphics::par()$usr[3L])
-    ## 
-    if (!add) 
+    ##
+    if (!add)
         graphics::plot.default(x, y, type = "n")
     ## Something weird, I had to use the t to getthe correct id fron grepl if
     ## (!is.null(col)) obj[!grepl(obj), pattern='#000000')] <- col
@@ -68,10 +68,10 @@ pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, at
             obj[obj != "0"] <- col
         }
     }
-    ## 
+    ##
     if (atcenter == TRUE) {
         graphics::rasterImage(obj, x - dx, y - dy, x + dx, y + dy, ...)
     } else graphics::rasterImage(obj, x, y, x + 2 * dx, y + 2 * dy, ...)
-    ## 
+    ##
     invisible(NULL)
 }
