@@ -63,4 +63,5 @@ plotOnSide <- function(mat, side = 1:2, dim = NULL, quiet = FALSE, ...) {
         print(mat)
         graphics::layout(mat, ...)
     }
+    invisible(NULL)
 }

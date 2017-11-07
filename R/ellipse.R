@@ -84,4 +84,6 @@ ellipse <- function(x = 0, y = x, mjradi = 1, mnradi = 0.5, from = 0, to = 2 * p
         graphics::polygon(rotpt$x, rotpt$y, ...)
         
     }
+    ## 
+    invisible(NULL)
 }

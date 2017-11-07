@@ -85,4 +85,5 @@ vecfield2d <- function(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2), 
         arrows2(gridin[i, 1], gridin[i, 2], gridin[i, 1] + dstx, gridin[i, 2] + dsty, 
             ...)
     }
+    invisible(NULL)
 }

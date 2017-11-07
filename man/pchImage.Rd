@@ -32,9 +32,10 @@ pchImage(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x,
 \code{pchimage} returns a plot that displays an image. It enables to users to directly include a png or a jpeg file in a plot region by providing their path.
 }
 \details{
-Either obj or file must be defined.
+Either \code{obj} or \code{file} must be defined.
 
-If a path is provided either \code{readPNG} or \code{readJPEG} according to the end of the file extension.
+If a \code{file} is defined, \code{readPNG} or \code{readJPEG} according to
+the end of the file extension.
 }
 \examples{
 # Example:

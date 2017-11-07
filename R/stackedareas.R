@@ -106,6 +106,6 @@ stackedAreas <- function(val, index = NULL, rgy = 1, cumul = FALSE, transp = FAL
         legend("center", legend, fill = colors, bty = "n", cex = 1.2, border = NA)
         graphics::par(oldpar)
     }
-    
+    ## 
     invisible(NULL)
 }

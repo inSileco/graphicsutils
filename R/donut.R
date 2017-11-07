@@ -121,5 +121,5 @@ donut <- function(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05,
             cex.y * c(sin(xb[szb]), width * sin(xb[szb])), ...)
     }
     
-    invisble(NULL)
+    invisible(NULL)
 }
