@@ -21,16 +21,17 @@ knitr::opts_chunk$set(
 
 # Description
 
-The *graphicsutils* is an R package that add various graphics utilities based on
-the core package *graphics*. For now, I do not intend to submit this package
-to the CRAN. First, because similar functions already exist elsewhere (see the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package).
-Second, because I use this package to improve my coding skills, not being on
-the CRAN allows me some liberty, *e.g* making some functions/arguments
-disappear without having to explain why :smile_cat:! Nevertheless, this package
-may help users to overcome some difficulties they may encounter with *graphics*.
+The *graphicsutils* is an R package that adds various graphics utilities based on
+the core package *graphics*. For now, the package is dedicated to store our
+graphical functions and improve our coding skills. Note that similar functions
+may already exist elsewhere (most likely in the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package).
+However this package may help users to overcome some difficulties they may
+encounter with *graphics*.
 
 Also, as *graphicsutils*  is based on the *graphics* package, it is not
-designed to work with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html) system (and thereby it does not work with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)).
+designed to work with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html) system (and thereby it does not work with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)). Related
+with this is one very helpful article by Paul Murrell:
+[The gridGraphics Package](https://journal.r-project.org/archive/2015-1/murrell.pdf).
 
 
 
@@ -47,12 +48,12 @@ designed to work with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library
 
 # Installation
 
-The easiest way to install this package is to use the
+The easiest way to install `graphicsutils` is to use the
 [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package:
 
 ```{r eval=FALSE}
 install.packages("devtools")
-devtools::install_github("KevCaz/graphicsutils")
+devtools::install_github("inSileco/graphicsutils")
 ```
 
 Then, load it:
@@ -86,7 +87,7 @@ plot0(c(0,1), c(0,1), fill="lightskyblue1")
 
 ## Add a box
 
-The `box2` function allows the user to add any axes around the plot in a more flexible way.
+The `box2()` function allows the user to add any axes around the plot in a more flexible way.
 
 ```{r box2}
 par(mar=rep(2,4))
@@ -175,8 +176,8 @@ layout2()
 ## Colors
 
 `darken()` and `lighten()` functions are convenient way to produce consistent
-set of colors with minimal effort. They can be displayed using the
-`showPalette()` function as for any color palette.
+set of shaded colors with minimal effort; also use
+`showPalette()` to display your palette.
 
 
 ```{r darken}
@@ -223,8 +224,8 @@ graphics::abline(v=0,h=0)
 
 # To do list
 
-- [ ] Improve the code coverage,
-- [ ] Add a contributing section
-- [ ] Add a vignette gathering examples (I may create a simple cookbook website),
-- [ ] add interactive mode in `showPalette()` function,
+- [ ] Improve the code coverage;
+- [ ] Add a contributing section;
+- [ ] Add a vignette gathering examples (I may create a simple cookbook website);
+- [ ] add interactive mode in `showPalette()` function;
 - [ ] `vectfield2d()` needs to be reviewed => I'll do so when I'll integrate nice looking arrows.

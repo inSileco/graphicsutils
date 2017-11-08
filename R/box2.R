@@ -66,10 +66,10 @@ box2 <- function(side = 1:4, which = "plot", fill = NULL, ...) {
                 diffy <- coord[4] - coord[3]
                 lenx <- diffx * 1/(diff(graphics::par()$fig[1:2]))
                 leny <- diffy * 1/(diff(graphics::par()$fig[1:2]))
-                coord[1] <- coord[1] - graphics::par()$fig[1] * lenx
-                coord[2] <- coord[1] + lenx
-                coord[3] <- coord[3] - graphics::par()$fig[3] * leny
-                coord[4] <- coord[3] + leny
+                coord[1L] <- coord[1L] - graphics::par()$fig[1] * lenx
+                coord[2L] <- coord[1L] + lenx
+                coord[3L] <- coord[3L] - graphics::par()$fig[3] * leny
+                coord[4L] <- coord[3L] + leny
                 ## outer margins in user units
                 if (which != "inner") {
                   omu <- graphics::par()$omi * rep(c(cvy, cvx), 2)

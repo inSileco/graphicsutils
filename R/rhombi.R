@@ -7,7 +7,7 @@
 #' @param ldg vector of length of the large diagonals.
 #' @param sdg vector of length of the small diagonals.
 #' @param rot rotation angles (in degree) of the rhombi.
-#' @param area logical. If TRUE the area of rhombis are returned.
+#' @param add logical. If \code{TRUE} rhombi are added to the current plot (default behavior).
 #' @param ... additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.
 #'
 #' @keywords rhumbus
@@ -20,7 +20,7 @@
 #' Additionnal arguments remain the same for every rhombus.
 #'
 #' @return
-#' If \code{area} is set to TRUE then areas of rhonbi drawn are returned.
+#' A vector including rhombi area is returned is assigned..
 #'
 #' @examples
 #' # Example 1:
@@ -37,7 +37,7 @@
 #' rhombi(x=0, rot=seq(0,180,30), ldg=0.5, col=7, border=NA)
 
 
-rhombi <- function(x, y = x, ldg = 1, sdg = ldg, rot = 0, area = FALSE, ...) {
+rhombi <- function(x, y = x, ldg = 1, sdg = ldg, rot = 0, add = FALSE, ...) {
     sz <- max(sapply(list(x, y, ldg, sdg, rot), length))
     x <- rep_len(x, sz)
     y <- rep_len(y, sz)
@@ -45,10 +45,8 @@ rhombi <- function(x, y = x, ldg = 1, sdg = ldg, rot = 0, area = FALSE, ...) {
     sdg <- rep_len(sdg, sz)
     rot <- rep_len(rot, sz)
     rot <- pi * rot/180
-    if (area) {
-        return(0.5 * ldg * sdg)
-    } else {
-        ## ----
+    ## ----
+    if (add) {
         for (i in 1:sz) {
             corh <- matrix(0, 2, 4)
             corh[1, ] <- c(0.5 * ldg[i], 0, -0.5 * ldg[i], 0)
@@ -58,6 +56,6 @@ rhombi <- function(x, y = x, ldg = 1, sdg = ldg, rot = 0, area = FALSE, ...) {
             pt.los <- mat.rot %*% corh
             graphics::polygon(x[i] + pt.los[1, ], y[i] + pt.los[2, ], ...)
         }
-        invisible(NULL)
     }
+    invisible(0.5 * ldg * sdg)
 }

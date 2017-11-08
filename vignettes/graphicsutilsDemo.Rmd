@@ -167,3 +167,13 @@ showPalette(somered)
 ```{r showpal, fig.height=6, fig.width=6}
 showPalette(rainbow(81))
 ```
+
+
+## Encircle points
+
+```{r encircle}
+coords <- cbind(runif(10), runif(10))
+plot0(coords)
+points(coords, bg="grey25", pch=21)
+encircle(coords, border="#7b11a1", lwd=2)
+```

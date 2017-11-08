@@ -13,9 +13,12 @@ envelop(x, upper, lower, add = TRUE, ...)
 
 \item{lower}{the y coordinates of the lower values.}
 
-\item{add}{logical. If \code{TRUE} the envelop is drawn as a polygon.}
+\item{add}{logical. If \code{TRUE} the envelop is drawn as a polygon (default behavior).}
 
-\item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygon}}.}
+\item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.}
+}
+\value{
+The coordinates of the envelop are returned if assigned.
 }
 \description{
 \code{envelop} eases the compuation of the polygons described by to set
@@ -23,12 +26,12 @@ of y coordinates along the x-axis. Optionnaly, the polygons could be added
 on the current plot.
 }
 \examples{
-plot0(c(0,10),c(0,10))
+plot0(c(0, 10), c(0, 10))
 sz <- 100
-seqx <- seq(0, 10, length.out=sz)
-seqy1 <- 0.2*seqx*runif(sz, 0, 1)
-seqy2 <- 4+0.25*seqx*runif(sz, 0, 1)
-seqy3 <- 8+0.25*seqx*runif(sz, 0, 1)
-envelop(seqx, seqy1, seqy2, col='grey85', border=NA)
-envelop(seqx, seqy2, seqy3, col='grey25', border=NA)
+seqx <- seq(0, 10, length.out = sz)
+seqy1 <- 0.2 * seqx * runif(sz, 0, 1)
+seqy2 <- 4 + 0.25 * seqx * runif(sz, 0, 1)
+seqy3 <- 8 + 0.25 * seqx * runif(sz, 0, 1)
+envelop(seqx, seqy1, seqy2, col = 'grey85', border = NA)
+envelop(seqx, seqy2, seqy3, col = 'grey25', border = NA)
 }

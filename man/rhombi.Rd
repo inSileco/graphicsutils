@@ -4,7 +4,7 @@
 \alias{rhombi}
 \title{Rhombi}
 \usage{
-rhombi(x, y = x, ldg = 1, sdg = ldg, rot = 0, area = FALSE, ...)
+rhombi(x, y = x, ldg = 1, sdg = ldg, rot = 0, add = FALSE, ...)
 }
 \arguments{
 \item{x}{a vector of x coordinates of the centers of the losange}
@@ -17,12 +17,12 @@ rhombi(x, y = x, ldg = 1, sdg = ldg, rot = 0, area = FALSE, ...)
 
 \item{rot}{rotation angles (in degree) of the rhombi.}
 
-\item{area}{logical. If TRUE the area of rhombis are returned.}
+\item{add}{logical. If \code{TRUE} rhombi are added to the current plot (default behavior).}
 
 \item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.}
 }
 \value{
-If \code{area} is set to TRUE then areas of rhonbi drawn are returned.
+A vector including rhombi area is returned is assigned..
 }
 \description{
 Add rhombi on a plot and optionnaly returns areas.

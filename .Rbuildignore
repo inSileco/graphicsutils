@@ -6,5 +6,5 @@
 ^Makefile
 ^pkg2date\.R
 ^README\.Rmd
-^NEWS$
+^NEWS
 ^record*

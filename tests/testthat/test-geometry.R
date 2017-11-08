@@ -1,7 +1,7 @@
 context("Test geometry")
 
 ## get the area of rhombi drawn
-res1 <- rhombi(x=0, rot=seq(0,180,60), ldg=0.5, col=7, border=NA, area=T)
+res1 <- rhombi(x=0, rot=seq(0,180,60), ldg=0.5, col=7, border=NA, add=FALSE)
 ##--
 x <- c(1,3,5)
 y <- c(1,2,3)

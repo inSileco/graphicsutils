@@ -7,19 +7,23 @@
 #' @param x vectors containing the x coordinates.
 #' @param upper the y coordinates of the upper values.
 #' @param lower the y coordinates of the lower values.
-#' @param add logical. If \code{TRUE} the envelop is drawn as a polygon.
-#' @param ... additionnal arguments to be passed to \code{\link[graphics]{polygon}}.
+#' @param add logical. If \code{TRUE} the envelop is drawn as a polygon (default behavior).
+#' @param ... additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.
+#'
 #' @export
 #'
+#' @return
+#' The coordinates of the envelop are returned if assigned.
+#'
 #' @examples
-#' plot0(c(0,10),c(0,10))
+#' plot0(c(0, 10), c(0, 10))
 #' sz <- 100
-#' seqx <- seq(0, 10, length.out=sz)
-#' seqy1 <- 0.2*seqx*runif(sz, 0, 1)
-#' seqy2 <- 4+0.25*seqx*runif(sz, 0, 1)
-#' seqy3 <- 8+0.25*seqx*runif(sz, 0, 1)
-#' envelop(seqx, seqy1, seqy2, col='grey85', border=NA)
-#' envelop(seqx, seqy2, seqy3, col='grey25', border=NA)
+#' seqx <- seq(0, 10, length.out = sz)
+#' seqy1 <- 0.2 * seqx * runif(sz, 0, 1)
+#' seqy2 <- 4 + 0.25 * seqx * runif(sz, 0, 1)
+#' seqy3 <- 8 + 0.25 * seqx * runif(sz, 0, 1)
+#' envelop(seqx, seqy1, seqy2, col = 'grey85', border = NA)
+#' envelop(seqx, seqy2, seqy3, col = 'grey25', border = NA)
 
 envelop <- function(x, upper, lower, add = TRUE, ...) {
     stopifnot(length(x) == length(upper))
@@ -27,5 +31,5 @@ envelop <- function(x, upper, lower, add = TRUE, ...) {
     out <- list(x = c(x, rev(x)), y = c(upper, rev(lower)))
     if (add) 
         graphics::polygon(c(x, rev(x)), c(upper, rev(lower)), ...)
-    out
+    invisible(out)
 }
