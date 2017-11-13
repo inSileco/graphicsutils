@@ -4,8 +4,8 @@
 \alias{showPalette}
 \title{Show a color Palette}
 \usage{
-showPalette(x, inline = FALSE, add_number = FALSE, add_codecolor = FALSE,
-  cex_num = 1.2)
+showPalette(x = grDevices::palette(), inline = FALSE, add_number = FALSE,
+  add_codecolor = FALSE, cex_num = 1.2)
 }
 \arguments{
 \item{x}{A vector of colors.}

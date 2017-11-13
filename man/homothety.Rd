@@ -42,4 +42,5 @@ poly2 <- homothety(x,y,2)
 graphics::polygon(poly2$x,poly2$y)
 poly3 <- homothety(x, y, -2.5, xcen=5, ycen=4, border=4, add=TRUE)
 }
-\keyword{homothethy}
+\keyword{geometry}
+\keyword{homothety}

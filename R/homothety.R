@@ -10,7 +10,7 @@
 #' @param add logical. If TRUE the set of transformed points are drawn as a polygon.
 #' @param ... additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).
 #'
-#' @keywords homothethy
+#' @keywords homothety geometry
 #'
 #' @export
 #'
@@ -57,5 +57,5 @@ homothety <- function(x, y, lambda, xcen = NULL, ycen = NULL, add = FALSE, ...) 
     if (add) 
         graphics::polygon(homot$x, homot$y, ...)
     ## ----
-    homot
+    invisible(homot)
 }

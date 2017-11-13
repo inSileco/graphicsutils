@@ -21,8 +21,8 @@
 #' @examples
 #' showPalette(sample(1:100, 16), add_number=TRUE, add_codecolor = TRUE)
 
-showPalette <- function(x, inline = FALSE, add_number = FALSE, add_codecolor = FALSE, 
-    cex_num = 1.2) {
+showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = FALSE, 
+    add_codecolor = FALSE, cex_num = 1.2) {
     
     opar <- graphics::par(no.readonly = TRUE)
     on.exit(graphics::par(opar))
