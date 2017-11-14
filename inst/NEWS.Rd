@@ -12,6 +12,8 @@
     }
     \item Changes in existing R functions:
     \itemize{
+      \item \code{showPalette()} now displays the first colors of the palette properly. 
+      \item \code{showPalette()} show the color in palette() by default. 
       \item Must of functions that creates new plots now ends by \code{invisible(NULL)}.
       \item \code{graphicsutils.R} has been renamed \code{zzz.R} and introduce a
       startup message including the version of the package.

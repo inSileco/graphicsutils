@@ -2,7 +2,7 @@
 % Please edit documentation in R/showPalette.R
 \name{showPalette}
 \alias{showPalette}
-\title{Show a color Palette}
+\title{Show a color palette}
 \usage{
 showPalette(x = grDevices::palette(), inline = FALSE, add_number = FALSE,
   add_codecolor = FALSE, cex_num = 1.2)
@@ -19,13 +19,11 @@ showPalette(x = grDevices::palette(), inline = FALSE, add_number = FALSE,
 \item{cex_num}{The maginification coefficient of the color vector's indices.}
 }
 \description{
-Generate an interactive interface to pick up colors and returns colors selected.
-}
-\details{
-This function generates a graphical window splitted into 6 panels.
-The top panel serves to select one tone. Currently channel alpha is ignored.
+Displays a color palette.
 }
 \examples{
+showPalette()
+showPalette(inline=TRUE)
 showPalette(sample(1:100, 16), add_number=TRUE, add_codecolor = TRUE)
 }
 \keyword{color,}

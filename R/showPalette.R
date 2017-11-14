@@ -1,6 +1,6 @@
-#' Show a color Palette
+#' Show a color palette
 #'
-#' Generate an interactive interface to pick up colors and returns colors selected.
+#' Displays a color palette.
 #'
 #' @param x A vector of colors.
 #' @param inline A logical. If TRUE, the colors are displayed on a single row.
@@ -14,11 +14,10 @@
 #'
 #' @export
 #'
-#' @details
-#' This function generates a graphical window splitted into 6 panels.
-#' The top panel serves to select one tone. Currently channel alpha is ignored.
 #'
 #' @examples
+#' showPalette()
+#' showPalette(inline=TRUE)
 #' showPalette(sample(1:100, 16), add_number=TRUE, add_codecolor = TRUE)
 
 showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = FALSE, 
@@ -26,7 +25,7 @@ showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = F
     
     opar <- graphics::par(no.readonly = TRUE)
     on.exit(graphics::par(opar))
-    ## 
+    ##--
     nb_x <- length(x)
     ## 
     if (is.numeric(x)) {
@@ -36,7 +35,9 @@ showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = F
     ## 
     x %<>% grDevices::col2rgb()
     ramp <- apply(x, 2, function(x) grDevices::rgb(x[1L], x[2L], x[3L], maxColorValue = 255))
-    ## 
+    ## -- compute the number of column and rows
+    nb_row <- 1L
+    nb_col <- nb_x
     if (!inline) {
         sqr <- sqrt(nb_x)
         fsq <- floor(sqr)
@@ -45,14 +46,12 @@ showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = F
             nb_row <- fsq + 1
         if (nb_x - nb_row * nb_col > 0) 
             nb_col <- fsq + 1
-        graphics::par(mfrow = c(nb_row, nb_col))
-    } else graphics::par(mfrow = c(1L, nb_x))
-    
-    graphics::par(mar = rep(0, 4L))
+    }
+    ##-- remove margins
+    graphics::par(mfrow = c(nb_row, nb_col), mar = rep(0, 4L))
     
     for (i in 1:nb_x) {
-        plot0()
-        plotAreaColor(col = ramp[i])
+        plot0(fill = ramp[i])
         txt <- ""
         if (add_number) {
             txt %<>% paste0(i)
@@ -64,8 +63,7 @@ showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = F
         }
         graphics::text(0, 0, txt, cex = cex_num, pos = 3L)
         graphics::text(0, 0, txt, cex = cex_num, pos = 1L, col = "white")
-        graphics::box(col = "white")
     }
     
-    invisible(NULL)
+    invisible(ramp)
 }
