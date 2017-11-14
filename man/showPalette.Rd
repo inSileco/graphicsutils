@@ -10,11 +10,11 @@ showPalette(x = grDevices::palette(), inline = FALSE, add_number = FALSE,
 \arguments{
 \item{x}{A vector of colors.}
 
-\item{inline}{A logical. If TRUE, the colors are displayed on a single row.}
+\item{inline}{A logical. If \code{TRUE}, the colors are displayed on a single row.}
 
-\item{add_number}{A logical. If TRUE, color vector's indices are added (default is set to FALSE).}
+\item{add_number}{A logical. If \code{TRUE}, color vector's indices are added (default is set to FALSE).}
 
-\item{add_codecolor}{A logical. If TRUE, the code color is displayed (default is set to FALSE).}
+\item{add_codecolor}{A logical. If \code{TRUE}, the code color is displayed (default is set to FALSE).}
 
 \item{cex_num}{The maginification coefficient of the color vector's indices.}
 }
@@ -24,6 +24,7 @@ Displays a color palette.
 \examples{
 showPalette()
 showPalette(inline=TRUE)
+showPalette(1)
 showPalette(sample(1:100, 16), add_number=TRUE, add_codecolor = TRUE)
 }
 \keyword{color,}

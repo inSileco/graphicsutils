@@ -3,9 +3,9 @@
 #' Displays a color palette.
 #'
 #' @param x A vector of colors.
-#' @param inline A logical. If TRUE, the colors are displayed on a single row.
-#' @param add_number A logical. If TRUE, color vector's indices are added (default is set to FALSE).
-#' @param add_codecolor A logical. If TRUE, the code color is displayed (default is set to FALSE).
+#' @param inline A logical. If \code{TRUE}, the colors are displayed on a single row.
+#' @param add_number A logical. If \code{TRUE}, color vector's indices are added (default is set to FALSE).
+#' @param add_codecolor A logical. If \code{TRUE}, the code color is displayed (default is set to FALSE).
 #' @param cex_num The maginification coefficient of the color vector's indices.
 #'
 #' @keywords color, selection
@@ -18,6 +18,7 @@
 #' @examples
 #' showPalette()
 #' showPalette(inline=TRUE)
+#' showPalette(1)
 #' showPalette(sample(1:100, 16), add_number=TRUE, add_codecolor = TRUE)
 
 showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = FALSE, 
@@ -35,9 +36,10 @@ showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = F
     ## 
     x %<>% grDevices::col2rgb()
     ramp <- apply(x, 2, function(x) grDevices::rgb(x[1L], x[2L], x[3L], maxColorValue = 255))
+    dark <- (apply(x, 2, sum) > 196) + 1
     ## -- compute the number of column and rows
-    nb_row <- 1L
-    nb_col <- nb_x
+    nb_row <- nb_x
+    nb_col <- 1L
     if (!inline) {
         sqr <- sqrt(nb_x)
         fsq <- floor(sqr)
@@ -61,8 +63,8 @@ showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = F
             if (add_codecolor) 
                 txt %<>% paste0(ramp[i])
         }
-        graphics::text(0, 0, txt, cex = cex_num, pos = 3L)
-        graphics::text(0, 0, txt, cex = cex_num, pos = 1L, col = "white")
+        graphics::text(0, 0, txt, cex = cex_num, col = c("white", "black")[dark[i]])
+        box2(col = "white")
     }
     
     invisible(ramp)

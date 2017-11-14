@@ -1,21 +1,42 @@
 Description
 ===========
 
-The *graphicsutils* is an R package that adds various graphics utilities based on the core package *graphics*. For now, the package is dedicated to store our graphical functions and improve our coding skills. Note that similar functions may already exist elsewhere (most likely in the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package). However this package may help users to overcome some difficulties they may encounter with *graphics*.
+The *graphicsutils* is an R package that adds various graphics utilities
+based on the core package *graphics*. For now, the package is dedicated
+to store our graphical functions and improve our coding skills. Note
+that similar functions may already exist elsewhere (most likely in the
+[*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html)
+package). However this package may help users to overcome some
+difficulties they may encounter with *graphics*.
 
-Also, as *graphicsutils* is based on the *graphics* package, it is not designed to work with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html) system (and thereby it does not work with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)). Related with this is one very helpful article by Paul Murrell: [The gridGraphics Package](https://journal.r-project.org/archive/2015-1/murrell.pdf).
+Also, as *graphicsutils* is based on the *graphics* package, it is not
+designed to work with the
+[*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html)
+system (and thereby it does not work with
+[ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)).
+Related with this is one very helpful article by Paul Murrell: [The
+gridGraphics
+Package](https://journal.r-project.org/archive/2015-1/murrell.pdf).
 
 Status
 ------
 
-[![Build Status](https://travis-ci.org/inSileco/graphicsutils.svg?branch=master)](https://travis-ci.org/inSileco/graphicsutils) [![Build status](https://ci.appveyor.com/api/projects/status/330p7f0djhpl998q?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils-qo99s) [![codecov](https://codecov.io/gh/inSileco/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/inSileco/graphicsutils) [![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html)
+[![Build
+Status](https://travis-ci.org/inSileco/graphicsutils.svg?branch=master)](https://travis-ci.org/inSileco/graphicsutils)
+[![Build
+status](https://ci.appveyor.com/api/projects/status/330p7f0djhpl998q?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils-qo99s)
+[![codecov](https://codecov.io/gh/inSileco/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/inSileco/graphicsutils)
+[![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html)
 
--   Note that functions are written using Camel case (e.g. `showPalette()`)
+-   Note that functions are written using Camel case (e.g.
+    `showPalette()`)
 
 Installation
 ============
 
-The easiest way to install `graphicsutils` is to use the [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html) package:
+The easiest way to install `graphicsutils` is to use the
+[*devtools*](http://cran.r-project.org/web/packages/devtools/index.html)
+package:
 
 ``` r
 install.packages("devtools")
@@ -34,7 +55,9 @@ Main features
 Empty your plot
 ---------------
 
-To start a figure from scratch it is often useful to get a plot without nothing but having the correct size of axes. `plot0()` allows the user to do so:
+To start a figure from scratch it is often useful to get a plot without
+nothing but having the correct size of axes. `plot0()` allows the user
+to do so:
 
 ``` r
 plot0(c(0,1),c(0,1))
@@ -42,7 +65,8 @@ plot0(c(0,1),c(0,1))
 
 ![](inst/assets/img/plot0-1.png)
 
-Quite empty, isn't it? Also, it can be filled with any color using the `fill` parameter.
+Quite empty, isn’t it? Also, it can be filled with any color using the
+`fill` parameter.
 
 ``` r
 plot0(c(0,1), c(0,1), fill="lightskyblue1")
@@ -53,7 +77,8 @@ plot0(c(0,1), c(0,1), fill="lightskyblue1")
 Add a box
 ---------
 
-The `box2()` function allows the user to add any axes around the plot in a more flexible way.
+The `box2()` function allows the user to add any axes around the plot in
+a more flexible way.
 
 ``` r
 par(mar=rep(2,4))
@@ -81,7 +106,9 @@ encircle(coords, border="#7b11a1", lwd=2)
 Add an image
 ------------
 
-The `pchImage()` function eases the uses of `rasterImage()` to add images (including png and jpeg files) on a graph. It allows to change the color of the whole image.
+The `pchImage()` function eases the uses of `rasterImage()` to add
+images (including png and jpeg files) on a graph. It allows to change
+the color of the whole image.
 
 ``` r
 pathLogo <- system.file("img", "Rlogo.png", package="png")
@@ -135,9 +162,9 @@ Get pretty ranges
 ``` r
 vec <- stats::runif(20)
 range(vec)
-R>>  [1] 0.1354961 0.9095315
+R>>  [1] 0.01306232 0.82961131
 prettyRange(vec)
-R>>  [1] 0.10 0.95
+R>>  [1] 0.00 0.85
 prettyRange(c(3.85, 3.88245))
 R>>  [1] 3.850 3.885
 ```
@@ -145,7 +172,8 @@ R>>  [1] 3.850 3.885
 Interactive functions
 ---------------------
 
-Some functions are interactive and fairly understandable! So, I suggest you try the following functions:
+Some functions are interactive and fairly understandable! So, I suggest
+you try the following functions:
 
 ``` r
 pickColors()
@@ -158,7 +186,9 @@ layout2()
 Colors
 ------
 
-`darken()` and `lighten()` functions are convenient way to produce consistent set of shaded colors with minimal effort; also use `showPalette()` to display your palette.
+`darken()` and `lighten()` functions are convenient way to produce
+consistent set of shaded colors with minimal effort; also use
+`showPalette()` to display your palette.
 
 ``` r
 someblue <- darken("blue", 10*1:9)
@@ -174,13 +204,13 @@ showPalette(somered, add_codecolor=TRUE)
 
 ![](inst/assets/img/lighten-1.png)
 
-Access to Font-Awesome's icons
+Access to Font-Awesome’s icons
 ==============================
 
 ``` r
 names <- getIconNames()
 my_icon <- getIcon(name='beer', col='grey80')
-R>>  Downloaded and stored at '/tmp/RtmpccgSu2/icon49706e54fc86.png'
+R>>  Downloaded and stored at '/tmp/RtmpfjxAau/icon225611254f0.png'
 plotImage(my_icon)
 ```
 
@@ -221,6 +251,8 @@ To do list
 
 -   \[ \] Improve the code coverage;
 -   \[ \] Add a contributing section;
--   \[ \] Add a vignette gathering examples (I may create a simple cookbook website);
+-   \[ \] Add a vignette gathering examples (I may create a simple
+    cookbook website);
 -   \[ \] add interactive mode in `showPalette()` function;
--   \[ \] `vectfield2d()` needs to be reviewed =&gt; I'll do so when I'll integrate nice looking arrows.
+-   \[ \] `vectfield2d()` needs to be reviewed =&gt; I’ll do so when
+    I’ll integrate nice looking arrows.

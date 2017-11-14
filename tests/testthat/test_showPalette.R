@@ -9,7 +9,7 @@ dev.off()
 showPalette()
 ##-- the computation of the computation of the number of rows and columns
 ## should be integrated in a separate function...
-res2 <- showPalette(palette()[1:2], inline=T, add_number = F, add_codecolor = F)
+res2 <- showPalette(palette()[1:2], inline=T, add_number = T, add_codecolor = T)
 dev.off()
 
 
