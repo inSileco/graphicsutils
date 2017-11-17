@@ -2,7 +2,7 @@
 title: "graphicsutils"
 output:
   md_document:
-    variant: markdown_github
+    variant: 'gfm'
 ---
 
 
@@ -188,6 +188,13 @@ showPalette(someblue)
 ```{r lighten}
 somered <- lighten("red", 10*1:9)
 showPalette(somered, add_codecolor=TRUE)
+```
+
+Since version 1.1-2 a set of color palettes has been added as a dataset.
+
+```{r insileco}
+utils::data(gpu)
+showPalette(gpu$insileco, add_codecolor=TRUE)
 ```
 
 
