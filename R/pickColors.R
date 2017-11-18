@@ -1,28 +1,28 @@
 #' Pick colors up
 #'
-#' Generate an interactive interface to pick up colors and returns colors selected.
+#' Generate an interactive interface to pick a set of colors up.
 #'
+#' @param n The number of colors to be selected (9 by default).
 #' @param ramp A vector of colors used as tone palette.
 #' @param nb_shades Number of shades to be displayed once a tone is selected.
-#' @param rgb logical. If TRUE, colors are returned as a rgb matrix. Default is FALSE.
-#' @param preview logical. If TRUE, colors are displayed once the selection is done. Default is set to FALSE.
+#' @param preview logical. If \code{TRUE}, colors are displayed once the selection is done. Default is set to \code{FALSE}.
 #'
-#' @keywords color, selection
+#' @keywords color palettes, interactive plot
 #'
 #' @export
 #'
 #' @return
-#' A vector containing the colrs selected.
+#' A character vector including the colors selected.
 #'
 #' @details
 #' This function generates a graphical window splitted into 6 panels. The top panel serves to select one tone.
 #' The panel right below present \code{nb_shades} of the selected tones.
 #' The bottom rigth panel presents the selected color that can be stored by clicking on the bottom left panel.
 #' The bottom center panel shows the characteristic of the selcted color.
-#' Finally, to abort, the user can simply clik on the left \code{Stop} panel.
+#' Finally, in order to abort, the user can simply clik on the left \code{Stop} panel.
 
-pickColors <- function(ramp = grDevices::rainbow(1024), nb_shades = 1024, rgb = FALSE, 
-    preview = FALSE) {
+
+pickColors <- function(n = 9, ramp = grDevices::rainbow(1024), nb_shades = 512, preview = FALSE) {
     
     old.par <- graphics::par(no.readonly = TRUE)
     ## ---
@@ -37,7 +37,7 @@ pickColors <- function(ramp = grDevices::rainbow(1024), nb_shades = 1024, rgb = 
     i <- 0
     while (i == 0) {
         shades <- (grDevices::colorRamp(c("white", col_ini, "black")))(nb_shades)
-        drawSelector(col_ini, col_foc, shades, nb_shades, nb_ramp)
+        drawSelector(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp)
         loc <- graphics::locator(1L)
         ## --
         if (loc$y > 0.6) {
@@ -65,16 +65,16 @@ pickColors <- function(ramp = grDevices::rainbow(1024), nb_shades = 1024, rgb = 
     if (preview) 
         showPalette(slccolor, add_number = TRUE)
     ## ---
-    if (rgb) 
-        return(grDevices::col2rgb(slccolor)) else return(slccolor)
+    return(slccolor)
 }
 
 
-
-drawSelector <- function(col_ini, col_foc, shades, nb_shades, nb_ramp) {
+## _-------------
+drawSelector <- function(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp) {
+    ##--
     graphics::par(mar = c(0, 0, 0, 0), xaxs = "i", yaxs = "i")
     plot0()
-    ## --
+    ##--
     graphics::par(fig = c(0, 1, 0.8, 1), new = TRUE)
     graphics::image(matrix(1L:nb_ramp), col = ramp, axes = FALSE, ann = FALSE)
     graphics::points(rep(which(ramp == col_ini)[1L]/nb_shades, 2), c(0, 0), col = c("white", 
@@ -104,9 +104,9 @@ drawSelector <- function(col_ini, col_foc, shades, nb_shades, nb_ramp) {
     plotAreaColor(col = "grey90")
     graphics::text(0, 0.6, label = (grDevices::colorRamp(col_foc))(1), cex = 2)
     code_rgb <- grDevices::col2rgb(col_foc)
-    graphics::text(0, 0.1, label = paste0("Red: ", code_rgb[1]), cex = 2)
-    graphics::text(0, -0.3, label = paste0("Green: ", code_rgb[2]), cex = 2)
-    graphics::text(0, -0.7, label = paste0("Blue: ", code_rgb[3]), cex = 2)
+    graphics::text(0, 0.1, label = paste0("Red: ", code_rgb[1L]), cex = 2)
+    graphics::text(0, -0.3, label = paste0("Green: ", code_rgb[2L]), cex = 2)
+    graphics::text(0, -0.7, label = paste0("Blue: ", code_rgb[3L]), cex = 2)
     graphics::box(lwd = 3, col = "white")
     ## --
     graphics::par(fig = c(0.5, 1, 0, 0.6), new = TRUE)

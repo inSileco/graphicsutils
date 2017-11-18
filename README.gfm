@@ -151,7 +151,7 @@ polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
 ``` r
 vec <- stats::runif(20)
 range(vec)
-R>>  [1] 0.02055861 0.98892399
+R>>  [1] 0.0231042 0.9980255
 prettyRange(vec)
 R>>  [1] 0 1
 prettyRange(c(3.85, 3.88245))
@@ -205,7 +205,7 @@ showPalette(gpu$insileco, add_codecolor=TRUE)
 ``` r
 names <- getIconNames()
 my_icon <- getIcon(name='beer', col='grey80')
-R>>  Downloaded and stored at '/tmp/RtmpSY0tAe/icon17567399bab7.png'
+R>>  Downloaded and stored at '/tmp/RtmppxrxK6/icon73543b4c558b.png'
 plotImage(my_icon)
 ```
 

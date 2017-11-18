@@ -41,13 +41,9 @@ showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = F
     nb_row <- nb_x
     nb_col <- 1L
     if (!inline) {
-        sqr <- sqrt(nb_x)
-        fsq <- floor(sqr)
-        nb_row <- nb_col <- fsq
-        if (sqr - fsq != 0) 
-            nb_row <- fsq + 1
-        if (nb_x - nb_row * nb_col > 0) 
-            nb_col <- fsq + 1
+        tmp <- howManyRC(nb_x)
+        nb_row <- tmp[1L]
+        nb_col <- tmp[2L]
     }
     ##-- remove margins
     graphics::par(mfrow = c(nb_row, nb_col), mar = rep(0, 4L))

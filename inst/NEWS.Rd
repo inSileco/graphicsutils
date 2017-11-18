@@ -8,7 +8,7 @@
   \itemize{
     \item Addition of R functions:
     \itemize{
-      \item So far nothing
+      \item \code{howManyRC()} compute the number of rows and columns to split a graphic window into panels as equally as possible.
     }
     \item Changes in existing R functions:
     \itemize{
@@ -22,7 +22,8 @@
     \item Changes in the package structure:
     \itemize{
       \item a new dataset has been added: \code{gpu} that includes a list of color palettes.
-      \item some improvement in the code coverage.
+      \item Code coverage (from 3\% to 12\%sudo).
+      \item \code{pickcolors.R} has been renamed \code{pickColors.R}.
     }
   }
 }

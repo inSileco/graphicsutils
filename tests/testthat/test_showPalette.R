@@ -18,3 +18,8 @@ test_that("checking areas", {
   expect_true(all(res2 == c("#000000", "#FF0000")))
 })
 #
+
+test_that("number of rows and number of columns", {
+  expect_true(all(howManyRC(9)==c(3,3)))
+  expect_true(all(howManyRC(17)==c(5,4)))
+})

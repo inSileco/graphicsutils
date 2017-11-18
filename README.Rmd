@@ -28,8 +28,8 @@ may already exist elsewhere (most likely in the [*plotrix*](http://cran.r-projec
 However this package may help users to overcome some difficulties they may
 encounter with *graphics*.
 
-Also, as *graphicsutils*  is based on the *graphics* package, it is not
-designed to work with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html) system (and thereby it does not work with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)). Related
+Also, as *graphicsutils*  is based on the *graphics* package, it
+is not designed to work with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html) system (and thereby it does not work with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)). Related
 with this is one very helpful article by Paul Murrell:
 [The gridGraphics Package](https://journal.r-project.org/archive/2015-1/murrell.pdf).
 
