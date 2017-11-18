@@ -18,6 +18,7 @@
       \item Must of functions that creates new plots now ends by \code{invisible(NULL)}.
       \item \code{graphicsutils.R} has been renamed \code{zzz.R} and introduce a
       startup message including the version of the package.
+      \item \code{pickColors()} has been reviewed to adress \ghit{3}.
     }
     \item Changes in the package structure:
     \itemize{

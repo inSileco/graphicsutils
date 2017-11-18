@@ -9,7 +9,7 @@ notifications:
     on_failure: always #change or never
     template:
       - "%{repository} (%{commit}) : %{message} %{foo} "
-      - "Le kiki a Dave: %{build_url}"
+      - "Here you go: %{build_url}"
   email:
     recipients:
       - kevin.cazelles@gmail.com

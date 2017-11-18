@@ -1,8 +1,7 @@
 ---
 title: "graphicsutils"
 output:
-  md_document:
-    variant: 'gfm'
+  md_document
 ---
 
 

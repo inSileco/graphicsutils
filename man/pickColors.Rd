@@ -4,8 +4,7 @@
 \alias{pickColors}
 \title{Pick colors up}
 \usage{
-pickColors(n = 9, ramp = grDevices::rainbow(1024), nb_shades = 512,
-  preview = FALSE)
+pickColors(n = 9, ramp = grDevices::rainbow(1024), nb_shades = 512)
 }
 \arguments{
 \item{n}{The number of colors to be selected (9 by default).}
@@ -13,8 +12,6 @@ pickColors(n = 9, ramp = grDevices::rainbow(1024), nb_shades = 512,
 \item{ramp}{A vector of colors used as tone palette.}
 
 \item{nb_shades}{Number of shades to be displayed once a tone is selected.}
-
-\item{preview}{logical. If \code{TRUE}, colors are displayed once the selection is done. Default is set to \code{FALSE}.}
 }
 \value{
 A character vector including the colors selected.
