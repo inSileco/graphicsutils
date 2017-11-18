@@ -24,7 +24,7 @@
 
 
 pickColors <- function(n = 9, ramp = grDevices::rainbow(1024), nb_shades = 512) {
-
+    
     opar <- par(no.readonly = TRUE)
     ## --- output
     colSlc <- rep(NA_character_, n)
@@ -32,7 +32,7 @@ pickColors <- function(n = 9, ramp = grDevices::rainbow(1024), nb_shades = 512) 
     nb_ramp <- length(ramp)
     ## --- initial values
     col_foc <- col_ini <- ramp[floor(nb_ramp * 0.5) + 1]
-
+    
     ##--- getLayout
     mat <- getMatrix(n)
     tmp <- howManyRC(n)
@@ -41,11 +41,11 @@ pickColors <- function(n = 9, ramp = grDevices::rainbow(1024), nb_shades = 512) 
     k <- 0
     while (i == 0 & k < n) {
         ##---
-        layout(mat, widths = c(1, 2, rep(1/(tmp[2L]), tmp[2L])), heights = c(1, 1,
+        layout(mat, widths = c(1, 2, rep(1/(tmp[2L]), tmp[2L])), heights = c(1, 1, 
             rep(2/tmp[1L], tmp[1L])))
         par(mar = c(0, 0, 0, 0), xaxs = "i", yaxs = "i")
         shades <- (grDevices::colorRampPalette(c("white", col_ini, "black")))(nb_shades)
-        drawSelector2(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp, prod(tmp),
+        drawSelector2(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp, prod(tmp), 
             colSlc)
         ##---
         par(new = T, fig = c(0, 1, 0, 1))
@@ -73,7 +73,7 @@ pickColors <- function(n = 9, ramp = grDevices::rainbow(1024), nb_shades = 512) 
     par(opar)
     grDevices::dev.off()
     ## ---
-    colSlc
+    colSlc[!is.na(colSlc)]
 }
 
 
@@ -81,23 +81,23 @@ pickColors <- function(n = 9, ramp = grDevices::rainbow(1024), nb_shades = 512) 
 getMatrix <- function(n) {
     ##-- rows and columns
     tmp <- howManyRC(n)
-    ##
+    ## 
     mat <- rbind(1, 2, cbind(3, 4, matrix(4 + (1:prod(tmp)), tmp[1L], tmp[2L], byrow = T)))
-    ##
+    ## 
     mat
 }
 
 ## -------------
-drawSelector2 <- function(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp, nbpanels,
+drawSelector2 <- function(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp, nbpanels, 
     colSlc) {
     ##--
     image(matrix(1L:nb_ramp), col = ramp, axes = FALSE, ann = FALSE)
-    points(rep(which(ramp == col_ini)[1L]/nb_ramp, 2), c(0, 0), col = c("white",
+    points(rep(which(ramp == col_ini)[1L]/nb_ramp, 2), c(0, 0), col = c("white", 
         1), pch = c(19, 20))
     box(lwd = 3, col = "white")
     ## --
     image(matrix(1:nb_shades), col = shades, axes = FALSE, ann = FALSE)
-    points(rep(which(shades == col_foc)[1L]/nb_shades, 2), c(0, 0), col = c("white",
+    points(rep(which(shades == col_foc)[1L]/nb_shades, 2), c(0, 0), col = c("white", 
         1), pch = c(19, 20))
     box(lwd = 3, col = "white")
     ## --
@@ -106,7 +106,7 @@ drawSelector2 <- function(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp, nb
     abline(h = 0, lwd = 2, col = "white")
     text(0, -0.5, label = "Stop", cex = 2, col = "grey20")
     ## --
-
+    
     plot0(fill = col_foc)
     code_rgb <- grDevices::col2rgb(col_foc)
     text(0, 0.7, label = as.character(col_foc), cex = 2.5)
@@ -117,6 +117,6 @@ drawSelector2 <- function(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp, nb
     for (i in 4 + 1:nbpanels) {
         plot0(fill = colSlc[i - 4])
     }
-
+    
     invisible(NULL)
 }
