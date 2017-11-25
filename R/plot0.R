@@ -2,11 +2,13 @@
 #'
 #' \code{plot0} returns an a plot of a specific size without any symbols.
 #'
-#' @param x the x coordinates of points in the plot.
+#' @param x the x coordinates of points in the plot or a matrix of coordinates.
 #' @param y the y coordinates of points in the plot.
 #' @param fill The color to be used to fill the plot area.
-#' @param ... additional arguments to be passed to the defauls scatterplot
-#' function \code{\link[graphics]{plot.default}}.
+#' @param text A character string or a object to be coerced as character string
+#' that will be displayed in the center of the plot region. q
+#' @param ... further graphical parameters from \code{\link[graphics]{par}}
+#' (such as \code{srt}) or \code{\link[graphics]{plot.default}}.
 #'
 #' @keywords empty plot
 #'
@@ -22,12 +24,20 @@
 #' plot0(c(-10,10), asp=1)
 #'
 #' # Example 2:
-#' plot0(c(-10,10), asp=1, fill=8)
+#' plot0(c(-10,10), asp=1, fill=8, text='cool', srt=90, cex=2)
+#' plot0(c(-10,10), asp=1, fill=8, text='cool', srt=45, cex=4, col=2)
 
-plot0 <- function(x = c(-1, 1), y = x, fill = NULL, ...) {
+plot0 <- function(x = c(-1, 1), y = NULL, fill = NULL, text = NULL, ...) {
     args <- list(...)
     coor <- list(x = x, y = y)
     deft <- list(ann = FALSE, axes = FALSE, type = "n")
+    ##--- default behavior for matrix and vectors
+    if (NCOL(as.matrix(x)) > 1) {
+        y <- x[, 2L]
+        x <- x[, 1L]
+    } else {
+        y <- x
+    }
     ## 
     if (length(args) > 0) {
         id <- which(names(deft) %in% names(args))
@@ -37,6 +47,9 @@ plot0 <- function(x = c(-1, 1), y = x, fill = NULL, ...) {
     } else graphics::plot.default(x = x, y = y, ann = FALSE, axes = FALSE, type = "n")
     if (!is.null(fill)) 
         plotAreaColor(col = fill)
+    ## 
+    if (!is.null(text)) 
+        text(mean(x), mean(y), labels = as.character(text), ...)
     ## 
     invisible(NULL)
 }

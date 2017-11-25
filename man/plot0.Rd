@@ -4,17 +4,20 @@
 \alias{plot0}
 \title{An empty plot function}
 \usage{
-plot0(x = c(-1, 1), y = x, fill = NULL, ...)
+plot0(x = c(-1, 1), y = NULL, fill = NULL, text = NULL, ...)
 }
 \arguments{
-\item{x}{the x coordinates of points in the plot.}
+\item{x}{the x coordinates of points in the plot or a matrix of coordinates.}
 
 \item{y}{the y coordinates of points in the plot.}
 
 \item{fill}{The color to be used to fill the plot area.}
 
-\item{...}{additional arguments to be passed to the defauls scatterplot
-function \code{\link[graphics]{plot.default}}.}
+\item{text}{A character string or a object to be coerced as character string
+that will be displayed in the center of the plot region. q}
+
+\item{...}{further graphical parameters from \code{\link[graphics]{par}}
+(such as \code{srt}) or \code{\link[graphics]{plot.default}}.}
 }
 \description{
 \code{plot0} returns an a plot of a specific size without any symbols.
@@ -27,7 +30,8 @@ plot0()
 plot0(c(-10,10), asp=1)
 
 # Example 2:
-plot0(c(-10,10), asp=1, fill=8)
+plot0(c(-10,10), asp=1, fill=8, text='cool', srt=90, cex=2)
+plot0(c(-10,10), asp=1, fill=8, text='cool', srt=45, cex=4, col=2)
 }
 \seealso{
 \code{\link[shape]{emptyplot}}

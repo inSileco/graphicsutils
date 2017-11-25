@@ -66,6 +66,12 @@ Quite empty, isn’t it? Also, it can be filled with any color using the
 
 ![](inst/assets/img/plot0v2-1.png)
 
+And also add a text:
+
+    plot0(c(-10,10), asp=1, fill=8, text='cool', srt=45, cex=4, col=2)
+
+![](inst/assets/img/plot0v3-1.png)
+
 Add a box
 ---------
 
@@ -141,9 +147,9 @@ Get pretty ranges
 
     vec <- stats::runif(20)
     range(vec)
-    R>>  [1] 0.01253445 0.92937429
+    R>>  [1] 0.1169838 0.9674204
     prettyRange(vec)
-    R>>  [1] 0.00 0.95
+    R>>  [1] 0.1 1.0
     prettyRange(c(3.85, 3.88245))
     R>>  [1] 3.850 3.885
 
@@ -186,7 +192,7 @@ Access to Font-Awesome’s icons
 
     names <- getIconNames()
     my_icon <- getIcon(name='beer', col='grey80')
-    R>>  Downloaded and stored at '/tmp/Rtmp6l0isy/icon7f86295df7f2.png'
+    R>>  Downloaded and stored at '/tmp/Rtmpx7ByMG/icon41aa2cf239f1.png'
     plotImage(my_icon)
 
 ![](inst/assets/img/getIcon-1.png)

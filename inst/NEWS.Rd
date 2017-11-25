@@ -19,6 +19,8 @@
       \item \code{graphicsutils.R} has been renamed \code{zzz.R} and introduce a
       startup message including the version of the package.
       \item \code{pickColors()} has been reviewed to adress \ghit{3}.
+      \item \code{plot0()} properly handle matrix of coordinates.
+      \item New argunent \code{text} in \code{plot0()} to add centered text in the plot region.
     }
     \item Changes in the package structure:
     \itemize{

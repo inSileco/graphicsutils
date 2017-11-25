@@ -83,6 +83,13 @@ Also, it can be filled with any color using the `fill` parameter.
 plot0(c(0,1), c(0,1), fill="lightskyblue1")
 ```
 
+And also add a text:
+
+```{r plot0v3}
+plot0(c(-10,10), asp=1, fill=8, text='cool', srt=45, cex=4, col=2)
+```
+
+
 
 ## Add a box
 
