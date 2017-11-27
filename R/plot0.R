@@ -32,7 +32,7 @@ plot0 <- function(x = c(-1, 1), y = NULL, fill = NULL, text = NULL, ...) {
     coor <- list(x = x, y = y)
     deft <- list(ann = FALSE, axes = FALSE, type = "n")
     ##--- default behavior for matrix and vectors
-    if (NCOL(as.matrix(x)) > 1) {
+    if (NCOL(as.matrix(x)) > 1 & is.null(y)) {
         y <- x[, 2L]
         x <- x[, 1L]
     } else {
