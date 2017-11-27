@@ -33,11 +33,17 @@ plot0 <- function(x = c(-1, 1), y = NULL, fill = NULL, text = NULL, ...) {
     deft <- list(ann = FALSE, axes = FALSE, type = "n")
     ##--- default behavior for matrix and vectors
     if (NCOL(as.matrix(x)) > 1 & is.null(y)) {
-        y <- x[, 2L]
+        if (is.null(y)) {
+            y <- x[, 2L]
+        }
         x <- x[, 1L]
     } else {
-        y <- x
+        if (is.null(y)) {
+            y <- x
+        }
     }
+    
+    
     ## 
     if (length(args) > 0) {
         id <- which(names(deft) %in% names(args))
