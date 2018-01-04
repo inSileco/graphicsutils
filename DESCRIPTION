@@ -2,7 +2,7 @@ Package: graphicsutils
 Type: Package
 Title: Collection of Graphics Utilities
 Version: 1.1-2
-Date: 2015-07-20
+Date: 2018-01-04
 Author: Kevin Cazelles [aut, cre],  Nicolas Casajus [aut]
 Maintainer: Kevin Cazelles <kevin.cazelles@um2.fr>
 Description: A collection of functions that helps customizing graphics with the core package "graphics".
@@ -23,7 +23,7 @@ Suggests:
     rmarkdown,
     testthat
 License: GPL-3
-URL: https://github.com/KevCaz/graphicsutils.git
-BugReports: https://github.com/letiR/letiRmisc/issues
+URL: https://github.com/inSileco/graphicsutils
+BugReports: https://github.com/inSileco/graphicsutils/issues
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
