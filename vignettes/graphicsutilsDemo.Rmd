@@ -177,3 +177,10 @@ plot0(coords)
 points(coords, bg="grey25", pch=21)
 encircle(coords, border="#7b11a1", lwd=2)
 ```
+
+##
+
+```{r image2}
+image2(matrix(1:9, 3))
+image2(matrix(1:27, 3), from = 2, border = 2, lwd = 2)
+```

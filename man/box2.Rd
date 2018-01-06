@@ -2,7 +2,7 @@
 % Please edit documentation in R/box2.R
 \name{box2}
 \alias{box2}
-\title{Box version 2}
+\title{Alternative box function}
 \usage{
 box2(side = 1:4, which = "plot", fill = NULL, ...)
 }

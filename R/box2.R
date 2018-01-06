@@ -1,4 +1,4 @@
-#' Box version 2
+#' Alternative box function
 #'
 #' Draw a Box around a Plot.
 #'

@@ -147,9 +147,9 @@ Get pretty ranges
 
     vec <- stats::runif(20)
     range(vec)
-    R>>  [1] 0.1169838 0.9674204
+    R>>  [1] 0.0158542 0.9867592
     prettyRange(vec)
-    R>>  [1] 0.1 1.0
+    R>>  [1] 0 1
     prettyRange(c(3.85, 3.88245))
     R>>  [1] 3.850 3.885
 
@@ -187,12 +187,23 @@ Since version 1.1-2 a set of color palettes has been added as a dataset.
 
 ![](inst/assets/img/insileco-1.png)
 
+Image 2
+=======
+
+    image2(matrix(1:9, 3))
+
+![](inst/assets/img/image2-1.png)
+
+    image2(matrix(1:27, 3), from=2, border = 2, lwd=2)
+
+![](inst/assets/img/image2-2.png)
+
 Access to Font-Awesome’s icons
 ==============================
 
     names <- getIconNames()
     my_icon <- getIcon(name='beer', col='grey80')
-    R>>  Downloaded and stored at '/tmp/Rtmpx7ByMG/icon41aa2cf239f1.png'
+    R>>  Downloaded and stored at '/tmp/RtmpD0neQd/icon37ba69eb6eab.png'
     plotImage(my_icon)
 
 ![](inst/assets/img/getIcon-1.png)
