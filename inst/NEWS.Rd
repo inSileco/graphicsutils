@@ -9,9 +9,11 @@
     \item Addition of R functions:
     \itemize{
       \item \code{howManyRC()} compute the number of rows and columns to split a graphic window into panels as equally as possible.
+      \item \code{image2()} an alternative \code{image}
     }
     \item Changes in existing R functions:
     \itemize{
+      \item \code{getIcon.R} has been removed as recommended in \ghit{9}.
       \item \code{showPalette()} now displays the first colors of the palette properly.
       \item \code{showPalette()} shows the colors from palette() by default.
       \item \code{showPalette()} now adds only one line when displaying the hex color code and tune the color according to the background.

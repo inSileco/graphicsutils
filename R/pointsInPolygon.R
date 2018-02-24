@@ -56,5 +56,5 @@ pointsInPolygon <- function(x, y, poly_x, poly_y) {
             }
         }
     }
-    return(out)
+    out
 }

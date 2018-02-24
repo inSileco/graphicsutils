@@ -210,13 +210,7 @@ image2(matrix(1:9, 3))
 image2(matrix(1:27, 3), from=2, border = 2, lwd=2)
 ```
 
-# Access to Font-Awesome's icons
 
-```{r getIcon}
-names <- getIconNames()
-my_icon <- getIcon(name='beer', col='grey80')
-plotImage(my_icon)
-```
 
 # Vector fields
 

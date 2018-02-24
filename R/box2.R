@@ -81,11 +81,13 @@ box2 <- function(side = 1:4, which = "plot", fill = NULL, ...) {
         graphics::par(xpd = NA)
         mat <- matrix(c(4, 2, 3, 1, 3, 1, 4, 2), ncol = 2)
         if (!is.null(fill)) 
-            graphics::rect(coord[1], coord[3], coord[2], coord[4], col = fill, border = NA)
+            graphics::rect(coord[1L], coord[3L], coord[2L], coord[4L], col = fill, 
+                border = NA)
         for (i in ax) {
             coordb <- coord
-            coordb[mat[i, 1]] <- coordb[mat[i, 2]]
-            graphics::lines(c(coordb[1], coordb[2]), c(coordb[3], coordb[4]), ...)
+            coordb[mat[i, 1L]] <- coordb[mat[i, 2L]]
+            graphics::lines(c(coordb[1L], coordb[2L]), c(coordb[3L], coordb[4L]), 
+                ...)
         }
         graphics::par(xpd = op)
     } else warning("'bty' does not match any of '1', '2', '3', '4', 'b', 'l', 't', 'r'")
