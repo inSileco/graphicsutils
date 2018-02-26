@@ -7,7 +7,7 @@
 gpuPalette(names = NULL)
 }
 \arguments{
-\item{names}{Names of desired palette; if \code{NULL}, color palettes available are printed.}
+\item{names}{names of desired color palettes; if \code{NULL}, color palettes available are printed.}
 }
 \value{
 A vector of colours.

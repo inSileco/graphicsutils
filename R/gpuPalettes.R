@@ -1,6 +1,6 @@
-#' Complete list of palettes
+#' Complete list of graphisutils' color palettes
 #'
-#' Color palettes of graphisutils package.
+#' Color palettes of the graphisutils package.
 #'
 #' @export
 
@@ -18,7 +18,7 @@ gpuPalettes <- list(atom = c("#dedcd5", "#991f16", "#3b9b6d", "#584b4f", "#72aca
 #'
 #' A couple of color palettes mainly insipered by popular websites.
 #'
-#' @param names Names of desired palette; if \code{NULL}, color palettes available are printed.
+#' @param names names of desired color palettes; if \code{NULL}, color palettes available are printed.
 #'
 #' @return A vector of colours.
 #' @export
