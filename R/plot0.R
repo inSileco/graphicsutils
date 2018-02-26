@@ -51,8 +51,9 @@ plot0 <- function(x = c(-1, 1), y = NULL, fill = NULL, text = NULL, ...) {
             deft <- deft[-id]
         do.call(graphics::plot.default, args = as.list(c(coor, args, deft)))
     } else graphics::plot.default(x = x, y = y, ann = FALSE, axes = FALSE, type = "n")
+    ## 
     if (!is.null(fill)) 
-        plotAreaColor(col = fill)
+        plotAreaColor(color = fill)
     ## 
     if (!is.null(text)) 
         text(mean(x), mean(y), labels = as.character(text), ...)

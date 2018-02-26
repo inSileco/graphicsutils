@@ -14,7 +14,6 @@
 #'
 #' @export
 #'
-#'
 #' @examples
 #' showPalette()
 #' showPalette(inline=TRUE)
@@ -34,7 +33,8 @@ showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = F
         x <- tmp[((x - 1)%%length(tmp)) + 1]
     }
     ## 
-    x %<>% grDevices::col2rgb()
+    if (class(x) != "matrix") 
+        x %<>% grDevices::col2rgb()
     ramp <- apply(x, 2, function(x) grDevices::rgb(x[1L], x[2L], x[3L], maxColorValue = 255))
     dark <- (apply(x, 2, sum) > 196) + 1
     ## -- compute the number of column and rows

@@ -7,6 +7,5 @@ NULL
 
 # .onLoad <- function(libname, pkgname) { invisible() }
 
-.onAttach <- function(libname, pkgname) {
-    packageStartupMessage(paste0(" --> graphicsutils version ", utils::packageVersion("graphicsutils")))
-}
+# .onAttach <- function(libname, pkgname) { packageStartupMessage(paste0(' -->
+# graphicsutils version ', utils::packageVersion('graphicsutils'))) }

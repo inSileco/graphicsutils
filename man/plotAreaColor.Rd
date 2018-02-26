@@ -4,10 +4,10 @@
 \alias{plotAreaColor}
 \title{Color the plot area}
 \usage{
-plotAreaColor(col = "grey80", border = NA, ...)
+plotAreaColor(color = "grey80", border = NA, ...)
 }
 \arguments{
-\item{col}{Color of the rectangle, default is set to 'grey80'.}
+\item{color}{Color of the rectangle, default is set to 'grey80'.}
 
 \item{border}{Color of the border of the rectangle drawn, default is set to NA, that is no border.}
 

@@ -13,6 +13,7 @@
     }
     \item Changes in existing R functions:
     \itemize{
+      \item Color palettes added through \code{gpuPalette()}, this adresses \ghit{#5}.
       \item \code{getIcon.R} has been removed as recommended in \ghit{9}.
       \item \code{showPalette()} now displays the first colors of the palette properly.
       \item \code{showPalette()} shows the colors from palette() by default.
@@ -26,7 +27,6 @@
     }
     \item Changes in the package structure:
     \itemize{
-      \item a new dataset has been added: \code{gpu} that includes a list of color palettes.
       \item Code coverage (from 3\% to 12\%sudo).
       \item \code{pickcolors.R} has been renamed \code{pickColors.R}.
     }

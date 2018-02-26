@@ -196,11 +196,10 @@ somered <- lighten("red", 10*1:9)
 showPalette(somered, add_codecolor=TRUE)
 ```
 
-Since version 1.1-2 a set of color palettes has been added as a dataset.
+Since version 1.1-2 a set of color palettes has been added, see `gpuPalette()`.
 
 ```{r insileco}
-utils::data(gpu)
-showPalette(gpu$insileco, add_codecolor=TRUE)
+showPalette(gpuPalette("insileco"), add_codecolor=TRUE)
 ```
 
 # Image 2
@@ -231,7 +230,7 @@ graphics::par(mar=c(2,2,2,2))
 vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
    args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
    border=NA,cex.hh=1, cex.shr=0.6, col=8)
-graphics::abline(v=0,h=0)
+graphics::abline(v=0, h=0)
 ```
 
 
@@ -240,5 +239,4 @@ graphics::abline(v=0,h=0)
 - [ ] Improve the code coverage;
 - [ ] Add a contributing section;
 - [ ] Add a vignette gathering examples (I may create a simple cookbook website);
-- [ ] add interactive mode in `showPalette()` function;
 - [ ] `vectfield2d()` needs to be reviewed => I'll do so when I'll integrate nice looking arrows.

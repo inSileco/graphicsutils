@@ -147,9 +147,9 @@ Get pretty ranges
 
     vec <- stats::runif(20)
     range(vec)
-    R>>  [1] 0.0158542 0.9867592
+    R>>  [1] 0.1273223 0.9866973
     prettyRange(vec)
-    R>>  [1] 0 1
+    R>>  [1] 0.1 1.0
     prettyRange(c(3.85, 3.88245))
     R>>  [1] 3.850 3.885
 
@@ -180,10 +180,10 @@ consistent set of shaded colors with minimal effort; also use
 
 ![](inst/assets/img/lighten-1.png)
 
-Since version 1.1-2 a set of color palettes has been added as a dataset.
+Since version 1.1-2 a set of color palettes has been added, see
+`gpuPalette()`.
 
-    utils::data(gpu)
-    showPalette(gpu$insileco, add_codecolor=TRUE)
+    showPalette(gpuPalette("insileco"), add_codecolor=TRUE)
 
 ![](inst/assets/img/insileco-1.png)
 
@@ -197,16 +197,6 @@ Image 2
     image2(matrix(1:27, 3), from=2, border = 2, lwd=2)
 
 ![](inst/assets/img/image2-2.png)
-
-Access to Font-Awesome’s icons
-==============================
-
-    names <- getIconNames()
-    my_icon <- getIcon(name='beer', col='grey80')
-    R>>  Downloaded and stored at '/tmp/RtmpD0neQd/icon37ba69eb6eab.png'
-    plotImage(my_icon)
-
-![](inst/assets/img/getIcon-1.png)
 
 Vector fields
 =============
@@ -230,7 +220,7 @@ Vector fields
     vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
        args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
        border=NA,cex.hh=1, cex.shr=0.6, col=8)
-    graphics::abline(v=0,h=0)
+    graphics::abline(v=0, h=0)
 
 ![](inst/assets/img/vectorfields-2.png)
 
@@ -241,6 +231,5 @@ To do list
 -   \[ \] Add a contributing section;
 -   \[ \] Add a vignette gathering examples (I may create a simple
     cookbook website);
--   \[ \] add interactive mode in `showPalette()` function;
 -   \[ \] `vectfield2d()` needs to be reviewed =&gt; I’ll do so when
     I’ll integrate nice looking arrows.
