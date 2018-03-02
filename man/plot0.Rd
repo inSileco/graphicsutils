@@ -23,14 +23,16 @@ that will be displayed in the center of the plot region. q}
 \code{plot0} returns an a plot of a specific size without any symbols.
 }
 \examples{
-# Example 1:
+# Example 1
 plot0()
 
-# Example 2:
+# Example 2
 plot0(c(-10,10), asp=1)
 
-# Example 2:
-plot0(c(-10,10), asp=1, fill=8, text='cool', srt=90, cex=2)
+# Example 3
+plot0(c(-10,10), text='cool', cex = 2)
+
+# Example 3
 plot0(c(-10,10), asp=1, fill=8, text='cool', srt=45, cex=4, col=2)
 }
 \seealso{

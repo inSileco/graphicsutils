@@ -4,7 +4,6 @@ output: rmarkdown::html_vignette
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteIndexEntry{Vignette Title}
-  \usepackage[utf8]{inputenc}
 abstract: "The package graphicsutils is a set of miscellaneous functions to be used with the graphics library."
 author: Kevin Cazelles
 ---

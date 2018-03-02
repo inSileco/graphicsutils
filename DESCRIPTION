@@ -11,12 +11,12 @@ Depends:
 Imports:
     grDevices,
     graphics,
+    methods,
     stats,
     utils,
     jpeg(>= 0.1-8),
     png(>= 0.1-7),
     magrittr(>= 1.5),
-    downloader(>= 0.4),
     RCurl(>= 1.95-4.7),
 Suggests:
     knitr,
