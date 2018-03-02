@@ -4,7 +4,7 @@
 \newcommand{\ghit}{\href{https://github.com/KevCaz/graphicsutils/issues/#1}{##1}}
 
 
-\section{Changes in graphicsutils version 1.1-2 (Unreleased)}{
+\section{Changes in graphicsutils version 1.1-2}{
   \itemize{
     \item Addition of R functions:
     \itemize{
