@@ -23,11 +23,11 @@
       startup message including the version of the package.
       \item \code{pickColors()} has been reviewed to adress \ghit{3}.
       \item \code{plot0()} properly handle matrix of coordinates.
-      \item New argunent \code{text} in \code{plot0()} to add centered text in the plot region.
+      \item New argument \code{text} in \code{plot0()} to add centered text in the plot region.
     }
     \item Changes in the package structure:
     \itemize{
-      \item Code coverage (from 3\% to 12\%sudo).
+      \item Code coverage (from 3\% to 17\%sudo).
       \item \code{pickcolors.R} has been renamed \code{pickColors.R}.
     }
   }
