@@ -4,6 +4,20 @@
 \newcommand{\ghit}{\href{https://github.com/KevCaz/graphicsutils/issues/#1}{##1}}
 
 
+\section{Changes in graphicsutils version 1.2-0}{
+  \itemize{
+    \item Changes in existing R functions:
+    \itemize{
+      \item The Ray-casting algorithm is now implemented in a cpp function, see \code{src/pointsInPolygon_core.cpp}, see \ghpr{10}.
+      \item A grid can be added in \code{plot0}, three arguments control its color (\code{grid.col}), its width (\code{grid.lwd}) and type (\code{grid.lty}).  
+    }
+    \item Changes in the package structure:
+    \itemize{
+      \item Rcpp added see \ghpr{10}.
+    }
+  }
+}
+
 \section{Changes in graphicsutils version 1.1-2}{
   \itemize{
     \item Addition of R functions:

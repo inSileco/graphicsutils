@@ -15,7 +15,8 @@ plot0(x=cbind(c(0,1), c(0,2)), text="test")
 pus3 <- par()$usr
 dev.off()
 
-
+##
+plot0(c(-10,10),  grid.col = 2)
 
 test_that("test par()$usr dimensions", {
   expect_true(all(pus1 == c(-1.08, 1.08, -1.08, 1.08)))

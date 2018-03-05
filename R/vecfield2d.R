@@ -69,11 +69,11 @@ vecfield2d <- function(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2), 
         gridout[i, ] <- do.call(FUN, args)
     }
     if (!add) 
-        plot0(range(gridin[, slices[1]]), range(gridin[, slices[2]]))
+        plot0(range(gridin[, slices[1L]]), range(gridin[, slices[2L]]))
     ## ----
     for (i in 1:nrow(gridout)) {
-        dstx <- cex.x * gridout[i, 1]
-        dsty <- cex.y * gridout[i, 2]
+        dstx <- cex.x * gridout[i, 1L]
+        dsty <- cex.y * gridout[i, 2L]
         if (log) {
             dstx <- log(abs(dstx) + 1)
             if (gridout[i, 1] < 0) 
@@ -82,8 +82,8 @@ vecfield2d <- function(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2), 
             if (gridout[i, 2] < 0) 
                 dsty <- -dsty
         }
-        arrows2(gridin[i, 1], gridin[i, 2], gridin[i, 1] + dstx, gridin[i, 2] + dsty, 
-            ...)
+        arrows2(gridin[i, 1L], gridin[i, 2L], gridin[i, 1L] + dstx, gridin[i, 2L] + 
+            dsty, ...)
     }
     invisible(NULL)
 }

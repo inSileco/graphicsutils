@@ -62,7 +62,7 @@ to do so:
 Quite empty, isn’t it? Also, it can be filled with any color using the
 `fill` parameter.
 
-    plot0(c(0,1), c(0,1), fill="lightskyblue1")
+    plot0(c(-10,10), fill='#ebebeb', grid.col = 'white')
 
 ![](inst/assets/img/plot0v2-1.png)
 
@@ -147,9 +147,9 @@ Get pretty ranges
 
     vec <- stats::runif(20)
     range(vec)
-    R>>  [1] 0.1273223 0.9866973
+    R>>  [1] 0.009068889 0.979221357
     prettyRange(vec)
-    R>>  [1] 0.1 1.0
+    R>>  [1] 0 1
     prettyRange(c(3.85, 3.88245))
     R>>  [1] 3.850 3.885
 
