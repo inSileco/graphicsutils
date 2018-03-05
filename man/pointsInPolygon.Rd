@@ -4,32 +4,29 @@
 \alias{pointsInPolygon}
 \title{Are points inside a polygon?}
 \usage{
-pointsInPolygon(x, y, poly_x, poly_y)
+pointsInPolygon(points, polygon)
 }
 \arguments{
-\item{x}{the x coordinates of points to be tested.}
+\item{points}{a matrix of coordinates of points to be tested.}
 
-\item{y}{the y coordinates of points to be tested.}
-
-\item{poly_x}{the x coordinates of the static polygons.}
-
-\item{poly_y}{the y coordinates of the static polygons.}
+\item{polygon}{a two-columns matrix including the coordinate of the polygon.}
 }
 \description{
-Return a logical vector stating whether or not points are inside a static polygon.
+For a matirx of points coordinates, \code{pointsInPolygon} returns a logical vector stating whether or not these points are inside a specific polygon whose coordinate as passed as an argument.
 }
 \details{
-It implements the Ray-casting algorithm.
+implements the Ray-casting algorithm
 }
 \examples{
-# Example
-plot0(c(0,10), c(0,10))
-valx <- 10*runif(40)
-valy <- 10*runif(40)
-res <- pointsInPolygon(valx,valy,c(4,8,8,4),c(4,4,8,8))
+mat <- matrix(10*runif(100), 50)
+res <- pointsInPolygon(mat, cbind(c(4,8,8,4),c(4,4,8,8)))
 # Visual assessment
+plot0(c(0,10), c(0,10))
 graphics::polygon(c(4,8,8,4),c(4,4,8,8))
-graphics::points(valx, valy, col=res+1)
+graphics::points(mat[,1], mat[,2], col=res+1)
+}
+\references{
+\url{https://rosettacode.org/wiki/Ray-casting_algorithm#C}
 }
 \keyword{over}
 \keyword{points,}

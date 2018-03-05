@@ -6,5 +6,5 @@
 \alias{graphicsutils-package}
 \title{graphicsutils}
 \description{
-A collection of (hopefully) useful function to creat graphics
+A collection of (hopefully) useful functions to create graphics based plots.
 }
