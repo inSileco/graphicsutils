@@ -2,7 +2,10 @@
 #'
 #' @name graphicsutils
 #' @docType package
-#' @description A collection of (hopefully) useful function to creat graphics
+#' @description A collection of (hopefully) useful functions to create graphics based plots.
+#' @import Rcpp
+#' @importFrom Rcpp evalCpp
+#' @useDynLib graphicsutils
 NULL
 
 # .onLoad <- function(libname, pkgname) { invisible() }
