@@ -41,9 +41,9 @@ plotImage <- function(obj = NULL, file = NULL, add = FALSE, ...) {
     ## 
     dm <- dim(obj)
     if (!add) 
-        plot0(c(1, dm[1]), c(1, dm[2]), asp = 1)
+        plot0(c(1, dm[1L]), c(1, dm[2L]), asp = 1)
     pu <- graphics::par()$usr
-    graphics::rasterImage(obj, pu[1], pu[3], pu[2], pu[4], ...)
+    graphics::rasterImage(obj, pu[1L], pu[3L], pu[2L], pu[4L], ...)
     ## 
     invisible(NULL)
 }

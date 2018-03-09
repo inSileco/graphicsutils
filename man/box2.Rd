@@ -16,7 +16,7 @@ box2(side = 1:4, which = "plot", fill = NULL, ...)
 \item{...}{further graphical parameters (see \code{\link[graphics]{par}}) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = 'b'}, \code{pch}.  Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
 }
 \description{
-Draw a Box around a Plot.
+Draw a box around a plot.
 }
 \details{
 This function intends to give more flexibility to the \code{\link[graphics]{box}} function.

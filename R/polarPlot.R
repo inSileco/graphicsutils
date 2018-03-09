@@ -48,7 +48,7 @@ polarPlot <- function(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi, in
     ## --- to polar coordinates
     rgtime <- range(seqtime)
     rgval <- prettyRange(seqval)
-    lgv <- floor(log(rgval[2] - rgval[1]))
+    lgv <- floor(log(rgval[2L] - rgval[1L]))
     ## 
     seqtp <- -0.5 * pi + from + (to - from) * (seqtime - rgtime[1L])/(rgtime[2L] - 
         rgtime[1L])
@@ -80,7 +80,7 @@ polarPlot <- function(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi, in
     
     ## --- Values labels
     if (is.null(labelr)) 
-        labelr <- round(seq(rgval[1], rgval[2], length.out = 6), digits = -lgv + 
+        labelr <- round(seq(rgval[1L], rgval[2L], length.out = 6), digits = -lgv + 
             2)
     if (!is.na(labelr) && nzchar(labelr)) {
         graphics::text(rep(0, 6), -0.2 * 0:5, grDevices::as.graphicsAnnot(labelr), 
@@ -95,13 +95,13 @@ polarPlot <- function(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi, in
     
     ## --- Circular values
     if (is.null(labelc)) 
-        labelc <- grDevices::as.graphicsAnnot(signif(seq(rgtime[1], rgtime[2], length.out = 7), 
-            n_signif)) else labelc <- grDevices::as.graphicsAnnot(labelc)
+        labelc <- grDevices::as.graphicsAnnot(signif(seq(rgtime[1L], rgtime[2L], 
+            length.out = 7), n_signif)) else labelc <- grDevices::as.graphicsAnnot(labelc)
     if (!is.na(labelc) && nzchar(labelc)) {
-        if (mangle[1]%%(2 * pi) == mangle[length(mangle)]%%(2 * pi)) {
-            mg1 <- mangle[1]
+        if (mangle[1L]%%(2 * pi) == mangle[length(mangle)]%%(2 * pi)) {
+            mg1 <- mangle[1L]
             mgl <- mangle[length(mangle)]
-            graphics::text(1.15 * cos(mg1), 1.15 * sin(mg1), labelc[1], pos = 4, 
+            graphics::text(1.15 * cos(mg1), 1.15 * sin(mg1), labelc[1L], pos = 4, 
                 cex = 1.15, col = tckcol)
             graphics::text(1.15 * cos(mgl), 1.15 * sin(mgl), labelc[length(labelc)], 
                 pos = 2, cex = 1.15, col = tckcol)

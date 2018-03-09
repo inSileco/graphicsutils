@@ -2,10 +2,10 @@
 #'
 #' Draw a donut chart.
 #'
-#' @param vec a vector of non-negative numerical quantities  that are displayed as the areas of donut slices.
-#' @param eaten the eaten part of the donut.
+#' @param vec a vector of non-negative numerical quantities that are displayed as the areas of donut slices.
+#' @param eaten the eaten part.
 #' @param labels one or more expressions or character strings giving names for the slices.
-#' @param rot the rotation angle (in degree) of the donut.
+#' @param rot the rotation angle (in degree).
 #' @param cx the magnification coefficient to be used for the total horizontal width of the donut.
 #' @param cy controls the total vertical width of the donut.
 #' @param cex the magnification coefficient to be used for the size of the donut.
@@ -15,9 +15,9 @@
 #' @param density the density of shading lines, in lines per inch.  The default value of \code{NULL} means that no shading lines are drawn.
 #' @param angle the slope of shading lines, given as an angle in degrees (counter-clockwise).
 #' @param dt point density of the drawn circles.
-#' @param add should images be added on the current graph ? If FALSE a new plot is created.
-#' @param border the border color of the donut. The default value of \code{NA} means that no border lines are drawn.
-#' @param clockwise logical. Shall slices be drawn clockwise?
+#' @param add a logical. Should the donut chart be added on the current graph? If \code{FALSE} then a new plot is created.
+#' @param border the border color of the donut, set to \code{NA} which omits borders.
+#' @param clockwise a logical. Shall slices be drawn clockwise?
 #' @param ... additionnal arguments to be passed to lines methods.
 #'
 #' @keywords donut
@@ -46,17 +46,17 @@
 #' vec <- runif(7)
 #' donut(vec, 0.15, cx=5, cy=20, add=TRUE, col=2)
 
-donut <- function(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05, 
-    width = 0.6, mycol = 1 + 1:length(vec), density = NULL, angle = 45, dt = 0.001, 
+donut <- function(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05,
+    width = 0.6, mycol = 1 + 1:length(vec), density = NULL, angle = 45, dt = 0.001,
     add = FALSE, cx = 0, cy = 0, border = NA, clockwise = TRUE, ...) {
-    if (!is.numeric(vec) || any(is.na(vec) | vec < 0)) 
+    if (!is.numeric(vec) || any(is.na(vec) | vec < 0))
         stop("'vec' values must be positive.")
     stopifnot(width <= 1 & width > 0)
     # makes 'width' intuitive
     width <- 1 - width
     ## sequence to draw circles
     x <- (2 * pi * rot/360) + seq(-0.5 * pi, -2.5 * pi, -dt)
-    if (!clockwise) 
+    if (!clockwise)
         x <- rev(x)
     sz <- length(x)
     d <- floor(0.5 * eaten * sz)
@@ -69,12 +69,12 @@ donut <- function(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05,
     ## color
     mycol <- rep(mycol, length.out = nb)
     ## labels
-    if (is.null(labels)) 
+    if (is.null(labels))
         labels <- as.character(1:nb) else labels <- grDevices::as.graphicsAnnot(labels)
     ## Dimension
-    wid <- (graphics::par()$usr[2] - graphics::par()$usr[1])
-    heg <- (graphics::par()$usr[4] - graphics::par()$usr[3])
-    
+    wid <- (graphics::par()$usr[2L] - graphics::par()$usr[1L])
+    heg <- (graphics::par()$usr[4L] - graphics::par()$usr[3L])
+
     if (!add) {
         graphics::plot.new()
         graphics::plot.window(c(-1, 1), c(-1, 1), asp = 1)
@@ -82,7 +82,7 @@ donut <- function(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05,
         cex.x <- cex.y <- cex
     } else {
         cex.x <- cex * 0.4 * wid
-        aspin <- graphics::par()$pin[1]/graphics::par()$pin[2]
+        aspin <- graphics::par()$pin[1L]/graphics::par()$pin[2L]
         cex.y <- aspin * cex * 0.4 * heg
     }
     if (!is.null(density)) {
@@ -91,23 +91,23 @@ donut <- function(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05,
     }
     sx <- 1
     for (i in 1L:nb) {
-        vx <- c(cos(xb[sx]), width * cos(xb[sx]), width * cos(xb[sx:(sx + vecb[i])]), 
+        vx <- c(cos(xb[sx]), width * cos(xb[sx]), width * cos(xb[sx:(sx + vecb[i])]),
             cos(xb[(sx + vecb[i]):sx]))
-        vy <- c(sin(xb[sx]), width * sin(xb[sx]), width * sin(xb[sx:(sx + vecb[i])]), 
+        vy <- c(sin(xb[sx]), width * sin(xb[sx]), width * sin(xb[sx:(sx + vecb[i])]),
             sin(xb[(sx + vecb[i]):sx]))
-        if (!is.null(density)) 
-            graphics::polygon(cx + cex.x * vx, cy + cex.y * vy, col = mycol[i], border = border, 
-                density = density[i], angle = angle[i]) else graphics::polygon(cx + cex.x * vx, cy + cex.y * vy, col = mycol[i], 
+        if (!is.null(density))
+            graphics::polygon(cx + cex.x * vx, cy + cex.y * vy, col = mycol[i], border = border,
+                density = density[i], angle = angle[i]) else graphics::polygon(cx + cex.x * vx, cy + cex.y * vy, col = mycol[i],
             border = border)
         lab <- as.character(labels[i])
         if (!is.na(lab) && nzchar(lab)) {
             mid <- sx + floor(0.5 * vecb[i])
             pos <- 1 + (sin(xb[mid]) > -0.5 * sqrt(3))
-            if (pos > 1) 
+            if (pos > 1)
                 pos <- pos + (cos(xb[mid]) > -0.5) + (cos(xb[mid]) > 0.5)
-            graphics::lines(cx + cex.x * c(1, 1 + tck) * cos(xb[mid]), cy + cex.y * 
+            graphics::lines(cx + cex.x * c(1, 1 + tck) * cos(xb[mid]), cy + cex.y *
                 c(1, 1 + tck) * sin(xb[mid]), ...)
-            graphics::text(cx + (1 + tck) * cex.x * cos(xb[mid]), cy + cex.y * (1 + 
+            graphics::text(cx + (1 + tck) * cex.x * cos(xb[mid]), cy + cex.y * (1 +
                 tck) * sin(xb[mid]), labels[i], pos = pos, xpd = TRUE)
         }
         sx <- sx + vecb[i]
@@ -115,11 +115,11 @@ donut <- function(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05,
     graphics::lines(cx + cex.x * cos(xb), cy + cex.y * sin(xb), ...)
     graphics::lines(cx + cex.x * width * cos(xb), cy + cex.y * width * sin(xb), ...)
     if (eaten) {
-        graphics::lines(cx + cex.x * c(cos(xb[1]), width * cos(xb[1])), cy + cex.y * 
-            c(sin(xb[1]), width * sin(xb[1])), ...)
-        graphics::lines(cx + cex.x * c(cos(xb[szb]), width * cos(xb[szb])), cy + 
+        graphics::lines(cx + cex.x * c(cos(xb[1L]), width * cos(xb[1L])), cy + cex.y *
+            c(sin(xb[1L]), width * sin(xb[1L])), ...)
+        graphics::lines(cx + cex.x * c(cos(xb[szb]), width * cos(xb[szb])), cy +
             cex.y * c(sin(xb[szb]), width * sin(xb[szb])), ...)
     }
-    
+
     invisible(NULL)
 }

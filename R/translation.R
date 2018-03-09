@@ -6,7 +6,7 @@
 #' @param y The y coordinates of points.
 #' @param xtrans The x vector of the translation.
 #' @param ytrans The y vector of the translation..
-#' @param add logical. If TRUE the set of transforned points is drawn as a polygon.
+#' @param add logical. If \code{TRUE} the set of transforned points is drawn as a polygon.
 #' @param ... Additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).
 #'
 #' @keywords translation
@@ -50,7 +50,7 @@ translation <- function(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...) {
     }
     ##--
     trasla <- list(x = x + xtrans, y = y + ytrans)
-    if (add) 
+    if (add)
         graphics::polygon(trasla$x, trasla$y, ...)
     ##--
     trasla

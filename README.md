@@ -147,11 +147,11 @@ Get pretty ranges
 
     vec <- stats::runif(20)
     range(vec)
-    R>>  [1] 0.009068889 0.979221357
+    R>>  [1L] 0.009068889 0.979221357
     prettyRange(vec)
-    R>>  [1] 0 1
+    R>>  [1L] 0 1
     prettyRange(c(3.85, 3.88245))
-    R>>  [1] 3.850 3.885
+    R>>  [1L] 3.850 3.885
 
 Interactive functions
 ---------------------
@@ -203,8 +203,8 @@ Vector fields
 
     systLin <- function(X, beta){
         Y <- matrix(0,ncol=2)
-        Y[1] <- beta[1,1]*X[1]+beta[1,2]*X[2]
-        Y[2] <- beta[2,1]*X[1]+beta[2,2]*X[2]
+        Y[1L] <- beta[1,1]*X[1L]+beta[1,2]*X[2L]
+        Y[2L] <- beta[2,1]*X[1L]+beta[2,2]*X[2L]
         return(Y)
     }
     seqx <- seq(-2,2,0.31)

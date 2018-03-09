@@ -84,7 +84,7 @@ stackedAreas <- function(val, index = NULL, rgy = 1, cumul = FALSE, transp = FAL
     }
     ## ---- Stacked areas
     cx <- c(index, rev(index))
-    graphics::polygon(cx, rgy * c(rep(1, ncol(x)), 1 - rev(x[1, ])), col = colors[1], 
+    graphics::polygon(cx, rgy * c(rep(1, ncol(x)), 1 - rev(x[1, ])), col = colors[1L], 
         lty = lty, lwd = lwd, border = border)
     if (nrow(x) > 1) 
         graphics::polygon(cx, rgy * c(1 - x[nrow(x) - 1, ], rep(0, ncol(x))), col = colors[nrow(x)], 

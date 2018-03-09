@@ -24,8 +24,8 @@
 #' @examples
 #' systLin <- function(X, beta){
 #'     Y <- matrix(0,ncol=2)
-#'     Y[1] <- beta[1,1]*X[1]+beta[1,2]*X[2]
-#'     Y[2] <- beta[2,1]*X[1]+beta[2,2]*X[2]
+#'     Y[1L] <- beta[1,1]*X[1L]+beta[1,2]*X[2L]
+#'     Y[2L] <- beta[2,1]*X[1L]+beta[2,2]*X[2L]
 #'     return(Y)
 #' }
 #' seqx <- seq(-2,2,0.31)
@@ -65,7 +65,7 @@ vecfield2d <- function(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2), 
     gridout <- gridin * 0
     fun_names <- names(formals(FUN))
     for (i in 1:nrow(gridin)) {
-        args[[fun_names[1]]] <- gridin[i, ]
+        args[[fun_names[1L]]] <- gridin[i, ]
         gridout[i, ] <- do.call(FUN, args)
     }
     if (!add) 
