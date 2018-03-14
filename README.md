@@ -147,11 +147,11 @@ Get pretty ranges
 
     vec <- stats::runif(20)
     range(vec)
-    R>>  [1L] 0.009068889 0.979221357
+    R>>  [1] 0.1605354 0.9681548
     prettyRange(vec)
-    R>>  [1L] 0 1
+    R>>  [1] 0.15 1.00
     prettyRange(c(3.85, 3.88245))
-    R>>  [1L] 3.850 3.885
+    R>>  [1] 3.850 3.885
 
 Interactive functions
 ---------------------
@@ -215,7 +215,7 @@ Vector fields
 
 ![](inst/assets/img/vectorfields-1.png)
 
-    # Plot 2:
+    # # Plot 2:
     graphics::par(mar=c(2,2,2,2))
     vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
        args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
@@ -224,12 +224,15 @@ Vector fields
 
 ![](inst/assets/img/vectorfields-2.png)
 
+Code of Conduct
+---------------
+
+Please note that this project is released with a [Contributor Code of
+Conduct](CONDUCT.md). By participating in this project you agree to
+abide by its terms.
+
 To do list
 ==========
 
 -   \[ \] Improve the code coverage;
 -   \[ \] Add a contributing section;
--   \[ \] Add a vignette gathering examples (I may create a simple
-    cookbook website);
--   \[ \] `vectfield2d()` needs to be reviewed =&gt; I’ll do so when
-    I’ll integrate nice looking arrows.

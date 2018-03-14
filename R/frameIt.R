@@ -19,11 +19,11 @@
 #' @examples
 #' #Example 1:
 #' plot0()
-#' frameit()
+#' frameIt()
 #'
 #' #Example 2:
 #' plot0()
-#' frameit(cex.x=1.5, col=c(2,3), border=1)
+#' frameIt(cex.x=1.5, col=c(2,3), border=1)
 
 
 frameIt <- function(nbc = 10, cex.x = 1, cex.y = cex.x, col = c("grey45", "grey85"), 

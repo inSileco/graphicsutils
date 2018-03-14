@@ -10,3 +10,5 @@
 ^NEWS
 ^record*
 ^inst/tmp
+^LICENSE
+^CONDUCT.md

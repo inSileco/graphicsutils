@@ -1,7 +1,7 @@
 Package: graphicsutils
 Type: Package
 Title: Collection of graphics utilities
-Version: 1.1-2
+Version: 1.2-0
 Date: 2018-03-02
 Author: Kevin Cazelles [aut, cre], Nicolas Casajus [aut], David Beauchesnes [aut].
 Maintainer: Kevin Cazelles <kevin.cazelles@uoguelph.ca>
@@ -24,7 +24,7 @@ Suggests:
     testthat
 LinkingTo: Rcpp
 NeedsCompilation: yes
-License: GPL-3
+License: GPL-2
 URL: https://github.com/inSileco/graphicsutils
 BugReports: https://github.com/inSileco/graphicsutils/issues
 VignetteBuilder: knitr

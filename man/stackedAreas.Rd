@@ -46,7 +46,7 @@ Draw a stacked areas chart.
 Areas are drawn using the \code{\link{polygon}} function and users can take advantage of ot to customize their stacked areas (using \code{lwd}, \code{lty} or \code{border} arguments).
 }
 \note{
-The default colors have been inspired by four palettes found on line: \url{http:www.color-hex.com/color-palettes/}. \code[plotrix]{stackpoly} function
+The default colors have been inspired by four palettes found on line: \url{http:www.color-hex.com/color-palettes/}. \code{\link[plotrix]{stackpoly}} function
 from the \code{plotrix} package offers a good alternative.
 
 Using a stacked areas chart with more than 20 areas should provide a figure really hard to read.

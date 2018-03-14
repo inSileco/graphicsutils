@@ -13,6 +13,8 @@ biBoxplot(df1 = rnorm(1000, sd = 0.25), df2 = df1, prob = c(0.01, 0.25,
 
 \item{df2}{first set of boxplots.}
 
+\item{prob}{quantile to be used.}
+
 \item{width}{a vector giving the relative widths of the boxes making up the plot.}
 
 \item{median}{A list of aruments passed to \link[graphics]{lines} to custom the median line.}
@@ -20,6 +22,8 @@ biBoxplot(df1 = rnorm(1000, sd = 0.25), df2 = df1, prob = c(0.01, 0.25,
 \item{staples}{A list of aruments passed to \link[graphics]{lines} to custom the staples.}
 
 \item{whiskers}{A list of aruments passed to \link[graphics]{lines} to custom the whishers.}
+
+\item{add}{a logical. Should the biboxplots be added on the current graph? If \code{FALSE} then a new plot is created.}
 }
 \description{
 Double boxplot

@@ -4,13 +4,17 @@
 #'
 #' @param df1 first set of boxplots.
 #' @param df2 first set of boxplots.
+#' @param prob quantile to be used. 
 #' @param width a vector giving the relative widths of the boxes making up the plot.
 #' @param median A list of aruments passed to \link[graphics]{lines} to custom the median line.
 #' @param staples A list of aruments passed to \link[graphics]{lines} to custom the staples.
 #' @param whiskers A list of aruments passed to \link[graphics]{lines} to custom the whishers.
+#' @param add a logical. Should the biboxplots be added on the current graph? If \code{FALSE} then a new plot is created.
 #'
 #' @keywords boxplots
 #'
+#' @importFrom graphics lines
+#' @importFrom stats quantile rnorm
 #' @export
 #'
 #' @details Do not assess the distributions. Based on quantiles only.

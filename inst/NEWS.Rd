@@ -9,7 +9,10 @@
     \item Changes in existing R functions:
     \itemize{
       \item The Ray-casting algorithm is now implemented in a cpp function, see \code{src/pointsInPolygon_core.cpp}, see \ghpr{10}.
-      \item A grid can be added in \code{plot0}, three arguments control its color (\code{grid.col}), its width (\code{grid.lwd}) and type (\code{grid.lty}).  
+      \item A grid can be added in \code{plot0}, three arguments control its color (\code{grid.col}), its width (\code{grid.lwd}) and type (\code{grid.lty}).
+      \item `frameit()` renamed `frameIt()` for the sack of naming consistency.
+      \item `compassRose1()` and `compassRose2()` respectively renamed `compassRoseCardinal()` and `compassRose()`.
+      \item `layout2()` renamed `interactiveLayout()` to better reflect what it does.
     }
     \item Changes in the package structure:
     \itemize{

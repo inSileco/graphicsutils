@@ -91,7 +91,7 @@ arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1
         }
         ## ----
         ptcoord <- rotation(sqptx, sqpty, rot = anglept[i], xrot = x0[i], yrot = y0[i], 
-            radian = TRUE)
+            rad = TRUE)
         graphics::polygon(ptcoord$x, ptcoord$y, ...)
     }
     invisible(NULL)

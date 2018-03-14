@@ -62,7 +62,6 @@ vecfield2d <- function(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2), 
         if (is.null(fixed)) 
             fixed <- rep(0, ndim - 2)
         grid_val <- matrix(rep(fixed, each = nrow(grid)), ncol = length(fixed))
-        print(grid_val)
         gridin[, -slices] <- grid_val
     } else gridin <- grid
     ##---

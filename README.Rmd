@@ -225,7 +225,7 @@ seqy <- seq(-2,2,0.31)
 beta1 <- matrix(c(0,-1,1,0),2)
 # Plot 1:
 vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin, args=list(beta=beta1))
-# Plot 2:
+# # Plot 2:
 graphics::par(mar=c(2,2,2,2))
 vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
    args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
@@ -234,9 +234,13 @@ graphics::abline(v=0, h=0)
 ```
 
 
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md).
+By participating in this project you agree to abide by its terms.
+
+
 # To do list
 
 - [ ] Improve the code coverage;
 - [ ] Add a contributing section;
-- [ ] Add a vignette gathering examples (I may create a simple cookbook website);
-- [ ] `vectfield2d()` needs to be reviewed => I'll do so when I'll integrate nice looking arrows.
