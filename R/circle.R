@@ -10,7 +10,7 @@
 #' @param from the angles, expressed in radians, from which circles are drawn.
 #' @param to the angles, expressed in radians, to which circles are drawn.
 #' @param incr increments between two points to be linked (expressed in radians).
-#' @param pie logical. If TRUE end points are linked with the center of the circle (default is set to FALSE).
+#' @param pie a logical. If TRUE end points are linked with the center of the circle (default is set to FALSE).
 #' @param ... additional arguments to be passed to \code{\link{polygon}} function.
 #'
 #' @keywords circle

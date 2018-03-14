@@ -1,23 +1,23 @@
-#' Lightened or darkened colors
+#' Lighten or darken colors
 #'
-#' Return lightened or darkened colors, vetorized over \code{percentage}.
-#' \code{ramp} is the general function any couple of colors. \code{darken} and
-#' \code{lightened} calls \code{ramp} to darken and lighten a given color.
+#' Returns lightened or darkened colors, vetorized over \code{percentage}.
+#' \code{ramp} is valid for any couple of colors. Functions \code{darken} and
+#' \code{lightened} actually call \code{ramp} to darken and lighten a given color.
 #'
-#' @param fromcol The starting color.  color to be changed.
-#' @param tocol The color towards which the 'fromcolor' will be nuanced.
-#' @param percentage percentage determining to what extent the color .
+#' @param fromcol starting color, i.e. if \code{percentage = 0}, it is the color returned.
+#' @param tocol color to nuance \code{fromcol}, i.e. if \code{percentage = 100}, it is the color returned.
+#' @param percentage percentage determining the percentage of \code{tocol} used to nuance \code{fromcol}.
 #' @param col the color to be darkened or lightened.
-#' @param as_rgb A logical indicating wheteher color must be returned as a matrix object.
+#' @param as_rgb a logical. Should the color(s) returned as a matrix object?
 #'
 #' @export
 #' @seealso \code{\link{colorRampPalette}}
 #' @examples
 #' darken('red', 50)
-#' somereds <- lighten('red', seq(10,90,9))
-#' showPalette(somereds)
+#' more_reds <- lighten('red', seq(10,90,9))
+#' showPalette(more_reds)
 
-#' @describeIn darken A color standing between two given hues.
+#' @describeIn darken Retuns a shaded color.
 ramp <- function(fromcol, tocol, percentage = 50, as_rgb = FALSE) {
     perc <- as.integer(percentage)
     outcol <- (grDevices::colorRampPalette(c(fromcol, tocol)))(100)[perc]
@@ -26,14 +26,14 @@ ramp <- function(fromcol, tocol, percentage = 50, as_rgb = FALSE) {
     return(outcol)
 }
 
-#' @describeIn darken A darkened color.
+#' @describeIn darken Returns a darkened color.
 #' @export
 darken <- function(col, percentage = 50, as_rgb = FALSE) {
     outcol <- ramp(fromcol = col, tocol = "black", percentage = percentage, as_rgb = as_rgb)
     return(outcol)
 }
 
-#' @describeIn darken A lightened color.
+#' @describeIn darken Returns a lightened color.
 #' @export
 lighten <- function(col, percentage = 50, as_rgb = FALSE) {
     outcol <- ramp(col, "white", percentage = percentage, as_rgb = as_rgb)

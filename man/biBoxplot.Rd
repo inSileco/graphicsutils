@@ -2,18 +2,30 @@
 % Please edit documentation in R/biBoxplot.R
 \name{biBoxplot}
 \alias{biBoxplot}
-\title{An boxplot of two distributions.}
+\title{A boxplot of two distributions.}
 \usage{
-biBoxplot(dist1, dist2)
+biBoxplot(df1 = rnorm(1000, sd = 0.25), df2 = df1, prob = c(0.01, 0.25,
+  0.5, 0.75, 0.99), width = NULL, median = NULL, staples = NULL,
+  whiskers = NULL, add = FALSE)
 }
 \arguments{
-\item{boxplot}{}
+\item{df1}{first set of boxplots.}
+
+\item{df2}{first set of boxplots.}
+
+\item{width}{a vector giving the relative widths of the boxes making up the plot.}
+
+\item{median}{A list of aruments passed to \link[graphics]{lines} to custom the median line.}
+
+\item{staples}{A list of aruments passed to \link[graphics]{lines} to custom the staples.}
+
+\item{whiskers}{A list of aruments passed to \link[graphics]{lines} to custom the whishers.}
 }
 \description{
 Double boxplot
 }
 \details{
-Do not assess the distributions. Based on quantile only.
+Do not assess the distributions. Based on quantiles only.
 }
 \examples{
 # Example 1:
@@ -21,4 +33,4 @@ Do not assess the distributions. Based on quantile only.
 \seealso{
 \code{\link[graphics]{box}}
 }
-\keyword{box}
+\keyword{boxplots}

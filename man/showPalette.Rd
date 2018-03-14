@@ -2,24 +2,27 @@
 % Please edit documentation in R/showPalette.R
 \name{showPalette}
 \alias{showPalette}
-\title{Show a color palette}
+\title{Displays a color palette}
 \usage{
 showPalette(x = grDevices::palette(), inline = FALSE, add_number = FALSE,
   add_codecolor = FALSE, cex_num = 1.2)
 }
 \arguments{
-\item{x}{A vector of colors.}
+\item{x}{a vector of colors.}
 
-\item{inline}{A logical. If \code{TRUE}, the colors are displayed on a single row.}
+\item{inline}{a logical. If \code{TRUE}, the colors are displayed on a single row.}
 
-\item{add_number}{A logical. If \code{TRUE}, color vector's indices are added (default is set to FALSE).}
+\item{add_number}{a logical. If \code{TRUE}, color vector's indices are added (default is set to \code{FALSE}).}
 
-\item{add_codecolor}{A logical. If \code{TRUE}, the code color is displayed (default is set to FALSE).}
+\item{add_codecolor}{a logical. If \code{TRUE}, the code color is displayed (default is set to \code{FALSE}).}
 
-\item{cex_num}{The maginification coefficient of the color vector's indices.}
+\item{cex_num}{the maginification coefficient of the color vector's indices.}
+}
+\value{
+The color palette displayed as an invisible output.
 }
 \description{
-Displays a color palette.
+Displays a color palette and information about the colors it is made of.
 }
 \examples{
 showPalette()

@@ -94,16 +94,16 @@ polarPlot(1:40, stats::runif(40), to=1.9*pi, col='grey30', border='grey80')
 par(mfrow=c(2,2), mar=rep(1,4))
 ##
 plot0(c(-1,1), asp=1)
-compassRose2(0, 0)
+compassRose(0, 0)
 ##
 plot0(c(-1,1), asp=1)
-compassRose2(0.5, 0.5)
+compassRose(0.5, 0.5)
 ##
 plot0(c(-1,1), asp=1)
-compassRose2(0, 0, cex.cr=2)
+compassRose(0, 0, cex.cr=2)
 ##
 plot0(c(-1,1), asp=1)
-compassRose2(0, 0, rot=.75*pi, cex.cr=2, cex.let=1.5, offset=-1.25)
+compassRose(0, 0, rot=.75*pi, cex.cr=2, cex.let=1.5, offset=-1.25)
 ```
 
 

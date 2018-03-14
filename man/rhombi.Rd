@@ -22,10 +22,10 @@ rhombi(x, y = x, ldg = 1, sdg = ldg, rot = 0, add = FALSE, ...)
 \item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.}
 }
 \value{
-A vector including rhombi area is returned is assigned..
+A vector including rhombi areas is returned if assigned.
 }
 \description{
-Add rhombi on a plot and optionnaly returns areas.
+Add rhombi on a plot and returns areas.
 }
 \details{
 The number of rhombus maximual is provided by the length of the largest argument among x, y, ldg, sdg and rot.

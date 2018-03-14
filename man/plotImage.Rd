@@ -16,11 +16,13 @@ plotImage(obj = NULL, file = NULL, add = FALSE, ...)
 \item{...}{additional arguments to be passed to \code{rasterImage} function.}
 }
 \description{
-Function that returns a plot that displays an image. It enables to users to directly include a png or a jpeg file in a plot region by providing their path.
+Returns a plot that displays an image. It enables users to directly include
+a \code{.png} or a \code{.jpeg} file in a plot region by providing their path.
 }
 \details{
-Either obj or file must be defined.
-If a path is provided either \code{readPNG} or \code{readJPEG} according to the end of the file extension.
+Note that either \code{obj} or \code{file} must be defined.
+If a path is provided either \code{readPNG} or \code{readJPEG} according to
+the end of the file extension.
 }
 \examples{
 img <- png::readPNG(system.file('img', 'Rlogo.png', package='png'), native=TRUE)

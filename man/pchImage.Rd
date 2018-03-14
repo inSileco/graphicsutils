@@ -8,28 +8,32 @@ pchImage(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x,
   atcenter = TRUE, add = TRUE, col = NULL, ...)
 }
 \arguments{
-\item{x}{The x coordinates of images to be drawn.}
+\item{x}{the x coordinates of images to be drawn.}
 
-\item{y}{The y coordinates of images to be drawn.}
+\item{y}{the y coordinates of images to be drawn.}
 
-\item{obj}{An object of class \code{nativeRaster}.}
+\item{obj}{an object of class \code{nativeRaster}.}
 
-\item{file}{A path to either a \code{.png} file or a \code{.jpeg} file.}
+\item{file}{a path to either a \code{.png} file or a \code{.jpeg} file.}
 
-\item{cex.x}{A numerical value giving the amount by which the horizontal width of the image should be magnified relative to the default.}
+\item{cex.x}{a numerical value giving the amount by which the horizontal
+width of the image should be magnified, a value of 1 means 5% of the total width.}
 
-\item{cex.y}{A numerical value giving the amount by which the vertical width of the image should be magnified relative To the default.}
+\item{cex.y}{Same as \code{cex.x} for the y axis.}
 
-\item{atcenter}{logical. If TRUE x and y coordinates describe the center of the image. Otherwise they represent the bottom-left coordinates of the image.}
+\item{atcenter}{a logical. If \code{TRUE} them x and y coordinates describe
+the center of the image. Otherwise they represent the bottom-left coordinates of the image.}
 
-\item{add}{logical. Should images be added on the current graph ? If FALSE a new plot is created.}
+\item{add}{logical. Should images be added on the current graph ? If
+'\code{FALSE} a new plot is created.}
 
-\item{col}{Optionnal color use to fill pixels whose values are not 0}
+\item{col}{optionnal color use to fill pixels whose values are not 0}
 
 \item{...}{Additional arguments to be passed to the \code{rasterImage} function.}
 }
 \description{
-\code{pchimage} returns a plot that displays an image. It enables to users to directly include a png or a jpeg file in a plot region by providing their path.
+\code{pchimage} returns a plot that displays an image. It enables to users
+to directly include a png or a jpeg file in a plot region by providing their path.
 }
 \details{
 Either \code{obj} or \code{file} must be defined.

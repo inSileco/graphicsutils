@@ -15,10 +15,10 @@ getAngle2d(x0, y0, x1, y1, rad = FALSE)
 
 \item{y1}{the y coordinates of the second set of vector.}
 
-\item{rad}{logical. If TRUE, angles are returned in radians.}
+\item{rad}{a logical. Should angles be expressed radians?}
 }
 \description{
-Calcul the angle of two set of vectors.
+Calcul the angles of two set of vectors.
 }
 \examples{
 #Example:
@@ -26,5 +26,5 @@ plot0(c(-10,10),c(-10,10))
 arrows(c(0,3),c(0,0),c(3,0),c(3,-3))
 cool <- getAngle2d(c(0,3),c(0,0),c(3,0),c(3,-3))
 }
-\keyword{empty}
-\keyword{plot}
+\keyword{angles,}
+\keyword{vectors}

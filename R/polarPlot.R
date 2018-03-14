@@ -1,6 +1,6 @@
-#' Polar Plot
+#' Polar plot
 #'
-#' Draw a polar plot.
+#' Draws a polar plot.
 #'
 #' @export
 #'
@@ -111,6 +111,6 @@ polarPlot <- function(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi, in
         graphics::text(1.15 * cos(mangle), 1.15 * sin(mangle), labelc, cex = 1.15, 
             col = tckcol)
     }
-    
+    # 
     invisible(NULL)
 }

@@ -1,4 +1,4 @@
-q  #' Add arrows to a plot.
+#' Add arrows to a plot.
 #'
 #' Draw arrows between pairs of points. Arrows drawn are fully customizable by using parameters of \code{polygon} function.
 #'

@@ -1,6 +1,8 @@
 #' Are points inside a polygon?
 #'
-#' For a matirx of points coordinates, \code{pointsInPolygon} returns a logical vector stating whether or not these points are inside a specific polygon whose coordinate as passed as an argument.
+#' For a given matrix of points coordinates, \code{pointsInPolygon} returns a
+#' logical vector stating whether or not these points are inside a specific
+#' polygon whose coordinate as passed as an argument.
 #'
 #' @param points a matrix of coordinates of points to be tested.
 #' @param polygon a two-columns matrix including the coordinate of the polygon.
@@ -8,7 +10,7 @@
 #' @keywords points, polygons, over
 #'
 #' @details
-#'  implements the Ray-casting algorithm
+#' Implements the Ray-casting algorithm.
 #'
 #' @references
 #' \url{https://rosettacode.org/wiki/Ray-casting_algorithm#C}

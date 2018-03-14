@@ -4,19 +4,19 @@
 #'
 #' @param val a dataframe or a matrix containing a series of positive values, rows stand for popultaions.
 #' @param index values to be used for the x axis, by default it is set to \code{NULL} meaning that it is handled by \code{plot.default}
-#' @param rgy A value that determines the range of y values. Default is set to 1 which means that the range of values is [0,1].
-#' @param cumul logical. If TRUE, data are considered as cumulative sums.
-#' @param transp logical. If TRUE, the transpose of the data table is computed.
+#' @param rgy a value that determines the range of y values. Default is set to 1 which means that the range of values is [0,1].
+#' @param cumul a logical. If \code{TRUE}, data are considered as cumulative sums.
+#' @param transp a logical. If \code{TRUE}, the transpose of the data table is computed.
 #' @param legend Text to be used as a legend for each area drawn.
 #' @param col vector of colors, repeated if too small.
 #' @param add logical. Should stacked areas be added on the current plot?
-#' @param pickcolors logical. If TRUE, \code{\link{pickColors}} is called to select colors.
+#' @param pickcolors logical. If \code{TRUE}, \code{\link{pickColors}} is called to select colors.
 #' @param lty the line type (see \code{\link{par}} documentation)
-#' @param lwd the line width (see \code{\link{par}} documentation)
+#' @param lwd the line width (see \code{\link[graphics]{par}} documentation)
 #' @param border The color to draw the border. The default, \code{NULL}, means to use \code{graphics::par('fg')}. Use \code{border=NA} to omit borders.
-#' @param main A main title for the plot.
-#' @param xlab A label for the x axis, defaults to a description of \code{x}.
-#' @param ylab A label for the y axis, defaults to a description of \code{y}.
+#' @param main a main title for the plot.
+#' @param xlab a label for the x axis, defaults to a description of \code{x}.
+#' @param ylab a label for the y axis, defaults to a description of \code{y}.
 #'
 #' @keywords areas, plot, histogram
 #'
@@ -25,7 +25,8 @@
 #' @details Areas are drawn using the \code{\link{polygon}} function and users can take advantage of ot to customize their stacked areas (using \code{lwd}, \code{lty} or \code{border} arguments).
 #'
 #' @note
-#' The default colors have been inspired by four palettes found on line: \url{http:www.color-hex.com/color-palettes/}. \code{stackpoly} in \code{plotrix} package offers a valuable alternative.
+#' The default colors have been inspired by four palettes found on line: \url{http:www.color-hex.com/color-palettes/}. \code[plotrix]{stackpoly} function
+#' from the \code{plotrix} package offers a good alternative.
 #'
 #' Using a stacked areas chart with more than 20 areas should provide a figure really hard to read.
 #'

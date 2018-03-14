@@ -9,9 +9,11 @@ image2(x, from = NULL, to = NULL, color_scale = NULL, border = NA, ...)
 \arguments{
 \item{x}{a matrix or an object to be coerced as a matrix.}
 
-\item{from}{matrix values equal to or smaller than \code{from} will be associated with the first color of the color scale.}
+\item{from}{matrix values equal to or smaller than \code{from} will be
+associated with the first color of the color scale.}
 
-\item{to}{values equal to or larger than \code{from} will be associated with the last color of the color scale.}
+\item{to}{values equal to or larger than \code{from} will be associated with
+the last color of the color scale.}
 
 \item{color_scale}{a vector of colors.}
 
@@ -21,14 +23,14 @@ image2(x, from = NULL, to = NULL, color_scale = NULL, border = NA, ...)
 }
 \description{
 Creates a grid of colored or gray-scale rectangles. This function is similar
-to \code{\link[graphics]{image}} when used for a matrix but simpler (*i.e* less
-features).
+to \code{\link[graphics]{image}} when used for a matrix but simpler (*i.e*
+less available features).
 }
 \details{
 This function actually draws rectangles to create an image from a matrix.
 Unlike \code{\link[graphics]{image}}, \code{image2} the image is ordered just as the
-matrix is displayed meaning that the cell (1,1) is the upper left cell of
-the image drawn. Note that currenlty neither titles nor axes' labels are added
+matrix is displayed meaning that the cell (1,1) is at the upper left cell of
+the plot drawn. Note that currenlty neither titles nor axes' labels are added
 user should call the \code{\link[graphics]{title}} and \code{\link[graphics]{axis}}.
 Concerning the latter, the user should be aware that cell's coordinates range
 from 0 to 1 with 0 being the coordinates of the first cell and 1 the coordinates

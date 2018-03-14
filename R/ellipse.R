@@ -10,7 +10,7 @@
 #' @param to the angles, expressed in radians, to which ellipses are drawn.
 #' @param rot the rotation angles (in degree) of the ellipses.
 #' @param incr increments between two points to be linked (expressed in radians).
-#' @param pie logical. If TRUE end points are linked with the center of the ellipse (default is set to FALSE).
+#' @param pie a logical. If \code{TRUE} end points are linked with the center of the ellipse (default is set to FALSE).
 #' @param ... additional arguments to be passed to \code{\link{polygon}} function.
 #'
 #' @keywords ellipse

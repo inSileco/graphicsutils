@@ -24,7 +24,7 @@ ellipse(x = 0, y = x, mjradi = 1, mnradi = 0.5, from = 0, to = 2 *
 
 \item{incr}{increments between two points to be linked (expressed in radians).}
 
-\item{pie}{logical. If TRUE end points are linked with the center of the ellipse (default is set to FALSE).}
+\item{pie}{a logical. If \code{TRUE} end points are linked with the center of the ellipse (default is set to FALSE).}
 
 \item{...}{additional arguments to be passed to \code{\link{polygon}} function.}
 }

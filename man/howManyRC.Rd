@@ -13,10 +13,6 @@ howManyRC(n)
 A vector of two elements: the number of rows followed by the number of columns.
 }
 \description{
-Compute the number of rows and columns to split a graphic window into panels as equally
-as possible.
+Compute the number of rows and columns to split a graphic window into panels
+as equally as possible.
 }
-\keyword{color}
-\keyword{interactive}
-\keyword{palettes,}
-\keyword{plot}

@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @details
-#' These functions can be used anytime, however, there are usefull only once a
+#' These functions can be used anytime, however, there are usefull only once
 #' \link[graphics]{plot.new} has been called.
 #'
 #' @describeIn toFig Convert figure region coordinates into user coordinates.
@@ -17,8 +17,8 @@ toFig <- function(x, y = NULL) {
     tmp <- out <- grDevices::xy.coords(x, y)
     fig <- graphics::par()$fig
     usr <- graphics::par()$usr
-    out$x <- ((tmp$x - usr[1L])/diff(usr[1:2]) * diff(fig[1:2])) + fig[1L]
-    out$y <- ((tmp$y - usr[3L])/diff(usr[3:4]) * diff(fig[3:4])) + fig[3L]
+    out$x <- ((tmp$x - usr[1L])/diff(usr[1L:2L]) * diff(fig[1L:2L])) + fig[1L]
+    out$y <- ((tmp$y - usr[3L])/diff(usr[3L:4L]) * diff(fig[3L:4L])) + fig[3L]
     return(data.frame(x = out$x, y = out$y))
 }
 
@@ -29,7 +29,7 @@ toUser <- function(x, y = NULL) {
     tmp <- out <- grDevices::xy.coords(x, y)
     fig <- graphics::par()$fig
     usr <- graphics::par()$usr
-    out$x <- ((tmp$x - fig[1L])/diff(fig[1:2]) * diff(usr[1:2])) + usr[1L]
-    out$y <- ((tmp$y - fig[3L])/diff(fig[3:4]) * diff(usr[3:4])) + usr[3L]
+    out$x <- ((tmp$x - fig[1L])/diff(fig[1L:2L]) * diff(usr[1L:2L])) + usr[1L]
+    out$y <- ((tmp$y - fig[3L])/diff(fig[3L:4L]) * diff(usr[3L:4L])) + usr[3L]
     return(data.frame(x = out$x, y = out$y))
 }

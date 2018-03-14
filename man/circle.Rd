@@ -20,7 +20,7 @@ circle(x = 0, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01,
 
 \item{incr}{increments between two points to be linked (expressed in radians).}
 
-\item{pie}{logical. If TRUE end points are linked with the center of the circle (default is set to FALSE).}
+\item{pie}{a logical. If TRUE end points are linked with the center of the circle (default is set to FALSE).}
 
 \item{...}{additional arguments to be passed to \code{\link{polygon}} function.}
 }

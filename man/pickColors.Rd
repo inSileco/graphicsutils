@@ -26,7 +26,6 @@ The bottom rigth panel presents the selected color that can be stored by clickin
 The bottom center panel shows the characteristic of the selcted color.
 Finally, in order to abort, the user can simply clik on the left \code{Stop} panel.
 }
-\keyword{color}
+\keyword{color,}
 \keyword{interactive}
-\keyword{palettes,}
-\keyword{plot}
+\keyword{palette,}

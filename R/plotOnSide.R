@@ -16,8 +16,7 @@
 #' It is based on \link[graphics]{layout} and it is no more than a tunned version of it.
 #'
 #' @examples
-#' graphics::par(mar=c(0,0,0,0))
-#' plotOnSide(1:3, width=c(0.2,1), height=c(1,1,1,0.6))
+#' plotOnSide(matrix(1,2), width=c(0.2,1), height=c(1,1,1,0.6))
 #' graphics::layout.show(5)
 
 

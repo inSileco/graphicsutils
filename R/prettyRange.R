@@ -1,6 +1,7 @@
 #' Pretty range
 #'
-#' This function returns a pretty range of values for a given a vector of type \code{numeric}.
+#' This function returns a pretty range of values for a given a vector of type
+#' \code{numeric}.
 #'
 #' @param x A vector of numerical values.
 #'
@@ -9,10 +10,13 @@
 #' @export
 #'
 #' @return
-#' A vector if two values that correspond to the range of values.
+#' A vector of two values that corresponds to the range of values.
 #'
 #' @details
 #' This function intends to generate range with round values.
+#'
+#' @seealso
+#' \code{\link[base]{pretty}}
 #'
 #' @examples
 #' # Example 1:

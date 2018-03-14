@@ -1,4 +1,4 @@
-#' Draw a frame around a Plot
+#' Draw a frame around a plot
 #'
 #' Draw a frame around the plot region as an ensemble of small rectangles whose colors can be specified.
 #'
@@ -26,7 +26,7 @@
 #' frameit(cex.x=1.5, col=c(2,3), border=1)
 
 
-frameit <- function(nbc = 10, cex.x = 1, cex.y = cex.x, col = c("grey45", "grey85"), 
+frameIt <- function(nbc = 10, cex.x = 1, cex.y = cex.x, col = c("grey45", "grey85"), 
     border = NA) {
     pu <- graphics::par()$usr
     ## 

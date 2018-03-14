@@ -6,7 +6,7 @@
 #' @param ramp A vector of colors used as tone palette.
 #' @param nb_shades Number of shades to be displayed once a tone is selected.
 #'
-#' @keywords color palettes, interactive plot
+#' @keywords color, palette, interactive
 #'
 #' @importFrom graphics par image points text box abline layout locator
 #'

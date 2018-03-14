@@ -21,9 +21,9 @@ gpuPalettes <- list(atom = c("#dedcd5", "#991f16", "#3b9b6d", "#584b4f", "#72aca
 #'
 #' @param names names of desired color palettes; if \code{NULL}, color palettes available are printed.
 #'
-#' @return A vector of colours.
+#' @return A vector of character strings of the hexadecimal colors values.
 #' @export
-#' @keywords color palette
+#' @keywords colors, palette
 #' @examples
 #' showPalette(gpuPalette(c('atom', 'cisl')))
 

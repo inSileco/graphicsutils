@@ -1,22 +1,23 @@
 #' Translation
 #'
-#' Compute a translation for a set of points. The transformed set of points is optionnaly add to the current plot.
+#' Compute a translation for a set of points. The transformed set of points is
+#' optionnaly add to the current plot.
 #'
-#' @param x The x coordinates of points. It can also be a matrix (see details).
-#' @param y The y coordinates of points.
-#' @param xtrans The x vector of the translation.
-#' @param ytrans The y vector of the translation..
+#' @param x the x coordinates of points. It can also be a matrix (see details).
+#' @param y the y coordinates of points.
+#' @param xtrans the x corrdinate of the translation vector.
+#' @param ytrans the y corrdinate of the translation vector.
 #' @param add logical. If \code{TRUE} the set of transforned points is drawn as a polygon.
 #' @param ... Additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).
 #'
-#' @keywords translation
+#' @keywords translation, geometry
 #'
 #' @export
 #'
 #' @details
 #' For details about what is a translation, see \url{https://en.wikipedia.org/wiki/Translation_(geometry)}.
-#'
-#' If x is a matrix with more than 2 columns, then x is the first column and y the second one.
+#' Note that if \code{x} is a matrix with more than 2 columns, then x is the
+#' first column and y the second one.
 #'
 #'
 #' @examples
@@ -50,7 +51,7 @@ translation <- function(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...) {
     }
     ##--
     trasla <- list(x = x + xtrans, y = y + ytrans)
-    if (add)
+    if (add) 
         graphics::polygon(trasla$x, trasla$y, ...)
     ##--
     trasla

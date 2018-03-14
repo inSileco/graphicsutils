@@ -10,10 +10,11 @@ prettyRange(x)
 \item{x}{A vector of numerical values.}
 }
 \value{
-A vector if two values that correspond to the range of values.
+A vector of two values that corresponds to the range of values.
 }
 \description{
-This function returns a pretty range of values for a given a vector of type \code{numeric}.
+This function returns a pretty range of values for a given a vector of type
+\code{numeric}.
 }
 \details{
 This function intends to generate range with round values.
@@ -25,6 +26,9 @@ range(vec)
 prettyRange(vec)
 # Example 2:
 prettyRange(c(3.85,3.88245))
+}
+\seealso{
+\code{\link[base]{pretty}}
 }
 \keyword{interval.}
 \keyword{range,}
