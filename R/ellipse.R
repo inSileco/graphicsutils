@@ -3,14 +3,14 @@
 #' Draw ellipses in a flexible way.
 #'
 #' @param x the x coordinates of the centers of the ellipses.
-#' @param y the y coordinates of the centers of the ellipses.
+#' @param y same as \code{x} for the y-axis.
 #' @param mjradi the major radii of the ellipses.
 #' @param mnradi the minor radii of the ellipses.
 #' @param from the angles, expressed in radians, from which ellipses are drawn.
 #' @param to the angles, expressed in radians, to which ellipses are drawn.
 #' @param rot the rotation angles (in degree) of the ellipses.
 #' @param incr increments between two points to be linked (expressed in radians).
-#' @param pie a logical. If \code{TRUE} end points are linked with the center of the ellipse (default is set to FALSE).
+#' @param pie a logical. If \code{TRUE} end points are linked with the center of the ellipse (default is set to \code{FALSE}).
 #' @param ... additional arguments to be passed to \code{\link{polygon}} function.
 #'
 #' @keywords ellipse

@@ -4,9 +4,10 @@
 \alias{biBoxplot}
 \title{A boxplot of two distributions.}
 \usage{
-biBoxplot(df1 = rnorm(1000, sd = 0.25), df2 = df1, prob = c(0.01, 0.25,
-  0.5, 0.75, 0.99), width = NULL, median = NULL, staples = NULL,
-  whiskers = NULL, add = FALSE)
+biBoxplot(df1, df2 = df1, prob = c(0.01, 0.25, 0.5, 0.75, 0.99),
+  width = 0.2, sta_wd = 0.5, median = NULL, staples = NULL,
+  whiskers = NULL, col_left = "grey75", col_right = col_left,
+  add = FALSE, at = NULL)
 }
 \arguments{
 \item{df1}{first set of boxplots.}
@@ -17,22 +18,31 @@ biBoxplot(df1 = rnorm(1000, sd = 0.25), df2 = df1, prob = c(0.01, 0.25,
 
 \item{width}{a vector giving the relative widths of the boxes making up the plot.}
 
-\item{median}{A list of aruments passed to \link[graphics]{lines} to custom the median line.}
+\item{sta_wd}{staple width.}
 
-\item{staples}{A list of aruments passed to \link[graphics]{lines} to custom the staples.}
+\item{median}{a list of aruments passed to \link[graphics]{lines} to custom the median line.}
 
-\item{whiskers}{A list of aruments passed to \link[graphics]{lines} to custom the whishers.}
+\item{staples}{a list of aruments passed to \link[graphics]{lines} to custom the staples.}
+
+\item{whiskers}{a list of aruments passed to \link[graphics]{lines} to custom the whiskers.}
+
+\item{col_left}{color of the left boxes.}
+
+\item{col_right}{color of the right boxes.}
 
 \item{add}{a logical. Should the biboxplots be added on the current graph? If \code{FALSE} then a new plot is created.}
+
+\item{at}{numeric vector giving the locations where the boxplots should be drawn. Same default behabiour as in \code{\link[graphics]{boxplot}}.}
 }
 \description{
 Double boxplot
 }
 \details{
-Do not assess the distributions. Based on quantiles only.
+Do not attempt to assess the distributions. Based on quantiles only.
 }
 \examples{
 # Example 1:
+# biBoxplot(stats::rnorm(1000, sd = 0.25), stats::rnorm(1000, 0.1, sd = 0.35), col_right = 'grey35')
 }
 \seealso{
 \code{\link[graphics]{box}}

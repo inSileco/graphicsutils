@@ -4,65 +4,95 @@
 #'
 #' @param df1 first set of boxplots.
 #' @param df2 first set of boxplots.
-#' @param prob quantile to be used. 
+#' @param prob quantile to be used.
 #' @param width a vector giving the relative widths of the boxes making up the plot.
-#' @param median A list of aruments passed to \link[graphics]{lines} to custom the median line.
-#' @param staples A list of aruments passed to \link[graphics]{lines} to custom the staples.
-#' @param whiskers A list of aruments passed to \link[graphics]{lines} to custom the whishers.
+#' @param sta_wd staple width.
+#' @param median a list of aruments passed to \link[graphics]{lines} to custom the median line.
+#' @param staples a list of aruments passed to \link[graphics]{lines} to custom the staples.
+#' @param whiskers a list of aruments passed to \link[graphics]{lines} to custom the whiskers.
+#' @param col_left color of the left boxes.
+#' @param col_right color of the right boxes. 
 #' @param add a logical. Should the biboxplots be added on the current graph? If \code{FALSE} then a new plot is created.
-#'
+#' @param at numeric vector giving the locations where the boxplots should be drawn. Same default behabiour as in \code{\link[graphics]{boxplot}}.
 #' @keywords boxplots
 #'
-#' @importFrom graphics lines
+#' @importFrom graphics lines.default rect
 #' @importFrom stats quantile rnorm
 #' @export
 #'
-#' @details Do not assess the distributions. Based on quantiles only.
+#' @details Do not attempt to assess the distributions. Based on quantiles only.
 #'
 #' @seealso \code{\link[graphics]{box}}
 #'
 #' @examples
 #' # Example 1:
+#' # biBoxplot(stats::rnorm(1000, sd = 0.25), stats::rnorm(1000, 0.1, sd = 0.35), col_right = 'grey35')
 
-biBoxplot <- function(df1 = rnorm(1000, sd = 0.25), df2 = df1, prob = c(0.01, 0.25, 
-    0.5, 0.75, 0.99), width = NULL, median = NULL, staples = NULL, whiskers = NULL, 
-    add = FALSE) {
-    x0 <- 0
-    if (is.null(width)) 
-        width = 0.25
-    par_med <- defaultParam(median, lwd = 4)
-    par_sta <- defaultParam(staples)
-    par_whi <- defaultParam(whiskers)
+biBoxplot <- function(df1, df2 = df1, prob = c(0.01, 0.25, 0.5, 0.75, 0.99), width = 0.2, 
+    sta_wd = 0.5, median = NULL, staples = NULL, whiskers = NULL, col_left = "grey75", 
+    col_right = col_left, add = FALSE, at = NULL) {
     ## 
-    seqy1 <- quantile(df1, prob)
-    seqy2 <- quantile(df2, prob)
-    seqx <- x0 + width * (-1:1)
-    plot0()
-    par(lend = 1)
+    df1 <- as.list(df1)
+    df2 <- as.list(df2)
     ## 
-    lines(rep(seqx[2L], 2), c(min(seqy1, seqy2), max(seqy1, seqy2)), lwd = 2)
-    width2 <- 0.25 * width
-    lines(seqx[2L] + c(-width2, 0), rep(seqy1[1L], 2), lwd = 2)
-    lines(seqx[2L] + c(-width2, 0), rep(seqy1[5L], 2), lwd = 2)
-    lines(seqx[2L] + c(width2, 0), rep(seqy2[1L], 2), lwd = 2)
-    lines(seqx[2L] + c(width2, 0), rep(seqy2[5L], 2), lwd = 2)
+    stopifnot(length(df1) == length(df2))
+    sz <- length(df1)
+    if (is.null(at) & !isTRUE(add)) 
+        at <- 1:sz
+    stopifnot(length(df1) == sz)
     ## 
-    rect(seqx[1L], seqy1[2L], seqx[2L], seqy1[4L], border = NA, col = "grey75")
-    lines(seqx[1L:2L], seqy1[c(3, 3)], lwd = 5)
-    rect(seqx[2L], seqy2[2L], seqx[3L], seqy2[4L], border = NA, col = "grey75")
-    do.call(lines, c(x = seqx[2L:3L], y = seqy2[c(3, 3)], par_med))
+    dft_med <- defaultParam(median, lwd = 4)
+    dft_sta <- defaultParam(staples)
+    dft_whi <- defaultParam(whiskers, lend = 2)
+    ## 
+    if (!isTRUE(add)) 
+        plot0(c(0, sz + 1))
     
-    
+    for (i in 1:sz) {
+        makeUnit(at[i], df1[i], df2[i], prob, width, sta_wd, col_left, col_right, 
+            dft_med, dft_sta, dft_whi)
+    }
+    ## 
     invisible(NULL)
 }
 
-# biBoxplot() biBoxplot <- function(dist1, dist2) { ## invisible(NULL) }
-
-defaultParam <- function(ls = NULL, lty = 1, lwd = 1, col = "grey15", lend = 2) {
+defaultParam <- function(ls = NULL, lty = 1, lwd = 2, col = "grey15", lend = 1) {
     ls <- as.list(ls)
     list(lty = ifelse("lty" %in% names(ls), ls$lty, lty), lwd = ifelse("lwd" %in% 
         names(ls), ls$lwd, lwd), col = ifelse("col" %in% names(ls), ls$col, col), 
         lend = ifelse("lend" %in% names(ls), ls$lend, lend))
 }
 
-defaultParam(list(lty = 2))
+makeBox <- function(seqx, seqy1, seqy2, col_left, col_right) {
+    rect(seqx[1L], seqy1[2L], seqx[2L], seqy1[4L], border = NA, col = col_left)
+    rect(seqx[2L], seqy2[2L], seqx[3L], seqy2[4L], border = NA, col = col_right)
+}
+
+makeSta <- function(seqx, seqy1, seqy2, sta_wd, width, dft_sta) {
+    sta_wd <- sta_wd * width
+    do.call(lines.default, c(list(x = seqx[2L] + c(-sta_wd, 0), y = rep(seqy1[1L], 
+        2)), dft_sta))
+    do.call(lines.default, c(list(x = seqx[2L] + c(-sta_wd, 0), y = rep(seqy1[5L], 
+        2)), dft_sta))
+    do.call(lines.default, c(list(x = seqx[2L] + c(sta_wd, 0), y = rep(seqy2[1L], 
+        2)), dft_sta))
+    do.call(lines.default, c(list(x = seqx[2L] + c(sta_wd, 0), y = rep(seqy2[5L], 
+        2)), dft_sta))
+}
+
+makeMed <- function(seqx, seqy1, seqy2, dft_med) {
+    do.call(lines.default, c(list(x = seqx[1L:2L], y = seqy1[c(3L, 3L)]), dft_med))
+    do.call(lines.default, c(list(x = seqx[2L:3L], y = seqy2[c(3L, 3L)]), dft_med))
+}
+
+makeUnit <- function(x0, df1, df2, prob, width, sta_wd, col_left, col_right, dft_med, 
+    dft_sta, dft_whi) {
+    seqy1 <- quantile(df1, prob)
+    seqy2 <- quantile(df2, prob)
+    seqx <- x0 + width * (-1:1)
+    do.call(lines.default, c(list(x = rep(seqx[2L], 2L), y = c(min(seqy1, seqy2), 
+        max(seqy1, seqy2))), dft_whi))
+    makeBox(seqx, seqy1, seqy2, col_left, col_right)
+    makeMed(seqx, seqy1, seqy2, dft_med)
+    makeSta(seqx, seqy1, seqy2, sta_wd, width, dft_sta)
+}

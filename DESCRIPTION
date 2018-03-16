@@ -2,10 +2,11 @@ Package: graphicsutils
 Type: Package
 Title: Collection of graphics utilities
 Version: 1.2-0
-Date: 2018-03-02
-Author: Kevin Cazelles [aut, cre], Nicolas Casajus [aut], David Beauchesnes [aut].
-Maintainer: Kevin Cazelles <kevin.cazelles@uoguelph.ca>
-Description: A collection of functions to help customizing graphics based plots.
+Date: 2018-03-16
+Authors@R: c(person("Kevin", "Cazelles", role = c("aut", "cre"), email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874")),
+  person("Nicolas", "Casajus", role = c("aut"), comment = c(ORCID = "0000-0001-7893-4389")),
+  person("David", "Beauchesne", role = c("aut")))
+Description: A collection of functions to help customizing graphics-based plots.
 Depends:
     R (>= 3.0)
 Imports:
@@ -14,9 +15,9 @@ Imports:
     methods,
     stats,
     utils,
-    jpeg(>= 0.1-8),
-    png(>= 0.1-7),
-    magrittr(>= 1.5),
+    jpeg (>= 0.1-8),
+    png (>= 0.1-7),
+    magrittr (>= 1.5),
     Rcpp (>= 0.12.9)
 Suggests:
     knitr,

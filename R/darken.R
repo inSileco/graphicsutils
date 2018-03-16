@@ -20,7 +20,7 @@
 #' @describeIn darken Retuns a shaded color.
 ramp <- function(fromcol, tocol, percentage = 50, as_rgb = FALSE) {
     perc <- as.integer(percentage)
-    outcol <- (grDevices::colorRampPalette(c(fromcol, tocol)))(100)[perc]
+    outcol <- (grDevices::colorRampPalette(c(fromcol, tocol)))(101)[perc + 1]
     if (as_rgb) 
         outcol <- grDevices::col2rgb(outcol)
     return(outcol)
