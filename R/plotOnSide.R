@@ -59,7 +59,6 @@ plotOnSide <- function(mat, side = 1:2, dim = NULL, quiet = FALSE, ...) {
         if (all(mat[, ncol(mat)] == 0)) 
             mat <- mat[, -ncol(mat)]
         ## 
-        print(mat)
         graphics::layout(mat, ...)
     }
     invisible(NULL)

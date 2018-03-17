@@ -1,5 +1,8 @@
+`graphicsutils` a set of `graphics`-based utilities
+===================================================
+
 Description
-===========
+-----------
 
 The *graphicsutils* is an R package that adds various graphics utilities
 based on the core package *graphics*. For now, the package is dedicated
@@ -14,7 +17,7 @@ designed to work with the
 [*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html)
 system (and thereby it does not work with
 [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)).
-Related with this is one very helpful article by Paul Murrell: [The
+Related with this, is one very helpful article by Paul Murrell: [The
 gridGraphics
 Package](https://journal.r-project.org/archive/2015-1/murrell.pdf).
 
@@ -26,13 +29,10 @@ Status](https://travis-ci.org/inSileco/graphicsutils.svg?branch=master)](https:/
 [![Build
 status](https://ci.appveyor.com/api/projects/status/330p7f0djhpl998q?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils-qo99s)
 [![codecov](https://codecov.io/gh/inSileco/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/inSileco/graphicsutils)
-[![](https://img.shields.io/badge/licence-GPLv3-8f10cb.svg)](http://www.gnu.org/licenses/gpl.html)
-
--   Note that functions are written using Camel case (e.g.
-    `showPalette()`)
+[![](https://img.shields.io/badge/licence-GPLv2-3fb3b2.svg)](LICENSE)
 
 Installation
-============
+------------
 
 The easiest way to install `graphicsutils` is to use the
 [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html)
@@ -46,10 +46,9 @@ Then, load it:
     library(graphicsutils)
 
 Main features
-=============
+-------------
 
-Empty your plot
----------------
+### Empty your plot
 
 To start a figure from scratch it is often useful to get a plot without
 nothing but having the correct size of axes. `plot0()` allows the user
@@ -72,8 +71,7 @@ And also add a text:
 
 ![](inst/assets/img/plot0v3-1.png)
 
-Add a box
----------
+### Add a box
 
 The `box2()` function allows the user to add any axes around the plot in
 a more flexible way.
@@ -87,8 +85,7 @@ a more flexible way.
 
 ![](inst/assets/img/box2-1.png)
 
-Encircle points
----------------
+### Encircle points
 
     coords <- cbind(runif(10), runif(10))
     plot0(coords)
@@ -97,8 +94,7 @@ Encircle points
 
 ![](inst/assets/img/encircle-1.png)
 
-Add an image
-------------
+### Add an image
 
 The `pchImage()` function eases the uses of `rasterImage()` to add
 images (including png and jpeg files) on a graph. It allows to change
@@ -113,10 +109,9 @@ the color of the whole image.
 
 ![](inst/assets/img/pchImage-1.png)
 
-A stacked areas chart
----------------------
+### A stacked areas chart
 
-### A simple stacked areas
+#### A simple stacked areas
 
     plot0(c(0, 10),c(0, 10))
     sz <- 100
@@ -128,33 +123,30 @@ A stacked areas chart
 
 ![](inst/assets/img/envelop-1.png)
 
-### A complete stacked areas
+#### A complete stacked areas
 
     x <- data.frame(matrix(runif(200, 2, 10), 8, 25))
     stackedAreas(x)
 
 ![](inst/assets/img/stackedArea-1.png)
 
-Polar plot
-----------
+### Polar plot
 
     polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
 
 ![](inst/assets/img/polarPlot-1.png)
 
-Get pretty ranges
------------------
+### Get pretty ranges
 
     vec <- stats::runif(20)
     range(vec)
-    R>>  [1] 0.1605354 0.9681548
+    R>>  [1] 0.04354205 0.94891618
     prettyRange(vec)
-    R>>  [1] 0.15 1.00
+    R>>  [1] 0.00 0.95
     prettyRange(c(3.85, 3.88245))
     R>>  [1] 3.850 3.885
 
-Interactive functions
----------------------
+### Interactive functions
 
 Some functions are interactive and fairly understandable! So, I suggest
 you try the following functions:
@@ -163,8 +155,7 @@ you try the following functions:
 
     layout2()
 
-Colors
-------
+### Colors
 
 `darken()` and `lighten()` functions are convenient way to produce
 consistent set of shaded colors with minimal effort; also use
@@ -188,7 +179,7 @@ Since version 1.1-2 a set of color palettes has been added, see
 ![](inst/assets/img/insileco-1.png)
 
 Image 2
-=======
+-------
 
     image2(matrix(1:9, 3))
 
@@ -199,7 +190,7 @@ Image 2
 ![](inst/assets/img/image2-2.png)
 
 Vector fields
-=============
+-------------
 
     systLin <- function(X, beta){
         Y <- matrix(0,ncol=2)
@@ -230,9 +221,3 @@ Code of Conduct
 Please note that this project is released with a [Contributor Code of
 Conduct](CONDUCT.md). By participating in this project you agree to
 abide by its terms.
-
-To do list
-==========
-
--   \[ \] Improve the code coverage;
--   \[ \] Add a contributing section;
