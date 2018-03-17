@@ -3,6 +3,7 @@
 ^appveyor\.yml$
 ^\.travis\.yml$
 ^\.gitignore
+^\.git
 ^Makefile
 ^pkg2date\.R
 ^README\.Rmd

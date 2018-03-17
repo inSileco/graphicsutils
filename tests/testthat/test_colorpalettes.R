@@ -1,4 +1,4 @@
-context("Test gpu color palette")
+context("gpu color palette")
 
 pal_atom <- c("#dedcd5", "#991f16", "#3b9b6d", "#584b4f", "#72acab", "#ca8c81")
 pal_cisl <- c("#c7cbce", "#96a3a3", "#687677", "#222d3d", "#25364a", "#c77f20",

@@ -1,4 +1,4 @@
-context("Test darken")
+context("Nuance colors")
 
 test_that("expected values", {
   expect_equal(ramp("green", "blue", 0), "#00FF00")

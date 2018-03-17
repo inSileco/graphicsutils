@@ -2,9 +2,9 @@
 % Please edit documentation in R/biBoxplot.R
 \name{biBoxplot}
 \alias{biBoxplot}
-\title{A boxplot of two distributions.}
+\title{A biboxplot.}
 \usage{
-biBoxplot(df1, df2 = df1, prob = c(0.01, 0.25, 0.5, 0.75, 0.99),
+biBoxplot(df1, df2 = df1, probs = c(0.01, 0.25, 0.5, 0.75, 0.99),
   width = 0.2, sta_wd = 0.5, median = NULL, staples = NULL,
   whiskers = NULL, col_left = "grey75", col_right = col_left,
   add = FALSE, at = NULL)
@@ -14,7 +14,7 @@ biBoxplot(df1, df2 = df1, prob = c(0.01, 0.25, 0.5, 0.75, 0.99),
 
 \item{df2}{first set of boxplots.}
 
-\item{prob}{quantile to be used.}
+\item{probs}{numeric vector of five probabilities with values in [0,1] (see \code{\link[stats]{quantile}}) used to design the boxes.}
 
 \item{width}{a vector giving the relative widths of the boxes making up the plot.}
 
@@ -35,14 +35,15 @@ biBoxplot(df1, df2 = df1, prob = c(0.01, 0.25, 0.5, 0.75, 0.99),
 \item{at}{numeric vector giving the locations where the boxplots should be drawn. Same default behabiour as in \code{\link[graphics]{boxplot}}.}
 }
 \description{
-Double boxplot
+Draws boxplots made of double plot.
 }
 \details{
 Do not attempt to assess the distributions. Based on quantiles only.
 }
 \examples{
 # Example 1:
-# biBoxplot(stats::rnorm(1000, sd = 0.25), stats::rnorm(1000, 0.1, sd = 0.35), col_right = 'grey35')
+dis1 <- list(stats::rnorm(1000, sd = 0.25))
+biBoxplot(dis1)
 }
 \seealso{
 \code{\link[graphics]{box}}

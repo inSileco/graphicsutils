@@ -9,8 +9,10 @@
 
 ## addibiboxplot
 
-:book: add a LICENSE.
+:book: add @KevCaz and @ahasverus ORCID in `DESCRIPTION`.
+:book: add a `LICENSE` file.
 :book: add a Code of Conduct.
+:book: add a `.github` folder similar to https://github.com/ropensci/taxize
 :book: review and standardize documentation of arguments, *i.e.* always starts by a lower case letter, use
 \code{}, every time a value is mentioned and \link{} anytime a function is mentioned.
 :hammer: `frameit()` renamed `frameIt()` for the sack of naming consistency.
@@ -18,7 +20,10 @@
 :hammer: `layout2()` renamed `interactiveLayout()` to better reflect what it does.
 :hammer: In `pickColors()` the color of the text giving the characteristics of the
 selected color depends on the current selection to improve readability.
+:hammer: `biBoxplot()` a new function to draw asymmetrical boxplots.
 :hammer: a new set of functions is introduced: `contrastColors` to easily contract colors
 :shield: test for `darken` family functions.
 :shield: test for `contrastColors` family functions.
+:shield: test for `contrastColors` family functions.
 :arrow_up: Switch to version 1.2-0.
+:book: edit `NEWS.Rd`.
