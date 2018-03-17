@@ -12,10 +12,12 @@ pointsInPolygon(points, polygon)
 \item{polygon}{a two-columns matrix including the coordinate of the polygon.}
 }
 \description{
-For a matirx of points coordinates, \code{pointsInPolygon} returns a logical vector stating whether or not these points are inside a specific polygon whose coordinate as passed as an argument.
+For a given matrix of points coordinates, \code{pointsInPolygon} returns a
+logical vector stating whether or not these points are inside a specific
+polygon whose coordinate as passed as an argument.
 }
 \details{
-implements the Ray-casting algorithm
+Implements the Ray-casting algorithm.
 }
 \examples{
 mat <- matrix(10*runif(100), 50)

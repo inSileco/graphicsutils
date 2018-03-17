@@ -7,25 +7,26 @@
 translation(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...)
 }
 \arguments{
-\item{x}{The x coordinates of points. It can also be a matrix (see details).}
+\item{x}{the x coordinates of points. It can also be a matrix (see details).}
 
-\item{y}{The y coordinates of points.}
+\item{y}{the y coordinates of points.}
 
-\item{xtrans}{The x vector of the translation.}
+\item{xtrans}{the x corrdinate of the translation vector.}
 
-\item{ytrans}{The y vector of the translation..}
+\item{ytrans}{the y corrdinate of the translation vector.}
 
-\item{add}{logical. If TRUE the set of transforned points is drawn as a polygon.}
+\item{add}{logical. If \code{TRUE} the set of transforned points is drawn as a polygon.}
 
 \item{...}{Additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).}
 }
 \description{
-Compute a translation for a set of points. The transformed set of points is optionnaly add to the current plot.
+Compute a translation for a set of points. The transformed set of points is
+optionnaly add to the current plot.
 }
 \details{
 For details about what is a translation, see \url{https://en.wikipedia.org/wiki/Translation_(geometry)}.
-
-If x is a matrix with more than 2 columns, then x is the first column and y the second one.
+Note that if \code{x} is a matrix with more than 2 columns, then x is the
+first column and y the second one.
 }
 \examples{
 # Example 1:
@@ -42,4 +43,5 @@ plot0(c(0,10),c(0,10))
 graphics::polygon(x,y)
 for (i in 1:6) translation(x,y,xtrans=i,ytrans=i, add=TRUE, border=i+1, lwd=2)
 }
-\keyword{translation}
+\keyword{geometry}
+\keyword{translation,}

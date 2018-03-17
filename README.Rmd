@@ -216,8 +216,8 @@ image2(matrix(1:27, 3), from=2, border = 2, lwd=2)
 ```{r vectorfields}
 systLin <- function(X, beta){
     Y <- matrix(0,ncol=2)
-    Y[1] <- beta[1,1]*X[1]+beta[1,2]*X[2]
-    Y[2] <- beta[2,1]*X[1]+beta[2,2]*X[2]
+    Y[1L] <- beta[1,1]*X[1L]+beta[1,2]*X[2L]
+    Y[2L] <- beta[2,1]*X[1L]+beta[2,2]*X[2L]
     return(Y)
 }
 seqx <- seq(-2,2,0.31)
@@ -225,7 +225,7 @@ seqy <- seq(-2,2,0.31)
 beta1 <- matrix(c(0,-1,1,0),2)
 # Plot 1:
 vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin, args=list(beta=beta1))
-# Plot 2:
+# # Plot 2:
 graphics::par(mar=c(2,2,2,2))
 vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
    args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
@@ -234,9 +234,13 @@ graphics::abline(v=0, h=0)
 ```
 
 
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md).
+By participating in this project you agree to abide by its terms.
+
+
 # To do list
 
 - [ ] Improve the code coverage;
 - [ ] Add a contributing section;
-- [ ] Add a vignette gathering examples (I may create a simple cookbook website);
-- [ ] `vectfield2d()` needs to be reviewed => I'll do so when I'll integrate nice looking arrows.

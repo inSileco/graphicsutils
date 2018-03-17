@@ -4,29 +4,30 @@
 \alias{rotation}
 \title{Rotation}
 \usage{
-rotation(x, y, rot = 90, xrot = mean(x), yrot = mean(y), radian = FALSE)
+rotation(x, y, rot = 90, xrot = mean(x), yrot = mean(y), rad = FALSE)
 }
 \arguments{
 \item{x}{the x coordinates of points.}
 
 \item{y}{the y coordinates of points.}
 
-\item{rot}{Angle of the rotation expressed in degree.}
+\item{rot}{angle of the rotation expressed in degree.}
 
 \item{xrot}{optional, x coordinate for the center of rotation.}
 
 \item{yrot}{optional, y coordinate for the center of rotation.}
 
-\item{radian}{logical. If TRUE, then radian are used rather that degree.}
+\item{rad}{logical. Should radian be used rather than degrees?}
 }
 \description{
 Rotates a set of points.
 }
 \details{
-This function returns the coordinates of the points after rotation. If The coordinates of the rotation center are not specified, the rotation center is taken as the means of coordinates.
+This function returns the coordinates of the points after rotation.
+If the coordinates of the rotation center are not specified, then the rotation
+center is the barycenters of the points to be rotated.
 }
 \examples{
-# Example:
 plot0(c(0,10),c(0,10))
 y <- c(6,6,9)
 x <- c(2,5,3.5)

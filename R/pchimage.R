@@ -1,16 +1,20 @@
 #' Images as ploting characters.
 #'
-#' \code{pchimage} returns a plot that displays an image. It enables to users to directly include a png or a jpeg file in a plot region by providing their path.
+#' \code{pchimage} returns a plot that displays an image. It enables to users
+#' to directly include a \code{.png} or a \code{.jpeg} file in a plot region.
 #'
-#' @param x The x coordinates of images to be drawn.
-#' @param y The y coordinates of images to be drawn.
-#' @param obj An object of class \code{nativeRaster}.
-#' @param file A path to either a \code{.png} file or a \code{.jpeg} file.
-#' @param cex.x A numerical value giving the amount by which the horizontal width of the image should be magnified relative to the default.
-#' @param cex.y A numerical value giving the amount by which the vertical width of the image should be magnified relative To the default.
-#' @param atcenter logical. If TRUE x and y coordinates describe the center of the image. Otherwise they represent the bottom-left coordinates of the image.
-#' @param col Optionnal color use to fill pixels whose values are not 0
-#' @param add logical. Should images be added on the current graph ? If FALSE a new plot is created.
+#' @param x the x coordinates of images to be drawn.
+#' @param y the y coordinates of images to be drawn.
+#' @param obj an object of class \code{nativeRaster}.
+#' @param file a path to either a \code{.png} file or a \code{.jpeg} file.
+#' @param cex.x a numerical value giving the amount by which the horizontal
+#' width of the image should be magnified, a value of 1 means 5\% of the total width.
+#' @param cex.y Same as \code{cex.x} for the y axis.
+#' @param atcenter a logical. If \code{TRUE} them x and y coordinates describe
+#' the center of the image. Otherwise they represent the bottom-left coordinates of the image.
+#' @param col optionnal color use to fill pixels whose values are not 0
+#' @param add logical. Should images be added on the current graph? If
+#' \code{FALSE} a new plot is created.
 #' @param ... Additional arguments to be passed to the \code{rasterImage} function.
 #'
 #' @keywords plot, image, plotting character
@@ -21,7 +25,6 @@
 #'
 #' @details
 #' Either \code{obj} or \code{file} must be defined.
-#'
 #' If a \code{file} is defined, \code{readPNG} or \code{readJPEG} according to
 #' the end of the file extension.
 #'
@@ -69,7 +72,7 @@ pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, at
         }
     }
     ## 
-    if (atcenter == TRUE) {
+    if (isTRUE(atcenter)) {
         graphics::rasterImage(obj, x - dx, y - dy, x + dx, y + dy, ...)
     } else graphics::rasterImage(obj, x, y, x + 2 * dx, y + 2 * dy, ...)
     ## 

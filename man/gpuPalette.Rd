@@ -10,7 +10,7 @@ gpuPalette(names = NULL)
 \item{names}{names of desired color palettes; if \code{NULL}, color palettes available are printed.}
 }
 \value{
-A vector of colours.
+A vector of character strings of the hexadecimal colors values.
 }
 \description{
 A couple of color palettes mainly insipered by popular websites.
@@ -18,5 +18,5 @@ A couple of color palettes mainly insipered by popular websites.
 \examples{
 showPalette(gpuPalette(c('atom', 'cisl')))
 }
-\keyword{color}
+\keyword{colors,}
 \keyword{palette}

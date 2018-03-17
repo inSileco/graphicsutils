@@ -8,7 +8,7 @@
 #' @useDynLib graphicsutils
 NULL
 
-# .onLoad <- function(libname, pkgname) { invisible() }
+.onLoad <- function(libname, pkgname) utils::packageVersion("graphicsutils")
 
 # .onAttach <- function(libname, pkgname) { packageStartupMessage(paste0(' -->
 # graphicsutils version ', utils::packageVersion('graphicsutils'))) }

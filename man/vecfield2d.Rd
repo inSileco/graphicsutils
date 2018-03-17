@@ -9,39 +9,43 @@ vecfield2d(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2),
   ...)
 }
 \arguments{
-\item{coords}{A matrix with two columns or more that is optionnally used to alternatively define the coordinates of the vector field.}
+\item{coords}{a matrix with two columns or more that is optionnally used to alternatively define the coordinates of the vector field.}
 
-\item{FUN}{The function that describes the dynamical system (see details).}
+\item{FUN}{the function that describes the dynamical system (see details).}
 
-\item{args}{The parameters of the dynamical system (see details).}
+\item{args}{the parameters of the dynamical system (see details).}
 
-\item{ndim}{Number of dimension of the system. If \code{NULL} the values is based on \code{coords} and \code{slice}}
+\item{ndim}{number of dimension of the system. If \code{NULL} the values is based on \code{coords} and \code{slice}}
 
-\item{slices}{A vector of 2 elements providing the dimensions to be displayed, (default set to c(1,2)).}
+\item{slices}{a vector of 2 elements providing the dimensions to be displayed, (default set to c(1,2)).}
 
-\item{fixed}{The values used for non drawn dimension, if \code{NULL} the values will be set to 0.}
+\item{fixed}{the values used for non drawn dimension, if \code{NULL} the values will be set to 0.}
 
-\item{cex.x}{The magnification coefficient to be used for lengths of vectors along the x axis.}
+\item{cex.x}{the magnification coefficient to be used for lengths of vectors along the x axis.}
 
-\item{cex.y}{The magnification coefficient to be used for lengths of vectors along the y axis.}
+\item{cex.y}{the magnification coefficient to be used for lengths of vectors along the y axis.}
 
-\item{log}{logical. If TRUE, the lenghts of arrows are log-transformed.}
+\item{log}{a logical. If \code{TRUE}, the lenghts of arrows are log-transformed.}
 
-\item{add}{logical. If TRUE, the vector field is added on the current plot.}
+\item{add}{a logical. If \code{TRUE}, the vector field is added on the current plot.}
 
-\item{...}{Additionnal arguments to be passed to \code{arrows2}.}
+\item{...}{additionnal arguments to be passed to \code{arrows2}.}
 }
 \description{
 Draw a vector field associated to a system of at least two ODE.
 }
 \details{
-The \code{FUN} function to be used must be a function of at least two arguments. The first argument must contain the dynamical variables as a vector and the second arguments must contain all the other parameters that shapes the dynamical system. When some dimension are missing, the order of \code{fixed} is the one in FUN once the drawn dimension are withdrawn.
+The \code{FUN} function must be a function of at least two arguments. The
+first argument must contain the dynamical variables as a vector and the
+second arguments must contain all the other parameters that shapes the
+dynamical system. When some dimensions are missing, the order of \code{fixed}
+is the one in \code{FUN} once the drawn dimension are withdrawn.
 }
 \examples{
 systLin <- function(X, beta){
     Y <- matrix(0,ncol=2)
-    Y[1] <- beta[1,1]*X[1]+beta[1,2]*X[2]
-    Y[2] <- beta[2,1]*X[1]+beta[2,2]*X[2]
+    Y[1L] <- beta[1,1]*X[1L]+beta[1,2]*X[2L]
+    Y[2L] <- beta[2,1]*X[1L]+beta[2,2]*X[2L]
     return(Y)
 }
 seqx <- seq(-2,2,0.31)

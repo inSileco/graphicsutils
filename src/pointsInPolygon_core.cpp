@@ -16,7 +16,7 @@ double vecmax(NumericVector x) {
   return *it;
 }
 
-// Adapted from https://rosettacode.org/wiki/Ray-casting_algorithm#C 
+// Adapted from https://rosettacode.org/wiki/Ray-casting_algorithm#C
 // [[Rcpp::export]]
 LogicalVector pointsInPolygon_core(NumericMatrix points, NumericMatrix polygon) {
   int i, j, szpt, szpo, tmp;
@@ -25,10 +25,10 @@ LogicalVector pointsInPolygon_core(NumericMatrix points, NumericMatrix polygon) 
   LogicalVector out(szpt);
   std::fill(out.begin(), out.end(), false);
   NumericVector cst(szpo), rgx(2), rgy(2);
-  rgx[0] = vecmin(polygon(_, 0));
-  rgx[1] = vecmax(polygon(_, 0));
-  rgy[0] = vecmin(polygon(_, 1));
-  rgy[1] = vecmax(polygon(_, 1));
+  rgx[0L] = vecmin(polygon(_, 0));
+  rgx[1L] = vecmax(polygon(_, 0));
+  rgy[0L] = vecmin(polygon(_, 1));
+  rgy[1L] = vecmax(polygon(_, 1));
   NumericMatrix next(szpo, 2);
   next(szpo-1, _) = polygon(0, _);
   for (i=1; i<szpo; i++){
@@ -41,7 +41,7 @@ LogicalVector pointsInPolygon_core(NumericMatrix points, NumericMatrix polygon) 
 
   //
   for (i = 0; i < szpt; i++) {
-    if (points(i, 0) >= rgx[0] && points(i, 0) <= rgx[1] && points(i, 1) >= rgy[0] && points(i, 1) <= rgy[1]) {
+    if (points(i, 0) >= rgx[0] && points(i, 0) <= rgx[1L] && points(i, 1) >= rgy[0] && points(i, 1) <= rgy[1L]) {
       tmp = 0;
       for (j = 0; j < szpo; j++) {
         if ((polygon(j, 1) >= points(i, 1) && next(j, 1) < points(i, 1)) || (next(j, 1) >= points(i, 1) &&  polygon(j, 1) < points(i, 1)) && (polygon(j, 0) <= points(i, 0) || next(j, 0) <= points(i, 1))) {

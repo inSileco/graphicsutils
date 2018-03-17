@@ -7,7 +7,7 @@
 #' @param x vectors containing the x coordinates.
 #' @param upper the y coordinates of the upper values.
 #' @param lower the y coordinates of the lower values.
-#' @param add logical. If \code{TRUE} the envelop is drawn as a polygon (default behavior).
+#' @param add a logical. If \code{TRUE} the envelop is drawn as a polygon (default behavior).
 #' @param ... additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.
 #'
 #' @export

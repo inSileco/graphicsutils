@@ -6,13 +6,12 @@
 #' @param n Number of plot regions desired, default is 1.
 #' @param grain.x Number of vertical lines drawn to select the size of the subplots regions.
 #' @param grain.y Number of horizontal lines drawn to select the size of the subplots regions.
-#' @param getmatrix logical. If TRUE the matrix used to draw the subplot region is returned.
 #' @param show logical. If TRUE \code{layout.show} is used to get a preview of the subplots regions.
 #' @param now logical. If TRUE \code{layout} is called at \code{layout2} exit.
 #'
-#' @keywords empty plot
+#' @keywords interactive layout
 #'
-#' @export
+#' @return the matrix use to draw the layout is returned as an invisible output. 
 #'
 #' @details
 #' Arguments \code{grain.x} and \code{grain.y} control the aspect of the support
@@ -24,9 +23,9 @@
 #' but only this area will actually be used only by the last one.
 #'
 #' As \code{layout} is ultimately called, \code{layout2} has the same limits: currently 200 for the numbers of rows and columns and 10007 for the total number of cells.
+#' @export
 
-
-layout2 <- function(n = 1, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, show = TRUE, 
+interactiveLayout <- function(n = 1, grain.x = 20, grain.y = grain.x, show = TRUE, 
     now = TRUE) {
     stopifnot(grain.x < 201)
     stopifnot(grain.y < 201)
@@ -71,11 +70,11 @@ layout2 <- function(n = 1, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, sh
     seqcy <- seq(1/(2 * grain.y), 1 - 1/(2 * grain.y), length.out = grain.y)
     for (i in 1:n) {
         xy <- graphics::locator(1)
-        pt1x <- which.min((seqcx - xy$x)^2)
-        pt1y <- which.min((seqcy - xy$y)^2)
+        pt1x <- which.min((seqcx - xy$x) * (seqcx - xy$x))
+        pt1y <- which.min((seqcy - xy$y) * (seqcy - xy$y))
         xy <- graphics::locator(1)
-        pt2x <- which.min((seqcx - xy$x)^2)
-        pt2y <- which.min((seqcy - xy$y)^2)
+        pt2x <- which.min((seqcx - xy$x) * (seqcx - xy$x))
+        pt2y <- which.min((seqcy - xy$y) * (seqcy - xy$y))
         #--
         xlf <- min(pt1x, pt2x)
         xrg <- max(pt1x, pt2x)
@@ -99,7 +98,7 @@ layout2 <- function(n = 1, grain.x = 20, grain.y = grain.x, getmatrix = TRUE, sh
     if (now) {
         on.exit(graphics::layout(mat))
     }
-    if (getmatrix) 
-        return(mat) else invisible(NULL)
+    # 
+    invisible(mat)
     
 }

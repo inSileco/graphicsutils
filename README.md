@@ -147,9 +147,9 @@ Get pretty ranges
 
     vec <- stats::runif(20)
     range(vec)
-    R>>  [1] 0.009068889 0.979221357
+    R>>  [1] 0.1605354 0.9681548
     prettyRange(vec)
-    R>>  [1] 0 1
+    R>>  [1] 0.15 1.00
     prettyRange(c(3.85, 3.88245))
     R>>  [1] 3.850 3.885
 
@@ -203,8 +203,8 @@ Vector fields
 
     systLin <- function(X, beta){
         Y <- matrix(0,ncol=2)
-        Y[1] <- beta[1,1]*X[1]+beta[1,2]*X[2]
-        Y[2] <- beta[2,1]*X[1]+beta[2,2]*X[2]
+        Y[1L] <- beta[1,1]*X[1L]+beta[1,2]*X[2L]
+        Y[2L] <- beta[2,1]*X[1L]+beta[2,2]*X[2L]
         return(Y)
     }
     seqx <- seq(-2,2,0.31)
@@ -215,7 +215,7 @@ Vector fields
 
 ![](inst/assets/img/vectorfields-1.png)
 
-    # Plot 2:
+    # # Plot 2:
     graphics::par(mar=c(2,2,2,2))
     vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
        args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
@@ -224,12 +224,15 @@ Vector fields
 
 ![](inst/assets/img/vectorfields-2.png)
 
+Code of Conduct
+---------------
+
+Please note that this project is released with a [Contributor Code of
+Conduct](CONDUCT.md). By participating in this project you agree to
+abide by its terms.
+
 To do list
 ==========
 
 -   \[ \] Improve the code coverage;
 -   \[ \] Add a contributing section;
--   \[ \] Add a vignette gathering examples (I may create a simple
-    cookbook website);
--   \[ \] `vectfield2d()` needs to be reviewed =&gt; I’ll do so when
-    I’ll integrate nice looking arrows.
