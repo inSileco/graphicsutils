@@ -1,40 +1,47 @@
 #' @title Compass Rose
 #'
-#' @description Draw a compass rose fully customizable.
+#' @description This function draws a fully personnalisable compass rose.
 #'
 #' @param x the x coordinates of the center of the compass rose.
 #' @param y the y coordinates of the center of the compass rose.
+#' @param labels a vector of four character string used as labels for the cardinal direction.
 #' @param rot rotation for the compass rose in degrees (clockwise).
+#' @param col.cr a vector of colors used to draw compass rose (see details).
+#' @param col.let a character string specifying the labels' color.
+#' @param border a vector of colors of the borders of the compass rose.
 #' @param cex.cr the magnification to be used for the whole compass rose.
 #' @param cex.let the magnification to be used for labels.
-#' @param labels labels for the cardinal direction.
 #' @param offset label offset of the cardinal points.
-#' @param col colors of the compass rose (see details).
-#' @param border colors of the borders of the compass rose.
-#' @param lty line type for the border lines.
+#' @param add a logical. Should the biboxplots be added on the current graph?
+#' @param ... additionnal arguments to be passed to \code{\link[graphics]{polygon}}.
 #'
 #' @details
-#' This function draw a basic but fully personnalisable compassRose.
-#' Note that There already exists one compass rose by Jim Lemon in \code{sp} package.
+#' Both \code{col.cr} and \code{border} are repeated over (\code{\link[base]{rep}}
+#' is called) so it has a 8 elements, meaning all triangles the compass rose is
+#' made of could have their own color.
 #'
+#' Note that there already exists a similar function by Jim Lemon in \code{sp} package.
 #'
 #' @examples
-#' plot0()
-#' compassRose(0, rot=25)
+#' compassRose(0, rot=25, cex.cr = 2, col.let =2, add = FALSE)
 
 #' @export
 #' @describeIn compassRose A compass rose with the four cardinal directions and additionnal directions.
-compassRose <- function(x = 0, y = 0, rot = 0, cex.cr = 1, cex.let = 1, offset = 1.2, 
-    col = c(1, 8), border = c(1, 8), lty = 1) {
+compassRose <- function(x = 0, y = 0, labels = c("S", "W", "N", "E"), rot = 0, cex.cr = 1, 
+    cex.let = cex.cr, col.cr = c(1, 8), col.let = 1, border = c(1, 8), offset = 1.2, 
+    add = TRUE, ...) {
+    # 
+    if (!isTRUE(add)) 
+        plot0(c(-0.1, 0.1), asp = T)
     # 
     compassRoseCardinal(x, y, rot + 22.5, cex.cr * 0.65, labels = rep("", 4), cex.let = cex.let, 
-        offset = offset, col = col, border = border, lty = lty)
+        offset = offset, col.cr = col.cr, border = border, ...)
     compassRoseCardinal(x, y, rot + 67.5, cex.cr * 0.65, labels = rep("", 4), cex.let = cex.let, 
-        offset = offset, col = col, border = border, lty = lty)
-    compassRoseCardinal(x, y, rot + 45, cex.cr * 0.85, labels = c("SW", "NW", "NE", 
-        "SE"), cex.let = cex.let, offset = offset, col = col, border = border, lty = lty)
-    compassRoseCardinal(x, y, rot, cex.cr, cex.let = cex.let, offset = offset, col = col, 
-        border = border, lty = lty)
+        offset = offset, col.cr = col.cr, border = border, ...)
+    compassRoseCardinal(x, y, rot + 45, cex.cr * 0.85, cex.let = cex.let, offset = offset, 
+        col.cr = col.cr, col.let = col.let, border = border, ...)
+    compassRoseCardinal(x, y, labels = labels, rot, cex.cr, cex.let = cex.let, offset = offset, 
+        col.cr = col.cr, col.let = col.let, border = border, ...)
     # 
     invisible(NULL)
 }
@@ -42,10 +49,11 @@ compassRose <- function(x = 0, y = 0, rot = 0, cex.cr = 1, cex.let = 1, offset =
 #' @export
 #' @describeIn compassRose A compass with the four cardinal directions only.
 compassRoseCardinal <- function(x, y = x, rot = 0, cex.cr = 1, cex.let = 1, labels = c("S", 
-    "W", "N", "E"), offset = 1.2, col = c(1, 8), border = c(1, 8), lty = 1) {
+    "W", "N", "E"), offset = 1.2, col.cr = c(1, 8), col.let = 1, border = c(1, 8), 
+    ...) {
     # 
     wh <- graphics::strheight("M")
-    rot < -pi * rot/180
+    rot <- pi * rot/180
     mat.rot <- matrix(c(cos(rot), sin(rot), -sin(rot), cos(rot)), 2)
     # 
     lwh <- cex.cr * 4 * wh
@@ -60,15 +68,15 @@ compassRoseCardinal <- function(x, y = x, rot = 0, cex.cr = 1, cex.let = 1, labe
     matxy <- as.matrix(cbind(rex1, rey1))
     matxy <- matxy %*% mat.rot
     # 
-    cr.col <- rep(col, length.out = 8)
+    cr.col <- rep(col.cr, length.out = 8)
     cr.bd <- rep(border, length.out = 8)
     # 
     for (i in 1:8) {
         graphics::polygon(x + c(0, matxy[i, 1], matxy[8 + i, 1]), y + c(0, matxy[i, 
-            2], matxy[8 + i, 2]), col = cr.col[i], border = cr.bd[i], lty = lty)
+            2], matxy[8 + i, 2]), col = cr.col[i], border = cr.bd[i], ...)
     }
     graphics::text(x + offset * matxy[seq(1, by = 2, length.out = 4), 1], y + offset * 
-        matxy[seq(1, by = 2, length.out = 4), 2], labels, cex = cex.let)
+        matxy[seq(1, by = 2, length.out = 4), 2], labels, cex = cex.let, col = col.let)
     # 
     invisible(NULL)
 }

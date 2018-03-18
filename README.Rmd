@@ -232,6 +232,11 @@ vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
 graphics::abline(v=0, h=0)
 ```
 
+## Compass Rose
+
+```{R compassRose}
+compassRose(0, rot=25, cex.cr = 2, col.let =2, add = FALSE)
+```
 
 ## Code of Conduct
 

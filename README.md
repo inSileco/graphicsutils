@@ -140,9 +140,9 @@ the color of the whole image.
 
     vec <- stats::runif(20)
     range(vec)
-    R>>  [1] 0.04354205 0.94891618
+    R>>  [1] 0.05697909 0.95889704
     prettyRange(vec)
-    R>>  [1] 0.00 0.95
+    R>>  [1] 0.05 1.00
     prettyRange(c(3.85, 3.88245))
     R>>  [1] 3.850 3.885
 
@@ -214,6 +214,13 @@ Vector fields
     graphics::abline(v=0, h=0)
 
 ![](inst/assets/img/vectorfields-2.png)
+
+Compass Rose
+------------
+
+    compassRose(0, rot=25, cex.cr = 2, col.let =2, add = FALSE)
+
+![](inst/assets/img/compassRose-1.png)
 
 Code of Conduct
 ---------------

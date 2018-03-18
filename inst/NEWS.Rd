@@ -6,15 +6,19 @@
 
 \section{Changes in graphicsutils version 1.2-0}{
   \itemize{
+    \item Addition of new functions:
+    \itemize{
+      \item new set of functions \code{contrastColors()} to easily contrast colors using different methods, see \ghpr{12}.
+      \item new function \code{biBoxplot()} to draw asymmetrical boxplots, see \ghpr{12}.
+    }
     \item Changes in existing R functions:
     \itemize{
       \item The Ray-casting algorithm is now implemented in a cpp function, see \code{src/pointsInPolygon_core.cpp}, see \ghpr{10}.
       \item A grid can be added in \code{plot0}, three arguments control its color (\code{grid.col}), its width (\code{grid.lwd}) and type (\code{grid.lty}).
       \item \code{frameit} renamed \code{frameIt()}for the sack of naming consistency.
       \item \code{compassRose1()} and \code{compassRose2()} respectively renamed \code{compassRoseCardinal()} and \code{compassRose()}.
+      \item Rotation is now properly handled in \code{compassRose()}, there was a mispelled assignation: \code{< -} instead of \code{<-}.
       \item \code{layout2()} renamed \code{interactiveLayout()} to better reflect what it does.
-      \item  new set of functions \code{contrastColors()} to easily contrast colors using different methods.
-      \item  new function \code{biBoxplot()} to draw asymmetrical boxplots.
     }
     \item Changes in the package's structure:
     \itemize{

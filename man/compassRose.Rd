@@ -5,17 +5,20 @@
 \alias{compassRoseCardinal}
 \title{Compass Rose}
 \usage{
-compassRose(x = 0, y = 0, rot = 0, cex.cr = 1, cex.let = 1,
-  offset = 1.2, col = c(1, 8), border = c(1, 8), lty = 1)
+compassRose(x = 0, y = 0, labels = c("S", "W", "N", "E"), rot = 0,
+  cex.cr = 1, cex.let = cex.cr, col.cr = c(1, 8), col.let = 1,
+  border = c(1, 8), offset = 1.2, add = TRUE, ...)
 
 compassRoseCardinal(x, y = x, rot = 0, cex.cr = 1, cex.let = 1,
-  labels = c("S", "W", "N", "E"), offset = 1.2, col = c(1, 8),
-  border = c(1, 8), lty = 1)
+  labels = c("S", "W", "N", "E"), offset = 1.2, col.cr = c(1, 8),
+  col.let = 1, border = c(1, 8), ...)
 }
 \arguments{
 \item{x}{the x coordinates of the center of the compass rose.}
 
 \item{y}{the y coordinates of the center of the compass rose.}
+
+\item{labels}{a vector of four character string used as labels for the cardinal direction.}
 
 \item{rot}{rotation for the compass rose in degrees (clockwise).}
 
@@ -23,22 +26,27 @@ compassRoseCardinal(x, y = x, rot = 0, cex.cr = 1, cex.let = 1,
 
 \item{cex.let}{the magnification to be used for labels.}
 
+\item{col.cr}{a vector of colors used to draw compass rose (see details).}
+
+\item{col.let}{a character string specifying the labels' color.}
+
+\item{border}{a vector of colors of the borders of the compass rose.}
+
 \item{offset}{label offset of the cardinal points.}
 
-\item{col}{colors of the compass rose (see details).}
+\item{add}{a logical. Should the biboxplots be added on the current graph?}
 
-\item{border}{colors of the borders of the compass rose.}
-
-\item{lty}{line type for the border lines.}
-
-\item{labels}{labels for the cardinal direction.}
+\item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygon}}.}
 }
 \description{
-Draw a compass rose fully customizable.
+This function draws a fully personnalisable compass rose.
 }
 \details{
-This function draw a basic but fully personnalisable compassRose.
-Note that There already exists one compass rose by Jim Lemon in \code{sp} package.
+Both \code{col.cr} and \code{border} are repeated over (\code{\link[base]{rep}}
+is called) so it has a 8 elements, meaning all triangles the compass rose is
+made of could have their own color.
+
+Note that there already exists a similar function by Jim Lemon in \code{sp} package.
 }
 \section{Functions}{
 \itemize{
@@ -48,6 +56,5 @@ Note that There already exists one compass rose by Jim Lemon in \code{sp} packag
 }}
 
 \examples{
-plot0()
-compassRose(0, rot=25)
+compassRose(0, rot=25, cex.cr = 2, col.let =2, add = FALSE)
 }
