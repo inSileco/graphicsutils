@@ -2,30 +2,34 @@
 #'
 #' Draw a vector field associated to a system of at least two ODE.
 #'
-#' @param coords A matrix with two columns or more that is optionnally used to alternatively define the coordinates of the vector field.
-#' @param FUN The function that describes the dynamical system (see details).
-#' @param args The parameters of the dynamical system (see details).
-#' @param ndim Number of dimension of the system. If \code{NULL} the values is based on \code{coords} and \code{slice}
-#' @param slices A vector of 2 elements providing the dimensions to be displayed, (default set to c(1,2)).
-#' @param fixed The values used for non drawn dimension, if \code{NULL} the values will be set to 0.
-#' @param cex.x The magnification coefficient to be used for lengths of vectors along the x axis.
-#' @param cex.y The magnification coefficient to be used for lengths of vectors along the y axis.
-#' @param log logical. If TRUE, the lenghts of arrows are log-transformed.
-#' @param add logical. If TRUE, the vector field is added on the current plot.
-#' @param ... Additionnal arguments to be passed to \code{arrows2}.
+#' @param coords a matrix with two columns or more that is optionnally used to alternatively define the coordinates of the vector field.
+#' @param FUN the function that describes the dynamical system (see details).
+#' @param args the parameters of the dynamical system (see details).
+#' @param ndim number of dimension of the system. If \code{NULL} the values is based on \code{coords} and \code{slice}
+#' @param slices a vector of 2 elements providing the dimensions to be displayed, (default set to c(1,2)).
+#' @param fixed the values used for non drawn dimension, if \code{NULL} the values will be set to 0.
+#' @param cex.x the magnification coefficient to be used for lengths of vectors along the x axis.
+#' @param cex.y the magnification coefficient to be used for lengths of vectors along the y axis.
+#' @param log a logical. If \code{TRUE}, the lenghts of arrows are log-transformed.
+#' @param add a logical. If \code{TRUE}, the vector field is added on the current plot.
+#' @param ... additionnal arguments to be passed to \code{arrows2}.
 #'
 #' @keywords empty plot
 #'
 #' @export
 #'
 #' @details
-#' The \code{FUN} function to be used must be a function of at least two arguments. The first argument must contain the dynamical variables as a vector and the second arguments must contain all the other parameters that shapes the dynamical system. When some dimension are missing, the order of \code{fixed} is the one in FUN once the drawn dimension are withdrawn.
+#' The \code{FUN} function must be a function of at least two arguments. The
+#' first argument must contain the dynamical variables as a vector and the
+#' second arguments must contain all the other parameters that shapes the
+#' dynamical system. When some dimensions are missing, the order of \code{fixed}
+#' is the one in \code{FUN} once the drawn dimension are withdrawn.
 #'
 #' @examples
 #' systLin <- function(X, beta){
 #'     Y <- matrix(0,ncol=2)
-#'     Y[1] <- beta[1,1]*X[1]+beta[1,2]*X[2]
-#'     Y[2] <- beta[2,1]*X[1]+beta[2,2]*X[2]
+#'     Y[1L] <- beta[1,1]*X[1L]+beta[1,2]*X[2L]
+#'     Y[2L] <- beta[2,1]*X[1L]+beta[2,2]*X[2L]
 #'     return(Y)
 #' }
 #' seqx <- seq(-2,2,0.31)
@@ -58,14 +62,13 @@ vecfield2d <- function(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2), 
         if (is.null(fixed)) 
             fixed <- rep(0, ndim - 2)
         grid_val <- matrix(rep(fixed, each = nrow(grid)), ncol = length(fixed))
-        print(grid_val)
         gridin[, -slices] <- grid_val
     } else gridin <- grid
     ##---
     gridout <- gridin * 0
     fun_names <- names(formals(FUN))
     for (i in 1:nrow(gridin)) {
-        args[[fun_names[1]]] <- gridin[i, ]
+        args[[fun_names[1L]]] <- gridin[i, ]
         gridout[i, ] <- do.call(FUN, args)
     }
     if (!add) 
@@ -76,10 +79,10 @@ vecfield2d <- function(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2), 
         dsty <- cex.y * gridout[i, 2L]
         if (log) {
             dstx <- log(abs(dstx) + 1)
-            if (gridout[i, 1] < 0) 
+            if (gridout[i, 1L] < 0) 
                 dstx <- -dstx
             dsty <- log(abs(dsty) + 1)
-            if (gridout[i, 2] < 0) 
+            if (gridout[i, 2L] < 0) 
                 dsty <- -dsty
         }
         arrows2(gridin[i, 1L], gridin[i, 2L], gridin[i, 1L] + dstx, gridin[i, 2L] + 

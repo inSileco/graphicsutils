@@ -13,7 +13,7 @@ envelop(x, upper, lower, add = TRUE, ...)
 
 \item{lower}{the y coordinates of the lower values.}
 
-\item{add}{logical. If \code{TRUE} the envelop is drawn as a polygon (default behavior).}
+\item{add}{a logical. If \code{TRUE} the envelop is drawn as a polygon (default behavior).}
 
 \item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.}
 }

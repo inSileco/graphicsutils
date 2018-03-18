@@ -17,12 +17,13 @@ homothety(x, y, lambda, xcen = NULL, ycen = NULL, add = FALSE, ...)
 
 \item{ycen}{the y coordinate for the center of rotation.}
 
-\item{add}{logical. If TRUE the set of transformed points are drawn as a polygon.}
+\item{add}{logical. If \code{TRUE} the set of transformed points are drawn as a polygon.}
 
 \item{...}{additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).}
 }
 \description{
-Compute a homothetic transformation for a set of points. The transformed set of points is optionnaly drawn as a polygon.
+Compute a homothetic transformation for a set of points.
+The transformed set of points is optionnaly drawn as a polygon.
 }
 \details{
 Details about what is a homothetic transformation, see \url{https://en.wikipedia.org/wiki/Homothetic_transformation}.
@@ -43,4 +44,4 @@ graphics::polygon(poly2$x,poly2$y)
 poly3 <- homothety(x, y, -2.5, xcen=5, ycen=4, border=4, add=TRUE)
 }
 \keyword{geometry}
-\keyword{homothety}
+\keyword{homothety,}

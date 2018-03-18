@@ -13,16 +13,18 @@ percY(percentage = 90)
 \item{percentage}{The percentage of the axis for which the values is returned.}
 }
 \description{
-Return the values of either x-axis or y-axis for a given percentage.
+Returns the values of either x-axis or y-axis for a given percentage.
 }
 \details{
-This function intends to ease the positionning of additionnal marks such as text when axis have not common axis.
+This function intends to ease the positionning of additionnal marks such as
+text when axis have not common axis. The user must be aware that its use
+becomes tricky when drawing multi-panels plots.
 }
 \section{Functions}{
 \itemize{
-\item \code{percX}: Return the values of x-axis for a given percentage.
+\item \code{percX}: Returns the values of x-axis for a given percentage.
 
-\item \code{percY}: Return the values of y-axis for a given percentage.
+\item \code{percY}: Returns the values of y-axis for a given percentage.
 }}
 
 \examples{

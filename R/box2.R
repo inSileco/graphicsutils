@@ -1,6 +1,6 @@
 #' Alternative box function
 #'
-#' Draw a Box around a Plot.
+#' Draw a box around a plot.
 #'
 #' @param side a numerical or character vector or a character string specifying which side(s) of the plot the box is to be drawn (see details).
 #' @param which a character, one of \code{plot}, \code{figure}, \code{inner} and \code{outer}.
@@ -56,24 +56,24 @@ box2 <- function(side = 1:4, which = "plot", fill = NULL, ...) {
         coord <- graphics::par()$usr
         if (which != "plot") {
             ## figure margins in user units
-            cvx <- (graphics::par()$usr[2] - graphics::par()$usr[1])/graphics::par()$pin[1]
-            cvy <- (graphics::par()$usr[4] - graphics::par()$usr[3])/graphics::par()$pin[2]
+            cvx <- (graphics::par()$usr[2L] - graphics::par()$usr[1L])/graphics::par()$pin[1L]
+            cvy <- (graphics::par()$usr[4L] - graphics::par()$usr[3L])/graphics::par()$pin[2L]
             mau <- graphics::par()$mai * rep(c(cvy, cvx), 2)
-            coord <- coord + c(-mau[2], mau[4], -mau[1], mau[3])
+            coord <- coord + c(-mau[2L], mau[4L], -mau[1L], mau[3L])
             ## inner margins in user units (get the lenght and adjust!)
             if (which != "figure") {
-                diffx <- coord[2] - coord[1]
-                diffy <- coord[4] - coord[3]
-                lenx <- diffx * 1/(diff(graphics::par()$fig[1:2]))
-                leny <- diffy * 1/(diff(graphics::par()$fig[1:2]))
-                coord[1L] <- coord[1L] - graphics::par()$fig[1] * lenx
+                diffx <- coord[2L] - coord[1L]
+                diffy <- coord[4L] - coord[3L]
+                lenx <- diffx * 1/(diff(graphics::par()$fig[1L:2L]))
+                leny <- diffy * 1/(diff(graphics::par()$fig[1L:2L]))
+                coord[1L] <- coord[1L] - graphics::par()$fig[1L] * lenx
                 coord[2L] <- coord[1L] + lenx
-                coord[3L] <- coord[3L] - graphics::par()$fig[3] * leny
+                coord[3L] <- coord[3L] - graphics::par()$fig[3L] * leny
                 coord[4L] <- coord[3L] + leny
                 ## outer margins in user units
                 if (which != "inner") {
                   omu <- graphics::par()$omi * rep(c(cvy, cvx), 2)
-                  coord <- coord + c(-omu[2], omu[4], -omu[1], omu[3])
+                  coord <- coord + c(-omu[2L], omu[4L], -omu[1L], omu[3L])
                 }
             }
         }

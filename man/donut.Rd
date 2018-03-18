@@ -10,13 +10,13 @@ donut(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05,
   clockwise = TRUE, ...)
 }
 \arguments{
-\item{vec}{a vector of non-negative numerical quantities  that are displayed as the areas of donut slices.}
+\item{vec}{a vector of non-negative numerical quantities that are displayed as the areas of donut slices.}
 
-\item{eaten}{the eaten part of the donut.}
+\item{eaten}{the eaten part.}
 
 \item{labels}{one or more expressions or character strings giving names for the slices.}
 
-\item{rot}{the rotation angle (in degree) of the donut.}
+\item{rot}{the rotation angle (in degree).}
 
 \item{cex}{the magnification coefficient to be used for the size of the donut.}
 
@@ -32,15 +32,15 @@ donut(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05,
 
 \item{dt}{point density of the drawn circles.}
 
-\item{add}{should images be added on the current graph ? If FALSE a new plot is created.}
+\item{add}{a logical. Should the donut chart be added on the current graph? If \code{FALSE} then a new plot is created.}
 
 \item{cx}{the magnification coefficient to be used for the total horizontal width of the donut.}
 
 \item{cy}{controls the total vertical width of the donut.}
 
-\item{border}{the border color of the donut. The default value of \code{NA} means that no border lines are drawn.}
+\item{border}{the border color of the donut, set to \code{NA} which omits borders.}
 
-\item{clockwise}{logical. Shall slices be drawn clockwise?}
+\item{clockwise}{a logical. Shall slices be drawn clockwise?}
 
 \item{...}{additionnal arguments to be passed to lines methods.}
 }

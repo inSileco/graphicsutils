@@ -10,7 +10,7 @@
 #' @param ... further arguments to be passed to \code{\link[graphics]{polygon}} function.
 #'
 #' @details
-#' The technique is fairly simple: for a set of coordinates x, y handled
+#' The technique employed is fairly simple: for a set of coordinates x, y handled
 #' using \code{xy.coords} a set of \code{nb.pt} number is generetaed at a
 #' \code{off.set} distance of each coordinates, then a convex is drawn around
 #' the coordinates using \link[grDevices]{chull}.

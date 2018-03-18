@@ -4,7 +4,7 @@
 \alias{ramp}
 \alias{darken}
 \alias{lighten}
-\title{Lightened or darkened colors}
+\title{Lighten or darken colors}
 \usage{
 ramp(fromcol, tocol, percentage = 50, as_rgb = FALSE)
 
@@ -13,34 +13,34 @@ darken(col, percentage = 50, as_rgb = FALSE)
 lighten(col, percentage = 50, as_rgb = FALSE)
 }
 \arguments{
-\item{fromcol}{The starting color.  color to be changed.}
+\item{fromcol}{starting color, i.e. if \code{percentage = 0}, it is the color returned.}
 
-\item{tocol}{The color towards which the 'fromcolor' will be nuanced.}
+\item{tocol}{color to nuance \code{fromcol}, i.e. if \code{percentage = 100}, it is the color returned.}
 
-\item{percentage}{percentage determining to what extent the color .}
+\item{percentage}{percentage determining the percentage of \code{tocol} used to nuance \code{fromcol}.}
 
-\item{as_rgb}{A logical indicating wheteher color must be returned as a matrix object.}
+\item{as_rgb}{a logical. Should the color(s) returned as a matrix object?}
 
 \item{col}{the color to be darkened or lightened.}
 }
 \description{
-Return lightened or darkened colors, vetorized over \code{percentage}.
-\code{ramp} is the general function any couple of colors. \code{darken} and
-\code{lightened} calls \code{ramp} to darken and lighten a given color.
+Returns lightened or darkened colors, vetorized over \code{percentage}.
+\code{ramp} is valid for any couple of colors. Functions \code{darken} and
+\code{lightened} actually call \code{ramp} to darken and lighten a given color.
 }
 \section{Functions}{
 \itemize{
-\item \code{ramp}: A color standing between two given hues.
+\item \code{ramp}: Retuns a shaded color.
 
-\item \code{darken}: A darkened color.
+\item \code{darken}: Returns a darkened color.
 
-\item \code{lighten}: A lightened color.
+\item \code{lighten}: Returns a lightened color.
 }}
 
 \examples{
 darken('red', 50)
-somereds <- lighten('red', seq(10,90,9))
-showPalette(somereds)
+more_reds <- lighten('red', seq(10,90,9))
+showPalette(more_reds)
 }
 \seealso{
 \code{\link{colorRampPalette}}

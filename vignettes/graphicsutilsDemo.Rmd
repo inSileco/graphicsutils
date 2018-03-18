@@ -49,18 +49,18 @@ axis(2)
 ```
 
 
-# circle()
+# circles()
 
-```{r circle, fig.height=6, fig.width=6}
+```{r circles, fig.height=6, fig.width=6}
 par(mar=c(1,1,1,1), mfrow=c(2,2))
 plot0()
-circle(0, 0, 1)
+circles(0, 0, 1)
 plot0()
-circle(0, 0, seq(0,1,0.2))
+circles(0, 0, seq(0,1,0.2))
 plot0()
-circle(0, 0, seq(0,1,0.2), lty=2, lwd=1.4)
+circles(0, 0, seq(0,1,0.2), lty=2, lwd=1.4)
 plot0()
-circle(0, 0 ,seq(0,1,0.2), from=pi, col="#BBBBFF88", lty=2, lwd=1.4)
+circles(0, 0 ,seq(0,1,0.2), from=pi, col="#BBBBFF88", lty=2, lwd=1.4)
 ```
 
 
@@ -94,16 +94,16 @@ polarPlot(1:40, stats::runif(40), to=1.9*pi, col='grey30', border='grey80')
 par(mfrow=c(2,2), mar=rep(1,4))
 ##
 plot0(c(-1,1), asp=1)
-compassRose2(0, 0)
+compassRose(0, 0)
 ##
 plot0(c(-1,1), asp=1)
-compassRose2(0.5, 0.5)
+compassRose(0.5, 0.5)
 ##
 plot0(c(-1,1), asp=1)
-compassRose2(0, 0, cex.cr=2)
+compassRose(0, 0, cex.cr=2)
 ##
 plot0(c(-1,1), asp=1)
-compassRose2(0, 0, rot=.75*pi, cex.cr=2, cex.let=1.5, offset=-1.25)
+compassRose(0, 0, rot=.75*pi, cex.cr=2, cex.let=1.5, offset=-1.25)
 ```
 
 

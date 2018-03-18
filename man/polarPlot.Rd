@@ -2,7 +2,7 @@
 % Please edit documentation in R/polarPlot.R
 \name{polarPlot}
 \alias{polarPlot}
-\title{Polar Plot}
+\title{Polar plot}
 \usage{
 polarPlot(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi,
   incr = 0.005, labelc = NULL, tckcol = 1, atc = NULL, labelr = NULL,
@@ -40,7 +40,7 @@ polarPlot(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi,
 \item{...}{additional argument to be passed to \code{polygon} function.}
 }
 \description{
-Draw a polar plot.
+Draws a polar plot.
 }
 \details{
 Polar Plot

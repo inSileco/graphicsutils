@@ -16,8 +16,7 @@
 #' It is based on \link[graphics]{layout} and it is no more than a tunned version of it.
 #'
 #' @examples
-#' graphics::par(mar=c(0,0,0,0))
-#' plotOnSide(1:3, width=c(0.2,1), height=c(1,1,1,0.6))
+#' plotOnSide(matrix(1,2), width=c(0.2,1), height=c(1,1,1,0.6))
 #' graphics::layout.show(5)
 
 
@@ -27,7 +26,7 @@ plotOnSide <- function(mat, side = 1:2, dim = NULL, quiet = FALSE, ...) {
     ## 
     if (!is.null(dim)) {
         stopifnot(length(dim) == 2)
-        mat <- matrix(dim[1] * dim[2], nrow = dim[1], ncol = dim[2])
+        mat <- matrix(dim[1L] * dim[2L], nrow = dim[1L], ncol = dim[2L])
     }
     slc <- sort(stats::na.exclude(unique(match(side, c(1, 2, 3, 4)))))
     ## 
@@ -42,13 +41,13 @@ plotOnSide <- function(mat, side = 1:2, dim = NULL, quiet = FALSE, ...) {
         mat <- rbind(0, mat, 0)
         for (i in 1L:sz) {
             switch(slc[i], {
-                mat[nrow(mat), 1 + (1:mydim[2])] <- 1
+                mat[nrow(mat), 1 + (1:mydim[2L])] <- 1
             }, {
-                mat[1 + (1:mydim[1]), 1] <- 2
+                mat[1 + (1:mydim[1L]), 1] <- 2
             }, {
-                mat[1, 1 + (1:mydim[2])] <- 3
+                mat[1, 1 + (1:mydim[2L])] <- 3
             }, {
-                mat[1 + (1:mydim[1]), ncol(mat)] <- 4
+                mat[1 + (1:mydim[1L]), ncol(mat)] <- 4
             })
         }
         if (all(mat[1L, ] == 0)) 
@@ -60,7 +59,6 @@ plotOnSide <- function(mat, side = 1:2, dim = NULL, quiet = FALSE, ...) {
         if (all(mat[, ncol(mat)] == 0)) 
             mat <- mat[, -ncol(mat)]
         ## 
-        print(mat)
         graphics::layout(mat, ...)
     }
     invisible(NULL)

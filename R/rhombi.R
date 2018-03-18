@@ -1,6 +1,6 @@
 #' Rhombi
 #'
-#' Add rhombi on a plot and optionnaly returns areas.
+#' Add rhombi on a plot and returns areas.
 #'
 #' @param x a vector of x coordinates of the centers of the losange
 #' @param y a vector of y coordinates of the centers of the losange
@@ -20,7 +20,7 @@
 #' Additionnal arguments remain the same for every rhombus.
 #'
 #' @return
-#' A vector including rhombi area is returned is assigned..
+#' A vector including rhombi areas is returned if assigned.
 #'
 #' @examples
 #' # Example 1:

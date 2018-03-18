@@ -13,11 +13,11 @@ stackedAreas(val, index = NULL, rgy = 1, cumul = FALSE, transp = FALSE,
 
 \item{index}{values to be used for the x axis, by default it is set to \code{NULL} meaning that it is handled by \code{plot.default}}
 
-\item{rgy}{A value that determines the range of y values. Default is set to 1 which means that the range of values is [0,1].}
+\item{rgy}{a value that determines the range of y values. Default is set to 1 which means that the range of values is [0,1].}
 
-\item{cumul}{logical. If TRUE, data are considered as cumulative sums.}
+\item{cumul}{a logical. If \code{TRUE}, data are considered as cumulative sums.}
 
-\item{transp}{logical. If TRUE, the transpose of the data table is computed.}
+\item{transp}{a logical. If \code{TRUE}, the transpose of the data table is computed.}
 
 \item{legend}{Text to be used as a legend for each area drawn.}
 
@@ -25,19 +25,19 @@ stackedAreas(val, index = NULL, rgy = 1, cumul = FALSE, transp = FALSE,
 
 \item{col}{vector of colors, repeated if too small.}
 
-\item{pickcolors}{logical. If TRUE, \code{\link{pickColors}} is called to select colors.}
+\item{pickcolors}{logical. If \code{TRUE}, \code{\link{pickColors}} is called to select colors.}
 
 \item{lty}{the line type (see \code{\link{par}} documentation)}
 
-\item{lwd}{the line width (see \code{\link{par}} documentation)}
+\item{lwd}{the line width (see \code{\link[graphics]{par}} documentation)}
 
 \item{border}{The color to draw the border. The default, \code{NULL}, means to use \code{graphics::par('fg')}. Use \code{border=NA} to omit borders.}
 
-\item{main}{A main title for the plot.}
+\item{main}{a main title for the plot.}
 
-\item{xlab}{A label for the x axis, defaults to a description of \code{x}.}
+\item{xlab}{a label for the x axis, defaults to a description of \code{x}.}
 
-\item{ylab}{A label for the y axis, defaults to a description of \code{y}.}
+\item{ylab}{a label for the y axis, defaults to a description of \code{y}.}
 }
 \description{
 Draw a stacked areas chart.
@@ -46,7 +46,8 @@ Draw a stacked areas chart.
 Areas are drawn using the \code{\link{polygon}} function and users can take advantage of ot to customize their stacked areas (using \code{lwd}, \code{lty} or \code{border} arguments).
 }
 \note{
-The default colors have been inspired by four palettes found on line: \url{http:www.color-hex.com/color-palettes/}. \code{stackpoly} in \code{plotrix} package offers a valuable alternative.
+The default colors have been inspired by four palettes found on line: \url{http:www.color-hex.com/color-palettes/}. \code{\link[plotrix]{stackpoly}} function
+from the \code{plotrix} package offers a good alternative.
 
 Using a stacked areas chart with more than 20 areas should provide a figure really hard to read.
 }

@@ -1,6 +1,6 @@
-#' Plot means and error asociated
+#' Plots means and error asociated
 #'
-#' Plot a set of means computed based on a dataset and draw error asociated.
+#' Plots a set of means computed based on a dataset and draw error asociated.
 #'
 #' @param formula a formula, see \code{\link[stats]{formula}}.
 #' @param data a data frame (or list) from which the variables in formula should be taken.
@@ -89,5 +89,6 @@ plotMeans <- function(formula, data, FUN_err = stats::sd, add = FALSE, seqx = NU
         graphics::axis(2)
         graphics::box(bty = "l", lwd = 1.2)
     }
+    # 
     invisible(NULL)
 }
