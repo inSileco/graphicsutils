@@ -38,8 +38,8 @@ compassRose <- function(x = 0, y = 0, labels = c("S", "W", "N", "E"), rot = 0, c
         offset = offset, col.cr = col.cr, border = border, ...)
     compassRoseCardinal(x, y, rot + 67.5, cex.cr * 0.65, labels = rep("", 4), cex.let = cex.let, 
         offset = offset, col.cr = col.cr, border = border, ...)
-    compassRoseCardinal(x, y, rot + 45, cex.cr * 0.85, cex.let = cex.let, offset = offset, 
-        col.cr = col.cr, col.let = col.let, border = border, ...)
+    compassRoseCardinal(x, y, rot + 45, cex.cr * 0.85, labels = rep("", 4), cex.let = cex.let, 
+        offset = offset, col.cr = col.cr, col.let = col.let, border = border, ...)
     compassRoseCardinal(x, y, labels = labels, rot, cex.cr, cex.let = cex.let, offset = offset, 
         col.cr = col.cr, col.let = col.let, border = border, ...)
     # 
