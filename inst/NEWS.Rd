@@ -19,6 +19,7 @@
       \item \code{compassRose1()} and \code{compassRose2()} respectively renamed \code{compassRoseCardinal()} and \code{compassRose()}.
       \item Rotation is now properly handled in \code{compassRose()}, there was a mispelled assignation: \code{< -} instead of \code{<-}.
       \item \code{layout2()} renamed \code{interactiveLayout()} to better reflect what it does.
+      \item \code{circle()} renamed \code{icircles()}.
     }
     \item Changes in the package's structure:
     \itemize{

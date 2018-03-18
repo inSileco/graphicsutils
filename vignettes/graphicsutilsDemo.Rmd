@@ -49,18 +49,18 @@ axis(2)
 ```
 
 
-# circle()
+# circles()
 
-```{r circle, fig.height=6, fig.width=6}
+```{r circles, fig.height=6, fig.width=6}
 par(mar=c(1,1,1,1), mfrow=c(2,2))
 plot0()
-circle(0, 0, 1)
+circles(0, 0, 1)
 plot0()
-circle(0, 0, seq(0,1,0.2))
+circles(0, 0, seq(0,1,0.2))
 plot0()
-circle(0, 0, seq(0,1,0.2), lty=2, lwd=1.4)
+circles(0, 0, seq(0,1,0.2), lty=2, lwd=1.4)
 plot0()
-circle(0, 0 ,seq(0,1,0.2), from=pi, col="#BBBBFF88", lty=2, lwd=1.4)
+circles(0, 0 ,seq(0,1,0.2), from=pi, col="#BBBBFF88", lty=2, lwd=1.4)
 ```
 
 

@@ -4,7 +4,7 @@
 #'
 #' @param x the x coordinates of the center of the compass rose.
 #' @param y the y coordinates of the center of the compass rose.
-#' @param labels a vector of four character string used as labels for the cardinal direction.
+#' @param labels a vector of four character strings used as labels for the cardinal directions.
 #' @param rot rotation for the compass rose in degrees (clockwise).
 #' @param col.cr a vector of colors used to draw compass rose (see details).
 #' @param col.let a character string specifying the labels' color.

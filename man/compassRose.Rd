@@ -18,7 +18,7 @@ compassRoseCardinal(x, y = x, rot = 0, cex.cr = 1, cex.let = 1,
 
 \item{y}{the y coordinates of the center of the compass rose.}
 
-\item{labels}{a vector of four character string used as labels for the cardinal direction.}
+\item{labels}{a vector of four character strings used as labels for the cardinal directions.}
 
 \item{rot}{rotation for the compass rose in degrees (clockwise).}
 

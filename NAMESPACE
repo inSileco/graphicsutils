@@ -3,7 +3,7 @@
 export(arrows2)
 export(biBoxplot)
 export(box2)
-export(circle)
+export(circles)
 export(compassRose)
 export(compassRoseCardinal)
 export(contrastColors)
