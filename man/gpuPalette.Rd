@@ -4,10 +4,12 @@
 \alias{gpuPalette}
 \title{graphicsutils colors palette}
 \usage{
-gpuPalette(names = NULL)
+gpuPalette(names = NULL, ncol = NULL)
 }
 \arguments{
 \item{names}{names of desired color palettes; if \code{NULL}, color palettes available are printed.}
+
+\item{ncol}{An integer indicating the number of colors to be returned (involves a call to \link[grDevices]{colorRampPalette}). Default is set to `\code{NULL}` in which case the number in the one the palette is made of.}
 }
 \value{
 A vector of character strings of the hexadecimal colors values.
@@ -17,6 +19,7 @@ A couple of color palettes mainly insipered by popular websites.
 }
 \examples{
 showPalette(gpuPalette(c('atom', 'cisl')))
+showPalette(gpuPalette('cisl', 100))
 }
 \keyword{colors,}
 \keyword{palette}

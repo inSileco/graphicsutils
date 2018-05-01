@@ -20,6 +20,7 @@
       \item Rotation is now properly handled in \code{compassRose()}, there was a mispelled assignation: \code{< -} instead of \code{<-}.
       \item \code{layout2()} renamed \code{interactiveLayout()} to better reflect what it does.
       \item \code{circle()} renamed \code{icircles()}.
+      \item \code{gpuPalette()} now has a new argument: \code{ncol}, that calls \code{colorRampPalette} (grDevices package) to custom the number of colors.
     }
     \item Changes in the package's structure:
     \itemize{
