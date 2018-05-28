@@ -25,7 +25,7 @@
 #' envelop(seqx, seqy1, seqy2, col = 'grey85', border = NA)
 #' envelop(seqx, seqy2, seqy3, col = 'grey25', border = NA)
 
-envelop <- function(x, upper, lower = rep(0, length(lower)), add = TRUE, ...) {
+envelop <- function(x, upper, lower = rep(0, length(upper)), add = TRUE, ...) {
     stopifnot(length(x) == length(upper))
     stopifnot(length(x) == length(lower))
     out <- list(x = c(x, rev(x)), y = c(upper, rev(lower)))
