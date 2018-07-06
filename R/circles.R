@@ -66,23 +66,19 @@ circles <- function(x, y = x, radi = 1, from = 0, to = 2*pi, incr = 0.01, pie = 
     # drawing circles
     out <- list()
     for (i in 1L:sz) {
+        ## distance (in rardian)
+        dagl <- abs(to[i] - from[i])
         ## --- angles sequence
-        if (abs(to[i] - from[i]) >= (pipi)) {
+        if (dagl >= pipi) {
+            # no point of drawing a circle multiple times
             to[i] <- pipi
             from[i] <- 0
-        } else {
-            if ((to[i] > from[i]) & (to[i]%%(pipi) == 0))
-                to[i] <- pipi
-            to[i] <- to[i]%%(pipi)
-            from[i] <- from[i]%%(pipi)
-            if (to[i] < from[i])
-                to[i] <- to[i] + pipi
         }
         ##
         if (!clockwise) {
-          sqc <- seq(from[i], to[i], by = incr)
+          sqc <- seq(from[i], from[i] + dagl, by = incr)
         } else {
-          sqc <- seq(from[i], 2*from[i] - to[i], by = -incr)
+          sqc <- seq(from[i], from[i] -dagl, by = -incr)
         }
 
         if (!pie) {
