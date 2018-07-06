@@ -5,7 +5,7 @@
 \title{Draw circles}
 \usage{
 circles(x, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01,
-  pie = FALSE, add = TRUE, ...)
+  pie = FALSE, clockwise = FALSE, add = TRUE, ...)
 }
 \arguments{
 \item{x}{the x coordinates of the centers of the circles.}
@@ -21,6 +21,8 @@ circles(x, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01,
 \item{incr}{increments between two points to be linked (expressed in radians).}
 
 \item{pie}{a logical. If \code{TRUE}, end points are linked with the center of the circle (default is set to \code{FALSE}).}
+
+\item{clockwise}{a logical. Shall slices be drawn clockwise?}
 
 \item{add}{a logical. Should the circles be added on the current plot?}
 

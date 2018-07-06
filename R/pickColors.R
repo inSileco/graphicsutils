@@ -108,7 +108,7 @@ drawSelector2 <- function(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp, nb
     # 
     plot0(fill = col_foc)
     code_rgb <- grDevices::col2rgb(col_foc)
-    print(sum(code_rgb) < 255)
+    # print(sum(code_rgb) < 255)
     if (sum(code_rgb) < 255) 
         txt_col <- "grey80" else txt_col <- "grey20"
     text(0, 0.7, label = as.character(col_foc), cex = 2.5, col = txt_col)

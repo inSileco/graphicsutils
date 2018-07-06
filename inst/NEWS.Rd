@@ -23,6 +23,7 @@
       \item Argument \code{lower} from \code{envelop()} now has a default values.
       \item \code{gpuPalette()} now has a new argument: \code{ncol}, that calls \code{colorRampPalette} (grDevices package) to custom the number of colors.
       \item{pchImage} now uses native representation of raster when importing image from file.
+      \item{circles} has a new argument \code{clockwise} and is tested.
     }
     \item Changes in the package's structure:
     \itemize{
