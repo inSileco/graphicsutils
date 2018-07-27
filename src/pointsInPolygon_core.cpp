@@ -1,7 +1,7 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-// references for vecmin and vecmax
+// References for vecmin and vecmax:
 // http://gallery.rcpp.org/articles/vector-minimum/index.html
 
 double vecmin(NumericVector x) {

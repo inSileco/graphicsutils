@@ -22,7 +22,7 @@ circles(x, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01,
 
 \item{pie}{a logical. If \code{TRUE}, end points are linked with the center of the circle (default is set to \code{FALSE}).}
 
-\item{clockwise}{a logical. Shall slices be drawn clockwise?}
+\item{clockwise}{a logical. Shall circles and arcs be drawn clockwise? Defaut is `FALSE`.}
 
 \item{add}{a logical. Should the circles be added on the current plot?}
 
@@ -47,8 +47,9 @@ circles(x = 0)
 
 # Example 2:
 plot0()
-circles(x=-.5, radi=0.5, from=0.5*pi, to=0.25*pi)
-circles(x=.5, radi=0.5, from=0.5*pi, to=0.25*pi, pie=TRUE)
+circles(x=-.5, radi=0.45, from=0.5*pi, to=0.25*pi)
+circles(x=.5, radi=0.45, from=0.5*pi, to=0.25*pi, pie=TRUE)
+circles(x=.5, y = -.5, radi=0.45, from=0.5*pi, to=0.25*pi, pie=TRUE, clockwise = TRUE)
 
 # Example 3:
 plot0()

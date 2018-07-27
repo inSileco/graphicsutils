@@ -19,3 +19,5 @@ test_that("checking outputs", {
   expect_true(identical(round(res1[[1]]$y, 10), round(res1b[[1]]$y, 10)))
   expect_true(res1[[1]]$x[1] == res1b[[1]]$x[1])
 })
+
+# polarPlot(1:40, stats::runif(40), to=1.9*pi, col='grey30', border='grey80')

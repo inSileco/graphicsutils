@@ -13,3 +13,5 @@
 ^inst/tmp
 ^LICENSE
 ^CONDUCT.md
+^_pkgdown\.yml$
+^docs$

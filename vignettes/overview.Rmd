@@ -1,9 +1,12 @@
 ---
-title: "graphicsutils"
-output:
-  md_document
+title: "'graphicsutils' an overview"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Vignette Title}
+abstract: "The package graphicsutils is a set of miscellaneous functions to be used with the graphics library."
+author: Kevin Cazelles
 ---
-
 
 ```{r echo=FALSE}
 knitr::opts_chunk$set(
@@ -22,14 +25,15 @@ knitr::opts_chunk$set(
 ## Description
 
 The *graphicsutils* is an R package that adds various graphics utilities based on
-the core package *graphics*. For now, the package is dedicated to store our
-graphical functions and improve our coding skills. Note that similar functions
-may already exist elsewhere (most likely in the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package).
+the core package *graphics*. For now, the package is mainly exploratory, and
+similar functions may already exist elsewhere (most likely in the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html) package).
 However this package may help users to overcome some difficulties they may
 encounter with *graphics*.
 
 Also, as *graphicsutils*  is based on the *graphics* package, it
-is not designed to work with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html) system (and thereby it does not work with [ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)). Related
+is not designed to work with the [*grid*](https://stat.ethz.ch/R-manual/R-devel/library/grid/html/grid-package.html) s
+ystem (and thereby it does not work with
+[ggplot2](http://cran.r-project.org/web/packages/ggplot2/index.html)). Related
 with this, is one very helpful article by Paul Murrell:
 [The gridGraphics Package](https://journal.r-project.org/archive/2015-1/murrell.pdf).
 
@@ -237,8 +241,3 @@ graphics::abline(v=0, h=0)
 ```{R compassRose}
 compassRose(0, rot=25, cex.cr = 2, col.let =2, add = FALSE)
 ```
-
-## Code of Conduct
-
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md).
-By participating in this project you agree to abide by its terms.

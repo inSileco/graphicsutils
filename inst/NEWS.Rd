@@ -33,6 +33,7 @@
     \itemize{
       \item DESCRIPTION now includes authors' ORCID.
       \item a LICENSE has been added.
+      \item add a website built with pkgdown
     }
 
   }
