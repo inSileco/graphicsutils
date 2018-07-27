@@ -32,6 +32,8 @@ status](https://ci.appveyor.com/api/projects/status/330p7f0djhpl998q?svg=true)](
 [![codecov](https://codecov.io/gh/inSileco/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/inSileco/graphicsutils)
 [![](https://img.shields.io/badge/licence-GPLv2-3fb3b2.svg)](LICENSE)
 
+
+
 Installation
 ------------
 
@@ -49,6 +51,9 @@ Then, load it:
 
 Main features
 -------------
+
+See the [overview vignette](http://insileco.github.io/graphicsutils/articles/overview.html)
+for details. 
 
 
 Code of Conduct

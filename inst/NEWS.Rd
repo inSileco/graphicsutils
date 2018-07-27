@@ -22,14 +22,15 @@
       \item \code{circle()} renamed \code{circles()}.
       \item Argument \code{lower} from \code{envelop()} now has a default values.
       \item \code{gpuPalette()} now has a new argument: \code{ncol}, that calls \code{colorRampPalette} (grDevices package) to custom the number of colors.
-      \item{pchImage} now uses native representation of raster when importing image from file.
-      \item{circles} has a new argument \code{clockwise} and is tested.
+      \item \code{pchImage()} now uses native representation of raster when importing image from file.
+      \item \code{circles()} has a new argument \code{clockwise} and is now tested.
+      \item \code{howManyRC()} and \code{prettyRange()} are now tested.
     }
     \item Changes in the package's structure:
     \itemize{
       \item Rcpp added see \ghpr{10}.
       \item A website has beeen built with pkgdown.
-      \item Code coverage has increased from 17\% to 20\%.
+      \item Code coverage has increased from 17\% to 31\%.
     }
     \item Changes in the package's metadata:
     \itemize{
