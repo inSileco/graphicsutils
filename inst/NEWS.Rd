@@ -28,12 +28,13 @@
     \item Changes in the package's structure:
     \itemize{
       \item Rcpp added see \ghpr{10}.
+      \item A website has beeen built with pkgdown.
+      \item Code coverage has increased from 17\% to 20\%.
     }
     \item Changes in the package's metadata:
     \itemize{
       \item DESCRIPTION now includes authors' ORCID.
-      \item a LICENSE has been added.
-      \item add a website built with pkgdown
+      \item A LICENSE has been added (GPL-2).
     }
 
   }
@@ -62,7 +63,7 @@
     }
     \item Changes in the package structure:
     \itemize{
-      \item Code coverage (from 3\% to 17\%sudo).
+      \item Code coverage has increased from 3\% to 17\%.
       \item \code{pickcolors.R} has been renamed \code{pickColors.R}.
     }
   }
