@@ -1,12 +1,12 @@
 Package: graphicsutils
 Type: Package
 Title: Collection of graphics utilities
-Version: 1.2-0
+Version: 1.2-1-9000
 Date: 2018-07-27
 Authors@R: c(person("Kevin", "Cazelles", role = c("aut", "cre"), email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874")),
   person("Nicolas", "Casajus", role = c("aut"), comment = c(ORCID = "0000-0002-5537-5294")),
   person("David", "Beauchesne", role = c("aut")))
-Description: A collection of functions that helps customizing graphics-based plots.
+Description: A collection of functions to make the customizing graphics-based plots easier.
 Depends:
     R (>= 3.0.0)
 Imports:

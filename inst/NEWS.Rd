@@ -4,6 +4,11 @@
 \newcommand{\ghit}{\href{https://github.com/KevCaz/graphicsutils/issues/#1}{##1}}
 
 
+\section{Changes in graphicsutils version 1.2-1}{
+
+}
+
+
 \section{Changes in graphicsutils version 1.2-0}{
   \itemize{
     \item Addition of new functions:
@@ -65,7 +70,7 @@
     \item Changes in the package structure:
     \itemize{
       \item Code coverage has increased from 3\% to 17\%.
-      \item \code{pickcolors.R} has been renamed \code{pickColors.R}.
+      \item \code{pickcolors()} has been renamed \code{pickColors()}.
     }
   }
 }
