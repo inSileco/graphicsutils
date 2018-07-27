@@ -4,7 +4,7 @@
 \alias{envelop}
 \title{Compute the coordinates of an envelop.}
 \usage{
-envelop(x, upper, lower, add = TRUE, ...)
+envelop(x, upper, lower = rep(0, length(upper)), add = TRUE, ...)
 }
 \arguments{
 \item{x}{vectors containing the x coordinates.}

@@ -7,6 +7,7 @@ pal_cisl <- c("#c7cbce", "#96a3a3", "#687677", "#222d3d", "#25364a", "#c77f20",
 test_that("test gpuPalettes", {
   expect_true(all(gpuPalette("atom") == pal_atom))
   expect_true(all(gpuPalette(c("atom", "cisl")) == c(pal_atom, pal_cisl)))
+  expect_equal(length(gpuPalette("atom", 100)), 100)
   expect_error(gpuPalette("insil"), "all(names %in% names(gpuPalettes)) is not TRUE", fixed = T)
 })
 

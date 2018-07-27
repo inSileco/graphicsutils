@@ -10,7 +10,7 @@ prettyRange(x)
 \item{x}{A vector of numerical values.}
 }
 \value{
-A vector of two values that corresponds to the range of values.
+A vector of two values specifying the pretty the range of values.
 }
 \description{
 This function returns a pretty range of values for a given a vector of type
@@ -25,7 +25,7 @@ vec <- stats::runif(20)
 range(vec)
 prettyRange(vec)
 # Example 2:
-prettyRange(c(3.85,3.88245))
+prettyRange(c(3.849,3.88245))
 }
 \seealso{
 \code{\link[base]{pretty}}

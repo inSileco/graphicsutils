@@ -7,7 +7,7 @@
 howManyRC(n)
 }
 \arguments{
-\item{n}{a number.}
+\item{n}{a positive integer (or corecible as is).}
 }
 \value{
 A vector of two elements: the number of rows followed by the number of columns.

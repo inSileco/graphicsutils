@@ -19,7 +19,7 @@
 #' \link[grDevices]{col2rgb}
 #'
 #' @importFrom grDevices col2rgb
-#' @importFrom magrittr %>% 
+#' @importFrom magrittr %>%
 #' @export
 #'
 #' @examples
@@ -34,6 +34,7 @@ contrastColors <- function(colors, how = "how_borw", alpha = FALSE) {
     paste0("#", out)
 }
 
+#' @export
 #' @describeIn contrastColors Retuns the hexadecimal string associates to a given vector of colors.
 col2Hex <- function(colors, alpha = FALSE) {
     out <- colors %>% col2rgb(alpha = alpha) %>% apply(2L, intToHex)

@@ -20,16 +20,25 @@ gpuPalettes <- list(atom = c("#dedcd5", "#991f16", "#3b9b6d", "#584b4f", "#72aca
 #' A couple of color palettes mainly insipered by popular websites.
 #'
 #' @param names names of desired color palettes; if \code{NULL}, color palettes available are printed.
+#' @param ncol An integer indicating the number of colors to be returned (involves a call to \link[grDevices]{colorRampPalette}). Default is set to `\code{NULL}` in which case the number in the one the palette is made of.
 #'
 #' @return A vector of character strings of the hexadecimal colors values.
 #' @export
 #' @keywords colors, palette
 #' @examples
 #' showPalette(gpuPalette(c('atom', 'cisl')))
+#' showPalette(gpuPalette('cisl', 100))
 
-gpuPalette <- function(names = NULL) {
+gpuPalette <- function(names = NULL, ncol = NULL) {
     tmp <- names(gpuPalettes)
-    if (is.null(names)) 
-        message(paste0("Color palettes available are: \n  ", paste(tmp, collapse = ", "))) else stopifnot(all(names %in% names(gpuPalettes)))
-    unlist(gpuPalettes[names])
+    if (is.null(names)) {
+        message(paste0("Color palettes available are: \n  ", paste(tmp, collapse = ", ")))
+        return(invisible(NULL))
+    } else {
+        stopifnot(all(names %in% names(gpuPalettes)))
+        out <- unlist(gpuPalettes[names])
+        if (!is.null(ncol)) {
+            colorRampPalette(out)(ncol)
+        } else return(out)
+    }
 }

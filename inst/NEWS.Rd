@@ -4,6 +4,11 @@
 \newcommand{\ghit}{\href{https://github.com/KevCaz/graphicsutils/issues/#1}{##1}}
 
 
+\section{Changes in graphicsutils version 1.2-1}{
+
+}
+
+
 \section{Changes in graphicsutils version 1.2-0}{
   \itemize{
     \item Addition of new functions:
@@ -19,16 +24,23 @@
       \item \code{compassRose1()} and \code{compassRose2()} respectively renamed \code{compassRoseCardinal()} and \code{compassRose()}.
       \item Rotation is now properly handled in \code{compassRose()}, there was a mispelled assignation: \code{< -} instead of \code{<-}.
       \item \code{layout2()} renamed \code{interactiveLayout()} to better reflect what it does.
-      \item \code{circle()} renamed \code{icircles()}.
+      \item \code{circle()} renamed \code{circles()}.
+      \item Argument \code{lower} from \code{envelop()} now has a default values.
+      \item \code{gpuPalette()} now has a new argument: \code{ncol}, that calls \code{colorRampPalette} (grDevices package) to custom the number of colors.
+      \item \code{pchImage()} now uses native representation of raster when importing image from file.
+      \item \code{circles()} has a new argument \code{clockwise} and is now tested.
+      \item \code{howManyRC()} and \code{prettyRange()} are now tested.
     }
     \item Changes in the package's structure:
     \itemize{
       \item Rcpp added see \ghpr{10}.
+      \item A website has beeen built with pkgdown.
+      \item Code coverage has increased from 17\% to 31\%.
     }
     \item Changes in the package's metadata:
     \itemize{
       \item DESCRIPTION now includes authors' ORCID.
-      \item a LICENSE has been added.
+      \item A LICENSE has been added (GPL-2).
     }
 
   }
@@ -57,8 +69,8 @@
     }
     \item Changes in the package structure:
     \itemize{
-      \item Code coverage (from 3\% to 17\%sudo).
-      \item \code{pickcolors.R} has been renamed \code{pickColors.R}.
+      \item Code coverage has increased from 3\% to 17\%.
+      \item \code{pickcolors()} has been renamed \code{pickColors()}.
     }
   }
 }

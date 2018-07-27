@@ -51,9 +51,9 @@ pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, at
             stop("No method found for the given file.")
         nb <- which(ext == TRUE)
         if (nb == 3) {
-            obj <- as.matrix(as.raster(png::readPNG(file)))
+            obj <- png::readPNG(file, native = TRUE)
         } else {
-            obj <- as.matrix(as.raster(jpeg::readJPEG(file)))
+            obj <- jpeg::readJPEG(file, native = TRUE)
         }
     }
     dx <- cex.x * 0.05 * (graphics::par()$usr[2L] - graphics::par()$usr[1L])
@@ -67,6 +67,7 @@ pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, at
         if (class(obj) == "nativeRaster") {
             obj[obj != 0] <- col
         } else {
+            # length nust be tested as it could be '#00000000'
             obj[!grepl(obj, pattern = "#000000")] <- col
             obj[obj != "0"] <- col
         }
