@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">graphicsutils</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.1.9000</span>
       </span>
     </div>
 
@@ -144,7 +144,7 @@ single argument <code>x</code> can be provided.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>further arguments to be passed to <code><a href='http://www.rdocumentation.org/packages/graphics/topics/polygon'>polygon</a></code> function.</p></td>
+      <td><p>further arguments to be passed to <code>[graphics::polygon()]</code> function.</p></td>
     </tr>
     </table>
     
@@ -153,7 +153,7 @@ single argument <code>x</code> can be provided.</p></td>
     <p>The technique employed is fairly simple: for a set of coordinates x, y handled
 using <code>xy.coords</code> a set of <code>nb.pt</code> number is generetaed at a
 <code>off.set</code> distance of each coordinates, then a convex is drawn around
-the coordinates using <a href='http://www.rdocumentation.org/packages/grDevices/topics/chull'>chull</a>.</p>
+the coordinates using <code><a href='http://www.rdocumentation.org/packages/grDevices/topics/chull'>grDevices::chull()</a></code>.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

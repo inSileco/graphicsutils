@@ -11,7 +11,7 @@
 #' @importFrom magrittr %<>%
 #' @export
 #'
-#' @details The function calls \code{\link{rect}} and draw a colored rectangle (defaut color is set to light blue) whose dimensions are given by argument \code{usr} of function \code{\link{par}}.
+#' @details The function calls \code{\link{rect}} and draw a colored rectangle (defaut color is set to light blue) whose dimensions are given by argument `usr` of function \code{\link{par}}.
 #'
 #' @note In graphics::par(), argument bg colors all the window, .
 #'

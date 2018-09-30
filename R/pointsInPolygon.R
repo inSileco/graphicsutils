@@ -1,6 +1,6 @@
 #' Are points inside a polygon?
 #'
-#' For a given matrix of points coordinates, \code{pointsInPolygon} returns a
+#' For a given matrix of points coordinates, `pointsInPolygon` returns a
 #' logical vector stating whether or not these points are inside a specific
 #' polygon whose coordinate as passed as an argument.
 #'

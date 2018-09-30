@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">graphicsutils</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.1.9000</span>
       </span>
     </div>
 
@@ -120,9 +120,10 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>stackedAreas</span>(<span class='no'>val</span>, <span class='kw'>index</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>rgy</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>cumul</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>transp</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>legend</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>pickcolors</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>lty</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>lwd</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>border</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>main</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>)</pre>
+    <pre class="usage"><span class='fu'>stackedAreas</span>(<span class='no'>val</span>, <span class='kw'>index</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>rgy</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>cumul</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>transp</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>legend</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>pickcolors</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>lty</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>lwd</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>border</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>main</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -161,7 +162,7 @@
     </tr>
     <tr>
       <th>pickcolors</th>
-      <td><p>logical. If <code>TRUE</code>, <code><a href='pickColors.html'>pickColors</a></code> is called to select colors.</p></td>
+      <td><p>logical. If <code>TRUE</code>, <a href='pickColors.html'>pickColors</a> is called to select colors.</p></td>
     </tr>
     <tr>
       <th>lty</th>
@@ -169,7 +170,7 @@
     </tr>
     <tr>
       <th>lwd</th>
-      <td><p>the line width (see <code><a href='http://www.rdocumentation.org/packages/graphics/topics/par'>par</a></code> documentation)</p></td>
+      <td><p>the line width (see <code><a href='http://www.rdocumentation.org/packages/graphics/topics/par'>graphics::par()</a></code> documentation)</p></td>
     </tr>
     <tr>
       <th>border</th>
@@ -195,7 +196,7 @@
     
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>The default colors have been inspired by four palettes found on line: <a href='http:www.color-hex.com/color-palettes/'>http:www.color-hex.com/color-palettes/</a>. <code><a href='http://www.rdocumentation.org/packages/plotrix/topics/stackpoly'>stackpoly</a></code> function
+    <p>The default colors have been inspired by four palettes found on line: <a href='http:www.color-hex.com/color-palettes/'>http:www.color-hex.com/color-palettes/</a>. <code>[plotrix::stackpoly()]</code> function
 from the <code>plotrix</code> package offers a good alternative.</p>
 <p>Using a stacked areas chart with more than 20 areas should provide a figure really hard to read.</p>
     

@@ -7,8 +7,8 @@
 #' @param ldg vector of length of the large diagonals.
 #' @param sdg vector of length of the small diagonals.
 #' @param rot rotation angles (in degree) of the rhombi.
-#' @param add logical. If \code{TRUE} rhombi are added to the current plot (default behavior).
-#' @param ... additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.
+#' @param add logical. If `TRUE` rhombi are added to the current plot (default behavior).
+#' @param ... additionnal arguments to be passed to \code{[graphics::polygon()]} function.
 #'
 #' @keywords rhumbus
 #'

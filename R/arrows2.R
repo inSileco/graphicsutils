@@ -1,6 +1,6 @@
 #' Add arrows to a plot.
 #'
-#' Draw arrows between pairs of points. Arrows drawn are fully customizable by using parameters of \code{polygon} function.
+#' Draw arrows between pairs of points. Arrows drawn are fully customizable by using parameters of `polygon` function.
 #'
 #' @export
 #'
@@ -16,11 +16,11 @@
 #' @param cex.hh the magnification coefficient to be used for the heights of arrows' head.
 #' @param prophead logical. If TRUE arrows are drawn with head proportionnal to the length of the arrows.
 #' @param twoheaded logical. If TRUE two-headed arrows are drawn, default is FALSE.
-#' @param ... additional arguments to be passed to \code{polygon} function.
+#' @param ... additional arguments to be passed to `polygon` function.
 #'
 #' @keywords arrows
 #'
-#' @seealso \code{\link[graphics]{arrows}}, \code{\link[shape]{Arrows}}
+#' @seealso \code{[graphics::arrows()]}, \code{[shape::Arrows()]}
 #'
 #' @examples
 #' # Example 1:

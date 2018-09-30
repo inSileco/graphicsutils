@@ -3,14 +3,14 @@
 #' Draw ellipses in a flexible way.
 #'
 #' @param x the x coordinates of the centers of the ellipses.
-#' @param y same as \code{x} for the y-axis.
+#' @param y same as `x` for the y-axis.
 #' @param mjradi the major radii of the ellipses.
 #' @param mnradi the minor radii of the ellipses.
 #' @param from the angles, expressed in radians, from which ellipses are drawn.
 #' @param to the angles, expressed in radians, to which ellipses are drawn.
 #' @param rot the rotation angles (in degree) of the ellipses.
 #' @param incr increments between two points to be linked (expressed in radians).
-#' @param pie a logical. If \code{TRUE} end points are linked with the center of the ellipse (default is set to \code{FALSE}).
+#' @param pie a logical. If `TRUE` end points are linked with the center of the ellipse (default is set to `FALSE`).
 #' @param ... additional arguments to be passed to \code{\link{polygon}} function.
 #'
 #' @keywords ellipse
@@ -20,13 +20,13 @@
 #' @details
 #' For a rotation angle of 0, major radii refer to the one along the x axis.
 #'
-#' The number of cicrles drawn is given by the maximum argument length amng \code{x}, \code{y}, \code{radi}, \code{from} and \code{to} arguments.
+#' The number of cicrles drawn is given by the maximum argument length amng `x`, `y`, `radi`, `from` and `to` arguments.
 #' Sizes are adjusted using \code{\link{rep_len}} function.
 #'
 #' To plot ellipses, \code{\link{polygon}} function is called.
 #'
 #' @note
-#' There is a similar function, called \code{draw.ellipse}, in the package \code{plotrix}.
+#' There is a similar function, called \code{draw.ellipse}, in the package `plotrix`.
 #'
 #' @examples
 #' #Example 1:

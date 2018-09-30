@@ -19,7 +19,7 @@ rhombi(x, y = x, ldg = 1, sdg = ldg, rot = 0, add = FALSE, ...)
 
 \item{add}{logical. If \code{TRUE} rhombi are added to the current plot (default behavior).}
 
-\item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.}
+\item{...}{additionnal arguments to be passed to \code{[graphics::polygon()]} function.}
 }
 \value{
 A vector including rhombi areas is returned if assigned.

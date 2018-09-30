@@ -4,9 +4,9 @@
 \alias{arrows2}
 \title{Add arrows to a plot.}
 \usage{
-arrows2(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1,
-  cex.shr = 1, cex.hh = 1, cex.hl = 1, prophead = TRUE,
-  twoheaded = FALSE, ...)
+arrows2(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0,
+  cex.arr = 1, cex.shr = 1, cex.hh = 1, cex.hl = 1,
+  prophead = TRUE, twoheaded = FALSE, ...)
 }
 \arguments{
 \item{x0}{the x coordinates of points from which to draw arrows.}
@@ -51,6 +51,6 @@ arrows2(runif(2), runif(2), x1=runif(2), y1=runif(2))
 arrows2(runif(2), runif(2), x1=runif(2), y1=runif(2), prophead=FALSE, lty=3)
 }
 \seealso{
-\code{\link[graphics]{arrows}}, \code{\link[shape]{Arrows}}
+\code{[graphics::arrows()]}, \code{[shape::Arrows()]}
 }
 \keyword{arrows}

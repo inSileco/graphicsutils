@@ -4,8 +4,8 @@
 \alias{interactiveLayout}
 \title{An interactive version of \code{layout}}
 \usage{
-interactiveLayout(n = 1, grain.x = 20, grain.y = grain.x, show = TRUE,
-  now = TRUE)
+interactiveLayout(n = 1, grain.x = 20, grain.y = grain.x,
+  show = TRUE, now = TRUE)
 }
 \arguments{
 \item{n}{Number of plot regions desired, default is 1.}
@@ -28,8 +28,8 @@ Once the clicks have been achieved, the users can get the matrix created and/or 
 \details{
 Arguments \code{grain.x} and \code{grain.y} control the aspect of the support
 grid generated to locate the differents panels. Once the grid popup, the user
-must click 2*n times to select the size of their n subplot. A panel is
-delimited by two consecutive clicks: click 2*p and clicks 2*p+1. The two cells
+must click 2\emph{n times to select the size of their n subplot. A panel is
+delimited by two consecutive clicks: click 2}p and clicks 2*p+1. The two cells
 the user clicked on will then be used to compute the area allocated for
 panel p. Note that the user is allowed to use the same area for several plots
 but only this area will actually be used only by the last one.

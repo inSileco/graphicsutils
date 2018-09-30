@@ -4,8 +4,8 @@
 \alias{frameIt}
 \title{Draw a frame around a plot}
 \usage{
-frameIt(nbc = 10, cex.x = 1, cex.y = cex.x, col = c("grey45", "grey85"),
-  border = NA)
+frameIt(nbc = 10, cex.x = 1, cex.y = cex.x, col = c("grey45",
+  "grey85"), border = NA)
 }
 \arguments{
 \item{nbc}{number of rectangles to be drawn for each axis.}

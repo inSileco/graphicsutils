@@ -3,7 +3,7 @@
 #' Convert user coordinates to figure region coordinates and conversely.
 #'
 #' @param x the x coordinates of a set of points. Alternatively, a
-#'       single argument \code{x} can be provided.
+#'       single argument `x` can be provided.
 #' @param y the y coordinates of a set of points.
 #'
 #' @export

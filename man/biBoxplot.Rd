@@ -2,7 +2,7 @@
 % Please edit documentation in R/biBoxplot.R
 \name{biBoxplot}
 \alias{biBoxplot}
-\title{A biboxplot.}
+\title{A bi-boxplot.}
 \usage{
 biBoxplot(df1, df2 = df1, probs = c(0.01, 0.25, 0.5, 0.75, 0.99),
   width = 0.2, sta_wd = 0.5, median = NULL, staples = NULL,
@@ -14,17 +14,17 @@ biBoxplot(df1, df2 = df1, probs = c(0.01, 0.25, 0.5, 0.75, 0.99),
 
 \item{df2}{first set of boxplots.}
 
-\item{probs}{numeric vector of five probabilities with values in [0,1] (see \code{\link[stats]{quantile}}) used to design the boxes.}
+\item{probs}{numeric vector of five probabilities (see \code{[stats::quantile()]}).}
 
 \item{width}{a vector giving the relative widths of the boxes making up the plot.}
 
 \item{sta_wd}{staple width.}
 
-\item{median}{a list of aruments passed to \link[graphics]{lines} to custom the median line.}
+\item{median}{a list of aruments passed to \code{\link[graphics:lines]{graphics::lines()}} to custom the median line.}
 
-\item{staples}{a list of aruments passed to \link[graphics]{lines} to custom the staples.}
+\item{staples}{a list of aruments passed to \code{\link[graphics:lines]{graphics::lines()}} to custom the staples.}
 
-\item{whiskers}{a list of aruments passed to \link[graphics]{lines} to custom the whiskers.}
+\item{whiskers}{a list of aruments passed to \code{\link[graphics:lines]{graphics::lines()}} to custom the whiskers.}
 
 \item{col_left}{color of the left boxes.}
 
@@ -32,10 +32,10 @@ biBoxplot(df1, df2 = df1, probs = c(0.01, 0.25, 0.5, 0.75, 0.99),
 
 \item{add}{a logical. Should the biboxplots be added on the current graph? If \code{FALSE} then a new plot is created.}
 
-\item{at}{numeric vector giving the locations where the boxplots should be drawn. Same default behabiour as in \code{\link[graphics]{boxplot}}.}
+\item{at}{numeric vector giving the locations where the boxplots should be drawn. Same default behabiour as in \code{\link[graphics:boxplot]{graphics::boxplot()}}.}
 }
 \description{
-Draws boxplots made of double plot.
+Draws boxplots and boz.
 }
 \details{
 Do not attempt to assess the distributions. Based on quantiles only.
@@ -46,6 +46,6 @@ dis1 <- list(stats::rnorm(1000, sd = 0.25))
 biBoxplot(dis1)
 }
 \seealso{
-\code{\link[graphics]{box}}
+\code{[graphics::box()]}
 }
 \keyword{boxplots}

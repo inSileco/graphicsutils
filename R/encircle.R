@@ -3,17 +3,17 @@
 #' Draw a polygons around a certains set of points.
 #'
 #' @param x the x coordinates of a set of points. Alternatively, a
-#'       single argument \code{x} can be provided.
+#'       single argument `x` can be provided.
 #' @param y the y coordinates of a set of points.
 #' @param nb.pt the nuber of points to ge generated around eah coordinates.
 #' @param off.set the y coordinates of a set of points.
-#' @param ... further arguments to be passed to \code{\link[graphics]{polygon}} function.
+#' @param ... further arguments to be passed to \code{[graphics::polygon()]} function.
 #'
 #' @details
 #' The technique employed is fairly simple: for a set of coordinates x, y handled
 #' using \code{xy.coords} a set of \code{nb.pt} number is generetaed at a
 #' \code{off.set} distance of each coordinates, then a convex is drawn around
-#' the coordinates using \link[grDevices]{chull}.
+#' the coordinates using [grDevices::chull()].
 #'
 #' @export
 #'

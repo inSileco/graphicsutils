@@ -7,7 +7,7 @@
 plotOnSide(mat, side = 1:2, dim = NULL, quiet = FALSE, ...)
 }
 \arguments{
-\item{mat}{a matrix object specifying the location of the next N figures on the output device, see \link[graphics]{layout}.}
+\item{mat}{a matrix object specifying the location of the next N figures on the output device, see \code{\link[graphics:layout]{graphics::layout()}}.}
 
 \item{side}{the number of the sides on which plot areas must be added.}
 
@@ -15,7 +15,7 @@ plotOnSide(mat, side = 1:2, dim = NULL, quiet = FALSE, ...)
 
 \item{quiet}{if TRUE, no warning message will be displayed.}
 
-\item{...}{additionnal arguments to be passed to \link[graphics]{layout}.}
+\item{...}{additionnal arguments to be passed to \code{\link[graphics:layout]{graphics::layout()}}.}
 }
 \description{
 plotOnSide adds plot areas on the specified sides of the original figures.
@@ -23,7 +23,7 @@ plotOnSide adds plot areas on the specified sides of the original figures.
 \details{
 This function eases the creation of plots that include multiple panels that shares information such as axis labels. Instead of
 repeating or deleting axis labels, \code{plotOnSide} add plot areas on the specified sides of the original fgures.
-It is based on \link[graphics]{layout} and it is no more than a tunned version of it.
+It is based on \code{\link[graphics:layout]{graphics::layout()}} and it is no more than a tunned version of it.
 }
 \examples{
 plotOnSide(matrix(1,2), width=c(0.2,1), height=c(1,1,1,0.6))

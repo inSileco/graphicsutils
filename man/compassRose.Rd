@@ -36,13 +36,13 @@ compassRoseCardinal(x, y = x, rot = 0, cex.cr = 1, cex.let = 1,
 
 \item{add}{a logical. Should the biboxplots be added on the current graph?}
 
-\item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygon}}.}
+\item{...}{additionnal arguments to be passed to \code{[graphics::polygon()]}.}
 }
 \description{
 This function draws a fully personnalisable compass rose.
 }
 \details{
-Both \code{col.cr} and \code{border} are repeated over (\code{\link[base]{rep}}
+Both \code{col.cr} and \code{border} are repeated over (\code{[base::rep()]}
 is called) so it has a 8 elements, meaning all triangles the compass rose is
 made of could have their own color.
 

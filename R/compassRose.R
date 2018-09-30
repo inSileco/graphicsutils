@@ -13,14 +13,14 @@
 #' @param cex.let the magnification to be used for labels.
 #' @param offset label offset of the cardinal points.
 #' @param add a logical. Should the biboxplots be added on the current graph?
-#' @param ... additionnal arguments to be passed to \code{\link[graphics]{polygon}}.
+#' @param ... additionnal arguments to be passed to \code{[graphics::polygon()]}.
 #'
 #' @details
-#' Both \code{col.cr} and \code{border} are repeated over (\code{\link[base]{rep}}
+#' Both \code{col.cr} and `border` are repeated over (\code{[base::rep()]}
 #' is called) so it has a 8 elements, meaning all triangles the compass rose is
 #' made of could have their own color.
 #'
-#' Note that there already exists a similar function by Jim Lemon in \code{sp} package.
+#' Note that there already exists a similar function by Jim Lemon in `sp` package.
 #'
 #' @examples
 #' compassRose(0, rot=25, cex.cr = 2, col.let =2, add = FALSE)

@@ -4,7 +4,8 @@
 \alias{image2}
 \title{Alternative image function}
 \usage{
-image2(x, from = NULL, to = NULL, color_scale = NULL, border = NA, ...)
+image2(x, from = NULL, to = NULL, color_scale = NULL, border = NA,
+  ...)
 }
 \arguments{
 \item{x}{a matrix or an object to be coerced as a matrix.}
@@ -17,21 +18,21 @@ the last color of the color scale.}
 
 \item{color_scale}{a vector of colors.}
 
-\item{border}{color for rectangle borders (see \code{\link[graphics]{rect}}).}
+\item{border}{color for rectangle borders (see \code{[graphics::rect()]}).}
 
-\item{...}{further arguments to be passed to \code{\link[graphics]{rect}}.}
+\item{...}{further arguments to be passed to \code{[graphics::rect()]}.}
 }
 \description{
 Creates a grid of colored or gray-scale rectangles. This function is similar
-to \code{\link[graphics]{image}} when used for a matrix but simpler (*i.e*
+to \code{[graphics::image()]} when used for a matrix but simpler (\emph{i.e}
 less available features).
 }
 \details{
 This function actually draws rectangles to create an image from a matrix.
-Unlike \code{\link[graphics]{image}}, \code{image2} the image is ordered just as the
+Unlike \code{[graphics::image()]}, \code{image2} the image is ordered just as the
 matrix is displayed meaning that the cell (1,1) is at the upper left cell of
 the plot drawn. Note that currenlty neither titles nor axes' labels are added
-user should call the \code{\link[graphics]{title}} and \code{\link[graphics]{axis}}.
+user should call the \code{[graphics::title()]} and \code{[graphics::axis()]}.
 Concerning the latter, the user should be aware that cell's coordinates range
 from 0 to 1 with 0 being the coordinates of the first cell and 1 the coordinates
 of the last cell (if there is only one cell then the center of the unique cell
@@ -42,7 +43,7 @@ image2(matrix(1:9, 3))
 image2(matrix(1:27, 3), from=2, border = 2, lwd=2)
 }
 \seealso{
-\code{\link[graphics]{image}}
+\code{[graphics::image()]}
 }
 \keyword{image}
 \keyword{rectangles}

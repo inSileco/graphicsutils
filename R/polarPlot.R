@@ -10,15 +10,15 @@
 #' @param from starting point of the circle.
 #' @param to ending point of the circle.
 #' @param incr increment used to draw the circle.
-#' @param atc the points at which tick-marks are to be drawn. By default (when \code{NULL}) tickmark locations are computed.
+#' @param atc the points at which tick-marks are to be drawn. By default (when `NULL`) tickmark locations are computed.
 #' @param labelc character or expression vector of labels to be placed at the tickpoints.
 #' @param atr the points at which radial-axis marks are to be drawn.
 #' @param tckcol color of the tickmarks.
 #' @param labelr character or expression vector specifying the _text_ to be placed at the radial-axis marks.
 #' @param clockwise logical. If TRUE, the plot must de read clockwise, otherwise, counter-clockwise.
-#' @param n_signif number of significant numbers to be displayed (used when labelc is \code{NULL}).
+#' @param n_signif number of significant numbers to be displayed (used when labelc is `NULL`).
 #' @param add logical. add to current plot?
-#' @param ... additional argument to be passed to \code{polygon} function.
+#' @param ... additional argument to be passed to `polygon` function.
 #'
 #' @details
 #' Polar Plot

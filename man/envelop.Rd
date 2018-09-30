@@ -15,7 +15,7 @@ envelop(x, upper, lower = rep(0, length(upper)), add = TRUE, ...)
 
 \item{add}{a logical. If \code{TRUE} the envelop is drawn as a polygon (default behavior).}
 
-\item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.}
+\item{...}{additionnal arguments to be passed to \code{[graphics::polygon()]} function.}
 }
 \value{
 The coordinates of the envelop are returned if assigned.

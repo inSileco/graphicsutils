@@ -9,7 +9,7 @@ gpuPalette(names = NULL, ncol = NULL)
 \arguments{
 \item{names}{names of desired color palettes; if \code{NULL}, color palettes available are printed.}
 
-\item{ncol}{An integer indicating the number of colors to be returned (involves a call to \link[grDevices]{colorRampPalette}). Default is set to `\code{NULL}` in which case the number in the one the palette is made of.}
+\item{ncol}{An integer indicating the number of colors to be returned (involves a call to \code{\link[grDevices:colorRampPalette]{grDevices::colorRampPalette()}}). Default is set to \code{NULL} in which case the number in the one the palette is made of.}
 }
 \value{
 A vector of character strings of the hexadecimal colors values.

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A biboxplot. — biBoxplot • graphicsutils</title>
+<title>A bi-boxplot. — biBoxplot • graphicsutils</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="A biboxplot. — biBoxplot" />
+<meta property="og:title" content="A bi-boxplot. — biBoxplot" />
 
-<meta property="og:description" content="Draws boxplots made of double plot." />
+<meta property="og:description" content="Draws boxplots and boz." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">graphicsutils</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.1.9000</span>
       </span>
     </div>
 
@@ -109,14 +109,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A biboxplot.</h1>
+    <h1>A bi-boxplot.</h1>
     <small class="dont-index">Source: <a href='https://github.com/inSileco/graphicsutils/blob/master/R/biBoxplot.R'><code>R/biBoxplot.R</code></a></small>
     <div class="hidden name"><code>biBoxplot.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Draws boxplots made of double plot.</p>
+    <p>Draws boxplots and boz.</p>
     
     </div>
 
@@ -138,7 +138,7 @@
     </tr>
     <tr>
       <th>probs</th>
-      <td><p>numeric vector of five probabilities with values in [0,1] (see <code><a href='http://www.rdocumentation.org/packages/stats/topics/quantile'>quantile</a></code>) used to design the boxes.</p></td>
+      <td><p>numeric vector of five probabilities (see <code>[stats::quantile()]</code>).</p></td>
     </tr>
     <tr>
       <th>width</th>
@@ -150,15 +150,15 @@
     </tr>
     <tr>
       <th>median</th>
-      <td><p>a list of aruments passed to <a href='http://www.rdocumentation.org/packages/graphics/topics/lines'>lines</a> to custom the median line.</p></td>
+      <td><p>a list of aruments passed to <code><a href='http://www.rdocumentation.org/packages/graphics/topics/lines'>graphics::lines()</a></code> to custom the median line.</p></td>
     </tr>
     <tr>
       <th>staples</th>
-      <td><p>a list of aruments passed to <a href='http://www.rdocumentation.org/packages/graphics/topics/lines'>lines</a> to custom the staples.</p></td>
+      <td><p>a list of aruments passed to <code><a href='http://www.rdocumentation.org/packages/graphics/topics/lines'>graphics::lines()</a></code> to custom the staples.</p></td>
     </tr>
     <tr>
       <th>whiskers</th>
-      <td><p>a list of aruments passed to <a href='http://www.rdocumentation.org/packages/graphics/topics/lines'>lines</a> to custom the whiskers.</p></td>
+      <td><p>a list of aruments passed to <code><a href='http://www.rdocumentation.org/packages/graphics/topics/lines'>graphics::lines()</a></code> to custom the whiskers.</p></td>
     </tr>
     <tr>
       <th>col_left</th>
@@ -174,7 +174,7 @@
     </tr>
     <tr>
       <th>at</th>
-      <td><p>numeric vector giving the locations where the boxplots should be drawn. Same default behabiour as in <code><a href='http://www.rdocumentation.org/packages/graphics/topics/boxplot'>boxplot</a></code>.</p></td>
+      <td><p>numeric vector giving the locations where the boxplots should be drawn. Same default behabiour as in <code><a href='http://www.rdocumentation.org/packages/graphics/topics/boxplot'>graphics::boxplot()</a></code>.</p></td>
     </tr>
     </table>
     
@@ -184,7 +184,7 @@
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/graphics/topics/box'>box</a></code></p></div>
+    <div class='dont-index'><p><code>[graphics::box()]</code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

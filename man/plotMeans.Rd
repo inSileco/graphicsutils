@@ -4,17 +4,17 @@
 \alias{plotMeans}
 \title{Plots means and error asociated}
 \usage{
-plotMeans(formula, data, FUN_err = stats::sd, add = FALSE, seqx = NULL,
-  draw_axis = TRUE, col_err = graphics::par()$col,
+plotMeans(formula, data, FUN_err = stats::sd, add = FALSE,
+  seqx = NULL, draw_axis = TRUE, col_err = graphics::par()$col,
   col_pt = graphics::par()$col, cex_pt = 1, connect = FALSE,
   args_con = list(), ...)
 }
 \arguments{
-\item{formula}{a formula, see \code{\link[stats]{formula}}.}
+\item{formula}{a formula, see \code{[stats::formula()]}.}
 
 \item{data}{a data frame (or list) from which the variables in formula should be taken.}
 
-\item{FUN_err}{the function that assess uncertainty. Default function is \code{\link[stats]{sd}}.}
+\item{FUN_err}{the function that assess uncertainty. Default function is \code{[stats::sd()]}.}
 
 \item{add}{logical. should images be added on the current graph ? If FALSE a new plot is created.}
 

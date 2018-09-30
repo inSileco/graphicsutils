@@ -2,18 +2,18 @@
 #'
 #' plotOnSide adds plot areas on the specified sides of the original figures.
 #'
-#' @param mat a matrix object specifying the location of the next N figures on the output device, see \link[graphics]{layout}.
+#' @param mat a matrix object specifying the location of the next N figures on the output device, see [graphics::layout()].
 #' @param dim optionnal. If provided, then a matrix is created based and this argument speciefies its dimensions.
 #' @param side the number of the sides on which plot areas must be added.
 #' @param quiet if TRUE, no warning message will be displayed.
-#' @param ... additionnal arguments to be passed to \link[graphics]{layout}.
+#' @param ... additionnal arguments to be passed to [graphics::layout()].
 #'
 #' @export
 #'
 #' @details
 #' This function eases the creation of plots that include multiple panels that shares information such as axis labels. Instead of
-#' repeating or deleting axis labels, \code{plotOnSide} add plot areas on the specified sides of the original fgures.
-#' It is based on \link[graphics]{layout} and it is no more than a tunned version of it.
+#' repeating or deleting axis labels, `plotOnSide` add plot areas on the specified sides of the original fgures.
+#' It is based on [graphics::layout()] and it is no more than a tunned version of it.
 #'
 #' @examples
 #' plotOnSide(matrix(1,2), width=c(0.2,1), height=c(1,1,1,0.6))

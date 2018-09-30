@@ -3,19 +3,19 @@
 #' Draw a box around a plot.
 #'
 #' @param side a numerical or character vector or a character string specifying which side(s) of the plot the box is to be drawn (see details).
-#' @param which a character, one of \code{plot}, \code{figure}, \code{inner} and \code{outer}.
+#' @param which a character, one of `plot`, `figure`, `inner` and `outer`.
 #' @param fill the color to be used to fill the box.
-#' @param ... further graphical parameters (see \code{\link[graphics]{par}}) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = 'b'}, \code{pch}.  Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.
+#' @param ... further graphical parameters (see \code{[graphics::par()]}) may also be supplied as arguments, particularly, line type, `lty`, line width, `lwd`, color, `col` and for \code{type = 'b'}, `pch`.  Also the line characteristics `lend`, `ljoin` and `lmitre`.
 #'
 #' @keywords box
 #'
 #' @export
 #'
-#' @details This function intends to give more flexibility to the \code{\link[graphics]{box}} function.
-#' As \code{which} parameter, the user provides an object first coerced by \code{as.character} to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{1, 2, 3, 4, b, l, t, r} where \code{1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right}.
+#' @details This function intends to give more flexibility to the \code{[graphics::box()]} function.
+#' As `which` parameter, the user provides an object first coerced by \code{as.character} to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{1, 2, 3, 4, b, l, t, r} where \code{1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right}.
 #'
 #'
-#' @seealso \code{\link[graphics]{box}}
+#' @seealso \code{[graphics::box()]}
 #'
 #' @examples
 #' # Example 1:

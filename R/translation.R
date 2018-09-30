@@ -7,8 +7,8 @@
 #' @param y the y coordinates of points.
 #' @param xtrans the x corrdinate of the translation vector.
 #' @param ytrans the y corrdinate of the translation vector.
-#' @param add logical. If \code{TRUE} the set of transforned points is drawn as a polygon.
-#' @param ... Additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).
+#' @param add logical. If `TRUE` the set of transforned points is drawn as a polygon.
+#' @param ... Additionnal arguments to be passed to `polygon` function (used only if `add` is TRUE).
 #'
 #' @keywords translation, geometry
 #'
@@ -16,7 +16,7 @@
 #'
 #' @details
 #' For details about what is a translation, see \url{https://en.wikipedia.org/wiki/Translation_(geometry)}.
-#' Note that if \code{x} is a matrix with more than 2 columns, then x is the
+#' Note that if `x` is a matrix with more than 2 columns, then x is the
 #' first column and y the second one.
 #'
 #'

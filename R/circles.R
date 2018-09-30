@@ -8,10 +8,10 @@
 #' @param from the angles, expressed in radians, from which circles are drawn.
 #' @param to the angles, expressed in radians, to which circles are drawn.
 #' @param incr increments between two points to be linked (expressed in radians).
-#' @param pie a logical. If \code{TRUE}, end points are linked with the center of the circle (default is set to \code{FALSE}).
+#' @param pie a logical. If `TRUE`, end points are linked with the center of the circle (default is set to `FALSE`).
 #' @param clockwise a logical. Shall circles and arcs be drawn clockwise? Defaut is `FALSE`.
 #' @param add a logical. Should the circles be added on the current plot?
-#' @param ... additional arguments to be passed to \code{\link[graphics]{polygon}} function.
+#' @param ... additional arguments to be passed to \code{[graphics::polygon()]} function.
 #'
 #' @keywords circle geometries
 #'
@@ -19,14 +19,14 @@
 #'
 #' @details
 #' The number of circles drawn is given by the maximum argument length amng
-#' \code{x}, \code{y}, \code{radi}, \code{from} and \code{to} arguments.
+#' `x`, `y`, `radi`, `from` and `to` arguments.
 #' Sizes are adjusted (i.e. repeated over) with \code{\link{rep_len}} function.
 #'
 #' @return
 #' An invisible list of \code{data.frame} of two columns including the
 #' coordinates of all circles.
 #'
-#' @seealso \code{\link[graphics]{symbols}}, \code{\link[plotrix]{draw.circle}}, \code{\link[plotrix]{draw.arc}}.
+#' @seealso \code{[graphics::symbols()]}, \code{\link[plotrix]{draw.circle}}, \code{\link[plotrix]{draw.arc}}.
 #'
 #' @examples
 #' # Example 1:

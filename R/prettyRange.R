@@ -1,7 +1,7 @@
 #' Pretty range
 #'
 #' This function returns a pretty range of values for a given a vector of type
-#' \code{numeric}.
+#' `numeric`.
 #'
 #' @param x A vector of numerical values.
 #'
@@ -16,7 +16,7 @@
 #' This function intends to generate range with round values.
 #'
 #' @seealso
-#' \code{\link[base]{pretty}}
+#' \code{[base::pretty()]}
 #'
 #' @examples
 #' # Example 1:

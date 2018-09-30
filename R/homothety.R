@@ -8,8 +8,8 @@
 #' @param lambda the factor to be used for the homothetetic transformations.
 #' @param xcen the x coordinate for the center of rotation.
 #' @param ycen the y coordinate for the center of rotation.
-#' @param add logical. If \code{TRUE} the set of transformed points are drawn as a polygon.
-#' @param ... additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).
+#' @param add logical. If `TRUE` the set of transformed points are drawn as a polygon.
+#' @param ... additionnal arguments to be passed to `polygon` function (used only if `add` is TRUE).
 #'
 #' @keywords homothety, geometry
 #'
@@ -20,7 +20,7 @@
 #'
 #' If x is a matrix with more than 2 columns, then x is the first column and y the second one.
 #'
-#' Note that \code{lambda}, \code{xcen} and \code{ycen} are unique meaning that \code{homothety} computes only one homothetic transformation.
+#' Note that `lambda`, `xcen` and `ycen` are unique meaning that `homothety` computes only one homothetic transformation.
 #' Drawing the points computed is relevant only if there are more than 2 points.
 #'
 #' @examples

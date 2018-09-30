@@ -3,9 +3,9 @@
 #' Displays a color palette and information about the colors it is made of.
 #'
 #' @param x a vector of colors.
-#' @param inline a logical. If \code{TRUE}, the colors are displayed on a single row.
-#' @param add_number a logical. If \code{TRUE}, color vector's indices are added (default is set to \code{FALSE}).
-#' @param add_codecolor a logical. If \code{TRUE}, the code color is displayed (default is set to \code{FALSE}).
+#' @param inline a logical. If `TRUE`, the colors are displayed on a single row.
+#' @param add_number a logical. If `TRUE`, color vector's indices are added (default is set to `FALSE`).
+#' @param add_codecolor a logical. If `TRUE`, the code color is displayed (default is set to `FALSE`).
 #' @param cex_num the maginification coefficient of the color vector's indices.
 #'
 #' @keywords color, selection

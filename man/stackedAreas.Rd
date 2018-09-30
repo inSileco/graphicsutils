@@ -4,9 +4,10 @@
 \alias{stackedAreas}
 \title{Stacked areas chart.}
 \usage{
-stackedAreas(val, index = NULL, rgy = 1, cumul = FALSE, transp = FALSE,
-  legend = NULL, add = FALSE, col = NULL, pickcolors = FALSE, lty = 1,
-  lwd = 1, border = NA, main = "", xlab = "", ylab = "")
+stackedAreas(val, index = NULL, rgy = 1, cumul = FALSE,
+  transp = FALSE, legend = NULL, add = FALSE, col = NULL,
+  pickcolors = FALSE, lty = 1, lwd = 1, border = NA, main = "",
+  xlab = "", ylab = "")
 }
 \arguments{
 \item{val}{a dataframe or a matrix containing a series of positive values, rows stand for popultaions.}
@@ -25,11 +26,11 @@ stackedAreas(val, index = NULL, rgy = 1, cumul = FALSE, transp = FALSE,
 
 \item{col}{vector of colors, repeated if too small.}
 
-\item{pickcolors}{logical. If \code{TRUE}, \code{\link{pickColors}} is called to select colors.}
+\item{pickcolors}{logical. If \code{TRUE}, \link{pickColors} is called to select colors.}
 
 \item{lty}{the line type (see \code{\link{par}} documentation)}
 
-\item{lwd}{the line width (see \code{\link[graphics]{par}} documentation)}
+\item{lwd}{the line width (see \code{\link[graphics:par]{graphics::par()}} documentation)}
 
 \item{border}{The color to draw the border. The default, \code{NULL}, means to use \code{graphics::par('fg')}. Use \code{border=NA} to omit borders.}
 
@@ -46,7 +47,7 @@ Draw a stacked areas chart.
 Areas are drawn using the \code{\link{polygon}} function and users can take advantage of ot to customize their stacked areas (using \code{lwd}, \code{lty} or \code{border} arguments).
 }
 \note{
-The default colors have been inspired by four palettes found on line: \url{http:www.color-hex.com/color-palettes/}. \code{\link[plotrix]{stackpoly}} function
+The default colors have been inspired by four palettes found on line: \url{http:www.color-hex.com/color-palettes/}. \code{[plotrix::stackpoly()]} function
 from the \code{plotrix} package offers a good alternative.
 
 Using a stacked areas chart with more than 20 areas should provide a figure really hard to read.

@@ -1,14 +1,14 @@
 #' Compute the coordinates of an envelop.
 #'
-#' \code{envelop} eases the compuation of the polygons described by to set
+#' `envelop` eases the compuation of the polygons described by to set
 #' of y coordinates along the x-axis. Optionnaly, the polygons could be added
 #' on the current plot.
 #'
 #' @param x vectors containing the x coordinates.
 #' @param upper the y coordinates of the upper values.
 #' @param lower the y coordinates of the lower values.
-#' @param add a logical. If \code{TRUE} the envelop is drawn as a polygon (default behavior).
-#' @param ... additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.
+#' @param add a logical. If `TRUE` the envelop is drawn as a polygon (default behavior).
+#' @param ... additionnal arguments to be passed to \code{[graphics::polygon()]} function.
 #'
 #' @export
 #'

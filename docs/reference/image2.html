@@ -33,7 +33,7 @@
 <meta property="og:title" content="Alternative image function — image2" />
 
 <meta property="og:description" content="Creates a grid of colored or gray-scale rectangles. This function is similar
-to image when used for a matrix but simpler (*i.e*
+to [graphics::image()] when used for a matrix but simpler (i.e
 less available features)." />
 <meta name="twitter:card" content="summary" />
 
@@ -63,7 +63,7 @@ less available features)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">graphicsutils</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">1.2.1.9000</span>
       </span>
     </div>
 
@@ -119,12 +119,13 @@ less available features)." />
     <div class="ref-description">
     
     <p>Creates a grid of colored or gray-scale rectangles. This function is similar
-to <code><a href='http://www.rdocumentation.org/packages/graphics/topics/image'>image</a></code> when used for a matrix but simpler (*i.e*
+to <code>[graphics::image()]</code> when used for a matrix but simpler (<em>i.e</em>
 less available features).</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>image2</span>(<span class='no'>x</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>color_scale</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>border</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>image2</span>(<span class='no'>x</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>color_scale</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>border</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
+  <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -149,21 +150,21 @@ the last color of the color scale.</p></td>
     </tr>
     <tr>
       <th>border</th>
-      <td><p>color for rectangle borders (see <code><a href='http://www.rdocumentation.org/packages/graphics/topics/rect'>rect</a></code>).</p></td>
+      <td><p>color for rectangle borders (see <code>[graphics::rect()]</code>).</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>further arguments to be passed to <code><a href='http://www.rdocumentation.org/packages/graphics/topics/rect'>rect</a></code>.</p></td>
+      <td><p>further arguments to be passed to <code>[graphics::rect()]</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>This function actually draws rectangles to create an image from a matrix.
-Unlike <code><a href='http://www.rdocumentation.org/packages/graphics/topics/image'>image</a></code>, <code>image2</code> the image is ordered just as the
+Unlike <code>[graphics::image()]</code>, <code>image2</code> the image is ordered just as the
 matrix is displayed meaning that the cell (1,1) is at the upper left cell of
 the plot drawn. Note that currenlty neither titles nor axes' labels are added
-user should call the <code><a href='http://www.rdocumentation.org/packages/graphics/topics/title'>title</a></code> and <code><a href='http://www.rdocumentation.org/packages/graphics/topics/axis'>axis</a></code>.
+user should call the <code>[graphics::title()]</code> and <code>[graphics::axis()]</code>.
 Concerning the latter, the user should be aware that cell's coordinates range
 from 0 to 1 with 0 being the coordinates of the first cell and 1 the coordinates
 of the last cell (if there is only one cell then the center of the unique cell
@@ -171,7 +172,7 @@ is 0).</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/graphics/topics/image'>image</a></code></p></div>
+    <div class='dont-index'><p><code>[graphics::image()]</code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

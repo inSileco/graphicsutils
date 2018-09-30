@@ -20,15 +20,15 @@
     \itemize{
       \item The Ray-casting algorithm is now implemented in a cpp function, see \code{src/pointsInPolygon_core.cpp}, see \ghpr{10}.
       \item A grid can be added in \code{plot0}, three arguments control its color (\code{grid.col}), its width (\code{grid.lwd}) and type (\code{grid.lty}).
-      \item \code{frameit} renamed \code{frameIt()}for the sack of naming consistency.
+      \item `frameit` renamed \code{frameIt()}for the sack of naming consistency.
       \item \code{compassRose1()} and \code{compassRose2()} respectively renamed \code{compassRoseCardinal()} and \code{compassRose()}.
       \item Rotation is now properly handled in \code{compassRose()}, there was a mispelled assignation: \code{< -} instead of \code{<-}.
       \item \code{layout2()} renamed \code{interactiveLayout()} to better reflect what it does.
       \item \code{circle()} renamed \code{circles()}.
-      \item Argument \code{lower} from \code{envelop()} now has a default values.
-      \item \code{gpuPalette()} now has a new argument: \code{ncol}, that calls \code{colorRampPalette} (grDevices package) to custom the number of colors.
+      \item Argument `lower` from \code{envelop()} now has a default values.
+      \item \code{gpuPalette()} now has a new argument: `ncol`, that calls `colorRampPalette` (grDevices package) to custom the number of colors.
       \item \code{pchImage()} now uses native representation of raster when importing image from file.
-      \item \code{circles()} has a new argument \code{clockwise} and is now tested.
+      \item \code{circles()} has a new argument `clockwise` and is now tested.
       \item \code{howManyRC()} and \code{prettyRange()} are now tested.
     }
     \item Changes in the package's structure:
@@ -51,7 +51,7 @@
     \item Addition of R functions:
     \itemize{
       \item \code{howManyRC()} compute the number of rows and columns to split a graphic window into panels as equally as possible.
-      \item \code{image2()} an alternative \code{image}
+      \item \code{image2()} an alternative `image`
     }
     \item Changes in existing R functions:
     \itemize{
@@ -65,7 +65,7 @@
       startup message including the version of the package.
       \item \code{pickColors()} has been reviewed to adress \ghit{3}.
       \item \code{plot0()} properly handle matrix of coordinates.
-      \item New argument \code{text} in \code{plot0()} to add centered text in the plot region.
+      \item New argument `text` in \code{plot0()} to add centered text in the plot region.
     }
     \item Changes in the package structure:
     \itemize{
@@ -88,9 +88,9 @@
     }
     \item Changes in existing R functions:
     \itemize{
-      \item Add the proper namespace for all functions used for \code{grDevices}
-      and \code{graphics} package.
-      \item \code{plot0()} now has a \code{fill} argument that calls \code{plotAreaColor()} tp color
+      \item Add the proper namespace for all functions used for `grDevices`
+      and `graphics` package.
+      \item \code{plot0()} now has a `fill` argument that calls \code{plotAreaColor()} tp color
       the plot region.
       \item a vignette has been added to showcase the package.
     }
@@ -119,17 +119,17 @@
       \item New R function \code{pchImage()} to use image as plotting points
       \item New R functions \code{percX()} (\code{percY()}) to get the x (y) coordinate from a
       percentage of total x (y) axis length.
-      \item New R function \code{pickColors} to interactively select colors .
-      \item New R function \code{plotAreaColor} to color the plot region.
-      \item New R function \code{plotImage} to ease the creation of plot including an image.
+      \item New R function `pickColors` to interactively select colors .
+      \item New R function `plotAreaColor` to color the plot region.
+      \item New R function `plotImage` to ease the creation of plot including an image.
       \item New R function \code{plot0} to draw empty plotes.
-      \item New R function \code{polarPlot} to draw polar plots.
-      \item New R function \code{prettyRange} to get pretty range from a set of values.
-      \item New R function \code{rhombi} to draw rhombi.
-      \item New R function \code{rotation} to rotate a set of coordinates.
-      \item New R function \code{showPalette} to show color palettes.
-      \item New R function \code{stackedareas} to create stacked areas charts.
-      \item New R function \code{translation} to translate a set of points.
+      \item New R function `polarPlot` to draw polar plots.
+      \item New R function `prettyRange` to get pretty range from a set of values.
+      \item New R function `rhombi` to draw rhombi.
+      \item New R function `rotation` to rotate a set of coordinates.
+      \item New R function `showPalette` to show color palettes.
+      \item New R function `stackedareas` to create stacked areas charts.
+      \item New R function `translation` to translate a set of points.
       \item New R function \code{vecfield2d} to create vector fields.
     }
   }

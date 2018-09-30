@@ -5,13 +5,13 @@
 #' @param coords a matrix with two columns or more that is optionnally used to alternatively define the coordinates of the vector field.
 #' @param FUN the function that describes the dynamical system (see details).
 #' @param args the parameters of the dynamical system (see details).
-#' @param ndim number of dimension of the system. If \code{NULL} the values is based on \code{coords} and \code{slice}
+#' @param ndim number of dimension of the system. If `NULL` the values is based on `coords` and `slice`
 #' @param slices a vector of 2 elements providing the dimensions to be displayed, (default set to c(1,2)).
-#' @param fixed the values used for non drawn dimension, if \code{NULL} the values will be set to 0.
+#' @param fixed the values used for non drawn dimension, if `NULL` the values will be set to 0.
 #' @param cex.x the magnification coefficient to be used for lengths of vectors along the x axis.
 #' @param cex.y the magnification coefficient to be used for lengths of vectors along the y axis.
-#' @param log a logical. If \code{TRUE}, the lenghts of arrows are log-transformed.
-#' @param add a logical. If \code{TRUE}, the vector field is added on the current plot.
+#' @param log a logical. If `TRUE`, the lenghts of arrows are log-transformed.
+#' @param add a logical. If `TRUE`, the vector field is added on the current plot.
 #' @param ... additionnal arguments to be passed to \code{arrows2}.
 #'
 #' @keywords empty plot
@@ -19,11 +19,11 @@
 #' @export
 #'
 #' @details
-#' The \code{FUN} function must be a function of at least two arguments. The
+#' The `FUN` function must be a function of at least two arguments. The
 #' first argument must contain the dynamical variables as a vector and the
 #' second arguments must contain all the other parameters that shapes the
-#' dynamical system. When some dimensions are missing, the order of \code{fixed}
-#' is the one in \code{FUN} once the drawn dimension are withdrawn.
+#' dynamical system. When some dimensions are missing, the order of `fixed`
+#' is the one in `FUN` once the drawn dimension are withdrawn.
 #'
 #' @examples
 #' systLin <- function(X, beta){
