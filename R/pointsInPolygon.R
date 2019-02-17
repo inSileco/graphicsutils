@@ -27,11 +27,11 @@
 
 
 pointsInPolygon <- function(points, polygon) {
-    ## 
-    points %<>% as.matrix
-    polygon %<>% as.matrix
+    ##
+    points <- as.matrix(points)
+    polygon <- as.matrix(polygon)
     stopifnot(nrow(polygon) > 2)
-    ## 
+    ##
     if (ncol(points) > 2) {
         warning("ncol(points)>2 - only the first two columns are used.")
         points <- points[, 1L:2L]

@@ -28,7 +28,7 @@ Displays a color palette and information about the colors it is made of.
 showPalette()
 showPalette(inline=TRUE)
 showPalette(1)
-showPalette(sample(1:100, 16), add_number=TRUE, add_codecolor = TRUE)
+showPalette(sample(1:100, 16), add_number = TRUE, add_codecolor = TRUE)
 }
 \keyword{color,}
 \keyword{selection}
