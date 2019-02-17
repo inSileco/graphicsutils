@@ -10,6 +10,11 @@
       \itemize{
         \item new function \code{boxplot2()} that generates boxplots with a different visual that \code{boxplot}.
       }
+    \item Change in documentation:
+    \itemize{
+      \item The vignette has been reviewed.
+      \item Several typos have been fixed throughout the documentation.
+    }
   }
 }
 
@@ -45,7 +50,7 @@
     \item Changes in the package's metadata:
     \itemize{
       \item DESCRIPTION now includes authors' ORCID.
-      \item A LICENSE has been added (GPL-2).
+      \item A LICENSE file has been added (GPL-2).
     }
 
   }

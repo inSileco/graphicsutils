@@ -34,7 +34,7 @@ Draw ellipses in a flexible way.
 \details{
 For a rotation angle of 0, major radii refer to the one along the x axis.
 
-The number of cicrles drawn is given by the maximum argument length amng \code{x}, \code{y}, \code{radi}, \code{from} and \code{to} arguments.
+The number of circles drawn is given by the maximum argument length among \code{x}, \code{y}, \code{radi}, \code{from} and \code{to} arguments.
 Sizes are adjusted using \code{\link{rep_len}} function.
 
 To plot ellipses, \code{\link{polygon}} function is called.

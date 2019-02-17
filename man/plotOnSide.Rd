@@ -11,11 +11,11 @@ plotOnSide(mat, side = 1:2, dim = NULL, quiet = FALSE, ...)
 
 \item{side}{the number of the sides on which plot areas must be added.}
 
-\item{dim}{optionnal. If provided, then a matrix is created based and this argument speciefies its dimensions.}
+\item{dim}{optional. If provided, then a matrix is created based and this argument specifies its dimensions.}
 
 \item{quiet}{if TRUE, no warning message will be displayed.}
 
-\item{...}{additionnal arguments to be passed to \code{\link[graphics:layout]{graphics::layout()}}.}
+\item{...}{additional arguments to be passed to \code{\link[graphics:layout]{graphics::layout()}}.}
 }
 \description{
 plotOnSide adds plot areas on the specified sides of the original figures.

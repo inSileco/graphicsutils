@@ -1,6 +1,6 @@
-#' Complete list of graphisutils' color palettes
+#' Complete list of graphicsutils' color palettes
 #'
-#' Color palettes of the graphisutils package.
+#' Color palettes of the graphicsutils package.
 #'
 #' @export
 

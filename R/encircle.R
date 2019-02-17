@@ -5,7 +5,7 @@
 #' @param x the x coordinates of a set of points. Alternatively, a
 #'       single argument `x` can be provided.
 #' @param y the y coordinates of a set of points.
-#' @param nb.pt the nuber of points to ge generated around eah coordinates.
+#' @param nb.pt the number of points to be generated around each coordinates.
 #' @param off.set the y coordinates of a set of points.
 #' @param ... further arguments to be passed to \code{[graphics::polygon()]} function.
 #'
@@ -32,11 +32,11 @@ encircle <- function(x, y = NULL, nb.pt = 20, off.set = 1, ...) {
     seqa <- seq(0, 2 * pi, length.out = nb.pt + 1)[-1L]
     seqx <- ofs * cos(seqa)
     seqy <- ofs * sin(seqa)
-    ## 
-    pts <- data.frame(x = rep(cfig$x, each = nb.pt) + rep(seqx, nrow(cfig)), y = rep(cfig$y, 
+    ##
+    pts <- data.frame(x = rep(cfig$x, each = nb.pt) + rep(seqx, nrow(cfig)), y = rep(cfig$y,
         each = nb.pt) + rep(seqy, nrow(cfig)))
     ## compute the convex hull and plot it using user system
     graphics::polygon(toUser(pts[grDevices::chull(pts), ]), ...)
-    ## 
+    ##
     invisible(NULL)
 }

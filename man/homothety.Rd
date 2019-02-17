@@ -19,11 +19,11 @@ homothety(x, y, lambda, xcen = NULL, ycen = NULL, add = FALSE, ...)
 
 \item{add}{logical. If \code{TRUE} the set of transformed points are drawn as a polygon.}
 
-\item{...}{additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).}
+\item{...}{additional arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).}
 }
 \description{
 Compute a homothetic transformation for a set of points.
-The transformed set of points is optionnaly drawn as a polygon.
+The transformed set of points is optionally drawn as a polygon.
 }
 \details{
 Details about what is a homothetic transformation, see \url{https://en.wikipedia.org/wiki/Homothetic_transformation}.

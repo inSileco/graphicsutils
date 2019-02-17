@@ -1,6 +1,6 @@
-#' Plots means and error asociated
+#' Plots means and error associated
 #'
-#' Plots a set of means computed based on a dataset and draw error asociated.
+#' Plots a set of means computed based on a dataset and draw error associated.
 #'
 #' @param formula a formula, see \code{[stats::formula()]}.
 #' @param data a data frame (or list) from which the variables in formula should be taken.
@@ -34,23 +34,23 @@
 #' draw_axis=FALSE, add=TRUE, seqx=c(.5,3.5), mar=c(6,6,1,1), cex=1.4)
 #' graphics::axis(2)
 
-plotMeans <- function(formula, data, FUN_err = stats::sd, add = FALSE, seqx = NULL, 
-    draw_axis = TRUE, col_err = graphics::par()$col, col_pt = graphics::par()$col, 
+plotMeans <- function(formula, data, FUN_err = stats::sd, add = FALSE, seqx = NULL,
+    draw_axis = TRUE, col_err = graphics::par()$col, col_pt = graphics::par()$col,
     cex_pt = 1, connect = FALSE, args_con = list(), ...) {
-    ## 
+    ##
     formu <- stats::as.formula(formula)
-    ## 
+    ##
     args <- list(...)
-    ## 
+    ##
     mn_val <- stats::aggregate(formu, data = data, FUN = mean)
     sd_val <- stats::aggregate(formu, data = data, FUN = FUN_err)
-    ## 
+    ##
     n_val <- nrow(mn_val)
     n_col <- ncol(mn_val)
-    ## 
+    ##
     min_val <- mn_val[, n_col] - sd_val[, n_col]
     max_val <- mn_val[, n_col] + sd_val[, n_col]
-    ## 
+    ##
     if (is.null(seqx)) {
         seqx <- seq(0.5, by = 1, length.out = n_val)
         rgx <- c(0, n_val)
@@ -58,37 +58,37 @@ plotMeans <- function(formula, data, FUN_err = stats::sd, add = FALSE, seqx = NU
         stopifnot(length(seqx) == n_val)
         rgx <- range(seqx)
     }
-    ## 
-    plt_def <- list(x = c(0, n_val), y = range(min_val, max_val), type = "n", axes = FALSE, 
+    ##
+    plt_def <- list(x = c(0, n_val), y = range(min_val, max_val), type = "n", axes = FALSE,
         xlab = "", ylab = "")
-    ## 
+    ##
     if (length(args)) {
         idpa <- which(names(args) %in% names(graphics::par(no.readonly = TRUE)))
-        if (length(idpa)) 
+        if (length(idpa))
             do.call(graphics::par, args[idpa])
         idpl <- which(names(args) %in% names(formals(graphics::plot.default)))
         if (length(idpl) & !add) {
             idus <- which(names(plt_def) %in% names(args)[idpl])
-            if (length(idus)) 
+            if (length(idus))
                 plt_def <- plt_def[-idus]
             do.call(graphics::plot.default, c(plt_def, args[idpl]))
-        } else if (!add) 
+        } else if (!add)
             do.call(graphics::plot.default, c(plt_def))
-    } else if (!add) 
+    } else if (!add)
         do.call(graphics::plot.default, c(plt_def))
-    # 
+    #
     do.call(graphics::points, list(x = seqx, y = mn_val[, n_col], col = col_pt, cex = cex_pt))
-    for (i in 1:n_val) do.call(graphics::lines, list(x = rep(seqx[i], 2), y = c(min_val[i], 
+    for (i in 1:n_val) do.call(graphics::lines, list(x = rep(seqx[i], 2), y = c(min_val[i],
         max_val[i]), col = col_err))
-    # 
-    if (connect) 
+    #
+    if (connect)
         do.call(graphics::lines, c(list(x = seqx, y = mn_val[, n_col]), args_con))
-    # 
+    #
     if (draw_axis) {
         graphics::axis(1, at = seqx, labels = mn_val[, 1])
         graphics::axis(2)
         graphics::box(bty = "l", lwd = 1.2)
     }
-    # 
+    #
     invisible(NULL)
 }

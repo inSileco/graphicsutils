@@ -29,14 +29,14 @@ arrows2(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0,
 
 \item{cex.hl}{the magnification coefficient to be used for the lengths of arrows' head.}
 
-\item{prophead}{logical. If TRUE arrows are drawn with head proportionnal to the length of the arrows.}
+\item{prophead}{logical. If TRUE arrows are drawn with head proportional to the length of the arrows.}
 
 \item{twoheaded}{logical. If TRUE two-headed arrows are drawn, default is FALSE.}
 
 \item{...}{additional arguments to be passed to \code{polygon} function.}
 }
 \description{
-Draw arrows between pairs of points. Arrows drawn are fully customizable by using parameters of \code{polygon} function.
+Draw a custom arrows between pairs of points.
 }
 \examples{
 # Example 1:

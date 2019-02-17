@@ -2,7 +2,7 @@
 % Please edit documentation in R/plotMeans.R
 \name{plotMeans}
 \alias{plotMeans}
-\title{Plots means and error asociated}
+\title{Plots means and error associated}
 \usage{
 plotMeans(formula, data, FUN_err = stats::sd, add = FALSE,
   seqx = NULL, draw_axis = TRUE, col_err = graphics::par()$col,
@@ -35,7 +35,7 @@ plotMeans(formula, data, FUN_err = stats::sd, add = FALSE,
 \item{...}{Further graphical parameters (see \code{\link[graphics]{plot.default}} and ) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = 'b'}, \code{pch}. Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
 }
 \description{
-Plots a set of means computed based on a dataset and draw error asociated.
+Plots a set of means computed based on a dataset and draw error associated.
 }
 \examples{
 # Example:

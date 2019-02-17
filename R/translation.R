@@ -1,14 +1,14 @@
 #' Translation
 #'
 #' Compute a translation for a set of points. The transformed set of points is
-#' optionnaly add to the current plot.
+#' optionally add to the current plot.
 #'
 #' @param x the x coordinates of points. It can also be a matrix (see details).
 #' @param y the y coordinates of points.
-#' @param xtrans the x corrdinate of the translation vector.
-#' @param ytrans the y corrdinate of the translation vector.
-#' @param add logical. If `TRUE` the set of transforned points is drawn as a polygon.
-#' @param ... Additionnal arguments to be passed to `polygon` function (used only if `add` is TRUE).
+#' @param xtrans the x coordinate of the translation vector.
+#' @param ytrans the y coordinate of the translation vector.
+#' @param add logical. If `TRUE` the set of transformed points is drawn as a polygon.
+#' @param ... Additional arguments to be passed to `polygon` function (used only if `add` is TRUE).
 #'
 #' @keywords translation, geometry
 #'
@@ -51,7 +51,7 @@ translation <- function(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...) {
     }
     ##--
     trasla <- list(x = x + xtrans, y = y + ytrans)
-    if (add) 
+    if (add)
         graphics::polygon(trasla$x, trasla$y, ...)
     ##--
     trasla

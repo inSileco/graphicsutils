@@ -42,7 +42,7 @@ donut(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8,
 
 \item{clockwise}{a logical. Shall slices be drawn clockwise?}
 
-\item{...}{additionnal arguments to be passed to lines methods.}
+\item{...}{additional arguments to be passed to lines methods.}
 }
 \description{
 Draw a donut chart.

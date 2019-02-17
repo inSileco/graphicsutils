@@ -16,7 +16,7 @@ percY(percentage = 90)
 Returns the values of either x-axis or y-axis for a given percentage.
 }
 \details{
-This function intends to ease the positionning of additionnal marks such as
+This function intends to ease the positioning of additional marks such as
 text when axis have not common axis. The user must be aware that its use
 becomes tricky when drawing multi-panels plots.
 }

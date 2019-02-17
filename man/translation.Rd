@@ -11,17 +11,17 @@ translation(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...)
 
 \item{y}{the y coordinates of points.}
 
-\item{xtrans}{the x corrdinate of the translation vector.}
+\item{xtrans}{the x coordinate of the translation vector.}
 
-\item{ytrans}{the y corrdinate of the translation vector.}
+\item{ytrans}{the y coordinate of the translation vector.}
 
-\item{add}{logical. If \code{TRUE} the set of transforned points is drawn as a polygon.}
+\item{add}{logical. If \code{TRUE} the set of transformed points is drawn as a polygon.}
 
-\item{...}{Additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).}
+\item{...}{Additional arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).}
 }
 \description{
 Compute a translation for a set of points. The transformed set of points is
-optionnaly add to the current plot.
+optionally add to the current plot.
 }
 \details{
 For details about what is a translation, see \url{https://en.wikipedia.org/wiki/Translation_(geometry)}.

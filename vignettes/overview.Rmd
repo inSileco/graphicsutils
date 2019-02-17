@@ -14,20 +14,26 @@ The "graphicsutils" package includes a set of functions built on the top of the
 `graphics` package. This vignette is basically a guided tour of the package,
 a cook book that exemplifies the functions implemented.
 
-```{r, echo = FALSE}
-library("graphicsutils")
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(
+  fig.align = "center",
+  comment = "#> ",
+  fig.height = 6,
+  fig.width = 6
+)
+library(graphicsutils)
 ```
 
-
+An important aspect of `graphicsutils` is that functions have been written in a layer-oriented perspective meaning that the default behavior of the functions provides functions that are rather minimalist and the user should call other functions (such as `axis`, `box2`, etc.) or change the default parameters values in order to customize his plot. Even though that this takes more command lines, we think that this approach makes it easier to get very personalized figures and we hope the functions we provide will help users
+making beautiful figures.
 
 
 
 # Empty your plot with plot0()
 
-It's often useful to empty a plot. The plot0 function makes it very easy to do so.
-Moreover the argument `fill` color the plot region (it is equivalent to calling the `plotAreaColor()`).
+In the layer-oriented approach we are using, it is very convenient to start with an empty plot of a given dimension, just like a canevas. To help creating such canevas, we wrote `plot0()`. Note that by default x and y ranges are `c(-1, 1)`. Moreover the argument `fill` color the plot region (it is equivalent to calling the `plotAreaColor()`).
 
-```{r plotv0, fig.height=6, fig.width=6, fig.cap="plot0() and plotAreaColor()"}
+```{r plotv0, fig.cap="plot0() and plotAreaColor()"}
 par(mar=c(1,1,1,1), mfrow=c(2,2))
 #
 plot0()
@@ -57,14 +63,17 @@ plot0(c(-10,10), asp=1, fill=8, text='cool', srt=45, cex=4, col=2)
 ```
 
 
-# box2()
+
+# Add plot components
+
+## box2()
 
 The `box2()` function allows the user to add any axes around the plot. A
 limitation of the `box()` function is does not allowed all the combination of
 axes. `box2()` proposes a simple way to select the sides to be added on the plot:
 1 = bottom; 2 = left; 3 = top; 4 = right.
 
-```{r box2, fig.height=6, fig.width=6}
+```{r box2}
 par(mar=rep(2,4))
 plot0()
 box2(which="figure", lwd=2, fill="grey30")
@@ -74,20 +83,11 @@ axis(2)
 ```
 
 
-## boxplot2
+## Add circles
 
-```{r boxplot2, fig.height=6, fig.width=6}
-par(mar=rep(2,4))
-dfa <- data.frame(name = rep(LETTERS[1:4], 25), val = runif(100))
-plot0(c(0,5), c(0,1))
-boxplot2(val ~ name, data = dfa, add = TRUE, vc_cex = c(4, 40, 2))
-```
+A function that creates circles.
 
-
-
-# circles()
-
-```{r circles, fig.height=6, fig.width=6}
+```{r circles}
 par(mar=c(1,1,1,1), mfrow=c(2,2))
 plot0()
 circles(0, 0, 1)
@@ -100,9 +100,87 @@ circles(0, 0 ,seq(0,1,0.2), from=pi, col="#BBBBFF88", lty=2, lwd=1.4)
 ```
 
 
+## Add ellipses
 
-# plotMeans()
+```{r ellispes}
+plot0(c(-2,2), c(-2,2), asp = 1)
+ellipse(c(-1,1), c(1,1,-1,-1), from = pi*seq(0.25, 1, by = 0.25),
+  to = 1.25*pi, col = 2, border = 4, lwd = 3)
+```
 
+
+## Add images on plot
+
+The `pchImage()` function eases the uses of `rasterImage()` to add images
+(including `.png` and `.jpeg` files) on a graphic. It allows to change the color of the whole image.
+
+```{r pchImage}
+pathLogo <- system.file("img", "Rlogo.png", package="png")
+par(mar=c(4,1,4,1), mfrow=c(1,2))
+plot0()
+pchImage(0, 0, file=pathLogo, cex.x =4.5, cex.y=4)
+plot0()
+pchImage(0, 0, file=pathLogo, cex.x =4.5, cex.y=4, col="grey25", angle=25)
+```
+
+
+## Add a frame to your plot
+
+Default frame.
+
+```{r frameIt}
+plot0()
+frameIt()
+```
+
+A custom one.
+
+```{r frameIt2}
+plot0()
+frameIt(cex.x=1.5, col=c(2,3), border=1)
+```
+
+
+## Add an envelop
+
+```{r envelop}
+plot0(c(0,10),c(0,10))
+sz <- 100
+seqx <- seq(0, 10, length.out=sz)
+seqy1 <- 0.2*seqx*runif(sz, 0, 1)
+seqy2 <- 4+0.25*seqx*runif(sz, 0, 1)
+seqy3 <- 8+0.25*seqx*runif(sz, 0, 1)
+envelop(seqx, seqy1, seqy2, col='grey85', border=NA)
+envelop(seqx, seqy2, seqy3, col='grey25', border=NA)
+```
+
+## Encircle points
+
+```{r encircle}
+coords <- cbind(runif(10), runif(10))
+plot0(coords)
+points(coords, bg="grey25", pch=21)
+encircle(coords, border="#7b11a1", lwd=2)
+```
+
+
+
+
+# Charts
+
+
+## boxplot2
+
+```{r boxplot2}
+par(mar=rep(2,4))
+dfa <- data.frame(name = rep(LETTERS[1:4], 25), val = runif(100))
+plot0(c(0,5), c(0,1))
+boxplot2(val ~ name, data = dfa, add = TRUE, vc_cex = c(4, 40, 2))
+```
+
+
+
+## plotMeans()
 
 ```{r plotMeans, fig.height=3, fig.width=6}
 dataset <- data.frame(dat=c(rnorm(50, 10, 2), rnorm(50, 20, 2)) , grp=rep(c('A','D'), each=50))
@@ -120,69 +198,20 @@ graphics::axis(2)
 ```
 
 
-# polarPlot()
+## polarPlot()
 
-```{r, fig.height=6, fig.width=6}
+```{r}
 polarPlot(1:40, stats::runif(40), to=1.9*pi, col='grey30', border='grey80')
 ```
 
-# compassRose
-
-```{r compassRose, fig.height=6, fig.width=6}
-par(mfrow=c(2,2), mar=rep(1,4))
-##
-plot0(c(-1,1), asp=1)
-compassRose(0, 0)
-##
-plot0(c(-1,1), asp=1)
-compassRose(0.5, 0.5)
-##
-plot0(c(-1,1), asp=1)
-compassRose(0, 0, cex.cr=2)
-##
-plot0(c(-1,1), asp=1)
-compassRose(0, 0, rot=.75*pi, cex.cr=2, cex.let=1.5, offset=-1.25)
-```
-
-also
-
-```{R compassRose2}
-compassRose(0, rot=25, cex.cr = 2, col.let =2, add = FALSE)
-```
-
-# envelop
-
-```{r envelop, fig.height=6, fig.width=6}
-plot0(c(0,10),c(0,10))
-sz <- 100
-seqx <- seq(0, 10, length.out=sz)
-seqy1 <- 0.2*seqx*runif(sz, 0, 1)
-seqy2 <- 4+0.25*seqx*runif(sz, 0, 1)
-seqy3 <- 8+0.25*seqx*runif(sz, 0, 1)
-envelop(seqx, seqy1, seqy2, col='grey85', border=NA)
-envelop(seqx, seqy2, seqy3, col='grey25', border=NA)
-```
 
 
 
-# Add images on plot
 
-
-The `pchImage()` function eases the uses of `rasterImage()` to add images
-(including png and jpeg files) on a graph. It allows to change the color of the whole image.
-
-```{r pchImage}
-pathLogo <- system.file("img", "Rlogo.png", package="png")
-par(mar=c(4,1,4,1), mfrow=c(1,2))
-plot0()
-pchImage(0, 0, file=pathLogo, cex.x =4.5, cex.y=4)
-plot0()
-pchImage(0, 0, file=pathLogo, cex.x =4.5, cex.y=4, col="grey25", angle=25)
-```
 
 ## plotImage
 
-```{r plotImage2, fig.height=6, fig.width=6}
+```{r plotImage2}
 img <- png::readPNG(system.file('img', 'Rlogo.png', package='png'), native=TRUE)
 op <- graphics::par(no.readonly = TRUE)
 graphics::par(mfrow=c(2,2), mar=rep(1,4))
@@ -192,7 +221,7 @@ graphics::par(op)
 
 Another example:
 
-```{r pchImage2, fig.height=6, fig.width=6}
+```{r pchImage2}
 img<-png::readPNG(system.file('img', 'Rlogo.png', package='png'), native=TRUE)
 n<-15
 plot0(c(0,1),c(0,1))
@@ -201,7 +230,21 @@ obj=img, angle=360*runif(n), col=2)
 ```
 
 
-## Colors
+
+## Image 2
+
+This function is designed for small matrices so the matrix is translated into
+a colored image without any rotation of the axes.
+
+```{r image2}
+image2(matrix(1:9, 3))
+image2(matrix(1:27, 3), from = 2, border = 2, lwd = 2)
+```
+
+
+
+
+# Colors manipulations
 
 ## Creating shades of colors
 
@@ -209,17 +252,17 @@ The `darken()` and `lighten()` functions ease the creation of shades of a given
 color. For any color palette, use the `showPalette()` to display them!
 
 
-```{r darken, fig.height=6, fig.width=6}
+```{r darken}
 someblue <- darken("blue", 10*1:9)
 showPalette(someblue)
 ```
 
-```{r lighten, fig.height=6, fig.width=6}
+```{r lighten}
 somered <- lighten("red", 10*1:9)
 showPalette(somered)
 ```
 
-```{r showpal, fig.height=6, fig.width=6}
+```{r showpal}
 showPalette(rainbow(81))
 ```
 
@@ -235,35 +278,26 @@ showPalette(someblue)
 
 ```{r lighten2}
 somered <- lighten("red", 10*1:9)
-showPalette(somered, add_codecolor=TRUE)
+showPalette(somered, add_codecolor = TRUE)
 ```
 
 Since version 1.1-2 a set of color palettes has been added, see `gpuPalette()`.
+By default, `gpuPalette()` displays the color palettes available:
+
+
+```{r gpuPalette}
+gpuPalette()
+```
+
+In order to use one of the palette, use its names:
 
 ```{r insileco}
-showPalette(gpuPalette("insileco"), add_codecolor=TRUE)
+showPalette(gpuPalette("insileco"), add_codecolor = TRUE)
 ```
 
 
 
-## Encircle points
 
-```{r encircle}
-coords <- cbind(runif(10), runif(10))
-plot0(coords)
-points(coords, bg="grey25", pch=21)
-encircle(coords, border="#7b11a1", lwd=2)
-```
-
-## Image 2
-
-This function is designed for small matrices so the matrix is translated into
-a colored image without any rotation of the axes.
-
-```{r image2}
-image2(matrix(1:9, 3))
-image2(matrix(1:27, 3), from = 2, border = 2, lwd = 2)
-```
 
 
 # Stacked areas chart
@@ -289,26 +323,7 @@ stackedAreas(x)
 ```
 
 
-# Manipulation of figure dimensions
 
-## Get pretty ranges
-
-```{r prettyRange}
-vec <- stats::runif(20)
-range(vec)
-prettyRange(vec)
-prettyRange(c(3.849,3.88245))
-```
-
-## Howmany RC
-
-This helper function returns a suggested number of row and column for a given
-number of panles passed as an argument.
-
-```{r howManyRC}
-howManyRC(10)
-howManyRC(16)
-```
 
 
 
@@ -316,14 +331,18 @@ howManyRC(16)
 
 ## Interactive functions
 
-Some functions are interactive and fairly understandable!
-So, I suggest you try the following functions:
+Some functions are interactive and fairly understandable, give them a try.
 
-```{r eval=FALSE}
+
+### Chose a color
+
+```{r eval = FALSE}
 pickColors()
 ```
 
-```{r eval=FALSE}
+### Build a layout matrix interactively
+
+```{r eval = FALSE}
 layout2()
 ```
 
@@ -332,29 +351,49 @@ layout2()
 
 
 
+# Miscellaneous
+
+## Are these points within this polygon?
+
+```{r ptinpol}
+ mat <- matrix(10*runif(100), 50)
+res <- pointsInPolygon(mat, cbind(c(4,8,8,4),c(4,4,8,8)))
+# Visual assessment
+plot0(c(0,10), c(0,10))
+graphics::polygon(c(4,8,8,4),c(4,4,8,8))
+graphics::points(mat[,1], mat[,2], col=res+1)
+```
 
 
+## compassRose
 
+```{r compassRose}
+par(mfrow=c(2,2), mar=rep(1,4))
+##
+plot0(c(-1,1), asp=1)
+compassRose(0, 0)
+##
+plot0(c(-1,1), asp=1)
+compassRose(0.5, 0.5)
+##
+plot0(c(-1,1), asp=1)
+compassRose(0, 0, cex.cr=2)
+##
+plot0(c(-1,1), asp=1)
+compassRose(0, 0, rot=.75*pi, cex.cr=2, cex.let=1.5, offset=-1.25)
+```
 
+also,
 
-
-
-
-
-
-
-### Polar plot
-
-```{r polarPlot,   fig.width=6,  fig.height=6}
-polarPlot(1:40, stats::runif(40), to=1.9*pi, col="grey30", border="grey80")
+```{R compassRose2}
+compassRose(0, rot=25, cex.cr = 2, col.let =2, add = FALSE)
 ```
 
 
 
+# Vector fields
 
-## Vector fields
-
-```{r vectorfields,  fig.height = 6, fig.width = 6}
+```{r vectorfields}
 systLin <- function(X, beta){
     Y <- matrix(0,ncol=2)
     Y[1L] <- beta[1,1]*X[1L]+beta[1,2]*X[2L]
@@ -372,4 +411,26 @@ vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
    args=list(beta=beta1), cex.x=0.35, cex.arr=0.25,
    border=NA,cex.hh=1, cex.shr=0.6, col=8)
 graphics::abline(v=0, h=0)
+```
+
+
+## Manipulation of figure dimensions
+
+### Get pretty ranges
+
+```{r prettyRange}
+vec <- stats::runif(20)
+range(vec)
+prettyRange(vec)
+prettyRange(c(3.849,3.88245))
+```
+
+### How many row and columns?
+
+This helper function returns suggested numbers of row and column for a given
+number of panels passed as an argument.
+
+```{r howManyRC}
+howManyRC(10)
+howManyRC(16)
 ```

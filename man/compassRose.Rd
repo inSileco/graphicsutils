@@ -50,7 +50,7 @@ Note that there already exists a similar function by Jim Lemon in \code{sp} pack
 }
 \section{Functions}{
 \itemize{
-\item \code{compassRose}: A compass rose with the four cardinal directions and additionnal directions.
+\item \code{compassRose}: A compass rose with the four cardinal directions and additional directions.
 
 \item \code{compassRoseCardinal}: A compass with the four cardinal directions only.
 }}

@@ -27,7 +27,7 @@ Once the clicks have been achieved, the users can get the matrix created and/or 
 }
 \details{
 Arguments \code{grain.x} and \code{grain.y} control the aspect of the support
-grid generated to locate the differents panels. Once the grid popup, the user
+grid generated to locate the different panels. Once the grid popup, the user
 must click 2\emph{n times to select the size of their n subplot. A panel is
 delimited by two consecutive clicks: click 2}p and clicks 2*p+1. The two cells
 the user clicked on will then be used to compute the area allocated for

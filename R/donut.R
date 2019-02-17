@@ -18,7 +18,7 @@
 #' @param add a logical. Should the donut chart be added on the current graph? If `FALSE` then a new plot is created.
 #' @param border the border color of the donut, set to `NA` which omits borders.
 #' @param clockwise a logical. Shall slices be drawn clockwise?
-#' @param ... additionnal arguments to be passed to lines methods.
+#' @param ... additional arguments to be passed to lines methods.
 #'
 #' @keywords donut
 #'

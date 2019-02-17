@@ -1,6 +1,6 @@
 #' Add arrows to a plot.
 #'
-#' Draw arrows between pairs of points. Arrows drawn are fully customizable by using parameters of `polygon` function.
+#' Draw a custom arrows between pairs of points.
 #'
 #' @export
 #'
@@ -14,7 +14,7 @@
 #' @param cex.shr the magnification coefficient to be used to change the height of arrows towards their heads.
 #' @param cex.hl the magnification coefficient to be used for the lengths of arrows' head.
 #' @param cex.hh the magnification coefficient to be used for the heights of arrows' head.
-#' @param prophead logical. If TRUE arrows are drawn with head proportionnal to the length of the arrows.
+#' @param prophead logical. If TRUE arrows are drawn with head proportional to the length of the arrows.
 #' @param twoheaded logical. If TRUE two-headed arrows are drawn, default is FALSE.
 #' @param ... additional arguments to be passed to `polygon` function.
 #'
@@ -35,10 +35,10 @@
 #' arrows2(runif(2), runif(2), x1=runif(2), y1=runif(2), prophead=FALSE, lty=3)
 
 
-arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1, 
+arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1,
     cex.shr = 1, cex.hh = 1, cex.hl = 1, prophead = TRUE, twoheaded = FALSE, ...) {
     stopifnot(all(c(off0, off1)^2 < 1))
-    ## ---- Format checkings / adjusting vectors sizes
+    ## ---- Format checking / adjusting vectors sizes
     argn <- c("x0", "y0", "x1", "y1")
     argo <- list(x0, y0, x1, y1)
     sz <- max(sapply(list(x0, y0, x1, y1), length))
@@ -48,7 +48,7 @@ arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1
     rx <- (x1 - x0)
     ry <- (y1 - y0)
     distpt <- sqrt(rx * rx + ry * ry)
-    # ----- Checkings
+    # ----- Checking
     pb <- which(distpt == 0)
     if (length(pb) > 0) {
         warning("Zero-length arrows are skipped.")
@@ -84,15 +84,16 @@ arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1
             sqptx <- rep(x0[i], 7) + c(0, lg2, lg2, lg1, lg2, lg2, 0)
             sqpty <- rep(y0[i], 7) + c(hg1, hg2, hg3, 0, -hg3, -hg2, -hg1)
         } else {
-            sqptx <- rep(x0[i], 12) + c(0, lg3, lg3, 0.5 * lg1, lg2, lg2, lg1, lg2, 
+            sqptx <- rep(x0[i], 12) + c(0, lg3, lg3, 0.5 * lg1, lg2, lg2, lg1, lg2,
                 lg2, 0.5 * lg1, lg3, lg3)
-            sqpty <- rep(y0[i], 12) + c(0, hg3, hg2, hg1, hg2, hg3, 0, -hg3, -hg2, 
+            sqpty <- rep(y0[i], 12) + c(0, hg3, hg2, hg1, hg2, hg3, 0, -hg3, -hg2,
                 -hg1, -hg2, -hg3)
         }
         ## ----
-        ptcoord <- rotation(sqptx, sqpty, rot = anglept[i], xrot = x0[i], yrot = y0[i], 
+        ptcoord <- rotation(sqptx, sqpty, rot = anglept[i], xrot = x0[i], yrot = y0[i],
             rad = TRUE)
         graphics::polygon(ptcoord$x, ptcoord$y, ...)
     }
+    ## ----
     invisible(NULL)
 }

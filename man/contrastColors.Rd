@@ -22,7 +22,7 @@ of colors.
 }
 \details{
 Based on the sum of colors' saturation \code{how_borw} returns black or white,
-\code{how_prop} proportially remove or add some saturation. \code{how_oppo}
+\code{how_prop} proportionally remove or add some saturation. \code{how_oppo}
 opposes the color (255-x) and \code{how_cent} centers the columns, i.e. remove
 or add 127.
 }

@@ -12,7 +12,7 @@ single argument \code{x} can be provided.}
 
 \item{y}{the y coordinates of a set of points.}
 
-\item{nb.pt}{the nuber of points to ge generated around eah coordinates.}
+\item{nb.pt}{the number of points to be generated around each coordinates.}
 
 \item{off.set}{the y coordinates of a set of points.}
 

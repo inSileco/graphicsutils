@@ -3,12 +3,12 @@
 \docType{data}
 \name{gpuPalettes}
 \alias{gpuPalettes}
-\title{Complete list of graphisutils' color palettes}
+\title{Complete list of graphicsutils' color palettes}
 \format{An object of class \code{list} of length 7.}
 \usage{
 gpuPalettes
 }
 \description{
-Color palettes of the graphisutils package.
+Color palettes of the graphicsutils package.
 }
 \keyword{datasets}

@@ -6,8 +6,6 @@ Status](https://travis-ci.org/inSileco/graphicsutils.svg?branch=master)](https:/
 [![Build
 status](https://ci.appveyor.com/api/projects/status/330p7f0djhpl998q?svg=true)](https://ci.appveyor.com/project/KevCaz/graphicsutils-qo99s)
 [![codecov](https://codecov.io/gh/inSileco/graphicsutils/branch/master/graph/badge.svg)](https://codecov.io/gh/inSileco/graphicsutils)
-[![](https://img.shields.io/badge/licence-GPLv2-3fb3b2.svg)](LICENSE)
-
 
 
 Description
@@ -57,9 +55,3 @@ Code of Conduct
 ---------------
 
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
-
-
-Tout-doux
----------
-
-- [ ] add mozaicplot

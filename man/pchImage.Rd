@@ -27,7 +27,7 @@ the center of the image. Otherwise they represent the bottom-left coordinates of
 \item{add}{logical. Should images be added on the current graph? If
 \code{FALSE} a new plot is created.}
 
-\item{col}{optionnal color use to fill pixels whose values are not 0}
+\item{col}{optional color use to fill pixels whose values are not 0}
 
 \item{...}{Additional arguments to be passed to the \code{rasterImage} function.}
 }
@@ -37,7 +37,7 @@ to directly include a \code{.png} or a \code{.jpeg} file in a plot region.
 }
 \details{
 Either \code{obj} or \code{file} must be defined.
-If a \code{file} is defined, \code{readPNG} or \code{readJPEG} according to
+If \code{file} is not null, then \code{\link[png:readPNG]{png::readPNG()}} or \code{\link[jpeg:readJPEG]{jpeg::readJPEG()}} according to
 the end of the file extension.
 }
 \examples{

@@ -20,13 +20,13 @@ A character vector including the colors selected.
 Generate an interactive interface to pick a set of colors up.
 }
 \details{
-This function generates a graphical window splitted into 6 panels. The top
+This function generates a graphical window split into 6 panels. The top
 panel serves to select one tone. The panel right below presents \code{nb_shades}
-of the selected tones. The bottom rigth panel displays the current selection
+of the selected tones. The bottom right panel displays the current selection
 that can be stored by clicking on the bottom left panel \emph{Keep it}.
 The bottom center panel shows the characteristic of the selected color.
 Finally, in order to abort before completing the selection of colors, the
-user can simply clik on the left \emph{Stop} panel.
+user can simply click on the \emph{Stop} panel (on the left).
 }
 \keyword{color,}
 \keyword{interactive}

@@ -16,7 +16,7 @@ showPalette(x = grDevices::palette(), inline = FALSE,
 
 \item{add_codecolor}{a logical. If \code{TRUE}, the code color is displayed (default is set to \code{FALSE}).}
 
-\item{cex_num}{the maginification coefficient of the color vector's indices.}
+\item{cex_num}{the magnification coefficient of the color vector's indices.}
 }
 \value{
 The color palette displayed as an invisible output.

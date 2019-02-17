@@ -26,7 +26,7 @@
 #' compassRose(0, rot=25, cex.cr = 2, col.let =2, add = FALSE)
 
 #' @export
-#' @describeIn compassRose A compass rose with the four cardinal directions and additionnal directions.
+#' @describeIn compassRose A compass rose with the four cardinal directions and additional directions.
 compassRose <- function(x = 0, y = 0, labels = c("S", "W", "N", "E"), rot = 0, cex.cr = 1,
     cex.let = cex.cr, col.cr = c(1, 8), col.let = 1, border = c(1, 8), offset = 1.2,
     add = TRUE, ...) {

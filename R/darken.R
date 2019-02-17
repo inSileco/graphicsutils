@@ -1,6 +1,6 @@
 #' Lighten or darken colors
 #'
-#' Returns lightened or darkened colors, vetorized over `percentage`.
+#' Returns lightened or darkened colors, vectorised over `percentage`.
 #' `ramp` is valid for any couple of colors. Functions `darken` and
 #' `lightened` actually call `ramp` to darken and lighten a given color.
 #'
@@ -21,7 +21,7 @@
 ramp <- function(fromcol, tocol, percentage = 50, as_rgb = FALSE) {
     perc <- as.integer(percentage)
     outcol <- (grDevices::colorRampPalette(c(fromcol, tocol)))(101)[perc + 1]
-    if (as_rgb) 
+    if (as_rgb)
         outcol <- grDevices::col2rgb(outcol)
     return(outcol)
 }
