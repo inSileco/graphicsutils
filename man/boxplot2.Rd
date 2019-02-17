@@ -32,7 +32,7 @@ be drawn, particularly when ‘add = TRUE’; defaults to ‘1:n’
 where ‘n’ is the number of boxes.}
 }
 \value{
-Draw a boxplot and returned the y coordinates as an invisible output.
+Draw a boxplot and returns the coordinates as an invisible output.
 }
 \description{
 Produce custom box-and-whisker plot(s) of the given (grouped) values.

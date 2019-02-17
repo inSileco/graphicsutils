@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Compute the coordinates of an envelop. — envelop • graphicsutils</title>
+<title>Custom boxplots — boxplot2 • graphicsutils</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,11 +30,9 @@
 
 
 
-<meta property="og:title" content="Compute the coordinates of an envelop. — envelop" />
+<meta property="og:title" content="Custom boxplots — boxplot2" />
 
-<meta property="og:description" content="envelop eases the compuation of the polygons described by to set
-of y coordinates along the x-axis. Optionnaly, the polygons could be added
-on the current plot." />
+<meta property="og:description" content="Produce custom box-and-whisker plot(s) of the given (grouped) values." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -113,58 +111,72 @@ on the current plot." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Compute the coordinates of an envelop.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/inSileco/graphicsutils/blob/master/R/envelop.R'><code>R/envelop.R</code></a></small>
-    <div class="hidden name"><code>envelop.Rd</code></div>
+    <h1>Custom boxplots</h1>
+    <small class="dont-index">Source: <a href='https://github.com/inSileco/graphicsutils/blob/master/R/boxplot2.R'><code>R/boxplot2.R</code></a></small>
+    <div class="hidden name"><code>boxplot2.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><code>envelop</code> eases the compuation of the polygons described by to set
-of y coordinates along the x-axis. Optionnaly, the polygons could be added
-on the current plot.</p>
+    <p>Produce custom box-and-whisker plot(s) of the given (grouped) values.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>envelop</span>(<span class='no'>x</span>, <span class='no'>upper</span>, <span class='kw'>lower</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rep'>rep</a></span>(<span class='fl'>0</span>, <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/length'>length</a></span>(<span class='no'>upper</span>)), <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>boxplot2</span>(<span class='no'>x</span>, <span class='no'>...</span>, <span class='kw'>probs</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0.05</span>, <span class='fl'>0.25</span>, <span class='fl'>0.5</span>, <span class='fl'>0.75</span>, <span class='fl'>0.95</span>), <span class='kw'>vc_cex</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>5</span>,
+  <span class='fl'>18</span>, <span class='fl'>1.4</span>), <span class='kw'>colors</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"grey75"</span>, <span class='st'>"grey75"</span>, <span class='st'>"grey20"</span>), <span class='kw'>med_pch</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+  <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>at</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>vectors containing the x coordinates.</p></td>
-    </tr>
-    <tr>
-      <th>upper</th>
-      <td><p>the y coordinates of the upper values.</p></td>
-    </tr>
-    <tr>
-      <th>lower</th>
-      <td><p>the y coordinates of the lower values.</p></td>
-    </tr>
-    <tr>
-      <th>add</th>
-      <td><p>a logical. If <code>TRUE</code> the envelop is drawn as a polygon (default behavior).</p></td>
+      <td><p>a formula, a an object to be coerced as a data frame.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>additionnal arguments to be passed to <code>[graphics::polygon()]</code> function.</p></td>
+      <td><p>further arguments to be passed to <code><a href='https://www.rdocumentation.org/packages/stats/topics/aggregate'>stats::aggregate()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>probs</th>
+      <td><p>a numeric vector of 5 probabilities used to drawn the boxes.
+By default <code>probs=c(.05, 0.25, .5, .75, .95)</code>.</p></td>
+    </tr>
+    <tr>
+      <th>vc_cex</th>
+      <td><p>numeric vector of 3 magnifications coefficients. The
+first one determines the width of the whiskers, the second one is for the
+width of the box and the last one is for the symbol indicating the median.</p></td>
+    </tr>
+    <tr>
+      <th>colors</th>
+      <td><p>numeric vector of 3 colors for 1- the whiskers 2- the boxes
+and 3- the symbols that indicates the median.</p></td>
+    </tr>
+    <tr>
+      <th>med_pch</th>
+      <td><p><code>pch</code> value used to indicate the median.</p></td>
+    </tr>
+    <tr>
+      <th>add</th>
+      <td><p>a logical. Should the boxes be added on the current graph?</p></td>
+    </tr>
+    <tr>
+      <th>at</th>
+      <td><p>numeric vector giving the locations where the boxplots should
+be drawn, particularly when ‘add = TRUE’; defaults to ‘1:n’
+where ‘n’ is the number of boxes.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The coordinates of the envelop are returned if assigned.</p>
+    <p>Draw a boxplot and returns the coordinates as an invisible output.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='plot0.html'>plot0</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>10</span>), <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>10</span>))</div><div class='input'><span class='no'>sz</span> <span class='kw'>&lt;-</span> <span class='fl'>100</span>
-<span class='no'>seqx</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq</a></span>(<span class='fl'>0</span>, <span class='fl'>10</span>, <span class='kw'>length.out</span> <span class='kw'>=</span> <span class='no'>sz</span>)
-<span class='no'>seqy1</span> <span class='kw'>&lt;-</span> <span class='fl'>0.2</span> * <span class='no'>seqx</span> * <span class='fu'><a href='https://www.rdocumentation.org/packages/stats/topics/Uniform'>runif</a></span>(<span class='no'>sz</span>, <span class='fl'>0</span>, <span class='fl'>1</span>)
-<span class='no'>seqy2</span> <span class='kw'>&lt;-</span> <span class='fl'>4</span> + <span class='fl'>0.25</span> * <span class='no'>seqx</span> * <span class='fu'><a href='https://www.rdocumentation.org/packages/stats/topics/Uniform'>runif</a></span>(<span class='no'>sz</span>, <span class='fl'>0</span>, <span class='fl'>1</span>)
-<span class='no'>seqy3</span> <span class='kw'>&lt;-</span> <span class='fl'>8</span> + <span class='fl'>0.25</span> * <span class='no'>seqx</span> * <span class='fu'><a href='https://www.rdocumentation.org/packages/stats/topics/Uniform'>runif</a></span>(<span class='no'>sz</span>, <span class='fl'>0</span>, <span class='fl'>1</span>)
-<span class='fu'>envelop</span>(<span class='no'>seqx</span>, <span class='no'>seqy1</span>, <span class='no'>seqy2</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>'grey85'</span>, <span class='kw'>border</span> <span class='kw'>=</span> <span class='fl'>NA</span>)</div><div class='input'><span class='fu'>envelop</span>(<span class='no'>seqx</span>, <span class='no'>seqy2</span>, <span class='no'>seqy3</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>'grey25'</span>, <span class='kw'>border</span> <span class='kw'>=</span> <span class='fl'>NA</span>)</div><div class='img'><img src='envelop-1.png' alt='' width='700' height='433' /></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>boxplot2</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/lapply'>replicate</a></span>(<span class='fl'>10</span>, <span class='fu'><a href='https://www.rdocumentation.org/packages/stats/topics/Uniform'>runif</a></span>(<span class='fl'>100</span>)))</div><div class='img'><img src='boxplot2-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='no'>dfa</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rep'>rep</a></span>(<span class='no'>LETTERS</span>[<span class='fl'>1</span>:<span class='fl'>4</span>], <span class='fl'>25</span>), <span class='kw'>val</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/stats/topics/Uniform'>runif</a></span>(<span class='fl'>100</span>))
+<span class='fu'><a href='plot0.html'>plot0</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>5</span>), <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>1</span>))</div><div class='input'><span class='fu'>boxplot2</span>(<span class='no'>val</span> ~ <span class='no'>name</span>, <span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>dfa</span>, <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>vc_cex</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>4</span>, <span class='fl'>40</span>, <span class='fl'>2</span>))</div><div class='img'><img src='boxplot2-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -176,6 +188,8 @@ on the current plot.</p>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
+    <h2>Author</h2>
+    <p>Kevin Cazelles</p>
   </div>
 </div>
 

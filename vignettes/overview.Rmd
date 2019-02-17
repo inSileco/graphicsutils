@@ -9,12 +9,10 @@ author: Kevin Cazelles
 ---
 
 
-# Introduction
 
-The "graphicsutils" package proposes a set of functions that eases the use of
-the `graphics` package. As this package is essentially a collection of functions,
-this vignette is a guided tour of the package, a cook book that exemplifies
-the functions implemented.
+The "graphicsutils" package includes a set of functions built on the top of the
+`graphics` package. This vignette is basically a guided tour of the package,
+a cook book that exemplifies the functions implemented.
 
 ```{r, echo = FALSE}
 library("graphicsutils")
@@ -24,12 +22,12 @@ library("graphicsutils")
 
 
 
-# Empty your plot plot0()
+# Empty your plot with plot0()
 
 It's often useful to empty a plot. The plot0 function makes it very easy to do so.
 Moreover the argument `fill` color the plot region (it is equivalent to calling the `plotAreaColor()`).
 
-```{r plot00, fig.height=6, fig.width=6, fig.cap="plot0() and plotAreaColor()"}
+```{r plotv0, fig.height=6, fig.width=6, fig.cap="plot0() and plotAreaColor()"}
 par(mar=c(1,1,1,1), mfrow=c(2,2))
 #
 plot0()
@@ -44,22 +42,15 @@ plot0()
 plotAreaColor(col="#8eb5e3", border="grey20", lty=2, lwd=4)
 ```
 
-Also
-
-
-```{r plot0}
-plot0(c(0,1),c(0,1))
-```
-
-Quite empty, isn't it?
-Also, it can be filled with any color using the `fill` parameter.
-
+The `fill` and `grid.col` make the customization of the background fairly
+easy:
 
 ```{r plot0v2}
-plot0(c(-10,10), fill='#ebebeb', grid.col = 'white')
+plot0(c(-10,10), fill="grey90", grid.col = 'white')
 ```
 
-And also add a text:
+Another parameter `text` that adds a text in the middle of the plot area
+which makes `plot0()` a helpful function to add piece of legend :
 
 ```{r plot0v3}
 plot0(c(-10,10), asp=1, fill=8, text='cool', srt=45, cex=4, col=2)
@@ -81,6 +72,17 @@ box2(side=12, lwd=2, fill="grey80")
 axis(1)
 axis(2)
 ```
+
+
+## boxplot2
+
+```{r boxplot2, fig.height=6, fig.width=6}
+par(mar=rep(2,4))
+dfa <- data.frame(name = rep(LETTERS[1:4], 25), val = runif(100))
+plot0(c(0,5), c(0,1))
+boxplot2(val ~ name, data = dfa, add = TRUE, vc_cex = c(4, 40, 2))
+```
+
 
 
 # circles()
@@ -307,6 +309,7 @@ number of panles passed as an argument.
 howManyRC(10)
 howManyRC(16)
 ```
+
 
 
 
