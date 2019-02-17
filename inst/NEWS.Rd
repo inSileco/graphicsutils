@@ -4,11 +4,15 @@
 \newcommand{\ghit}{\href{https://github.com/KevCaz/graphicsutils/issues/#1}{##1}}
 
 
-\section{Changes in graphicsutils version 1.2-1}{
+\section{Changes in graphicsutils version 1.3-0}{
   \itemize{
     \item Addition of new functions:
       \itemize{
         \item new function \code{boxplot2()} that generates boxplots with a different visual that \code{boxplot}.
+      }
+    \item Changes in the package's structure:
+      \itemize{
+        \item magrittr is no longer imported and change in functions have been made accordingly.
       }
     \item Change in documentation:
     \itemize{

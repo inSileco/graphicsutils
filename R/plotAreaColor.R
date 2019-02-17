@@ -8,7 +8,6 @@
 #'
 #' @keywords background, color
 #'
-#' @importFrom magrittr %<>%
 #' @export
 #'
 #' @details The function calls \code{\link{rect}} and draw a colored rectangle (default color is set to light blue) whose dimensions are given by argument `usr` of function \code{\link{par}}.

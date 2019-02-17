@@ -10,8 +10,6 @@
 #'
 #' @keywords color, selection
 #'
-#' @importFrom magrittr %<>%
-#'
 #' @return The color palette displayed as an invisible output.
 #'
 #' @export
@@ -20,10 +18,10 @@
 #' showPalette()
 #' showPalette(inline=TRUE)
 #' showPalette(1)
-#' showPalette(sample(1:100, 16), add_number=TRUE, add_codecolor = TRUE)
+#' showPalette(sample(1:100, 16), add_number = TRUE, add_codecolor = TRUE)
 
-showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = FALSE,
-    add_codecolor = FALSE, cex_num = 1.2) {
+showPalette <- function(x = grDevices::palette(), inline = FALSE,
+    add_number = FALSE, add_codecolor = FALSE, cex_num = 1.2) {
 
     opar <- graphics::par(no.readonly = TRUE)
     on.exit(graphics::par(opar))
@@ -36,7 +34,7 @@ showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = F
     }
     ##
     if (class(x) != "matrix")
-        x %<>% grDevices::col2rgb()
+        x <- grDevices::col2rgb(x)
     ramp <- apply(x, 2, function(x) grDevices::rgb(x[1L], x[2L], x[3L], maxColorValue = 255))
     dark <- (apply(x, 2, sum) > 196) + 1
     ## -- compute the number of column and rows
@@ -53,14 +51,8 @@ showPalette <- function(x = grDevices::palette(), inline = FALSE, add_number = F
     for (i in 1:nb_x) {
         plot0(fill = ramp[i])
         txt <- ""
-        if (add_number) {
-            txt %<>% paste0(i)
-            if (add_codecolor)
-                txt %<>% paste0(":  ", ramp[i])
-        } else {
-            if (add_codecolor)
-                txt %<>% paste0(ramp[i])
-        }
+        if (add_number) txt <- paste0(txt, i, ": ")
+        if (add_codecolor)  txt <- paste0(txt, ramp[i])
         graphics::text(0, 0, txt, cex = cex_num, col = c("white", "black")[dark[i]])
         box2(col = "white")
     }

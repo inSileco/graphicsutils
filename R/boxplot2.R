@@ -50,10 +50,11 @@ boxplot2 <- function(x, ..., probs = c(.05, 0.25, .5, .75, .95),
     val <- apply(as.data.frame(x), 2, quantile, probs = probs)
   }
   ##
-  if (!add)
-    plot0(c(.5, ncol(val) +.5), c(range(val)))
-  ##
   if (is.null(at)) xco <- 1:ncol(val) else xco <- rep_len(at, ncol(val))
+  ##
+  if (!add)
+    plot0(c(.5, ncol(val) + .5), range(val))
+
 
   for (i in seq_len(ncol(val))) {
     single_boxplot(xco[i], val[,i], vc_cex = vc_cex, colors = colors,
