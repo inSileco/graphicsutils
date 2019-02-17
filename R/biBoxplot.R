@@ -1,19 +1,19 @@
 #' A bi-boxplot.
 #'
-#' Draws boxplots and boz.
+#' Draws boxplots and bi-boxplots.
 #'
 #' @param df1 first set of boxplots.
 #' @param df2 first set of boxplots.
 #' @param probs numeric vector of five probabilities (see \code{[stats::quantile()]}).
 #' @param width a vector giving the relative widths of the boxes making up the plot.
 #' @param sta_wd staple width.
-#' @param median a list of aruments passed to [graphics::lines()] to custom the median line.
-#' @param staples a list of aruments passed to [graphics::lines()] to custom the staples.
-#' @param whiskers a list of aruments passed to [graphics::lines()] to custom the whiskers.
+#' @param median a list of arguments passed to [graphics::lines()] to custom the median line.
+#' @param staples a list of arguments passed to [graphics::lines()] to custom the staples.
+#' @param whiskers a list of arguments passed to [graphics::lines()] to custom the whiskers.
 #' @param col_left color of the left boxes.
 #' @param col_right color of the right boxes.
 #' @param add a logical. Should the biboxplots be added on the current graph? If `FALSE` then a new plot is created.
-#' @param at numeric vector giving the locations where the boxplots should be drawn. Same default behabiour as in [graphics::boxplot()].
+#' @param at numeric vector giving the locations where the boxplots should be drawn. Same default behavior as in [graphics::boxplot()].
 #' @keywords boxplots
 #'
 #' @importFrom graphics lines.default rect

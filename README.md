@@ -53,7 +53,7 @@ Main features
 -------------
 
 See the [overview vignette](http://insileco.github.io/graphicsutils/articles/overview.html)
-for details. 
+for details.
 
 
 Code of Conduct
@@ -62,3 +62,10 @@ Code of Conduct
 Please note that this project is released with a [Contributor Code of
 Conduct](CONDUCT.md). By participating in this project you agree to
 abide by its terms.
+
+
+Tout-doux
+---------
+
+- [ ] add mozaicplot
+- [ ] add boxplot

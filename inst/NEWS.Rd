@@ -5,7 +5,12 @@
 
 
 \section{Changes in graphicsutils version 1.2-1}{
-
+  \itemize{
+    \item Addition of new functions:
+      \itemize{
+        \item new function \code{boxplot2()} that generates boxplots with a different visual that \code{boxplot}.
+      }
+  }
 }
 
 

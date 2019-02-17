@@ -20,11 +20,11 @@ biBoxplot(df1, df2 = df1, probs = c(0.01, 0.25, 0.5, 0.75, 0.99),
 
 \item{sta_wd}{staple width.}
 
-\item{median}{a list of aruments passed to \code{\link[graphics:lines]{graphics::lines()}} to custom the median line.}
+\item{median}{a list of arguments passed to \code{\link[graphics:lines]{graphics::lines()}} to custom the median line.}
 
-\item{staples}{a list of aruments passed to \code{\link[graphics:lines]{graphics::lines()}} to custom the staples.}
+\item{staples}{a list of arguments passed to \code{\link[graphics:lines]{graphics::lines()}} to custom the staples.}
 
-\item{whiskers}{a list of aruments passed to \code{\link[graphics:lines]{graphics::lines()}} to custom the whiskers.}
+\item{whiskers}{a list of arguments passed to \code{\link[graphics:lines]{graphics::lines()}} to custom the whiskers.}
 
 \item{col_left}{color of the left boxes.}
 
@@ -32,10 +32,10 @@ biBoxplot(df1, df2 = df1, probs = c(0.01, 0.25, 0.5, 0.75, 0.99),
 
 \item{add}{a logical. Should the biboxplots be added on the current graph? If \code{FALSE} then a new plot is created.}
 
-\item{at}{numeric vector giving the locations where the boxplots should be drawn. Same default behabiour as in \code{\link[graphics:boxplot]{graphics::boxplot()}}.}
+\item{at}{numeric vector giving the locations where the boxplots should be drawn. Same default behavior as in \code{\link[graphics:boxplot]{graphics::boxplot()}}.}
 }
 \description{
-Draws boxplots and boz.
+Draws boxplots and bi-boxplots.
 }
 \details{
 Do not attempt to assess the distributions. Based on quantiles only.

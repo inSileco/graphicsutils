@@ -34,9 +34,9 @@ compassRoseCardinal(x, y = x, rot = 0, cex.cr = 1, cex.let = 1,
 
 \item{offset}{label offset of the cardinal points.}
 
-\item{add}{a logical. Should the biboxplots be added on the current graph?}
+\item{add}{a logical. Should the compass rose be added on the current graph?}
 
-\item{...}{additionnal arguments to be passed to \code{[graphics::polygon()]}.}
+\item{...}{additional arguments to be passed to \code{[graphics::polygon()]}.}
 }
 \description{
 This function draws a fully personnalisable compass rose.
