@@ -13,6 +13,7 @@
 #' @param border color for rectangle borders (see \code{[graphics::rect()]}).
 #' @param add_value a logical should value be added in the middle of the rectangles drawn?
 #' @param val_cex coefficient of magnification used if values are displayed.
+#' @param n_signif number of significant numbers to be displayed (used when labelc is `NULL`).
 #' @param ... further arguments to be passed to \code{[graphics::rect()]}.
 #'
 #' @keywords image rectangles
@@ -39,7 +40,7 @@
 #' image2(matrix(1:27, 3), from=2, border = 2, lwd=2)
 
 image2 <- function(x, from = NULL, to = NULL, color_scale = NULL, border = NA,
-   add_value = FALSE, val_cex = 1, ...) {
+   add_value = FALSE, val_cex = 1, n_signif, ...) {
     x <- as.matrix(x)
 
     if (!is.null(from)) {
@@ -77,7 +78,9 @@ image2 <- function(x, from = NULL, to = NULL, color_scale = NULL, border = NA,
             rect(xmin, ymin, xmax, ymax, col = curcol, border = border, ...)
             if (add_value)
               text(.5*(xmin + xmax), .5*(ymin+ ymax),
-                col = contrastColors(curcol), labels = x[i, j], cex = val_cex)
+                col = contrastColors(curcol),
+                labels = signif(x[i, j], n_signif), 
+                cex = val_cex)
         }
     }
 

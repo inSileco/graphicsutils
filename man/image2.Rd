@@ -5,7 +5,7 @@
 \title{Alternative image function}
 \usage{
 image2(x, from = NULL, to = NULL, color_scale = NULL, border = NA,
-  add_value = FALSE, val_cex = 1, ...)
+  add_value = FALSE, val_cex = 1, n_signif, ...)
 }
 \arguments{
 \item{x}{a matrix or an object to be coerced as a matrix.}
@@ -23,6 +23,8 @@ the last color of the color scale.}
 \item{add_value}{a logical should value be added in the middle of the rectangles drawn?}
 
 \item{val_cex}{coefficient of magnification used if values are displayed.}
+
+\item{n_signif}{number of significant numbers to be displayed (used when labelc is \code{NULL}).}
 
 \item{...}{further arguments to be passed to \code{[graphics::rect()]}.}
 }
