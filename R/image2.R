@@ -79,7 +79,7 @@ image2 <- function(x, from = NULL, to = NULL, color_scale = NULL, border = NA,
             if (add_value)
               text(.5*(xmin + xmax), .5*(ymin+ ymax),
                 col = contrastColors(curcol),
-                labels = signif(x[i, j], n_signif), 
+                labels = signif(x[j, i], n_signif), 
                 cex = val_cex)
         }
     }
