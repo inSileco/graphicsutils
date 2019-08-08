@@ -11,6 +11,8 @@
 #' the last color of the color scale.
 #' @param color_scale a vector of colors.
 #' @param border color for rectangle borders (see \code{[graphics::rect()]}).
+#' @param add_value a logical should value be added in the middle of the rectangles drawn?
+#' @param val_cex coefficient of magnification used if values are displayed.
 #' @param ... further arguments to be passed to \code{[graphics::rect()]}.
 #'
 #' @keywords image rectangles
@@ -29,13 +31,15 @@
 #' of the last cell (if there is only one cell then the center of the unique cell
 #' is 0).
 #'
-#' @seealso \code{[graphics::image()]}
+#' @seealso [graphics::image()]
 #'
 #' @examples
 #' image2(matrix(1:9, 3))
+#' image2(matrix(1:9, 3), add_value = TRUE)
 #' image2(matrix(1:27, 3), from=2, border = 2, lwd=2)
 
-image2 <- function(x, from = NULL, to = NULL, color_scale = NULL, border = NA, ...) {
+image2 <- function(x, from = NULL, to = NULL, color_scale = NULL, border = NA,
+   add_value = FALSE, val_cex = 1, ...) {
     x <- as.matrix(x)
 
     if (!is.null(from)) {
@@ -65,8 +69,15 @@ image2 <- function(x, from = NULL, to = NULL, color_scale = NULL, border = NA, .
     plot0(range(seqx), range(seqy))
     for (i in 1:nc) {
         for (j in 1:nr) {
-            rect(seqx[i], seqy[(nr + 2) - j], seqx[i + 1], seqy[(nr + 1) - j], col = color_scale[mat_col[j,
-                i]], border = border, ...)
+            xmin <- seqx[i]
+            xmax <- seqx[i + 1]
+            ymin <- seqy[(nr + 2) - j]
+            ymax <- seqy[(nr + 1) - j]
+            curcol <-  color_scale[mat_col[j, i]]
+            rect(xmin, ymin, xmax, ymax, col = curcol, border = border, ...)
+            if (add_value)
+              text(.5*(xmin + xmax), .5*(ymin+ ymax),
+                col = contrastColors(curcol), labels = x[i, j], cex = val_cex)
         }
     }
 

@@ -3,8 +3,17 @@
 \newcommand{\ghpr}{\href{https://github.com/KevCaz/graphicsutils/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/KevCaz/graphicsutils/issues/#1}{##1}}
 
+\section{Changes in graphicsutils version 1.3.0-9000}{
+  \itemize{
+    \item Addition of new features:
+      \itemize{
+        \item new arguments `add_val` and `val_cex` to add value in `image2()` and control the size of the text.
+      }
+  }
+}
 
-\section{Changes in graphicsutils version 1.3-0}{
+
+\section{Changes in graphicsutils version 1.3.0}{
   \itemize{
     \item Addition of new functions:
       \itemize{

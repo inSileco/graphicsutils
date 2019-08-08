@@ -5,7 +5,7 @@
 \title{Alternative image function}
 \usage{
 image2(x, from = NULL, to = NULL, color_scale = NULL, border = NA,
-  ...)
+  add_value = FALSE, val_cex = 1, ...)
 }
 \arguments{
 \item{x}{a matrix or an object to be coerced as a matrix.}
@@ -19,6 +19,10 @@ the last color of the color scale.}
 \item{color_scale}{a vector of colors.}
 
 \item{border}{color for rectangle borders (see \code{[graphics::rect()]}).}
+
+\item{add_value}{a logical should value be added in the middle of the rectangles drawn?}
+
+\item{val_cex}{coefficient of magnification used if values are displayed.}
 
 \item{...}{further arguments to be passed to \code{[graphics::rect()]}.}
 }
@@ -40,10 +44,11 @@ is 0).
 }
 \examples{
 image2(matrix(1:9, 3))
+image2(matrix(1:9, 3), add_value = TRUE)
 image2(matrix(1:27, 3), from=2, border = 2, lwd=2)
 }
 \seealso{
-\code{[graphics::image()]}
+\code{\link[graphics:image]{graphics::image()}}
 }
 \keyword{image}
 \keyword{rectangles}
