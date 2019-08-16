@@ -40,7 +40,7 @@
 #' image2(matrix(1:27, 3), from=2, border = 2, lwd=2)
 
 image2 <- function(x, from = NULL, to = NULL, color_scale = NULL, border = NA,
-   add_value = FALSE, val_cex = 1, n_signif, ...) {
+   add_value = FALSE, val_cex = 1, n_signif = 2, ...) {
     x <- as.matrix(x)
 
     if (!is.null(from)) {
@@ -79,7 +79,7 @@ image2 <- function(x, from = NULL, to = NULL, color_scale = NULL, border = NA,
             if (add_value)
               text(.5*(xmin + xmax), .5*(ymin+ ymax),
                 col = contrastColors(curcol),
-                labels = signif(x[j, i], n_signif), 
+                labels = signif(x[j, i], n_signif),
                 cex = val_cex)
         }
     }

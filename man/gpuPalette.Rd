@@ -2,20 +2,21 @@
 % Please edit documentation in R/gpuPalettes.R
 \name{gpuPalette}
 \alias{gpuPalette}
-\title{graphicsutils colors palette}
+\title{graphicsutils colors palettes}
 \usage{
-gpuPalette(names = NULL, ncol = NULL)
+gpuPalette(id, ncol)
 }
 \arguments{
-\item{names}{names of desired color palettes; if \code{NULL}, color palettes available are printed.}
+\item{id}{either an integer or a character string corresponding names of desired color palettes; if missing then color palettes available are prompted.}
 
-\item{ncol}{An integer indicating the number of colors to be returned (involves a call to \code{\link[grDevices:colorRampPalette]{grDevices::colorRampPalette()}}). Default is set to \code{NULL} in which case the number in the one the palette is made of.}
+\item{ncol}{An integer giving the number of colors to be returned (involves a call to \code{\link[grDevices:colorRampPalette]{grDevices::colorRampPalette()}}). If missing, then the entire palette is returned.}
 }
 \value{
 A vector of character strings of the hexadecimal colors values.
 }
 \description{
-A couple of color palettes mainly insipered by popular websites.
+A couple of color palettes including our inSileco palette and a couple
+inspired by popular websites.
 }
 \examples{
 showPalette(gpuPalette(c('atom', 'cisl')))

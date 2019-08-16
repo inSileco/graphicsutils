@@ -5,7 +5,7 @@
 \title{Alternative image function}
 \usage{
 image2(x, from = NULL, to = NULL, color_scale = NULL, border = NA,
-  add_value = FALSE, val_cex = 1, n_signif, ...)
+  add_value = FALSE, val_cex = 1, n_signif = 2, ...)
 }
 \arguments{
 \item{x}{a matrix or an object to be coerced as a matrix.}

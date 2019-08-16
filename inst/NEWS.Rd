@@ -8,6 +8,7 @@
     \item Addition of new features:
       \itemize{
         \item new arguments `add_val` and `val_cex` `n_signif` to add value in `image2()` and control the size of the text.
+        \item `gpuPalette()` now supports numeric vectors to select palettes.
       }
   }
 }

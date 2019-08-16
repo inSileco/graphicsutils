@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>graphicsutils colors palette — gpuPalette • graphicsutils</title>
+<title>graphicsutils colors palettes — gpuPalette • graphicsutils</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,10 @@
 
 
 
-<meta property="og:title" content="graphicsutils colors palette — gpuPalette" />
+<meta property="og:title" content="graphicsutils colors palettes — gpuPalette" />
 
-<meta property="og:description" content="A couple of color palettes mainly insipered by popular websites." />
+<meta property="og:description" content="A couple of color palettes including our inSileco palette and a couple
+inspired by popular websites." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -111,29 +112,30 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>graphicsutils colors palette</h1>
+    <h1>graphicsutils colors palettes</h1>
     <small class="dont-index">Source: <a href='https://github.com/inSileco/graphicsutils/blob/master/R/gpuPalettes.R'><code>R/gpuPalettes.R</code></a></small>
     <div class="hidden name"><code>gpuPalette.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>A couple of color palettes mainly insipered by popular websites.</p>
+    <p>A couple of color palettes including our inSileco palette and a couple
+inspired by popular websites.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>gpuPalette</span>(<span class='kw'>names</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ncol</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>gpuPalette</span>(<span class='no'>id</span>, <span class='no'>ncol</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>names</th>
-      <td><p>names of desired color palettes; if <code>NULL</code>, color palettes available are printed.</p></td>
+      <th>id</th>
+      <td><p>either an integer or a character string corresponding names of desired color palettes; if missing then color palettes available are prompted.</p></td>
     </tr>
     <tr>
       <th>ncol</th>
-      <td><p>An integer indicating the number of colors to be returned (involves a call to <code><a href='https://www.rdocumentation.org/packages/grDevices/topics/colorRamp'>grDevices::colorRampPalette()</a></code>). Default is set to <code>NULL</code> in which case the number in the one the palette is made of.</p></td>
+      <td><p>An integer giving the number of colors to be returned (involves a call to <code><a href='https://www.rdocumentation.org/packages/grDevices/topics/colorRamp'>grDevices::colorRampPalette()</a></code>). If missing, then the entire palette is returned.</p></td>
     </tr>
     </table>
     

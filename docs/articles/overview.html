@@ -293,7 +293,7 @@ plot0() and plotAreaColor()
 <p><img src="overview_files/figure-html/lighten2-1.png" width="576" style="display: block; margin: auto;"></p>
 <p>Since version 1.1-2 a set of color palettes has been added, see <code><a href="../reference/gpuPalette.html">gpuPalette()</a></code>. By default, <code><a href="../reference/gpuPalette.html">gpuPalette()</a></code> displays the color palettes available:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw"><a href="../reference/gpuPalette.html">gpuPalette</a></span>()</a></code></pre></div>
-<pre><code>#&gt;  Color palettes available are: 
+<pre><code>#&gt;  Color palettes currently available are: 
 #&gt;    atom, cisl, github, google, google2, insileco, slack</code></pre>
 <p>In order to use one of the palette, use its names:</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="kw"><a href="../reference/showPalette.html">showPalette</a></span>(<span class="kw"><a href="../reference/gpuPalette.html">gpuPalette</a></span>(<span class="st">"insileco"</span>), <span class="dt">add_codecolor =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
@@ -404,7 +404,7 @@ plot0() and plotAreaColor()
 <a href="#get-pretty-ranges" class="anchor"></a>Get pretty ranges</h3>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1">vec &lt;-<span class="st"> </span>stats<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/stats/topics/Uniform">runif</a></span>(<span class="dv">20</span>)</a>
 <a class="sourceLine" id="cb37-2" title="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/range">range</a></span>(vec)</a></code></pre></div>
-<pre><code>#&gt;  [1] 0.008425466 0.913590266</code></pre>
+<pre><code>#&gt;  [1] 0.04662983 0.91984392</code></pre>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1"><span class="kw"><a href="../reference/prettyRange.html">prettyRange</a></span>(vec)</a></code></pre></div>
 <pre><code>#&gt;  [1] 0.00 0.95</code></pre>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1"><span class="kw"><a href="../reference/prettyRange.html">prettyRange</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="fl">3.849</span>,<span class="fl">3.88245</span>))</a></code></pre></div>
