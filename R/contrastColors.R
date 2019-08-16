@@ -1,17 +1,17 @@
 #' Contrast colors.
 #'
-#' For a given set of colors, \code{contrastColors} returns an associated set
+#' For a given set of colors, `contrastColors` returns an associated set
 #' of colors.
 #'
 #' @param colors vector of any of the three kinds of R color specifications, see \code{\link[grDevices]{col2rgb}}.
-#' @param how a method to contrast \code{colors}. Methods currently available are \code{how_borw}, \code{how_cent}, \code{how_oppo} and \code{how_prop}, see details.
+#' @param how a method to contrast `colors`. Methods currently available are \code{how_borw}, \code{how_cent}, \code{how_oppo} and \code{how_prop}, see details.
 #' @param alpha logical value indicating whether the alpha channel (opacity) values should be returned.
 #'
 #' @keywords colors, contrast
 #'
 #' @details
 #' Based on the sum of colors' saturation \code{how_borw} returns black or white,
-#' \code{how_prop} proportially remove or add some saturation. \code{how_oppo}
+#' \code{how_prop} proportionally remove or add some saturation. \code{how_oppo}
 #' opposes the color (255-x) and \code{how_cent} centers the columns, i.e. remove
 #' or add 127.
 #'
@@ -19,7 +19,6 @@
 #' \link[grDevices]{col2rgb}
 #'
 #' @importFrom grDevices col2rgb
-#' @importFrom magrittr %>%
 #' @export
 #'
 #' @examples
@@ -30,20 +29,20 @@
 
 #' @describeIn contrastColors Retuns a set of colors contrasted.
 contrastColors <- function(colors, how = "how_borw", alpha = FALSE) {
-    out <- colors %>% col2rgb(alpha = alpha) %>% apply(2L, how) %>% apply(2L, intToHex)
+    out <- apply(apply(col2rgb(colors, alpha = alpha), 2L, how), 2L, intToHex)
     paste0("#", out)
 }
 
 #' @export
 #' @describeIn contrastColors Retuns the hexadecimal string associates to a given vector of colors.
 col2Hex <- function(colors, alpha = FALSE) {
-    out <- colors %>% col2rgb(alpha = alpha) %>% apply(2L, intToHex)
+    out <- apply(col2rgb(colors, alpha = alpha), 2L, intToHex)
     paste0("#", out)
 }
 
 how_borw <- function(x) {
     out <- x
-    if (sum(x[1L:3L]) > 382) 
+    if (sum(x[1L:3L]) > 382)
         out[1L:3L] <- 0 else out[1L:3L] <- 255
     out
 }

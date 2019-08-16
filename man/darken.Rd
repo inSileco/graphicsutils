@@ -24,7 +24,7 @@ lighten(col, percentage = 50, as_rgb = FALSE)
 \item{col}{the color to be darkened or lightened.}
 }
 \description{
-Returns lightened or darkened colors, vetorized over \code{percentage}.
+Returns lightened or darkened colors, vectorised over \code{percentage}.
 \code{ramp} is valid for any couple of colors. Functions \code{darken} and
 \code{lightened} actually call \code{ramp} to darken and lighten a given color.
 }

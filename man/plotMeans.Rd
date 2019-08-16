@@ -2,19 +2,19 @@
 % Please edit documentation in R/plotMeans.R
 \name{plotMeans}
 \alias{plotMeans}
-\title{Plots means and error asociated}
+\title{Plots means and error associated}
 \usage{
-plotMeans(formula, data, FUN_err = stats::sd, add = FALSE, seqx = NULL,
-  draw_axis = TRUE, col_err = graphics::par()$col,
+plotMeans(formula, data, FUN_err = stats::sd, add = FALSE,
+  seqx = NULL, draw_axis = TRUE, col_err = graphics::par()$col,
   col_pt = graphics::par()$col, cex_pt = 1, connect = FALSE,
   args_con = list(), ...)
 }
 \arguments{
-\item{formula}{a formula, see \code{\link[stats]{formula}}.}
+\item{formula}{a formula, see \code{[stats::formula()]}.}
 
 \item{data}{a data frame (or list) from which the variables in formula should be taken.}
 
-\item{FUN_err}{the function that assess uncertainty. Default function is \code{\link[stats]{sd}}.}
+\item{FUN_err}{the function that assess uncertainty. Default function is \code{[stats::sd()]}.}
 
 \item{add}{logical. should images be added on the current graph ? If FALSE a new plot is created.}
 
@@ -35,7 +35,7 @@ plotMeans(formula, data, FUN_err = stats::sd, add = FALSE, seqx = NULL,
 \item{...}{Further graphical parameters (see \code{\link[graphics]{plot.default}} and ) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = 'b'}, \code{pch}. Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
 }
 \description{
-Plots a set of means computed based on a dataset and draw error asociated.
+Plots a set of means computed based on a dataset and draw error associated.
 }
 \examples{
 # Example:

@@ -1,14 +1,14 @@
 #' Compute the coordinates of an envelop.
 #'
-#' \code{envelop} eases the compuation of the polygons described by to set
-#' of y coordinates along the x-axis. Optionnaly, the polygons could be added
+#' `envelop` eases the computation of the polygons described by to set
+#' of y coordinates along the x-axis. Optionally, the polygons could be added
 #' on the current plot.
 #'
 #' @param x vectors containing the x coordinates.
 #' @param upper the y coordinates of the upper values.
 #' @param lower the y coordinates of the lower values.
-#' @param add a logical. If \code{TRUE} the envelop is drawn as a polygon (default behavior).
-#' @param ... additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.
+#' @param add a logical. If `TRUE` the envelop is drawn as a polygon (default behavior).
+#' @param ... additional arguments to be passed to \code{[graphics::polygon()]} function.
 #'
 #' @export
 #'
@@ -29,7 +29,7 @@ envelop <- function(x, upper, lower = rep(0, length(upper)), add = TRUE, ...) {
     stopifnot(length(x) == length(upper))
     stopifnot(length(x) == length(lower))
     out <- list(x = c(x, rev(x)), y = c(upper, rev(lower)))
-    if (add) 
+    if (add)
         graphics::polygon(c(x, rev(x)), c(upper, rev(lower)), ...)
     invisible(out)
 }

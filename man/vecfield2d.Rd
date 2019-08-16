@@ -5,11 +5,11 @@
 \title{Vector Fields.}
 \usage{
 vecfield2d(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2),
-  fixed = NULL, cex.x = 0.25, cex.y = cex.x, log = FALSE, add = FALSE,
-  ...)
+  fixed = NULL, cex.x = 0.25, cex.y = cex.x, log = FALSE,
+  add = FALSE, ...)
 }
 \arguments{
-\item{coords}{a matrix with two columns or more that is optionnally used to alternatively define the coordinates of the vector field.}
+\item{coords}{a matrix with two columns or more that is optionally used to alternatively define the coordinates of the vector field.}
 
 \item{FUN}{the function that describes the dynamical system (see details).}
 
@@ -25,11 +25,11 @@ vecfield2d(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2),
 
 \item{cex.y}{the magnification coefficient to be used for lengths of vectors along the y axis.}
 
-\item{log}{a logical. If \code{TRUE}, the lenghts of arrows are log-transformed.}
+\item{log}{a logical. If \code{TRUE}, the lengths of arrows are log-transformed.}
 
 \item{add}{a logical. If \code{TRUE}, the vector field is added on the current plot.}
 
-\item{...}{additionnal arguments to be passed to \code{arrows2}.}
+\item{...}{additional arguments to be passed to \code{arrows2}.}
 }
 \description{
 Draw a vector field associated to a system of at least two ODE.

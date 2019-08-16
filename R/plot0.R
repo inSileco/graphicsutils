@@ -5,19 +5,19 @@
 #' @param x the x coordinates of points in the plot or a matrix of coordinates.
 #' @param y the y coordinates of points in the plot.
 #' @param fill The color to be used to fill the plot area.
-#' @param grid.col color of the grid's lines. The default value is \code{NULL}, in which case the grid is not drawn.
+#' @param grid.col color of the grid's lines. The default value is `NULL`, in which case the grid is not drawn.
 #' @param grid.lty line type of the grid's lines.
 #' @param grid.lwd line width of the grid's lines.
 #' @param text A character string or a object to be coerced as character string
 #' that will be displayed in the center of the plot region.
-#' @param ... further graphical parameters from \code{\link[graphics]{par}}
-#' (such as \code{srt}) or \code{\link[graphics]{plot.default}}.
+#' @param ... further graphical parameters from \code{[graphics::par()]}
+#' (such as `srt`) or \code{\link[graphics]{plot.default}}.
 #'
 #' @keywords empty plot
 #'
 #' @export
 #'
-#' @seealso \code{\link[shape]{emptyplot}}
+#' @seealso \code{[shape::emptyplot()]}
 #'
 #' @examples
 #' # Example 1

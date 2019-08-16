@@ -22,11 +22,11 @@ circles(x, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01,
 
 \item{pie}{a logical. If \code{TRUE}, end points are linked with the center of the circle (default is set to \code{FALSE}).}
 
-\item{clockwise}{a logical. Shall circles and arcs be drawn clockwise? Defaut is `FALSE`.}
+\item{clockwise}{a logical. Shall circles and arcs be drawn clockwise? Defaut is \code{FALSE}.}
 
 \item{add}{a logical. Should the circles be added on the current plot?}
 
-\item{...}{additional arguments to be passed to \code{\link[graphics]{polygon}} function.}
+\item{...}{additional arguments to be passed to \code{[graphics::polygon()]} function.}
 }
 \value{
 An invisible list of \code{data.frame} of two columns including the
@@ -60,7 +60,7 @@ plot0(x=c(-2,2),y=c(-2,2), asp=1)
 circles(x=c(-1,1),c(1,1,-1,-1),from=pi*seq(0.25,1,by=0.25),to=1.25*pi, col=2, border=4, lwd=3)
 }
 \seealso{
-\code{\link[graphics]{symbols}}, \code{\link[plotrix]{draw.circle}}, \code{\link[plotrix]{draw.arc}}.
+\code{[graphics::symbols()]}, \code{\link[plotrix]{draw.circle}}, \code{\link[plotrix]{draw.arc}}.
 }
 \keyword{circle}
 \keyword{geometries}

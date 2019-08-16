@@ -3,13 +3,13 @@
 #' Convert user coordinates to figure region coordinates and conversely.
 #'
 #' @param x the x coordinates of a set of points. Alternatively, a
-#'       single argument \code{x} can be provided.
+#'       single argument `x` can be provided.
 #' @param y the y coordinates of a set of points.
 #'
 #' @export
 #'
 #' @details
-#' These functions can be used anytime, however, there are usefull only once
+#' These functions can be used anytime, however, there are useful only once
 #' \link[graphics]{plot.new} has been called.
 #'
 #' @describeIn toFig Convert figure region coordinates into user coordinates.

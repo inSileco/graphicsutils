@@ -5,8 +5,9 @@
 \title{Polar plot}
 \usage{
 polarPlot(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi,
-  incr = 0.005, labelc = NULL, tckcol = 1, atc = NULL, labelr = NULL,
-  atr = NULL, clockwise = TRUE, n_signif = 2, add = FALSE, ...)
+  incr = 0.005, labelc = NULL, tckcol = 1, atc = NULL,
+  labelr = NULL, atr = NULL, clockwise = TRUE, n_signif = 2,
+  add = FALSE, ...)
 }
 \arguments{
 \item{seqtime}{sequence of time values (equivalent to the x axis).}
@@ -27,7 +28,7 @@ polarPlot(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi,
 
 \item{atc}{the points at which tick-marks are to be drawn. By default (when \code{NULL}) tickmark locations are computed.}
 
-\item{labelr}{character or expression vector specifying the _text_ to be placed at the radial-axis marks.}
+\item{labelr}{character or expression vector specifying the \emph{text} to be placed at the radial-axis marks.}
 
 \item{atr}{the points at which radial-axis marks are to be drawn.}
 

@@ -3,6 +3,7 @@
 export(arrows2)
 export(biBoxplot)
 export(box2)
+export(boxplot2)
 export(circles)
 export(col2Hex)
 export(compassRose)
@@ -58,8 +59,12 @@ importFrom(graphics,box)
 importFrom(graphics,image)
 importFrom(graphics,layout)
 <<<<<<< HEAD
+<<<<<<< HEAD
 importFrom(graphics,lines)
 =======
+=======
+importFrom(graphics,lines)
+>>>>>>> master
 importFrom(graphics,lines.default)
 >>>>>>> master
 importFrom(graphics,locator)
@@ -67,8 +72,8 @@ importFrom(graphics,par)
 importFrom(graphics,points)
 importFrom(graphics,rect)
 importFrom(graphics,text)
-importFrom(magrittr,"%<>%")
-importFrom(magrittr,"%>%")
+importFrom(stats,aggregate)
 importFrom(stats,quantile)
 importFrom(stats,rnorm)
+importFrom(stats,runif)
 useDynLib(graphicsutils)

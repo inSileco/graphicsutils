@@ -19,7 +19,7 @@ rhombi(x, y = x, ldg = 1, sdg = ldg, rot = 0, add = FALSE, ...)
 
 \item{add}{logical. If \code{TRUE} rhombi are added to the current plot (default behavior).}
 
-\item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.}
+\item{...}{additional arguments to be passed to \code{[graphics::polygon()]} function.}
 }
 \value{
 A vector including rhombi areas is returned if assigned.
@@ -28,9 +28,9 @@ A vector including rhombi areas is returned if assigned.
 Add rhombi on a plot and returns areas.
 }
 \details{
-The number of rhombus maximual is provided by the length of the largest argument among x, y, ldg, sdg and rot.
+The number of rhombus maximal is provided by the length of the largest argument among x, y, ldg, sdg and rot.
 Other arguments are repeated with the largest length as the desired one (see \code{rep_len}).
-Additionnal arguments remain the same for every rhombus.
+Additional arguments remain the same for every rhombus.
 }
 \examples{
 # Example 1:

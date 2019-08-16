@@ -13,13 +13,13 @@ box2(side = 1:4, which = "plot", fill = NULL, ...)
 
 \item{fill}{the color to be used to fill the box.}
 
-\item{...}{further graphical parameters (see \code{\link[graphics]{par}}) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = 'b'}, \code{pch}.  Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
+\item{...}{further graphical parameters (see \code{[graphics::par()]}) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = 'b'}, \code{pch}.  Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
 }
 \description{
 Draw a box around a plot.
 }
 \details{
-This function intends to give more flexibility to the \code{\link[graphics]{box}} function.
+This function intends to give more flexibility to the \code{[graphics::box()]} function.
 As \code{which} parameter, the user provides an object first coerced by \code{as.character} to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{1, 2, 3, 4, b, l, t, r} where \code{1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right}.
 }
 \examples{
@@ -47,6 +47,6 @@ box2(which='figure',lwd=2, fill=2)
 box2(side=12, lwd=2, fill=8)
 }
 \seealso{
-\code{\link[graphics]{box}}
+\code{[graphics::box()]}
 }
 \keyword{box}

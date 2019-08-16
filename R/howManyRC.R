@@ -3,7 +3,7 @@
 #' Compute the number of rows and columns to split a graphic window into panels
 #' as equally as possible.
 #'
-#' @param n a positive integer (or corecible as is).
+#' @param n a positive integer (or coercible as is).
 #'
 #' @export
 #'

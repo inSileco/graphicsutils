@@ -8,10 +8,9 @@
 #'
 #' @keywords background, color
 #'
-#' @importFrom magrittr %<>%
 #' @export
 #'
-#' @details The function calls \code{\link{rect}} and draw a colored rectangle (defaut color is set to light blue) whose dimensions are given by argument \code{usr} of function \code{\link{par}}.
+#' @details The function calls \code{\link{rect}} and draw a colored rectangle (default color is set to light blue) whose dimensions are given by argument `usr` of function \code{\link{par}}.
 #'
 #' @note In graphics::par(), argument bg colors all the window, .
 #'
@@ -28,12 +27,12 @@ plotAreaColor <- function(color = "grey80", border = NA, ...) {
     args <- list(...)
     lp <- graphics::par()$usr
     coor <- list(xleft = lp[1L], ybottom = lp[3L], xright = lp[2L], ytop = lp[4L])
-    if (!is.null(names(color))) 
+    if (!is.null(names(color)))
         names(color) <- NULL
-    ## 
+    ##
     if (length(args) > 0) {
         do.call("rect", args = as.list(c(coor, border = border, col = color, args)))
     } else do.call("rect", args = as.list(c(coor, border = border, col = color)))
-    ## 
+    ##
     invisible(NULL)
 }

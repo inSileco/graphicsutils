@@ -4,10 +4,10 @@
 \alias{donut}
 \title{Donut chart.}
 \usage{
-donut(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05,
-  width = 0.6, mycol = 1 + 1:length(vec), density = NULL, angle = 45,
-  dt = 0.001, add = FALSE, cx = 0, cy = 0, border = NA,
-  clockwise = TRUE, ...)
+donut(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8,
+  tck = 0.05, width = 0.6, mycol = 1 + 1:length(vec),
+  density = NULL, angle = 45, dt = 0.001, add = FALSE, cx = 0,
+  cy = 0, border = NA, clockwise = TRUE, ...)
 }
 \arguments{
 \item{vec}{a vector of non-negative numerical quantities that are displayed as the areas of donut slices.}
@@ -42,13 +42,13 @@ donut(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8, tck = 0.05,
 
 \item{clockwise}{a logical. Shall slices be drawn clockwise?}
 
-\item{...}{additionnal arguments to be passed to lines methods.}
+\item{...}{additional arguments to be passed to lines methods.}
 }
 \description{
 Draw a donut chart.
 }
 \details{
-As pie chart, donut charts are a very bad way of displaying information, see \link[graphics]{pie}
+As pie chart, donut charts are a very bad way of displaying information, see \code{\link[graphics:pie]{graphics::pie()}}
 The aspect of the donut is fully customizable. If \code{width} is set to 1 and \code{eaten} to 0, the donut chart is then a pie chart.
 }
 \note{

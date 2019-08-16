@@ -15,14 +15,14 @@ envelop(x, upper, lower = rep(0, length(upper)), add = TRUE, ...)
 
 \item{add}{a logical. If \code{TRUE} the envelop is drawn as a polygon (default behavior).}
 
-\item{...}{additionnal arguments to be passed to \code{\link[graphics]{polygon}} function.}
+\item{...}{additional arguments to be passed to \code{[graphics::polygon()]} function.}
 }
 \value{
 The coordinates of the envelop are returned if assigned.
 }
 \description{
-\code{envelop} eases the compuation of the polygons described by to set
-of y coordinates along the x-axis. Optionnaly, the polygons could be added
+\code{envelop} eases the computation of the polygons described by to set
+of y coordinates along the x-axis. Optionally, the polygons could be added
 on the current plot.
 }
 \examples{

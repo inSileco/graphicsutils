@@ -12,11 +12,11 @@ single argument \code{x} can be provided.}
 
 \item{y}{the y coordinates of a set of points.}
 
-\item{nb.pt}{the nuber of points to ge generated around eah coordinates.}
+\item{nb.pt}{the number of points to be generated around each coordinates.}
 
 \item{off.set}{the y coordinates of a set of points.}
 
-\item{...}{further arguments to be passed to \code{\link[graphics]{polygon}} function.}
+\item{...}{further arguments to be passed to \code{[graphics::polygon()]} function.}
 }
 \description{
 Draw a polygons around a certains set of points.
@@ -25,7 +25,7 @@ Draw a polygons around a certains set of points.
 The technique employed is fairly simple: for a set of coordinates x, y handled
 using \code{xy.coords} a set of \code{nb.pt} number is generetaed at a
 \code{off.set} distance of each coordinates, then a convex is drawn around
-the coordinates using \link[grDevices]{chull}.
+the coordinates using \code{\link[grDevices:chull]{grDevices::chull()}}.
 }
 \examples{
 coords <- cbind(runif(10), runif(10))

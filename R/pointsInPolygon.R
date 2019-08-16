@@ -1,6 +1,6 @@
 #' Are points inside a polygon?
 #'
-#' For a given matrix of points coordinates, \code{pointsInPolygon} returns a
+#' For a given matrix of points coordinates, `pointsInPolygon` returns a
 #' logical vector stating whether or not these points are inside a specific
 #' polygon whose coordinate as passed as an argument.
 #'
@@ -27,11 +27,11 @@
 
 
 pointsInPolygon <- function(points, polygon) {
-    ## 
-    points %<>% as.matrix
-    polygon %<>% as.matrix
+    ##
+    points <- as.matrix(points)
+    polygon <- as.matrix(polygon)
     stopifnot(nrow(polygon) > 2)
-    ## 
+    ##
     if (ncol(points) > 2) {
         warning("ncol(points)>2 - only the first two columns are used.")
         points <- points[, 1L:2L]

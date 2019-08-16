@@ -1,12 +1,12 @@
 #' Lighten or darken colors
 #'
-#' Returns lightened or darkened colors, vetorized over \code{percentage}.
-#' \code{ramp} is valid for any couple of colors. Functions \code{darken} and
-#' \code{lightened} actually call \code{ramp} to darken and lighten a given color.
+#' Returns lightened or darkened colors, vectorised over `percentage`.
+#' `ramp` is valid for any couple of colors. Functions `darken` and
+#' `lightened` actually call `ramp` to darken and lighten a given color.
 #'
 #' @param fromcol starting color, i.e. if \code{percentage = 0}, it is the color returned.
-#' @param tocol color to nuance \code{fromcol}, i.e. if \code{percentage = 100}, it is the color returned.
-#' @param percentage percentage determining the percentage of \code{tocol} used to nuance \code{fromcol}.
+#' @param tocol color to nuance `fromcol`, i.e. if \code{percentage = 100}, it is the color returned.
+#' @param percentage percentage determining the percentage of `tocol` used to nuance `fromcol`.
 #' @param col the color to be darkened or lightened.
 #' @param as_rgb a logical. Should the color(s) returned as a matrix object?
 #'
@@ -21,7 +21,7 @@
 ramp <- function(fromcol, tocol, percentage = 50, as_rgb = FALSE) {
     perc <- as.integer(percentage)
     outcol <- (grDevices::colorRampPalette(c(fromcol, tocol)))(101)[perc + 1]
-    if (as_rgb) 
+    if (as_rgb)
         outcol <- grDevices::col2rgb(outcol)
     return(outcol)
 }

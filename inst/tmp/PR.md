@@ -1,8 +1,10 @@
-:book: documentation
-:hammer: function
+:book: add a new piece of documentation
+:pencil: edit in the documentation
+:hammer: add a feature, new function function
+:gear: add a new argument to a function
 :wrench: method
-:shield: tests
-:floppy_disk: data
+:shield: add or edit a tests
+:floppy_disk: add or edit data
 :wastebasket: delete
 :arrow_up: new version
 :bug: bug

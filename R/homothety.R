@@ -1,15 +1,15 @@
 #' Homothety
 #'
 #' Compute a homothetic transformation for a set of points.
-#' The transformed set of points is optionnaly drawn as a polygon.
+#' The transformed set of points is optionally drawn as a polygon.
 #'
 #' @param x the x coordinates of points. It can also be a matrix (see details).
 #' @param y the y coordinates of points.
 #' @param lambda the factor to be used for the homothetetic transformations.
 #' @param xcen the x coordinate for the center of rotation.
 #' @param ycen the y coordinate for the center of rotation.
-#' @param add logical. If \code{TRUE} the set of transformed points are drawn as a polygon.
-#' @param ... additionnal arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).
+#' @param add logical. If `TRUE` the set of transformed points are drawn as a polygon.
+#' @param ... additional arguments to be passed to `polygon` function (used only if `add` is TRUE).
 #'
 #' @keywords homothety, geometry
 #'
@@ -20,7 +20,7 @@
 #'
 #' If x is a matrix with more than 2 columns, then x is the first column and y the second one.
 #'
-#' Note that \code{lambda}, \code{xcen} and \code{ycen} are unique meaning that \code{homothety} computes only one homothetic transformation.
+#' Note that `lambda`, `xcen` and `ycen` are unique meaning that `homothety` computes only one homothetic transformation.
 #' Drawing the points computed is relevant only if there are more than 2 points.
 #'
 #' @examples
@@ -35,7 +35,7 @@
 
 
 homothety <- function(x, y, lambda, xcen = NULL, ycen = NULL, add = FALSE, ...) {
-    
+
     # Format checking
     x <- as.matrix(x)
     stopifnot(ncol(x) <= 2)
@@ -49,14 +49,14 @@ homothety <- function(x, y, lambda, xcen = NULL, ycen = NULL, add = FALSE, ...) 
         y <- rep_len(y, sz)
     }
     # if null, xrot/yrot are the mean of x/y coordinates
-    if (is.null(xcen)) 
+    if (is.null(xcen))
         xcen <- mean(x)
-    if (is.null(ycen)) 
+    if (is.null(ycen))
         ycen <- mean(y)
-    # 
+    #
     homot <- list(x = lambda * (x - xcen) + xcen, y = lambda * (y - ycen) + ycen)
-    if (add) 
+    if (add)
         graphics::polygon(homot$x, homot$y, ...)
-    # 
+    #
     invisible(homot)
 }

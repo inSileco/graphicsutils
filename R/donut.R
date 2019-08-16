@@ -12,24 +12,24 @@
 #' @param tck the magnification coefficient to be used for the length of the tick marks.
 #' @param width the width of the donut (set between 0 and 1).
 #' @param mycol vector of colors to be used.
-#' @param density the density of shading lines, in lines per inch.  The default value of \code{NULL} means that no shading lines are drawn.
+#' @param density the density of shading lines, in lines per inch.  The default value of `NULL` means that no shading lines are drawn.
 #' @param angle the slope of shading lines, given as an angle in degrees (counter-clockwise).
 #' @param dt point density of the drawn circles.
-#' @param add a logical. Should the donut chart be added on the current graph? If \code{FALSE} then a new plot is created.
-#' @param border the border color of the donut, set to \code{NA} which omits borders.
+#' @param add a logical. Should the donut chart be added on the current graph? If `FALSE` then a new plot is created.
+#' @param border the border color of the donut, set to `NA` which omits borders.
 #' @param clockwise a logical. Shall slices be drawn clockwise?
-#' @param ... additionnal arguments to be passed to lines methods.
+#' @param ... additional arguments to be passed to lines methods.
 #'
 #' @keywords donut
 #'
 #' @export
 #'
 #' @details
-#' As pie chart, donut charts are a very bad way of displaying information, see \link[graphics]{pie}
-#' The aspect of the donut is fully customizable. If \code{width} is set to 1 and \code{eaten} to 0, the donut chart is then a pie chart.
+#' As pie chart, donut charts are a very bad way of displaying information, see [graphics::pie()]
+#' The aspect of the donut is fully customizable. If `width` is set to 1 and `eaten` to 0, the donut chart is then a pie chart.
 #'
 #' @note
-#' Substantial part of the code have been inspired by the \code{pie} function.
+#' Substantial part of the code have been inspired by the `pie` function.
 #'
 #' The 'col' argument determines the succession of colors to be applied to each axis.
 #'
