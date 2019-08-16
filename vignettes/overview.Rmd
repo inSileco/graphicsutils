@@ -293,6 +293,7 @@ In order to use one of the palette, use its names:
 
 ```{r insileco}
 showPalette(gpuPalette("insileco"), add_codecolor = TRUE)
+showPalette(gpuPalette("insileco", 25), add_codecolor = TRUE)
 ```
 
 

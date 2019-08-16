@@ -14,12 +14,8 @@ export(donut)
 export(ellipse)
 export(encircle)
 export(envelop)
-<<<<<<< HEAD
-export(frameit)
-export(ganttChart)
-=======
 export(frameIt)
->>>>>>> master
+export(ganttChart)
 export(getAngle2d)
 export(gpuPalette)
 export(gpuPalettes)
@@ -58,15 +54,8 @@ importFrom(graphics,abline)
 importFrom(graphics,box)
 importFrom(graphics,image)
 importFrom(graphics,layout)
-<<<<<<< HEAD
-<<<<<<< HEAD
 importFrom(graphics,lines)
-=======
-=======
-importFrom(graphics,lines)
->>>>>>> master
 importFrom(graphics,lines.default)
->>>>>>> master
 importFrom(graphics,locator)
 importFrom(graphics,par)
 importFrom(graphics,points)

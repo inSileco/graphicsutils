@@ -24,19 +24,27 @@ gpuPalettes <- list(
 #' graphicsutils colors palettes
 #'
 #' A couple of color palettes including our inSileco palette and a couple
-#' inspired by popular websites.
+#' of other inspired by popular websites.
 #'
-#' @param id either an integer or a character string corresponding names of desired color palettes; if missing then color palettes available are prompted.
-#' @param ncol An integer giving the number of colors to be returned (involves a call to [grDevices::colorRampPalette()]). If missing, then the entire palette is returned.
+#' @param id either an integer or a character string matching the names of
+#' the desired color palette(s). If missing then color palettes available are
+#' prompted.
+#' @param ncolors An integer giving the number of colors to be returned. If
+#' greater than the number of colors included in the selection, then
+#' '[grDevices::colorRampPalette()] is called to expand the palette.
+#' If missing, then the entire palette is returned.
 #'
 #' @return A vector of character strings of the hexadecimal colors values.
+#' Note that if several color palette is requested, then the output is a vector
+#' with all color palette concatenated.
+#'
 #' @export
 #' @keywords colors, palette
 #' @examples
 #' showPalette(gpuPalette(c('atom', 'cisl')))
 #' showPalette(gpuPalette('cisl', 100))
 
-gpuPalette <- function(id, ncol) {
+gpuPalette <- function(id, ncolors) {
     tmp <- names(gpuPalettes)
     if (missing(id)) {
         message(
@@ -49,6 +57,10 @@ gpuPalette <- function(id, ncol) {
           stopifnot(all(id %in% names(gpuPalettes)))
         }
         out <- unlist(gpuPalettes[id])
-        if (!missing(ncol)) colorRampPalette(out)(ncol) else out
+        if (!missing(ncolors)) {
+          if (ncolors > length(out)) {
+            colorRampPalette(out)(ncolors)
+          } else colorRampPalette(out)(ncolors)
+        }  else out
     }
 }

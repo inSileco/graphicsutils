@@ -3,9 +3,12 @@ Type: Package
 Title: Collection of graphics utilities
 Version: 1.3.0-9000
 Date: 2019-08-07
-Authors@R: c(person("Kevin", "Cazelles", role = c("aut", "cre"), email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874")),
+Authors@R: c(
+  person("Kevin", "Cazelles", role = c("aut", "cre"), email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874")),
   person("Nicolas", "Casajus", role = c("aut"), comment = c(ORCID = "0000-0002-5537-5294")),
-  person("David", "Beauchesne", role = c("aut")))
+  person("David", "Beauchesne", role = c("aut")),
+  person(given = "Steve", family = "Vissault", comment = c(ORCID = "0000-0002-0866-4376"), role = "aut")
+  )
 Description: A collection of functions to make the customizing graphics-based plots easier.
 Depends:
     R (>= 3.0.0)
