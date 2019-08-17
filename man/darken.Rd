@@ -30,7 +30,7 @@ Returns lightened or darkened colors, vectorised over \code{percentage}.
 }
 \section{Functions}{
 \itemize{
-\item \code{ramp}: Retuns a shaded color.
+\item \code{ramp}: Returns a shaded color.
 
 \item \code{darken}: Returns a darkened color.
 
@@ -38,6 +38,7 @@ Returns lightened or darkened colors, vectorised over \code{percentage}.
 }}
 
 \examples{
+showPalette(ramp("blue", "red", 10*3:7))
 darken('red', 50)
 more_reds <- lighten('red', seq(10,90,9))
 showPalette(more_reds)

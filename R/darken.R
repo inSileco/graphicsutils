@@ -13,29 +13,27 @@
 #' @export
 #' @seealso \code{\link{colorRampPalette}}
 #' @examples
+#' showPalette(ramp("blue", "red", 10*3:7))
 #' darken('red', 50)
 #' more_reds <- lighten('red', seq(10,90,9))
 #' showPalette(more_reds)
 
-#' @describeIn darken Retuns a shaded color.
+#' @describeIn darken Returns a shaded color.
 ramp <- function(fromcol, tocol, percentage = 50, as_rgb = FALSE) {
     perc <- as.integer(percentage)
-    outcol <- (grDevices::colorRampPalette(c(fromcol, tocol)))(101)[perc + 1]
-    if (as_rgb)
-        outcol <- grDevices::col2rgb(outcol)
-    return(outcol)
+    outcol <- colorRampPalette(c(fromcol, tocol))(101)[perc + 1]
+    if (as_rgb) col2rgb(outcol) else outcol
 }
 
 #' @describeIn darken Returns a darkened color.
 #' @export
 darken <- function(col, percentage = 50, as_rgb = FALSE) {
-    outcol <- ramp(fromcol = col, tocol = "black", percentage = percentage, as_rgb = as_rgb)
-    return(outcol)
+    ramp(fromcol = col, tocol = "black", percentage = percentage,
+      as_rgb = as_rgb)
 }
 
 #' @describeIn darken Returns a lightened color.
 #' @export
 lighten <- function(col, percentage = 50, as_rgb = FALSE) {
-    outcol <- ramp(col, "white", percentage = percentage, as_rgb = as_rgb)
-    return(outcol)
+    ramp(col, "white", percentage = percentage, as_rgb = as_rgb)
 }

@@ -263,6 +263,8 @@ showPalette(somered)
 ```
 
 ```{r showpal}
+showPalette(ramp("blue", "red", 10*3:7))
+showPalette(blendColors(c("blue", "purple")))
 showPalette(rainbow(81))
 ```
 

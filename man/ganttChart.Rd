@@ -28,10 +28,6 @@ Data frame with the following column (order does not matter):
 \item optionally a \code{status} and \code{col} columns
 }
 }
-\examples{
-data(dfGantt)
-ganttChart(dfGantt)
-}
 \references{
 https://insileco.github.io/2017/09/20/gantt-charts-in-r/
 }

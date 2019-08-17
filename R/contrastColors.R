@@ -34,7 +34,7 @@ contrastColors <- function(colors, how = "how_borw", alpha = FALSE) {
 }
 
 #' @export
-#' @describeIn contrastColors Retuns the hexadecimal string associates to a given vector of colors.
+#' @describeIn contrastColors Returns the hexadecimal string associates to a given vector of colors.
 col2Hex <- function(colors, alpha = FALSE) {
     out <- apply(col2rgb(colors, alpha = alpha), 2L, intToHex)
     paste0("#", out)
