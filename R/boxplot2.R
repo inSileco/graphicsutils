@@ -23,8 +23,6 @@
 #' @return
 #' Draw a boxplot and returns the coordinates as an invisible output.
 #'
-#' @importFrom graphics lines points
-#' @importFrom stats aggregate quantile runif
 #' @export
 #'
 #' @examples

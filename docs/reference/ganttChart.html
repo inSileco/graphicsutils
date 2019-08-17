@@ -122,8 +122,7 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>ganttChart</span>(<span class='no'>df</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='fu'><a href='gpuPalette.html'>gpuPalette</a></span>(<span class='st'>"insileco"</span>)[-<span class='fl'>1</span>], <span class='kw'>perc_txt</span> <span class='kw'>=</span> <span class='fl'>20</span>,
-  <span class='kw'>order</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>ganttChart</span>(<span class='no'>df</span>, <span class='no'>col</span>, <span class='kw'>perc_txt</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>order</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>add_</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -138,7 +137,7 @@
     </tr>
     <tr>
       <th>perc_txt</th>
-      <td><p>percentage of the wodth dedicated to the description of tasks.</p></td>
+      <td><p>percentage of the width dedicated to the description of tasks.</p></td>
     </tr>
     <tr>
       <th>order</th>
@@ -146,27 +145,33 @@
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>https://insileco.github.io/2017/09/20/gantt-charts-in-r/</p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>dfGantt</span>)
-<span class='fu'>ganttChart</span>(<span class='no'>dfGantt</span>)</div><div class='img'><img src='ganttChart-1.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'>ganttChart</span>(<span class='no'>dfGantt</span>)</div><div class='output co'>#&gt; <span class='error'>Error in rep_len(col, nbm): argument "col" is missing, with no default</span></div><div class='output co'>#&gt; <span class='error'>Error in par() &lt;- opar: invalid (NULL) left side of assignment</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
+      
+      <li><a href="#references">References</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
     <h2>Author</h2>
-    <p>David Beauchesne</p>
+    <p>David Beauchesne wrote the first version of the function Kevin Cazelles the second.</p>
   </div>
 </div>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Kevin Cazelles, Nicolas Casajus, David Beauchesne.</p>
+  <p>Developed by Kevin Cazelles, Nicolas Casajus, David Beauchesne, Steve Vissault.</p>
 </div>
 
 <div class="pkgdown">

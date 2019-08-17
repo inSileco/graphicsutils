@@ -16,8 +16,6 @@
 #' @param at numeric vector giving the locations where the boxplots should be drawn. Same default behavior as in [graphics::boxplot()].
 #' @keywords boxplots
 #'
-#' @importFrom graphics lines.default rect
-#' @importFrom stats quantile rnorm
 #' @export
 #'
 #' @details Do not attempt to assess the distributions. Based on quantiles only.

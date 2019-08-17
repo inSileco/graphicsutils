@@ -5,6 +5,10 @@
 #' @description A collection of (hopefully) useful functions to create graphics based plots.
 #' @import Rcpp
 #' @importFrom Rcpp evalCpp
+#' @importFrom graphics par lines points layout text lines.default rect plot.new
+#' @importFrom graphics plot axis strwidth
+#' @importFrom grDevices colorRampPalette
+#' @importFrom stats aggregate quantile runif rnorm
 #' @useDynLib graphicsutils
 NULL
 

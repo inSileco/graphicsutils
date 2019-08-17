@@ -4,25 +4,37 @@
 \alias{ganttChart}
 \title{Gantt Chart}
 \usage{
-ganttChart(df, col = gpuPalette("insileco")[-1], perc_txt = 20,
-  order = TRUE)
+ganttChart(df, order = TRUE, add_milestone = order, axes = TRUE)
 }
 \arguments{
-\item{df}{a data.frame (see details),}
+\item{df}{a data.frame (see details).}
 
-\item{col}{color palette.}
+\item{order}{a logical. Should the tasks be ordered? See below for more details.}
 
-\item{perc_txt}{percentage of the wodth dedicated to the description of tasks.}
+\item{add_milestone}{Should milestone be abbed? (not implemented yet)}
 
-\item{order}{a logical should the tasks be ordered.}
+\item{axes}{a logical. Should the axes be added?}
 }
 \description{
-Gant Chart.
+A flexible Gantt Chart.
+}
+\details{
+Data frame with the following column (order does not matter):
+\itemize{
+\item \code{milestone}
+\item \code{due}
+\item \code{start}
+\item \code{task}
+\item optionally a \code{status} and \code{col} columns
+}
 }
 \examples{
 data(dfGantt)
 ganttChart(dfGantt)
 }
+\references{
+https://insileco.github.io/2017/09/20/gantt-charts-in-r/
+}
 \author{
-David Beauchesne
+David Beauchesne, Kevin Cazelles
 }

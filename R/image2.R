@@ -18,8 +18,6 @@
 #'
 #' @keywords image rectangles
 #'
-#' @importFrom grDevices colorRampPalette
-#' @importFrom graphics par rect
 #' @export
 #'
 #' @details This function actually draws rectangles to create an image from a matrix.
