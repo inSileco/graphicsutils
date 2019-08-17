@@ -145,7 +145,7 @@ lightened actually call ramp to darken and lighten a given color." />
     </tr>
     <tr>
       <th>percentage</th>
-      <td><p>percentage determining the percentage of <code>tocol</code> used to nuance <code>fromcol</code>.</p></td>
+      <td><p>percentage determining the percentage of <code>tocol</code> used to nuance <code>fromcol</code>. Note that <code>darken</code> and <code>lighten</code> support negative percentage.</p></td>
     </tr>
     <tr>
       <th>as_rgb</th>
@@ -160,7 +160,7 @@ lightened actually call ramp to darken and lighten a given color." />
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
     <ul>
-<li><p><code>ramp</code>: Retuns a shaded color.</p></li>
+<li><p><code>ramp</code>: Returns a shaded color.</p></li>
 <li><p><code>darken</code>: Returns a darkened color.</p></li>
 <li><p><code>lighten</code>: Returns a lightened color.</p></li>
 </ul>
@@ -171,8 +171,7 @@ lightened actually call ramp to darken and lighten a given color." />
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>darken</span>(<span class='st'>'red'</span>, <span class='fl'>50</span>)</div><div class='output co'>#&gt; [1] "#7F0000"</div><div class='input'><span class='no'>more_reds</span> <span class='kw'>&lt;-</span> <span class='fu'>lighten</span>(<span class='st'>'red'</span>, <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq</a></span>(<span class='fl'>10</span>,<span class='fl'>90</span>,<span class='fl'>9</span>))
-<span class='fu'><a href='showPalette.html'>showPalette</a></span>(<span class='no'>more_reds</span>)</div><div class='img'><img src='darken-1.png' alt='' width='700' height='433' /></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='showPalette.html'>showPalette</a></span>(<span class='fu'>ramp</span>(<span class='st'>"blue"</span>, <span class='st'>"red"</span>, <span class='fl'>10</span>*<span class='fl'>3</span>:<span class='fl'>7</span>))</div><div class='img'><img src='darken-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>darken</span>(<span class='st'>'red'</span>, <span class='fl'>50</span>)</div><div class='output co'>#&gt; [1] "#7F0000"</div><div class='input'><span class='no'>more_reds</span> <span class='kw'>&lt;-</span> <span class='fu'>lighten</span>(<span class='st'>'red'</span>, <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/seq'>seq</a></span>(<span class='fl'>10</span>,<span class='fl'>90</span>,<span class='fl'>9</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: the condition has length &gt; 1 and only the first element will be used</span></div><div class='input'><span class='fu'><a href='showPalette.html'>showPalette</a></span>(<span class='no'>more_reds</span>)</div><div class='img'><img src='darken-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

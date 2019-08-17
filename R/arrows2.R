@@ -70,7 +70,7 @@ arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1
     hg2 <- hg1 * cex.shr
     hg3 <- hg2 + cex.hh * hg1
     ## ----
-    for (i in 1L:sz) {
+    for (i in seq_len(sz)) {
         lg1 <- distpt[i]
         if (!prophead) {
             lg3 <- cex.hl * 0.06 * (myusr[2L] - myusr[1L])

@@ -17,7 +17,7 @@ lighten(col, percentage = 50, as_rgb = FALSE)
 
 \item{tocol}{color to nuance \code{fromcol}, i.e. if \code{percentage = 100}, it is the color returned.}
 
-\item{percentage}{percentage determining the percentage of \code{tocol} used to nuance \code{fromcol}.}
+\item{percentage}{percentage determining the percentage of \code{tocol} used to nuance \code{fromcol}. Note that \code{darken} and \code{lighten} support negative percentage.}
 
 \item{as_rgb}{a logical. Should the color(s) returned as a matrix object?}
 

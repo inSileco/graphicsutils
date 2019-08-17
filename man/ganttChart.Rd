@@ -4,28 +4,39 @@
 \alias{ganttChart}
 \title{Gantt Chart}
 \usage{
-ganttChart(df, order = TRUE, add_milestone = order, axes = TRUE)
+ganttChart(df, order = TRUE, mstone_add = order, mstone_spacing = 1,
+  mstone_lwd = 2, axes = TRUE, mstone_font = 2, lighten_done = 0)
 }
 \arguments{
 \item{df}{a data.frame (see details).}
 
 \item{order}{a logical. Should the tasks be ordered? See below for more details.}
 
-\item{add_milestone}{Should milestone be abbed? (not implemented yet)}
+\item{mstone_add}{Should milestones be added?}
+
+\item{mstone_spacing}{spacing between milestones (expressed as figure unit).}
+
+\item{mstone_lwd}{lines width for the milestone.}
 
 \item{axes}{a logical. Should the axes be added?}
+
+\item{mstone_font}{font of milestone (ignore of \code{axes} is \code{FALSE}).}
+
+\item{lighten_done}{percentage use to lighten done task (see \code{\link[=lighten]{lighten()}}). Default set to 0, so the completed task of a given milestone have the same color as the pending ones.}
 }
 \description{
 A flexible Gantt Chart.
 }
 \details{
-Data frame with the following column (order does not matter):
+Argument \code{df} should be a data frame with the following columns (in any order):
 \itemize{
-\item \code{milestone}
-\item \code{due}
-\item \code{start}
-\item \code{task}
-\item optionally a \code{status} and \code{col} columns
+\item \code{milestone}: milestones names
+\item \code{due}: due date (will be converted into a date with \code{\link[=as.Date]{as.Date()}})
+\item \code{start}: start date (will be converted into a date with \code{\link[=as.Date]{as.Date()}})
+\item \code{task}: tasks names
+It might as well include any of the following optional columns:
+\item \code{done}: vector of logicals indicating whether the task if completed
+\item \code{col}: to custom the color of the tasks.
 }
 }
 \references{

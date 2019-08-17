@@ -26,6 +26,7 @@ dev.off()
 showPalette()
 ##-- the computation of the computation of the number of rows and columns
 ## should be integrated in a separate function...
+palette("default")
 res2 <- showPalette(palette()[1:2], inline = TRUE, add_number = TRUE,
   add_codecolor = TRUE)
 dev.off()

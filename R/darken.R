@@ -6,7 +6,7 @@
 #'
 #' @param fromcol starting color, i.e. if \code{percentage = 0}, it is the color returned.
 #' @param tocol color to nuance `fromcol`, i.e. if \code{percentage = 100}, it is the color returned.
-#' @param percentage percentage determining the percentage of `tocol` used to nuance `fromcol`.
+#' @param percentage percentage determining the percentage of `tocol` used to nuance `fromcol`. Note that `darken` and `lighten` support negative percentage.
 #' @param col the color to be darkened or lightened.
 #' @param as_rgb a logical. Should the color(s) returned as a matrix object?
 #'
@@ -21,6 +21,7 @@
 #' @describeIn darken Returns a shaded color.
 ramp <- function(fromcol, tocol, percentage = 50, as_rgb = FALSE) {
     perc <- as.integer(percentage)
+    stopifnot(percentage <= 100 & percentage >= 0)
     outcol <- colorRampPalette(c(fromcol, tocol))(101)[perc + 1]
     if (as_rgb) col2rgb(outcol) else outcol
 }
@@ -28,12 +29,16 @@ ramp <- function(fromcol, tocol, percentage = 50, as_rgb = FALSE) {
 #' @describeIn darken Returns a darkened color.
 #' @export
 darken <- function(col, percentage = 50, as_rgb = FALSE) {
-    ramp(fromcol = col, tocol = "black", percentage = percentage,
+    if (percentage < 0) {
+      lighten(col, -percentage, as_rgb)
+    } else ramp(col, "black", percentage = percentage,
       as_rgb = as_rgb)
 }
 
 #' @describeIn darken Returns a lightened color.
 #' @export
 lighten <- function(col, percentage = 50, as_rgb = FALSE) {
-    ramp(col, "white", percentage = percentage, as_rgb = as_rgb)
+    if (percentage < 0) {
+      darken(col, -percentage, as_rgb)
+    } else  ramp(col, "white", percentage = percentage, as_rgb = as_rgb)
 }

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contrast colors. — contrastColors • graphicsutils</title>
+<title>Blend colors — blendColors • graphicsutils</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,10 +30,9 @@
 
 
 
-<meta property="og:title" content="Contrast colors. — contrastColors" />
+<meta property="og:title" content="Blend colors — blendColors" />
 
-<meta property="og:description" content="For a given set of colors, contrastColors returns an associated set
-of colors." />
+<meta property="og:description" content="Blend a set of colors and return the color thereby obtained." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,73 +111,37 @@ of colors." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Contrast colors.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/inSileco/graphicsutils/blob/master/R/contrastColors.R'><code>R/contrastColors.R</code></a></small>
-    <div class="hidden name"><code>contrastColors.Rd</code></div>
+    <h1>Blend colors</h1>
+    <small class="dont-index">Source: <a href='https://github.com/inSileco/graphicsutils/blob/master/R/mixColors.R'><code>R/mixColors.R</code></a></small>
+    <div class="hidden name"><code>blendColors.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>For a given set of colors, <code>contrastColors</code> returns an associated set
-of colors.</p>
+    <p>Blend a set of colors and return the color thereby obtained.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>contrastColors</span>(<span class='no'>colors</span>, <span class='kw'>how</span> <span class='kw'>=</span> <span class='st'>"how_borw"</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='fu'>col2Hex</span>(<span class='no'>colors</span>, <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>blendColors</span>(<span class='no'>cols</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>colors</th>
-      <td><p>vector of any of the three kinds of R color specifications, see <code><a href='https://www.rdocumentation.org/packages/grDevices/topics/col2rgb'>col2rgb</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>how</th>
-      <td><p>a method to contrast <code>colors</code>. Methods currently available are <code>how_borw</code>, <code>how_cent</code>, <code>how_oppo</code> and <code>how_prop</code>, see details.</p></td>
-    </tr>
-    <tr>
-      <th>alpha</th>
-      <td><p>logical value indicating whether the alpha channel (opacity) values should be returned.</p></td>
+      <th>cols</th>
+      <td><p>set of colors to be mixed.</p></td>
     </tr>
     </table>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Based on the sum of colors' saturation <code>how_borw</code> returns black or white,
-<code>how_prop</code> proportionally remove or add some saturation. <code>how_oppo</code>
-opposes the color (255-x) and <code>how_cent</code> centers the columns, i.e. remove
-or add 127.</p>
-    
-    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
-
-    <ul>
-<li><p><code>contrastColors</code>: Retuns a set of colors contrasted.</p></li>
-<li><p><code>col2Hex</code>: Returns the hexadecimal string associates to a given vector of colors.</p></li>
-</ul>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><a href='https://www.rdocumentation.org/packages/grDevices/topics/col2rgb'>col2rgb</a></p></div>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>#Example 1:</span>
-<span class='fu'>contrastColors</span>(<span class='st'>'blue'</span>)</div><div class='output co'>#&gt; [1] "#ffffff"</div><div class='input'><span class='fu'>contrastColors</span>(<span class='st'>'blue'</span>, <span class='kw'>how</span> <span class='kw'>=</span> <span class='st'>'how_prop'</span>)</div><div class='output co'>#&gt; [1] "#bfbfff"</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>blendColors</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"blue"</span>, <span class='st'>"purple"</span>))</div><div class='output co'>#&gt; [1] "#5010F7"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#functions">Functions</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-      
+            
       <li><a href="#examples">Examples</a></li>
     </ul>
 
