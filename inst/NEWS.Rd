@@ -10,9 +10,9 @@
         \item new arguments `add_val` and `val_cex` `n_signif` to add value in `image2()` and control the size of the text.
         \item `gpuPalette()` now supports numeric vectors to select palettes and expand palettes (calling `colorRampPalette()`) when necessary.
         \item add `blendColors()`.
-        \item add `ganttChart()`.
+        \item add `ganttChart()` (via \ghpr{16})
         \item `darken()` and `lighten()` now support negative percentage by calling each other.
-        \item Many small changes have been done do follow good practice.
+        \item many small changes have been done to follow good practice.
       }
   }
 }
