@@ -4,7 +4,8 @@
 \alias{box2}
 \title{Alternative box function}
 \usage{
-box2(side = 1:4, which = "plot", fill = NULL, ...)
+box2(side, which = c("plot", "figure", "outer", "inner"), fill = NULL,
+  ...)
 }
 \arguments{
 \item{side}{a numerical or character vector or a character string specifying which side(s) of the plot the box is to be drawn (see details).}
@@ -36,12 +37,12 @@ plot0()
 box2(c(1,4), fill='grey80', lwd=2)
 
 # Example 3:
-graphics::par(mfrow=c(2,2),oma=c(2,2,2,2))
+par(mfrow=c(2,2),oma=c(2,2,2,2))
 plot0(0,0)
-graphics::box('outer',lwd=2)
-graphics::box('inner',lwd=2)
-graphics::plot.default(0,0)
-graphics::plot.default(0,0)
+box('outer',lwd=2)
+box('inner',lwd=2)
+plot.default(0,0)
+plot.default(0,0)
 plot0()
 box2(which='figure',lwd=2, fill=2)
 box2(side=12, lwd=2, fill=8)

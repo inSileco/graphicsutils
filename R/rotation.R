@@ -14,18 +14,18 @@
 #' @export
 #'
 #' @details This function returns the coordinates of the points after rotation.
-#' If the coordinates of the rotation center are not specified, then the rotation
-#' center is the barycenters of the points to be rotated.
+#' If the coordinates of the rotation center are not specified, then the
+#' rotation center is the centroid of the points to be rotated.
 #'
 #' @examples
 #' plot0(c(0,10),c(0,10))
 #' y <- c(6,6,9)
 #' x <- c(2,5,3.5)
-#' graphics::polygon(x, y, lwd=2)
+#' polygon(x, y, lwd=2)
 #' myrot <- rotation(x, y, rot=90)
-#' graphics::polygon(myrot$x, myrot$y, lwd=2, border=4)
+#' polygon(myrot$x, myrot$y, lwd=2, border=4)
 #' myrot2 <- rotation(x, y, rot=-40, 0, 0)
-#' graphics::polygon(myrot2$x,myrot2$y, lwd=2, border=3)
+#' polygon(myrot2$x,myrot2$y, lwd=2, border=3)
 
 rotation <- function(x, y, rot = 90, xrot = mean(x), yrot = mean(y), rad = FALSE) {
     # Format checking
@@ -40,12 +40,12 @@ rotation <- function(x, y, rot = 90, xrot = mean(x), yrot = mean(y), rad = FALSE
         x <- rep_len(x, sz)
         y <- rep_len(y, sz)
     }
-    # 
+    #
     matxy <- matrix(c(x - xrot, y - yrot), nrow = 2, byrow = TRUE)
-    if (!isTRUE(rad)) 
+    if (!isTRUE(rad))
         rot <- pi * rot/180
     mat.rot <- matrix(c(cos(rot), sin(rot), -sin(rot), cos(rot)), 2)
     matxy2 <- mat.rot %*% matxy
-    # 
+    #
     list(x = matxy2[1L, ] + xrot, y = matxy2[2L, ] + yrot)
 }

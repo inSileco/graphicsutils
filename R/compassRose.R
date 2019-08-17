@@ -52,7 +52,7 @@ compassRoseCardinal <- function(x, y = x, rot = 0, cex.cr = 1, cex.let = 1, labe
     "W", "N", "E"), offset = 1.2, col.cr = c(1, 8), col.let = 1, border = c(1, 8),
     ...) {
     #
-    wh <- graphics::strheight("M")
+    wh <- strheight("M")
     rot <- pi * rot/180
     mat.rot <- matrix(c(cos(rot), sin(rot), -sin(rot), cos(rot)), 2)
     #
@@ -72,7 +72,7 @@ compassRoseCardinal <- function(x, y = x, rot = 0, cex.cr = 1, cex.let = 1, labe
     cr.bd <- rep(border, length.out = 8)
     #
     for (i in seq_len(8)) {
-        graphics::polygon(x + c(0, matxy[i, 1], matxy[8 + i, 1]), y + c(0, matxy[i,
+        polygon(x + c(0, matxy[i, 1], matxy[8 + i, 1]), y + c(0, matxy[i,
             2], matxy[8 + i, 2]), col = cr.col[i], border = cr.bd[i], ...)
     }
     graphics::text(x + offset * matxy[seq(1, by = 2, length.out = 4), 1], y + offset *

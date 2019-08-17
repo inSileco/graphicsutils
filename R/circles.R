@@ -90,7 +90,7 @@ circles <- function(x, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01, pie 
             yout <- y[i] + c(0, radi[i] * sin(sqc), 0)
         }
 
-        graphics::polygon(xout, yout, ...)
+        polygon(xout, yout, ...)
         out[[i]] <- data.frame(x = xout, y = yout)
     }
 

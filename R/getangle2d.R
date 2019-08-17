@@ -26,7 +26,7 @@ getAngle2d <- function(x0, y0, x1, y1, rad = FALSE) {
     y1 <- rep_len(y1, sz)
     #
     dstc <- sqrt((x1 - x0) * (x1 - x0) + (y1 - y0) * (y1 - y0))
-    stopifnot(sum(dstc == 0) == 0)
+    stopifnot(!sum(dstc == 0))
     cx <- acos((x1 - x0)/dstc)
     #
     ang <- cx * (-1 + 2 * ((y1 - y0) > 0))

@@ -24,7 +24,7 @@ that will be displayed in the center of the plot region.}
 \item{grid.lty}{line type of the grid's lines.}
 
 \item{...}{further graphical parameters from \code{[graphics::par()]}
-(such as \code{srt}) or \code{\link[graphics]{plot.default}}.}
+(such as \code{srt}) or \link[graphics:plot.default]{graphics::plot.default}.}
 }
 \description{
 \code{plot0} returns an a plot of a specific size without any symbols.

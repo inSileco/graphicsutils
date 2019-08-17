@@ -57,8 +57,7 @@ pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, at
     dx <- cex.x * 0.05 * (graphics::par()$usr[2L] - graphics::par()$usr[1L])
     dy <- cex.y * 0.05 * (graphics::par()$usr[4L] - graphics::par()$usr[3L])
     ##
-    if (!add)
-        graphics::plot.default(x, y, type = "n")
+    if (!add) plot.default(x, y, type = "n")
     ## Something weird, I had to use the t to get the correct id from grepl if
     ## (!is.null(col)) obj[!grepl(obj), pattern='#000000')] <- col
     if (!is.null(col)) {
@@ -72,8 +71,8 @@ pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, at
     }
     ##
     if (isTRUE(atcenter)) {
-        graphics::rasterImage(obj, x - dx, y - dy, x + dx, y + dy, ...)
-    } else graphics::rasterImage(obj, x, y, x + 2 * dx, y + 2 * dy, ...)
+        rasterImage(obj, x - dx, y - dy, x + dx, y + dy, ...)
+    } else rasterImage(obj, x, y, x + 2 * dx, y + 2 * dy, ...)
     ##
     invisible(NULL)
 }

@@ -8,8 +8,6 @@
 #'
 #' @keywords color, palette, interactive
 #'
-#' @importFrom graphics par image points text box abline layout locator
-#'
 #' @export
 #'
 #' @return
@@ -105,7 +103,7 @@ drawSelector2 <- function(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp, nb
     text(0, -0.5, label = "Stop", cex = 2, col = "grey20")
     #
     plot0(fill = col_foc)
-    code_rgb <- grDevices::col2rgb(col_foc)
+    code_rgb <- col2rgb(col_foc)
     # print(sum(code_rgb) < 255)
     if (sum(code_rgb) < 255)
         txt_col <- "grey80" else txt_col <- "grey20"
@@ -114,7 +112,8 @@ drawSelector2 <- function(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp, nb
     text(0, -0.3, label = paste0("Green:", code_rgb[2L]), cex = 2, col = txt_col)
     text(0, -0.6, label = paste0("Blue :", code_rgb[3L]), cex = 2, col = txt_col)
     # box(lwd = 3, col = 'white') --
-    for (i in 4 + 1:nbpanels) plot0(fill = colSlc[i - 4])
+    for (i in 4 + seq_len(nbpanels))
+      plot0(fill = colSlc[i - 4])
 
     invisible(NULL)
 }

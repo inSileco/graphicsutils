@@ -36,7 +36,7 @@ encircle <- function(x, y = NULL, nb.pt = 20, off.set = 1, ...) {
     pts <- data.frame(x = rep(cfig$x, each = nb.pt) + rep(seqx, nrow(cfig)), y = rep(cfig$y,
         each = nb.pt) + rep(seqy, nrow(cfig)))
     ## compute the convex hull and plot it using user system
-    graphics::polygon(toUser(pts[grDevices::chull(pts), ]), ...)
+    polygon(toUser(pts[grDevices::chull(pts), ]), ...)
     ##
     invisible(NULL)
 }

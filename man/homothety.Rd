@@ -38,9 +38,9 @@ Drawing the points computed is relevant only if there are more than 2 points.
 plot0(c(0,10),c(0,10))
 x <- c(4,6,5)
 y <- c(2,2,4)
-graphics::polygon(x,y)
+polygon(x,y)
 poly2 <- homothety(x,y,2)
-graphics::polygon(poly2$x,poly2$y)
+polygon(poly2$x,poly2$y)
 poly3 <- homothety(x, y, -2.5, xcen=5, ycen=4, border=4, add=TRUE)
 }
 \keyword{geometry}

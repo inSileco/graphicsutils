@@ -15,8 +15,9 @@
 #' @export
 #'
 #' @details
-#' The number of rhombus maximal is provided by the length of the largest argument among x, y, ldg, sdg and rot.
-#' Other arguments are repeated with the largest length as the desired one (see \code{rep_len}).
+#' The number of rhombus maximal is provided by the length of the largest
+#' argument among x, y, ldg, sdg and rot. Other arguments are repeated with the
+#' largest length as the desired one (see [rep_len()]).
 #' Additional arguments remain the same for every rhombus.
 #'
 #' @return
@@ -49,8 +50,8 @@ rhombi <- function(x, y = x, ldg = 1, sdg = ldg, rot = 0, add = FALSE, ...) {
     if (add) {
         for (i in seq_len(sz)) {
             corh <- matrix(0, 2, 4)
-            corh[1, ] <- c(.5 * ldg[i], 0, -.5 * ldg[i], 0)
-            corh[2, ] <- c(0, .5 * sdg[i], 0, -.5 * sdg[i])
+            corh[1L, ] <- c(.5 * ldg[i], 0, -.5 * ldg[i], 0)
+            corh[2L, ] <- c(0, .5 * sdg[i], 0, -.5 * sdg[i])
             mat.rot <- matrix(c(cos(rot[i]), sin(rot[i]), -sin(rot[i]), cos(rot[i])),
                 2)
             pt.los <- mat.rot %*% corh

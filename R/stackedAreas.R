@@ -44,13 +44,14 @@
 #' plotAreaColor(col='#f2c4c4')
 #' stackedAreas(x, index=2001:2025, rgy=100, lwd=2, add=TRUE, border='transparent')
 
-stackedAreas <- function(val, index = NULL, rgy = 1, cumul = FALSE, transp = FALSE,
-    legend = NULL, add = FALSE, col = NULL, pickcolors = FALSE, lty = 1, lwd = 1,
-    border = NA, main = "", xlab = "", ylab = "") {
+stackedAreas <- function(val, index = NULL, rgy = 1, cumul = FALSE,
+    transp = FALSE, legend = NULL, add = FALSE, col = NULL,
+    pickcolors = FALSE, lty = 1, lwd = 1, border = NA, main = "",
+    xlab = "", ylab = "") {
     ## checking values / converting if required
+        stopifnot(ncol(x) > 1)
     x <- as.matrix(val)
-    stopifnot(ncol(x) > 1)
-    if (sum(x < 0) > 0)
+    if (sum(x < 0))
         stop("x must be positive")
     if (transp) x <- t(x)
     #
@@ -59,7 +60,8 @@ stackedAreas <- function(val, index = NULL, rgy = 1, cumul = FALSE, transp = FAL
     if (sum(vecol != rep(1, ncol(x))) > 0)
         x <- t(t(x)/vecol)
     if (nrow(x) > 1) {
-        if (!cumul) for (i in seq(2, nrow(x))) x[i, ] <- x[i - 1, ] + x[i, ]
+        if (!cumul)
+          for (i in seq(2, nrow(x))) x[i, ] <- x[i - 1, ] + x[i, ]
     }
     ## ---- Colors
     if (pickcolors) {

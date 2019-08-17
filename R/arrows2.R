@@ -51,7 +51,7 @@ arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0,
     distpt <- sqrt(rx * rx + ry * ry)
     # ----- Checking
     pb <- which(distpt == 0)
-    if (length(pb) > 0) {
+    if (length(pb)) {
         warning("Zero-length arrows are skipped.")
         for (i in seq_along(argn)) assign(argn[i], argo[[i]][-pb])
     }
@@ -91,8 +91,8 @@ arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0,
                 -hg1, -hg2, -hg3)
         }
         ## ----
-        ptcoord <- rotation(sqptx, sqpty, rot = anglept[i], xrot = x0[i], yrot = y0[i],
-            rad = TRUE)
+        ptcoord <- rotation(sqptx, sqpty, rot = anglept[i], xrot = x0[i],
+          yrot = y0[i], rad = TRUE)
         polygon(ptcoord$x, ptcoord$y, ...)
     }
     ## ----

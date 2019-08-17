@@ -25,17 +25,17 @@ Rotates a set of points.
 }
 \details{
 This function returns the coordinates of the points after rotation.
-If the coordinates of the rotation center are not specified, then the rotation
-center is the barycenters of the points to be rotated.
+If the coordinates of the rotation center are not specified, then the
+rotation center is the centroid of the points to be rotated.
 }
 \examples{
 plot0(c(0,10),c(0,10))
 y <- c(6,6,9)
 x <- c(2,5,3.5)
-graphics::polygon(x, y, lwd=2)
+polygon(x, y, lwd=2)
 myrot <- rotation(x, y, rot=90)
-graphics::polygon(myrot$x, myrot$y, lwd=2, border=4)
+polygon(myrot$x, myrot$y, lwd=2, border=4)
 myrot2 <- rotation(x, y, rot=-40, 0, 0)
-graphics::polygon(myrot2$x,myrot2$y, lwd=2, border=3)
+polygon(myrot2$x,myrot2$y, lwd=2, border=3)
 }
 \keyword{rotation}

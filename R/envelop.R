@@ -30,6 +30,6 @@ envelop <- function(x, upper, lower = rep(0, length(upper)), add = TRUE, ...) {
     stopifnot(length(x) == length(lower))
     out <- list(x = c(x, rev(x)), y = c(upper, rev(lower)))
     if (add)
-        graphics::polygon(c(x, rev(x)), c(upper, rev(lower)), ...)
+        polygon(c(x, rev(x)), c(upper, rev(lower)), ...)
     invisible(out)
 }
