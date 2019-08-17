@@ -1,7 +1,7 @@
 #' Alternative image function
 #'
 #' Creates a grid of colored or gray-scale rectangles. This function is similar
-#' to \code{[graphics::image()]} when used for a matrix but simpler (*i.e*
+#' to `[graphics::image()]` when used for a matrix but simpler (*i.e*
 #' less available features).
 #'
 #' @param x a matrix or an object to be coerced as a matrix.
@@ -10,21 +10,21 @@
 #' @param to values equal to or larger than `from` will be associated with
 #' the last color of the color scale.
 #' @param color_scale a vector of colors.
-#' @param border color for rectangle borders (see \code{[graphics::rect()]}).
+#' @param border color for rectangle borders (see `[graphics::rect()]`).
 #' @param add_value a logical should value be added in the middle of the rectangles drawn?
 #' @param val_cex coefficient of magnification used if values are displayed.
 #' @param n_signif number of significant numbers to be displayed (used when labelc is `NULL`).
-#' @param ... further arguments to be passed to \code{[graphics::rect()]}.
+#' @param ... further arguments to be passed to `[graphics::rect()]`.
 #'
 #' @keywords image rectangles
 #'
 #' @export
 #'
 #' @details This function actually draws rectangles to create an image from a matrix.
-#' Unlike \code{[graphics::image()]}, \code{image2} the image is ordered just as the
+#' Unlike `[graphics::image()]`, \code{image2} the image is ordered just as the
 #' matrix is displayed meaning that the cell (1,1) is at the upper left cell of
 #' the plot drawn. Note that currently neither titles nor axes' labels are added
-#' user should call the \code{[graphics::title()]} and \code{[graphics::axis()]}.
+#' user should call the `[graphics::title()]` and `[graphics::axis()]`.
 #' Concerning the latter, the user should be aware that cell's coordinates range
 #' from 0 to 1 with 0 being the coordinates of the first cell and 1 the coordinates
 #' of the last cell (if there is only one cell then the center of the unique cell
@@ -66,8 +66,8 @@ image2 <- function(x, from = NULL, to = NULL, color_scale = NULL, border = NA,
 
     par(xaxs = "i", yaxs = "i")
     plot0(range(seqx), range(seqy))
-    for (i in 1:nc) {
-        for (j in 1:nr) {
+    for (i in seq_len(nc)) {
+        for (j in seq_len(nr)) {
             xmin <- seqx[i]
             xmax <- seqx[i + 1]
             ymin <- seqy[(nr + 2) - j]

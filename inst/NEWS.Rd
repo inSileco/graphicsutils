@@ -12,6 +12,7 @@
         \item add `blendColors()`.
         \item add `ganttChart()`.
         \item `darken()` and `lighten()` now support negative percentage by calling each other.
+        \item Many small changes have been done do follow good practice.
       }
   }
 }

@@ -32,8 +32,9 @@
 # ff <- ganttChart(dfGantt, mstone_lwd = 3, mstone_spacing = 0.6, lighten_done = 80)
 
 
-ganttChart <- function(df, order = TRUE, mstone_add = order, mstone_spacing = 1,
-    mstone_lwd = 2, axes = TRUE, mstone_font = 2, lighten_done = 0) {
+ganttChart <- function(df, order = TRUE, mstone_add = order,
+    mstone_spacing = 1, mstone_lwd = 2, axes = TRUE, mstone_font = 2,
+    lighten_done = 0) {
     ##
     opar <- par(no.readonly = TRUE)
     ## checks
@@ -69,7 +70,8 @@ ganttChart <- function(df, order = TRUE, mstone_add = order, mstone_spacing = 1,
       if (mstone_font != opar$font) {
         id <- df$done == "M"
         axis(2, at = df$y[!id], labels = df$task[!id], lwd = 0, las = 1)
-        axis(2, at = df$y[id], labels = df$task[id], lwd = 0, las = 1, font = mstone_font)
+        axis(2, at = df$y[id], labels = df$task[id], lwd = 0, las = 1,
+          font = mstone_font)
       } else {
         axis(2, at = df$y, labels = df$task, lwd = 0, las = 1)
       }
@@ -89,7 +91,8 @@ ganttChart <- function(df, order = TRUE, mstone_add = order, mstone_spacing = 1,
     #
     for (i in seq_len(nrow(df))) {
       tl <- ifelse(df$done[i] == "M", mstone_lwd, opar$lwd)
-      lines(c(df$start[i], df$due[i]), rep(df$y[i], 2), col = cols[i], lwd = tl)
+      lines(c(df$start[i], df$due[i]), rep(df$y[i], 2), col = cols[i],
+        lwd = tl)
     }
     ##
     invisible(df)

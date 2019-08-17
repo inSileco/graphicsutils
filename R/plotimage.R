@@ -1,10 +1,10 @@
 #' Plot a picture.
 #'
 #' Returns a plot that displays an image. It enables users to directly include
-#' a \code{.png} or a \code{.jpeg} file in a plot region by providing their path.
+#' a `.png` or a `.jpeg` file in a plot region by providing their path.
 #'
 #' @param obj an object of class `nativeRaster` function.
-#' @param file a path to either a \code{.png} file or a \code{.jpeg} file.
+#' @param file a path to either a `.png` file or a `.jpeg` file.
 #' @param add logical. Should images be added on the current graph? If FALSE a new plot is created.
 #' @param ... additional arguments to be passed to `rasterImage` function.
 #'
@@ -21,7 +21,7 @@
 #' img <- png::readPNG(system.file('img', 'Rlogo.png', package='png'), native=TRUE)
 #' op <- graphics::par(no.readonly = TRUE)
 #' graphics::par(mfrow=c(4,4), mar=rep(2,4))
-#' for (i in 1:16) plotImage(img)
+#' for (i in seq_len(16)) plotImage(img)
 #' graphics::par(op)
 
 plotImage <- function(obj = NULL, file = NULL, add = FALSE, ...) {
@@ -32,7 +32,7 @@ plotImage <- function(obj = NULL, file = NULL, add = FALSE, ...) {
     } else {
         # if the file ends with jpeg or jpg we use readJPG from 'jpeg' package if the
         # file ends with png we use readPNG from 'png' package
-        ext <- sapply(c(".jpeg$", ".jpg$", ".png$"), grepl, file)
+        ext <- unlist(lapply(c(".jpeg$", ".jpg$", ".png$"), grepl, file))
         if (sum(ext) == 0)
             stop("No method found for the given file.")
         nb <- which(ext == TRUE)

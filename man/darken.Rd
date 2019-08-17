@@ -25,8 +25,8 @@ lighten(col, percentage = 50, as_rgb = FALSE)
 }
 \description{
 Returns lightened or darkened colors, vectorised over \code{percentage}.
-\code{ramp} is valid for any couple of colors. Functions \code{darken} and
-\code{lightened} actually call \code{ramp} to darken and lighten a given color.
+\code{ramp} is valid for any couple of colors. Functions \code{darken()} and
+\code{lighten()} call \code{ramp} to respectively darken and lighten a given color.
 }
 \section{Functions}{
 \itemize{

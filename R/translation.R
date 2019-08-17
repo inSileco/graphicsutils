@@ -33,7 +33,7 @@
 #' y <- c(1,1,3,3)
 #' plot0(c(0,10),c(0,10))
 #' graphics::polygon(x,y)
-#' for (i in 1:6) translation(x,y,xtrans=i,ytrans=i, add=TRUE, border=i+1, lwd=2)
+#' for (i in seq_len(6)) translation(x,y,xtrans=i,ytrans=i, add=TRUE, border=i+1, lwd=2)
 
 
 translation <- function(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...) {

@@ -8,7 +8,7 @@
 #' @param upper the y coordinates of the upper values.
 #' @param lower the y coordinates of the lower values.
 #' @param add a logical. If `TRUE` the envelop is drawn as a polygon (default behavior).
-#' @param ... additional arguments to be passed to \code{[graphics::polygon()]} function.
+#' @param ... additional arguments to be passed to `[graphics::polygon()]` function.
 #'
 #' @export
 #'

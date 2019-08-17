@@ -1,15 +1,15 @@
 #' Images as ploting characters.
 #'
 #' `pchimage` returns a plot that displays an image. It enables to users
-#' to directly include a \code{.png} or a \code{.jpeg} file in a plot region.
+#' to directly include a `.png` or a `.jpeg` file in a plot region.
 #'
 #' @param x the x coordinates of images to be drawn.
 #' @param y the y coordinates of images to be drawn.
 #' @param obj an object of class `nativeRaster`.
-#' @param file a path to either a \code{.png} file or a \code{.jpeg} file.
+#' @param file a path to either a `.png` file or a `.jpeg` file.
 #' @param cex.x a numerical value giving the amount by which the horizontal
 #' width of the image should be magnified, a value of 1 means 5\% of the total width.
-#' @param cex.y Same as \code{cex.x} for the y axis.
+#' @param cex.y Same as `cex.x` for the y axis.
 #' @param atcenter a logical. If `TRUE` them x and y coordinates describe
 #' the center of the image. Otherwise they represent the bottom-left coordinates of the image.
 #' @param col optional color use to fill pixels whose values are not 0
@@ -46,15 +46,13 @@ pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, at
     } else {
         # if the file ends with jpeg or jpg we use readJPG from 'jpeg' package if the
         # file ends with png we use readPNG from 'png' package
-        ext <- sapply(c(".jpeg$", ".jpg$", ".png$"), grepl, file)
+        ext <- unlist(lapply(c(".jpeg$", ".jpg$", ".png$"), grepl, file))
         if (sum(ext) == 0)
             stop("No method found for the given file.")
         nb <- which(ext == TRUE)
         if (nb == 3) {
             obj <- png::readPNG(file, native = TRUE)
-        } else {
-            obj <- jpeg::readJPEG(file, native = TRUE)
-        }
+        } else obj <- jpeg::readJPEG(file, native = TRUE)
     }
     dx <- cex.x * 0.05 * (graphics::par()$usr[2L] - graphics::par()$usr[1L])
     dy <- cex.y * 0.05 * (graphics::par()$usr[4L] - graphics::par()$usr[3L])

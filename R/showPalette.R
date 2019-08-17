@@ -48,7 +48,7 @@ showPalette <- function(x = grDevices::palette(), inline = FALSE,
     ##-- remove margins
     graphics::par(mfrow = c(nb_row, nb_col), mar = rep(0, 4L))
 
-    for (i in 1:nb_x) {
+    for (i in seq_len(nb_x)) {
         plot0(fill = ramp[i])
         txt <- ""
         if (add_number) txt <- paste0(txt, i, ": ")

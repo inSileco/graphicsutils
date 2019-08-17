@@ -28,7 +28,7 @@ the end of the file extension.
 img <- png::readPNG(system.file('img', 'Rlogo.png', package='png'), native=TRUE)
 op <- graphics::par(no.readonly = TRUE)
 graphics::par(mfrow=c(4,4), mar=rep(2,4))
-for (i in 1:16) plotImage(img)
+for (i in seq_len(16)) plotImage(img)
 graphics::par(op)
 }
 \keyword{image.}

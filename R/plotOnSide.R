@@ -39,7 +39,7 @@ plotOnSide <- function(mat, side = 1:2, dim = NULL, quiet = FALSE, ...) {
         mydim <- dim(mat)
         mat <- cbind(0, mat + sz, 0)
         mat <- rbind(0, mat, 0)
-        for (i in 1L:sz) {
+        for (i in seq_len(sz)) {
             switch(slc[i], {
                 mat[nrow(mat), 1 + (1:mydim[2L])] <- 1
             }, {

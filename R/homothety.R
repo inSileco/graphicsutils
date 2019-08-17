@@ -9,18 +9,18 @@
 #' @param xcen the x coordinate for the center of rotation.
 #' @param ycen the y coordinate for the center of rotation.
 #' @param add logical. If `TRUE` the set of transformed points are drawn as a polygon.
-#' @param ... additional arguments to be passed to `polygon` function (used only if `add` is TRUE).
+#' @param ... additional arguments to be passed to [graphics::polygon()] function (used only if `add` is TRUE).
 #'
 #' @keywords homothety, geometry
 #'
 #' @export
 #'
 #' @details
-#' Details about what is a homothetic transformation, see \url{https://en.wikipedia.org/wiki/Homothetic_transformation}.
+#' Details about what is a homothetic transformation, see <https://en.wikipedia.org/wiki/Homothetic_transformation>.
 #'
-#' If x is a matrix with more than 2 columns, then x is the first column and y the second one.
+#' If `x` is a matrix with more than 2 columns, then `x` is the first column and y the second one.
 #'
-#' Note that `lambda`, `xcen` and `ycen` are unique meaning that `homothety` computes only one homothetic transformation.
+#' Note that `lambda`, `xcen` and `ycen` are unique, meaning that `homothety` computes only one homothetic transformation.
 #' Drawing the points computed is relevant only if there are more than 2 points.
 #'
 #' @examples

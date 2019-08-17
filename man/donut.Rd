@@ -5,7 +5,7 @@
 \title{Donut chart.}
 \usage{
 donut(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8,
-  tck = 0.05, width = 0.6, mycol = 1 + 1:length(vec),
+  tck = 0.05, width = 0.6, mycol = 1 + seq_along(vec),
   density = NULL, angle = 45, dt = 0.001, add = FALSE, cx = 0,
   cy = 0, border = NA, clockwise = TRUE, ...)
 }

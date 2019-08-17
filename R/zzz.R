@@ -6,8 +6,9 @@
 #' @import Rcpp
 #' @importFrom Rcpp evalCpp
 #' @importFrom graphics par lines points layout text lines.default rect plot.new
-#' @importFrom graphics plot axis strwidth plot.window
-#' @importFrom grDevices colorRampPalette rgb col2rgb
+#' @importFrom graphics plot axis strwidth plot.window polygon layout
+#' @importFrom graphics plot.default
+#' @importFrom grDevices colorRampPalette rgb col2rgb as.graphicsAnnot
 #' @importFrom stats aggregate quantile runif rnorm
 #' @useDynLib graphicsutils
 NULL

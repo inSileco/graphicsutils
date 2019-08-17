@@ -1,8 +1,8 @@
 #' Lighten or darken colors
 #'
 #' Returns lightened or darkened colors, vectorised over `percentage`.
-#' `ramp` is valid for any couple of colors. Functions `darken` and
-#' `lightened` actually call `ramp` to darken and lighten a given color.
+#' `ramp` is valid for any couple of colors. Functions `darken()` and
+#' `lighten()` call `ramp` to respectively darken and lighten a given color.
 #'
 #' @param fromcol starting color, i.e. if \code{percentage = 0}, it is the color returned.
 #' @param tocol color to nuance `fromcol`, i.e. if \code{percentage = 100}, it is the color returned.

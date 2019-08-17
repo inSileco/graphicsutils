@@ -49,7 +49,7 @@ pickColors <- function(n = 9, ramp = grDevices::rainbow(1024), nb_shades = 512) 
         drawSelector2(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp, prod(tmp),
             colSlc)
         #
-        par(new = T, fig = c(0, 1, 0, 1))
+        par(new = TRUE, fig = c(0, 1, 0, 1))
         plot0(c(0, 1), c(0, 1))
         loc <- locator(1L)
         #
@@ -64,9 +64,7 @@ pickColors <- function(n = 9, ramp = grDevices::rainbow(1024), nb_shades = 512) 
                 if (loc$y > 0.25) {
                   k <- k + 1
                   colSlc[k] <- col_foc
-                } else {
-                  i <- 1
-                }
+                } else i <- 1
             }
         }
     }
@@ -82,7 +80,7 @@ getMatrix <- function(n) {
     ##-- rows and columns
     tmp <- howManyRC(n)
     ##
-    mat <- rbind(1, 2, cbind(3, 4, matrix(4 + (1:prod(tmp)), tmp[1L], tmp[2L], byrow = T)))
+    mat <- rbind(1, 2, cbind(3, 4, matrix(4 + (1:prod(tmp)), tmp[1L], tmp[2L], byrow = TRUE)))
     ##
     mat
 }

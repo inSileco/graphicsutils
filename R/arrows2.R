@@ -20,7 +20,7 @@
 #'
 #' @keywords arrows
 #'
-#' @seealso \code{[graphics::arrows()]}, \code{[shape::Arrows()]}
+#' @seealso `[graphics::arrows()]`, `[shape::Arrows()]`
 #'
 #' @examples
 #' # Example 1:
@@ -35,14 +35,15 @@
 #' arrows2(runif(2), runif(2), x1=runif(2), y1=runif(2), prophead=FALSE, lty=3)
 
 
-arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1,
-    cex.shr = 1, cex.hh = 1, cex.hl = 1, prophead = TRUE, twoheaded = FALSE, ...) {
+arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0,
+    cex.arr = 1, cex.shr = 1, cex.hh = 1, cex.hl = 1, prophead = TRUE,
+    twoheaded = FALSE, ...) {
     stopifnot(all(c(off0, off1)^2 < 1))
     ## ---- Format checking / adjusting vectors sizes
     argn <- c("x0", "y0", "x1", "y1")
     argo <- list(x0, y0, x1, y1)
-    sz <- max(sapply(list(x0, y0, x1, y1), length))
-    for (i in 1L:length(argn)) assign(argn[i], rep_len(argo[[i]], sz))
+    sz <- max(lengths(list(x0, y0, x1, y1)))
+    for (i in seq_along(argn)) assign(argn[i], rep_len(argo[[i]], sz))
     argo <- list(x0, y0, x1, y1)
     ## ----
     rx <- (x1 - x0)
@@ -52,7 +53,7 @@ arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1
     pb <- which(distpt == 0)
     if (length(pb) > 0) {
         warning("Zero-length arrows are skipped.")
-        for (i in 1L:length(argn)) assign(argn[i], argo[[i]][-pb])
+        for (i in seq_along(argn)) assign(argn[i], argo[[i]][-pb])
     }
     ## ----
     anglept <- 0.5 * pi
@@ -92,7 +93,7 @@ arrows2 <- function(x0, y0, x1 = x0, y1 = y0, off0 = 0, off1 = off0, cex.arr = 1
         ## ----
         ptcoord <- rotation(sqptx, sqpty, rot = anglept[i], xrot = x0[i], yrot = y0[i],
             rad = TRUE)
-        graphics::polygon(ptcoord$x, ptcoord$y, ...)
+        polygon(ptcoord$x, ptcoord$y, ...)
     }
     ## ----
     invisible(NULL)

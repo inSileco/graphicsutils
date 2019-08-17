@@ -5,17 +5,17 @@
 #' @param side a numerical or character vector or a character string specifying which side(s) of the plot the box is to be drawn (see details).
 #' @param which a character, one of `plot`, `figure`, `inner` and `outer`.
 #' @param fill the color to be used to fill the box.
-#' @param ... further graphical parameters (see \code{[graphics::par()]}) may also be supplied as arguments, particularly, line type, `lty`, line width, `lwd`, color, `col` and for \code{type = 'b'}, `pch`.  Also the line characteristics `lend`, `ljoin` and `lmitre`.
+#' @param ... further graphical parameters (see `[graphics::par()]`) may also be supplied as arguments, particularly, line type, `lty`, line width, `lwd`, color, `col` and for \code{type = 'b'}, `pch`.  Also the line characteristics `lend`, `ljoin` and `lmitre`.
 #'
 #' @keywords box
 #'
 #' @export
 #'
-#' @details This function intends to give more flexibility to the \code{[graphics::box()]} function.
-#' As `which` parameter, the user provides an object first coerced by \code{as.character} to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{1, 2, 3, 4, b, l, t, r} where \code{1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right}.
+#' @details This function intends to give more flexibility to the `[graphics::box()]` function.
+#' As `which` parameter, the user provides an object first coerced by `as.character` to a character string that is secondly split into single characters. For all of these characters, matches are sought with all elements of \code{1, 2, 3, 4, b, l, t, r} where \code{1=below, 2=left, 3=above, 4=right, b=below, l=left, t=above and r=right}.
 #'
 #'
-#' @seealso \code{[graphics::box()]}
+#' @seealso `[graphics::box()]`
 #'
 #' @examples
 #' # Example 1:
