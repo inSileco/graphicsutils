@@ -36,8 +36,8 @@ The easiest way to install `graphicsutils` is to use the
 [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html)
 (or [*githubinstall*](http://cran.r-project.org/web/packages/githubinstall/index.html))package:
 
-    install.packages("devtools")
-    devtools::install_github("inSileco/graphicsutils")
+    install.packages("remotes")
+    remotes::install_github("inSileco/graphicsutils")
 
 Then, load it:
 
