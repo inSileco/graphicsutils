@@ -19,7 +19,7 @@ homothety(x, y, lambda, xcen = NULL, ycen = NULL, add = FALSE, ...)
 
 \item{add}{logical. If \code{TRUE} the set of transformed points are drawn as a polygon.}
 
-\item{...}{additional arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).}
+\item{...}{additional arguments to be passed to \code{\link[graphics:polygon]{graphics::polygon()}} function (used only if \code{add} is TRUE).}
 }
 \description{
 Compute a homothetic transformation for a set of points.
@@ -28,9 +28,9 @@ The transformed set of points is optionally drawn as a polygon.
 \details{
 Details about what is a homothetic transformation, see \url{https://en.wikipedia.org/wiki/Homothetic_transformation}.
 
-If x is a matrix with more than 2 columns, then x is the first column and y the second one.
+If \code{x} is a matrix with more than 2 columns, then \code{x} is the first column and y the second one.
 
-Note that \code{lambda}, \code{xcen} and \code{ycen} are unique meaning that \code{homothety} computes only one homothetic transformation.
+Note that \code{lambda}, \code{xcen} and \code{ycen} are unique, meaning that \code{homothety} computes only one homothetic transformation.
 Drawing the points computed is relevant only if there are more than 2 points.
 }
 \examples{
@@ -38,9 +38,9 @@ Drawing the points computed is relevant only if there are more than 2 points.
 plot0(c(0,10),c(0,10))
 x <- c(4,6,5)
 y <- c(2,2,4)
-graphics::polygon(x,y)
+polygon(x,y)
 poly2 <- homothety(x,y,2)
-graphics::polygon(poly2$x,poly2$y)
+polygon(poly2$x,poly2$y)
 poly3 <- homothety(x, y, -2.5, xcen=5, ycen=4, border=4, add=TRUE)
 }
 \keyword{geometry}

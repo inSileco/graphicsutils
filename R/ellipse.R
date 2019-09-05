@@ -26,7 +26,7 @@
 #' To plot ellipses, \code{\link{polygon}} function is called.
 #'
 #' @note
-#' There is a similar function, called \code{draw.ellipse}, in the package `plotrix`.
+#' There is a similar function, called `draw.ellipse`, in the package `plotrix`.
 #'
 #' @examples
 #' #Example 1:
@@ -53,13 +53,13 @@ ellipse <- function(x = 0, y = x, mjradi = 1, mnradi = 0.5, from = 0, to = 2 * p
     argn <- c("x", "y", "mjradi", "mnradi", "from", "to")
     nbarg <- length(argn)
     nbcol <- min(nbarg, ncol(matx))
-    for (i in 1L:nbcol) assign(argn[i], matx[, i])
+    for (i in seq_len(nbcol)) assign(argn[i], matx[, i])
     argo <- list(x, y, mjradi, mnradi, from, to)
-    sz <- max(sapply(argo, length))
-    for (i in 1L:nbarg) assign(argn[i], rep_len(argo[[i]], sz))
+    sz <- max(lengths(argo))
+    for (i in seq_len(nbarg)) assign(argn[i], rep_len(argo[[i]], sz))
 
     ## --- draw the ellipse
-    for (i in 1L:sz) {
+    for (i in seq_len(sz)) {
         ## --- sequence to draw the ellipse
         if (abs(to[i] - from[i]) >= (2 * pi)) {
             to[i] <- 2 * pi
@@ -81,7 +81,7 @@ ellipse <- function(x = 0, y = x, mjradi = 1, mnradi = 0.5, from = 0, to = 2 * p
             seqy <- c(y[i], seqy, y[i])
         }
         rotpt <- graphicsutils::rotation(seqx, seqy, xrot = x[i], yrot = y[i], rot = rot)
-        graphics::polygon(rotpt$x, rotpt$y, ...)
+        polygon(rotpt$x, rotpt$y, ...)
 
     }
     ##

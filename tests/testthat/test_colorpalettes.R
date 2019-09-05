@@ -7,6 +7,7 @@ pal_cisl <- c("#c7cbce", "#96a3a3", "#687677", "#222d3d", "#25364a", "#c77f20",
 test_that("test gpuPalettes", {
   expect_true(all(gpuPalette("atom") == pal_atom))
   expect_true(all(gpuPalette(1) == pal_atom))
+  expect_true(all(gpuPalette(1, 20) == colorRampPalette(pal_atom)(20)))
   expect_true(all(gpuPalette(c("atom", "cisl")) == c(pal_atom, pal_cisl)))
   expect_true(all(gpuPalette(1:2) == c(pal_atom, pal_cisl)))
   expect_equal(length(gpuPalette("atom", 100)), 100)
@@ -20,10 +21,12 @@ showPalette()
 res1 <- showPalette()
 dev.off()
 
+
 ##
 showPalette()
 ##-- the computation of the computation of the number of rows and columns
 ## should be integrated in a separate function...
+palette("default")
 res2 <- showPalette(palette()[1:2], inline = TRUE, add_number = TRUE,
   add_codecolor = TRUE)
 dev.off()

@@ -33,13 +33,13 @@ plotOnSide <- function(mat, side = 1:2, dim = NULL, quiet = FALSE, ...) {
     if (!length(slc)) {
         if (!quiet)
             warning("'side' does not match with any of 1, 2, 3 or 4")
-        graphics::layout(mat, ...)
+        layout(mat, ...)
     } else {
         sz <- length(slc)
         mydim <- dim(mat)
         mat <- cbind(0, mat + sz, 0)
         mat <- rbind(0, mat, 0)
-        for (i in 1L:sz) {
+        for (i in seq_len(sz)) {
             switch(slc[i], {
                 mat[nrow(mat), 1 + (1:mydim[2L])] <- 1
             }, {
@@ -59,7 +59,7 @@ plotOnSide <- function(mat, side = 1:2, dim = NULL, quiet = FALSE, ...) {
         if (all(mat[, ncol(mat)] == 0))
             mat <- mat[, -ncol(mat)]
         ##
-        graphics::layout(mat, ...)
+        layout(mat, ...)
     }
     invisible(NULL)
 }

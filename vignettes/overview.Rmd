@@ -263,6 +263,8 @@ showPalette(somered)
 ```
 
 ```{r showpal}
+showPalette(ramp("blue", "red", 10*3:7))
+showPalette(blendColors(c("blue", "purple")))
 showPalette(rainbow(81))
 ```
 
@@ -293,6 +295,7 @@ In order to use one of the palette, use its names:
 
 ```{r insileco}
 showPalette(gpuPalette("insileco"), add_codecolor = TRUE)
+showPalette(gpuPalette("insileco", 25), add_codecolor = TRUE)
 ```
 
 
@@ -336,13 +339,15 @@ Some functions are interactive and fairly understandable, give them a try.
 
 ### Chose a color
 
-```{r eval = FALSE}
+```r
+# NB: not run
 pickColors()
 ```
 
 ### Build a layout matrix interactively
 
-```{r eval = FALSE}
+```r
+# NB: not run
 layout2()
 ```
 
@@ -353,10 +358,24 @@ layout2()
 
 # Miscellaneous
 
+## Gantt Chart
+
+```{r gantt, fig.width = 9}
+data(dfGantt)
+dfGantt
+par(lwd = 2)
+palette(gpuPalette(6)[c(2,4)])
+ganttChart(dfGantt, mstone_lwd = 4, mstone_spacing = 0.6, lighten_done = 80)
+palette(gpuPalette(6)[c(3,6)])
+ganttChart(dfGantt, order = FALSE, mstone_add = TRUE, lighten_done = -40)
+# restore default palette
+palette("default")
+```
+
 ## Are these points within this polygon?
 
 ```{r ptinpol}
- mat <- matrix(10*runif(100), 50)
+mat <- matrix(10*runif(100), 50)
 res <- pointsInPolygon(mat, cbind(c(4,8,8,4),c(4,4,8,8)))
 # Visual assessment
 plot0(c(0,10), c(0,10))

@@ -8,8 +8,6 @@
 #'
 #' @keywords color, palette, interactive
 #'
-#' @importFrom graphics par image points text box abline layout locator
-#'
 #' @export
 #'
 #' @return
@@ -49,7 +47,7 @@ pickColors <- function(n = 9, ramp = grDevices::rainbow(1024), nb_shades = 512) 
         drawSelector2(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp, prod(tmp),
             colSlc)
         #
-        par(new = T, fig = c(0, 1, 0, 1))
+        par(new = TRUE, fig = c(0, 1, 0, 1))
         plot0(c(0, 1), c(0, 1))
         loc <- locator(1L)
         #
@@ -64,9 +62,7 @@ pickColors <- function(n = 9, ramp = grDevices::rainbow(1024), nb_shades = 512) 
                 if (loc$y > 0.25) {
                   k <- k + 1
                   colSlc[k] <- col_foc
-                } else {
-                  i <- 1
-                }
+                } else i <- 1
             }
         }
     }
@@ -82,7 +78,7 @@ getMatrix <- function(n) {
     ##-- rows and columns
     tmp <- howManyRC(n)
     ##
-    mat <- rbind(1, 2, cbind(3, 4, matrix(4 + (1:prod(tmp)), tmp[1L], tmp[2L], byrow = T)))
+    mat <- rbind(1, 2, cbind(3, 4, matrix(4 + (1:prod(tmp)), tmp[1L], tmp[2L], byrow = TRUE)))
     ##
     mat
 }
@@ -107,7 +103,7 @@ drawSelector2 <- function(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp, nb
     text(0, -0.5, label = "Stop", cex = 2, col = "grey20")
     #
     plot0(fill = col_foc)
-    code_rgb <- grDevices::col2rgb(col_foc)
+    code_rgb <- col2rgb(col_foc)
     # print(sum(code_rgb) < 255)
     if (sum(code_rgb) < 255)
         txt_col <- "grey80" else txt_col <- "grey20"
@@ -116,7 +112,8 @@ drawSelector2 <- function(ramp, col_ini, col_foc, shades, nb_shades, nb_ramp, nb
     text(0, -0.3, label = paste0("Green:", code_rgb[2L]), cex = 2, col = txt_col)
     text(0, -0.6, label = paste0("Blue :", code_rgb[3L]), cex = 2, col = txt_col)
     # box(lwd = 3, col = 'white') --
-    for (i in 4 + 1:nbpanels) plot0(fill = colSlc[i - 4])
+    for (i in 4 + seq_len(nbpanels))
+      plot0(fill = colSlc[i - 4])
 
     invisible(NULL)
 }

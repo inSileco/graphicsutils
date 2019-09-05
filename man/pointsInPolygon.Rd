@@ -24,7 +24,7 @@ mat <- matrix(10*runif(100), 50)
 res <- pointsInPolygon(mat, cbind(c(4,8,8,4),c(4,4,8,8)))
 # Visual assessment
 plot0(c(0,10), c(0,10))
-graphics::polygon(c(4,8,8,4),c(4,4,8,8))
+polygon(c(4,8,8,4),c(4,4,8,8))
 graphics::points(mat[,1], mat[,2], col=res+1)
 }
 \references{

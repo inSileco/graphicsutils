@@ -30,7 +30,7 @@ or add 127.
 \itemize{
 \item \code{contrastColors}: Retuns a set of colors contrasted.
 
-\item \code{col2Hex}: Retuns the hexadecimal string associates to a given vector of colors.
+\item \code{col2Hex}: Returns the hexadecimal string associates to a given vector of colors.
 }}
 
 \examples{

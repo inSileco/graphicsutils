@@ -23,8 +23,6 @@
 #' @return
 #' Draw a boxplot and returns the coordinates as an invisible output.
 #'
-#' @importFrom graphics lines points
-#' @importFrom stats aggregate quantile runif
 #' @export
 #'
 #' @examples
@@ -50,7 +48,7 @@ boxplot2 <- function(x, ..., probs = c(.05, 0.25, .5, .75, .95),
     val <- apply(as.data.frame(x), 2, quantile, probs = probs)
   }
   ##
-  if (is.null(at)) xco <- 1:ncol(val) else xco <- rep_len(at, ncol(val))
+  if (is.null(at)) xco <- seq_len(ncol(val)) else xco <- rep_len(at, ncol(val))
   ##
   if (!add)
     plot0(c(.5, ncol(val) + .5), range(val))

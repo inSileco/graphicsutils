@@ -122,7 +122,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>box2</span>(<span class='kw'>side</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>4</span>, <span class='kw'>which</span> <span class='kw'>=</span> <span class='st'>"plot"</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>box2</span>(<span class='no'>side</span>, <span class='kw'>which</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"plot"</span>, <span class='st'>"figure"</span>, <span class='st'>"outer"</span>, <span class='st'>"inner"</span>), <span class='kw'>fill</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -161,12 +162,12 @@ As <code>which</code> parameter, the user provides an object first coerced by <c
 <span class='co'># Example 2:</span>
 <span class='fu'><a href='plot0.html'>plot0</a></span>()</div><div class='input'><span class='fu'>box2</span>(<span class='st'>'14'</span>, <span class='kw'>fill</span><span class='kw'>=</span><span class='st'>'grey80'</span>, <span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='img'><img src='box2-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='plot0.html'>plot0</a></span>()</div><div class='input'><span class='fu'>box2</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>4</span>), <span class='kw'>fill</span><span class='kw'>=</span><span class='st'>'grey80'</span>, <span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='img'><img src='box2-3.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='plot0.html'>plot0</a></span>()</div><div class='input'><span class='fu'>box2</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>4</span>), <span class='kw'>fill</span><span class='kw'>=</span><span class='st'>'grey80'</span>, <span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='img'><img src='box2-4.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Example 3:</span>
-<span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/par'>par</a></span>(<span class='kw'>mfrow</span><span class='kw'>=</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>2</span>),<span class='kw'>oma</span><span class='kw'>=</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>2</span>,<span class='fl'>2</span>,<span class='fl'>2</span>))
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/par'>par</a></span>(<span class='kw'>mfrow</span><span class='kw'>=</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>2</span>),<span class='kw'>oma</span><span class='kw'>=</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>2</span>,<span class='fl'>2</span>,<span class='fl'>2</span>))
 <span class='fu'><a href='plot0.html'>plot0</a></span>(<span class='fl'>0</span>,<span class='fl'>0</span>)
-<span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/box'>box</a></span>(<span class='st'>'outer'</span>,<span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>)
-<span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/box'>box</a></span>(<span class='st'>'inner'</span>,<span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>)
-<span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot.default'>plot.default</a></span>(<span class='fl'>0</span>,<span class='fl'>0</span>)
-<span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot.default'>plot.default</a></span>(<span class='fl'>0</span>,<span class='fl'>0</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/box'>box</a></span>(<span class='st'>'outer'</span>,<span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/box'>box</a></span>(<span class='st'>'inner'</span>,<span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot.default'>plot.default</a></span>(<span class='fl'>0</span>,<span class='fl'>0</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot.default'>plot.default</a></span>(<span class='fl'>0</span>,<span class='fl'>0</span>)
 <span class='fu'><a href='plot0.html'>plot0</a></span>()</div><div class='input'><span class='fu'>box2</span>(<span class='kw'>which</span><span class='kw'>=</span><span class='st'>'figure'</span>,<span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>fill</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='input'><span class='fu'>box2</span>(<span class='kw'>side</span><span class='kw'>=</span><span class='fl'>12</span>, <span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>fill</span><span class='kw'>=</span><span class='fl'>8</span>)</div><div class='img'><img src='box2-5.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -186,7 +187,7 @@ As <code>which</code> parameter, the user provides an object first coerced by <c
 
       <footer>
       <div class="copyright">
-  <p>Developed by Kevin Cazelles, Nicolas Casajus, David Beauchesne.</p>
+  <p>Developed by Kevin Cazelles, Nicolas Casajus, David Beauchesne, Steve Vissault.</p>
 </div>
 
 <div class="pkgdown">

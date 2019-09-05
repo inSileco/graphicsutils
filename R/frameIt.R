@@ -26,32 +26,36 @@
 #' frameIt(cex.x=1.5, col=c(2,3), border=1)
 
 
-frameIt <- function(nbc = 10, cex.x = 1, cex.y = cex.x, col = c("grey45", "grey85"), 
+frameIt <- function(nbc = 10, cex.x = 1, cex.y = cex.x, col = c("grey45", "grey85"),
     border = NA) {
-    pu <- graphics::par()$usr
-    ## 
+    pu <- par()$usr
+    ##
     px <- pretty(c(pu[1L], pu[2L]), nbc)
     dx <- px[2L] - px[1L]
     px <- c(px[1L] - dx, px, px[nbc] + dx)
-    ## 
+    ##
     py <- pretty(c(pu[3L], pu[4L]), nbc)
     dy <- py[2L] - py[1L]
     py <- c(py[1L] - dy, py, py[nbc] + dy)
-    ## 
-    widx <- 0.01 * (pu[4L] - pu[3L]) * cex.x * graphics::par()$pin[1L]/graphics::par()$pin[2L]
+    ##
+    widx <- 0.01 * (pu[4L] - pu[3L]) * cex.x * par()$pin[1L]/par()$pin[2L]
     widy <- 0.01 * (pu[2L] - pu[1L]) * cex.y
-    ## 
+    ##
     mycol <- rep_len(col, nbc + 3)
-    ## 
-    for (i in (1:(nbc + 3))) {
+    ##
+    for (i in seq(1, nbc + 3)) {
         # axis 1
-        graphics::rect(px[i], pu[3L], px[i + 1], pu[3L] + widx, col = mycol[i], border = border)
+        rect(px[i], pu[3L], px[i + 1], pu[3L] + widx, col = mycol[i],
+            border = border)
         # axis 3
-        graphics::rect(px[i], pu[4L] - widx, px[i + 1], pu[4L], col = mycol[i], border = border)
+        rect(px[i], pu[4L] - widx, px[i + 1], pu[4L], col = mycol[i],
+            border = border)
         # axis 2
-        graphics::rect(pu[1L], py[i], pu[1L] + widy, py[i + 1], col = mycol[i], border = border)
+        rect(pu[1L], py[i], pu[1L] + widy, py[i + 1], col = mycol[i],
+            border = border)
         # axis 4
-        graphics::rect(pu[2L] - widy, py[i], pu[2L], py[i + 1], col = mycol[i], border = border)
+        rect(pu[2L] - widy, py[i], pu[2L], py[i + 1], col = mycol[i],
+          border = border)
     }
     invisible(NULL)
 }

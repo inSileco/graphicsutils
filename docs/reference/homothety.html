@@ -155,15 +155,15 @@ The transformed set of points is optionally drawn as a polygon.</p>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>additional arguments to be passed to <code>polygon</code> function (used only if <code>add</code> is TRUE).</p></td>
+      <td><p>additional arguments to be passed to <code><a href='https://www.rdocumentation.org/packages/graphics/topics/polygon'>graphics::polygon()</a></code> function (used only if <code>add</code> is TRUE).</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Details about what is a homothetic transformation, see <a href='https://en.wikipedia.org/wiki/Homothetic_transformation'>https://en.wikipedia.org/wiki/Homothetic_transformation</a>.</p>
-<p>If x is a matrix with more than 2 columns, then x is the first column and y the second one.</p>
-<p>Note that <code>lambda</code>, <code>xcen</code> and <code>ycen</code> are unique meaning that <code>homothety</code> computes only one homothetic transformation.
+<p>If <code>x</code> is a matrix with more than 2 columns, then <code>x</code> is the first column and y the second one.</p>
+<p>Note that <code>lambda</code>, <code>xcen</code> and <code>ycen</code> are unique, meaning that <code>homothety</code> computes only one homothetic transformation.
 Drawing the points computed is relevant only if there are more than 2 points.</p>
     
 
@@ -171,8 +171,8 @@ Drawing the points computed is relevant only if there are more than 2 points.</p
     <pre class="examples"><div class='input'><span class='co'># Example:</span>
 <span class='fu'><a href='plot0.html'>plot0</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>10</span>),<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>10</span>))</div><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>4</span>,<span class='fl'>6</span>,<span class='fl'>5</span>)
 <span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>2</span>,<span class='fl'>4</span>)
-<span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/polygon'>polygon</a></span>(<span class='no'>x</span>,<span class='no'>y</span>)</div><div class='input'><span class='no'>poly2</span> <span class='kw'>&lt;-</span> <span class='fu'>homothety</span>(<span class='no'>x</span>,<span class='no'>y</span>,<span class='fl'>2</span>)
-<span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/polygon'>polygon</a></span>(<span class='no'>poly2</span>$<span class='no'>x</span>,<span class='no'>poly2</span>$<span class='no'>y</span>)</div><div class='input'><span class='no'>poly3</span> <span class='kw'>&lt;-</span> <span class='fu'>homothety</span>(<span class='no'>x</span>, <span class='no'>y</span>, -<span class='fl'>2.5</span>, <span class='kw'>xcen</span><span class='kw'>=</span><span class='fl'>5</span>, <span class='kw'>ycen</span><span class='kw'>=</span><span class='fl'>4</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>4</span>, <span class='kw'>add</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='img'><img src='homothety-1.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/polygon'>polygon</a></span>(<span class='no'>x</span>,<span class='no'>y</span>)</div><div class='input'><span class='no'>poly2</span> <span class='kw'>&lt;-</span> <span class='fu'>homothety</span>(<span class='no'>x</span>,<span class='no'>y</span>,<span class='fl'>2</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/polygon'>polygon</a></span>(<span class='no'>poly2</span>$<span class='no'>x</span>,<span class='no'>poly2</span>$<span class='no'>y</span>)</div><div class='input'><span class='no'>poly3</span> <span class='kw'>&lt;-</span> <span class='fu'>homothety</span>(<span class='no'>x</span>, <span class='no'>y</span>, -<span class='fl'>2.5</span>, <span class='kw'>xcen</span><span class='kw'>=</span><span class='fl'>5</span>, <span class='kw'>ycen</span><span class='kw'>=</span><span class='fl'>4</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>4</span>, <span class='kw'>add</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='img'><img src='homothety-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -189,7 +189,7 @@ Drawing the points computed is relevant only if there are more than 2 points.</p
 
       <footer>
       <div class="copyright">
-  <p>Developed by Kevin Cazelles, Nicolas Casajus, David Beauchesne.</p>
+  <p>Developed by Kevin Cazelles, Nicolas Casajus, David Beauchesne, Steve Vissault.</p>
 </div>
 
 <div class="pkgdown">

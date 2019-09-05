@@ -5,8 +5,8 @@
 \title{Plots means and error associated}
 \usage{
 plotMeans(formula, data, FUN_err = stats::sd, add = FALSE,
-  seqx = NULL, draw_axis = TRUE, col_err = graphics::par()$col,
-  col_pt = graphics::par()$col, cex_pt = 1, connect = FALSE,
+  seqx = NULL, draw_axis = TRUE, col_err = par()$col,
+  col_pt = par()$col, cex_pt = 1, connect = FALSE,
   args_con = list(), ...)
 }
 \arguments{

@@ -8,7 +8,7 @@
 #' @param upper the y coordinates of the upper values.
 #' @param lower the y coordinates of the lower values.
 #' @param add a logical. If `TRUE` the envelop is drawn as a polygon (default behavior).
-#' @param ... additional arguments to be passed to \code{[graphics::polygon()]} function.
+#' @param ... additional arguments to be passed to `[graphics::polygon()]` function.
 #'
 #' @export
 #'
@@ -30,6 +30,6 @@ envelop <- function(x, upper, lower = rep(0, length(upper)), add = TRUE, ...) {
     stopifnot(length(x) == length(lower))
     out <- list(x = c(x, rev(x)), y = c(upper, rev(lower)))
     if (add)
-        graphics::polygon(c(x, rev(x)), c(upper, rev(lower)), ...)
+        polygon(c(x, rev(x)), c(upper, rev(lower)), ...)
     invisible(out)
 }

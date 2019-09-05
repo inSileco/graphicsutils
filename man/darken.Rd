@@ -17,7 +17,7 @@ lighten(col, percentage = 50, as_rgb = FALSE)
 
 \item{tocol}{color to nuance \code{fromcol}, i.e. if \code{percentage = 100}, it is the color returned.}
 
-\item{percentage}{percentage determining the percentage of \code{tocol} used to nuance \code{fromcol}.}
+\item{percentage}{percentage determining the percentage of \code{tocol} used to nuance \code{fromcol}. Note that \code{darken} and \code{lighten} support negative percentage.}
 
 \item{as_rgb}{a logical. Should the color(s) returned as a matrix object?}
 
@@ -25,12 +25,12 @@ lighten(col, percentage = 50, as_rgb = FALSE)
 }
 \description{
 Returns lightened or darkened colors, vectorised over \code{percentage}.
-\code{ramp} is valid for any couple of colors. Functions \code{darken} and
-\code{lightened} actually call \code{ramp} to darken and lighten a given color.
+\code{ramp} is valid for any couple of colors. Functions \code{darken()} and
+\code{lighten()} call \code{ramp} to respectively darken and lighten a given color.
 }
 \section{Functions}{
 \itemize{
-\item \code{ramp}: Retuns a shaded color.
+\item \code{ramp}: Returns a shaded color.
 
 \item \code{darken}: Returns a darkened color.
 
@@ -38,6 +38,7 @@ Returns lightened or darkened colors, vectorised over \code{percentage}.
 }}
 
 \examples{
+showPalette(ramp("blue", "red", 10*3:7))
 darken('red', 50)
 more_reds <- lighten('red', seq(10,90,9))
 showPalette(more_reds)

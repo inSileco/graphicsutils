@@ -4,7 +4,7 @@
 #'
 #' @param df1 first set of boxplots.
 #' @param df2 first set of boxplots.
-#' @param probs numeric vector of five probabilities (see \code{[stats::quantile()]}).
+#' @param probs numeric vector of five probabilities (see `[stats::quantile()]`).
 #' @param width a vector giving the relative widths of the boxes making up the plot.
 #' @param sta_wd staple width.
 #' @param median a list of arguments passed to [graphics::lines()] to custom the median line.
@@ -16,13 +16,11 @@
 #' @param at numeric vector giving the locations where the boxplots should be drawn. Same default behavior as in [graphics::boxplot()].
 #' @keywords boxplots
 #'
-#' @importFrom graphics lines.default rect
-#' @importFrom stats quantile rnorm
 #' @export
 #'
 #' @details Do not attempt to assess the distributions. Based on quantiles only.
 #'
-#' @seealso \code{[graphics::box()]}
+#' @seealso `[graphics::box()]`
 #'
 #' @examples
 #' # Example 1:
@@ -52,7 +50,7 @@ biBoxplot <- function(df1, df2 = df1, probs = c(0.01, 0.25, 0.5, 0.75, 0.99), wi
     if (!isTRUE(add))
         plot0(c(0.5, sz + 0.5), range(unlist(c(seqy1, seqy2))))
 
-    for (i in 1:sz) {
+    for (i in seq_len(sz)) {
         makeUnit(at[i], seqy1[[i]], seqy2[[i]], width, sta_wd, col_left, col_right,
             dft_med, dft_sta, dft_whi)
     }

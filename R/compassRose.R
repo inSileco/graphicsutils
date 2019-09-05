@@ -13,10 +13,10 @@
 #' @param cex.let the magnification to be used for labels.
 #' @param offset label offset of the cardinal points.
 #' @param add a logical. Should the compass rose be added on the current graph?
-#' @param ... additional arguments to be passed to \code{[graphics::polygon()]}.
+#' @param ... additional arguments to be passed to `[graphics::polygon()]`.
 #'
 #' @details
-#' Both \code{col.cr} and `border` are repeated over (\code{[base::rep()]}
+#' Both `col.cr` and `border` are repeated over (`[base::rep()]`
 #' is called) so it has a 8 elements, meaning all triangles the compass rose is
 #' made of could have their own color.
 #'
@@ -32,7 +32,7 @@ compassRose <- function(x = 0, y = 0, labels = c("S", "W", "N", "E"), rot = 0, c
     add = TRUE, ...) {
     #
     if (!isTRUE(add))
-        plot0(c(-0.1, 0.1), asp = T)
+        plot0(c(-0.1, 0.1), asp = TRUE)
     #
     compassRoseCardinal(x, y, rot + 22.5, cex.cr * 0.65, labels = rep("", 4), cex.let = cex.let,
         offset = offset, col.cr = col.cr, border = border, ...)
@@ -52,7 +52,7 @@ compassRoseCardinal <- function(x, y = x, rot = 0, cex.cr = 1, cex.let = 1, labe
     "W", "N", "E"), offset = 1.2, col.cr = c(1, 8), col.let = 1, border = c(1, 8),
     ...) {
     #
-    wh <- graphics::strheight("M")
+    wh <- strheight("M")
     rot <- pi * rot/180
     mat.rot <- matrix(c(cos(rot), sin(rot), -sin(rot), cos(rot)), 2)
     #
@@ -71,12 +71,12 @@ compassRoseCardinal <- function(x, y = x, rot = 0, cex.cr = 1, cex.let = 1, labe
     cr.col <- rep(col.cr, length.out = 8)
     cr.bd <- rep(border, length.out = 8)
     #
-    for (i in 1:8) {
-        graphics::polygon(x + c(0, matxy[i, 1], matxy[8 + i, 1]), y + c(0, matxy[i,
+    for (i in seq_len(8)) {
+        polygon(x + c(0, matxy[i, 1], matxy[8 + i, 1]), y + c(0, matxy[i,
             2], matxy[8 + i, 2]), col = cr.col[i], border = cr.bd[i], ...)
     }
     graphics::text(x + offset * matxy[seq(1, by = 2, length.out = 4), 1], y + offset *
         matxy[seq(1, by = 2, length.out = 4), 2], labels, cex = cex.let, col = col.let)
     #
-    invisible(NULL)
+    invisible(matxy)
 }

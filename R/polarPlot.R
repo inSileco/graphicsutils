@@ -70,7 +70,7 @@ polarPlot <- function(seqtime, seqval = NULL, rad = 1, from = 0, to = 2*pi,
     graphics::points(0, 0, pch = 20, col = "grey45")
 
     # lines
-    graphics::polygon(c(0, seqvp * cos(seqtp), 0), c(0, seqvp * sin(seqtp), 0), ...)
+    polygon(c(0, seqvp * cos(seqtp), 0), c(0, seqvp * sin(seqtp), 0), ...)
 
     ## --- Points at start and end
     graphics::points(seqvp[1L] * cos(seqtp[1L]), seqvp[1L] * sin(seqtp[1L]), pch = 19,

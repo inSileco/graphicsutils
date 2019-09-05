@@ -2,9 +2,9 @@
 #'
 #' Plots a set of means computed based on a dataset and draw error associated.
 #'
-#' @param formula a formula, see \code{[stats::formula()]}.
+#' @param formula a formula, see `[stats::formula()]`.
 #' @param data a data frame (or list) from which the variables in formula should be taken.
-#' @param FUN_err the function that assess uncertainty. Default function is \code{[stats::sd()]}.
+#' @param FUN_err the function that assess uncertainty. Default function is `[stats::sd()]`.
 #' @param add logical. should images be added on the current graph ? If FALSE a new plot is created.
 #' @param seqx the x coordinates of the means to be plotted, if `NULL`, default values are used. This is intended to be used when `add` parameter is `TRUE`.
 #' @param draw_axis logical. If `TRUE` axes and box are drawn.
@@ -34,16 +34,16 @@
 #' draw_axis=FALSE, add=TRUE, seqx=c(.5,3.5), mar=c(6,6,1,1), cex=1.4)
 #' graphics::axis(2)
 
-plotMeans <- function(formula, data, FUN_err = stats::sd, add = FALSE, seqx = NULL,
-    draw_axis = TRUE, col_err = graphics::par()$col, col_pt = graphics::par()$col,
-    cex_pt = 1, connect = FALSE, args_con = list(), ...) {
+plotMeans <- function(formula, data, FUN_err = stats::sd, add = FALSE,
+  seqx = NULL, draw_axis = TRUE, col_err = par()$col, col_pt = par()$col,
+  cex_pt = 1, connect = FALSE, args_con = list(), ...) {
     ##
-    formu <- stats::as.formula(formula)
+    formu <- as.formula(formula)
     ##
     args <- list(...)
     ##
-    mn_val <- stats::aggregate(formu, data = data, FUN = mean)
-    sd_val <- stats::aggregate(formu, data = data, FUN = FUN_err)
+    mn_val <- aggregate(formu, data = data, FUN = mean)
+    sd_val <- aggregate(formu, data = data, FUN = FUN_err)
     ##
     n_val <- nrow(mn_val)
     n_col <- ncol(mn_val)
@@ -59,11 +59,11 @@ plotMeans <- function(formula, data, FUN_err = stats::sd, add = FALSE, seqx = NU
         rgx <- range(seqx)
     }
     ##
-    plt_def <- list(x = c(0, n_val), y = range(min_val, max_val), type = "n", axes = FALSE,
-        xlab = "", ylab = "")
+    plt_def <- list(x = c(0, n_val), y = range(min_val, max_val),
+      type = "n", axes = FALSE, xlab = "", ylab = "")
     ##
     if (length(args)) {
-        idpa <- which(names(args) %in% names(graphics::par(no.readonly = TRUE)))
+        idpa <- which(names(args) %in% names(par(no.readonly = TRUE)))
         if (length(idpa))
             do.call(graphics::par, args[idpa])
         idpl <- which(names(args) %in% names(formals(graphics::plot.default)))
@@ -71,23 +71,25 @@ plotMeans <- function(formula, data, FUN_err = stats::sd, add = FALSE, seqx = NU
             idus <- which(names(plt_def) %in% names(args)[idpl])
             if (length(idus))
                 plt_def <- plt_def[-idus]
-            do.call(graphics::plot.default, c(plt_def, args[idpl]))
+            do.call(plot.default, c(plt_def, args[idpl]))
         } else if (!add)
-            do.call(graphics::plot.default, c(plt_def))
+            do.call(plot.default, c(plt_def))
     } else if (!add)
-        do.call(graphics::plot.default, c(plt_def))
+        do.call(plot.default, c(plt_def))
     #
-    do.call(graphics::points, list(x = seqx, y = mn_val[, n_col], col = col_pt, cex = cex_pt))
-    for (i in 1:n_val) do.call(graphics::lines, list(x = rep(seqx[i], 2), y = c(min_val[i],
-        max_val[i]), col = col_err))
+    do.call(points, list(x = seqx, y = mn_val[, n_col],
+        col = col_pt, cex = cex_pt))
+    for (i in seq_len(n_val))
+      do.call(lines, list(x = rep(seqx[i], 2), y = c(min_val[i], max_val[i]),
+       col = col_err))
     #
     if (connect)
-        do.call(graphics::lines, c(list(x = seqx, y = mn_val[, n_col]), args_con))
+        do.call(lines, c(list(x = seqx, y = mn_val[, n_col]), args_con))
     #
     if (draw_axis) {
-        graphics::axis(1, at = seqx, labels = mn_val[, 1])
-        graphics::axis(2)
-        graphics::box(bty = "l", lwd = 1.2)
+        axis(1, at = seqx, labels = mn_val[, 1])
+        axis(2)
+        box(bty = "l", lwd = 1.2)
     }
     #
     invisible(NULL)

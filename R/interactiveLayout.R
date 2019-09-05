@@ -6,7 +6,7 @@
 #' @param n Number of plot regions desired, default is 1.
 #' @param grain.x Number of vertical lines drawn to select the size of the subplots regions.
 #' @param grain.y Number of horizontal lines drawn to select the size of the subplots regions.
-#' @param show logical. If TRUE \code{layout.show} is used to get a preview of the subplots regions.
+#' @param show logical. If TRUE `layout.show` is used to get a preview of the subplots regions.
 #' @param now logical. If TRUE `layout` is called at \code{layout2} exit.
 #'
 #' @keywords interactive layout
@@ -14,7 +14,7 @@
 #' @return the matrix use to draw the layout is returned as an invisible output.
 #'
 #' @details
-#' Arguments \code{grain.x} and \code{grain.y} control the aspect of the support
+#' Arguments `grain.x` and `grain.y` control the aspect of the support
 #' grid generated to locate the different panels. Once the grid popup, the user
 #' must click 2*n times to select the size of their n subplot. A panel is
 #' delimited by two consecutive clicks: click 2*p and clicks 2*p+1. The two cells
@@ -34,45 +34,45 @@ interactiveLayout <- function(n = 1, grain.x = 20, grain.y = grain.x, show = TRU
     ## --- matrix to be returned
     mat <- matrix(0, ncol = grain.x, nrow = grain.y)
     ## --- plot and lines
-    graphics::par(mfrow = c(1, 1), mar = rep(0, 4), xaxs = "i", yaxs = "i", ann = T)
-    graphics::plot.default(0, xlim = c(0, 1), ylim = c(0, 1), type = "n", axes = F)
+    par(mfrow = c(1, 1), mar = rep(0, 4), xaxs = "i", yaxs = "i", ann = TRUE)
+    plot.default(0, xlim = c(0, 1), ylim = c(0, 1), type = "n", axes = FALSE)
     seqx <- seq(0, 1, length.out = grain.x + 1)
     seqy <- seq(0, 1, length.out = grain.y + 1)
-    graphics::abline(v = seqx, h = seqy, lty = 3, lwd = 0.8)
+    abline(v = seqx, h = seqy, lty = 3, lwd = 0.8)
     ## --- Reperes
     if ((grain.x%%2) == 0 && (grain.y%%2) == 0) {
-        graphics::points(x = seqx[1 + grain.x/2], y = seqy[1 + grain.y/2], pch = 43)
+        points(x = seqx[1 + grain.x/2], y = seqy[1 + grain.y/2], pch = 43)
     }
     if ((grain.x%%2) == 0 && (grain.y%%2) == 1) {
-        graphics::points(x = rep(seqx[1 + grain.x/2], 2), y = seqy[c(1 + grain.y/3,
-            1 + 2 * grain.y/3)], pch = 43)
+        points(x = rep(seqx[1 + grain.x/2], 2),
+          y = seqy[c(1 + grain.y/3, 1 + 2 * grain.y/3)], pch = 43)
     }
     if ((grain.x%%2) == 1 && (grain.y%%2) == 0) {
-        graphics::points(x = seqx[c(1 + grain.x/3, 1 + 2 * grain.x/3)], y = rep(seqy[1 +
-            grain.y/2], 2), pch = 43)
+        points(x = seqx[c(1 + grain.x/3, 1 + 2 * grain.x/3)],
+          y = rep(seqy[1 + grain.y/2], 2), pch = 43)
     }
     if ((grain.x%%2) == 1 && (grain.y%%2) == 1) {
-        graphics::points(x = seqx[c(1 + grain.x/3, 1 + 2 * grain.x/3)], y = seqy[c(1 +
-            grain.y/3, 1 + 2 * grain.y/3)], pch = 43)
-        graphics::points(x = seqx[c(1 + 2 * grain.x/3, 1 + grain.x/3)], y = seqy[c(1 +
-            grain.y/3, 1 + 2 * grain.y/3)], pch = 43)
+        points(x = seqx[c(1 + grain.x/3, 1 + 2 * grain.x/3)],
+          y = seqy[c(1 + grain.y/3, 1 + 2 * grain.y/3)], pch = 43)
+        points(x = seqx[c(1 + 2 * grain.x/3, 1 + grain.x/3)],
+          y = seqy[c(1 + grain.y/3, 1 + 2 * grain.y/3)], pch = 43)
     }
     rx <- max(which((grain.x%%1:5) == 0))
     ry <- max(which((grain.y%%1:5) == 0))
     if (rx > 1)
-        graphics::abline(v = seqx[1 + seq(grain.y/rx, (rx - 1) * grain.x/rx, length.out = rx -
-            1)])
+        abline(v = seqx[1 + seq(grain.y/rx, (rx - 1) * grain.x/rx,
+          length.out = rx - 1)])
     if (ry > 1)
-        graphics::abline(h = seqy[1 + seq(grain.y/ry, (ry - 1) * grain.y/ry, length.out = ry -
-            1)])
+        abline(h = seqy[1 + seq(grain.y/ry, (ry - 1) * grain.y/ry,
+          length.out = ry -1)])
     ## ---- center sequences
     seqcx <- seq(1/(2 * grain.x), 1 - 1/(2 * grain.x), length.out = grain.x)
     seqcy <- seq(1/(2 * grain.y), 1 - 1/(2 * grain.y), length.out = grain.y)
-    for (i in 1:n) {
-        xy <- graphics::locator(1)
+    for (i in seq_len(n)) {
+        xy <- locator(1)
         pt1x <- which.min((seqcx - xy$x) * (seqcx - xy$x))
         pt1y <- which.min((seqcy - xy$y) * (seqcy - xy$y))
-        xy <- graphics::locator(1)
+        xy <- locator(1)
         pt2x <- which.min((seqcx - xy$x) * (seqcx - xy$x))
         pt2y <- which.min((seqcy - xy$y) * (seqcy - xy$y))
         #--
@@ -86,19 +86,16 @@ interactiveLayout <- function(n = 1, grain.x = 20, grain.y = grain.x, show = TRU
                 mat[grain.y - j + 1, k] <- i
             }
         }
-        graphics::rect(seqx[xlf], seqy[ybt], seqx[xrg + 1], seqy[ytp + 1], col = "#00000088",
-            border = "#00000088")
+        rect(seqx[xlf], seqy[ybt], seqx[xrg + 1], seqy[ytp + 1],
+            col = "#00000088", border = "#00000088")
     }
-    grDevices::dev.off()
-    graphics::par(old.par)
+    dev.off()
+    par(old.par)
     if (show) {
-        graphics::layout(mat)
-        graphics::layout.show(n)
+        layout(mat)
+        layout.show(n)
     }
-    if (now) {
-        on.exit(graphics::layout(mat))
-    }
+    if (now) on.exit(graphics::layout(mat))
     #
     invisible(mat)
-
 }

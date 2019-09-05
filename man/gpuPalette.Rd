@@ -4,19 +4,26 @@
 \alias{gpuPalette}
 \title{graphicsutils colors palettes}
 \usage{
-gpuPalette(id, ncol)
+gpuPalette(id, ncolors)
 }
 \arguments{
-\item{id}{either an integer or a character string corresponding names of desired color palettes; if missing then color palettes available are prompted.}
+\item{id}{either an integer or a character string matching the names of
+the desired color palette(s). If missing then color palettes available are
+prompted.}
 
-\item{ncol}{An integer giving the number of colors to be returned (involves a call to \code{\link[grDevices:colorRampPalette]{grDevices::colorRampPalette()}}). If missing, then the entire palette is returned.}
+\item{ncolors}{An integer giving the number of colors to be returned. If
+greater than the number of colors included in the selection, then
+'\code{\link[grDevices:colorRampPalette]{grDevices::colorRampPalette()}} is called to expand the palette.
+If missing, then the entire palette is returned.}
 }
 \value{
 A vector of character strings of the hexadecimal colors values.
+Note that if several color palette is requested, then the output is a vector
+with all color palette concatenated.
 }
 \description{
 A couple of color palettes including our inSileco palette and a couple
-inspired by popular websites.
+of other inspired by popular websites.
 }
 \examples{
 showPalette(gpuPalette(c('atom', 'cisl')))

@@ -8,15 +8,16 @@
 #' @param sdg vector of length of the small diagonals.
 #' @param rot rotation angles (in degree) of the rhombi.
 #' @param add logical. If `TRUE` rhombi are added to the current plot (default behavior).
-#' @param ... additional arguments to be passed to \code{[graphics::polygon()]} function.
+#' @param ... additional arguments to be passed to `[graphics::polygon()]` function.
 #'
 #' @keywords rhumbus
 #'
 #' @export
 #'
 #' @details
-#' The number of rhombus maximal is provided by the length of the largest argument among x, y, ldg, sdg and rot.
-#' Other arguments are repeated with the largest length as the desired one (see \code{rep_len}).
+#' The number of rhombus maximal is provided by the length of the largest
+#' argument among x, y, ldg, sdg and rot. Other arguments are repeated with the
+#' largest length as the desired one (see [rep_len()]).
 #' Additional arguments remain the same for every rhombus.
 #'
 #' @return
@@ -38,7 +39,7 @@
 
 
 rhombi <- function(x, y = x, ldg = 1, sdg = ldg, rot = 0, add = FALSE, ...) {
-    sz <- max(sapply(list(x, y, ldg, sdg, rot), length))
+    sz <- max(lengths(list(x, y, ldg, sdg, rot)))
     x <- rep_len(x, sz)
     y <- rep_len(y, sz)
     ldg <- rep_len(ldg, sz)
@@ -47,14 +48,14 @@ rhombi <- function(x, y = x, ldg = 1, sdg = ldg, rot = 0, add = FALSE, ...) {
     rot <- pi * rot/180
     ## ----
     if (add) {
-        for (i in 1:sz) {
+        for (i in seq_len(sz)) {
             corh <- matrix(0, 2, 4)
-            corh[1, ] <- c(0.5 * ldg[i], 0, -0.5 * ldg[i], 0)
-            corh[2, ] <- c(0, 0.5 * sdg[i], 0, -0.5 * sdg[i])
+            corh[1L, ] <- c(.5 * ldg[i], 0, -.5 * ldg[i], 0)
+            corh[2L, ] <- c(0, .5 * sdg[i], 0, -.5 * sdg[i])
             mat.rot <- matrix(c(cos(rot[i]), sin(rot[i]), -sin(rot[i]), cos(rot[i])),
                 2)
             pt.los <- mat.rot %*% corh
-            graphics::polygon(x[i] + pt.los[1, ], y[i] + pt.los[2, ], ...)
+            polygon(x[i] + pt.los[1, ], y[i] + pt.los[2, ], ...)
         }
     }
     invisible(0.5 * ldg * sdg)

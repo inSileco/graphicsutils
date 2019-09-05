@@ -8,7 +8,11 @@
     \item Addition of new features:
       \itemize{
         \item new arguments `add_val` and `val_cex` `n_signif` to add value in `image2()` and control the size of the text.
-        \item `gpuPalette()` now supports numeric vectors to select palettes.
+        \item `gpuPalette()` now supports numeric vectors to select palettes and expand palettes (calling `colorRampPalette()`) when necessary.
+        \item add `blendColors()` (via \ghpr{16}).
+        \item add `ganttChart()` (via \ghpr{16}).
+        \item `darken()` and `lighten()` now support negative percentage by calling each other.
+        \item many small changes have been done to follow good practice :recycle:.
       }
   }
 }
