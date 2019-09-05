@@ -56,14 +56,14 @@ box2 <- function(side, which = c("plot", "figure", "outer", "inner"),
     ##
     if (length(ax)) {
         opar <- par(no.readonly = TRUE)
-        on.exit(par(opar))
+        # on.exit(par(opar))$ this will cause a problem!
         coord <- opar$usr
         if (which != "plot") {
             ## figure margins in user units
             cvx <- (opar$usr[2L] - opar$usr[1L])/opar$pin[1L]
             cvy <- (opar$usr[4L] - opar$usr[3L])/opar$pin[2L]
             mau <- opar$mai * rep(c(cvy, cvx), 2)
-            coord <- coord + c(-mau[2L], mau[4L], -mau[1L], mau[3L])
+            coord <- coord + c(-mau[2L], mau[4L], - mau[1L], mau[3L])
             ## inner margins in user units (get the lenght and adjust!)
             if (which != "figure") {
                 diffx <- coord[2L] - coord[1L]

@@ -23,18 +23,18 @@
 showPalette <- function(x = grDevices::palette(), inline = FALSE,
     add_number = FALSE, add_codecolor = FALSE, cex_num = 1.2) {
 
-    opar <- par(no.readonly = TRUE)
-    on.exit(par(opar))
+    opar <- graphics::par(no.readonly = TRUE)
+    on.exit(graphics::par(opar))
     ##--
     nb_x <- length(x)
     ##
     if (is.numeric(x)) {
-        tmp <- palette()
+        tmp <- grDevices::palette()
         x <- tmp[((x - 1)%%length(tmp)) + 1]
     }
     ##
     if (class(x) != "matrix")
-        x <- col2rgb(x)
+        x <- grDevices::col2rgb(x)
     ramp <- apply(x, 2, function(x) grDevices::rgb(x[1L], x[2L], x[3L], maxColorValue = 255))
     dark <- (apply(x, 2, sum) > 196) + 1
     ## -- compute the number of column and rows
@@ -45,8 +45,9 @@ showPalette <- function(x = grDevices::palette(), inline = FALSE,
         nb_row <- tmp[1L]
         nb_col <- tmp[2L]
     }
+    print(nb_x)
     ##-- remove margins
-    par(mfrow = c(nb_row, nb_col), mar = rep(0, 4L))
+    graphics::par(mfrow = c(nb_row, nb_col), mar = rep(0, 4L))
 
     for (i in seq_len(nb_x)) {
         plot0(fill = ramp[i])
