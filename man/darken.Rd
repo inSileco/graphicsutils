@@ -32,9 +32,9 @@ Returns lightened or darkened colors, vectorised over \code{percentage}.
 \itemize{
 \item \code{ramp}: Returns a shaded color.
 
-\item \code{darken}: Returns a darkened color.
+\item \code{darken}: Darken a color.
 
-\item \code{lighten}: Returns a lightened color.
+\item \code{lighten}: Lighten a color.
 }}
 
 \examples{

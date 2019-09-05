@@ -26,19 +26,29 @@ ramp <- function(fromcol, tocol, percentage = 50, as_rgb = FALSE) {
     if (as_rgb) col2rgb(outcol) else outcol
 }
 
-#' @describeIn darken Returns a darkened color.
+#' @describeIn darken Darken a color.
 #' @export
 darken <- function(col, percentage = 50, as_rgb = FALSE) {
-    if (percentage < 0) {
-      lighten(col, -percentage, as_rgb)
-    } else ramp(col, "black", percentage = percentage,
-      as_rgb = as_rgb)
+    if (length(percentage) > 1) {
+      tmp <- lapply(percentage, darken, col = col, as_rgb = as_rgb)
+      if (as_rgb) do.call(cbind, tmp) else do.call(c, tmp)
+    } else {
+      if (all(percentage < 0)) {
+        lighten(col, -percentage, as_rgb)
+      } else ramp(col, "black", percentage = percentage,
+        as_rgb = as_rgb)
+    }
 }
 
-#' @describeIn darken Returns a lightened color.
+#' @describeIn darken Lighten a color.
 #' @export
 lighten <- function(col, percentage = 50, as_rgb = FALSE) {
-    if (percentage < 0) {
-      darken(col, -percentage, as_rgb)
-    } else  ramp(col, "white", percentage = percentage, as_rgb = as_rgb)
+    if (length(percentage) > 1) {
+      tmp <- lapply(percentage, lighten, col = col, as_rgb = as_rgb)
+      if (as_rgb) do.call(cbind, tmp) else do.call(c, tmp)
+    } else {
+      if (percentage < 0) {
+        darken(col, -percentage, as_rgb)
+      } else  ramp(col, "white", percentage = percentage, as_rgb = as_rgb)
+    }
 }

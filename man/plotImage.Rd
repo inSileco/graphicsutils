@@ -26,10 +26,10 @@ the end of the file extension.
 }
 \examples{
 img <- png::readPNG(system.file('img', 'Rlogo.png', package='png'), native=TRUE)
-op <- graphics::par(no.readonly = TRUE)
-graphics::par(mfrow=c(4,4), mar=rep(2,4))
+op <- par(no.readonly = TRUE)
+par(mfrow=c(4,4), mar=rep(2,4))
 for (i in seq_len(16)) plotImage(img)
-graphics::par(op)
+par(op)
 }
 \keyword{image.}
 \keyword{plot,}

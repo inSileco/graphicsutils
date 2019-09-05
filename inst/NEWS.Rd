@@ -3,15 +3,22 @@
 \newcommand{\ghpr}{\href{https://github.com/KevCaz/graphicsutils/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/KevCaz/graphicsutils/issues/#1}{##1}}
 
+
+\section{Changes in graphicsutils version 1.4.9000}{
+  \itemize{
+    \item fix a bug in \code{darken()} and \code{darken()} intriduced in 1.4.0 (via \ghit{#17})
+  }
+}
+
 \section{Changes in graphicsutils version 1.4.0}{
   \itemize{
     \item Addition of new features:
       \itemize{
-        \item new arguments `add_val` and `val_cex` `n_signif` to add value in `image2()` and control the size of the text.
-        \item `gpuPalette()` now supports numeric vectors to select palettes and expand palettes (calling `colorRampPalette()`) when necessary.
-        \item add `blendColors()` (via \ghpr{16}).
-        \item add `ganttChart()` (via \ghpr{16}).
-        \item `darken()` and `lighten()` now support negative percentage by calling each other.
+        \item new arguments \code{add_val}, \code{val_cex} and \code{n_signif} to add value in \code{image2()} and control the size of the text.
+        \item \code{gpuPalette()} now supports numeric vectors to select palettes and expand palettes (calling \code{olorRampPalette()}) when necessary.
+        \item add \code{blendColors()} (via \ghpr{16}).
+        \item add \code{ganttChart()} (via \ghpr{16}).
+        \item \code{darken()} and \code{lighten()} now support negative percentage by calling each other.
         \item many small changes have been done to follow good practice :recycle:.
       }
   }

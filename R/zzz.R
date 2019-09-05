@@ -7,7 +7,7 @@
 #' @importFrom Rcpp evalCpp
 #' @importFrom graphics par lines points lines.default rect plot.new
 #' @importFrom graphics plot axis strwidth plot.window polygon locator
-#' @importFrom graphics layout layout.show text
+#' @importFrom graphics layout layout.show text grid text.default
 #' @importFrom graphics plot.default strheight rasterImage image box abline
 #' @importFrom grDevices colorRampPalette rgb col2rgb as.graphicsAnnot palette
 #' @importFrom grDevices xy.coords dev.off
@@ -15,8 +15,4 @@
 #' @useDynLib graphicsutils
 NULL
 
-
 .onLoad <- function(libname, pkgname) utils::packageVersion("graphicsutils")
-
-# .onAttach <- function(libname, pkgname) { packageStartupMessage(paste0(' -->
-# graphicsutils version ', utils::packageVersion('graphicsutils'))) }
