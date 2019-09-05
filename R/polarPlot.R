@@ -58,33 +58,33 @@ polarPlot <- function(seqtime, seqval = NULL, rad = 1, from = 0, to = 2*pi,
 
     # plot
     if (!add) {
-        graphics::par(mar = c(1, 1, 1, 1))
-        graphics::plot.new()
-        graphics::plot.window(1.2 * c(-1, 1), 1.2 * c(-1, 1), asp = 1)
+        par(mar = c(1, 1, 1, 1))
+        plot.new()
+        plot.window(1.2 * c(-1, 1), 1.2 * c(-1, 1), asp = 1)
     }
 
     # circles
     for (i in rad/5 * seq_len(5 - 1)) circles(0, 0, rad * i, col = NA, lwd = 0.5 +
         0.5 * i, lty = 2)
     circles(0, 0, rad, lwd = 1, col = NA)
-    graphics::points(0, 0, pch = 20, col = "grey45")
+    points(0, 0, pch = 20, col = "grey45")
 
     # lines
     polygon(c(0, seqvp * cos(seqtp), 0), c(0, seqvp * sin(seqtp), 0), ...)
 
     ## --- Points at start and end
-    graphics::points(seqvp[1L] * cos(seqtp[1L]), seqvp[1L] * sin(seqtp[1L]), pch = 19,
+    points(seqvp[1L] * cos(seqtp[1L]), seqvp[1L] * sin(seqtp[1L]), pch = 19,
         cex = 1.2)
     lv <- length(seqval)
-    graphics::points(seqvp[lv] * cos(seqtp[lv]), seqvp[lv] * sin(seqtp[lv]), pch = 20)
+    points(seqvp[lv] * cos(seqtp[lv]), seqvp[lv] * sin(seqtp[lv]), pch = 20)
 
     # values labels
     if (is.null(labelr))
         labelr <- round(seq(rgval[1L], rgval[2L], length.out = 6),
         digits = -lgv + 2)
     if (!any(is.na(labelr))) {
-        graphics::text(rep(0, 6), -0.2 * 0:5,
-        grDevices::as.graphicsAnnot(labelr), cex = 1.1, pos = 3)
+        text(rep(0, 6), -0.2 * 0:5,
+        as.graphicsAnnot(labelr), cex = 1.1, pos = 3)
     }
 
     # Circular ticks
@@ -95,20 +95,20 @@ polarPlot <- function(seqtime, seqval = NULL, rad = 1, from = 0, to = 2*pi,
 
     # Circular values
     if (is.null(labelc))
-        labelc <- grDevices::as.graphicsAnnot(signif(seq(rgtime[1L], rgtime[2L],
-            length.out = 7), n_signif)) else labelc <- grDevices::as.graphicsAnnot(labelc)
+        labelc <- as.graphicsAnnot(signif(seq(rgtime[1L], rgtime[2L],
+            length.out = 7), n_signif)) else labelc <- as.graphicsAnnot(labelc)
     if (!any(is.na(labelc))) {
         if (mangle[1L]%%(2 * pi) == mangle[length(mangle)]%%(2 * pi)) {
             mg1 <- mangle[1L]
             mgl <- mangle[length(mangle)]
             graphics::text(1.15 * cos(mg1), 1.15 * sin(mg1), labelc[1L], pos = 4,
                 cex = 1.15, col = tckcol)
-            graphics::text(1.15 * cos(mgl), 1.15 * sin(mgl), labelc[length(labelc)],
+            text(1.15 * cos(mgl), 1.15 * sin(mgl), labelc[length(labelc)],
                 pos = 2, cex = 1.15, col = tckcol)
             mangle <- mangle[-c(1L, length(mangle))]
             labelc <- labelc[-c(1L, length(labelc))]
         }
-        graphics::text(1.15 * cos(mangle), 1.15 * sin(mangle), labelc, cex = 1.15,
+        text(1.15 * cos(mangle), 1.15 * sin(mangle), labelc, cex = 1.15,
             col = tckcol)
     }
     #

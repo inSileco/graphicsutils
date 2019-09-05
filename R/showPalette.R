@@ -30,12 +30,12 @@ showPalette <- function(x = grDevices::palette(), inline = FALSE,
     ##
     if (is.numeric(x)) {
         tmp <- palette()
-        x <- tmp[((x - 1)%%length(tmp)) + 1]
+        x <- tmp[((x - 1) %% length(tmp)) + 1]
     }
     ##
     if (class(x) != "matrix")
         x <- col2rgb(x)
-    ramp <- apply(x, 2, function(x) grDevices::rgb(x[1L], x[2L], x[3L], maxColorValue = 255))
+    ramp <- apply(x, 2, function(x) rgb(x[1L], x[2L], x[3L], maxColorValue = 255))
     dark <- (apply(x, 2, sum) > 196) + 1
     ## -- compute the number of column and rows
     nb_row <- nb_x

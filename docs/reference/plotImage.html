@@ -8,10 +8,12 @@
 
 <title>Plot a picture. — plotImage • graphicsutils</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
@@ -30,11 +32,12 @@
 
 
 
-<meta property="og:title" content="Plot a picture. — plotImage" />
 
+<meta property="og:title" content="Plot a picture. — plotImage" />
 <meta property="og:description" content="Returns a plot that displays an image. It enables users to directly include
 a .png or a .jpeg file in a plot region by providing their path." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -64,7 +67,7 @@ a .png or a .jpeg file in a plot region by providing their path." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">graphicsutils</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4.1</span>
       </span>
     </div>
 
@@ -92,7 +95,6 @@ a .png or a .jpeg file in a plot region by providing their path." />
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/inSileco/graphicsutils">
@@ -118,14 +120,12 @@ a .png or a .jpeg file in a plot region by providing their path." />
     </div>
 
     <div class="ref-description">
-    
     <p>Returns a plot that displays an image. It enables users to directly include
 a <code>.png</code> or a <code>.jpeg</code> file in a plot region by providing their path.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>plotImage</span>(<span class='kw'>obj</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -146,13 +146,12 @@ a <code>.png</code> or a <code>.jpeg</code> file in a plot region by providing t
       <td><p>additional arguments to be passed to <code>rasterImage</code> function.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Note that either <code>obj</code> or <code>file</code> must be defined.
 If a path is provided either <code>readPNG</code> or <code>readJPEG</code> according to
 the end of the file extension.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>img</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>png</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/png/topics/readPNG'>readPNG</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>'img'</span>, <span class='st'>'Rlogo.png'</span>, <span class='kw'>package</span><span class='kw'>=</span><span class='st'>'png'</span>), <span class='kw'>native</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
@@ -164,9 +163,7 @@ the end of the file extension.</p>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#details">Details</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 

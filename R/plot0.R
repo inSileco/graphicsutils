@@ -62,19 +62,19 @@ plot0 <- function(x = c(-1, 1), y = NULL, fill = NULL, text = NULL, grid.col = N
         id <- which(names(deft) %in% names(args))
         if (length(id) > 0)
             deft <- deft[-id]
-        do.call(graphics::plot.default, args = as.list(c(coor, args, deft)))
-    } else graphics::plot.default(x = x, y = y, ann = FALSE, axes = FALSE, type = "n")
+        do.call(plot.default, args = as.list(c(coor, args, deft)))
+    } else plot.default(x = x, y = y, ann = FALSE, axes = FALSE, type = "n")
 
     ##
     if (!is.null(fill))
         plotAreaColor(color = fill)
     #
     if (!is.null(grid.col))
-        graphics::grid(col = grid.col, lty = grid.lty, lwd = grid.lwd)
+        grid(col = grid.col, lty = grid.lty, lwd = grid.lwd)
 
     ##
     if (!is.null(text))
-        do.call(graphics::text.default, args = as.list(c(x = mean(x), y = mean(y),
+        do.call(text.default, args = as.list(c(x = mean(x), y = mean(y),
             labels = as.character(text), args_txt)))
     ##
     invisible(NULL)

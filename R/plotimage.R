@@ -19,10 +19,10 @@
 #'
 #' @examples
 #' img <- png::readPNG(system.file('img', 'Rlogo.png', package='png'), native=TRUE)
-#' op <- graphics::par(no.readonly = TRUE)
-#' graphics::par(mfrow=c(4,4), mar=rep(2,4))
+#' op <- par(no.readonly = TRUE)
+#' par(mfrow=c(4,4), mar=rep(2,4))
 #' for (i in seq_len(16)) plotImage(img)
-#' graphics::par(op)
+#' par(op)
 
 plotImage <- function(obj = NULL, file = NULL, add = FALSE, ...) {
 
@@ -44,8 +44,8 @@ plotImage <- function(obj = NULL, file = NULL, add = FALSE, ...) {
     dm <- dim(obj)
     if (!add)
         plot0(c(1, dm[1L]), c(1, dm[2L]), asp = 1)
-    pu <- graphics::par()$usr
-    graphics::rasterImage(obj, pu[1L], pu[3L], pu[2L], pu[4L], ...)
+    pu <- par()$usr
+    rasterImage(obj, pu[1L], pu[3L], pu[2L], pu[4L], ...)
     ##
     invisible(NULL)
 }
