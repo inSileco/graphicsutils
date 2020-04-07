@@ -2,7 +2,7 @@
 % Please edit documentation in R/plotimage.R
 \name{plotImage}
 \alias{plotImage}
-\title{Plot a picture.}
+\title{Display an image}
 \usage{
 plotImage(obj = NULL, file = NULL, add = FALSE, ...)
 }
@@ -16,8 +16,8 @@ plotImage(obj = NULL, file = NULL, add = FALSE, ...)
 \item{...}{additional arguments to be passed to \code{rasterImage} function.}
 }
 \description{
-Returns a plot that displays an image. It enables users to directly include
-a \code{.png} or a \code{.jpeg} file in a plot region by providing their path.
+Returns a plot that displays an image. It enables users to directly include a
+\code{.png} or a \code{.jpeg} file in a plot region by providing their path.
 }
 \details{
 Note that either \code{obj} or \code{file} must be defined.
@@ -31,5 +31,3 @@ par(mfrow=c(4,4), mar=rep(2,4))
 for (i in seq_len(16)) plotImage(img)
 par(op)
 }
-\keyword{image.}
-\keyword{plot,}

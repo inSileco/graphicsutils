@@ -5,13 +5,34 @@
 \alias{compassRoseCardinal}
 \title{Compass Rose}
 \usage{
-compassRose(x = 0, y = 0, labels = c("S", "W", "N", "E"), rot = 0,
-  cex.cr = 1, cex.let = cex.cr, col.cr = c(1, 8), col.let = 1,
-  border = c(1, 8), offset = 1.2, add = TRUE, ...)
+compassRose(
+  x = 0,
+  y = 0,
+  labels = c("S", "W", "N", "E"),
+  rot = 0,
+  cex.cr = 1,
+  cex.let = cex.cr,
+  col.cr = c(1, 8),
+  col.let = 1,
+  border = c(1, 8),
+  offset = 1.2,
+  add = TRUE,
+  ...
+)
 
-compassRoseCardinal(x, y = x, rot = 0, cex.cr = 1, cex.let = 1,
-  labels = c("S", "W", "N", "E"), offset = 1.2, col.cr = c(1, 8),
-  col.let = 1, border = c(1, 8), ...)
+compassRoseCardinal(
+  x,
+  y = x,
+  rot = 0,
+  cex.cr = 1,
+  cex.let = 1,
+  labels = c("S", "W", "N", "E"),
+  offset = 1.2,
+  col.cr = c(1, 8),
+  col.let = 1,
+  border = c(1, 8),
+  ...
+)
 }
 \arguments{
 \item{x}{the x coordinates of the center of the compass rose.}
@@ -36,13 +57,13 @@ compassRoseCardinal(x, y = x, rot = 0, cex.cr = 1, cex.let = 1,
 
 \item{add}{a logical. Should the compass rose be added on the current graph?}
 
-\item{...}{additional arguments to be passed to \code{[graphics::polygon()]}.}
+\item{...}{additional arguments to be passed to \verb{[graphics::polygon()]}.}
 }
 \description{
 This function draws a fully personnalisable compass rose.
 }
 \details{
-Both \code{col.cr} and \code{border} are repeated over (\code{[base::rep()]}
+Both \code{col.cr} and \code{border} are repeated over (\verb{[base::rep()]}
 is called) so it has a 8 elements, meaning all triangles the compass rose is
 made of could have their own color.
 

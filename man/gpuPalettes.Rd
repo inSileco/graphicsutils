@@ -4,7 +4,9 @@
 \name{gpuPalettes}
 \alias{gpuPalettes}
 \title{Complete list of graphicsutils' color palettes}
-\format{An object of class \code{list} of length 7.}
+\format{
+An object of class \code{list} of length 7.
+}
 \usage{
 gpuPalettes
 }

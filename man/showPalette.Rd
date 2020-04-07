@@ -4,17 +4,22 @@
 \alias{showPalette}
 \title{Displays a color palette}
 \usage{
-showPalette(x = palette(), inline = FALSE, add_number = FALSE,
-  add_codecolor = FALSE, cex_num = 1.2)
+showPalette(
+  x = palette(),
+  inline = FALSE,
+  add_number = TRUE,
+  add_codecolor = TRUE,
+  cex_num = 1.2
+)
 }
 \arguments{
 \item{x}{a vector of colors.}
 
 \item{inline}{a logical. If \code{TRUE}, the colors are displayed on a single row.}
 
-\item{add_number}{a logical. If \code{TRUE}, color vector's indices are added (default is set to \code{FALSE}).}
+\item{add_number}{a logical. If \code{TRUE}, color vector's indices are added.}
 
-\item{add_codecolor}{a logical. If \code{TRUE}, the code color is displayed (default is set to \code{FALSE}).}
+\item{add_codecolor}{a logical. If \code{TRUE}, the code color is displayed.}
 
 \item{cex_num}{the magnification coefficient of the color vector's indices.}
 }
@@ -22,13 +27,13 @@ showPalette(x = palette(), inline = FALSE, add_number = FALSE,
 The color palette displayed as an invisible output.
 }
 \description{
-Displays a color palette and information about the colors it is made of.
+Displays a color palette and information about its colors.
 }
 \examples{
 showPalette()
 showPalette(inline=TRUE)
 showPalette(1)
-showPalette(sample(1:100, 16), add_number = TRUE, add_codecolor = TRUE)
+showPalette(sample(1:100, 16), add_number = FALSE, add_codecolor = FALSE)
 }
 \keyword{color,}
 \keyword{selection}

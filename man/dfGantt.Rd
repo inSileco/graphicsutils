@@ -4,7 +4,9 @@
 \name{dfGantt}
 \alias{dfGantt}
 \title{dfGantt}
-\format{A simulated data frame to create a Gantt chart.}
+\format{
+A simulated data frame to create a Gantt chart.
+}
 \usage{
 data(dfGantt)
 }

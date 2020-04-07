@@ -16,7 +16,7 @@ single argument \code{x} can be provided.}
 
 \item{off.set}{the y coordinates of a set of points.}
 
-\item{...}{further arguments to be passed to \code{[graphics::polygon()]} function.}
+\item{...}{further arguments to be passed to \verb{[graphics::polygon()]} function.}
 }
 \description{
 Draw a polygons around a certains set of points.

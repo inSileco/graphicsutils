@@ -4,10 +4,25 @@
 \alias{donut}
 \title{Donut chart.}
 \usage{
-donut(vec, eaten = 0, labels = NULL, rot = 0, cex = 0.8,
-  tck = 0.05, width = 0.6, mycol = 1 + seq_along(vec),
-  density = NULL, angle = 45, dt = 0.001, add = FALSE, cx = 0,
-  cy = 0, border = NA, clockwise = TRUE, ...)
+donut(
+  vec,
+  eaten = 0,
+  labels = NULL,
+  rot = 0,
+  cex = 0.8,
+  tck = 0.05,
+  width = 0.6,
+  mycol = 1 + seq_along(vec),
+  density = NULL,
+  angle = 45,
+  dt = 0.001,
+  add = FALSE,
+  cx = 0,
+  cy = 0,
+  border = NA,
+  clockwise = TRUE,
+  ...
+)
 }
 \arguments{
 \item{vec}{a vector of non-negative numerical quantities that are displayed as the areas of donut slices.}

@@ -4,8 +4,18 @@
 \alias{ellipse}
 \title{Ellipse}
 \usage{
-ellipse(x = 0, y = x, mjradi = 1, mnradi = 0.5, from = 0,
-  to = 2 * pi, rot = 0, incr = 0.01, pie = FALSE, ...)
+ellipse(
+  x = 0,
+  y = x,
+  mjradi = 1,
+  mnradi = 0.5,
+  from = 0,
+  to = 2 * pi,
+  rot = 0,
+  incr = 0.01,
+  pie = FALSE,
+  ...
+)
 }
 \arguments{
 \item{x}{the x coordinates of the centers of the ellipses.}

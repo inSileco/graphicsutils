@@ -2,10 +2,20 @@
 % Please edit documentation in R/pchimage.R
 \name{pchImage}
 \alias{pchImage}
-\title{Images as ploting characters.}
+\title{Images as plotting character}
 \usage{
-pchImage(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x,
-  atcenter = TRUE, add = TRUE, col = NULL, ...)
+pchImage(
+  x,
+  y,
+  obj = NULL,
+  file = NULL,
+  cex.x = 1,
+  cex.y = cex.x,
+  atcenter = TRUE,
+  add = TRUE,
+  col = NULL,
+  ...
+)
 }
 \arguments{
 \item{x}{the x coordinates of images to be drawn.}

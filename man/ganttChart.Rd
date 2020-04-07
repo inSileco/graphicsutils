@@ -4,8 +4,16 @@
 \alias{ganttChart}
 \title{Gantt Chart}
 \usage{
-ganttChart(df, order = TRUE, mstone_add = order, mstone_spacing = 1,
-  mstone_lwd = 2, axes = TRUE, mstone_font = 2, lighten_done = 0)
+ganttChart(
+  df,
+  order = TRUE,
+  mstone_add = order,
+  mstone_spacing = 1,
+  mstone_lwd = 2,
+  axes = TRUE,
+  mstone_font = 2,
+  lighten_done = 0
+)
 }
 \arguments{
 \item{df}{a data.frame (see details).}

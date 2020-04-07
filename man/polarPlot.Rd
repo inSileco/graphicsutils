@@ -4,10 +4,23 @@
 \alias{polarPlot}
 \title{Polar plot}
 \usage{
-polarPlot(seqtime, seqval = NULL, rad = 1, from = 0, to = 2 * pi,
-  incr = 0.005, labelc = NULL, tckcol = 1, atc = NULL,
-  labelr = NULL, atr = NULL, clockwise = TRUE, n_signif = 2,
-  add = FALSE, ...)
+polarPlot(
+  seqtime,
+  seqval = NULL,
+  rad = 1,
+  from = 0,
+  to = 2 * pi,
+  incr = 0.005,
+  labelc = NULL,
+  tckcol = 1,
+  atc = NULL,
+  labelr = NULL,
+  atr = NULL,
+  clockwise = TRUE,
+  n_signif = 2,
+  add = FALSE,
+  ...
+)
 }
 \arguments{
 \item{seqtime}{sequence of time values (equivalent to the x axis).}

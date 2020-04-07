@@ -1,11 +1,11 @@
 #' Displays a color palette
 #'
-#' Displays a color palette and information about the colors it is made of.
+#' Displays a color palette and information about its colors.
 #'
 #' @param x a vector of colors.
 #' @param inline a logical. If `TRUE`, the colors are displayed on a single row.
-#' @param add_number a logical. If `TRUE`, color vector's indices are added (default is set to `FALSE`).
-#' @param add_codecolor a logical. If `TRUE`, the code color is displayed (default is set to `FALSE`).
+#' @param add_number a logical. If `TRUE`, color vector's indices are added.
+#' @param add_codecolor a logical. If `TRUE`, the code color is displayed.
 #' @param cex_num the magnification coefficient of the color vector's indices.
 #'
 #' @keywords color, selection
@@ -18,10 +18,10 @@
 #' showPalette()
 #' showPalette(inline=TRUE)
 #' showPalette(1)
-#' showPalette(sample(1:100, 16), add_number = TRUE, add_codecolor = TRUE)
+#' showPalette(sample(1:100, 16), add_number = FALSE, add_codecolor = FALSE)
 
-showPalette <- function(x = palette(), inline = FALSE, add_number = FALSE,
-  add_codecolor = FALSE, cex_num = 1.2) {
+showPalette <- function(x = palette(), inline = FALSE, add_number = TRUE,
+  add_codecolor = TRUE, cex_num = 1.2) {
 
     ##--
     nb_x <- length(x)
@@ -49,9 +49,16 @@ showPalette <- function(x = palette(), inline = FALSE, add_number = FALSE,
 
     for (i in seq_len(nb_x)) {
         plot0(fill = ramp[i])
-        txt <- ""
-        if (add_number) txt <- paste0(txt, i, ": ")
-        if (add_codecolor)  txt <- paste0(txt, ramp[i])
+        if (add_number) {
+            if (add_codecolor) {
+                txt <- paste0(i, ": ", ramp[i])
+            } else txt <- paste0(i)
+        } else {
+            if (add_codecolor) {
+                txt <- paste0(ramp[i])
+            } else txt <- ""
+        }
+
         text(0, 0, txt, cex = cex_num, col = c("white", "black")[dark[i]])
         box2(col = "white")
     }

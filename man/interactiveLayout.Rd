@@ -4,8 +4,13 @@
 \alias{interactiveLayout}
 \title{An interactive version of \code{layout}}
 \usage{
-interactiveLayout(n = 1, grain.x = 20, grain.y = grain.x,
-  show = TRUE, now = TRUE)
+interactiveLayout(
+  n = 1,
+  grain.x = 20,
+  grain.y = grain.x,
+  show = TRUE,
+  now = TRUE
+)
 }
 \arguments{
 \item{n}{Number of plot regions desired, default is 1.}

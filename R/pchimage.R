@@ -1,4 +1,4 @@
-#' Images as ploting characters.
+#' Images as plotting character
 #'
 #' `pchimage` returns a plot that displays an image. It enables to users
 #' to directly include a `.png` or a `.jpeg` file in a plot region.
@@ -8,7 +8,7 @@
 #' @param obj an object of class `nativeRaster`.
 #' @param file a path to either a `.png` file or a `.jpeg` file.
 #' @param cex.x a numerical value giving the amount by which the horizontal
-#' width of the image should be magnified, a value of 1 means 5\% of the total width.
+#' width of the image should be magnified, a value of 1 means 5% of the total width.
 #' @param cex.y Same as `cex.x` for the y axis.
 #' @param atcenter a logical. If `TRUE` them x and y coordinates describe
 #' the center of the image. Otherwise they represent the bottom-left coordinates of the image.

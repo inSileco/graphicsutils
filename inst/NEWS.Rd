@@ -6,7 +6,7 @@
 
 \section{Changes in graphicsutils version 1.4.9000}{
   \itemize{
-    \item fix a bug in \code{darken()} and \code{darken()} intriduced in 1.4.0 (via \ghit{#17})
+    \item fix a bug in \code{darken()} and \code{darken()} introduced in 1.4.0 (via \ghit{#17}).
   }
 }
 

@@ -28,7 +28,7 @@ prettyRange(vec)
 prettyRange(c(3.849,3.88245))
 }
 \seealso{
-\code{[base::pretty()]}
+\verb{[base::pretty()]}
 }
 \keyword{interval.}
 \keyword{range,}

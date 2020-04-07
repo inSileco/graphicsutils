@@ -4,9 +4,19 @@
 \alias{vecfield2d}
 \title{Vector Fields.}
 \usage{
-vecfield2d(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2),
-  fixed = NULL, cex.x = 0.25, cex.y = cex.x, log = FALSE,
-  add = FALSE, ...)
+vecfield2d(
+  coords,
+  FUN,
+  args = NULL,
+  ndim = NULL,
+  slices = c(1, 2),
+  fixed = NULL,
+  cex.x = 0.25,
+  cex.y = cex.x,
+  log = FALSE,
+  add = FALSE,
+  ...
+)
 }
 \arguments{
 \item{coords}{a matrix with two columns or more that is optionally used to alternatively define the coordinates of the vector field.}

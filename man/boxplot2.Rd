@@ -4,9 +4,16 @@
 \alias{boxplot2}
 \title{Custom boxplots}
 \usage{
-boxplot2(x, ..., probs = c(0.05, 0.25, 0.5, 0.75, 0.95), vc_cex = c(5,
-  18, 1.4), colors = c("grey75", "grey75", "grey20"), med_pch = 3,
-  add = FALSE, at = NULL)
+boxplot2(
+  x,
+  ...,
+  probs = c(0.05, 0.25, 0.5, 0.75, 0.95),
+  vc_cex = c(5, 18, 1.4),
+  colors = c("grey75", "grey75", "grey20"),
+  med_pch = 3,
+  add = FALSE,
+  at = NULL
+)
 }
 \arguments{
 \item{x}{a formula, a an object to be coerced as a data frame.}

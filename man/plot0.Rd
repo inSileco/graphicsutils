@@ -4,8 +4,16 @@
 \alias{plot0}
 \title{An empty plot function}
 \usage{
-plot0(x = c(-1, 1), y = NULL, fill = NULL, text = NULL,
-  grid.col = NULL, grid.lwd = 1, grid.lty = 1, ...)
+plot0(
+  x = c(-1, 1),
+  y = NULL,
+  fill = NULL,
+  text = NULL,
+  grid.col = NULL,
+  grid.lwd = 1,
+  grid.lty = 1,
+  ...
+)
 }
 \arguments{
 \item{x}{the x coordinates of points in the plot or a matrix of coordinates.}
@@ -23,7 +31,7 @@ that will be displayed in the center of the plot region.}
 
 \item{grid.lty}{line type of the grid's lines.}
 
-\item{...}{further graphical parameters from \code{[graphics::par()]}
+\item{...}{further graphical parameters from \verb{[graphics::par()]}
 (such as \code{srt}) or \link[graphics:plot.default]{graphics::plot.default}.}
 }
 \description{
@@ -49,7 +57,7 @@ plot0(c(-10,10), fill='#ebebeb', grid.col = 'white')
 plot0(c(-10,10), grid.col = 2)
 }
 \seealso{
-\code{[shape::emptyplot()]}
+\verb{[shape::emptyplot()]}
 }
 \keyword{empty}
 \keyword{plot}

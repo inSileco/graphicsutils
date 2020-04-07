@@ -4,17 +4,27 @@
 \alias{biBoxplot}
 \title{A bi-boxplot.}
 \usage{
-biBoxplot(df1, df2 = df1, probs = c(0.01, 0.25, 0.5, 0.75, 0.99),
-  width = 0.2, sta_wd = 0.5, median = NULL, staples = NULL,
-  whiskers = NULL, col_left = "grey75", col_right = col_left,
-  add = FALSE, at = NULL)
+biBoxplot(
+  df1,
+  df2 = df1,
+  probs = c(0.01, 0.25, 0.5, 0.75, 0.99),
+  width = 0.2,
+  sta_wd = 0.5,
+  median = NULL,
+  staples = NULL,
+  whiskers = NULL,
+  col_left = "grey75",
+  col_right = col_left,
+  add = FALSE,
+  at = NULL
+)
 }
 \arguments{
 \item{df1}{first set of boxplots.}
 
 \item{df2}{first set of boxplots.}
 
-\item{probs}{numeric vector of five probabilities (see \code{[stats::quantile()]}).}
+\item{probs}{numeric vector of five probabilities (see \verb{[stats::quantile()]}).}
 
 \item{width}{a vector giving the relative widths of the boxes making up the plot.}
 
@@ -46,6 +56,6 @@ dis1 <- list(stats::rnorm(1000, sd = 0.25))
 biBoxplot(dis1)
 }
 \seealso{
-\code{[graphics::box()]}
+\verb{[graphics::box()]}
 }
 \keyword{boxplots}
