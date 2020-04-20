@@ -31,7 +31,7 @@ Displays a color palette and information about its colors.
 }
 \examples{
 showPalette()
-showPalette(inline=TRUE)
+showPalette(inline = TRUE)
 showPalette(1)
 showPalette(sample(1:100, 16), add_number = FALSE, add_codecolor = FALSE)
 }

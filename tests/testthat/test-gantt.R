@@ -1,5 +1,4 @@
 context("Gantt chart")
-data(dfGantt)
 
 hid <- ganttChart(dfGantt)
 

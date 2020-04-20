@@ -11,7 +11,7 @@ A simulated data frame to create a Gantt chart.
 data(dfGantt)
 }
 \description{
-A data frame to showcase \code{\link[graphicsutils]{ganttChart}}.
+A data frame to showcase \code{\link[=ganttChart]{ganttChart()}}.
 }
 \author{
 David Beauchesne

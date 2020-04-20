@@ -27,6 +27,7 @@ Suggests:
     testthat
 LinkingTo: Rcpp
 NeedsCompilation: yes
+LazyData: true
 URL: https://github.com/inSileco/graphicsutils
 BugReports: https://github.com/inSileco/graphicsutils/issues
 License: GPL-3

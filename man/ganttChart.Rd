@@ -30,7 +30,9 @@ ganttChart(
 
 \item{mstone_font}{font of milestone (ignore of \code{axes} is \code{FALSE}).}
 
-\item{lighten_done}{percentage use to lighten done task (see \code{\link[=lighten]{lighten()}}). Default set to 0, so the completed task of a given milestone have the same color as the pending ones.}
+\item{lighten_done}{percentage use to lighten done task (see \code{\link[=lighten]{lighten()}}).
+Default set to 0, so the completed task of a given milestone have the same
+color as the pending ones.}
 }
 \description{
 A flexible Gantt Chart.
@@ -46,6 +48,10 @@ It might as well include any of the following optional columns:
 \item \code{done}: vector of logicals indicating whether the task if completed
 \item \code{col}: to custom the color of the tasks.
 }
+}
+\examples{
+ ff <- ganttChart(dfGantt, mstone_lwd = 3, mstone_spacing = 0.6,
+   lighten_done = 80)
 }
 \references{
 https://insileco.github.io/2017/09/20/gantt-charts-in-r/
