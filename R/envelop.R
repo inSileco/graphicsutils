@@ -1,4 +1,4 @@
-#' Compute the coordinates of an envelop.
+#' Compute the coordinates of an envelop
 #'
 #' `envelop` eases the computation of the polygons described by to set
 #' of y coordinates along the x-axis. Optionally, the polygons could be added
@@ -8,7 +8,7 @@
 #' @param upper the y coordinates of the upper values.
 #' @param lower the y coordinates of the lower values.
 #' @param add a logical. If `TRUE` the envelop is drawn as a polygon (default behavior).
-#' @param ... additional arguments to be passed to `[graphics::polygon()]` function.
+#' @param ... additional arguments to be passed to [graphics::polygon()] function.
 #'
 #' @export
 #'

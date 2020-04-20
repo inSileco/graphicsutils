@@ -2,7 +2,7 @@
 % Please edit documentation in R/donut.R
 \name{donut}
 \alias{donut}
-\title{Donut chart.}
+\title{Donut chart}
 \usage{
 donut(
   vec,

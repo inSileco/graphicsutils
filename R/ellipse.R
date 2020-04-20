@@ -1,4 +1,4 @@
-#' Ellipse
+#' Draw ellipses
 #'
 #' Draw ellipses in a flexible way.
 #'
@@ -11,7 +11,7 @@
 #' @param rot the rotation angles (in degree) of the ellipses.
 #' @param incr increments between two points to be linked (expressed in radians).
 #' @param pie a logical. If `TRUE` end points are linked with the center of the ellipse (default is set to `FALSE`).
-#' @param ... additional arguments to be passed to \code{\link{polygon}} function.
+#' @param ... additional arguments to be passed to [graphics::polygon()].
 #'
 #' @keywords ellipse
 #'

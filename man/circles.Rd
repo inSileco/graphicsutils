@@ -36,7 +36,7 @@ circles(
 
 \item{add}{a logical. Should the circles be added on the current plot?}
 
-\item{...}{additional arguments to be passed to \verb{[graphics::polygon()]} function.}
+\item{...}{additional arguments to be passed to \code{\link[graphics:polygon]{graphics::polygon()}} function.}
 }
 \value{
 An invisible list of \code{data.frame} of two columns including the
@@ -70,7 +70,7 @@ plot0(x=c(-2,2),y=c(-2,2), asp=1)
 circles(x=c(-1,1),c(1,1,-1,-1),from=pi*seq(0.25,1,by=0.25),to=1.25*pi, col=2, border=4, lwd=3)
 }
 \seealso{
-\verb{[graphics::symbols()]}, \code{\link[plotrix]{draw.circle}}, \code{\link[plotrix]{draw.arc}}.
+\code{\link[graphics:symbols]{graphics::symbols()}}, \code{\link[plotrix]{draw.circle}}, \code{\link[plotrix]{draw.arc}}.
 }
 \keyword{circle}
 \keyword{geometries}

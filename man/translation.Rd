@@ -7,9 +7,7 @@
 translation(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...)
 }
 \arguments{
-\item{x}{the x coordinates of points. It can also be a matrix (see details).}
-
-\item{y}{the y coordinates of points.}
+\item{x, y}{x and y coordinates of points to be translated (can also be a matrix, see details).}
 
 \item{xtrans}{the x coordinate of the translation vector.}
 
@@ -24,9 +22,10 @@ Compute a translation for a set of points. The transformed set of points is
 optionally add to the current plot.
 }
 \details{
-For details about what is a translation, see \url{https://en.wikipedia.org/wiki/Translation_(geometry)}.
-Note that if \code{x} is a matrix with more than 2 columns, then x is the
-first column and y the second one.
+For details about what is a translation, see
+\url{https://en.wikipedia.org/wiki/Translation_(geometry)}. Note that if \code{x} is a
+matrix with more than 2 columns, then x is the first column and y the second
+one.
 }
 \examples{
 # Example 1:

@@ -26,8 +26,6 @@ Compute a homothetic transformation for a set of points.
 The transformed set of points is optionally drawn as a polygon.
 }
 \details{
-Details about what is a homothetic transformation, see \url{https://en.wikipedia.org/wiki/Homothetic_transformation}.
-
 If \code{x} is a matrix with more than 2 columns, then \code{x} is the first column and y the second one.
 
 Note that \code{lambda}, \code{xcen} and \code{ycen} are unique, meaning that \code{homothety} computes only one homothetic transformation.
@@ -42,6 +40,9 @@ polygon(x,y)
 poly2 <- homothety(x,y,2)
 polygon(poly2$x,poly2$y)
 poly3 <- homothety(x, y, -2.5, xcen=5, ycen=4, border=4, add=TRUE)
+}
+\references{
+\url{https://en.wikipedia.org/wiki/Homothetic_transformation}.
 }
 \keyword{geometry}
 \keyword{homothety,}

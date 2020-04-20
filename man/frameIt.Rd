@@ -27,8 +27,9 @@ frameIt(
 Draw a frame around the plot region as an ensemble of small rectangles whose colors can be specified.
 }
 \details{
-The number of rectangles could be different from \code{nbc} as \code{pretty} is called to properly locate them.
-The \code{col} argument determines the succession of colors to be applied to each axis.
+The number of rectangles could be different from \code{nbc} as \code{pretty} is called
+to properly locate them. The \code{col} argument determines the succession of
+colors to be applied to each axis.
 }
 \examples{
 #Example 1:

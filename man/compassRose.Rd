@@ -57,13 +57,13 @@ compassRoseCardinal(
 
 \item{add}{a logical. Should the compass rose be added on the current graph?}
 
-\item{...}{additional arguments to be passed to \verb{[graphics::polygon()]}.}
+\item{...}{additional arguments to be passed to \code{\link[graphics:polygon]{graphics::polygon()}}.}
 }
 \description{
 This function draws a fully personnalisable compass rose.
 }
 \details{
-Both \code{col.cr} and \code{border} are repeated over (\verb{[base::rep()]}
+Both \code{col.cr} and \code{border} are repeated over (\code{\link[base:rep]{base::rep()}}
 is called) so it has a 8 elements, meaning all triangles the compass rose is
 made of could have their own color.
 

@@ -27,7 +27,7 @@ the last color of the color scale.}
 
 \item{color_scale}{a vector of colors.}
 
-\item{border}{color for rectangle borders (see \verb{[graphics::rect()]}).}
+\item{border}{color for rectangle borders (see \code{\link[graphics:rect]{graphics::rect()}}).}
 
 \item{add_value}{a logical should value be added in the middle of the rectangles drawn?}
 
@@ -35,23 +35,23 @@ the last color of the color scale.}
 
 \item{n_signif}{number of significant numbers to be displayed (used when labelc is \code{NULL}).}
 
-\item{...}{further arguments to be passed to \verb{[graphics::rect()]}.}
+\item{...}{further arguments to be passed to \code{\link[graphics:rect]{graphics::rect()}}.}
 }
 \description{
 Creates a grid of colored or gray-scale rectangles. This function is similar
-to \verb{[graphics::image()]} when used for a matrix but simpler (\emph{i.e}
+to \code{\link[graphics:image]{graphics::image()}} when used for a matrix but simpler (\emph{i.e}
 less available features).
 }
 \details{
 This function actually draws rectangles to create an image from a matrix.
-Unlike \verb{[graphics::image()]}, \code{image2} the image is ordered just as the
+Unlike \code{\link[graphics:image]{graphics::image()}}, \code{image2} the image is ordered just as the
 matrix is displayed meaning that the cell (1,1) is at the upper left cell of
 the plot drawn. Note that currently neither titles nor axes' labels are added
-user should call the \verb{[graphics::title()]} and \verb{[graphics::axis()]}.
+user should call the \code{\link[graphics:title]{graphics::title()}} and \code{\link[graphics:axis]{graphics::axis()}}.
 Concerning the latter, the user should be aware that cell's coordinates range
-from 0 to 1 with 0 being the coordinates of the first cell and 1 the coordinates
-of the last cell (if there is only one cell then the center of the unique cell
-is 0).
+from 0 to 1 with 0 being the coordinates of the first cell and 1 the
+coordinates of the last cell (if there is only one cell then the center of
+the unique cell is 0).
 }
 \examples{
 image2(matrix(1:9, 3))
@@ -59,7 +59,7 @@ image2(matrix(1:9, 3), add_value = TRUE)
 image2(matrix(1:27, 3), from=2, border = 2, lwd=2)
 }
 \seealso{
-\code{\link[graphics:image]{graphics::image()}}
+\code{\link[graphics:image]{graphics::image()}} \code{\link[graphics:rect]{graphics::rect()}}
 }
 \keyword{image}
 \keyword{rectangles}

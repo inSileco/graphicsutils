@@ -1,7 +1,7 @@
 #' Alternative image function
 #'
 #' Creates a grid of colored or gray-scale rectangles. This function is similar
-#' to `[graphics::image()]` when used for a matrix but simpler (*i.e*
+#' to [graphics::image()] when used for a matrix but simpler (*i.e*
 #' less available features).
 #'
 #' @param x a matrix or an object to be coerced as a matrix.
@@ -10,27 +10,28 @@
 #' @param to values equal to or larger than `from` will be associated with
 #' the last color of the color scale.
 #' @param color_scale a vector of colors.
-#' @param border color for rectangle borders (see `[graphics::rect()]`).
+#' @param border color for rectangle borders (see [graphics::rect()]).
 #' @param add_value a logical should value be added in the middle of the rectangles drawn?
 #' @param val_cex coefficient of magnification used if values are displayed.
 #' @param n_signif number of significant numbers to be displayed (used when labelc is `NULL`).
-#' @param ... further arguments to be passed to `[graphics::rect()]`.
+#' @param ... further arguments to be passed to [graphics::rect()].
 #'
 #' @keywords image rectangles
 #'
 #' @export
 #'
-#' @details This function actually draws rectangles to create an image from a matrix.
-#' Unlike `[graphics::image()]`, \code{image2} the image is ordered just as the
+#' @details
+#' This function actually draws rectangles to create an image from a matrix.
+#' Unlike [graphics::image()], `image2` the image is ordered just as the
 #' matrix is displayed meaning that the cell (1,1) is at the upper left cell of
 #' the plot drawn. Note that currently neither titles nor axes' labels are added
-#' user should call the `[graphics::title()]` and `[graphics::axis()]`.
+#' user should call the [graphics::title()] and [graphics::axis()].
 #' Concerning the latter, the user should be aware that cell's coordinates range
-#' from 0 to 1 with 0 being the coordinates of the first cell and 1 the coordinates
-#' of the last cell (if there is only one cell then the center of the unique cell
-#' is 0).
+#' from 0 to 1 with 0 being the coordinates of the first cell and 1 the
+#' coordinates of the last cell (if there is only one cell then the center of
+#' the unique cell is 0).
 #'
-#' @seealso [graphics::image()]
+#' @seealso [graphics::image()] [graphics::rect()]
 #'
 #' @examples
 #' image2(matrix(1:9, 3))

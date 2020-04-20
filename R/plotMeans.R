@@ -2,9 +2,9 @@
 #'
 #' Plots a set of means computed based on a dataset and draw error associated.
 #'
-#' @param formula a formula, see `[stats::formula()]`.
+#' @param formula a formula, see [stats::formula()].
 #' @param data a data frame (or list) from which the variables in formula should be taken.
-#' @param FUN_err the function that assess uncertainty. Default function is `[stats::sd()]`.
+#' @param FUN_err the function that assess uncertainty. Default function is [stats::sd()].
 #' @param add logical. should images be added on the current graph ? If FALSE a new plot is created.
 #' @param seqx the x coordinates of the means to be plotted, if `NULL`, default values are used. This is intended to be used when `add` parameter is `TRUE`.
 #' @param draw_axis logical. If `TRUE` axes and box are drawn.

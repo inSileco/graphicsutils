@@ -2,7 +2,7 @@
 % Please edit documentation in R/biBoxplot.R
 \name{biBoxplot}
 \alias{biBoxplot}
-\title{A bi-boxplot.}
+\title{A bi-boxplot}
 \usage{
 biBoxplot(
   df1,
@@ -24,7 +24,7 @@ biBoxplot(
 
 \item{df2}{first set of boxplots.}
 
-\item{probs}{numeric vector of five probabilities (see \verb{[stats::quantile()]}).}
+\item{probs}{numeric vector of five probabilities, see \code{\link[stats:quantile]{stats::quantile()}}.}
 
 \item{width}{a vector giving the relative widths of the boxes making up the plot.}
 
@@ -48,14 +48,10 @@ biBoxplot(
 Draws boxplots and bi-boxplots.
 }
 \details{
-Do not attempt to assess the distributions. Based on quantiles only.
+This functions does not attempt to assess the distributions as it is based on quantiles.
 }
 \examples{
-# Example 1:
 dis1 <- list(stats::rnorm(1000, sd = 0.25))
 biBoxplot(dis1)
-}
-\seealso{
-\verb{[graphics::box()]}
 }
 \keyword{boxplots}

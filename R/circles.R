@@ -11,7 +11,7 @@
 #' @param pie a logical. If `TRUE`, end points are linked with the center of the circle (default is set to `FALSE`).
 #' @param clockwise a logical. Shall circles and arcs be drawn clockwise? Defaut is `FALSE`.
 #' @param add a logical. Should the circles be added on the current plot?
-#' @param ... additional arguments to be passed to `[graphics::polygon()]` function.
+#' @param ... additional arguments to be passed to [graphics::polygon()] function.
 #'
 #' @keywords circle geometries
 #'
@@ -26,7 +26,7 @@
 #' An invisible list of `data.frame` of two columns including the
 #' coordinates of all circles.
 #'
-#' @seealso `[graphics::symbols()]`, \code{\link[plotrix]{draw.circle}}, \code{\link[plotrix]{draw.arc}}.
+#' @seealso [graphics::symbols()], \code{\link[plotrix]{draw.circle}}, \code{\link[plotrix]{draw.arc}}.
 #'
 #' @examples
 #' # Example 1:

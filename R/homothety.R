@@ -16,12 +16,13 @@
 #' @export
 #'
 #' @details
-#' Details about what is a homothetic transformation, see <https://en.wikipedia.org/wiki/Homothetic_transformation>.
-#'
 #' If `x` is a matrix with more than 2 columns, then `x` is the first column and y the second one.
 #'
 #' Note that `lambda`, `xcen` and `ycen` are unique, meaning that `homothety` computes only one homothetic transformation.
 #' Drawing the points computed is relevant only if there are more than 2 points.
+#'
+#' @references
+#' <https://en.wikipedia.org/wiki/Homothetic_transformation>.
 #'
 #' @examples
 #' # Example:

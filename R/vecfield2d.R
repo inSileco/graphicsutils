@@ -12,7 +12,7 @@
 #' @param cex.y the magnification coefficient to be used for lengths of vectors along the y axis.
 #' @param log a logical. If `TRUE`, the lengths of arrows are log-transformed.
 #' @param add a logical. If `TRUE`, the vector field is added on the current plot.
-#' @param ... additional arguments to be passed to \code{arrows2}.
+#' @param ... additional arguments to be passed to [arrows()].
 #'
 #' @keywords empty plot
 #'

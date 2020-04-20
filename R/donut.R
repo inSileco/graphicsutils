@@ -1,4 +1,4 @@
-#' Donut chart.
+#' Donut chart
 #'
 #' Draw a donut chart.
 #'

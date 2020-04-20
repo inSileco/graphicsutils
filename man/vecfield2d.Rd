@@ -39,7 +39,7 @@ vecfield2d(
 
 \item{add}{a logical. If \code{TRUE}, the vector field is added on the current plot.}
 
-\item{...}{additional arguments to be passed to \code{arrows2}.}
+\item{...}{additional arguments to be passed to \code{\link[=arrows]{arrows()}}.}
 }
 \description{
 Draw a vector field associated to a system of at least two ODE.

@@ -10,14 +10,12 @@
 #' @param grid.lwd line width of the grid's lines.
 #' @param text A character string or a object to be coerced as character string
 #' that will be displayed in the center of the plot region.
-#' @param ... further graphical parameters from `[graphics::par()]`
+#' @param ... further graphical parameters from [graphics::par()]
 #' (such as `srt`) or [graphics::plot.default].
 #'
 #' @keywords empty plot
 #'
 #' @export
-#'
-#' @seealso `[shape::emptyplot()]`
 #'
 #' @examples
 #' # Example 1

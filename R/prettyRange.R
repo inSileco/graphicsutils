@@ -16,7 +16,7 @@
 #' This function intends to generate range with round values.
 #'
 #' @seealso
-#' `[base::pretty()]`
+#' [base::pretty()]
 #'
 #' @examples
 #' # Example 1:

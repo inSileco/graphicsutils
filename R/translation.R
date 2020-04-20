@@ -3,8 +3,7 @@
 #' Compute a translation for a set of points. The transformed set of points is
 #' optionally add to the current plot.
 #'
-#' @param x the x coordinates of points. It can also be a matrix (see details).
-#' @param y the y coordinates of points.
+#' @param x,y x and y coordinates of points to be translated (can also be a matrix, see details).
 #' @param xtrans the x coordinate of the translation vector.
 #' @param ytrans the y coordinate of the translation vector.
 #' @param add logical. If `TRUE` the set of transformed points is drawn as a polygon.
@@ -15,9 +14,10 @@
 #' @export
 #'
 #' @details
-#' For details about what is a translation, see \url{https://en.wikipedia.org/wiki/Translation_(geometry)}.
-#' Note that if `x` is a matrix with more than 2 columns, then x is the
-#' first column and y the second one.
+#' For details about what is a translation, see
+#' <https://en.wikipedia.org/wiki/Translation_(geometry)>. Note that if `x` is a
+#' matrix with more than 2 columns, then x is the first column and y the second
+#' one.
 #'
 #'
 #' @examples

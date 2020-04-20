@@ -8,7 +8,7 @@
 #' @param sdg vector of length of the small diagonals.
 #' @param rot rotation angles (in degree) of the rhombi.
 #' @param add logical. If `TRUE` rhombi are added to the current plot (default behavior).
-#' @param ... additional arguments to be passed to `[graphics::polygon()]` function.
+#' @param ... additional arguments to be passed to [graphics::polygon()] function.
 #'
 #' @keywords rhumbus
 #'

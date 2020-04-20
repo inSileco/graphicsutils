@@ -2,7 +2,7 @@
 % Please edit documentation in R/arrows2.R
 \name{arrows2}
 \alias{arrows2}
-\title{Add arrows to a plot.}
+\title{Add arrows to a plot}
 \usage{
 arrows2(
   x0,
@@ -63,6 +63,6 @@ arrows2(runif(2), runif(2), x1=runif(2), y1=runif(2))
 arrows2(runif(2), runif(2), x1=runif(2), y1=runif(2), prophead=FALSE, lty=3)
 }
 \seealso{
-\verb{[graphics::arrows()]}, \verb{[shape::Arrows()]}
+\code{\link[graphics:arrows]{graphics::arrows()}}
 }
 \keyword{arrows}

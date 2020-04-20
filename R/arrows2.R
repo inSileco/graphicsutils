@@ -1,4 +1,4 @@
-#' Add arrows to a plot.
+#' Add arrows to a plot
 #'
 #' Draw a custom arrows between pairs of points.
 #'
@@ -20,7 +20,7 @@
 #'
 #' @keywords arrows
 #'
-#' @seealso `[graphics::arrows()]`, `[shape::Arrows()]`
+#' @seealso [graphics::arrows()]
 #'
 #' @examples
 #' # Example 1:

@@ -2,7 +2,7 @@
 % Please edit documentation in R/ellipse.R
 \name{ellipse}
 \alias{ellipse}
-\title{Ellipse}
+\title{Draw ellipses}
 \usage{
 ellipse(
   x = 0,
@@ -36,7 +36,7 @@ ellipse(
 
 \item{pie}{a logical. If \code{TRUE} end points are linked with the center of the ellipse (default is set to \code{FALSE}).}
 
-\item{...}{additional arguments to be passed to \code{\link{polygon}} function.}
+\item{...}{additional arguments to be passed to \code{\link[graphics:polygon]{graphics::polygon()}}.}
 }
 \description{
 Draw ellipses in a flexible way.

@@ -7,9 +7,7 @@
 rotation(x, y, rot = 90, xrot = mean(x), yrot = mean(y), rad = FALSE)
 }
 \arguments{
-\item{x}{the x coordinates of points.}
-
-\item{y}{the y coordinates of points.}
+\item{x, y}{x and y coordinates of points.}
 
 \item{rot}{angle of the rotation expressed in degree.}
 

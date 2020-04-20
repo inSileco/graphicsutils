@@ -13,8 +13,10 @@
 #' @export
 #'
 #' @details
-#' The number of rectangles could be different from `nbc` as `pretty` is called to properly locate them.
-#' The `col` argument determines the succession of colors to be applied to each axis.
+#'
+#' The number of rectangles could be different from `nbc` as `pretty` is called
+#' to properly locate them. The `col` argument determines the succession of
+#' colors to be applied to each axis.
 #'
 #' @examples
 #' #Example 1:

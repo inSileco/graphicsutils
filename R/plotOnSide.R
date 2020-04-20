@@ -12,8 +12,8 @@
 #'
 #' @details
 #' This function eases the creation of plots that include multiple panels that shares information such as axis labels. Instead of
-#' repeating or deleting axis labels, `plotOnSide` add plot areas on the specified sides of the original fgures.
-#' It is based on [graphics::layout()] and it is no more than a tunned version of it.
+#' repeating or deleting axis labels, `plotOnSide` add plot areas on the specified sides of the original figures.
+#' It is based on [graphics::layout()] and it is no more than a tuned version of it.
 #'
 #' @examples
 #' plotOnSide(matrix(1,2), width=c(0.2,1), height=c(1,1,1,0.6))

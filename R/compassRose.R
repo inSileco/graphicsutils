@@ -13,10 +13,10 @@
 #' @param cex.let the magnification to be used for labels.
 #' @param offset label offset of the cardinal points.
 #' @param add a logical. Should the compass rose be added on the current graph?
-#' @param ... additional arguments to be passed to `[graphics::polygon()]`.
+#' @param ... additional arguments to be passed to [graphics::polygon()].
 #'
 #' @details
-#' Both `col.cr` and `border` are repeated over (`[base::rep()]`
+#' Both `col.cr` and `border` are repeated over ([base::rep()]
 #' is called) so it has a 8 elements, meaning all triangles the compass rose is
 #' made of could have their own color.
 #'

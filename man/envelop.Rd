@@ -2,7 +2,7 @@
 % Please edit documentation in R/envelop.R
 \name{envelop}
 \alias{envelop}
-\title{Compute the coordinates of an envelop.}
+\title{Compute the coordinates of an envelop}
 \usage{
 envelop(x, upper, lower = rep(0, length(upper)), add = TRUE, ...)
 }
@@ -15,7 +15,7 @@ envelop(x, upper, lower = rep(0, length(upper)), add = TRUE, ...)
 
 \item{add}{a logical. If \code{TRUE} the envelop is drawn as a polygon (default behavior).}
 
-\item{...}{additional arguments to be passed to \verb{[graphics::polygon()]} function.}
+\item{...}{additional arguments to be passed to \code{\link[graphics:polygon]{graphics::polygon()}} function.}
 }
 \value{
 The coordinates of the envelop are returned if assigned.

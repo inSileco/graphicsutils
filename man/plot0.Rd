@@ -31,7 +31,7 @@ that will be displayed in the center of the plot region.}
 
 \item{grid.lty}{line type of the grid's lines.}
 
-\item{...}{further graphical parameters from \verb{[graphics::par()]}
+\item{...}{further graphical parameters from \code{\link[graphics:par]{graphics::par()}}
 (such as \code{srt}) or \link[graphics:plot.default]{graphics::plot.default}.}
 }
 \description{
@@ -55,9 +55,6 @@ plot0(c(-10,10), fill='#ebebeb', grid.col = 'white')
 
 # Example 4
 plot0(c(-10,10), grid.col = 2)
-}
-\seealso{
-\verb{[shape::emptyplot()]}
 }
 \keyword{empty}
 \keyword{plot}

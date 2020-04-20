@@ -7,11 +7,11 @@
 #' @param y the y coordinates of a set of points.
 #' @param nb.pt the number of points to be generated around each coordinates.
 #' @param off.set the y coordinates of a set of points.
-#' @param ... further arguments to be passed to `[graphics::polygon()]` function.
+#' @param ... further arguments to be passed to [graphics::polygon()] function.
 #'
 #' @details
 #' The technique employed is fairly simple: for a set of coordinates x, y handled
-#' using `xy.coords` a set of `nb.pt` number is generetaed at a
+#' using `xy.coords` a set of `nb.pt` number is generated at a
 #' `off.set` distance of each coordinates, then a convex is drawn around
 #' the coordinates using [grDevices::chull()].
 #'
