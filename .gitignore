@@ -1,5 +1,6 @@
 Meta
-doc
+doc/
+docs/
 # Makefile
 src/*.so
 src/*.o

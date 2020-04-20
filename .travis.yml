@@ -1,23 +1,42 @@
 language: r
 warnings_are_errors: true
-sudo: required
 cache: packages
 
+jobs:
+  include:
+    - stage: Check package
+      r: oldrel
+    - stage: Check package, code coverage and deploy pkgdown website
+      os: linux
+      dist: xenial
+      r: release
+      r_packages:
+        - covr
+        - pkgdown
+      after_success:
+        - Rscript -e 'covr::codecov()'
+        - mkdir docs
+        - git fetch origin gh-pages:gh-pages
+        - git --work-tree=docs checkout gh-pages -- .
+        - Rscript -e 'pkgdown::build_site()'
+      deploy:
+        provider: pages
+        name: TraviSteve
+        skip_cleanup: true
+        keep_history: true
+        github_token: $GITHUB_TOKEN
+        on:
+          branch: master
+        local_dir: docs
+    - stage: Check package
+      os: osx
+      r: release
+    - stage: Check package
+      os: linux
+      dist: bionic
+      r: devel
 
 notifications:
-  slack:
-    rooms: insileco:3OxNTMMQsOZubgPEXCrXEwx7
-    on_success: always
-    on_failure: always #change or never
-    template:
-      - "%{repository} (%{commit}) : %{message} %{foo} "
-      - "Here you go: %{build_url}"
   email:
     recipients:
       - kevin.cazelles@gmail.com
-
-r_packages:
-  - covr
-
-after_success:
-  - Rscript -e 'covr::codecov()'
