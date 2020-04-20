@@ -146,12 +146,12 @@ frameIt(cex.x=1.5, col=c(2,3), border=1)
 ```{r envelop}
 plot0(c(0,10),c(0,10))
 sz <- 100
-seqx <- seq(0, 10, length.out=sz)
+seqx <- seq(0, 10, length.out = sz)
 seqy1 <- 0.2*seqx*runif(sz, 0, 1)
 seqy2 <- 4+0.25*seqx*runif(sz, 0, 1)
 seqy3 <- 8+0.25*seqx*runif(sz, 0, 1)
-envelop(seqx, seqy1, seqy2, col='grey85', border=NA)
-envelop(seqx, seqy2, seqy3, col='grey25', border=NA)
+envelop(seqx, seqy1, seqy2, col = 'grey85', border = NA)
+envelop(seqx, seqy2, seqy3, col = 'grey25', border = NA)
 ```
 
 ## Encircle points
@@ -311,7 +311,7 @@ showPalette(gpuPalette("insileco", 25), add_codecolor = TRUE)
 ```{r envelop2,  fig.width=6,  fig.height=6}
 plot0(c(0, 10),c(0, 10))
 sz <- 100
-seqx <- seq(0, 10, length.out=sz)
+seqx <- seq(0, 10, length.out = sz)
 seqy1 <- 0.2*seqx*runif(sz, 0, 1)
 seqy2 <- 4+0.25*seqx*runif(sz, 0, 1)
 seqy3 <- 8+0.25*seqx*runif(sz, 0, 1)
@@ -380,7 +380,7 @@ res <- pointsInPolygon(mat, cbind(c(4,8,8,4),c(4,4,8,8)))
 # Visual assessment
 plot0(c(0,10), c(0,10))
 graphics::polygon(c(4,8,8,4),c(4,4,8,8))
-graphics::points(mat[,1], mat[,2], col=res+1)
+graphics::points(mat[,1], mat[,2], col = res+1)
 ```
 
 

@@ -41,7 +41,7 @@ boxplot2 <- function(x, ..., probs = c(.05, 0.25, .5, .75, .95),
   stopifnot(all(probs <= 1))
   stopifnot(all(probs >= 0 ))
 
-  if (class(x) == "formula") {
+  if ("formula" %in% class(x)) {
     tmp <- aggregate(x, ..., FUN = quantile, probs = probs)
     val <- as.data.frame(t(tmp[,-1L]))
   } else {
