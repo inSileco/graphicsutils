@@ -29,9 +29,9 @@
 #' https://insileco.github.io/2017/09/20/gantt-charts-in-r/
 #'
 #' @export
-# @examples
-# ff <- ganttChart(dfGantt, mstone_lwd = 3, mstone_spacing = 0.6,
-#   lighten_done = 80)
+#' @examples
+#' ff <- ganttChart(dfGantt, mstone_lwd = 3, mstone_spacing = 0.6,
+#'   lighten_done = 80)
 
 
 ganttChart <- function(df, task_order = TRUE, mstone_add = task_order,

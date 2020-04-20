@@ -49,6 +49,10 @@ It might as well include any of the following optional columns:
 \item \code{col}: to custom the color of the tasks.
 }
 }
+\examples{
+ff <- ganttChart(dfGantt, mstone_lwd = 3, mstone_spacing = 0.6,
+  lighten_done = 80)
+}
 \references{
 https://insileco.github.io/2017/09/20/gantt-charts-in-r/
 }
