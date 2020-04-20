@@ -10,9 +10,10 @@ contrastColors(colors, how = "how_borw", alpha = FALSE)
 col2Hex(colors, alpha = FALSE)
 }
 \arguments{
-\item{colors}{vector of any of the three kinds of R color specifications, see \code{\link[grDevices]{col2rgb}}.}
+\item{colors}{vector of any of the three kinds of R color specifications, see \code{\link[grDevices:col2rgb]{grDevices::col2rgb()}}.}
 
-\item{how}{a method to contrast \code{colors}. Methods currently available are \code{how_borw}, \code{how_cent}, \code{how_oppo} and \code{how_prop}, see details.}
+\item{how}{a method to contrast \code{colors}. Methods currently available are
+\code{how_borw}, \code{how_cent}, \code{how_oppo} and \code{how_prop}, see details.}
 
 \item{alpha}{logical value indicating whether the alpha channel (opacity) values should be returned.}
 }
@@ -34,12 +35,11 @@ or add 127.
 }}
 
 \examples{
-#Example 1:
 contrastColors('blue')
 contrastColors('blue', how = 'how_prop')
 }
 \seealso{
-\link[grDevices]{col2rgb}
+\code{\link[grDevices:col2rgb]{grDevices::col2rgb()}}
 }
 \keyword{colors,}
 \keyword{contrast}

@@ -3,7 +3,7 @@
 #' @description A flexible Gantt Chart.
 #'
 #' @param df a data.frame (see details).
-#' @param order a logical. Should the tasks be ordered? See below for more details.
+#' @param task_order a logical. Should the tasks be ordered? See below for more details.
 #' @param mstone_add Should milestones be added?
 #' @param mstone_lwd lines width for the milestone.
 #' @param mstone_spacing spacing between milestones (expressed as figure unit).
@@ -29,16 +29,17 @@
 #' https://insileco.github.io/2017/09/20/gantt-charts-in-r/
 #'
 #' @export
-#' @examples
-#' ff <- ganttChart(dfGantt, mstone_lwd = 3, mstone_spacing = 0.6,
-#'   lighten_done = 80)
+# @examples
+# ff <- ganttChart(dfGantt, mstone_lwd = 3, mstone_spacing = 0.6,
+#   lighten_done = 80)
 
 
-ganttChart <- function(df, order = TRUE, mstone_add = order,
+ganttChart <- function(df, task_order = TRUE, mstone_add = task_order,
     mstone_spacing = 1, mstone_lwd = 2, axes = TRUE, mstone_font = 2,
     lighten_done = 0) {
     ##
     opar <- par(no.readonly = TRUE)
+    on.exit(par(opar))
     ## checks
     df$start <- as.Date(df$start)
     df$due <- as.Date(df$due)
@@ -50,11 +51,11 @@ ganttChart <- function(df, order = TRUE, mstone_add = order,
       if ("done" %in% names(df))
         df$done <- c("I", "C")[df$done + 1]
     }
-    if (order) df <- order_dfgantt(df)
+    if (task_order) df <- order_dfgantt(df)
     ## y coordinates
     tbm <- table(df$milestone)
     nms <- length(tbm)
-    if (!order & mstone_add) {
+    if (!task_order & mstone_add) {
       warning("spacing set to 0")
       mstone_spacing <- 0
      }
