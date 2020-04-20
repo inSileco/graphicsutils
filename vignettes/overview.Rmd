@@ -359,14 +359,14 @@ layout2()
 ## Gantt chart
 
 ```{r gantt, fig.width = 9}
-dfGantt
-par(lwd = 2)
-palette(gpuPalette(6)[c(2,4)])
-ganttChart(dfGantt, mstone_lwd = 4, mstone_spacing = 0.6, lighten_done = 80)
-palette(gpuPalette(6)[c(3,6)])
-ganttChart(dfGantt, order = FALSE, mstone_add = TRUE, lighten_done = -40)
-# restore default palette
-palette("default")
+# dfGantt
+# par(lwd = 2)
+# palette(gpuPalette(6)[c(2,4)])
+# ganttChart(dfGantt, mstone_lwd = 4, mstone_spacing = 0.6, lighten_done = 80)
+# palette(gpuPalette(6)[c(3,6)])
+# ganttChart(dfGantt, order = FALSE, mstone_add = TRUE, lighten_done = -40)
+# # restore default palette
+# palette("default")
 ```
 
 ## Are these points within this polygon?
