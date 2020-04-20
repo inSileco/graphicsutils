@@ -30,8 +30,8 @@
 #'
 #' @export
 #' @examples
-#'  ff <- ganttChart(dfGantt, mstone_lwd = 3, mstone_spacing = 0.6,
-#'    lighten_done = 80)
+#' ff <- ganttChart(dfGantt, mstone_lwd = 3, mstone_spacing = 0.6,
+#'   lighten_done = 80)
 
 
 ganttChart <- function(df, order = TRUE, mstone_add = order,
@@ -105,7 +105,7 @@ order_dfgantt <- function(df) {
   # use the minimum of the starting day among tasks of a milestone to sort
   # them out properly
   tmp <- merge(df,
-    aggregate(start~milestone, df, min),
+    aggregate(start ~ milestone, df, min),
     by = "milestone", suffixes = c("", "_tmp"))
   ord <- order(tmp$start_tmp, tmp$milestone, tmp$start, tmp$due,
     decreasing = c(FALSE, FALSE, FALSE, TRUE), method = "radix")
