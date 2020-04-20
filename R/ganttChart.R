@@ -9,7 +9,10 @@
 #' @param mstone_spacing spacing between milestones (expressed as figure unit).
 #' @param axes a logical. Should the axes be added?
 #' @param mstone_font font of milestone (ignore of `axes` is `FALSE`).
-#' @param lighten_done percentage use to lighten done task (see [lighten()]). Default set to 0, so the completed task of a given milestone have the same color as the pending ones.
+#' @param lighten_done percentage use to lighten done task (see [lighten()]).
+#' Default set to 0, so the completed task of a given milestone have the same
+#' color as the pending ones.
+#'
 #' @author David Beauchesne, Kevin Cazelles
 #'
 #' @details
@@ -112,8 +115,8 @@ order_dfgantt <- function(df) {
 
 mstone_add <- function(df) {
   tmp <- merge(
-    aggregate(start~milestone, df, min),
-    aggregate(due~milestone, df, max),
+    aggregate(start ~ milestone, df, min),
+    aggregate(due ~ milestone, df, max),
     by = "milestone"
   )
   tmp$task <- tmp$milestone
@@ -123,7 +126,7 @@ mstone_add <- function(df) {
   tmp$done <- "M"
   #
   if ("col" %in% names(df))
-    tmp$col <- aggregate(col~milestone, df, blendColors)
+    tmp$col <- aggregate(col ~ milestone, df, blendColors)
   rbind(df, tmp)
 }
 

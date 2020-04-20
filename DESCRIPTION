@@ -9,9 +9,9 @@ Authors@R: c(
   person("David", "Beauchesne", role = "aut", comment = c(ORCID = "0000-0002-3590-8161")),
   person(given = "Steve", family = "Vissault", comment = c(ORCID = "0000-0002-0866-4376"), role = "aut")
   )
-Description: A collection of functions to make the customizing graphics-based plots easier.
+Description: A collection of functions to easily customize graphics-based plots.
 Depends:
-    R (>= 3.0.0)
+    R (>= 3.5.0)
 Imports:
     grDevices,
     graphics,
@@ -29,7 +29,7 @@ LinkingTo: Rcpp
 NeedsCompilation: yes
 URL: https://github.com/inSileco/graphicsutils
 BugReports: https://github.com/inSileco/graphicsutils/issues
-License: GPL-2
+License: GPL-3
 Encoding: UTF-8
 RoxygenNote: 7.1.0
 VignetteBuilder: knitr
