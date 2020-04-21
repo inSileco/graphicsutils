@@ -1,4 +1,4 @@
-# graphicsutils (devel)
+# graphicsutils 1.5.0
 
 * New function `colorScale()` to add a custom color scale on a plot.
 * Fix cross-references throughout the documentation (see #19).
