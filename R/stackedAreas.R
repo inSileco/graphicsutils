@@ -1,4 +1,4 @@
-#' Stacked areas chart.
+#' Stacked areas chart
 #'
 #' Draw a stacked areas chart.
 #'
@@ -11,7 +11,7 @@
 #' @param col vector of colors, repeated if too small.
 #' @param add logical. Should stacked areas be added on the current plot?
 #' @param pickcolors logical. If `TRUE`, [pickColors()] is called to select colors.
-#' @param lty the line type (see \code{\link{par}} documentation)
+#' @param lty the line type (see [graphics::par()] documentation)
 #' @param lwd the line width (see [graphics::par()] documentation)
 #' @param border The color to draw the border. The default, `NULL`, means to use `graphics::par('fg')`. Use \code{border=NA} to omit borders.
 #' @param main a main title for the plot.

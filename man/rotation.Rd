@@ -21,7 +21,7 @@ rotation(x, y, rot = 90, xrot = mean(x), yrot = mean(y), rad = FALSE)
 Rotates a set of points.
 }
 \details{
-This function returns the coordinates of the points after rotation.
+Returns the coordinates of the points after rotation.
 If the coordinates of the rotation center are not specified, then the
 rotation center is the centroid of the points to be rotated.
 }

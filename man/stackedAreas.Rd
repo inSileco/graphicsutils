@@ -2,7 +2,7 @@
 % Please edit documentation in R/stackedAreas.R
 \name{stackedAreas}
 \alias{stackedAreas}
-\title{Stacked areas chart.}
+\title{Stacked areas chart}
 \usage{
 stackedAreas(
   val,
@@ -41,7 +41,7 @@ stackedAreas(
 
 \item{pickcolors}{logical. If \code{TRUE}, \code{\link[=pickColors]{pickColors()}} is called to select colors.}
 
-\item{lty}{the line type (see \code{\link{par}} documentation)}
+\item{lty}{the line type (see \code{\link[graphics:par]{graphics::par()}} documentation)}
 
 \item{lwd}{the line width (see \code{\link[graphics:par]{graphics::par()}} documentation)}
 

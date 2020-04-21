@@ -11,7 +11,7 @@ Authors@R: c(
   )
 Description: A collection of functions to easily customize graphics-based plots.
 Depends:
-    R (>= 3.5.0)
+    R (>= 3.1.0)
 Imports:
     grDevices,
     graphics,
@@ -23,10 +23,12 @@ Imports:
     Rcpp (>= 0.12.9)
 Suggests:
     knitr,
+    plotrix,
     rmarkdown,
     testthat
 LinkingTo: Rcpp
 NeedsCompilation: yes
+LazyData: true
 URL: https://github.com/inSileco/graphicsutils
 BugReports: https://github.com/inSileco/graphicsutils/issues
 License: GPL-3

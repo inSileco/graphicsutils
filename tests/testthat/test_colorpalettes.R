@@ -30,8 +30,8 @@ dev.off()
 
 
 test_that("checking areas", {
-  expect_equal(res1, c("#000000", "#FF0000", "#00CD00", "#0000FF", "#00FFFF", "#FF00FF", "#FFFF00", "#BEBEBE"))
-  expect_equal(res2, c("#000000", "#FF0000"))
+  expect_equal(tolower(res1), col2Hex(palette()))
+  expect_equal(tolower(res2), col2Hex(palette())[1:2])
 })
 #
 

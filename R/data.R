@@ -1,6 +1,6 @@
 #' dfGantt
 #'
-#' A data frame to showcase \code{\link[graphicsutils]{ganttChart}}.
+#' A data frame to showcase [ganttChart()].
 #'
 #' @docType data
 #' @keywords datasets Gantt

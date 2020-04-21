@@ -3,26 +3,27 @@
 #' For a given set of colors, `contrastColors` returns an associated set
 #' of colors.
 #'
-#' @param colors vector of any of the three kinds of R color specifications, see \code{\link[grDevices]{col2rgb}}.
-#' @param how a method to contrast `colors`. Methods currently available are \code{how_borw}, \code{how_cent}, \code{how_oppo} and \code{how_prop}, see details.
+#' @param colors vector of any of the three kinds of R color specifications, see [grDevices::col2rgb()].
+
+#' @param how a method to contrast `colors`. Methods currently available are
+#' `how_borw`, `how_cent`, `how_oppo` and `how_prop`, see details.
+
 #' @param alpha logical value indicating whether the alpha channel (opacity) values should be returned.
 #'
 #' @keywords colors, contrast
 #'
 #' @details
-#' Based on the sum of colors' saturation \code{how_borw} returns black or white,
-#' \code{how_prop} proportionally remove or add some saturation. \code{how_oppo}
-#' opposes the color (255-x) and \code{how_cent} centers the columns, i.e. remove
+#' Based on the sum of colors' saturation `how_borw` returns black or white,
+#' `how_prop` proportionally remove or add some saturation. `how_oppo`
+#' opposes the color (255-x) and `how_cent` centers the columns, i.e. remove
 #' or add 127.
 #'
 #' @seealso
-#' \link[grDevices]{col2rgb}
+#' [grDevices::col2rgb()]
 #'
-#' @importFrom grDevices col2rgb
 #' @export
 #'
 #' @examples
-#' #Example 1:
 #' contrastColors('blue')
 #' contrastColors('blue', how = 'how_prop')
 
