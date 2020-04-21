@@ -4,8 +4,8 @@ cache: packages
 
 jobs:
   include:
-    - stage: Check package
-      r: oldrel
+    # - stage: Check package
+    #   r: oldrel
     - stage: Check package, code coverage and deploy pkgdown website
       os: linux
       dist: xenial
