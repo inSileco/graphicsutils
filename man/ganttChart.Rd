@@ -40,10 +40,10 @@ A flexible Gantt Chart.
 \details{
 Argument \code{df} should be a data frame with the following columns (in any order):
 \itemize{
-\item \code{milestone}: milestones names
-\item \code{due}: due date (will be converted into a date with \code{\link[=as.Date]{as.Date()}})
-\item \code{start}: start date (will be converted into a date with \code{\link[=as.Date]{as.Date()}})
-\item \code{task}: tasks names
+\item \code{milestone}: milestones names,
+\item \code{due}: due date (will be converted into a date with \code{\link[=as.Date]{as.Date()}}),
+\item \code{start}: start date (will be converted into a date with \code{\link[=as.Date]{as.Date()}}),
+\item \code{task}: tasks names.
 It might as well include any of the following optional columns:
 \item \code{done}: vector of logicals indicating whether the task if completed
 \item \code{col}: to custom the color of the tasks.

@@ -17,13 +17,13 @@
 #'
 #' @details
 #' Argument `df` should be a data frame with the following columns (in any order):
-#'  - `milestone`: milestones names
-#'  - `due`: due date (will be converted into a date with [as.Date()])
-#'  - `start`: start date (will be converted into a date with [as.Date()])
-#'  - `task`: tasks names
+#'  * `milestone`: milestones names,
+#'  * `due`: due date (will be converted into a date with [as.Date()]),
+#'  * `start`: start date (will be converted into a date with [as.Date()]),
+#'  * `task`: tasks names.
 #' It might as well include any of the following optional columns:
-#'  - `done`: vector of logicals indicating whether the task if completed
-#'  - `col`: to custom the color of the tasks.
+#'  * `done`: vector of logicals indicating whether the task if completed
+#'  * `col`: to custom the color of the tasks.
 #'
 #' @references
 #' https://insileco.github.io/2017/09/20/gantt-charts-in-r/
@@ -49,7 +49,7 @@ ganttChart <- function(df, task_order = TRUE, mstone_add = task_order,
       df <- mstone_add(df)
     } else {
       if ("done" %in% names(df))
-        df$done <- c("I", "C")[df$done + 1]
+        df$done <- c("I", "C")[df$done + 1] # 
     }
     if (task_order) df <- order_dfgantt(df)
     ## y coordinates
@@ -108,6 +108,7 @@ order_dfgantt <- function(df) {
   tmp <- merge(df,
     aggregate(start ~ milestone, df, min),
     by = "milestone", suffixes = c("", "_tmp"))
+  print(tmp)
   ord <- order(tmp$start_tmp, tmp$milestone, tmp$start, tmp$due,
     decreasing = c(FALSE, FALSE, FALSE, TRUE), method = "radix")
   tmp[ord, -ncol(tmp)]

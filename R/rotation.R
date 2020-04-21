@@ -12,7 +12,7 @@
 #'
 #' @export
 #'
-#' @details This function returns the coordinates of the points after rotation.
+#' @details Returns the coordinates of the points after rotation.
 #' If the coordinates of the rotation center are not specified, then the
 #' rotation center is the centroid of the points to be rotated.
 #'
