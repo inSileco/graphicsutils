@@ -6,6 +6,13 @@ jobs:
   include:
     # - stage: Check package
     #   r: oldrel
+    - stage: Check package
+      os: osx
+      r: release
+    - stage: Check package
+      os: linux
+      dist: bionic
+      r: devel
     - stage: Check package, code coverage and deploy pkgdown website
       os: linux
       dist: xenial
@@ -28,13 +35,6 @@ jobs:
         on:
           branch: master
         local_dir: docs
-    - stage: Check package
-      os: osx
-      r: release
-    - stage: Check package
-      os: linux
-      dist: bionic
-      r: devel
 
 notifications:
   email:
