@@ -1,7 +1,7 @@
 Package: graphicsutils
 Type: Package
 Title: Collection of graphics utilities
-Version: 1.4.9000
+Version: 1.4.0.9000
 Date: 2020-04-20
 Authors@R: c(
   person("Kevin", "Cazelles", role = c("aut", "cre"), email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874")),
@@ -29,7 +29,7 @@ Suggests:
 LinkingTo: Rcpp
 NeedsCompilation: yes
 LazyData: true
-URL: https://github.com/inSileco/graphicsutils
+URL: https://github.com/inSileco/graphicsutils, http://insileco.github.io/graphicsutils/
 BugReports: https://github.com/inSileco/graphicsutils/issues
 License: GPL-3
 Encoding: UTF-8

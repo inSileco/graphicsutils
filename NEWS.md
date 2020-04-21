@@ -1,5 +1,6 @@
 # graphicsutils (devel)
 
+* New function `colorScale()` to add a custom color scale on a plot.
 * Fix cross-references throughout the documentation (see #19).
 * Fix a bug in `darken()` and `darken()` introduced in 1.4.0 (via #17).
 * `inst/News.Rd` has been converted and moved to `./NEWS.md`.
