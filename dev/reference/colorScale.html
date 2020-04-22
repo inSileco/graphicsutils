@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">graphicsutils</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">1.4.0.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">1.5.0.9000</span>
       </span>
     </div>
 
@@ -141,6 +141,7 @@
   <span class='kw'>horiz</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>percx</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>percy</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>adj</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>labels.cex</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"legend"</span>,
   <span class='kw'>title.cex</span> <span class='kw'>=</span> <span class='fl'>1.2</span>
@@ -180,6 +181,14 @@
     <tr>
       <th>percy</th>
       <td><p>size of the color scale along y axis.</p></td>
+    </tr>
+    <tr>
+      <th>adj</th>
+      <td><p>adjust the position labels position. If <code>adj = 0</code> then labels are
+at the bottom if <code>horiz = TRUE</code> and on the the left if <code>horiz = FALSE</code>. If
+<code>adj = 1</code>, labels are at the top if <code>horiz = TRUE</code> and on the the right if
+<code>horiz = FALSE</code>. So far if <code>horiz = TRUE</code>, <code>title</code> and <code>labels</code> are on
+opposite sides.</p></td>
     </tr>
     <tr>
       <th>labels.cex</th>
