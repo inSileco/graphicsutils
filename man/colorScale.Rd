@@ -13,6 +13,7 @@ colorScale(
   horiz = TRUE,
   percx = NULL,
   percy = NULL,
+  adj = 0,
   labels.cex = 1,
   title = "legend",
   title.cex = 1.2
@@ -34,6 +35,12 @@ colorScale(
 \item{percx}{size of the color scale along x axis.}
 
 \item{percy}{size of the color scale along y axis.}
+
+\item{adj}{adjust the position labels position. If \code{adj = 0} then labels are
+at the bottom if \code{horiz = TRUE} and on the the left if \code{horiz = FALSE}. If
+\code{adj = 1}, labels are at the top if \code{horiz = TRUE} and on the the right if
+\code{horiz = FALSE}. So far if \code{horiz = TRUE}, \code{title} and \code{labels} are on
+opposite sides.}
 
 \item{labels.cex}{magnification to be used for labels.}
 

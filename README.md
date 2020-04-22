@@ -1,6 +1,4 @@
-`graphicsutils` a set of `graphics`-based utilities
-===================================================
-
+# graphicsutils
 [![Build
 Status](https://travis-ci.org/inSileco/graphicsutils.svg?branch=master)](https://travis-ci.org/inSileco/graphicsutils)
 [![Build
@@ -9,8 +7,7 @@ status](https://ci.appveyor.com/api/projects/status/330p7f0djhpl998q?svg=true)](
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 
 
-Description
------------
+## Description
 
 The *graphicsutils* R package adds various graphics utilities
 based on the core package *graphics*.  Similar functions may already exist
@@ -27,32 +24,28 @@ gridGraphics
 Package](https://journal.r-project.org/archive/2015-1/murrell.pdf).
 
 
-
-
-Installation
-------------
+## Installation
 
 The easiest way to install `graphicsutils` is to use the
 [*devtools*](http://cran.r-project.org/web/packages/devtools/index.html)
 (or [*githubinstall*](http://cran.r-project.org/web/packages/githubinstall/index.html))package:
 
-    install.packages("remotes")
-    remotes::install_github("inSileco/graphicsutils")
+```R
+install.packages("remotes")
+remotes::install_github("inSileco/graphicsutils")
+```
 
 Then, load it:
 
-    library(graphicsutils)
+```R
+library(graphicsutils)
+```
 
-
-
-Main features
--------------
+## Main features
 
 See our [tour vignette](http://insileco.github.io/graphicsutils/articles/overview.html) to have a overview of the functionalities included in the package.
 
 
-
-Code of Conduct
----------------
+## Code of Conduct
 
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

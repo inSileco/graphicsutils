@@ -13,7 +13,7 @@
 #' @param pickcolors logical. If `TRUE`, [pickColors()] is called to select colors.
 #' @param lty the line type (see [graphics::par()] documentation)
 #' @param lwd the line width (see [graphics::par()] documentation)
-#' @param border The color to draw the border. The default, `NULL`, means to use `graphics::par('fg')`. Use \code{border=NA} to omit borders.
+#' @param border The color to draw the border. The default, `NULL`, means to use `graphics::par('fg')`. Use `border = NA` to omit borders.
 #' @param main a main title for the plot.
 #' @param xlab a label for the x axis, defaults to a description of `x`.
 #' @param ylab a label for the y axis, defaults to a description of `y`.

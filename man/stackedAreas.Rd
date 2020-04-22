@@ -45,7 +45,7 @@ stackedAreas(
 
 \item{lwd}{the line width (see \code{\link[graphics:par]{graphics::par()}} documentation)}
 
-\item{border}{The color to draw the border. The default, \code{NULL}, means to use \code{graphics::par('fg')}. Use \code{border=NA} to omit borders.}
+\item{border}{The color to draw the border. The default, \code{NULL}, means to use \code{graphics::par('fg')}. Use \code{border = NA} to omit borders.}
 
 \item{main}{a main title for the plot.}
 

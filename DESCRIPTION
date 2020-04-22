@@ -1,8 +1,8 @@
 Package: graphicsutils
 Type: Package
 Title: Collection of graphics utilities
-Version: 1.5.0
-Date: 2020-04-21
+Version: 1.5.0.9000
+Date: 2020-04-22
 Authors@R: c(
   person("Kevin", "Cazelles", role = c("aut", "cre"), email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874")),
   person("Nicolas", "Casajus", role = "aut", comment = c(ORCID = "0000-0002-5537-5294")),
