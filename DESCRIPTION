@@ -25,7 +25,8 @@ Suggests:
     knitr,
     plotrix,
     rmarkdown,
-    testthat
+    testthat,
+    maps
 LinkingTo: Rcpp
 NeedsCompilation: yes
 LazyData: true
