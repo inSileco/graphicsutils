@@ -126,13 +126,24 @@
       <small>Source: <a href='https://github.com/inSileco/graphicsutils/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="graphicsutils-1-5-9000" class="section level1">
+<h1 class="page-header" data-toc-text="1.5.9000">
+<a href="#graphicsutils-1-5-9000" class="anchor"></a>graphicsutils 1.5.9000</h1>
+<ul>
+<li>
+<code>colorScale()</code> gains argument <code>adj</code> to adjust labels position.</li>
+<li>new function <code>addFrame()</code>: a complementary function of <code>frameIt()</code> (via <a href='https://github.com/inSileco/graphicsutils/issues/24'>#24</a>).</li>
+<li>new function <code>addAxis()</code>: a function to add °N, °W, etc. to axis labels (via <a href='https://github.com/inSileco/graphicsutils/issues/24'>#24</a>).</li>
+<li>new function <code>addGrid()</code>: an combination of <code><a href="https://rdrr.io/r/graphics/box.html">box()</a></code> and <code><a href="https://rdrr.io/r/graphics/grid.html">grid()</a></code> (via <a href='https://github.com/inSileco/graphicsutils/issues/24'>#24</a>).</li>
+</ul>
+</div>
     <div id="graphicsutils-1-5-0" class="section level1">
 <h1 class="page-header" data-toc-text="1.5.0">
 <a href="#graphicsutils-1-5-0" class="anchor"></a>graphicsutils 1.5.0</h1>
 <ul>
-<li>New function <code>colorScale()</code> to add a custom color scale on a plot.</li>
+<li>New function <code>colorScale()</code> to add custom color scales on plots.</li>
 <li>Fix cross-references throughout the documentation (see <a href='https://github.com/inSileco/graphicsutils/issues/19'>#19</a>).</li>
-<li>Fix a bug in <code>darken()</code> and <code>darken()</code> introduced in 1.4.0 (via <a href='https://github.com/inSileco/graphicsutils/issues/17'>#17</a>).</li>
+<li>Fix a bug in <code>darken()</code> and <code>lighten()</code> introduced in 1.4.0 (via <a href='https://github.com/inSileco/graphicsutils/issues/17'>#17</a>).</li>
 <li>
 <code>inst/News.Rd</code> has been converted and moved to <code>./NEWS.md</code>.</li>
 </ul>
@@ -269,30 +280,30 @@
 <h1 class="page-header" data-toc-text="1.1.0">
 <a href="#graphicsutils-1-1-0-2015-11-12" class="anchor"></a>graphicsutils 1.1.0 (2015-11-12)</h1>
 <ul>
-<li>New R function <code>arrows2()</code> to draw pretty arrows.</li>
-<li>New R function <code>circle()</code> to draw circle.</li>
-<li>New R functions <code>compassRose1()</code>, <code>compassRose2()</code> to draw compass rose.</li>
-<li>New R function <code>donut()</code> to draw donut.</li>
-<li>New R function <code>ellipse()</code> to draw ellipse.</li>
-<li>New R function <code>frames()</code> to add a frame to a given.</li>
-<li>New R function <code>homothety()</code> to do homthethy.</li>
-<li>New R function <code>getAngle2d()</code> to get the angles between two vectors.</li>
-<li>New R function <code>getIcon()</code>, <code>getIconNames()</code> to get Font-Awesome icons.</li>
-<li>New R function <code>layout2()</code> to create layout interecatively</li>
-<li>New R function <code>pchImage()</code> to use image as plotting points</li>
-<li>New R functions <code>percX()</code> (<code>percY()</code>) to get the x (y) coordinate from a percentage of total x (y) axis length.</li>
-<li>New R function <code>pickColors()</code> to interactively select colors .</li>
-<li>New R function <code>plotAreaColor()</code> to color the plot region.</li>
-<li>New R function <code>plotImage()</code> to ease the creation of plot including an image.</li>
-<li>New R function <code>plot0()</code> to draw empty plots.</li>
-<li>New R function <code>polarPlot()</code> to draw polar plots.</li>
-<li>New R function <code>prettyRange()</code> to get pretty range from a set of values.</li>
-<li>New R function <code>rhombi()</code> to draw rhombi.</li>
-<li>New R function <code>rotation()</code> to rotate a set of coordinates.</li>
-<li>New R function <code>showPalette()</code> to show color palettes.</li>
-<li>New R function <code>stackedareas()</code> to create stacked areas charts.</li>
-<li>New R function <code>translation()</code> to translate a set of points.</li>
-<li>New R function <code>vecfield2d()</code> to create vector fields.</li>
+<li>New function <code>arrows2()</code> to draw pretty arrows.</li>
+<li>New function <code>circle()</code> to draw circle.</li>
+<li>New functions <code>compassRose1()</code>, <code>compassRose2()</code> to draw compass rose.</li>
+<li>New function <code>donut()</code> to draw donut.</li>
+<li>New function <code>ellipse()</code> to draw ellipse.</li>
+<li>New function <code>frames()</code> to add a frame to a given.</li>
+<li>New function <code>homothety()</code> to do homthethy.</li>
+<li>New function <code>getAngle2d()</code> to get the angles between two vectors.</li>
+<li>New function <code>getIcon()</code>, <code>getIconNames()</code> to get Font-Awesome icons.</li>
+<li>New function <code>layout2()</code> to create layout interecatively</li>
+<li>New function <code>pchImage()</code> to use image as plotting points</li>
+<li>New functions <code>percX()</code> (<code>percY()</code>) to get the x (y) coordinate from a percentage of total x (y) axis length.</li>
+<li>New function <code>pickColors()</code> to interactively select colors .</li>
+<li>New function <code>plotAreaColor()</code> to color the plot region.</li>
+<li>New function <code>plotImage()</code> to ease the creation of plot including an image.</li>
+<li>New function <code>plot0()</code> to draw empty plots.</li>
+<li>New function <code>polarPlot()</code> to draw polar plots.</li>
+<li>New function <code>prettyRange()</code> to get pretty range from a set of values.</li>
+<li>New function <code>rhombi()</code> to draw rhombi.</li>
+<li>New function <code>rotation()</code> to rotate a set of coordinates.</li>
+<li>New function <code>showPalette()</code> to show color palettes.</li>
+<li>New function <code>stackedareas()</code> to create stacked areas charts.</li>
+<li>New function <code>translation()</code> to translate a set of points.</li>
+<li>New function <code>vecfield2d()</code> to create vector fields.</li>
 </ul>
 </div>
   </div>
