@@ -2,11 +2,11 @@
 #'
 #' This function adds cardinal directions to axis labels in a map.
 #'
-#' @param side An integer between 1 (bottom x-Axis) and 4 (right y-Axis).
-#' @param at Values on the axis to add labels.
-#' @param mgp Customize axis positions. See `par()`.
-#' @param digits Number of digits of labels.
-#' @param ... Other parameters to pass to `axis()`.
+#' @param side an integer between 1 (bottom x-Axis) and 4 (right y-Axis).
+#' @param at values on the axis to add labels.
+#' @param mgp customize axis positions. See `par()`.
+#' @param digits number of digits of labels.
+#' @param ... other parameters to pass to `axis()`.
 #'
 #' @importFrom graphics par axTicks axis
 #' @export
@@ -25,13 +25,16 @@
 
 
 addAxis <- function(side, at = axTicks(side), mgp = par()$mgp, digits = 0,
-                     ...) {
+                    ...) {
 
-  opar <- par(no.readonly = TRUE)
+  opar  <- par(no.readonly = TRUE)
+  on.exit(par(opar, no.readonly = TRUE))
+
+  owarn <- options()$warn
+  on.exit(options(warn = owarn))
 
   options(warn = -1)
   par(mgp = mgp)
-  options(warn = 0)
 
   if (side %in% c(1, 3)) {
 
@@ -51,5 +54,5 @@ addAxis <- function(side, at = axTicks(side), mgp = par()$mgp, digits = 0,
 
   axis(side = side, at = at, labels = labels, ...)
 
-  par(opar, no.readonly = TRUE)
+  invisible(NULL)
 }

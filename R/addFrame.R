@@ -4,18 +4,18 @@
 #' new one) as an ensemble of small rectangles whose colors, position and width
 #' can be specified by user.
 #'
-#' @param at_x Positions on the x-Axis of the borders of rectangles.
-#' @param at_y Positions on the y-Axis of the borders of rectangles.
-#' @param col One or several colors of rectangles background.
-#' @param border Color of rectangles border.
-#' @param width Width of the frame.
-#' @param lwd Thickness of rectangles border (and grid).
-#' @param lty Type of rectangles border lines (and grid).
-#' @param asp Aspect ratio of the plot (see `plot.window()`).
-#' @param grid Boolean. If `TRUE` adds vertical and horizontal lines at `at_x`
+#' @param at_x positions on the x-Axis of the borders of rectangles.
+#' @param at_y positions on the y-Axis of the borders of rectangles.
+#' @param col one or several colors of rectangles background.
+#' @param border color of rectangles border.
+#' @param width width of the frame.
+#' @param lwd thickness of rectangles border (and grid).
+#' @param lty type of rectangles border lines (and grid).
+#' @param asp aspect ratio of the plot (see `plot.window()`).
+#' @param grid a boolean. If `TRUE` adds vertical and horizontal lines at `at_x`
 #'             and `at_y`.
-#' @param add Boolean. If `TRUE` adds the frame to an existing plot.
-#' @param ... Other graphical parameters as in `par()`.
+#' @param add a boolean. If `TRUE` adds the frame to an existing plot.
+#' @param ... other graphical parameters as in `par()`.
 #'
 #' @details
 #' If `add = FALSE`, a new plot is drawn with `xlim = ylim = c(-1, 1)`. Argument
@@ -56,13 +56,15 @@
 
 
 addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
-                      width = NULL, lwd = 1, lty = 1, asp = NA, grid = FALSE,
-                      add = FALSE, ...) {
+                     width = NULL, lwd = 1, lty = 1, asp = NA, grid = FALSE,
+                     add = FALSE, ...) {
 
 
   if (length(border) > 1) stop("Argument 'border' must be a single color.")
 
   opar <- par(no.readonly = TRUE)
+  on.exit(par(opar, no.readonly = TRUE))
+
   par(...)
 
   if (!add) {
@@ -391,5 +393,5 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
     lty    = lty
   )
 
-  par(opar, no.readonly = TRUE)
+  invisible(NULL)
 }

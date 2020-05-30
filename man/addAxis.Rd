@@ -7,15 +7,15 @@
 addAxis(side, at = axTicks(side), mgp = par()$mgp, digits = 0, ...)
 }
 \arguments{
-\item{side}{An integer between 1 (bottom x-Axis) and 4 (right y-Axis).}
+\item{side}{an integer between 1 (bottom x-Axis) and 4 (right y-Axis).}
 
-\item{at}{Values on the axis to add labels.}
+\item{at}{values on the axis to add labels.}
 
-\item{mgp}{Customize axis positions. See \code{par()}.}
+\item{mgp}{customize axis positions. See \code{par()}.}
 
-\item{digits}{Number of digits of labels.}
+\item{digits}{number of digits of labels.}
 
-\item{...}{Other parameters to pass to \code{axis()}.}
+\item{...}{other parameters to pass to \code{axis()}.}
 }
 \description{
 This function adds cardinal directions to axis labels in a map.

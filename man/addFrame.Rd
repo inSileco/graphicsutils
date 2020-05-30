@@ -19,28 +19,28 @@ addFrame(
 )
 }
 \arguments{
-\item{at_x}{Positions on the x-Axis of the borders of rectangles.}
+\item{at_x}{positions on the x-Axis of the borders of rectangles.}
 
-\item{at_y}{Positions on the y-Axis of the borders of rectangles.}
+\item{at_y}{positions on the y-Axis of the borders of rectangles.}
 
-\item{col}{One or several colors of rectangles background.}
+\item{col}{one or several colors of rectangles background.}
 
-\item{border}{Color of rectangles border.}
+\item{border}{color of rectangles border.}
 
-\item{width}{Width of the frame.}
+\item{width}{width of the frame.}
 
-\item{lwd}{Thickness of rectangles border (and grid).}
+\item{lwd}{thickness of rectangles border (and grid).}
 
-\item{lty}{Type of rectangles border lines (and grid).}
+\item{lty}{type of rectangles border lines (and grid).}
 
-\item{asp}{Aspect ratio of the plot (see \code{plot.window()}).}
+\item{asp}{aspect ratio of the plot (see \code{plot.window()}).}
 
-\item{grid}{Boolean. If \code{TRUE} adds vertical and horizontal lines at \code{at_x}
+\item{grid}{a boolean. If \code{TRUE} adds vertical and horizontal lines at \code{at_x}
 and \code{at_y}.}
 
-\item{add}{Boolean. If \code{TRUE} adds the frame to an existing plot.}
+\item{add}{a boolean. If \code{TRUE} adds the frame to an existing plot.}
 
-\item{...}{Other graphical parameters as in \code{par()}.}
+\item{...}{other graphical parameters as in \code{par()}.}
 }
 \description{
 This function adds a checkerboard-like frame around an existing plot (or a

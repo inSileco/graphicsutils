@@ -16,21 +16,21 @@ addGrid(
 )
 }
 \arguments{
-\item{at_x}{Coordinates on the x-Axis where to draw vertical lines.}
+\item{at_x}{coordinates on the x-Axis where to draw vertical lines.}
 
-\item{at_y}{Coordinates on the y-Axis where to draw horizontal lines.}
+\item{at_y}{coordinates on the y-Axis where to draw horizontal lines.}
 
-\item{col}{The color of the background.}
+\item{col}{the color of the background.}
 
-\item{border}{The color of lines (and box).}
+\item{border}{the color of lines (and box).}
 
-\item{lwd}{The width of lines (see \code{par()}).}
+\item{lwd}{the width of lines (see \code{par()}).}
 
-\item{lty}{The type of lines (see \code{par()}).}
+\item{lty}{the type of lines (see \code{par()}).}
 
-\item{box}{A boolean. If \code{TRUE} add a box around the plot area.}
+\item{box}{a boolean. If \code{TRUE} add a box around the plot area.}
 
-\item{...}{Other graphical parameters as in \code{par()}.}
+\item{...}{other graphical parameters as in \code{par()}.}
 }
 \description{
 This function adds a grid to an existing plot (like \code{box()}). User can

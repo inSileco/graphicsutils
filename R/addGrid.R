@@ -5,14 +5,14 @@
 #' horizontal lines respectively. User can also color the background of the plot
 #' area and add a box around this area (if required).
 #'
-#' @param at_x Coordinates on the x-Axis where to draw vertical lines.
-#' @param at_y Coordinates on the y-Axis where to draw horizontal lines.
-#' @param col The color of the background.
-#' @param border The color of lines (and box).
-#' @param lwd The width of lines (see `par()`).
-#' @param lty The type of lines (see `par()`).
-#' @param box A boolean. If `TRUE` add a box around the plot area.
-#' @param ... Other graphical parameters as in `par()`.
+#' @param at_x coordinates on the x-Axis where to draw vertical lines.
+#' @param at_y coordinates on the y-Axis where to draw horizontal lines.
+#' @param col the color of the background.
+#' @param border the color of lines (and box).
+#' @param lwd the width of lines (see `par()`).
+#' @param lty the type of lines (see `par()`).
+#' @param box a boolean. If `TRUE` add a box around the plot area.
+#' @param ... other graphical parameters as in `par()`.
 #'
 #' @details
 #' If user does not specify `at_x` and `at_y`, the grid is aligned with the tick
@@ -38,9 +38,11 @@
 
 
 addGrid <- function(at_x, at_y, col = NA, border = "black", lwd = 1, lty = 1,
-                     box = FALSE, ...) {
+                    box = FALSE, ...) {
 
   opar <- par(no.readonly = TRUE)
+  on.exit(par(opar, no.readonly = TRUE))
+
   par(...)
 
   if (missing(at_x) && missing(at_y)) {
@@ -109,5 +111,5 @@ addGrid <- function(at_x, at_y, col = NA, border = "black", lwd = 1, lty = 1,
     }
   }
 
-  par(opar, no.readonly = TRUE)
+  invisible(NULL)
 }
