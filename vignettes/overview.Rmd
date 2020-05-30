@@ -126,6 +126,8 @@ pchImage(0, 0, file=pathLogo, cex.x =4.5, cex.y=4, col="grey25", angle=25)
 
 ## Add a frame to your plot
 
+### frameIt()
+
 Default frame.
 
 ```{r frameIt}
@@ -140,6 +142,26 @@ plot0()
 frameIt(cex.x=1.5, col=c(2,3), border=1)
 ```
 
+#### addFrame()
+
+```{r frame3}
+addFrame()
+addFrame(grid = TRUE)
+addFrame(grid = TRUE, lwd = 0.25, lty = 3)
+addFrame(at_x = seq(-1, 1, by = 0.1))
+## Frame width
+addFrame(width = 0.25)
+addFrame(at_x = seq(-1, 1, by = 0.01), width = 1.00)
+## Colors
+addFrame(col = 1:6)
+addFrame(col = "lightgray", border = "darkgray")
+## Adding to a plot
+maps::map()
+addFrame(grid = TRUE, add = TRUE, width = 5)
+maps::map.axes()
+## Other graphical parameters
+addFrame(bg = "darkgray", xaxs = "i", yaxs = "i")
+```
 
 ## Add an envelop
 

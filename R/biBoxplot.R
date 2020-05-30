@@ -2,8 +2,7 @@
 #'
 #' Draws boxplots and bi-boxplots.
 #'
-#' @param df1 first set of boxplots.
-#' @param df2 first set of boxplots.
+#' @param df1,df2 first and second set of boxplots.
 #' @param probs numeric vector of five probabilities, see [stats::quantile()].
 #' @param width a vector giving the relative widths of the boxes making up the plot.
 #' @param sta_wd staple width.
