@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a color scale — colorScale • graphicsutils</title>
+<title>Add a Grid to a Plot — addGrid • graphicsutils</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,11 @@
 
 
 
-<meta property="og:title" content="Create a color scale — colorScale" />
-<meta property="og:description" content="Simple and flexible color scale." />
+<meta property="og:title" content="Add a Grid to a Plot — addGrid" />
+<meta property="og:description" content="This function adds a grid to an existing plot (like box()). User can
+specify coordinates on x- and/or y-axis where to draw vertical and/or
+horizontal lines respectively. User can also color the background of the plot
+area and add a box around this area (if required)." />
 
 
 <meta name="robots" content="noindex">
@@ -123,90 +126,74 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a color scale</h1>
-    <small class="dont-index">Source: <a href='https://github.com/inSileco/graphicsutils/blob/master/R/colorScale.R'><code>R/colorScale.R</code></a></small>
-    <div class="hidden name"><code>colorScale.Rd</code></div>
+    <h1>Add a Grid to a Plot</h1>
+    <small class="dont-index">Source: <a href='https://github.com/inSileco/graphicsutils/blob/master/R/addGrid.R'><code>R/addGrid.R</code></a></small>
+    <div class="hidden name"><code>addGrid.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Simple and flexible color scale.</p>
+    <p>This function adds a grid to an existing plot (like <code><a href='https://rdrr.io/r/graphics/box.html'>box()</a></code>). User can
+specify coordinates on x- and/or y-axis where to draw vertical and/or
+horizontal lines respectively. User can also color the background of the plot
+area and add a box around this area (if required).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>colorScale</span>(
-  <span class='no'>x</span>,
-  <span class='no'>y</span>,
-  <span class='no'>col</span>,
-  <span class='kw'>at</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>labels</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>horiz</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>percx</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>percy</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>adj</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>labels.cex</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"legend"</span>,
-  <span class='kw'>title.cex</span> <span class='kw'>=</span> <span class='fl'>1.2</span>
+    <pre class="usage"><span class='fu'>addGrid</span>(
+  <span class='no'>at_x</span>,
+  <span class='no'>at_y</span>,
+  <span class='kw'>col</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
+  <span class='kw'>border</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
+  <span class='kw'>lwd</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>lty</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>box</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>x-coordinates of the bottom-left corner of the legend.</p></td>
+      <th>at_x</th>
+      <td><p>coordinates on the x-Axis where to draw vertical lines.</p></td>
     </tr>
     <tr>
-      <th>y</th>
-      <td><p>y-coordinates of the bottom-left corner of the legend.</p></td>
+      <th>at_y</th>
+      <td><p>coordinates on the y-Axis where to draw horizontal lines.</p></td>
     </tr>
     <tr>
       <th>col</th>
-      <td><p>vector of colors.</p></td>
+      <td><p>the color of the background.</p></td>
     </tr>
     <tr>
-      <th>at</th>
-      <td><p>vector of integers indicating colors to be labeled.</p></td>
+      <th>border</th>
+      <td><p>the color of lines (and box).</p></td>
     </tr>
     <tr>
-      <th>labels</th>
-      <td><p>labels.</p></td>
+      <th>lwd</th>
+      <td><p>the width of lines (see <code><a href='https://rdrr.io/r/graphics/par.html'>par()</a></code>).</p></td>
     </tr>
     <tr>
-      <th>horiz</th>
-      <td><p>a logical. Should the color scale be horizontal?</p></td>
+      <th>lty</th>
+      <td><p>the type of lines (see <code><a href='https://rdrr.io/r/graphics/par.html'>par()</a></code>).</p></td>
     </tr>
     <tr>
-      <th>percx</th>
-      <td><p>size of the color scale along x axis.</p></td>
+      <th>box</th>
+      <td><p>a boolean. If <code>TRUE</code> add a box around the plot area.</p></td>
     </tr>
     <tr>
-      <th>percy</th>
-      <td><p>size of the color scale along y axis.</p></td>
-    </tr>
-    <tr>
-      <th>adj</th>
-      <td><p>adjust the position labels position. If <code>adj = 0</code> then labels are
-at the bottom if <code>horiz = TRUE</code> and on the the left if <code>horiz = FALSE</code>. If
-<code>adj = 1</code>, labels are at the top if <code>horiz = TRUE</code> and on the the right if
-<code>horiz = FALSE</code>. So far if <code>horiz = TRUE</code>, <code>title</code> and <code>labels</code> are on
-opposite sides.</p></td>
-    </tr>
-    <tr>
-      <th>labels.cex</th>
-      <td><p>magnification to be used for labels.</p></td>
-    </tr>
-    <tr>
-      <th>title</th>
-      <td><p>legend title.</p></td>
-    </tr>
-    <tr>
-      <th>title.cex</th>
-      <td><p>magnification to be used for the title.</p></td>
+      <th>...</th>
+      <td><p>other graphical parameters as in <code><a href='https://rdrr.io/r/graphics/par.html'>par()</a></code>.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>If user does not specify <code>at_x</code> and <code>at_y</code>, the grid is aligned with the tick
+marks on the corresponding default axes (computed by <code>axTicks</code>).</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>10</span>), <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>10</span>))</div><div class='input'><span class='fu'>colorScale</span>(<span class='fl'>5</span>, <span class='fl'>5</span>, <span class='fu'>gpuPalette</span>(<span class='st'>"cisl"</span>, <span class='fl'>10</span>), <span class='kw'>at</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>, <span class='fl'>4</span>))</div><div class='img'><img src='colorScale-1.png' alt='' width='700' height='433' /></div></pre>
+    <pre class="examples"><div class='input'><span class='kw pkg'>maps</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/maps/man/map.html'>map</a></span>()</div><div class='input'><span class='fu'>addGrid</span>()</div><div class='input'><span class='fu'>addGrid</span>(<span class='kw'>box</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='input'><span class='fu'>addGrid</span>(<span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"#ff000044"</span>, <span class='kw'>border</span> <span class='kw'>=</span> <span class='st'>"green"</span>, <span class='kw'>box</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='addGrid-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='kw pkg'>maps</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/maps/man/map.html'>map</a></span>()</div><div class='input'><span class='fu'>addGrid</span>(<span class='kw'>at_x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/graphics/axTicks.html'>axTicks</a></span>(<span class='fl'>1</span>), <span class='kw'>border</span> <span class='kw'>=</span> <span class='st'>"blue"</span>, <span class='kw'>lwd</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='input'><span class='fu'>addGrid</span>(<span class='kw'>at_y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/graphics/axTicks.html'>axTicks</a></span>(<span class='fl'>2</span>), <span class='kw'>border</span> <span class='kw'>=</span> <span class='st'>"red"</span>)</div><div class='input'><span class='fu'>addGrid</span>(<span class='kw'>at_x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>at_y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>lwd</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>box</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='addGrid-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
