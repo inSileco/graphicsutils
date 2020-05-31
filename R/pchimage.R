@@ -19,7 +19,6 @@
 #'
 #' @keywords plot, image, plotting character
 #'
-#' @importFrom grDevices as.raster
 #'
 #' @export
 #'

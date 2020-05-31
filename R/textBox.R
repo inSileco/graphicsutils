@@ -60,7 +60,6 @@
 #' With these coordinates, user can draw the box and the text by himself (only
 #' if same parameters are used, e.g. `cex`, `family`, `lheight`, and `font`).
 #'
-#' @importFrom graphics strheight strwidth rect text
 #' @export
 #'
 #' @keywords text, box
@@ -78,65 +77,65 @@
 #'
 #' ## Padding ----
 #' plot(1, type = "n", ann = FALSE, las = 1)
-#' coords <- textBox(x = 1, y = 1.2, labels = "Hello World (1)",
+#' textBox(x = 1, y = 1.2, labels = "Hello World (1)",
 #'                    padding = 0.05) # all borders
-#' coords <- textBox(x = 1, y = 1.0, labels = "Hello World (2)",
+#' textBox(x = 1, y = 1.0, labels = "Hello World (2)",
 #'                    padding = c(0.05, 0.20)) # bottom/top and left/right
-#' coords <- textBox(x = 1, y = 0.8, labels = "Hello World (3)",
+#' textBox(x = 1, y = 0.8, labels = "Hello World (3)",
 #'                    padding = c(0.05, 0.05, 0.05, 0.35)) # bottom, left, top, right
 #'
 #' ## Colors ----
 #' plot(1, type = "n", ann = FALSE, las = 1)
-#' coords <- textBox(x = 1, y = 1.2, labels = "Hello World (1)",
+#' textBox(x = 1, y = 1.2, labels = "Hello World (1)",
 #'                    padding = 0.05, col = "yellow", border = "green",
 #'                    fill = "red")
 #'
 #' ## Box Types ----
-#' coords <- textBox(x = 1, y = 1.0, labels = "Hello World (2)",
+#' textBox(x = 1, y = 1.0, labels = "Hello World (2)",
 #'                    padding = 0.05, lwd = 3, lty = 3)
-#' coords <- textBox(x = 1, y = 0.8, labels = "Hello World (3)",
+#' textBox(x = 1, y = 0.8, labels = "Hello World (3)",
 #'                    padding = 0.05, density = 30, angle = 45, fill = "gray")
 #'
 #' ## Text Fonts ----
 #' plot(1, type = "n", ann = FALSE, las = 1)
-#' coords <- textBox(x = 1, y = 1.2, labels = "Hello World (1)",
+#' textBox(x = 1, y = 1.2, labels = "Hello World (1)",
 #'                    padding = 0.05, family = "mono")
-#' coords <- textBox(x = 1, y = 1.0, labels = "Hello World (2)",
+#' textBox(x = 1, y = 1.0, labels = "Hello World (2)",
 #'                    padding = 0.05, family = "serif")
-#' coords <- textBox(x = 1, y = 0.8, labels = "Hello World (3)",
+#' textBox(x = 1, y = 0.8, labels = "Hello World (3)",
 #'                    padding = 0.05, family = "serif", font = 3, cex = 3)
 #'
 #' ## Text Alignment ----
 #' texte <- "Hello World!\nHow beautiful you are!"
 #' plot(1, type = "n", ann = FALSE, las = 1)
-#' coords <- textBox(x = 1, y = 1.2, labels = texte, padding = 0.05,
+#' textBox(x = 1, y = 1.2, labels = texte, padding = 0.05,
 #'                    align = "l")
-#' coords <- textBox(x = 1, y = 1.0, labels = texte, padding = 0.05,
+#' textBox(x = 1, y = 1.0, labels = texte, padding = 0.05,
 #'                    align = "c")
-#' coords <- textBox(x = 1, y = 0.8, labels = texte, padding = 0.05,
+#' textBox(x = 1, y = 0.8, labels = texte, padding = 0.05,
 #'                    align = "r")
 #'
 #' plot(1, type = "n", ann = FALSE, las = 1)
-#' coords <- textBox(x = 1, y = 1.2, labels = texte, padding = 0.05,
+#' textBox(x = 1, y = 1.2, labels = texte, padding = 0.05,
 #'                    align = "l", lheight = 0)
-#' coords <- textBox(x = 1, y = 1.0, labels = texte, padding = 0.05,
+#' textBox(x = 1, y = 1.0, labels = texte, padding = 0.05,
 #'                    align = "l", lheight = 1)
-#' coords <- textBox(x = 1, y = 0.8, labels = texte, padding = 0.05,
+#' textBox(x = 1, y = 0.8, labels = texte, padding = 0.05,
 #'                    align = "l", lheight = 2)
 #'
 #' plot(1, type = "n", ann = FALSE, las = 1)
-#' coords <- textBox(x = 1, y = 1.2, labels = texte, align = "l",
+#' textBox(x = 1, y = 1.2, labels = texte, align = "l",
 #'                    padding = c(0.05, 0.05, 0.05, 0.35))
-#' coords <- textBox(x = 1, y = 1.0, labels = texte, align = "c",
+#' textBox(x = 1, y = 1.0, labels = texte, align = "c",
 #'                    padding = c(0.05, 0.05, 0.05, 0.35))
-#' coords <- textBox(x = 1, y = 0.8, labels = texte, align = "r",
+#' textBox(x = 1, y = 0.8, labels = texte, align = "r",
 #'                    padding = c(0.05, 0.05, 0.05, 0.35))
 #'
 #' ## Removing Box and/or Text ----
 #' plot(1, type = "n", ann = FALSE, las = 1)
-#' coords <- textBox(x = 1, y = 1.2, labels = texte, col = "transparent")
-#' coords <- textBox(x = 1, y = 1.0, labels = texte, lwd = 0)
-#' coords <- textBox(x = 1, y = 0.8, labels = texte, lwd = 0,
+#' textBox(x = 1, y = 1.2, labels = texte, col = "transparent")
+#' textBox(x = 1, y = 1.0, labels = texte, lwd = 0)
+#' textBox(x = 1, y = 0.8, labels = texte, lwd = 0,
 #'                    col = "transparent")
 
 
@@ -330,7 +329,7 @@ textBox <- function(x, y, labels, align = "c", padding = 0, cex = 1, font = 1,
 
   ## Add Text to Plot ----
 
-  for (i in 1:length(labels)) {
+  for (i in seq_along(labels)) {
 
     label <- switch(
       font,
@@ -351,11 +350,13 @@ textBox <- function(x, y, labels, align = "c", padding = 0, cex = 1, font = 1,
   }
 
   return(
-    list(
-      box    = c(box_left, box_bottom, box_right, box_top),
-      labels = labels,
-      x      = text_x,
-      y      = text_y
+    invisible(
+      list(
+        box    = c(box_left, box_bottom, box_right, box_top),
+        labels = labels,
+        x      = text_x,
+        y      = text_y
+      )
     )
   )
 }
