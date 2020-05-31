@@ -24,7 +24,6 @@
 #' `NULL`, the width of the frame is equivalent to 4% of the extent of the plot
 #' area.
 #'
-#' @importFrom graphics par plot axTicks lines rect polygon
 #' @export
 #'
 #' @keywords frame, box, grid

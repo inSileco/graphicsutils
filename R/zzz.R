@@ -5,14 +5,16 @@
 #' @description A collection of (hopefully) useful functions to create graphics based plots.
 #' @import Rcpp
 #' @importFrom Rcpp evalCpp
-#' @importFrom graphics par lines points lines.default rect plot.new
-#' @importFrom graphics plot axis strwidth plot.window polygon locator
-#' @importFrom graphics layout layout.show text grid text.default segments
-#' @importFrom graphics plot.default strheight rasterImage image box abline
-#' @importFrom grDevices colorRampPalette rgb col2rgb as.graphicsAnnot palette
-#' @importFrom grDevices xy.coords dev.off
-#' @importFrom stats aggregate quantile runif rnorm as.formula
+#' @importFrom graphics abline axis axTicks box grid image
+#' @importFrom graphics layout layout.show lines lines.default locator par plot
+#' @importFrom graphics plot.default plot.new plot.window points polygon text
+#' @importFrom graphics text.default segments rect rasterImage
+#' @importFrom graphics strheight strwidth
+#' @importFrom grDevices as.graphicsAnnot as.raster col2rgb colorRampPalette
+#' @importFrom grDevices dev.off palette rgb xy.coords
+#' @importFrom stats aggregate as.formula quantile runif rnorm
 #' @useDynLib graphicsutils
+
 NULL
 
 .onLoad <- function(libname, pkgname) utils::packageVersion("graphicsutils")

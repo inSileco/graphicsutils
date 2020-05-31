@@ -18,7 +18,6 @@
 #' If user does not specify `at_x` and `at_y`, the grid is aligned with the tick
 #' marks on the corresponding default axes (computed by `axTicks`).
 #'
-#' @importFrom graphics par axTicks rect lines
 #' @export
 #'
 #' @keywords box, grid, background

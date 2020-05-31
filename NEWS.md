@@ -1,10 +1,12 @@
 
 # graphicsutils 1.5.9000
 
+* New function `textBox()`: add a highly customizable box around a text (via #25).
+* New function  `shadowText()`: shadow a text (via #25).
+* New function `addFrame()`: a complementary function of `frameIt()` (via #24).
+* New function `addAxis()`: a function to add °N, °W, etc. to axis labels (via #24).
+* New function `addGrid()`: an combination of `box()` and `grid()` (via #24).
 * `colorScale()` gains argument `adj` to adjust labels position.
-* new function `addFrame()`: a complementary function of `frameIt()` (via #24).
-* new function `addAxis()`: a function to add °N, °W, etc. to axis labels (via #24).
-* new function `addGrid()`: an combination of `box()` and `grid()` (via #24).
 
 
 # graphicsutils 1.5.0

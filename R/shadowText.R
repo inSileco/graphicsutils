@@ -10,7 +10,6 @@
 #' @param radius Width of the shadow.
 #' @param ... others parameters to pass to `text()`.
 #'
-#' @importFrom graphics strwidth strheight text
 #' @export
 #'
 #' @keywords text, shadow

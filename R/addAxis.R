@@ -8,7 +8,6 @@
 #' @param digits number of digits of labels.
 #' @param ... other parameters to pass to `axis()`.
 #'
-#' @importFrom graphics par axTicks axis
 #' @export
 #'
 #' @keywords axis, spatial
