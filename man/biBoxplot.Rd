@@ -20,9 +20,7 @@ biBoxplot(
 )
 }
 \arguments{
-\item{df1}{first set of boxplots.}
-
-\item{df2}{first set of boxplots.}
+\item{df1, df2}{first and second set of boxplots.}
 
 \item{probs}{numeric vector of five probabilities, see \code{\link[stats:quantile]{stats::quantile()}}.}
 

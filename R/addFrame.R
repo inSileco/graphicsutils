@@ -150,7 +150,7 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
 
   k <- 2
 
-  for (side in 1:length(ats)) {
+  for (side in seq_along(ats)) {
 
     if (length(ats[[side]]) > 3) {
 

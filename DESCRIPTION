@@ -11,7 +11,7 @@ Authors@R: c(
   )
 Description: A collection of functions to easily customize graphics-based plots.
 Depends:
-    R (>= 3.1.0)
+    R (>= 3.5.0)
 Imports:
     grDevices,
     graphics,

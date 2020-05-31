@@ -1,8 +1,17 @@
+
+# graphicsutils 1.5.9000
+
+* `colorScale()` gains argument `adj` to adjust labels position.
+* new function `addFrame()`: a complementary function of `frameIt()` (via #24).
+* new function `addAxis()`: a function to add °N, °W, etc. to axis labels (via #24).
+* new function `addGrid()`: an combination of `box()` and `grid()` (via #24).
+
+
 # graphicsutils 1.5.0
 
-* New function `colorScale()` to add a custom color scale on a plot.
+* New function `colorScale()` to add custom color scales on plots.
 * Fix cross-references throughout the documentation (see #19).
-* Fix a bug in `darken()` and `darken()` introduced in 1.4.0 (via #17).
+* Fix a bug in `darken()` and `lighten()` introduced in 1.4.0 (via #17).
 * `inst/News.Rd` has been converted and moved to `./NEWS.md`.
 
 
@@ -86,7 +95,7 @@
 
 # graphicsutils version 1.1.1
 
-* Addition of R functions:
+* Addition of functions:
   * New R functions `toFig()` and `toFig()` that allow conversion from figure
     region coordinates to the user coordinates and conversely.
   * New R function encircle that encirle points.
@@ -106,28 +115,28 @@
 
 # graphicsutils 1.1.0 (2015-11-12)
 
-* New R function `arrows2()` to draw pretty arrows.
-* New R function `circle()` to draw circle.
-* New R functions `compassRose1()`, `compassRose2()` to draw compass rose.
-* New R function `donut()` to draw donut.
-* New R function `ellipse()` to draw ellipse.
-* New R function `frames()` to add a frame to a given.
-* New R function `homothety()` to do homthethy.
-* New R function `getAngle2d()` to get the angles between two vectors.
-* New R function `getIcon()`, `getIconNames()` to get Font-Awesome icons.
-* New R function `layout2()` to create layout interecatively
-* New R function `pchImage()` to use image as plotting points
-* New R functions `percX()` (`percY()`) to get the x (y) coordinate from a
+* New function `arrows2()` to draw pretty arrows.
+* New function `circle()` to draw circle.
+* New functions `compassRose1()`, `compassRose2()` to draw compass rose.
+* New function `donut()` to draw donut.
+* New function `ellipse()` to draw ellipse.
+* New function `frames()` to add a frame to a given.
+* New function `homothety()` to do homthethy.
+* New function `getAngle2d()` to get the angles between two vectors.
+* New function `getIcon()`, `getIconNames()` to get Font-Awesome icons.
+* New function `layout2()` to create layout interecatively
+* New function `pchImage()` to use image as plotting points
+* New functions `percX()` (`percY()`) to get the x (y) coordinate from a
   percentage of total x (y) axis length.
-* New R function `pickColors()` to interactively select colors .
-* New R function `plotAreaColor()` to color the plot region.
-* New R function `plotImage()` to ease the creation of plot including an image.
-* New R function `plot0()` to draw empty plots.
-* New R function `polarPlot()` to draw polar plots.
-* New R function `prettyRange()` to get pretty range from a set of values.
-* New R function `rhombi()` to draw rhombi.
-* New R function `rotation()` to rotate a set of coordinates.
-* New R function `showPalette()` to show color palettes.
-* New R function `stackedareas()` to create stacked areas charts.
-* New R function `translation()` to translate a set of points.
-* New R function `vecfield2d()` to create vector fields.
+* New function `pickColors()` to interactively select colors .
+* New function `plotAreaColor()` to color the plot region.
+* New function `plotImage()` to ease the creation of plot including an image.
+* New function `plot0()` to draw empty plots.
+* New function `polarPlot()` to draw polar plots.
+* New function `prettyRange()` to get pretty range from a set of values.
+* New function `rhombi()` to draw rhombi.
+* New function `rotation()` to rotate a set of coordinates.
+* New function `showPalette()` to show color palettes.
+* New function `stackedareas()` to create stacked areas charts.
+* New function `translation()` to translate a set of points.
+* New function `vecfield2d()` to create vector fields.
