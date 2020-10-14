@@ -73,7 +73,7 @@ optionally add to the current plot." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">graphicsutils</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.6.0</span>
       </span>
     </div>
 
@@ -96,7 +96,7 @@ optionally add to the current plot." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/overview.html">'graphicsutils' an overview</a>
+      <a href="../articles/overview.html">'graphicsutils', an overview</a>
     </li>
   </ul>
 </li>
@@ -134,7 +134,7 @@ optionally add to the current plot." />
 optionally add to the current plot.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>translation</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>xtrans</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>ytrans</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>translation</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>y</span>, xtrans <span class='op'>=</span> <span class='fl'>0</span>, ytrans <span class='op'>=</span> <span class='fl'>0</span>, add <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -170,13 +170,19 @@ one.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Example 1:</span>
-<span class='fu'>plot0</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>10</span>),<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>10</span>))</div><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>4</span>,<span class='fl'>6</span>,<span class='fl'>5</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>2</span>,<span class='fl'>4</span>)
-<span class='fu'><a href='https://rdrr.io/r/graphics/polygon.html'>polygon</a></span>(<span class='no'>x</span>,<span class='no'>y</span>)</div><div class='input'><span class='no'>trans1</span> <span class='kw'>&lt;-</span> <span class='fu'>translation</span>(<span class='no'>x</span>,<span class='no'>y</span>,<span class='kw'>xtrans</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>ytrans</span><span class='kw'>=</span><span class='fl'>5</span>, <span class='kw'>add</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>4</span>, <span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='img'><img src='translation-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='plot0.html'>plot0</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>10</span><span class='op'>)</span>,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>4</span>,<span class='fl'>6</span>,<span class='fl'>5</span><span class='op'>)</span>
+<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>2</span>,<span class='fl'>2</span>,<span class='fl'>4</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/polygon.html'>polygon</a></span><span class='op'>(</span><span class='va'>x</span>,<span class='va'>y</span><span class='op'>)</span>
+</div><div class='input'><span class='va'>trans1</span> <span class='op'>&lt;-</span> <span class='fu'>translation</span><span class='op'>(</span><span class='va'>x</span>,<span class='va'>y</span>,xtrans<span class='op'>=</span><span class='fl'>2</span>,ytrans<span class='op'>=</span><span class='fl'>5</span>, add<span class='op'>=</span><span class='cn'>TRUE</span>, border<span class='op'>=</span><span class='fl'>4</span>, lwd<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+</div><div class='img'><img src='translation-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Example 2:</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>4</span>,<span class='fl'>3</span>,<span class='fl'>1</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>3</span>)
-<span class='fu'>plot0</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>10</span>),<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>10</span>))</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/polygon.html'>polygon</a></span>(<span class='no'>x</span>,<span class='no'>y</span>)</div><div class='input'><span class='kw'>for</span> (<span class='no'>i</span> <span class='kw'>in</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)) <span class='fu'>translation</span>(<span class='no'>x</span>,<span class='no'>y</span>,<span class='kw'>xtrans</span><span class='kw'>=</span><span class='no'>i</span>,<span class='kw'>ytrans</span><span class='kw'>=</span><span class='no'>i</span>, <span class='kw'>add</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='no'>i</span>+<span class='fl'>1</span>, <span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='img'><img src='translation-2.png' alt='' width='700' height='433' /></div></pre>
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>2</span>,<span class='fl'>4</span>,<span class='fl'>3</span>,<span class='fl'>1</span><span class='op'>)</span>
+<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>3</span><span class='op'>)</span>
+<span class='fu'><a href='plot0.html'>plot0</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>10</span><span class='op'>)</span>,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/polygon.html'>polygon</a></span><span class='op'>(</span><span class='va'>x</span>,<span class='va'>y</span><span class='op'>)</span>
+</div><div class='input'><span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>6</span><span class='op'>)</span><span class='op'>)</span> <span class='fu'>translation</span><span class='op'>(</span><span class='va'>x</span>,<span class='va'>y</span>,xtrans<span class='op'>=</span><span class='va'>i</span>,ytrans<span class='op'>=</span><span class='va'>i</span>, add<span class='op'>=</span><span class='cn'>TRUE</span>, border<span class='op'>=</span><span class='va'>i</span><span class='op'>+</span><span class='fl'>1</span>, lwd<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+</div><div class='img'><img src='translation-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -192,7 +198,7 @@ one.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

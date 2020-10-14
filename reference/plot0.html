@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">graphicsutils</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.6.0</span>
       </span>
     </div>
 
@@ -95,7 +95,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/overview.html">'graphicsutils' an overview</a>
+      <a href="../articles/overview.html">'graphicsutils', an overview</a>
     </li>
   </ul>
 </li>
@@ -132,16 +132,16 @@
     <p><code>plot0</code> returns an a plot of a specific size without any symbols.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plot0</span>(
-  <span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>1</span>, <span class='fl'>1</span>),
-  <span class='kw'>y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>fill</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>text</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>grid.col</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>grid.lwd</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>grid.lty</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='no'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>plot0</span><span class='op'>(</span>
+  x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>1</span>, <span class='fl'>1</span><span class='op'>)</span>,
+  y <span class='op'>=</span> <span class='cn'>NULL</span>,
+  fill <span class='op'>=</span> <span class='cn'>NULL</span>,
+  text <span class='op'>=</span> <span class='cn'>NULL</span>,
+  grid.col <span class='op'>=</span> <span class='cn'>NULL</span>,
+  grid.lwd <span class='op'>=</span> <span class='fl'>1</span>,
+  grid.lty <span class='op'>=</span> <span class='fl'>1</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -185,17 +185,23 @@ that will be displayed in the center of the plot region.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Example 1</span>
-<span class='fu'>plot0</span>()</div><div class='img'><img src='plot0-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>plot0</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='img'><img src='plot0-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Example 2</span>
-<span class='fu'>plot0</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>10</span>,<span class='fl'>10</span>), <span class='kw'>asp</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='img'><img src='plot0-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>plot0</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>10</span>,<span class='fl'>10</span><span class='op'>)</span>, asp<span class='op'>=</span><span class='fl'>1</span><span class='op'>)</span>
+</div><div class='img'><img src='plot0-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Example 3</span>
-<span class='fu'>plot0</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>10</span>,<span class='fl'>10</span>), <span class='kw'>text</span><span class='kw'>=</span><span class='st'>'cool'</span>, <span class='kw'>cex</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='img'><img src='plot0-3.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>plot0</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>10</span>,<span class='fl'>10</span><span class='op'>)</span>, text<span class='op'>=</span><span class='st'>'cool'</span>, cex <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
+</div><div class='img'><img src='plot0-3.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Example 3</span>
-<span class='fu'>plot0</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>10</span>,<span class='fl'>10</span>), <span class='kw'>asp</span><span class='kw'>=</span><span class='fl'>1</span>, <span class='kw'>fill</span><span class='kw'>=</span><span class='fl'>8</span>, <span class='kw'>text</span><span class='kw'>=</span><span class='st'>'cool'</span>, <span class='kw'>srt</span><span class='kw'>=</span><span class='fl'>45</span>, <span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>4</span>, <span class='kw'>col</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='img'><img src='plot0-4.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>plot0</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>10</span>,<span class='fl'>10</span><span class='op'>)</span>, asp<span class='op'>=</span><span class='fl'>1</span>, fill<span class='op'>=</span><span class='fl'>8</span>, text<span class='op'>=</span><span class='st'>'cool'</span>, srt<span class='op'>=</span><span class='fl'>45</span>, cex<span class='op'>=</span><span class='fl'>4</span>, col<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+</div><div class='img'><img src='plot0-4.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Example 4</span>
-<span class='fu'>plot0</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>10</span>,<span class='fl'>10</span>), <span class='kw'>fill</span><span class='kw'>=</span><span class='st'>'#ebebeb'</span>, <span class='kw'>grid.col</span> <span class='kw'>=</span> <span class='st'>'white'</span>)</div><div class='img'><img src='plot0-5.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>plot0</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>10</span>,<span class='fl'>10</span><span class='op'>)</span>, fill<span class='op'>=</span><span class='st'>'#ebebeb'</span>, grid.col <span class='op'>=</span> <span class='st'>'white'</span><span class='op'>)</span>
+</div><div class='img'><img src='plot0-5.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Example 4</span>
-<span class='fu'>plot0</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>10</span>,<span class='fl'>10</span>), <span class='kw'>grid.col</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='img'><img src='plot0-6.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'>plot0</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>10</span>,<span class='fl'>10</span><span class='op'>)</span>, grid.col <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
+</div><div class='img'><img src='plot0-6.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -211,7 +217,7 @@ that will be displayed in the center of the plot region.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -74,7 +74,7 @@ less available features)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">graphicsutils</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.6.0</span>
       </span>
     </div>
 
@@ -97,7 +97,7 @@ less available features)." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/overview.html">'graphicsutils' an overview</a>
+      <a href="../articles/overview.html">'graphicsutils', an overview</a>
     </li>
   </ul>
 </li>
@@ -136,17 +136,17 @@ to <code><a href='https://rdrr.io/r/graphics/image.html'>graphics::image()</a></
 less available features).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>image2</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>from</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>to</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>color_scale</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>border</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
-  <span class='kw'>add_value</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>val_cex</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>n_signif</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='no'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>image2</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  from <span class='op'>=</span> <span class='cn'>NULL</span>,
+  to <span class='op'>=</span> <span class='cn'>NULL</span>,
+  color_scale <span class='op'>=</span> <span class='cn'>NULL</span>,
+  border <span class='op'>=</span> <span class='cn'>NA</span>,
+  add_value <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  val_cex <span class='op'>=</span> <span class='fl'>1</span>,
+  n_signif <span class='op'>=</span> <span class='fl'>2</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -207,7 +207,10 @@ the unique cell is 0).</p>
     <div class='dont-index'><p><code><a href='https://rdrr.io/r/graphics/image.html'>graphics::image()</a></code> <code><a href='https://rdrr.io/r/graphics/rect.html'>graphics::rect()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>image2</span>(<span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>1</span>:<span class='fl'>9</span>, <span class='fl'>3</span>))</div><div class='img'><img src='image2-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>image2</span>(<span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>1</span>:<span class='fl'>9</span>, <span class='fl'>3</span>), <span class='kw'>add_value</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='image2-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>image2</span>(<span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>1</span>:<span class='fl'>27</span>, <span class='fl'>3</span>), <span class='kw'>from</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>border</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='img'><img src='image2-3.png' alt='' width='700' height='433' /></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>image2</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>9</span>, <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='image2-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>image2</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>9</span>, <span class='fl'>3</span><span class='op'>)</span>, add_value <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='img'><img src='image2-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>image2</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>27</span>, <span class='fl'>3</span><span class='op'>)</span>, from<span class='op'>=</span><span class='fl'>2</span>, border <span class='op'>=</span> <span class='fl'>2</span>, lwd<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+</div><div class='img'><img src='image2-3.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -223,7 +226,7 @@ the unique cell is 0).</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
