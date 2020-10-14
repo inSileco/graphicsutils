@@ -96,7 +96,7 @@ The transformed set of points is optionally drawn as a polygon." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/overview.html">'graphicsutils' an overview</a>
+      <a href="../articles/overview.html">'graphicsutils', an overview</a>
     </li>
   </ul>
 </li>
@@ -134,7 +134,7 @@ The transformed set of points is optionally drawn as a polygon." />
 The transformed set of points is optionally drawn as a polygon.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>homothety</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='no'>lambda</span>, <span class='kw'>xcen</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ycen</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>homothety</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>y</span>, <span class='va'>lambda</span>, xcen <span class='op'>=</span> <span class='cn'>NULL</span>, ycen <span class='op'>=</span> <span class='cn'>NULL</span>, add <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -180,10 +180,14 @@ Drawing the points computed is relevant only if there are more than 2 points.</p
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Example:</span>
-<span class='fu'>plot0</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>10</span>),<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>10</span>))</div><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>4</span>,<span class='fl'>6</span>,<span class='fl'>5</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>2</span>,<span class='fl'>4</span>)
-<span class='fu'><a href='https://rdrr.io/r/graphics/polygon.html'>polygon</a></span>(<span class='no'>x</span>,<span class='no'>y</span>)</div><div class='input'><span class='no'>poly2</span> <span class='kw'>&lt;-</span> <span class='fu'>homothety</span>(<span class='no'>x</span>,<span class='no'>y</span>,<span class='fl'>2</span>)
-<span class='fu'><a href='https://rdrr.io/r/graphics/polygon.html'>polygon</a></span>(<span class='no'>poly2</span>$<span class='no'>x</span>,<span class='no'>poly2</span>$<span class='no'>y</span>)</div><div class='input'><span class='no'>poly3</span> <span class='kw'>&lt;-</span> <span class='fu'>homothety</span>(<span class='no'>x</span>, <span class='no'>y</span>, -<span class='fl'>2.5</span>, <span class='kw'>xcen</span><span class='kw'>=</span><span class='fl'>5</span>, <span class='kw'>ycen</span><span class='kw'>=</span><span class='fl'>4</span>, <span class='kw'>border</span><span class='kw'>=</span><span class='fl'>4</span>, <span class='kw'>add</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='img'><img src='homothety-1.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'><a href='plot0.html'>plot0</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>10</span><span class='op'>)</span>,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>4</span>,<span class='fl'>6</span>,<span class='fl'>5</span><span class='op'>)</span>
+<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>2</span>,<span class='fl'>2</span>,<span class='fl'>4</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/polygon.html'>polygon</a></span><span class='op'>(</span><span class='va'>x</span>,<span class='va'>y</span><span class='op'>)</span>
+</div><div class='input'><span class='va'>poly2</span> <span class='op'>&lt;-</span> <span class='fu'>homothety</span><span class='op'>(</span><span class='va'>x</span>,<span class='va'>y</span>,<span class='fl'>2</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/polygon.html'>polygon</a></span><span class='op'>(</span><span class='va'>poly2</span><span class='op'>$</span><span class='va'>x</span>,<span class='va'>poly2</span><span class='op'>$</span><span class='va'>y</span><span class='op'>)</span>
+</div><div class='input'><span class='va'>poly3</span> <span class='op'>&lt;-</span> <span class='fu'>homothety</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>y</span>, <span class='op'>-</span><span class='fl'>2.5</span>, xcen<span class='op'>=</span><span class='fl'>5</span>, ycen<span class='op'>=</span><span class='fl'>4</span>, border<span class='op'>=</span><span class='fl'>4</span>, add<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='img'><img src='homothety-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -199,7 +203,7 @@ Drawing the points computed is relevant only if there are more than 2 points.</p
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

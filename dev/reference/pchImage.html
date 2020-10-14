@@ -96,7 +96,7 @@ to directly include a .png or a .jpeg file in a plot region." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/overview.html">'graphicsutils' an overview</a>
+      <a href="../articles/overview.html">'graphicsutils', an overview</a>
     </li>
   </ul>
 </li>
@@ -134,18 +134,18 @@ to directly include a .png or a .jpeg file in a plot region." />
 to directly include a <code>.png</code> or a <code>.jpeg</code> file in a plot region.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>pchImage</span>(
-  <span class='no'>x</span>,
-  <span class='no'>y</span>,
-  <span class='kw'>obj</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>cex.x</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>cex.y</span> <span class='kw'>=</span> <span class='no'>cex.x</span>,
-  <span class='kw'>atcenter</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>col</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='no'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>pchImage</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  <span class='va'>y</span>,
+  obj <span class='op'>=</span> <span class='cn'>NULL</span>,
+  file <span class='op'>=</span> <span class='cn'>NULL</span>,
+  cex.x <span class='op'>=</span> <span class='fl'>1</span>,
+  cex.y <span class='op'>=</span> <span class='va'>cex.x</span>,
+  atcenter <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  add <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  col <span class='op'>=</span> <span class='cn'>NULL</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -203,10 +203,12 @@ the end of the file extension.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Example:</span>
-<span class='no'>img</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>png</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/png/man/readPNG.html'>readPNG</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>'img'</span>, <span class='st'>'Rlogo.png'</span>, <span class='kw'>package</span><span class='kw'>=</span><span class='st'>'png'</span>), <span class='kw'>native</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
-<span class='no'>n</span><span class='kw'>&lt;-</span><span class='fl'>15</span>
-<span class='fu'>plot0</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>1</span>),<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>1</span>))</div><div class='input'><span class='fu'>pchImage</span>(<span class='fl'>0.1</span>+<span class='fl'>0.8</span>*<span class='kw pkg'>stats</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='no'>n</span>), <span class='fl'>0.1</span>+<span class='fl'>0.8</span>*<span class='kw pkg'>stats</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='no'>n</span>), <span class='kw'>cex.x</span><span class='kw'>=</span><span class='fl'>0.2</span>+<span class='fl'>1.6</span>*<span class='kw pkg'>stats</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='no'>n</span>),
-<span class='kw'>obj</span><span class='kw'>=</span><span class='no'>img</span>, <span class='kw'>angle</span><span class='kw'>=</span><span class='fl'>360</span>*<span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='no'>n</span>), <span class='kw'>col</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='img'><img src='pchImage-1.png' alt='' width='700' height='433' /></div></pre>
+<span class='va'>img</span> <span class='op'>&lt;-</span> <span class='fu'>png</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/png/man/readPNG.html'>readPNG</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>'img'</span>, <span class='st'>'Rlogo.png'</span>, package<span class='op'>=</span><span class='st'>'png'</span><span class='op'>)</span>, native<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='va'>n</span><span class='op'>&lt;-</span><span class='fl'>15</span>
+<span class='fu'><a href='plot0.html'>plot0</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span>,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='input'><span class='fu'>pchImage</span><span class='op'>(</span><span class='fl'>0.1</span><span class='op'>+</span><span class='fl'>0.8</span><span class='op'>*</span><span class='fu'>stats</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span>, <span class='fl'>0.1</span><span class='op'>+</span><span class='fl'>0.8</span><span class='op'>*</span><span class='fu'>stats</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span>, cex.x<span class='op'>=</span><span class='fl'>0.2</span><span class='op'>+</span><span class='fl'>1.6</span><span class='op'>*</span><span class='fu'>stats</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span>,
+obj<span class='op'>=</span><span class='va'>img</span>, angle<span class='op'>=</span><span class='fl'>360</span><span class='op'>*</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span>, col<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+</div><div class='img'><img src='pchImage-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -222,7 +224,7 @@ the end of the file extension.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

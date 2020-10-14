@@ -94,7 +94,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="articles/overview.html">'graphicsutils' an overview</a>
+      <a href="articles/overview.html">'graphicsutils', an overview</a>
     </li>
   </ul>
 </li>
@@ -164,14 +164,17 @@
 <p>To add tests, go to the folder <code>tests/testthat/</code>. Tests are generally organized as individual files for each exported function from the package (that is, listed as an export in the <code>NAMESPACE</code> file). If you are adding a new exported function, add a new test file. If you are changing an existing function, work in the tests file for that function, unless it doesn’t have tests, in which case make a new test file.</p>
 <p>The book R packages book provides <a href="http://r-pkgs.had.co.nz/tests.html">a chapter on testing in general</a>. Do consult that first if you aren’t familiar with testing in R.</p>
 <p>The easiest set up to run tests is from within an R session:</p>
-<div class="sourceCode" id="cb1"><html><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">devtools</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">testthat</span>)
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">devtools</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://testthat.r-lib.org">testthat</a></span><span class="op">)</span>
 <span class="co"># loads the package</span>
-<span class="fu">load_all</span>()</pre></html></div>
+<span class="fu">load_all</span><span class="op">(</span><span class="op">)</span></pre></div>
 <p>To test an individual test file</p>
-<div class="sourceCode" id="cb2"><html><pre class="r"><span class="fu"><a href="https://testthat.r-lib.org/reference/test_file.html">test_file</a></span>(<span class="st">"tests/testthat/test-foobar.R"</span>)</pre></html></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="https://testthat.r-lib.org/reference/test_file.html">test_file</a></span><span class="op">(</span><span class="st">"tests/testthat/test-foobar.R"</span><span class="op">)</span></pre></div>
 <p>To run all tests</p>
-<div class="sourceCode" id="cb3"><html><pre class="r"><span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu">test</span>()</pre></html></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu">test</span><span class="op">(</span><span class="op">)</span></pre></div>
 <p>If you are running tests that have <code><a href="https://testthat.r-lib.org/reference/skip.html">skip_on_cran()</a></code> in them, set <code><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv(NOT_CRAN = "true")</a></code> prior to running tests.</p>
 </div>
 <div id="making-changes" class="section level3">
@@ -187,7 +190,7 @@
 <a href="#style" class="anchor"></a>Style</h3>
 <ul>
 <li>Make sure code, documentation, and comments are no more than 80 characters in width;</li>
-<li>Use <code>&lt;-</code> instead of <code>=</code> for assignment;</li>
+<li>Use <code><a href="https://rdrr.io/r/base/assignOps.html">&lt;-</a></code> instead of <code><a href="https://rdrr.io/r/base/assignOps.html">=</a></code> for assignment;</li>
 <li>Always use <code>camelCase</code>
 </li>
 </ul>
@@ -217,7 +220,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

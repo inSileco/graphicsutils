@@ -96,7 +96,7 @@ numeric." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/overview.html">'graphicsutils' an overview</a>
+      <a href="../articles/overview.html">'graphicsutils', an overview</a>
     </li>
   </ul>
 </li>
@@ -134,7 +134,7 @@ numeric." />
 <code>numeric</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>prettyRange</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>prettyRange</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -157,9 +157,12 @@ numeric." />
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Example 1:</span>
-<span class='no'>vec</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>stats</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='fl'>20</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/range.html'>range</a></span>(<span class='no'>vec</span>)</div><div class='output co'>#&gt; [1] 0.04373911 0.82295308</div><div class='input'><span class='fu'>prettyRange</span>(<span class='no'>vec</span>)</div><div class='output co'>#&gt; [1] 0.00 0.85</div><div class='input'><span class='co'># Example 2:</span>
-<span class='fu'>prettyRange</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>3.849</span>,<span class='fl'>3.88245</span>))</div><div class='output co'>#&gt; [1] 3.845 3.885</div></pre>
+<span class='va'>vec</span> <span class='op'>&lt;-</span> <span class='fu'>stats</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>20</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/range.html'>range</a></span><span class='op'>(</span><span class='va'>vec</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.04373911 0.82295308</div><div class='input'><span class='fu'>prettyRange</span><span class='op'>(</span><span class='va'>vec</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.00 0.85</div><div class='input'><span class='co'># Example 2:</span>
+<span class='fu'>prettyRange</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>3.849</span>,<span class='fl'>3.88245</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 3.845 3.885</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -175,7 +178,7 @@ numeric." />
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

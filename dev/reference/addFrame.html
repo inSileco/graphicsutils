@@ -97,7 +97,7 @@ can be specified by user." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/overview.html">'graphicsutils' an overview</a>
+      <a href="../articles/overview.html">'graphicsutils', an overview</a>
     </li>
   </ul>
 </li>
@@ -136,19 +136,19 @@ new one) as an ensemble of small rectangles whose colors, position and width
 can be specified by user.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>addFrame</span>(
-  <span class='no'>at_x</span>,
-  <span class='no'>at_y</span>,
-  <span class='kw'>col</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"white"</span>, <span class='no'>border</span>),
-  <span class='kw'>border</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>width</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>lwd</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>lty</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>asp</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
-  <span class='kw'>grid</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='no'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>addFrame</span><span class='op'>(</span>
+  <span class='va'>at_x</span>,
+  <span class='va'>at_y</span>,
+  col <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"white"</span>, <span class='va'>border</span><span class='op'>)</span>,
+  border <span class='op'>=</span> <span class='st'>"black"</span>,
+  width <span class='op'>=</span> <span class='cn'>NULL</span>,
+  lwd <span class='op'>=</span> <span class='fl'>1</span>,
+  lty <span class='op'>=</span> <span class='fl'>1</span>,
+  asp <span class='op'>=</span> <span class='cn'>NA</span>,
+  grid <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  add <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -207,18 +207,33 @@ and <code>at_y</code>.</p></td>
 in <code>col</code>, border color will be used to draw the checkerboard. If <code>width</code> is
 <code>NULL</code>, the width of the frame is equivalent to 4% of the extent of the plot
 area.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Nicolas CASAJUS, <a href='mailto:nicolas.casajus@gmail.com'>nicolas.casajus@gmail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Grid and graduations</span>
-<span class='fu'>addFrame</span>()</div><div class='img'><img src='addFrame-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>addFrame</span>(<span class='kw'>grid</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='addFrame-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>addFrame</span>(<span class='kw'>grid</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>lwd</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>lty</span> <span class='kw'>=</span> <span class='fl'>3</span>)</div><div class='img'><img src='addFrame-3.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>addFrame</span>(<span class='kw'>at_x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(-<span class='fl'>1</span>, <span class='fl'>1</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>0.1</span>))</div><div class='img'><img src='addFrame-4.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>addFrame</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='img'><img src='addFrame-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>addFrame</span><span class='op'>(</span>grid <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='img'><img src='addFrame-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>addFrame</span><span class='op'>(</span>grid <span class='op'>=</span> <span class='cn'>TRUE</span>, lwd <span class='op'>=</span> <span class='fl'>0.25</span>, lty <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span>
+</div><div class='img'><img src='addFrame-3.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>addFrame</span><span class='op'>(</span>at_x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>1</span>, <span class='fl'>1</span>, by <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='addFrame-4.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>## Frame width</span>
-<span class='fu'>addFrame</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>0.25</span>)</div><div class='img'><img src='addFrame-5.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>addFrame</span>(<span class='kw'>at_x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(-<span class='fl'>1</span>, <span class='fl'>1</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>0.01</span>), <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>1.00</span>)</div><div class='img'><img src='addFrame-6.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>addFrame</span><span class='op'>(</span>width <span class='op'>=</span> <span class='fl'>0.25</span><span class='op'>)</span>
+</div><div class='img'><img src='addFrame-5.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>addFrame</span><span class='op'>(</span>at_x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>1</span>, <span class='fl'>1</span>, by <span class='op'>=</span> <span class='fl'>0.01</span><span class='op'>)</span>, width <span class='op'>=</span> <span class='fl'>1.00</span><span class='op'>)</span>
+</div><div class='img'><img src='addFrame-6.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>## Colors</span>
-<span class='fu'>addFrame</span>(<span class='kw'>col</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>6</span>)</div><div class='img'><img src='addFrame-7.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>addFrame</span>(<span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"lightgray"</span>, <span class='kw'>border</span> <span class='kw'>=</span> <span class='st'>"darkgray"</span>)</div><div class='img'><img src='addFrame-8.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>addFrame</span><span class='op'>(</span>col <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>6</span><span class='op'>)</span>
+</div><div class='img'><img src='addFrame-7.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>addFrame</span><span class='op'>(</span>col <span class='op'>=</span> <span class='st'>"lightgray"</span>, border <span class='op'>=</span> <span class='st'>"darkgray"</span><span class='op'>)</span>
+</div><div class='img'><img src='addFrame-8.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>## Adding to a plot</span>
-<span class='kw pkg'>maps</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/maps/man/map.html'>map</a></span>()</div><div class='input'><span class='fu'>addFrame</span>(<span class='kw'>grid</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>5</span>)</div><div class='input'><span class='kw pkg'>maps</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/maps/man/map.axes.html'>map.axes</a></span>()</div><div class='img'><img src='addFrame-9.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>maps</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/maps/man/map.html'>map</a></span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='input'><span class='fu'>addFrame</span><span class='op'>(</span>grid <span class='op'>=</span> <span class='cn'>TRUE</span>, add <span class='op'>=</span> <span class='cn'>TRUE</span>, width <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
+</div><div class='input'><span class='fu'>maps</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/maps/man/map.axes.html'>map.axes</a></span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='img'><img src='addFrame-9.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>## Other graphical parameters</span>
-<span class='fu'>addFrame</span>(<span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"darkgray"</span>, <span class='kw'>xaxs</span> <span class='kw'>=</span> <span class='st'>"i"</span>, <span class='kw'>yaxs</span> <span class='kw'>=</span> <span class='st'>"i"</span>)</div><div class='img'><img src='addFrame-10.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'>addFrame</span><span class='op'>(</span>bg <span class='op'>=</span> <span class='st'>"darkgray"</span>, xaxs <span class='op'>=</span> <span class='st'>"i"</span>, yaxs <span class='op'>=</span> <span class='st'>"i"</span><span class='op'>)</span>
+</div><div class='img'><img src='addFrame-10.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -234,7 +249,7 @@ area.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
