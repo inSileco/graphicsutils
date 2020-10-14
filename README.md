@@ -9,8 +9,8 @@ status](https://ci.appveyor.com/api/projects/status/330p7f0djhpl998q?svg=true)](
 
 ## Description
 
-The *graphicsutils* R package adds various graphics utilities
-based on the core package *graphics*.  Similar functions may already exist
+*graphicsutils* is a R package that adds various graphics utilities
+based on the core package *graphics*. Similar functions may already exist
 elsewhere (most likely in the [*plotrix*](http://cran.r-project.org/web/packages/plotrix/index.html)
 package). However this package may help users to overcome some difficulties they may encounter with *graphics*.
 
@@ -26,9 +26,8 @@ Package](https://journal.r-project.org/archive/2015-1/murrell.pdf).
 
 ## Installation
 
-The easiest way to install `graphicsutils` is to use the
-[*devtools*](http://cran.r-project.org/web/packages/devtools/index.html)
-(or [*githubinstall*](http://cran.r-project.org/web/packages/githubinstall/index.html))package:
+The easiest way to install `graphicsutils` is to use 
+[`remotes`](https://CRAN.R-project.org/package=remotes):
 
 ```R
 install.packages("remotes")

@@ -4,22 +4,19 @@ cache: packages
 
 jobs:
   include:
-    # - stage: Check package
-    #   r: oldrel
     - stage: Check package
-      os: osx
-      r: release
-    - stage: Check package
-      os: linux
+      r: oldrel
       dist: bionic
-      r: devel
     - stage: Check package, code coverage and deploy pkgdown website
       os: linux
-      dist: xenial
+      dist: focal
       r: release
       r_packages:
         - covr
+        - ragg
         - pkgdown
+      before_install:
+        - sudo apt-get -y install libharfbuzz-dev libfribidi-dev
       after_success:
         - Rscript -e 'covr::codecov()'
         - mkdir docs
@@ -35,6 +32,14 @@ jobs:
         on:
           branch: master
         local_dir: docs
+    - stage: Check package
+      os: osx
+      r: release
+    - stage: Check package
+      os: linux
+      dist: focal
+      r: devel
+
 
 notifications:
   email:

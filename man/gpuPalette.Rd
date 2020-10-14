@@ -13,7 +13,7 @@ prompted.}
 
 \item{ncolors}{An integer giving the number of colors to be returned. If
 greater than the number of colors included in the selection, then
-'\code{\link[grDevices:colorRampPalette]{grDevices::colorRampPalette()}} is called to expand the palette.
+'\code{\link[grDevices:colorRamp]{grDevices::colorRampPalette()}} is called to expand the palette.
 If missing, then the entire palette is returned.}
 }
 \value{
