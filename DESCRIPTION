@@ -1,7 +1,7 @@
 Package: graphicsutils
 Type: Package
 Title: Collection of graphics utilities
-Version: 1.5.0.9000
+Version: 1.6.0
 Date: 2020-10-14
 Authors@R: c(
   person("Kevin", "Cazelles", role = c("aut", "cre"), email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874")),
@@ -10,8 +10,8 @@ Authors@R: c(
   person(given = "Steve", family = "Vissault", comment = c(ORCID = "0000-0002-0866-4376"), role = "aut")
   )
 Description: A collection of functions to easily customize graphics-based plots.
-Depends:
-    R (>= 3.5.0)
+Depends: 
+    R (>= 3.2.0)
 Imports:
     grDevices,
     graphics,

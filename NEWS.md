@@ -1,8 +1,9 @@
 
-# graphicsutils 1.5.9000
+# graphicsutils 1.6.0 
 
+* Travis settings reviewed so to use Ubuntu 18.04 and 20.04. 
 * New function `textBox()`: add a highly customizable box around a text (via #25).
-* New function  `shadowText()`: shadow a text (via #25).
+* New function `shadowText()`: shadow a text (via #25).
 * New function `addFrame()`: a complementary function of `frameIt()` (via #24).
 * New function `addAxis()`: a function to add °N, °W, etc. to axis labels (via #24).
 * New function `addGrid()`: an combination of `box()` and `grid()` (via #24).
@@ -33,7 +34,7 @@
   * new function `boxplot2()` that generates boxplots with a different visual that `boxplot()`.
 
 * Changes in the package's structure:
-    * magrittr is no longer imported and changes in various functions have been made accordingly.
+    * `magrittr` is no longer imported and changes in various functions have been made accordingly.
 
 * Change in documentation:
   * The vignette has been reviewed.
@@ -56,7 +57,7 @@
   * `circle()` renamed `circles()`.
   * Argument `lower` from `envelop()` now has a default values.
   * `gpuPalette()` now has a new argument: `ncol`, that calls `colorRampPalette` (grDevices package) to custom the number of colors.
-  * `pchImage()` now uses native representation of raster when importing image from file.
+  * `pchImage()` now uses native representation of raster when importing image from a file.
   * `circles()` has a new argument `clockwise` and is now tested.
   * `howManyRC()` and `prettyRange()` are now tested.
 
@@ -100,7 +101,7 @@
 * Addition of functions:
   * New R functions `toFig()` and `toFig()` that allow conversion from figure
     region coordinates to the user coordinates and conversely.
-  * New R function encircle that encirle points.
+  * New R function encircle that encircles a set of points.
   * New R function `box2()`, a flexible version of `box()`.
   * New R functions `ramp()`, `darken()`, `lighten()` to ease the creation of color shades.
 
@@ -123,11 +124,11 @@
 * New function `donut()` to draw donut.
 * New function `ellipse()` to draw ellipse.
 * New function `frames()` to add a frame to a given.
-* New function `homothety()` to do homthethy.
+* New function `homothety()` to do a homothety.
 * New function `getAngle2d()` to get the angles between two vectors.
 * New function `getIcon()`, `getIconNames()` to get Font-Awesome icons.
-* New function `layout2()` to create layout interecatively
-* New function `pchImage()` to use image as plotting points
+* New function `layout2()` to create layout interactively.
+* New function `pchImage()` to use image as plotting points.
 * New functions `percX()` (`percY()`) to get the x (y) coordinate from a
   percentage of total x (y) axis length.
 * New function `pickColors()` to interactively select colors .
