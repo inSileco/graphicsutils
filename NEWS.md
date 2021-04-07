@@ -1,3 +1,7 @@
+# graphicsutils (devel)
+
+* Drop Travis CI and AppVeyor, use GitHub Actions instead.
+
 
 # graphicsutils 1.6.0 
 
