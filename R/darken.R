@@ -11,7 +11,7 @@
 #' @param as_rgb a logical. Should the color(s) returned as a matrix object?
 #'
 #' @export
-#' @seealso \code{\link{colorRampPalette}}
+#' @seealso [grDevices::colorRampPalette()]
 #' @examples
 #' showPalette(ramp("blue", "red", 10*3:7))
 #' darken('red', 50)

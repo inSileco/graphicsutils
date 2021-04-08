@@ -1,13 +1,13 @@
 #' An interactive version of `layout`
 #'
-#' This function provides an interactive version of the `layout` function. Once \code{layout2} is called, the users get a grid he can click on (thanks to `locator` function).
+#' This function provides an interactive version of the `layout` function. Once `layout2` is called, the users get a grid he can click on (thanks to `locator` function).
 #' Once the clicks have been achieved, the users can get the matrix created and/or use directly layout and then call the function.
 #'
 #' @param n Number of plot regions desired, default is 1.
 #' @param grain.x Number of vertical lines drawn to select the size of the subplots regions.
 #' @param grain.y Number of horizontal lines drawn to select the size of the subplots regions.
 #' @param show logical. If TRUE `layout.show` is used to get a preview of the subplots regions.
-#' @param now logical. If TRUE `layout` is called at \code{layout2} exit.
+#' @param now logical. If TRUE `layout` is called at `layout2` exit.
 #'
 #' @keywords interactive layout
 #'
@@ -22,7 +22,7 @@
 #' panel p. Note that the user is allowed to use the same area for several plots
 #' but only this area will actually be used only by the last one.
 #'
-#' As `layout` is ultimately called, \code{layout2} has the same limits: currently 200 for the numbers of rows and columns and 10007 for the total number of cells.
+#' As `layout` is ultimately called, `layout2` has the same limits: currently 200 for the numbers of rows and columns and 10007 for the total number of cells.
 #' @export
 
 interactiveLayout <- function(n = 1, grain.x = 20, grain.y = grain.x, show = TRUE,

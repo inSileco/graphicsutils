@@ -64,7 +64,7 @@
 #'
 #' @keywords text, box
 #'
-#' @author Nicolas CASAJUS, \email{nicolas.casajus@@gmail.com}
+#' @author Nicolas Casajus, \email{nicolas.casajus@@gmail.com}
 #'
 #' @examples
 #' ## Setting the scene ----

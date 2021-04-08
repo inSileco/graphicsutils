@@ -78,7 +78,7 @@ maps::map.axes()
 addFrame(bg = "darkgray", xaxs = "i", yaxs = "i")
 }
 \author{
-Nicolas CASAJUS, \email{nicolas.casajus@gmail.com}
+Nicolas Casajus, \email{nicolas.casajus@gmail.com}
 }
 \keyword{box,}
 \keyword{frame,}

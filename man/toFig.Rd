@@ -20,7 +20,7 @@ Convert user coordinates to figure region coordinates and conversely.
 }
 \details{
 These functions can be used anytime, however, there are useful only once
-\link[graphics]{plot.new} has been called.
+\code{\link[graphics:frame]{graphics::plot.new()}} has been called.
 }
 \section{Functions}{
 \itemize{

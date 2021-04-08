@@ -44,5 +44,5 @@ more_reds <- lighten('red', seq(10,90,9))
 showPalette(more_reds)
 }
 \seealso{
-\code{\link{colorRampPalette}}
+\code{\link[grDevices:colorRamp]{grDevices::colorRampPalette()}}
 }

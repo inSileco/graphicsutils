@@ -176,7 +176,7 @@ textBox(x = 1, y = 0.8, labels = texte, lwd = 0,
                    col = "transparent")
 }
 \author{
-Nicolas CASAJUS, \email{nicolas.casajus@gmail.com}
+Nicolas Casajus, \email{nicolas.casajus@gmail.com}
 }
 \keyword{box}
 \keyword{text,}

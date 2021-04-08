@@ -5,7 +5,7 @@
 #' @param formula a formula, see [stats::formula()].
 #' @param data a data frame (or list) from which the variables in formula should be taken.
 #' @param FUN_err the function that assess uncertainty. Default function is [stats::sd()].
-#' @param add logical. should images be added on the current graph ? If FALSE a new plot is created.
+#' @param add logical. should images be added on the current graph ? If `FALSE` a new plot is created.
 #' @param seqx the x coordinates of the means to be plotted, if `NULL`, default values are used. This is intended to be used when `add` parameter is `TRUE`.
 #' @param draw_axis logical. If `TRUE` axes and box are drawn.
 #' @param col_err color of the lines that reflect uncertainty.
@@ -13,7 +13,7 @@
 #' @param cex_pt magnification coefficient of the points that stand for means.
 #' @param connect logical. If TRUE then mean are linked using a lines.
 #' @param args_con a list of parameters that are used to customize the lines that links the means.
-#' @param ... Further graphical parameters (see \code{\link[graphics]{plot.default}} and ) may also be supplied as arguments, particularly, line type, `lty`, line width, `lwd`, color, `col` and for \code{type = 'b'}, `pch`. Also the line characteristics `lend`, `ljoin` and `lmitre`.
+#' @param ... Further graphical parameters (see [plot.default()] and ) may also be supplied as arguments, particularly, line type, `lty`, line width, `lwd`, color, `col` and for `type = 'b'`, `pch`. Also the line characteristics `lend`, `ljoin` and `lmitre`.
 #'
 #' @keywords means, standard deviation
 #'

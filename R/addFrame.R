@@ -28,7 +28,7 @@
 #'
 #' @keywords frame, box, grid
 #'
-#' @author Nicolas CASAJUS, \email{nicolas.casajus@@gmail.com}
+#' @author Nicolas Casajus, \email{nicolas.casajus@@gmail.com}
 #'
 #' @examples
 #' ## Grid and graduations

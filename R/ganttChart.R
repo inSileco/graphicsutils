@@ -26,7 +26,7 @@
 #'  * `col`: to custom the color of the tasks.
 #'
 #' @references
-#' https://insileco.github.io/2017/09/20/gantt-charts-in-r/
+#' <https://insileco.github.io/2017/09/20/gantt-charts-in-r/>
 #'
 #' @export
 #' @examples

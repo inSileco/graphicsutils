@@ -48,7 +48,7 @@ Draw circles in a flexible way.
 \details{
 The number of circles drawn is given by the maximum argument length amng
 \code{x}, \code{y}, \code{radi}, \code{from} and \code{to} arguments.
-Sizes are adjusted (i.e. repeated over) with \code{\link{rep_len}} function.
+Sizes are adjusted (i.e. repeated over) with \code{\link[=rep_len]{rep_len()}} function.
 }
 \examples{
 # Example 1:
@@ -70,7 +70,7 @@ plot0(x=c(-2,2),y=c(-2,2), asp=1)
 circles(x=c(-1,1),c(1,1,-1,-1),from=pi*seq(0.25,1,by=0.25),to=1.25*pi, col=2, border=4, lwd=3)
 }
 \seealso{
-\code{\link[graphics:symbols]{graphics::symbols()}}, \code{\link[plotrix]{draw.circle}}, \code{\link[plotrix]{draw.arc}}.
+\code{\link[graphics:symbols]{graphics::symbols()}}, \code{\link[plotrix:draw.circle]{plotrix::draw.circle()}}, \code{\link[plotrix:draw.arc]{plotrix::draw.arc()}}.
 }
 \keyword{circle}
 \keyword{geometries}

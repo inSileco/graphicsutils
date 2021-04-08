@@ -13,7 +13,7 @@
 #' Implements the Ray-casting algorithm.
 #'
 #' @references
-#' \url{https://rosettacode.org/wiki/Ray-casting_algorithm#C}
+#' <https://rosettacode.org/wiki/Ray-casting_algorithm#C>
 #'
 #' @export
 #'

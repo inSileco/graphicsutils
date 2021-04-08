@@ -20,13 +20,13 @@
 #' @details
 #' The number of circles drawn is given by the maximum argument length amng
 #' `x`, `y`, `radi`, `from` and `to` arguments.
-#' Sizes are adjusted (i.e. repeated over) with \code{\link{rep_len}} function.
+#' Sizes are adjusted (i.e. repeated over) with [rep_len()] function.
 #'
 #' @return
 #' An invisible list of `data.frame` of two columns including the
 #' coordinates of all circles.
 #'
-#' @seealso [graphics::symbols()], \code{\link[plotrix]{draw.circle}}, \code{\link[plotrix]{draw.arc}}.
+#' @seealso [graphics::symbols()], [plotrix::draw.circle()], [plotrix::draw.arc()].
 #'
 #' @examples
 #' # Example 1:
@@ -67,7 +67,7 @@ circles <- function(x, y = x, radi = 1, from = 0, to = 2 * pi, incr = 0.01, pie 
     # drawing circles
     out <- list()
     for (i in seq_len(sz)) {
-        ## distance (in rardian)
+        ## distance (in radian)
         dagl <- abs(to[i] - from[i])
         ## --- angles sequence
         if (dagl >= pipi) {
