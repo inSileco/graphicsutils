@@ -32,9 +32,11 @@ ellipse(
 
 \item{rot}{the rotation angles (in degree) of the ellipses.}
 
-\item{incr}{increments between two points to be linked (expressed in radians).}
+\item{incr}{increments between two points to be linked (expressed in
+radians).}
 
-\item{pie}{a logical. If \code{TRUE} end points are linked with the center of the ellipse (default is set to \code{FALSE}).}
+\item{pie}{a logical. If \code{TRUE} end points are linked with the center of
+the ellipse (default is set to \code{FALSE}).}
 
 \item{...}{additional arguments to be passed to \code{\link[graphics:polygon]{graphics::polygon()}}.}
 }
@@ -43,30 +45,32 @@ Draw ellipses in a flexible way.
 }
 \details{
 For a rotation angle of 0, major radii refer to the one along the x axis.
-
-The number of circles drawn is given by the maximum argument length among \code{x}, \code{y}, \code{radi}, \code{from} and \code{to} arguments.
-Sizes are adjusted using \code{\link{rep_len}} function.
-
-To plot ellipses, \code{\link{polygon}} function is called.
+The number of circles drawn is given by the maximum argument length among
+\code{x}, \code{y}, \code{radi}, \code{from} and \code{to} arguments. Note vector length are adjusted
+using \code{\link[=rep_len]{rep_len()}}.
 }
 \note{
 There is a similar function, called \code{draw.ellipse}, in the package \code{plotrix}.
 }
 \examples{
-#Example 1:
-plot0(asp=1)
+# Example 1:
+plot0(asp = 1)
 ellipse()
 
-#Example 2:
+# Example 2:
 plot0()
-for (i in seq(0,360,30)) ellipse(rot=i)
+for (i in seq(0, 360, 30)) ellipse(rot = i)
 
-#Example 3:
+# Example 3:
 plot0()
-ellipse(matrix(-.5+.5*stats::runif(18), ncol=3))
+ellipse(matrix(-.5 + .5 * stats::runif(18), ncol = 3))
 
-#Example 4:
-plot0(x=c(-2,2),y=c(-2,2), asp=1)
-ellipse(x=c(-1,1),c(1,1,-1,-1),from=pi*seq(0.25,1,by=0.25),to=1.25*pi, col=2, border=4, lwd=3)
+# Example 4:
+plot0(x = c(-2, 2), y = c(-2, 2), asp = 1)
+ellipse(
+    x = c(-1, 1), c(1, 1, -1, -1), from = pi * seq(0.25, 1, by = 0.25),
+    to = 1.25 * pi, col = 2, border = 4, lwd = 3
+)
+
 }
 \keyword{ellipse}

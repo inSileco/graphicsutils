@@ -3,11 +3,13 @@
 #' Compute a translation for a set of points. The transformed set of points is
 #' optionally add to the current plot.
 #'
-#' @param x,y x and y coordinates of points to be translated (can also be a matrix, see details).
-#' @param xtrans the x coordinate of the translation vector.
-#' @param ytrans the y coordinate of the translation vector.
-#' @param add logical. If `TRUE` the set of transformed points is drawn as a polygon.
-#' @param ... Additional arguments to be passed to `polygon` function (used only if `add` is TRUE).
+#' @param x,y x and y coordinates of points to be translated (can also be a 
+#' matrix, see details).
+#' @param xtrans,ytrans the x and y coordinates of the translation vector.
+#' @param add logical. If `TRUE` the set of transformed points is drawn as a 
+#' polygon.
+#' @param ... Additional arguments to be passed to `polygon` function (used 
+#' only if `add` is TRUE).
 #'
 #' @keywords translation, geometry
 #'
@@ -15,10 +17,9 @@
 #'
 #' @details
 #' For details about what is a translation, see
-#' <https://en.wikipedia.org/wiki/Translation_(geometry)>. Note that if `x` is a
-#' matrix with more than 2 columns, then x is the first column and y the second
-#' one.
-#'
+#' <https://en.wikipedia.org/wiki/Translation_(geometry)>. Note that if `x` is 
+#' a matrix with more than 2 columns, then x is the first column and y the 
+#' second one.
 #'
 #' @examples
 #' # Example 1:
@@ -33,7 +34,8 @@
 #' y <- c(1,1,3,3)
 #' plot0(c(0,10),c(0,10))
 #' polygon(x,y)
-#' for (i in seq_len(6)) translation(x,y,xtrans=i,ytrans=i, add=TRUE, border=i+1, lwd=2)
+#' for (i in seq_len(6)) translation(x,y,xtrans=i,ytrans=i, add=TRUE,
+#' border=i+1, lwd=2)
 
 
 translation <- function(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...) {

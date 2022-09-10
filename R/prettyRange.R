@@ -34,8 +34,8 @@ prettyRange <- function(x) {
     ## --- Assess the range of values
     dif <- rgx[2L] - rgx[1L]
     pow <- floor(log(dif, 10))
-    ## --- Get the 'fixed part' (e.g. if the range values is [3.85;3.88] then we set
-    ## 3.8 apart.)
+    ## --- Get the 'fixed part' (e.g. if the range values is [3.85;3.88] then 
+    ## we set 3.8 apart.)
     base <- floor(rgx[1L]/10^pow) * 10^pow
     rgx <- rgx - base
     ## --- Create a sequence of small values to select the min and max

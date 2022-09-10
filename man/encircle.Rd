@@ -22,9 +22,8 @@ single argument \code{x} can be provided.}
 Draw a polygons around a certains set of points.
 }
 \details{
-The technique employed is fairly simple: for a set of coordinates x, y handled
-using \code{xy.coords} a set of \code{nb.pt} number is generated at a
-\code{off.set} distance of each coordinates, then a convex is drawn around
+The technique employed is straightforward: for each point, a circle of
+radius of off.set\verb{made of}nb.pt` points, then a convex is drawn around
 the coordinates using \code{\link[grDevices:chull]{grDevices::chull()}}.
 }
 \examples{

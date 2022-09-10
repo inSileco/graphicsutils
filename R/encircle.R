@@ -3,16 +3,15 @@
 #' Draw a polygons around a certains set of points.
 #'
 #' @param x the x coordinates of a set of points. Alternatively, a
-#'       single argument `x` can be provided.
+#' single argument `x` can be provided.
 #' @param y the y coordinates of a set of points.
 #' @param nb.pt the number of points to be generated around each coordinates.
 #' @param off.set the y coordinates of a set of points.
 #' @param ... further arguments to be passed to [graphics::polygon()] function.
 #'
 #' @details
-#' The technique employed is fairly simple: for a set of coordinates x, y handled
-#' using `xy.coords` a set of `nb.pt` number is generated at a
-#' `off.set` distance of each coordinates, then a convex is drawn around
+#' The technique employed is straightforward: for each point, a circle of
+#' radius of off.set` made of `nb.pt` points, then a convex is drawn around
 #' the coordinates using [grDevices::chull()].
 #'
 #' @export
@@ -33,8 +32,9 @@ encircle <- function(x, y = NULL, nb.pt = 20, off.set = 1, ...) {
     seqx <- ofs * cos(seqa)
     seqy <- ofs * sin(seqa)
     ##
-    pts <- data.frame(x = rep(cfig$x, each = nb.pt) + rep(seqx, nrow(cfig)), y = rep(cfig$y,
-        each = nb.pt) + rep(seqy, nrow(cfig)))
+    pts <- data.frame(
+        x = rep(cfig$x, each = nb.pt) + rep(seqx, nrow(cfig)),
+        y = rep(cfig$y, each = nb.pt) + rep(seqy, nrow(cfig)))
     ## compute the convex hull and plot it using user system
     polygon(toUser(pts[grDevices::chull(pts), ]), ...)
     ##

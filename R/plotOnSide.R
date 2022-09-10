@@ -11,15 +11,16 @@
 #' @export
 #'
 #' @details
-#' This function eases the creation of plots that include multiple panels that shares information such as axis labels. Instead of
-#' repeating or deleting axis labels, `plotOnSide` add plot areas on the specified sides of the original figures.
-#' It is based on [graphics::layout()] and it is no more than a tuned version of it.
+#' This function eases the creation of plots that include multiple panels that
+#' shares information such as axis labels. Instead of repeating or deleting
+#' axis labels, `plotOnSide` add plot areas on the specified sides of the
+#' original figures. It is based on [graphics::layout()] and it is no more
+#' than a tuned version of it.
 #'
 #' @examples
-#' plotOnSide(matrix(1,2), width=c(0.2,1), height=c(1,1,1,0.6))
+#' plotOnSide(matrix(1, 2), width = c(0.2, 1), height = c(1, 1, 1, 0.6))
 #' graphics::layout.show(5)
-
-
+#'
 plotOnSide <- function(mat, side = 1:2, dim = NULL, quiet = FALSE, ...) {
     ##
     mat <- as.matrix(mat)
@@ -31,8 +32,9 @@ plotOnSide <- function(mat, side = 1:2, dim = NULL, quiet = FALSE, ...) {
     slc <- sort(stats::na.exclude(unique(match(side, c(1, 2, 3, 4)))))
     ##
     if (!length(slc)) {
-        if (!quiet)
+        if (!quiet) {
             warning("'side' does not match with any of 1, 2, 3 or 4")
+        }
         layout(mat, ...)
     } else {
         sz <- length(slc)
@@ -40,24 +42,33 @@ plotOnSide <- function(mat, side = 1:2, dim = NULL, quiet = FALSE, ...) {
         mat <- cbind(0, mat + sz, 0)
         mat <- rbind(0, mat, 0)
         for (i in seq_len(sz)) {
-            switch(slc[i], {
-                mat[nrow(mat), 1 + (1:mydim[2L])] <- 1
-            }, {
-                mat[1 + (1:mydim[1L]), 1] <- 2
-            }, {
-                mat[1, 1 + (1:mydim[2L])] <- 3
-            }, {
-                mat[1 + (1:mydim[1L]), ncol(mat)] <- 4
-            })
+            switch(slc[i],
+                {
+                    mat[nrow(mat), 1 + (1:mydim[2L])] <- 1
+                },
+                {
+                    mat[1 + (1:mydim[1L]), 1] <- 2
+                },
+                {
+                    mat[1, 1 + (1:mydim[2L])] <- 3
+                },
+                {
+                    mat[1 + (1:mydim[1L]), ncol(mat)] <- 4
+                }
+            )
         }
-        if (all(mat[1L, ] == 0))
+        if (all(mat[1L, ] == 0)) {
             mat <- mat[-1L, ]
-        if (all(mat[, 1L] == 0))
+        }
+        if (all(mat[, 1L] == 0)) {
             mat <- mat[, -1L]
-        if (all(mat[nrow(mat), ] == 0))
+        }
+        if (all(mat[nrow(mat), ] == 0)) {
             mat <- mat[-nrow(mat), ]
-        if (all(mat[, ncol(mat)] == 0))
+        }
+        if (all(mat[, ncol(mat)] == 0)) {
             mat <- mat[, -ncol(mat)]
+        }
         ##
         layout(mat, ...)
     }

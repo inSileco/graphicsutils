@@ -19,21 +19,27 @@ vecfield2d(
 )
 }
 \arguments{
-\item{coords}{a matrix with two columns or more that is optionally used to alternatively define the coordinates of the vector field.}
+\item{coords}{a matrix with two columns or more that is optionally used to
+alternatively define the coordinates of the vector field.}
 
 \item{FUN}{the function that describes the dynamical system (see details).}
 
 \item{args}{the parameters of the dynamical system (see details).}
 
-\item{ndim}{number of dimension of the system. If \code{NULL} the values is based on \code{coords} and \code{slice}}
+\item{ndim}{number of dimension of the system. If \code{NULL} the values is
+based on \code{coords} and \code{slice}}
 
-\item{slices}{a vector of 2 elements providing the dimensions to be displayed, (default set to c(1,2)).}
+\item{slices}{a vector of 2 elements providing the dimensions to be
+displayed, (default set to c(1,2)).}
 
-\item{fixed}{the values used for non drawn dimension, if \code{NULL} the values will be set to 0.}
+\item{fixed}{the values used for non drawn dimension, if \code{NULL} the values
+will be set to 0.}
 
-\item{cex.x}{the magnification coefficient to be used for lengths of vectors along the x axis.}
+\item{cex.x}{the magnification coefficient to be used for lengths of
+vectors along the x axis.}
 
-\item{cex.y}{the magnification coefficient to be used for lengths of vectors along the y axis.}
+\item{cex.y}{the magnification coefficient to be used for lengths of
+vectors along the y axis.}
 
 \item{log}{a logical. If \code{TRUE}, the lengths of arrows are log-transformed.}
 
@@ -62,7 +68,8 @@ seqx <- seq(-2,2,0.31)
 seqy <- seq(-2,2,0.31)
 beta1 <- matrix(c(0,-1,1,0),2)
 # Plot 1:
-vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin, args=list(beta=beta1))
+vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
+args=list(beta=beta1))
 # Plot 2:
 graphics::par(mar=c(2,2,2,2))
 vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,

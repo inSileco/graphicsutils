@@ -25,7 +25,8 @@ polarPlot(
 \arguments{
 \item{seqtime}{sequence of time values (equivalent to the x axis).}
 
-\item{seqval}{sequence of values of interest (radial axis, equivalent to the y axis).}
+\item{seqval}{sequence of values of interest (radial axis, equivalent to
+the y axis).}
 
 \item{rad}{radius of the circle.}
 
@@ -35,19 +36,24 @@ polarPlot(
 
 \item{incr}{increment used to draw the circle.}
 
-\item{labelc}{character or expression vector of labels to be placed at the tickpoints.}
+\item{labelc}{character or expression vector of labels to be placed at the
+tickpoints.}
 
 \item{tckcol}{color of the tickmarks.}
 
-\item{atc}{the points at which tick-marks are to be drawn. By default (when \code{NULL}) tickmark locations are computed.}
+\item{atc}{the points at which tick-marks are to be drawn. By default (when
+\code{NULL}) tickmark locations are computed.}
 
-\item{labelr}{character or expression vector specifying the \emph{text} to be placed at the radial-axis marks.}
+\item{labelr}{character or expression vector specifying the \emph{text} to be
+placed at the radial-axis marks.}
 
 \item{atr}{the points at which radial-axis marks are to be drawn.}
 
-\item{clockwise}{logical. If TRUE, the plot must de read clockwise, otherwise, counter-clockwise.}
+\item{clockwise}{logical. If TRUE, the plot must de read clockwise,
+otherwise, counter-clockwise.}
 
-\item{n_signif}{number of significant numbers to be displayed (used when labelc is \code{NULL}).}
+\item{n_signif}{number of significant numbers to be displayed (used when
+labelc is \code{NULL}).}
 
 \item{add}{logical. add to current plot?}
 
@@ -60,7 +66,8 @@ Draws a polar plot.
 Polar Plot
 }
 \examples{
-polarPlot(1:40, stats::runif(40), to=1.9*pi, col='grey30', border='grey80')
+polarPlot(1:40, stats::runif(40), to = 1.9 * pi, col = "grey30", border = "grey80")
+
 }
 \seealso{
 \code{\link[plotrix]{polar.plot}}

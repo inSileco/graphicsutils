@@ -10,6 +10,6 @@ test_that("does it work properly", {
 })
 
 test_that("expected warnings", {
-  expect_warning(pointsInPolygon(cbind(tria,0), pts), "ncol(points)>2 - only the first two columns are used.", fixed = TRUE)
-  expect_warning(pointsInPolygon(tria, cbind(pts, 0)), "ncol(polygon)>2 - only the first two columns are used.", fixed = TRUE)
+  expect_warning(pointsInPolygon(cbind(tria,0), pts), "ncol(points) > 2 - only the first two columns are used.", fixed = TRUE)
+  expect_warning(pointsInPolygon(tria, cbind(pts, 0)), "ncol(polygon) > 2 - only the first two columns are used.", fixed = TRUE)
 })

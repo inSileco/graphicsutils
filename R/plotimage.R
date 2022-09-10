@@ -1,11 +1,12 @@
 #' Display an image
 #'
-#' Returns a plot that displays an image. It enables users to directly include a
-#' `.png` or a `.jpeg` file in a plot region by providing their path.
+#' Returns a plot that displays an image. It enables users to directly include 
+#' a `.png` or a `.jpeg` file in a plot region by providing their path.
 #'
 #' @param obj an object of class `nativeRaster` function.
 #' @param file a path to either a `.png` file or a `.jpeg` file.
-#' @param add logical. Should images be added on the current graph? If FALSE a new plot is created.
+#' @param add logical. Should images be added on the current graph? If `FALSE`
+#' a new plot is created.
 #' @param ... additional arguments to be passed to `rasterImage` function.
 #'
 #' @details
@@ -15,7 +16,8 @@
 #'
 #' @export
 #' @examples
-#' img <- png::readPNG(system.file('img', 'Rlogo.png', package='png'), native=TRUE)
+#' img <- png::readPNG(system.file('img', 'Rlogo.png', package='png'),
+#' native=TRUE)
 #' op <- par(no.readonly = TRUE)
 #' par(mfrow=c(4,4), mar=rep(2,4))
 #' for (i in seq_len(16)) plotImage(img)

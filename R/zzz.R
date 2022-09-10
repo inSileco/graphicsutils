@@ -2,7 +2,8 @@
 #'
 #' @name graphicsutils
 #' @docType package
-#' @description A collection of (hopefully) useful functions to create graphics based plots.
+#' @description A collection of (hopefully) useful functions to create
+#' graphics based plots.
 #' @import Rcpp
 #' @importFrom Rcpp evalCpp
 #' @importFrom graphics abline axis axTicks box grid image
@@ -18,7 +19,6 @@
 NULL
 
 .onLoad <- function(libname, pkgname) utils::packageVersion("graphicsutils")
-
 
 
 # Functions exposed in inSilecoMisc
@@ -38,4 +38,3 @@ seqRg <- function(x, n, offset = 0, prop = TRUE) {
   if (prop) offset <- offset*diff(rg)
   seq(rg[1L] - offset, rg[2L] + offset, length.out = n)
 }
-

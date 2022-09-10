@@ -4,4 +4,3 @@
 pointsInPolygon_core <- function(points, polygon) {
     .Call('_graphicsutils_pointsInPolygon_core', PACKAGE = 'graphicsutils', points, polygon)
 }
-

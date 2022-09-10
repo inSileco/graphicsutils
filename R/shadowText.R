@@ -2,8 +2,7 @@
 #'
 #' This function shadows a text and adds it to an existing plot.
 #'
-#' @param x coordinate(s) of text(s) on the x-axis.
-#' @param y coordinate(s) of text(s) on the y-axis.
+#' @param x,y x and y coordinate of text(s) to be shadowed.
 #' @param labels A character vector to shadow.
 #' @param col color of the text.
 #' @param bg color of the background (shadow color).

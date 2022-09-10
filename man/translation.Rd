@@ -7,15 +7,16 @@
 translation(x, y, xtrans = 0, ytrans = 0, add = FALSE, ...)
 }
 \arguments{
-\item{x, y}{x and y coordinates of points to be translated (can also be a matrix, see details).}
+\item{x, y}{x and y coordinates of points to be translated (can also be a
+matrix, see details).}
 
-\item{xtrans}{the x coordinate of the translation vector.}
+\item{xtrans, ytrans}{the x and y coordinates of the translation vector.}
 
-\item{ytrans}{the y coordinate of the translation vector.}
+\item{add}{logical. If \code{TRUE} the set of transformed points is drawn as a
+polygon.}
 
-\item{add}{logical. If \code{TRUE} the set of transformed points is drawn as a polygon.}
-
-\item{...}{Additional arguments to be passed to \code{polygon} function (used only if \code{add} is TRUE).}
+\item{...}{Additional arguments to be passed to \code{polygon} function (used
+only if \code{add} is TRUE).}
 }
 \description{
 Compute a translation for a set of points. The transformed set of points is
@@ -23,9 +24,9 @@ optionally add to the current plot.
 }
 \details{
 For details about what is a translation, see
-\url{https://en.wikipedia.org/wiki/Translation_(geometry)}. Note that if \code{x} is a
-matrix with more than 2 columns, then x is the first column and y the second
-one.
+\url{https://en.wikipedia.org/wiki/Translation_(geometry)}. Note that if \code{x} is
+a matrix with more than 2 columns, then x is the first column and y the
+second one.
 }
 \examples{
 # Example 1:
@@ -40,7 +41,8 @@ x <- c(2,4,3,1)
 y <- c(1,1,3,3)
 plot0(c(0,10),c(0,10))
 polygon(x,y)
-for (i in seq_len(6)) translation(x,y,xtrans=i,ytrans=i, add=TRUE, border=i+1, lwd=2)
+for (i in seq_len(6)) translation(x,y,xtrans=i,ytrans=i, add=TRUE,
+border=i+1, lwd=2)
 }
 \keyword{geometry}
 \keyword{translation,}

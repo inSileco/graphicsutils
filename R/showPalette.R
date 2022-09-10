@@ -1,9 +1,10 @@
 #' Displays a color palette
 #'
-#' Displays a color palette and information about its colors.
+#' Displays a color palette and color details.
 #'
 #' @param x a vector of colors.
-#' @param inline a logical. If `TRUE`, the colors are displayed on a single row.
+#' @param inline a logical. If `TRUE`, the colors are displayed on a single 
+#' row.
 #' @param add_number a logical. If `TRUE`, color vector's indices are added.
 #' @param add_codecolor a logical. If `TRUE`, the code color is displayed.
 #' @param cex_num the magnification coefficient of the color vector's indices.
@@ -31,8 +32,7 @@ showPalette <- function(x = palette(), inline = FALSE, add_number = TRUE,
         x <- tmp[((x - 1) %% length(tmp)) + 1]
     }
     ##
-    if (class(x) != "matrix")
-        x <- col2rgb(x)
+    if (!inherits(x, "matrix")) x <- col2rgb(x)
     ramp <- apply(x, 2, function(x) rgb(x[1L], x[2L], x[3L],
       maxColorValue = 255))
     dark <- (apply(x, 2, sum) > 196) + 1
@@ -52,11 +52,11 @@ showPalette <- function(x = palette(), inline = FALSE, add_number = TRUE,
         if (add_number) {
             if (add_codecolor) {
                 txt <- paste0(i, ": ", ramp[i])
-            } else txt <- paste0(i)
+            } else {
+                txt <- paste0(i)
+            }
         } else {
-            if (add_codecolor) {
-                txt <- paste0(ramp[i])
-            } else txt <- ""
+            if (add_codecolor) txt <- paste0(ramp[i]) else txt <- ""
         }
 
         text(0, 0, txt, cex = cex_num, col = c("white", "black")[dark[i]])

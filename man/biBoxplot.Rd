@@ -38,18 +38,22 @@ biBoxplot(
 
 \item{col_right}{color of the right boxes.}
 
-\item{add}{a logical. Should the biboxplots be added on the current graph? If \code{FALSE} then a new plot is created.}
+\item{add}{a logical. Should the biboxplots be added on the current graph?
+If \code{FALSE} then a new plot is created.}
 
-\item{at}{numeric vector giving the locations where the boxplots should be drawn. Same default behavior as in \code{\link[graphics:boxplot]{graphics::boxplot()}}.}
+\item{at}{numeric vector giving the locations where the boxplots should be
+drawn. Same default behavior as in \code{\link[graphics:boxplot]{graphics::boxplot()}}.}
 }
 \description{
 Draws boxplots and bi-boxplots.
 }
 \details{
-This functions does not attempt to assess the distributions as it is based on quantiles.
+This functions does not attempt to assess the distributions as it
+is based on quantiles.
 }
 \examples{
 dis1 <- list(stats::rnorm(1000, sd = 0.25))
 biBoxplot(dis1)
+
 }
 \keyword{boxplots}

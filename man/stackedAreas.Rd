@@ -23,15 +23,19 @@ stackedAreas(
 )
 }
 \arguments{
-\item{val}{a dataframe or a matrix containing a series of positive values, rows stand for popultaions.}
+\item{val}{a dataframe or a matrix containing a series of positive values,
+rows stand for popultaions.}
 
-\item{index}{values to be used for the x axis, by default it is set to \code{NULL} meaning that it is handled by \code{plot.default}}
+\item{index}{values to be used for the x axis, by default it is set to
+\code{NULL} meaning that it is handled by \code{plot.default}}
 
-\item{rgy}{a value that determines the range of y values. Default is set to 1 which means that the range of values is [0,1].}
+\item{rgy}{a value that determines the range of y values. Default is set to
+1 which means that the range of values is [0,1].}
 
 \item{cumul}{a logical. If \code{TRUE}, data are considered as cumulative sums.}
 
-\item{transp}{a logical. If \code{TRUE}, the transpose of the data table is computed.}
+\item{transp}{a logical. If \code{TRUE}, the transpose of the data table is
+computed.}
 
 \item{legend}{Text to be used as a legend for each area drawn.}
 
@@ -39,7 +43,8 @@ stackedAreas(
 
 \item{col}{vector of colors, repeated if too small.}
 
-\item{pickcolors}{logical. If \code{TRUE}, \code{\link[=pickColors]{pickColors()}} is called to select colors.}
+\item{pickcolors}{logical. If \code{TRUE}, \code{\link[=pickColors]{pickColors()}} is called to select
+colors.}
 
 \item{lty}{the line type (see \code{\link[graphics:par]{graphics::par()}} documentation)}
 
@@ -57,13 +62,17 @@ stackedAreas(
 Draw a stacked areas chart.
 }
 \details{
-Areas are drawn using \code{\link[graphics:polygon]{graphics::polygon()}} and users can take advantage of it to customize their stacked areas (using \code{lwd}, \code{lty} or \code{border} arguments).
+Areas are drawn using \code{\link[graphics:polygon]{graphics::polygon()}} and users can take
+advantage of it to customize their stacked areas (using \code{lwd}, \code{lty} or
+\code{border} arguments).
 }
 \note{
-The default colors have been inspired by four palettes found on line: \url{http:www.color-hex.com/color-palettes/}. \code{\link[plotrix:stackpoly]{plotrix::stackpoly()}} function
+The default colors have been inspired by four palettes found on line:
+\url{http:www.color-hex.com/color-palettes/}. \code{\link[plotrix:stackpoly]{plotrix::stackpoly()}} function
 from the \code{plotrix} package offers a good alternative.
 
-Using a stacked areas chart with more than 20 areas should provide a figure really hard to read.
+Using a stacked areas chart with more than 20 areas should provide a figure
+really hard to read.
 }
 \examples{
 # data for 8 populations at 25 different periods.
@@ -73,11 +82,14 @@ x <- data.frame(matrix(runif(200,2,10), 8, 25))
 stackedAreas(x)
 
 # plot 2: personalized plot
-graphics::par(xaxs='i', yaxs='i', font=2, cex.axis=1.2, cex.lab=1.4, bty='l')
-graphics::plot.default(c(1999,2027), c(-10,110), type='n', xlab='Years', ylab='Percentage',
-main='My customized stacked areas chart')
-plotAreaColor(col='#f2c4c4')
-stackedAreas(x, index=2001:2025, rgy=100, lwd=2, add=TRUE, border='transparent')
+graphics::par(xaxs = 'i', yaxs = 'i', font = 2, cex.axis = 1.2,
+cex.lab = 1.4, bty = 'l')
+graphics::plot.default(c(1999, 2027), c(-10, 110), type = 'n',
+xlab = 'Years', ylab = 'Percentage',
+main = 'My customized stacked areas chart')
+plotAreaColor(col = '#f2c4c4')
+stackedAreas(x, index = 2001:2025, rgy = 100, lwd = 2, add = TRUE,
+border = 'transparent')
 }
 \keyword{areas,}
 \keyword{histogram}

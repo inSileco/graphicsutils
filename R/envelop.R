@@ -7,8 +7,10 @@
 #' @param x vectors containing the x coordinates.
 #' @param upper the y coordinates of the upper values.
 #' @param lower the y coordinates of the lower values.
-#' @param add a logical. If `TRUE` the envelop is drawn as a polygon (default behavior).
-#' @param ... additional arguments to be passed to [graphics::polygon()] function.
+#' @param add a logical. If `TRUE` the envelop is drawn as a polygon (default 
+#' behavior).
+#' @param ... additional arguments to be passed to [graphics::polygon()] 
+#' function.
 #'
 #' @export
 #'

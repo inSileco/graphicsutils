@@ -9,7 +9,8 @@ plotAreaColor(color = "grey80", border = NA, ...)
 \arguments{
 \item{color}{Color of the rectangle, default is set to 'grey80'.}
 
-\item{border}{Color of the border of the rectangle drawn, default is set to \code{NA}, that is no border.}
+\item{border}{Color of the border of the rectangle drawn, default is set to
+\code{NA}, that is no border.}
 
 \item{...}{Additional arguments to be passed to \code{\link[graphics:rect]{graphics::rect()}} function.}
 }
@@ -17,7 +18,9 @@ plotAreaColor(color = "grey80", border = NA, ...)
 Color the plot area by drawing a rectangle. Default color is 'grey80'.
 }
 \details{
-The function calls \code{\link[graphics:rect]{graphics::rect()}} and draw a colored rectangle (default color is set to light blue) whose dimensions are given by argument \code{usr} of function \code{\link[graphics:par]{graphics::par()}}.
+The function calls \code{\link[graphics:rect]{graphics::rect()}} and draw a colored rectangle
+(default color is set to light blue) whose dimensions are given by argument
+\code{usr} of function \code{\link[graphics:par]{graphics::par()}}.
 }
 \note{
 In \code{\link[graphics:par]{graphics::par()}}, argument \code{bg} colors the entire window.

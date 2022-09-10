@@ -13,33 +13,38 @@ interactiveLayout(
 )
 }
 \arguments{
-\item{n}{Number of plot regions desired, default is 1.}
+\item{n}{Number of plot regions, default is set to 1.}
 
-\item{grain.x}{Number of vertical lines drawn to select the size of the subplots regions.}
+\item{grain.x}{Number of vertical lines drawn to select the size of the
+subplots regions.}
 
-\item{grain.y}{Number of horizontal lines drawn to select the size of the subplots regions.}
+\item{grain.y}{Number of horizontal lines drawn to select the size of the
+subplots regions.}
 
-\item{show}{logical. If TRUE \code{layout.show} is used to get a preview of the subplots regions.}
+\item{show}{logical. If \code{TRUE} \code{\link[graphics:layout]{graphics::layout.show()}} is used to get a
+preview of the subplots regions.}
 
-\item{now}{logical. If TRUE \code{layout} is called at \code{layout2} exit.}
+\item{now}{logical. If \code{TRUE} \code{\link[graphics:layout]{graphics::layout()}} is called on exit.}
 }
 \value{
 the matrix use to draw the layout is returned as an invisible output.
 }
 \description{
-This function provides an interactive version of the \code{layout} function. Once \code{layout2} is called, the users get a grid he can click on (thanks to \code{locator} function).
-Once the clicks have been achieved, the users can get the matrix created and/or use directly layout and then call the function.
+\code{layout2()} provides an interactive version of \code{\link[graphics:layout]{graphics::layout()}}. Once
+called, an interactive grid is displayed and can be used to create a layout.
 }
 \details{
 Arguments \code{grain.x} and \code{grain.y} control the aspect of the support
-grid generated to locate the different panels. Once the grid popup, the user
-must click 2\emph{n times to select the size of their n subplot. A panel is
-delimited by two consecutive clicks: click 2}p and clicks 2*p+1. The two cells
-the user clicked on will then be used to compute the area allocated for
-panel p. Note that the user is allowed to use the same area for several plots
+grid generated to locate the different panels. Once the grid pops up, the
+user must click 2\emph{n times to select the size of the n subplots. A panel is
+delimited by two consecutive clicks, the tow cells selected by click 2}p
+and clicks 2*p+1  will be used to compute the area allocated to panel p.
+Note that the user is allowed to use the same area for several plots
 but only this area will actually be used only by the last one.
 
-As \code{layout} is ultimately called, \code{layout2} has the same limits: currently 200 for the numbers of rows and columns and 10007 for the total number of cells.
+As \code{\link[graphics:layout]{graphics::layout()}} is ultimately called, \code{layout2()} has the same
+limits, i.e. currently 200 for the numbers of rows and columns and 10007
+for the total number of cells.
 }
 \keyword{interactive}
 \keyword{layout}

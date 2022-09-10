@@ -5,7 +5,8 @@
 #' @param x the x coordinates of points in the plot or a matrix of coordinates.
 #' @param y the y coordinates of points in the plot.
 #' @param fill The color to be used to fill the plot area.
-#' @param grid.col color of the grid's lines. The default value is `NULL`, in which case the grid is not drawn.
+#' @param grid.col color of the grid's lines. The default value is `NULL`, in 
+#' which case the grid is not drawn.
 #' @param grid.lty line type of the grid's lines.
 #' @param grid.lwd line width of the grid's lines.
 #' @param text A character string or a object to be coerced as character string
@@ -36,14 +37,16 @@
 #' # Example 4
 #' plot0(c(-10,10), grid.col = 2)
 
-plot0 <- function(x = c(-1, 1), y = NULL, fill = NULL, text = NULL, grid.col = NULL,
-    grid.lwd = 1, grid.lty = 1, ...) {
+plot0 <- function(x = c(-1, 1), y = NULL, fill = NULL, text = NULL,
+    grid.col = NULL, grid.lwd = 1, grid.lty = 1, ...) {
     ##
     args <- list(...)
-    args_txt <- args[names(args) %in% methods::formalArgs(graphics::text.default)]
+    args_txt <- args[
+        names(args) %in% methods::formalArgs(graphics::text.default)
+    ]
     deft <- list(ann = FALSE, axes = FALSE, type = "n")
     # default behavior for matrix and vectors
-    if (NCOL(as.matrix(x)) > 1 & is.null(y)) {
+    if (NCOL(as.matrix(x)) > 1 && is.null(y)) {
         if (is.null(y)) {
             y <- x[, 2L]
         }

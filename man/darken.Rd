@@ -13,11 +13,15 @@ darken(col, percentage = 50, as_rgb = FALSE)
 lighten(col, percentage = 50, as_rgb = FALSE)
 }
 \arguments{
-\item{fromcol}{starting color, i.e. if \code{percentage = 0}, it is the color returned.}
+\item{fromcol}{starting color, i.e. \code{percentage = 0}, it is the
+color returned.}
 
-\item{tocol}{color to nuance \code{fromcol}, i.e. if \code{percentage = 100}, it is the color returned.}
+\item{tocol}{color to nuance \code{fromcol}, i.e. \code{percentage = 100}, it
+is the color returned.}
 
-\item{percentage}{percentage determining the percentage of \code{tocol} used to nuance \code{fromcol}. Note that \code{darken} and \code{lighten} support negative percentage.}
+\item{percentage}{percentage determining the percentage of \code{tocol} used to
+nuance \code{fromcol}. Note that \code{darken} and \code{lighten} support negative
+percentage.}
 
 \item{as_rgb}{a logical. Should the color(s) returned as a matrix object?}
 
@@ -30,18 +34,19 @@ Returns lightened or darkened colors, vectorised over \code{percentage}.
 }
 \section{Functions}{
 \itemize{
-\item \code{ramp}: Returns a shaded color.
+\item \code{ramp()}: Returns a shaded color.
 
-\item \code{darken}: Darken a color.
+\item \code{darken()}: Darken a color.
 
-\item \code{lighten}: Lighten a color.
+\item \code{lighten()}: Lighten a color.
+
 }}
-
 \examples{
-showPalette(ramp("blue", "red", 10*3:7))
-darken('red', 50)
-more_reds <- lighten('red', seq(10,90,9))
+showPalette(ramp("blue", "red", 10 * 3:7))
+darken("red", 50)
+more_reds <- lighten("red", seq(10, 90, 9))
 showPalette(more_reds)
+
 }
 \seealso{
 \code{\link[grDevices:colorRamp]{grDevices::colorRampPalette()}}

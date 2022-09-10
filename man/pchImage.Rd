@@ -2,7 +2,7 @@
 % Please edit documentation in R/pchimage.R
 \name{pchImage}
 \alias{pchImage}
-\title{Images as plotting character}
+\title{Images as plotting characters}
 \usage{
 pchImage(
   x,
@@ -27,28 +27,30 @@ pchImage(
 \item{file}{a path to either a \code{.png} file or a \code{.jpeg} file.}
 
 \item{cex.x}{a numerical value giving the amount by which the horizontal
-width of the image should be magnified, a value of 1 means 5\% of the total width.}
+width of the image should be magnified, a value of 1 means 5\% of the total
+width.}
 
 \item{cex.y}{Same as \code{cex.x} for the y axis.}
 
 \item{atcenter}{a logical. If \code{TRUE} them x and y coordinates describe
-the center of the image. Otherwise they represent the bottom-left coordinates of the image.}
+the center of the image. Otherwise they represent the bottom-left
+coordinates of the image.}
 
-\item{add}{logical. Should images be added on the current graph? If
+\item{add}{logical. Should images be added on the current plot? If
 \code{FALSE} a new plot is created.}
 
-\item{col}{optional color use to fill pixels whose values are not 0}
+\item{col}{optional color use to fill pixels whose values are not 0.}
 
 \item{...}{Additional arguments to be passed to the \code{rasterImage} function.}
 }
 \description{
-\code{pchimage} returns a plot that displays an image. It enables to users
+\code{pchimage} returns a plot that displays an image. It allows users
 to directly include a \code{.png} or a \code{.jpeg} file in a plot region.
 }
 \details{
-Either \code{obj} or \code{file} must be defined.
-If \code{file} is not null, then \code{\link[png:readPNG]{png::readPNG()}} or \code{\link[jpeg:readJPEG]{jpeg::readJPEG()}} according to
-the end of the file extension.
+Either \code{obj} or \code{file} must be defined. If \code{file} is not null, then
+\code{\link[png:readPNG]{png::readPNG()}} or \code{\link[jpeg:readJPEG]{jpeg::readJPEG()}} according to the end of the file
+extension.
 }
 \examples{
 # Example:

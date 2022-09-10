@@ -17,9 +17,11 @@ rhombi(x, y = x, ldg = 1, sdg = ldg, rot = 0, add = FALSE, ...)
 
 \item{rot}{rotation angles (in degree) of the rhombi.}
 
-\item{add}{logical. If \code{TRUE} rhombi are added to the current plot (default behavior).}
+\item{add}{logical. If \code{TRUE} rhombi are added to the current plot (default
+behavior).}
 
-\item{...}{additional arguments to be passed to \code{\link[graphics:polygon]{graphics::polygon()}} function.}
+\item{...}{additional arguments to be passed to \code{\link[graphics:polygon]{graphics::polygon()}}
+function.}
 }
 \value{
 A vector including rhombi areas is returned if assigned.
@@ -35,16 +37,17 @@ Additional arguments remain the same for every rhombus.
 }
 \examples{
 # Example 1:
-plot0(asp=1)
+plot0(asp = 1)
 rhombi(0)
 
 # Example 2:
-plot0(c(-0.4,1.4),c(-0.4,1.4))
+plot0(c(-0.4, 1.4), c(-0.4, 1.4))
 rhombi(runif(6), runif(5), runif(2), runif(3))
 
 # Example 3:
-plot0(asp=1)
-rhombi(x=0, rot=seq(0,180,20), col=2, border=NA)
-rhombi(x=0, rot=seq(0,180,30), ldg=0.5, col=7, border=NA)
+plot0(asp = 1)
+rhombi(x = 0, rot = seq(0, 180, 20), col = 2, border = NA)
+rhombi(x = 0, rot = seq(0, 180, 30), ldg = 0.5, col = 7, border = NA)
+
 }
 \keyword{rhumbus}

@@ -11,13 +11,14 @@ plotImage(obj = NULL, file = NULL, add = FALSE, ...)
 
 \item{file}{a path to either a \code{.png} file or a \code{.jpeg} file.}
 
-\item{add}{logical. Should images be added on the current graph? If FALSE a new plot is created.}
+\item{add}{logical. Should images be added on the current graph? If \code{FALSE}
+a new plot is created.}
 
 \item{...}{additional arguments to be passed to \code{rasterImage} function.}
 }
 \description{
-Returns a plot that displays an image. It enables users to directly include a
-\code{.png} or a \code{.jpeg} file in a plot region by providing their path.
+Returns a plot that displays an image. It enables users to directly include
+a \code{.png} or a \code{.jpeg} file in a plot region by providing their path.
 }
 \details{
 Note that either \code{obj} or \code{file} must be defined.
@@ -25,7 +26,8 @@ If a path is provided either \code{readPNG} or \code{readJPEG} according to
 the end of the file extension.
 }
 \examples{
-img <- png::readPNG(system.file('img', 'Rlogo.png', package='png'), native=TRUE)
+img <- png::readPNG(system.file('img', 'Rlogo.png', package='png'),
+native=TRUE)
 op <- par(no.readonly = TRUE)
 par(mfrow=c(4,4), mar=rep(2,4))
 for (i in seq_len(16)) plotImage(img)

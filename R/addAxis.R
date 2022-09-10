@@ -21,12 +21,10 @@
 #' addAxis(2, at = seq(-50, 50, 100), digits = 2)
 #' addAxis(3, lwd = 0, lwd.ticks = 0.5)
 #' addAxis(4, las = 1, col.axis = "red")
-
-
+#'
 addAxis <- function(side, at = axTicks(side), mgp = par()$mgp, digits = 0,
                     ...) {
-
-  opar  <- par(no.readonly = TRUE)
+  opar <- par(no.readonly = TRUE)
   on.exit(par(opar, no.readonly = TRUE))
 
   owarn <- options()$warn
@@ -36,19 +34,21 @@ addAxis <- function(side, at = axTicks(side), mgp = par()$mgp, digits = 0,
   par(mgp = mgp)
 
   if (side %in% c(1, 3)) {
-
     labels <- ifelse(at == 0,
-                     sprintf("%.0f\u00B0", at),
-                     ifelse(at > 0,
-                            sprintf(paste0("%.", digits, "f\u00B0E"), at),
-                            sprintf(paste0("%.", digits, "f\u00B0W"), -1 * at)))
+      sprintf("%.0f\u00B0", at),
+      ifelse(at > 0,
+        sprintf(paste0("%.", digits, "f\u00B0E"), at),
+        sprintf(paste0("%.", digits, "f\u00B0W"), -1 * at)
+      )
+    )
   } else {
-
     labels <- ifelse(at == 0,
-                     sprintf("%.0f\u00B0", at),
-                     ifelse(at > 0,
-                            sprintf(paste0("%.", digits, "f\u00B0N"), at),
-                            sprintf(paste0("%.", digits, "f\u00B0S"), -1 * at)))
+      sprintf("%.0f\u00B0", at),
+      ifelse(at > 0,
+        sprintf(paste0("%.", digits, "f\u00B0N"), at),
+        sprintf(paste0("%.", digits, "f\u00B0S"), -1 * at)
+      )
+    )
   }
 
   axis(side = side, at = at, labels = labels, ...)

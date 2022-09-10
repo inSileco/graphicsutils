@@ -1,6 +1,6 @@
-#' Images as plotting character
+#' Images as plotting characters
 #'
-#' `pchimage` returns a plot that displays an image. It enables to users
+#' `pchimage` returns a plot that displays an image. It allows users
 #' to directly include a `.png` or a `.jpeg` file in a plot region.
 #'
 #' @param x the x coordinates of images to be drawn.
@@ -8,24 +8,25 @@
 #' @param obj an object of class `nativeRaster`.
 #' @param file a path to either a `.png` file or a `.jpeg` file.
 #' @param cex.x a numerical value giving the amount by which the horizontal
-#' width of the image should be magnified, a value of 1 means 5% of the total width.
+#' width of the image should be magnified, a value of 1 means 5% of the total
+#' width.
 #' @param cex.y Same as `cex.x` for the y axis.
 #' @param atcenter a logical. If `TRUE` them x and y coordinates describe
-#' the center of the image. Otherwise they represent the bottom-left coordinates of the image.
-#' @param col optional color use to fill pixels whose values are not 0
-#' @param add logical. Should images be added on the current graph? If
+#' the center of the image. Otherwise they represent the bottom-left
+#' coordinates of the image.
+#' @param col optional color use to fill pixels whose values are not 0.
+#' @param add logical. Should images be added on the current plot? If
 #' `FALSE` a new plot is created.
 #' @param ... Additional arguments to be passed to the `rasterImage` function.
 #'
 #' @keywords plot, image, plotting character
 #'
-#'
 #' @export
 #'
 #' @details
-#' Either `obj` or `file` must be defined.
-#' If `file` is not null, then [png::readPNG()] or [jpeg::readJPEG()] according to
-#' the end of the file extension.
+#' Either `obj` or `file` must be defined. If `file` is not null, then
+#' [png::readPNG()] or [jpeg::readJPEG()] according to the end of the file
+#' extension.
 #'
 #' @examples
 #' # Example:
@@ -60,7 +61,7 @@ pchImage <- function(x, y, obj = NULL, file = NULL, cex.x = 1, cex.y = cex.x, at
     ## Something weird, I had to use the t to get the correct id from grepl if
     ## (!is.null(col)) obj[!grepl(obj), pattern='#000000')] <- col
     if (!is.null(col)) {
-        if (class(obj) == "nativeRaster") {
+        if (inherits(obj, "nativeRaster")) {
             obj[obj != 0] <- col
         } else {
             # length must be tested as it could be '#00000000'
