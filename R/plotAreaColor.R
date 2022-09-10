@@ -2,7 +2,8 @@
 #'
 #' Color the plot area by drawing a rectangle. Default color is 'grey80'.
 #'
-#' @param border Color of the border of the rectangle drawn, default is set to `NA`, that is no border.
+#' @param border Color of the border of the rectangle drawn, default is set to 
+#' `NA`, that is no border.
 #' @param color Color of the rectangle, default is set to 'grey80'.
 #' @param ... Additional arguments to be passed to [graphics::rect()] function.
 #'
@@ -10,7 +11,9 @@
 #'
 #' @export
 #'
-#' @details The function calls [graphics::rect()] and draw a colored rectangle (default color is set to light blue) whose dimensions are given by argument `usr` of function [graphics::par()].
+#' @details The function calls [graphics::rect()] and draw a colored rectangle
+#' (default color is set to light blue) whose dimensions are given by argument
+#' `usr` of function [graphics::par()].
 #'
 #' @note In [graphics::par()], argument `bg` colors the entire window.
 #'
@@ -34,8 +37,9 @@ plotAreaColor <- function(color = "grey80", border = NA, ...) {
     if (length(args) > 0) {
         do.call("rect", args = as.list(
           c(coor, border = border, col = color, args)))
-    } else do.call("rect", args = as.list(
-      c(coor, border = border, col = color)))
+    } else {
+      do.call("rect", args = as.list(c(coor, border = border, col = color)))
+    }
     ##
     invisible(NULL)
 }

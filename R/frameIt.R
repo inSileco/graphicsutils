@@ -1,6 +1,7 @@
 #' Draw a frame around a plot
 #'
-#' Draw a frame around the plot region as an ensemble of small rectangles whose colors can be specified.
+#' Draw a frame around the plot region as an ensemble of small rectangles
+#' whose colors can be specified.
 #'
 #' @param nbc number of rectangles to be drawn for each axis.
 #' @param cex.x control the dimension
@@ -19,17 +20,16 @@
 #' colors to be applied to each axis.
 #'
 #' @examples
-#' #Example 1:
+#' # Example 1:
 #' plot0()
 #' frameIt()
 #'
-#' #Example 2:
+#' # Example 2:
 #' plot0()
-#' frameIt(cex.x=1.5, col=c(2,3), border=1)
-
-
-frameIt <- function(nbc = 10, cex.x = 1, cex.y = cex.x, col = c("grey45", "grey85"),
-    border = NA) {
+#' frameIt(cex.x = 1.5, col = c(2, 3), border = 1)
+#'
+frameIt <- function(nbc = 10, cex.x = 1, cex.y = cex.x,
+                    col = c("grey45", "grey85"), border = NA) {
     pu <- par()$usr
     ##
     px <- pretty(c(pu[1L], pu[2L]), nbc)
@@ -40,24 +40,32 @@ frameIt <- function(nbc = 10, cex.x = 1, cex.y = cex.x, col = c("grey45", "grey8
     dy <- py[2L] - py[1L]
     py <- c(py[1L] - dy, py, py[nbc] + dy)
     ##
-    widx <- 0.01 * (pu[4L] - pu[3L]) * cex.x * par()$pin[1L]/par()$pin[2L]
+    widx <- 0.01 * (pu[4L] - pu[3L]) * cex.x * par()$pin[1L] / par()$pin[2L]
     widy <- 0.01 * (pu[2L] - pu[1L]) * cex.y
     ##
     mycol <- rep_len(col, nbc + 3)
     ##
     for (i in seq(1, nbc + 3)) {
         # axis 1
-        rect(px[i], pu[3L], px[i + 1], pu[3L] + widx, col = mycol[i],
-            border = border)
+        rect(px[i], pu[3L], px[i + 1], pu[3L] + widx,
+            col = mycol[i],
+            border = border
+        )
         # axis 3
-        rect(px[i], pu[4L] - widx, px[i + 1], pu[4L], col = mycol[i],
-            border = border)
+        rect(px[i], pu[4L] - widx, px[i + 1], pu[4L],
+            col = mycol[i],
+            border = border
+        )
         # axis 2
-        rect(pu[1L], py[i], pu[1L] + widy, py[i + 1], col = mycol[i],
-            border = border)
+        rect(pu[1L], py[i], pu[1L] + widy, py[i + 1],
+            col = mycol[i],
+            border = border
+        )
         # axis 4
-        rect(pu[2L] - widy, py[i], pu[2L], py[i + 1], col = mycol[i],
-          border = border)
+        rect(pu[2L] - widy, py[i], pu[2L], py[i + 1],
+            col = mycol[i],
+            border = border
+        )
     }
     invisible(NULL)
 }

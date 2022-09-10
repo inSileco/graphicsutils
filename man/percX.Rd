@@ -10,24 +10,25 @@ percX(percentage = 90)
 percY(percentage = 90)
 }
 \arguments{
-\item{percentage}{The percentage of the axis for which the values is returned.}
+\item{percentage}{The percentage of the axis for which the values is
+returned.}
 }
 \description{
 Returns the values of either x-axis or y-axis for a given percentage.
 }
 \details{
-This function intends to ease the positioning of additional marks such as
-text when axis have not common axis. The user must be aware that its use
-becomes tricky when drawing multi-panels plots.
+This function intends to ease the positioning of additional marks on plot
+(such as annotation). Note that percentages refer to the entire plot window.
 }
 \section{Functions}{
 \itemize{
-\item \code{percX}: Returns the values of x-axis for a given percentage.
+\item \code{percX()}: Returns the values of x-axis for a given percentage.
 
-\item \code{percY}: Returns the values of y-axis for a given percentage.
+\item \code{percY()}: Returns the values of y-axis for a given percentage.
+
 }}
-
 \examples{
 plot0()
-text(x=percX(90), y=percY(90), label='cool')
+text(x = percX(90), y = percY(90), label = "cool")
+
 }

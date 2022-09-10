@@ -11,9 +11,7 @@ rotation(x, y, rot = 90, xrot = mean(x), yrot = mean(y), rad = FALSE)
 
 \item{rot}{angle of the rotation expressed in degree.}
 
-\item{xrot}{optional, x coordinate for the center of rotation.}
-
-\item{yrot}{optional, y coordinate for the center of rotation.}
+\item{xrot, yrot}{optional, x and y coordinate for the center of rotation.}
 
 \item{rad}{logical. Should radian be used rather than degrees?}
 }
@@ -26,13 +24,14 @@ If the coordinates of the rotation center are not specified, then the
 rotation center is the centroid of the points to be rotated.
 }
 \examples{
-plot0(c(0,10),c(0,10))
-y <- c(6,6,9)
-x <- c(2,5,3.5)
-polygon(x, y, lwd=2)
-myrot <- rotation(x, y, rot=90)
-polygon(myrot$x, myrot$y, lwd=2, border=4)
-myrot2 <- rotation(x, y, rot=-40, 0, 0)
-polygon(myrot2$x,myrot2$y, lwd=2, border=3)
+plot0(c(0, 10), c(0, 10))
+y <- c(6, 6, 9)
+x <- c(2, 5, 3.5)
+polygon(x, y, lwd = 2)
+myrot <- rotation(x, y, rot = 90)
+polygon(myrot$x, myrot$y, lwd = 2, border = 4)
+myrot2 <- rotation(x, y, rot = -40, 0, 0)
+polygon(myrot2$x, myrot2$y, lwd = 2, border = 3)
+
 }
 \keyword{rotation}

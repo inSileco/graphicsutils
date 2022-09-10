@@ -7,9 +7,7 @@
 shadowText(x, y, labels, col = "white", bg = par()$fg, radius = 0.1, ...)
 }
 \arguments{
-\item{x}{coordinate(s) of text(s) on the x-axis.}
-
-\item{y}{coordinate(s) of text(s) on the y-axis.}
+\item{x, y}{x and y coordinate of text(s) to be shadowed.}
 
 \item{labels}{A character vector to shadow.}
 

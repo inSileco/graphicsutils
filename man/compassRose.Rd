@@ -35,11 +35,10 @@ compassRoseCardinal(
 )
 }
 \arguments{
-\item{x}{the x coordinates of the center of the compass rose.}
+\item{x, y}{the x and y coordinates of the center of the compass rose.}
 
-\item{y}{the y coordinates of the center of the compass rose.}
-
-\item{labels}{a vector of four character strings used as labels for the cardinal directions.}
+\item{labels}{a vector of four character strings used as labels for the
+cardinal directions.}
 
 \item{rot}{rotation for the compass rose in degrees (clockwise).}
 
@@ -67,15 +66,18 @@ Both \code{col.cr} and \code{border} are repeated over (\code{\link[base:rep]{ba
 is called) so it has a 8 elements, meaning all triangles the compass rose is
 made of could have their own color.
 
-Note that there already exists a similar function by Jim Lemon in \code{sp} package.
+Note that there already exists a similar function by Jim Lemon in \code{sp}
+package.
 }
 \section{Functions}{
 \itemize{
-\item \code{compassRose}: A compass rose with the four cardinal directions and additional directions.
+\item \code{compassRose()}: A compass rose with the four cardinal directions
+and additional directions.
 
-\item \code{compassRoseCardinal}: A compass with the four cardinal directions only.
+\item \code{compassRoseCardinal()}: A compass with the four cardinal directions only.
+
 }}
-
 \examples{
-compassRose(0, rot=25, cex.cr = 2, col.let =2, add = FALSE)
+compassRose(0, rot = 25, cex.cr = 2, col.let = 2, add = FALSE)
+
 }

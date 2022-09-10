@@ -22,13 +22,18 @@ plotMeans(
 \arguments{
 \item{formula}{a formula, see \code{\link[stats:formula]{stats::formula()}}.}
 
-\item{data}{a data frame (or list) from which the variables in formula should be taken.}
+\item{data}{a data frame (or list) from which the variables in formula
+should be taken.}
 
-\item{FUN_err}{the function that assess uncertainty. Default function is \code{\link[stats:sd]{stats::sd()}}.}
+\item{FUN_err}{the function that assess uncertainty. Default function is
+\code{\link[stats:sd]{stats::sd()}}.}
 
-\item{add}{logical. should images be added on the current graph ? If \code{FALSE} a new plot is created.}
+\item{add}{logical. should images be added on the current graph ? If
+\code{FALSE} a new plot is created.}
 
-\item{seqx}{the x coordinates of the means to be plotted, if \code{NULL}, default values are used. This is intended to be used when \code{add} parameter is \code{TRUE}.}
+\item{seqx}{the x coordinates of the means to be plotted, if \code{NULL},
+default values are used. This is intended to be used when \code{add} parameter
+is \code{TRUE}.}
 
 \item{draw_axis}{logical. If \code{TRUE} axes and box are drawn.}
 
@@ -40,27 +45,39 @@ plotMeans(
 
 \item{connect}{logical. If TRUE then mean are linked using a lines.}
 
-\item{args_con}{a list of parameters that are used to customize the lines that links the means.}
+\item{args_con}{a list of parameters that are used to customize the lines
+that links the means.}
 
-\item{...}{Further graphical parameters (see \code{\link[=plot.default]{plot.default()}} and ) may also be supplied as arguments, particularly, line type, \code{lty}, line width, \code{lwd}, color, \code{col} and for \code{type = 'b'}, \code{pch}. Also the line characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
+\item{...}{Further graphical parameters (see \code{\link[=plot.default]{plot.default()}} and ) may
+also be supplied as arguments, particularly, line type, \code{lty}, line width,
+\code{lwd}, color, \code{col} and for \code{type = 'b'}, \code{pch}. Also the line
+characteristics \code{lend}, \code{ljoin} and \code{lmitre}.}
 }
 \description{
 Plots a set of means computed based on a dataset and draw error associated.
 }
 \examples{
 # Example:
-dataset <- data.frame(dat=c(rnorm(50, 10, 2), rnorm(50, 20, 2)) , grp=rep(c('A','D'), each=50))
-graphics::par(mfrow=c(1,3))
-plotMeans(dat~grp, data=dataset, pch=19)
+dataset <- data.frame(dat = c(rnorm(50, 10, 2), rnorm(50, 20, 2)), 
+ grp = rep(c("A", "D"), each = 50))
+graphics::par(mfrow = c(1, 3))
+plotMeans(dat ~ grp, data = dataset, pch = 19)
 #
-plotMeans(dat~grp, data=dataset, FUN_err= function(x) sd(x)*2, pch=15,
-ylim=c(-5,30), yaxs='i', connect=TRUE, args_con=list(lwd=2, lty=2, col='grey35'))
+plotMeans(dat ~ grp,
+    data = dataset, FUN_err = function(x) sd(x) * 2, pch = 15,
+    ylim = c(-5, 30), yaxs = "i", connect = TRUE,
+    args_con = list(lwd = 2, lty = 2, col = "grey35")
+)
 #
-ser <- function(x) sd(x)/sqrt(length(x))
-plot0(c(0,4), c(0,30))
-plotMeans(dat~grp, data=dataset, FUN_err=ser, pch=15,
-draw_axis=FALSE, add=TRUE, seqx=c(.5,3.5), mar=c(6,6,1,1), cex=1.4)
+ser <- function(x) sd(x) / sqrt(length(x))
+plot0(c(0, 4), c(0, 30))
+plotMeans(dat ~ grp,
+    data = dataset, FUN_err = ser, pch = 15,
+    draw_axis = FALSE, add = TRUE, seqx = c(.5, 3.5), mar = c(6, 6, 1, 1),
+    cex = 1.4
+)
 graphics::axis(2)
+
 }
 \keyword{deviation}
 \keyword{means,}

@@ -42,13 +42,15 @@ where ‘n’ is the number of boxes.}
 Draw a boxplot and returns the coordinates as an invisible output.
 }
 \description{
-Produce custom box-and-whisker plot(s) of the given (grouped) values.
+Produce custom box-and-whisker plot(s) of the given (grouped)
+values.
 }
 \examples{
 boxplot2(replicate(10, runif(100)))
 dfa <- data.frame(name = rep(LETTERS[1:4], 25), val = runif(100))
-plot0(c(0,5), c(0,1))
+plot0(c(0, 5), c(0, 1))
 boxplot2(val ~ name, data = dfa, add = TRUE, vc_cex = c(4, 40, 2))
+
 }
 \author{
 Kevin Cazelles

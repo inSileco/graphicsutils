@@ -24,7 +24,8 @@ frameIt(
 \item{border}{color of the borders if the rectangles drawn.}
 }
 \description{
-Draw a frame around the plot region as an ensemble of small rectangles whose colors can be specified.
+Draw a frame around the plot region as an ensemble of small rectangles
+whose colors can be specified.
 }
 \details{
 The number of rectangles could be different from \code{nbc} as \code{pretty} is called
@@ -32,13 +33,14 @@ to properly locate them. The \code{col} argument determines the succession of
 colors to be applied to each axis.
 }
 \examples{
-#Example 1:
+# Example 1:
 plot0()
 frameIt()
 
-#Example 2:
+# Example 2:
 plot0()
-frameIt(cex.x=1.5, col=c(2,3), border=1)
+frameIt(cex.x = 1.5, col = c(2, 3), border = 1)
+
 }
 \keyword{box}
 \keyword{frame,}

@@ -2,15 +2,20 @@
 #'
 #' Draw a stacked areas chart.
 #'
-#' @param val a dataframe or a matrix containing a series of positive values, rows stand for popultaions.
-#' @param index values to be used for the x axis, by default it is set to `NULL` meaning that it is handled by `plot.default`
-#' @param rgy a value that determines the range of y values. Default is set to 1 which means that the range of values is \[0,1\].
+#' @param val a dataframe or a matrix containing a series of positive values,
+#' rows stand for popultaions.
+#' @param index values to be used for the x axis, by default it is set to
+#' `NULL` meaning that it is handled by `plot.default`
+#' @param rgy a value that determines the range of y values. Default is set to
+#' 1 which means that the range of values is \[0,1\].
 #' @param cumul a logical. If `TRUE`, data are considered as cumulative sums.
-#' @param transp a logical. If `TRUE`, the transpose of the data table is computed.
+#' @param transp a logical. If `TRUE`, the transpose of the data table is
+#' computed.
 #' @param legend Text to be used as a legend for each area drawn.
 #' @param col vector of colors, repeated if too small.
 #' @param add logical. Should stacked areas be added on the current plot?
-#' @param pickcolors logical. If `TRUE`, [pickColors()] is called to select colors.
+#' @param pickcolors logical. If `TRUE`, [pickColors()] is called to select
+#' colors.
 #' @param lty the line type (see [graphics::par()] documentation)
 #' @param lwd the line width (see [graphics::par()] documentation)
 #' @param border The color to draw the border. The default, `NULL`, means to use `graphics::par('fg')`. Use `border = NA` to omit borders.
@@ -22,13 +27,17 @@
 #'
 #' @export
 #'
-#' @details Areas are drawn using [graphics::polygon()] and users can take advantage of it to customize their stacked areas (using `lwd`, `lty` or `border` arguments).
+#' @details Areas are drawn using [graphics::polygon()] and users can take
+#' advantage of it to customize their stacked areas (using `lwd`, `lty` or
+#' `border` arguments).
 #'
 #' @note
-#' The default colors have been inspired by four palettes found on line: <http:www.color-hex.com/color-palettes/>. [plotrix::stackpoly()] function
+#' The default colors have been inspired by four palettes found on line:
+#' <http:www.color-hex.com/color-palettes/>. [plotrix::stackpoly()] function
 #' from the `plotrix` package offers a good alternative.
 #'
-#' Using a stacked areas chart with more than 20 areas should provide a figure really hard to read.
+#' Using a stacked areas chart with more than 20 areas should provide a figure
+#' really hard to read.
 #'
 #' @examples
 #' # data for 8 populations at 25 different periods.
@@ -38,11 +47,14 @@
 #' stackedAreas(x)
 #'
 #' # plot 2: personalized plot
-#' graphics::par(xaxs='i', yaxs='i', font=2, cex.axis=1.2, cex.lab=1.4, bty='l')
-#' graphics::plot.default(c(1999,2027), c(-10,110), type='n', xlab='Years', ylab='Percentage',
-#' main='My customized stacked areas chart')
-#' plotAreaColor(col='#f2c4c4')
-#' stackedAreas(x, index=2001:2025, rgy=100, lwd=2, add=TRUE, border='transparent')
+#' graphics::par(xaxs = 'i', yaxs = 'i', font = 2, cex.axis = 1.2,
+#' cex.lab = 1.4, bty = 'l')
+#' graphics::plot.default(c(1999, 2027), c(-10, 110), type = 'n',
+#' xlab = 'Years', ylab = 'Percentage',
+#' main = 'My customized stacked areas chart')
+#' plotAreaColor(col = '#f2c4c4')
+#' stackedAreas(x, index = 2001:2025, rgy = 100, lwd = 2, add = TRUE,
+#' border = 'transparent')
 
 stackedAreas <- function(val, index = NULL, rgy = 1, cumul = FALSE,
     transp = FALSE, legend = NULL, add = FALSE, col = NULL,

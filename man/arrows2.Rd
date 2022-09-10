@@ -33,17 +33,23 @@ arrows2(
 
 \item{off1}{offset of points to which to draw arrows.}
 
-\item{cex.arr}{the magnification coefficient to be used for the heights of the arrows.}
+\item{cex.arr}{the magnification coefficient to be used for the heights of
+the arrows.}
 
-\item{cex.shr}{the magnification coefficient to be used to change the height of arrows towards their heads.}
+\item{cex.shr}{the magnification coefficient to be used to change the
+height of arrows towards their heads.}
 
-\item{cex.hh}{the magnification coefficient to be used for the heights of arrows' head.}
+\item{cex.hh}{the magnification coefficient to be used for the heights of
+arrows' head.}
 
-\item{cex.hl}{the magnification coefficient to be used for the lengths of arrows' head.}
+\item{cex.hl}{the magnification coefficient to be used for the lengths of
+arrows' head.}
 
-\item{prophead}{logical. If TRUE arrows are drawn with head proportional to the length of the arrows.}
+\item{prophead}{logical. If \code{TRUE} arrows are drawn with head proportional
+to the length of the arrows.}
 
-\item{twoheaded}{logical. If TRUE two-headed arrows are drawn, default is FALSE.}
+\item{twoheaded}{logical. If \code{TRUE} two-headed arrows are drawn, default is
+\code{FALSE}.}
 
 \item{...}{additional arguments to be passed to \code{polygon} function.}
 }
@@ -52,15 +58,18 @@ Draw a custom arrows between pairs of points.
 }
 \examples{
 # Example 1:
-plot0(c(0,10),c(0,10))
-arrows2(1,9,8)
-arrows2(1,8,8,1,cex.hh=1.2, cex.hl=1.2, col='grey30', lwd=1.2, prophead=TRUE, twoheaded=TRUE)
-arrows2(5,9,5,1)
+plot0(c(0, 10), c(0, 10))
+arrows2(1, 9, 8)
+arrows2(1, 8, 8, 1, cex.hh = 1.2, cex.hl = 1.2, col = "grey30", lwd = 1.2,
+ prophead = TRUE, twoheaded = TRUE)
+arrows2(5, 9, 5, 1)
 
 # Example 2:
-plot0(c(0,1),c(0,1))
-arrows2(runif(2), runif(2), x1=runif(2), y1=runif(2))
-arrows2(runif(2), runif(2), x1=runif(2), y1=runif(2), prophead=FALSE, lty=3)
+plot0(c(0, 1), c(0, 1))
+arrows2(runif(2), runif(2), x1 = runif(2), y1 = runif(2))
+arrows2(runif(2), runif(2), x1 = runif(2), y1 = runif(2), prophead = FALSE,
+ lty = 3)
+
 }
 \seealso{
 \code{\link[graphics:arrows]{graphics::arrows()}}

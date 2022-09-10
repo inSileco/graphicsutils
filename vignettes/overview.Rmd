@@ -227,9 +227,9 @@ The `pchImage()` function eases the uses of `rasterImage()` to add images
 pathLogo <- system.file("img", "Rlogo.png", package = "png")
 par(mar = c(4, 1, 4, 1), mfrow = c(1, 2))
 plot0()
-pchImage(0, 0, file = pathLogo, cex.x =4.5, cex.y = 4)
+pchImage(0, 0, file = pathLogo, cex.x = 4.5, cex.y = 4)
 plot0()
-pchImage(0, 0, file = pathLogo, cex.x =4.5, cex.y = 4, col = "grey25", angle = 25)
+pchImage(0, 0, file = pathLogo, cex.x = 4.5, cex.y = 4, col = "grey25", angle = 25)
 ```
 
 
@@ -384,17 +384,17 @@ color. For any color palette, use the `showPalette()` to display them!
 
 
 ```{r darken}
-someblue <- darken("blue", 10*1:9)
+someblue <- darken("blue", 10 * 1:9)
 showPalette(someblue)
 ```
 
 ```{r lighten}
-somered <- lighten("red", 10*1:9)
+somered <- lighten("red", 10 * 1:9)
 showPalette(somered)
 ```
 
 ```{r showpal}
-showPalette(ramp("blue", "red", 10*3:7))
+showPalette(ramp("blue", "red", 10 * 3:7))
 showPalette(blendColors(c("blue", "purple")))
 showPalette(rainbow(81))
 ```
@@ -476,8 +476,6 @@ envelop(seqx, seqy1, seqy2, col = "grey85", border = NA)
 x <- data.frame(matrix(runif(200, 2, 10), 8, 25))
 stackedAreas(x)
 ```
-
-
 
 
 
@@ -574,11 +572,11 @@ seqy <- seq(-2, 2, 0.31)
 beta1 <- matrix(c(0, -1, 1, 0), 2)
 # Plot 1:
 vecfield2d(coords = expand.grid(seqx, seqy), FUN = systLin, args = list(beta = beta1))
-# # Plot 2:
+# Plot 2:
 graphics::par(mar = c(2, 2, 2, 2))
 vecfield2d(coords = expand.grid(seqx, seqy), FUN = systLin,
    args = list(beta = beta1), cex.x = 0.35, cex.arr = 0.25,
-   border = NA,cex.hh = 1, cex.shr = 0.6, col = 8)
+   border = NA, cex.hh = 1, cex.shr = 0.6, col = 8)
 graphics::abline(v = 0, h = 0)
 ```
 

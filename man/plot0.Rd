@@ -25,7 +25,8 @@ plot0(
 \item{text}{A character string or a object to be coerced as character string
 that will be displayed in the center of the plot region.}
 
-\item{grid.col}{color of the grid's lines. The default value is \code{NULL}, in which case the grid is not drawn.}
+\item{grid.col}{color of the grid's lines. The default value is \code{NULL}, in
+which case the grid is not drawn.}
 
 \item{grid.lwd}{line width of the grid's lines.}
 

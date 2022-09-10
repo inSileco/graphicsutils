@@ -59,7 +59,11 @@ gpuPalette <- function(id, ncolors) {
         if (!missing(ncolors)) {
           if (ncolors > length(out)) {
             colorRampPalette(out)(ncolors)
-          } else colorRampPalette(out)(ncolors)
-        }  else out
+          } else {
+            colorRampPalette(out)(ncolors)
+          }
+        }  else {
+          out
+        }
     }
 }

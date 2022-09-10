@@ -3,11 +3,10 @@
 #' Compute a homothetic transformation for a set of points.
 #' The transformed set of points is optionally drawn as a polygon.
 #'
-#' @param x the x coordinates of points. It can also be a matrix (see details).
-#' @param y the y coordinates of points.
+#' @param x,y the x and ycoordinates of points. It can also be a matrix (see
+#' details).
 #' @param lambda the factor to be used for the homothetetic transformations.
-#' @param xcen the x coordinate for the center of rotation.
-#' @param ycen the y coordinate for the center of rotation.
+#' @param xcen,ycen the x and y coordinate for the center of rotation.
 #' @param add logical. If `TRUE` the set of transformed points are drawn as a polygon.
 #' @param ... additional arguments to be passed to [graphics::polygon()] function (used only if `add` is TRUE).
 #'
@@ -26,15 +25,14 @@
 #'
 #' @examples
 #' # Example:
-#' plot0(c(0,10),c(0,10))
-#' x <- c(4,6,5)
-#' y <- c(2,2,4)
-#' polygon(x,y)
-#' poly2 <- homothety(x,y,2)
-#' polygon(poly2$x,poly2$y)
-#' poly3 <- homothety(x, y, -2.5, xcen=5, ycen=4, border=4, add=TRUE)
-
-
+#' plot0(c(0, 10), c(0, 10))
+#' x <- c(4, 6, 5)
+#' y <- c(2, 2, 4)
+#' polygon(x, y)
+#' poly2 <- homothety(x, y, 2)
+#' polygon(poly2$x, poly2$y)
+#' poly3 <- homothety(x, y, -2.5, xcen = 5, ycen = 4, border = 4, add = TRUE)
+#'
 homothety <- function(x, y, lambda, xcen = NULL, ycen = NULL, add = FALSE, ...) {
 
     # Format checking
@@ -50,14 +48,14 @@ homothety <- function(x, y, lambda, xcen = NULL, ycen = NULL, add = FALSE, ...) 
         y <- rep_len(y, sz)
     }
     # if null, xrot/yrot are the mean of x/y coordinates
-    if (is.null(xcen))
-        xcen <- mean(x)
-    if (is.null(ycen))
-        ycen <- mean(y)
+    if (is.null(xcen)) xcen <- mean(x)
+    if (is.null(ycen)) ycen <- mean(y)
     #
-    homot <- list(x = lambda * (x - xcen) + xcen, y = lambda * (y - ycen) + ycen)
-    if (add)
-        polygon(homot$x, homot$y, ...)
+    homot <- list(
+        x = lambda * (x - xcen) + xcen,
+        y = lambda * (y - ycen) + ycen
+    )
+    if (add) polygon(homot$x, homot$y, ...)
     #
     invisible(homot)
 }

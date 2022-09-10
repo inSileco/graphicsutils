@@ -20,9 +20,7 @@ colorScale(
 )
 }
 \arguments{
-\item{x}{x-coordinates of the bottom-left corner of the legend.}
-
-\item{y}{y-coordinates of the bottom-left corner of the legend.}
+\item{x, y}{x and y coordinates of the bottom-left corner of the legend.}
 
 \item{col}{vector of colors.}
 
@@ -32,9 +30,7 @@ colorScale(
 
 \item{horiz}{a logical. Should the color scale be horizontal?}
 
-\item{percx}{size of the color scale along x axis.}
-
-\item{percy}{size of the color scale along y axis.}
+\item{percx, percy}{size of the color scale along the x-axis and the y-axis.}
 
 \item{adj}{adjust the position labels position. If \code{adj = 0} then labels are
 at the bottom if \code{horiz = TRUE} and on the the left if \code{horiz = FALSE}. If
@@ -52,6 +48,7 @@ opposite sides.}
 Simple and flexible color scale.
 }
 \examples{
-plot(c(0,10), c(0,10))
+plot(c(0, 10), c(0, 10))
 colorScale(5, 5, gpuPalette("cisl", 10), at = c(2, 4))
+
 }

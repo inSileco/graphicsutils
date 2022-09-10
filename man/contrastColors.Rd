@@ -10,12 +10,14 @@ contrastColors(colors, how = "how_borw", alpha = FALSE)
 col2Hex(colors, alpha = FALSE)
 }
 \arguments{
-\item{colors}{vector of any of the three kinds of R color specifications, see \code{\link[grDevices:col2rgb]{grDevices::col2rgb()}}.}
+\item{colors}{vector of any of the three kinds of R color specifications,
+see \code{\link[grDevices:col2rgb]{grDevices::col2rgb()}}.}
 
 \item{how}{a method to contrast \code{colors}. Methods currently available are
 \code{how_borw}, \code{how_cent}, \code{how_oppo} and \code{how_prop}, see details.}
 
-\item{alpha}{logical value indicating whether the alpha channel (opacity) values should be returned.}
+\item{alpha}{logical value indicating whether the alpha channel (opacity)
+values should be returned.}
 }
 \description{
 For a given set of colors, \code{contrastColors} returns an associated set
@@ -29,14 +31,15 @@ or add 127.
 }
 \section{Functions}{
 \itemize{
-\item \code{contrastColors}: Retuns a set of colors contrasted.
+\item \code{contrastColors()}: Retuns a set of colors contrasted.
 
-\item \code{col2Hex}: Returns the hexadecimal string associates to a given vector of colors.
+\item \code{col2Hex()}: Returns the hexadecimal string associates to a given vector of colors.
+
 }}
-
 \examples{
-contrastColors('blue')
-contrastColors('blue', how = 'how_prop')
+contrastColors("blue")
+contrastColors("blue", how = "how_prop")
+
 }
 \seealso{
 \code{\link[grDevices:col2rgb]{grDevices::col2rgb()}}

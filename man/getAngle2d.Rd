@@ -7,13 +7,9 @@
 getAngle2d(x0, y0, x1, y1, rad = FALSE)
 }
 \arguments{
-\item{x0}{the x coordinates of the first set of vector.}
+\item{x0, y0}{the x and y coordinates of the first set of vector.}
 
-\item{y0}{the y coordinates of the first set of vector.}
-
-\item{x1}{the x coordinates of the second set of vector.}
-
-\item{y1}{the y coordinates of the second set of vector.}
+\item{x1, y1}{the x and y coordinates of the second set of vector.}
 
 \item{rad}{a logical. Should angles be expressed radians?}
 }
@@ -21,10 +17,11 @@ getAngle2d(x0, y0, x1, y1, rad = FALSE)
 Calcul the angles of two set of vectors.
 }
 \examples{
-#Example:
-plot0(c(-10,10),c(-10,10))
-arrows(c(0,3),c(0,0),c(3,0),c(3,-3))
-cool <- getAngle2d(c(0,3),c(0,0),c(3,0),c(3,-3))
+# Example:
+plot0(c(-10, 10), c(-10, 10))
+arrows(c(0, 3), c(0, 0), c(3, 0), c(3, -3))
+cool <- getAngle2d(c(0, 3), c(0, 0), c(3, 0), c(3, -3))
+
 }
 \keyword{angles,}
 \keyword{vectors}

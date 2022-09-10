@@ -18,7 +18,8 @@ ganttChart(
 \arguments{
 \item{df}{a data.frame (see details).}
 
-\item{task_order}{a logical. Should the tasks be ordered? See below for more details.}
+\item{task_order}{a logical. Should the tasks be ordered? See below for
+more details.}
 
 \item{mstone_add}{Should milestones be added?}
 
@@ -38,7 +39,8 @@ color as the pending ones.}
 A flexible Gantt Chart.
 }
 \details{
-Argument \code{df} should be a data frame with the following columns (in any order):
+Argument \code{df} should be a data frame with the following columns (in any
+order):
 \itemize{
 \item \code{milestone}: milestones names,
 \item \code{due}: due date (will be converted into a date with \code{\link[=as.Date]{as.Date()}}),
@@ -50,8 +52,11 @@ It might as well include any of the following optional columns:
 }
 }
 \examples{
-ff <- ganttChart(dfGantt, mstone_lwd = 3, mstone_spacing = 0.6,
-  lighten_done = 80)
+ff <- ganttChart(dfGantt,
+  mstone_lwd = 3, mstone_spacing = 0.6,
+  lighten_done = 80
+)
+
 }
 \references{
 \url{https://insileco.github.io/2017/09/20/gantt-charts-in-r/}

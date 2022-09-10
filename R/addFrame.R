@@ -52,13 +52,10 @@
 #'
 #' ## Other graphical parameters
 #' addFrame(bg = "darkgray", xaxs = "i", yaxs = "i")
-
-
+#'
 addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
                      width = NULL, lwd = 1, lty = 1, asp = NA, grid = FALSE,
                      add = FALSE, ...) {
-
-
   if (length(border) > 1) stop("Argument 'border' must be a single color.")
 
   opar <- par(no.readonly = TRUE)
@@ -67,7 +64,6 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
   par(...)
 
   if (!add) {
-
     if (missing(at_x)) {
       x_lim <- c(-1, 1)
     } else {
@@ -80,8 +76,10 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
       y_lim <- range(at_y)
     }
 
-    plot(0, xlim = x_lim, ylim = y_lim, type = "n", ann = FALSE, axes = FALSE,
-         bty = "n", asp = asp)
+    plot(0,
+      xlim = x_lim, ylim = y_lim, type = "n", ann = FALSE, axes = FALSE,
+      bty = "n", asp = asp
+    )
   }
 
   if (is.null(width)) width <- 4 * (par()$usr[2] - par()$usr[1]) / 100
@@ -101,15 +99,12 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
   ats <- list()
   ats[[1]] <- at_x
   ats[[2]] <- at_y
-  ats[[3]] <- at_x[length(at_x):1]
-  ats[[4]] <- at_y[length(at_y):1]
+  ats[[3]] <- at_x[seq(length(at_x), 1, -1)]
+  ats[[4]] <- at_y[seq(length(at_y), 1, -1)]
 
   if (length(col) == 1) {
-
     cols <- c(col, border)
-
   } else {
-
     cols <- col
   }
 
@@ -120,9 +115,7 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
 
 
   if (grid) {
-
     for (at in at_x) {
-
       lines(
         x   = rep(at, 2),
         y   = c(par()$usr[3], par()$usr[4]),
@@ -133,7 +126,6 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
     }
 
     for (at in at_y) {
-
       lines(
         x   = c(par()$usr[1], par()$usr[2]),
         y   = rep(at, 2),
@@ -150,11 +142,8 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
   k <- 2
 
   for (side in seq_along(ats)) {
-
     if (length(ats[[side]]) > 3) {
-
       for (tick in 2:(length(ats[[side]]) - 2)) {
-
         if (side == 1) {
           x1 <- ats[[side]][tick]
           x2 <- ats[[side]][tick + 1]
@@ -206,22 +195,22 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
   col <- cols[1]
 
   polygon(
-    x      = c(
+    x = c(
       par()$usr[1],
       ats[[1]][2],
       ats[[1]][2],
       par()$usr[1] + width
     ),
-    y      = c(
+    y = c(
       par()$usr[3],
       par()$usr[3],
       par()$usr[3] + width,
       par()$usr[3] + width
     ),
-    col    = col,
+    col = col,
     border = border,
-    lwd    = lwd,
-    lty    = lty
+    lwd = lwd,
+    lty = lty
   )
 
 
@@ -230,22 +219,22 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
   col <- cols[length(ats[[1]]) + length(ats[[2]]) + length(ats[[3]]) - 3]
 
   polygon(
-    x      = c(
+    x = c(
       par()$usr[1] + width,
       ats[[1]][2],
       ats[[1]][2],
       par()$usr[1]
     ),
-    y      = c(
+    y = c(
       par()$usr[4] - width,
       par()$usr[4] - width,
       par()$usr[4],
       par()$usr[4]
     ),
-    col    = col,
+    col = col,
     border = border,
-    lwd    = lwd,
-    lty    = lty
+    lwd = lwd,
+    lty = lty
   )
 
 
@@ -254,22 +243,22 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
   col <- cols[length(ats[[1]]) - 1]
 
   polygon(
-    x      = c(
+    x = c(
       ats[[1]][length(ats[[1]]) - 1],
       par()$usr[2],
       par()$usr[2] - width,
       ats[[1]][length(ats[[1]]) - 1]
     ),
-    y      = c(
+    y = c(
       par()$usr[3],
       par()$usr[3],
       par()$usr[3] + width,
       par()$usr[3] + width
     ),
-    col    = col,
+    col = col,
     border = border,
-    lwd    = lwd,
-    lty    = lty
+    lwd = lwd,
+    lty = lty
   )
 
 
@@ -278,22 +267,22 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
   col <- cols[length(ats[[1]]) + length(ats[[2]]) - 1]
 
   polygon(
-    x      = c(
+    x = c(
       ats[[1]][length(ats[[1]]) - 1],
       par()$usr[2] - width,
       par()$usr[2],
       ats[[1]][length(ats[[1]]) - 1]
     ),
-    y      = c(
+    y = c(
       par()$usr[4] - width,
       par()$usr[4] - width,
       par()$usr[4],
       par()$usr[4]
     ),
-    col    = col,
+    col = col,
     border = border,
-    lwd    = lwd,
-    lty    = lty
+    lwd = lwd,
+    lty = lty
   )
 
 
@@ -302,22 +291,22 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
   col <- cols[length(ats[[1]])]
 
   polygon(
-    x      = c(
+    x = c(
       par()$usr[2] - width,
       par()$usr[2],
       par()$usr[2],
       par()$usr[2] - width
     ),
-    y      = c(
+    y = c(
       par()$usr[3] + width,
       par()$usr[3],
       ats[[2]][2],
       ats[[2]][2]
     ),
-    col    = col,
+    col = col,
     border = border,
-    lwd    = lwd,
-    lty    = lty
+    lwd = lwd,
+    lty = lty
   )
 
 
@@ -326,22 +315,22 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
   col <- cols[length(ats[[1]]) + length(ats[[2]]) - 2]
 
   polygon(
-    x      = c(
+    x = c(
       par()$usr[2] - width,
       par()$usr[2],
       par()$usr[2],
       par()$usr[2] - width
     ),
-    y      = c(
+    y = c(
       ats[[2]][length(ats[[2]]) - 1],
       ats[[2]][length(ats[[2]]) - 1],
       par()$usr[4],
       par()$usr[4] - width
     ),
-    col    = col,
+    col = col,
     border = border,
-    lwd    = lwd,
-    lty    = lty
+    lwd = lwd,
+    lty = lty
   )
 
 
@@ -350,22 +339,22 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
   col <- cols[length(cols)]
 
   polygon(
-    x      = c(
+    x = c(
       par()$usr[1],
       par()$usr[1] + width,
       par()$usr[1] + width,
       par()$usr[1]
     ),
-    y      = c(
+    y = c(
       par()$usr[3],
       par()$usr[3] + width,
       ats[[4]][length(ats[[2]]) - 1],
       ats[[4]][length(ats[[2]]) - 1]
     ),
-    col    = col,
+    col = col,
     border = border,
-    lwd    = lwd,
-    lty    = lty
+    lwd = lwd,
+    lty = lty
   )
 
 
@@ -374,22 +363,22 @@ addFrame <- function(at_x, at_y, col = c("white", border), border = "black",
   col <- cols[length(ats[[1]]) + length(ats[[2]]) + length(ats[[3]]) - 2]
 
   polygon(
-    x      = c(
+    x = c(
       par()$usr[1],
       par()$usr[1] + width,
       par()$usr[1] + width,
       par()$usr[1]
     ),
-    y      = c(
+    y = c(
       ats[[4]][2],
       ats[[4]][2],
       par()$usr[4] - width,
       par()$usr[4]
     ),
-    col    = col,
+    col = col,
     border = border,
-    lwd    = lwd,
-    lty    = lty
+    lwd = lwd,
+    lty = lty
   )
 
   invisible(NULL)

@@ -2,14 +2,20 @@
 #'
 #' Draw a vector field associated to a system of at least two ODE.
 #'
-#' @param coords a matrix with two columns or more that is optionally used to alternatively define the coordinates of the vector field.
+#' @param coords a matrix with two columns or more that is optionally used to 
+#' alternatively define the coordinates of the vector field.
 #' @param FUN the function that describes the dynamical system (see details).
 #' @param args the parameters of the dynamical system (see details).
-#' @param ndim number of dimension of the system. If `NULL` the values is based on `coords` and `slice`
-#' @param slices a vector of 2 elements providing the dimensions to be displayed, (default set to c(1,2)).
-#' @param fixed the values used for non drawn dimension, if `NULL` the values will be set to 0.
-#' @param cex.x the magnification coefficient to be used for lengths of vectors along the x axis.
-#' @param cex.y the magnification coefficient to be used for lengths of vectors along the y axis.
+#' @param ndim number of dimension of the system. If `NULL` the values is 
+#' based on `coords` and `slice`
+#' @param slices a vector of 2 elements providing the dimensions to be 
+#' displayed, (default set to c(1,2)).
+#' @param fixed the values used for non drawn dimension, if `NULL` the values 
+#' will be set to 0.
+#' @param cex.x the magnification coefficient to be used for lengths of 
+#' vectors along the x axis.
+#' @param cex.y the magnification coefficient to be used for lengths of 
+#' vectors along the y axis.
 #' @param log a logical. If `TRUE`, the lengths of arrows are log-transformed.
 #' @param add a logical. If `TRUE`, the vector field is added on the current plot.
 #' @param ... additional arguments to be passed to [arrows()].
@@ -36,7 +42,8 @@
 #' seqy <- seq(-2,2,0.31)
 #' beta1 <- matrix(c(0,-1,1,0),2)
 #' # Plot 1:
-#' vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin, args=list(beta=beta1))
+#' vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
+#' args=list(beta=beta1))
 #' # Plot 2:
 #' graphics::par(mar=c(2,2,2,2))
 #' vecfield2d(coords=expand.grid(seqx, seqy), FUN=systLin,
@@ -44,8 +51,9 @@
 #'    border=NA,cex.hh=1, cex.shr=0.6, col=8)
 #' graphics::abline(v=0,h=0)
 
-vecfield2d <- function(coords, FUN, args = NULL, ndim = NULL, slices = c(1, 2), fixed = NULL,
-    cex.x = 0.25, cex.y = cex.x, log = FALSE, add = FALSE, ...) {
+vecfield2d <- function(coords, FUN, args = NULL, ndim = NULL, 
+        slices = c(1, 2), fixed = NULL, cex.x = 0.25, cex.y = cex.x,
+        log = FALSE, add = FALSE, ...) {
 
     ##-- Format checking
     grid <- as.matrix(coords)

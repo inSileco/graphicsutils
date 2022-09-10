@@ -33,11 +33,11 @@ pointsInPolygon <- function(points, polygon) {
     stopifnot(nrow(polygon) > 2)
     ##
     if (ncol(points) > 2) {
-        warning("ncol(points)>2 - only the first two columns are used.")
+        warning("ncol(points) > 2 - only the first two columns are used.")
         points <- points[, 1L:2L]
     }
     if (ncol(polygon) > 2) {
-        warning("ncol(polygon)>2 - only the first two columns are used.")
+        warning("ncol(polygon) > 2 - only the first two columns are used.")
         polygon <- polygon[, 1L:2L]
     }
     pointsInPolygon_core(points, polygon)

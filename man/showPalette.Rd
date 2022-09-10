@@ -15,7 +15,8 @@ showPalette(
 \arguments{
 \item{x}{a vector of colors.}
 
-\item{inline}{a logical. If \code{TRUE}, the colors are displayed on a single row.}
+\item{inline}{a logical. If \code{TRUE}, the colors are displayed on a single
+row.}
 
 \item{add_number}{a logical. If \code{TRUE}, color vector's indices are added.}
 
@@ -27,7 +28,7 @@ showPalette(
 The color palette displayed as an invisible output.
 }
 \description{
-Displays a color palette and information about its colors.
+Displays a color palette and color details.
 }
 \examples{
 showPalette()

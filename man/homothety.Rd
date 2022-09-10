@@ -7,15 +7,12 @@
 homothety(x, y, lambda, xcen = NULL, ycen = NULL, add = FALSE, ...)
 }
 \arguments{
-\item{x}{the x coordinates of points. It can also be a matrix (see details).}
-
-\item{y}{the y coordinates of points.}
+\item{x, y}{the x and ycoordinates of points. It can also be a matrix (see
+details).}
 
 \item{lambda}{the factor to be used for the homothetetic transformations.}
 
-\item{xcen}{the x coordinate for the center of rotation.}
-
-\item{ycen}{the y coordinate for the center of rotation.}
+\item{xcen, ycen}{the x and y coordinate for the center of rotation.}
 
 \item{add}{logical. If \code{TRUE} the set of transformed points are drawn as a polygon.}
 
@@ -33,13 +30,14 @@ Drawing the points computed is relevant only if there are more than 2 points.
 }
 \examples{
 # Example:
-plot0(c(0,10),c(0,10))
-x <- c(4,6,5)
-y <- c(2,2,4)
-polygon(x,y)
-poly2 <- homothety(x,y,2)
-polygon(poly2$x,poly2$y)
-poly3 <- homothety(x, y, -2.5, xcen=5, ycen=4, border=4, add=TRUE)
+plot0(c(0, 10), c(0, 10))
+x <- c(4, 6, 5)
+y <- c(2, 2, 4)
+polygon(x, y)
+poly2 <- homothety(x, y, 2)
+polygon(poly2$x, poly2$y)
+poly3 <- homothety(x, y, -2.5, xcen = 5, ycen = 4, border = 4, add = TRUE)
+
 }
 \references{
 \url{https://en.wikipedia.org/wiki/Homothetic_transformation}.

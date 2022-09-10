@@ -8,7 +8,8 @@
 #' @export
 #'
 #' @return
-#' A vector of two elements: the number of rows followed by the number of columns.
+#' A vector of two elements: the number of rows followed by the number of 
+#' columns.
 
 howManyRC <- function(n) {
     n <- as.integer(n[1L])

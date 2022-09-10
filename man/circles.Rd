@@ -18,9 +18,7 @@ circles(
 )
 }
 \arguments{
-\item{x}{the x coordinates of the centers of the circles.}
-
-\item{y}{the y coordinates of the centers of the circles.}
+\item{x, y}{the x and y coordinates of the centers of the circles.}
 
 \item{radi}{the radii of the circles.}
 
@@ -28,11 +26,14 @@ circles(
 
 \item{to}{the angles, expressed in radians, to which circles are drawn.}
 
-\item{incr}{increments between two points to be linked (expressed in radians).}
+\item{incr}{increments between two points to be linked (expressed in
+radians).}
 
-\item{pie}{a logical. If \code{TRUE}, end points are linked with the center of the circle (default is set to \code{FALSE}).}
+\item{pie}{a logical. If \code{TRUE}, end points are linked with the center of
+the circle (default is set to \code{FALSE}).}
 
-\item{clockwise}{a logical. Shall circles and arcs be drawn clockwise? Defaut is \code{FALSE}.}
+\item{clockwise}{a logical. Shall circles and arcs be drawn clockwise?
+Defaut is \code{FALSE}.}
 
 \item{add}{a logical. Should the circles be added on the current plot?}
 
@@ -57,17 +58,20 @@ circles(x = 0)
 
 # Example 2:
 plot0()
-circles(x=-.5, radi=0.45, from=0.5*pi, to=0.25*pi)
-circles(x=.5, radi=0.45, from=0.5*pi, to=0.25*pi, pie=TRUE)
-circles(x=.5, y = -.5, radi=0.45, from=0.5*pi, to=0.25*pi, pie=TRUE, clockwise = TRUE)
+circles(x = -.5, radi = 0.45, from = 0.5 * pi, to = 0.25 * pi)
+circles(x = .5, radi = 0.45, from = 0.5 * pi, to = 0.25 * pi, pie = TRUE)
+circles(x = .5, y = -.5, radi = 0.45, from = 0.5 * pi, to = 0.25 * pi, pie
+= TRUE, clockwise = TRUE)
 
 # Example 3:
 plot0()
-circles(matrix(-.5+.5*stats::runif(18), ncol=3))
+circles(matrix(-.5 + .5 * stats::runif(18), ncol = 3))
 
 # Example 4:
-plot0(x=c(-2,2),y=c(-2,2), asp=1)
-circles(x=c(-1,1),c(1,1,-1,-1),from=pi*seq(0.25,1,by=0.25),to=1.25*pi, col=2, border=4, lwd=3)
+plot0(x = c(-2, 2), y = c(-2, 2), asp = 1)
+circles(x = c(-1, 1), c(1, 1, -1, -1), from = pi * seq(0.25, 1, by = 0.25),
+to = 1.25 * pi, col = 2, border = 4, lwd = 3)
+
 }
 \seealso{
 \code{\link[graphics:symbols]{graphics::symbols()}}, \code{\link[plotrix:draw.circle]{plotrix::draw.circle()}}, \code{\link[plotrix:draw.arc]{plotrix::draw.arc()}}.

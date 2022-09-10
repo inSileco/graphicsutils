@@ -76,6 +76,7 @@ maps::map.axes()
 
 ## Other graphical parameters
 addFrame(bg = "darkgray", xaxs = "i", yaxs = "i")
+
 }
 \author{
 Nicolas Casajus, \email{nicolas.casajus@gmail.com}

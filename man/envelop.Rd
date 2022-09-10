@@ -13,9 +13,11 @@ envelop(x, upper, lower = rep(0, length(upper)), add = TRUE, ...)
 
 \item{lower}{the y coordinates of the lower values.}
 
-\item{add}{a logical. If \code{TRUE} the envelop is drawn as a polygon (default behavior).}
+\item{add}{a logical. If \code{TRUE} the envelop is drawn as a polygon (default
+behavior).}
 
-\item{...}{additional arguments to be passed to \code{\link[graphics:polygon]{graphics::polygon()}} function.}
+\item{...}{additional arguments to be passed to \code{\link[graphics:polygon]{graphics::polygon()}}
+function.}
 }
 \value{
 The coordinates of the envelop are returned if assigned.

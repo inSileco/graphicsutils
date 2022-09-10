@@ -24,8 +24,8 @@ These functions can be used anytime, however, there are useful only once
 }
 \section{Functions}{
 \itemize{
-\item \code{toFig}: Convert figure region coordinates into user coordinates.
+\item \code{toFig()}: Convert figure region coordinates into user coordinates.
 
-\item \code{toUser}: Convert user coordinates into figure region coordinates.
+\item \code{toUser()}: Convert user coordinates into figure region coordinates.
+
 }}
-

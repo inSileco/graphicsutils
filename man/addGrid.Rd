@@ -16,9 +16,7 @@ addGrid(
 )
 }
 \arguments{
-\item{at_x}{coordinates on the x-Axis where to draw vertical lines.}
-
-\item{at_y}{coordinates on the y-Axis where to draw horizontal lines.}
+\item{at_x, at_y}{coordinates on the x and y-axis where to draw lines.}
 
 \item{col}{the color of the background.}
 
@@ -52,6 +50,7 @@ maps::map()
 addGrid(at_x = axTicks(1), border = "blue", lwd = 2)
 addGrid(at_y = axTicks(2), border = "red")
 addGrid(at_x = NULL, at_y = NULL, lwd = 3, box = TRUE)
+
 }
 \author{
 Nicolas CASAJUS, \email{nicolas.casajus@gmail.com}

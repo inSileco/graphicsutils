@@ -27,6 +27,7 @@ addAxis(1)
 addAxis(2, at = seq(-50, 50, 100), digits = 2)
 addAxis(3, lwd = 0, lwd.ticks = 0.5)
 addAxis(4, las = 1, col.axis = "red")
+
 }
 \author{
 Nicolas CASAJUS, \email{nicolas.casajus@gmail.com}
